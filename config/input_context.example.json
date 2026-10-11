@@ -1,0 +1,29 @@
+{
+  "schema_version": "a02-input-1",
+  "kind": "excerpt",
+  "reference_record_id": "reference-loulou-001",
+  "recording": {
+    "recording_id": "recording-loulou-unverified",
+    "artist": "daoud",
+    "title": "Loulou & the loulous",
+    "version": null,
+    "external_ids": null,
+    "identity_status": "unverified",
+    "identity_evidence": null
+  },
+  "provenance": {
+    "origin_url": null,
+    "acquired_at": null,
+    "permitted_use": null,
+    "notes": "Candidate association only. Replace with actual supplied evidence in an ignored local context."
+  },
+  "requested_interval": {
+    "basis": "claimed_recording",
+    "start_seconds": 218,
+    "end_seconds": 240,
+    "status": "approximate",
+    "note": "Original request; never an instruction to crop an excerpt again at 218 seconds."
+  },
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null
+}

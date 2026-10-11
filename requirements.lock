@@ -1,0 +1,10 @@
+# Complete pinned Python 3.12 runtime, build, and local-validation resolution.
+# Install binary wheels only; no model, GPU, or external decoder dependencies.
+cffi==1.17.1
+numpy==2.2.6
+pycparser==2.22
+ruff==0.11.13
+scipy==1.15.3
+setuptools==80.9.0
+soundfile==0.13.1
+wheel==0.45.1

@@ -1,6 +1,6 @@
 # Reference and result records
 
-A01 design contract, version **0.1-draft**. JSON is the initial manifest format; executable validation, storage, and retrieval are deferred. The [Loulou manifest](../manifests/references/loulou.json) is an actual unverified reference record, not an available audio asset. Examples below are arithmetic illustrations, not search results.
+A01 reference/result design contract, version **0.1-draft**, plus the additive **0.2 A02 input/prepared contract** below. JSON is the manifest format. A02 validates the context and lineage it uses; full reference/result validation and retrieval remain deferred. The [Loulou manifest](../manifests/references/loulou.json) remains an unchanged 0.1-draft unverified reference, not an available audio asset. Examples below are arithmetic illustrations, not search results.
 
 ## Common conventions
 
@@ -75,3 +75,32 @@ Resampling changes sample coordinates, not elapsed seconds: map using the respec
 A result uses the common source, processing history, and time-map fields as well. An item with unavailable playback or unverified mapping cannot pass the technical acceptance contract. Report it as an incomplete diagnostic rather than a playable verified match. Similarity scores order candidates; they are **not calibrated probabilities** or independent evidence of perceived similarity. Calibration would require separate evidence and a versioned protocol.
 
 No result manifest is created in A01: there has been no search. Store future sanitized result manifests with their run/protocol records, and keep private run output under `data/runs/` or `reports/local/`.
+
+## A02 input and prepared records (version 0.2)
+
+A02 adds `kind: input|prepared`, rather than changing the unimplemented reference/result contract or asserting that a decoded candidate is the intended reference. Inputs appear in private inspection reports; prepared records live next to their derivative in ignored `data/audio/prepared/KEY/record.json`. Public exports require privacy review. `source` always identifies the **original available file**; a prepared record's `artifact` identifies its current derivative.
+
+| Field / extension | A02 meaning |
+| --- | --- |
+| `schema_version: "0.2"`, `record_id` | Content/context-derived input ID or preparation-key-derived prepared ID |
+| `validation_status: "unverified"` | Target/reference association remains unverified, even when technical evidence succeeds |
+| `technical_metadata_status: "verified"`, `technical_metadata` | Root file decoded, byte SHA-256, frames/rate/channels/duration, container/subtype, peak/RMS/silence measured; separate from recording identity |
+| `source.sample_count` | Original available-file frame count; all channels share this count |
+| `recording.identity_evidence` | Explicit supplied evidence; no filename-based verification |
+| `reference_record_id` | Optional supplied candidate association, never an automatic reference-manifest update |
+| `requested_interval` | Optional supplied approximate/unverified `claimed_recording` interval; never used as a crop |
+| `verified_interval` | Null on inspection; on preparation, verified technical source-file bounds with `status: verified_bounds`, not target-event verification |
+| `timestamp_mapping.status: "verified_file_mapping"` | Checked sample/time mapping back to the original available source; original-recording identity/offset is separate evidence |
+| `timestamp_mapping.basis: "file"` | New display basis when a file is available but kind or original offset is unknown; excerpt with unknown offset still uses `excerpt` |
+| `timestamp_mapping.offset_evidence` | Supplied basis for a non-null original offset, retained once across composition |
+| `timestamp_mapping.unmapped_tail_seconds` | Fractional ceil-rounded resampler bin beyond real source duration, excluded from verified mapping/playback |
+| `artifact` (prepared only) | Derivative asset ID/path/byte hash/size, frames/rate/channels/duration, output format and measurements |
+| `preparation_key`, `preparation_identity` | Hash of input bytes, parent ID/contract hash, explicit processing parameters, and tools/versions |
+| `record_hash` (prepared only) | SHA-256 of canonical sorted compact UTF-8 JSON excluding this field; detects record corruption before reuse/composition |
+| `processing_history` | Ordered operations with input/output identity, paths/hashes, tools, parameters/config hash, operation key and composed time map |
+
+Asset IDs are `sha256:HEX`; an input record also hashes supplied context so different identity/permission evidence cannot silently reuse an older association. Technical measurements stay with the root source; each derivative has its own `artifact` measurements. `selected_events` remains empty because B01 owns selection. The preparation key doubles as the deterministic operation/run identity; timestamps are omitted from canonical records so identical supported-environment inputs reproduce them. CLI reports retain measured wall time and actual environment separately.
+
+Optional `a02-input-1` context has a required `schema_version` and `kind`. Missing optional fields are documented unknowns: null identity/provenance/offset/request/reference ID and `identity_status: unverified`. Allowed recording/provenance fields follow the tables above, plus `identity_evidence`. `original_recording_offset_seconds` and `offset_evidence` are at the context root. Verified identity requires nonempty recording ID, version and evidence; a known offset also requires known kind, verified identity and offset evidence. Full-track offsets must explicitly be zero. Invalid/incomplete assertions fail; supplied evidence is not independently authenticated. See [the candidate excerpt example](../config/input_context.example.json).
+
+Runtime readers accept only their documented context or 0.2 prepared lineage; passing the 0.1 Loulou reference as a prepared parent is an explicit error. The smoke reads its reference ID/source availability/status without converting or verifying it. Preparation maps are contiguous, unit elapsed-time scale, and composable through at most 32 previous A02 operations. More general concatenation/stretching maps remain future work. [RUNTIME.md](RUNTIME.md#context-and-timestamps) specifies rounding, decoder/resampler timing, supported formats, and exact commands.
