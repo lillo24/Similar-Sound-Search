@@ -1,6 +1,6 @@
 # Evaluation contract
 
-Adopted for A01 on 11 October 2026. **No benchmark or audio experiment has been run.** A04 implements these checks; A05 compares matchers; A06 checks the baseline workflow; D02 runs integrated evaluation before D04 listening. The [record contract](RECORDS.md) defines source identity and time coordinates.
+Adopted for A01 on 11 October 2026. **No retrieval/perceptual benchmark has been run.** A02 has exercised only deterministic input/runtime/time-map engineering checks ([evidence](../reports/A02_RUNTIME.md)). A04 implements the retrieval benchmark; A05 compares matchers; A06 checks the baseline workflow; D02 runs integrated evaluation before D04 listening. The [record contract](RECORDS.md) defines source identity and time coordinates.
 
 ## Separate questions and evidence
 
@@ -33,7 +33,7 @@ These are correctness requirements, not timbre-quality percentages. A claimed co
 | Score interpretation | Each score states metric, direction, normalization, and stage. Timbre and pitch contributions are inspectable. No uncalibrated score is presented as a probability or as independent proof of quality. |
 | Honest failure | Empty catalogues, unavailable models, absent/missing inputs, out-of-bounds requests, and stale indexes produce explicit outcomes; no fabricated playable results or benchmark passes. |
 
-A01 only reviews the contract and manifest structure. It does not implement or claim success on these future technical checks.
+A01 reviewed the contract and manifest structure. A02 tests the applicable input/preparation/time-map invariants; it does not claim search, indexing, original-result playback, discovery identity, or perceptual acceptance. Those future checks require their own implementation and evidence.
 
 ## Model selection and leakage control
 

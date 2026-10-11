@@ -15,13 +15,26 @@ Adopted on 11 October 2026 for A01. These are foundation decisions, not validate
 | DEC-009 | Reserve local data directories and exclude audio, weights, caches, and secrets from Git. | Keeps private/large artifacts local while allowing sanitized manifests and evidence summaries to be versioned. Exclusions do not protect already tracked content. |
 | DEC-010 | Keep A06 internal and the first required listening review at D04; default to local resources and no paid services. | Automates catalogue/test/model work without upfront labels or routine approval gates. The present handoff stops at A01 because later prompts define later scope. |
 
-## Unresolved assumptions
+## A02 runtime decisions
 
-| Unknown | Consequence and next step | Blocks A01? |
+A02 additions, 11 October 2026:
+
+| ID | Decision | Reason / consequence |
 | --- | --- | --- |
-| Loulou file, recording version, full-track/excerpt status, original offset, and exact event | A02 first locates and inspects available inputs. Until then, no verified Loulou crop/search claim is possible. | No |
+| DEC-011 | Python 3.12 local environment with a complete pinned binary NumPy/SciPy/SoundFile resolution; CPU path only. | Actual Windows session had a working bundled 3.12.14 but no usable PATH interpreter/FFmpeg. Wheel libsndfile provides tested WAV/FLAC without global/driver changes. A 6 GiB NVIDIA GPU was detected without installing a framework; GPU computation is untested. |
+| DEC-012 | Explicit file or bounded project audio inventory, optional evidence context, additive 0.2 candidate/prepared records. | Technical decoding cannot verify recording/version/event/offset. The 0.1 Loulou manifest remains unchanged and missing. No A02 reference experiment is claimed. |
+| DEC-013 | Required channels/rate, validated optional file-relative crop, zero-phase polyphase resampling, composed original-file mapping. | Prevents implicit target-dropping, changed playback speed, double excerpt offsets, and invented recording time. Fractional output padding has no claimed original source span. |
+| DEC-014 | Hash/version-keyed atomic derivative bundles with verified reuse; fail on corruption. | Keeps originals immutable and changed source/context/parameters from resolving to stale derivatives. This is bounded preparation reuse, not C04. |
+| DEC-015 | Numeric smoke/starter tiers, single locked worker, hard deadline, memory/disk/output preflight. | Limits fit observed ~16 GiB RAM/four CPU threads and a short offline pilot. Future download/shortlist caps are contracts awaiting A03/A05 enforcement; no paid service/upload/deployment is authorized. See [runtime limits](RUNTIME.md#resource-policy). |
+| DEC-016 | Small local Ruff/unittest/CLI validation; no hosted CI workflow added. | The repository had no CI/required checks. Complete manual commands validate every changed area without recurring runner cost, model downloads, or unrelated suites. |
+
+## Remaining assumptions after A02
+
+| Unknown | Consequence and next step | Blocks A02? |
+| --- | --- | --- |
+| Loulou file, recording version, full-track/excerpt status, original offset, and exact event | No actual file was supplied/present in A02's project inputs. Inspect a supplied file with evidence context before any verified Loulou crop/search claim. | No |
 | Instrument identity and useful pitch tolerance | Keep description unverified; compare query/pitch choices in later experiments. | No |
-| Runtime, hardware, disk, dependency compatibility, and run budget | Inspect and record limits in A02 before choosing/installing a stack or running expensive jobs. | No |
+| Larger workloads, Linux/GPU compute, and lossy decoder/seek behavior | Windows CPU runtime and conservative limits are now exercised; measure new routes before expanding their claims or resource budgets. | No |
 | Permitted starter catalogue and benchmark audio access | A03/A04 establish actual audio access, provenance, versions, and permitted use; provider metadata is insufficient. | No |
 | Pretrained model/checkpoint availability, suitability, and training overlap | A05 documents available candidates and measured results; overlap may remain unknown. | No |
 | Separation benefit, generalisation, and real-song relevance | Unrun hypotheses; compare separation later, reserve held-out checks, and obtain the first relevance review at D04. | No |

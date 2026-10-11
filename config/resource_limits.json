@@ -1,0 +1,44 @@
+{
+  "schema_version": "a02-resources-1",
+  "policy": {
+    "paid_services": false,
+    "private_audio_uploads": false,
+    "public_deployment": false
+  },
+  "tiers": {
+    "smoke": {
+      "max_input_bytes": 16777216,
+      "max_duration_seconds": 30,
+      "max_channels": 2,
+      "max_sample_rate_hz": 96000,
+      "max_decoded_bytes": 67108864,
+      "max_working_bytes": 268435456,
+      "max_output_bytes": 16777216,
+      "max_managed_bytes": 268435456,
+      "min_free_bytes": 1073741824,
+      "max_seconds": 20,
+      "max_inventory_files": 16,
+      "max_resample_factor": 1024,
+      "concurrency": 1,
+      "max_download_bytes": 0,
+      "max_model_candidates": 0
+    },
+    "starter": {
+      "max_input_bytes": 268435456,
+      "max_duration_seconds": 900,
+      "max_channels": 8,
+      "max_sample_rate_hz": 192000,
+      "max_decoded_bytes": 268435456,
+      "max_working_bytes": 1073741824,
+      "max_output_bytes": 268435456,
+      "max_managed_bytes": 4294967296,
+      "min_free_bytes": 4294967296,
+      "max_seconds": 120,
+      "max_inventory_files": 64,
+      "max_resample_factor": 1024,
+      "concurrency": 1,
+      "max_download_bytes": 536870912,
+      "max_model_candidates": 3
+    }
+  }
+}
