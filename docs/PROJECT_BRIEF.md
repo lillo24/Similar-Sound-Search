@@ -1,0 +1,69 @@
+# Project brief
+
+Adopted on 11 October 2026 for A01. This is a design brief, not evidence that the search works. [STATUS.md](STATUS.md) records implemented and tested capabilities.
+
+## Goal and reference
+
+Find passages in other songs that contain a sound like one selected element of a reference recording, even among overlapping instruments. Return the source recording, the matching interval, and playback of the original passage. Whole-song genre, mood, or recording recognition does not establish success.
+
+First reference: **daoud — Loulou & the loulous**, approximately **3:38–4:00 (218–240 seconds)** in Leonardo's marked version. "Electronic-sounding" describes his impression; instrument identity is unverified. The actual file, version, full-track/excerpt status, original offset, and exact event are unknown. The [reference manifest](../manifests/references/loulou.json) records those unknowns rather than inventing a source. Its requested interval is approximate and is not a verified crop instruction.
+
+Tom's Diner's "Thhh" vocal sound is a possible later generalisation example from the design notes. Its audio is not supplied or verified here; it does not replace the Loulou reference or add an A01 prerequisite.
+
+## Similarity priorities
+
+1. **Timbre first:** texture, harmonic/noisy character, attack, decay, and internal modulation of the selected sound.
+2. **Approximate pitch second:** roughly compatible pitch may help. Keep the pitch preference separately inspectable; its useful tolerance is an experiment, not an adopted numerical rule.
+3. **Phrase rhythm later:** matching melody, rhythm, or note order is unnecessary for the first build. Preserve the evolution of an individual event, including its attack and decay.
+
+A complete event or several examples of the same sound in any order are candidate query forms to compare. Neither is an implemented selection capability. Begin with original audio and compare pretrained representations with a simpler acoustic baseline. Optional separation must earn its cost through measured retrieval improvement, retaining original audio for playback. Clean separation of every source is not assumed. Custom training and rhythm search belong to conditional future work.
+
+## Autonomy and resources
+
+The implementation agent handles permitted catalogue collection, published benchmark reuse, controlled test generation, matcher comparison, indexing, debugging, and packaging. Leonardo does not need to discover similar songs, prepare labels, or approve routine technical decisions. The first required listening review is **D04**, after the complete prototype works and has been automatically tested. A06 produces internal evidence without a listening gate.
+
+Default to available local resources and no new paid services. A02 establishes compute, disk, dependency, and run limits before expensive experiments. Locate available inputs and complete independent work before reporting an indispensable missing input/access decision or a resource commitment outside the agreed budget. Missing Loulou audio does not block A01 or unrelated engineering tests; a substitute must be labelled as an engineering test, never as validation of the intended reference.
+
+Keep original audio unchanged. Record provenance and permitted use; metadata access alone does not provide analysable song audio. Preserve private audio and secrets locally, and sanitize manifests/reports before versioning them.
+
+## Roadmap and dependencies
+
+| Stage | Scope | Dependency or milestone |
+| --- | --- | --- |
+| A01 | Target and success definition; repository foundation | This task; documentation and workspace only |
+| A02 | Runtime, inputs, and resource limits | Uses A01 contracts; establishes a bounded environment |
+| A03 | Automated starter catalogue | Uses A02 access and resource evidence |
+| A04 | Benchmarks and controlled test generation | Uses A02 runtime; keeps evaluation audio separate from A03 discovery audio |
+| A05 | Candidate matchers and comparison harness | Uses A04 protocols and available A02 resources |
+| A06 | First complete search baseline with playable passages | Integrates A03 catalogue and A05 matcher; internal report, no user rating gate |
+| B01–B03 | Event selection, optional separation, reusable queries, and pitch preference | Extends the baseline; measures query and separation choices |
+| C01–C04 | Passage/stem indexing, candidate retrieval, refinement, and resumable processing | Uses reproducible queries; measures shortlist coverage before refinement |
+| D01–D04 | Interface, automatic evaluation, runnable package, then first listening review | Integrates B/C; automatically tests before the D04 review |
+| E01–E03 | Broader catalogue sources, measured optimisation, and maintenance | Expands the bounded prototype with explicit resource costs |
+| F01–F03 | Conditional learned ranking, representation fine-tuning, and future rhythm target | Optional improvements after measured need; not prerequisites |
+
+Dependent B/C/D engineering may interleave without changing identifiers or adding listening/approval gates. This handoff implements **A01 only**; later prompts define their own work. The D04 goal is about ten distinct-song candidates, timestamps, direct playback, and an evidence report with optional feedback. Report weak or fewer candidates honestly rather than padding apparent successes.
+
+## Workspace layout
+
+| Location | Purpose | Version-control policy |
+| --- | --- | --- |
+| `src/` | Future Python audio-processing core | Source versioned; no runtime/package implemented in A01 |
+| `config/` | Future reproducible processing and evaluation configuration | Versioned without secrets; `config/local/` and `*.local.*` ignored |
+| `manifests/references/` | Reference records | Sanitized metadata versioned; initial Loulou record is unverified |
+| `manifests/catalogue/` | Future source identities, provenance, hashes, and duplicate groups | Sanitized records versioned |
+| `manifests/evaluation/` | Future dataset versions, splits, seeds, and frozen protocols | Sanitized reproducibility records versioned |
+| `manifests/private/` | Private paths, access details, or sensitive metadata | Ignored |
+| `data/audio/` | Local audio; later use `originals/`, `excerpts/`, `discovery/`, `generated/`, and `human-rated/` subdirectories | Contents ignored except directory markers |
+| `data/features/`, `data/indexes/` | Derived features and versioned-by-key indexes | Contents ignored except directory markers |
+| `data/models/`, `data/runs/` | Model weights, raw run output, and temporary products | Contents ignored except directory markers |
+| `reports/` | Shareable evidence summaries and selected reproducibility records | Versioned after privacy review; `reports/local/` ignored |
+| `docs/`, `history-implementations/` | Durable context and archived task prompts | Versioned |
+
+The directory markers reserve locations; they do not provide a working pipeline. Git exclusions apply only to untracked files and are not a substitute for reviewing a diff before publishing.
+
+## Context and evidence
+
+The [archived A01 prompt](../history-implementations/Similar_Sound_Search_A01.md) is the task definition. The [Similar Sound Search design document](https://docs.google.com/document/d/14YC-w8eGEEj8eKTKCx7Fn8L3bOMNx1bjRdPjW1TRR-s), read on 11 October 2026, supplies "Direction — sound type first", "Roadmap v2 — Plan index", and "Autonomous build & evaluation". Its older Tom's Diner example does not override the explicit first Loulou reference in A01 and the v2 autonomous plan. No future session needs access to that document to understand this brief.
+
+Keep four evidence categories distinct: **adopted design** (this brief and decisions), **tentative proposals** (query forms, models, separation, pitch tolerance), **implemented behavior** (supported by code), and **experimental results** (supported by a reproducible run). A01 establishes the first category and records proposals; it supplies no retrieval experiment.

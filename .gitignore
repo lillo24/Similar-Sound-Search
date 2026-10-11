@@ -1,0 +1,60 @@
+# Local inputs and generated artifacts; retain only directory markers.
+/data/**
+!/data/**/
+!/data/**/.gitkeep
+
+# Audio and model weights also stay local outside data/, on any OS.
+*.[wW][aA][vV]
+*.[wW][aA][vV][eE]
+*.[mM][pP]3
+*.[fF][lL][aA][cC]
+*.[aA][iI][fF]
+*.[aA][iI][fF][fF]
+*.[mM]4[aA]
+*.[aA][aA][cC]
+*.[oO][gG][gG]
+*.[oO][pP][uU][sS]
+*.[wW][mM][aA]
+*.[mM][pP]4
+*.[wW][eE][bB][mM]
+*.[pP][tT]
+*.[pP][tT][hH]
+*.[cC][kK][pP][tT]
+*.[sS][aA][fF][eE][tT][eE][nN][sS][oO][rR][sS]
+*.[oO][nN][nN][xX]
+*.[hH]5
+*.[hH][dD][fF]5
+
+# Secrets and machine-specific/private records.
+.env
+.env.*
+!.env.example
+*.local.*
+*.pem
+*.key
+/config/local/
+/manifests/private/
+/reports/local/
+
+# Python environments, build products, and disposable caches.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Editor and operating-system output.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
