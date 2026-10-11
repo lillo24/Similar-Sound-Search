@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1-draft",
+  "record_id": "reference-loulou-001",
+  "kind": "reference",
+  "validation_status": "unverified",
+  "recording": {
+    "recording_id": "recording-loulou-unverified",
+    "artist": "daoud",
+    "title": "Loulou & the loulous",
+    "version": null,
+    "external_ids": null,
+    "identity_status": "unverified"
+  },
+  "source": {
+    "asset_id": null,
+    "availability": "missing",
+    "local_path": null,
+    "sha256": null,
+    "kind": "unknown",
+    "duration_seconds": null,
+    "sample_rate_hz": null,
+    "channels": null,
+    "provenance": {
+      "origin_url": null,
+      "acquired_at": null,
+      "permitted_use": null,
+      "notes": "No audio supplied or present in the inspected repository. Design context is not audio provenance."
+    }
+  },
+  "requested_interval": {
+    "basis": "claimed_recording",
+    "asset_id": null,
+    "start_seconds": 218,
+    "end_seconds": 240,
+    "status": "approximate",
+    "note": "Approximately 3:38-4:00 in Leonardo's marked recording; not a verified crop instruction."
+  },
+  "verified_interval": null,
+  "selected_events": [],
+  "target_description": {
+    "character": "Electronic-sounding, as described by Leonardo",
+    "instrument_identity": null,
+    "instrument_identity_status": "unverified"
+  },
+  "similarity_priorities": {
+    "order": ["timbre", "approximate_pitch", "phrase_rhythm_deferred"],
+    "pitch_tolerance_semitones": null,
+    "phrase_rhythm_required": false
+  },
+  "processing_history": [],
+  "timestamp_mapping": {
+    "asset_id": null,
+    "status": "unverified",
+    "basis": "unknown",
+    "original_recording_offset_seconds": null,
+    "segments": null
+  },
+  "context_sources": [
+    "history-implementations/Similar_Sound_Search_A01.md",
+    "https://docs.google.com/document/d/14YC-w8eGEEj8eKTKCx7Fn8L3bOMNx1bjRdPjW1TRR-s"
+  ],
+  "unknowns": [
+    "Actual available audio file and SHA-256",
+    "Recording/release version and verified identity",
+    "Full-track versus excerpt status and any original excerpt offset",
+    "Decoded duration, sample rate, and channel count",
+    "Exact target event boundaries and instrument identity",
+    "Acquisition provenance and permitted use",
+    "Useful approximate-pitch tolerance"
+  ]
+}
