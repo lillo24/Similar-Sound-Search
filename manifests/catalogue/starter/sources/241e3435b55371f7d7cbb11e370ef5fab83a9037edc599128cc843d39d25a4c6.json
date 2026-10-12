@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0136/track:4",
+  "source_item_id": "BSMX0136",
+  "file_name": "04-SomethingToSee_DeVriesInstrumental_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0136/04-SomethingToSee_DeVriesInstrumental_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0136",
+  "expected_bytes": 5215118,
+  "expected_md5": "08412b36de99a1735b5f4f6706d43284",
+  "provider_mtime": "1468505885",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 194.06,
+  "title": "Something To See (De Vries Instrumental)",
+  "artist": "Donnie Ozone",
+  "album": "Something To See",
+  "version": "Archive file mtime=1468505885; md5=08412b36de99a1735b5f4f6706d43284",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0136",
+    "sha256": "802362c51d61f2747cba969a4e8f50640a588012fd33849d39054833b31ce77e",
+    "acquired_at": "2026-10-12T10:24:11.234979+00:00",
+    "bytes": 17413
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0136",
+    "evidence_sha256": "802362c51d61f2747cba969a4e8f50640a588012fd33849d39054833b31ce77e",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Donnie Ozone \u2014 Something To See (De Vries Instrumental); Donnie Ozone - Something To See; https://archive.org/download/BSMX0136/04-SomethingToSee_DeVriesInstrumental_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0136/04-SomethingToSee_DeVriesInstrumental.mp3",
+      "expected_md5": "502de0f70f711d03967c5b498e1f570f",
+      "expected_bytes": 4931584,
+      "provider_original": "04-SomethingToSee_DeVriesInstrumental_192kb.mp3"
+    }
+  ],
+  "record_hash": "a89782d660234c63326344c5fdc59fba6847142d47f9d3ffceeff50e15534e6c"
+}

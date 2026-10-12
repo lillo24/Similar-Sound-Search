@@ -1,0 +1,60 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSXE0019/track:5",
+  "source_item_id": "BSXE0019",
+  "file_name": "02-05-ScreaminforLyrics_Instrumental_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSXE0019/02-05-ScreaminforLyrics_Instrumental_192kb.mp3",
+  "source_page": "https://archive.org/details/BSXE0019",
+  "expected_bytes": 3111988,
+  "expected_md5": "5e1959b6adde9a8a8fe08342f1216fab",
+  "provider_mtime": "1529404520",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 97.72,
+  "title": "Screamin for Lyrics (Instrumental)",
+  "artist": "Mported Flows",
+  "album": "Sensitive Information XE",
+  "version": "Archive file mtime=1529404520; md5=5e1959b6adde9a8a8fe08342f1216fab",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSXE0019",
+    "sha256": "2ae1d0296d2b5650a3eea8e444d766df8d6b29379b5eee39ac88c65d498b6aa5",
+    "acquired_at": "2026-10-12T10:24:01.793059+00:00",
+    "bytes": 51353
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSXE0019",
+    "evidence_sha256": "2ae1d0296d2b5650a3eea8e444d766df8d6b29379b5eee39ac88c65d498b6aa5",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Mported Flows \u2014 Screamin for Lyrics (Instrumental); Mported Flows - Sensitive Information XE; https://archive.org/download/BSXE0019/02-05-ScreaminforLyrics_Instrumental_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSXE0019/01-05-ScreaminforLyrics_192kb.mp3",
+      "expected_md5": "82bfb47becbe2262bffeef8290c2fcb0",
+      "expected_bytes": 3521990,
+      "provider_original": null
+    },
+    {
+      "origin_url": "https://archive.org/download/BSXE0019/02-05-ScreaminforLyrics_Instrumental.mp3",
+      "expected_md5": "a593ac831d60bf4fd026bdfc8638b982",
+      "expected_bytes": 2360604,
+      "provider_original": "02-05-ScreaminforLyrics_Instrumental_192kb.mp3"
+    },
+    {
+      "origin_url": "https://archive.org/download/BSXE0019/01-05-ScreaminforLyrics.mp3",
+      "expected_md5": "20a032d64d3744de76c40f4a933296d8",
+      "expected_bytes": 2923710,
+      "provider_original": "01-05-ScreaminforLyrics_192kb.mp3"
+    }
+  ],
+  "record_hash": "229e006e5610806bf036b5b23ebe670062476e7210fc15e04f374984df617b8a"
+}

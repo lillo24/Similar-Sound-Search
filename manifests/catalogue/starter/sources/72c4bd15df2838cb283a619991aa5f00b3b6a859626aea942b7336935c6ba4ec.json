@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BS450029/track:1",
+  "source_item_id": "BS450029",
+  "file_name": "01-BadCop_7inchMixx_192kb.mp3",
+  "origin_url": "https://archive.org/download/BS450029/01-BadCop_7inchMixx_192kb.mp3",
+  "source_page": "https://archive.org/details/BS450029",
+  "expected_bytes": 4559733,
+  "expected_md5": "7f399a4fc193ef4f5c8ab067ea9b3a53",
+  "provider_mtime": "1467892044",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 155.79,
+  "title": "Bad Cop (7inch Mixx)",
+  "artist": "The Impossebulls",
+  "album": "Bad Cop",
+  "version": "Archive file mtime=1467892044; md5=7f399a4fc193ef4f5c8ab067ea9b3a53",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BS450029",
+    "sha256": "16d40bd9ca02729cd9eb04097c6914f9c85ac603754637f4d1b0822862c816fb",
+    "acquired_at": "2026-10-12T10:24:57.045960+00:00",
+    "bytes": 9171
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BS450029",
+    "evidence_sha256": "16d40bd9ca02729cd9eb04097c6914f9c85ac603754637f4d1b0822862c816fb",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "The Impossebulls \u2014 Bad Cop (7inch Mixx); The Impossebulls - Bad Cop; https://archive.org/download/BS450029/01-BadCop_7inchMixx_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BS450029/01-BadCop_7inchMixx.mp3",
+      "expected_md5": "431fba0c69460f7327e711fd0cff447f",
+      "expected_bytes": 3746816,
+      "provider_original": "01-BadCop_7inchMixx_192kb.mp3"
+    }
+  ],
+  "record_hash": "5b5b8bc9907c93cb4f157d9ab76d1af5c483eef9cd52d2fd08336003d632cdae"
+}

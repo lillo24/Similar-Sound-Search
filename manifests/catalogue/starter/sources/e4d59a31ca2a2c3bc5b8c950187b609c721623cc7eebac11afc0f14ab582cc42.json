@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0127/track:1",
+  "source_item_id": "BSMX0127",
+  "file_name": "01-AbsurdiusRex.mp3",
+  "origin_url": "https://archive.org/download/BSMX0127/01-AbsurdiusRex.mp3",
+  "source_page": "https://archive.org/details/BSMX0127",
+  "expected_bytes": 5106688,
+  "expected_md5": "28074f462ea7a3d9cd56187349af7eb2",
+  "provider_mtime": "1461071653",
+  "provider_original": "01-AbsurdiusRex_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 206.0,
+  "title": "Absurdius Rex",
+  "artist": "Jovian Year",
+  "album": "Absurdius Rex",
+  "version": "Archive file mtime=1461071653; md5=28074f462ea7a3d9cd56187349af7eb2",
+  "genre": "Indie",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0127",
+    "sha256": "d0f9fc427aba15de271c0ef8967dc59f891af2665eed3f9bab011a630baa71a9",
+    "acquired_at": "2026-10-12T10:32:48.188930+00:00",
+    "bytes": 15537
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0127",
+    "evidence_sha256": "d0f9fc427aba15de271c0ef8967dc59f891af2665eed3f9bab011a630baa71a9",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Jovian Year \u2014 Absurdius Rex; Jovian Year - Absurdius Rex; https://archive.org/download/BSMX0127/01-AbsurdiusRex.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "ba78e099067805ca58cef25011626a2a40418adafa0509af08cec46c3ea3a44c"
+}

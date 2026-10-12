@@ -25,7 +25,7 @@ LIMITS = {
     "max_download_bytes",
     "max_model_candidates",
 }
-MANAGED = ("data", "reports/local", "manifests/private")
+MANAGED = ("data", "reports/local", "manifests/private", "manifests/catalogue")
 
 
 def load_limits(path, tier):
@@ -116,3 +116,38 @@ class Budget:
             )
         self.check_time("preflight", self.root)
         return {"managed_bytes_before": managed, "free_bytes_before": free}
+
+
+class CatalogueBudget(Budget):
+    """Locked worker disk inventory with explicit accounting for its owned file writes.
+
+    Rewalking all catalogue files twice per ledger read/update is quadratic. The worker
+    holds the A03 lock, tracks exact logical file sizes, and refreshes at A02 preparation
+    boundaries. A crash discards this in-memory cache; the next worker scans actual disk,
+    including abandoned partials. Free-space checks and all ceilings remain unchanged.
+    """
+
+    def __init__(self, root, limits):
+        super().__init__(root, limits)
+        self._managed = None
+        self._files = {}
+
+    def managed_bytes(self):
+        if self._managed is None:
+            self._managed = super().managed_bytes()
+        return self._managed
+
+    def track_file(self, path):
+        self.managed_bytes()
+        path = Path(path)
+        if path not in self._files:
+            self._files[path] = path.stat().st_size if path.exists() else 0
+
+    def account_file(self, path, size):
+        path = Path(path)
+        self._managed += size - self._files[path]
+        self._files[path] = size
+
+    def refresh_disk(self):
+        self._managed = None
+        self._files = {}

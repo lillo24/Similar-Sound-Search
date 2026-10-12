@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0134/track:6",
+  "source_item_id": "BSMX0134",
+  "file_name": "06-NoCountryForOldMen_DsMuddyWaterBreakfixMixx.mp3",
+  "origin_url": "https://archive.org/download/BSMX0134/06-NoCountryForOldMen_DsMuddyWaterBreakfixMixx.mp3",
+  "source_page": "https://archive.org/details/BSMX0134",
+  "expected_bytes": 5134848,
+  "expected_md5": "8318124be285067c4674c4b6e14240bc",
+  "provider_mtime": "1468499924",
+  "provider_original": "06-NoCountryForOldMen_DsMuddyWaterBreakfixMixx_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 241.0,
+  "title": "No Country For Old Men (D's Muddy Water Breakfix Mixx)",
+  "artist": "The Impossebulls",
+  "album": "Back To It b/w 5 x 5",
+  "version": "Archive file mtime=1468499924; md5=8318124be285067c4674c4b6e14240bc",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0134",
+    "sha256": "338afae8f1cf7ab5e836fd45a63e01a95bf00391370ec54f04fcc3d688893681",
+    "acquired_at": "2026-10-12T10:26:06.753551+00:00",
+    "bytes": 20012
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0134",
+    "evidence_sha256": "338afae8f1cf7ab5e836fd45a63e01a95bf00391370ec54f04fcc3d688893681",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "The Impossebulls \u2014 No Country For Old Men (D's Muddy Water Breakfix Mixx); The Impossebulls - Back To It b/w 5 x 5; https://archive.org/download/BSMX0134/06-NoCountryForOldMen_DsMuddyWaterBreakfixMixx.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "512c6bb3bab9587b7b3c715bf5af558637ae8a689a5ed5a42da336b5469ccc8e"
+}

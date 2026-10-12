@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "similar-sound-search"
-version = "0.2.0"
-description = "Bounded local audio input tooling for Similar Sound Search"
+version = "0.3.0"
+description = "Bounded audio input and discovery catalogue tooling for Similar Sound Search"
 requires-python = ">=3.12,<3.13"
-dependencies = ["numpy==2.2.6", "scipy==1.15.3", "soundfile==0.13.1"]
+dependencies = ["numpy==2.2.6", "scipy==1.15.3", "soundfile==0.13.1", "truststore==0.10.4"]
 
 [project.scripts]
 sound-search = "similar_sound_search.cli:main"

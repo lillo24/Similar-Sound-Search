@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0060/track:42",
+  "source_item_id": "BSOG0060",
+  "file_name": "42-LyrikalTranzportashun_12inMixx.mp3",
+  "origin_url": "https://archive.org/download/BSOG0060/42-LyrikalTranzportashun_12inMixx.mp3",
+  "source_page": "https://archive.org/details/BSOG0060",
+  "expected_bytes": 5117952,
+  "expected_md5": "43fe48750fefd4213dcbd79415abd0ff",
+  "provider_mtime": "1476794236",
+  "provider_original": "42-LyrikalTranzportashun_12inMixx_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 227.0,
+  "title": "Lyrikal Tranzportashun (12\" Mixx)",
+  "artist": "LOWdown",
+  "album": "soBELOW (THE groundZERO SINGLES 2006-2016)",
+  "version": "Archive file mtime=1476794236; md5=43fe48750fefd4213dcbd79415abd0ff",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0060",
+    "sha256": "bf16cb2732d3ef422f833659933a97f88f7c2e2a0505608bb0819761bd3d1405",
+    "acquired_at": "2026-10-12T10:25:19.885103+00:00",
+    "bytes": 43489
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0060",
+    "evidence_sha256": "bf16cb2732d3ef422f833659933a97f88f7c2e2a0505608bb0819761bd3d1405",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "LOWdown \u2014 Lyrikal Tranzportashun (12\" Mixx); LOWdown - soBELOW (THE groundZERO SINGLES 2006-2016); https://archive.org/download/BSOG0060/42-LyrikalTranzportashun_12inMixx.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "139b167f098988fbd7444a6e5ec38b45d029a3727a1a2632dc303baf57fd6b44"
+}

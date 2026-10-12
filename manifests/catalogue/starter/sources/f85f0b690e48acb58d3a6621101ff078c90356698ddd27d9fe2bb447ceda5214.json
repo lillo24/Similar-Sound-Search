@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0062/track:2",
+  "source_item_id": "BSOG0062",
+  "file_name": "02-ShiveringShadows_FeaturingViktorVanRiver_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0062/02-ShiveringShadows_FeaturingViktorVanRiver_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0062",
+  "expected_bytes": 5202249,
+  "expected_md5": "1eeae2fc1ca57a48ae907626afac7b14",
+  "provider_mtime": "1485864547",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 194.56,
+  "title": "Shivering Shadows (Featuring Viktor Van River)",
+  "artist": "Cutside",
+  "album": "Point Of No Return",
+  "version": "Archive file mtime=1485864547; md5=1eeae2fc1ca57a48ae907626afac7b14",
+  "genre": "(4294967295)",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0062",
+    "sha256": "ac2e00ab8b13f53d0ef854381df6425e30002ae939fc2fa63edd3e61e9889d28",
+    "acquired_at": "2026-10-12T10:23:00.134720+00:00",
+    "bytes": 25788
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0062",
+    "evidence_sha256": "ac2e00ab8b13f53d0ef854381df6425e30002ae939fc2fa63edd3e61e9889d28",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Cutside \u2014 Shivering Shadows (Featuring Viktor Van River); Cutside - Point Of No Return; https://archive.org/download/BSOG0062/02-ShiveringShadows_FeaturingViktorVanRiver_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0062/02-ShiveringShadows_FeaturingViktorVanRiver.mp3",
+      "expected_md5": "4308d864423fbcec53d59bd305755eec",
+      "expected_bytes": 4935680,
+      "provider_original": "02-ShiveringShadows_FeaturingViktorVanRiver_192kb.mp3"
+    }
+  ],
+  "record_hash": "3c5ab8e2ae3a31de304bff2e271616a031eb35f0af7baa5dd7c05547627f0247"
+}

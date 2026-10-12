@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0155/track:5",
+  "source_item_id": "BSMX0155",
+  "file_name": "05-PledgeofAllegiance_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0155/05-PledgeofAllegiance_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0155",
+  "expected_bytes": 3590166,
+  "expected_md5": "1a3585ddafaa9c7f2c420d1d02307013",
+  "provider_mtime": "1491310372",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 107.83,
+  "title": "Pledge of Allegiance",
+  "artist": "Bralitz",
+  "album": "Bralitz",
+  "version": "Archive file mtime=1491310372; md5=1a3585ddafaa9c7f2c420d1d02307013",
+  "genre": "Indie",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0155",
+    "sha256": "db200bec41671db22ebe9f8c32f6031614cd00cbcce3ad2748bbf264648f9b83",
+    "acquired_at": "2026-10-12T10:24:33.929544+00:00",
+    "bytes": 14286
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0155",
+    "evidence_sha256": "db200bec41671db22ebe9f8c32f6031614cd00cbcce3ad2748bbf264648f9b83",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Bralitz \u2014 Pledge of Allegiance; Bralitz - Bralitz; https://archive.org/download/BSMX0155/05-PledgeofAllegiance_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0155/05-PledgeofAllegiance.mp3",
+      "expected_md5": "5a07ccfff0c881ef6f30d8ee61dd042d",
+      "expected_bytes": 2231808,
+      "provider_original": "05-PledgeofAllegiance_192kb.mp3"
+    }
+  ],
+  "record_hash": "01a9a82124b7ad10960742253f1685f97d2f46f8d8d67f822a73bb0b3d76c2d3"
+}

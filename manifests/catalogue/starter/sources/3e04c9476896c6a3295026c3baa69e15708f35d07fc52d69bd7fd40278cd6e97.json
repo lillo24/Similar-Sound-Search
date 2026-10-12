@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0062/track:8",
+  "source_item_id": "BSOG0062",
+  "file_name": "08-Amaterasu_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0062/08-Amaterasu_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0062",
+  "expected_bytes": 4722602,
+  "expected_md5": "50ff49efd1ebbf0be959338c47d6642c",
+  "provider_mtime": "1485864556",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 174.58,
+  "title": "Amaterasu",
+  "artist": "Cutside",
+  "album": "Point Of No Return",
+  "version": "Archive file mtime=1485864556; md5=50ff49efd1ebbf0be959338c47d6642c",
+  "genre": "(4294967295)",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0062",
+    "sha256": "ac2e00ab8b13f53d0ef854381df6425e30002ae939fc2fa63edd3e61e9889d28",
+    "acquired_at": "2026-10-12T10:23:00.134720+00:00",
+    "bytes": 25788
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0062",
+    "evidence_sha256": "ac2e00ab8b13f53d0ef854381df6425e30002ae939fc2fa63edd3e61e9889d28",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Cutside \u2014 Amaterasu; Cutside - Point Of No Return; https://archive.org/download/BSOG0062/08-Amaterasu_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0062/08-Amaterasu.mp3",
+      "expected_md5": "0854bdf7dcffd19695586ba134354543",
+      "expected_bytes": 4297216,
+      "provider_original": "08-Amaterasu_192kb.mp3"
+    }
+  ],
+  "record_hash": "b371df3c5ba784af18dc348f2cd1e0605db00ce2d5d8279a7095b9ab9382df44"
+}

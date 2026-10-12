@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0044/track:2",
+  "source_item_id": "BSOG0044",
+  "file_name": "02-KerseyWilliams-Taxidermy_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0044/02-KerseyWilliams-Taxidermy_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0044",
+  "expected_bytes": 4663003,
+  "expected_md5": "96ed5ab985972290151bbd33a269c7b2",
+  "provider_mtime": "1424787701",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 164.99,
+  "title": "Taxidermy",
+  "artist": "Kersey Williams",
+  "album": "Trophies",
+  "version": "Archive file mtime=1424787701; md5=96ed5ab985972290151bbd33a269c7b2",
+  "genre": "Folk",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0044",
+    "sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+    "acquired_at": "2026-10-12T10:25:41.663802+00:00",
+    "bytes": 27557
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0044",
+    "evidence_sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Kersey Williams \u2014 Taxidermy; Mr. & Mrs. Smith - Trophies; https://archive.org/download/BSOG0044/02-KerseyWilliams-Taxidermy_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0044/02-KerseyWilliams-Taxidermy.mp3",
+      "expected_md5": "d02cb94c07fe2fdc655bd4817333d9a2",
+      "expected_bytes": 2825216,
+      "provider_original": "02-KerseyWilliams-Taxidermy_192kb.mp3"
+    }
+  ],
+  "record_hash": "369e908c521c1cabb6db1e36b2f7abec9be1aa69a4baaead2c20b61beb4f87f6"
+}

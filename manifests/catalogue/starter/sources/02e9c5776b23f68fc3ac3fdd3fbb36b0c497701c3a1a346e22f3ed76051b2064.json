@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0152/track:6",
+  "source_item_id": "BSMX0152",
+  "file_name": "06-Burns_FeaturingCable_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0152/06-Burns_FeaturingCable_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0152",
+  "expected_bytes": 4898857,
+  "expected_md5": "19c5102bf89be2970fe31d3ad22cee94",
+  "provider_mtime": "1481026155",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 157.91,
+  "title": "Burns (Featuring Cable)",
+  "artist": "Deadly Combo",
+  "album": "The Vault",
+  "version": "Archive file mtime=1481026155; md5=19c5102bf89be2970fe31d3ad22cee94",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0152",
+    "sha256": "a76c128b25a45b9efba9f96ea2146d8b78c6895ab151899827a3b52fca367d69",
+    "acquired_at": "2026-10-12T10:36:08.037156+00:00",
+    "bytes": 17195
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0152",
+    "evidence_sha256": "a76c128b25a45b9efba9f96ea2146d8b78c6895ab151899827a3b52fca367d69",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Deadly Combo \u2014 Burns (Featuring Cable); Deadly Combo - The Vault; https://archive.org/download/BSMX0152/06-Burns_FeaturingCable_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0152/06-Burns_FeaturingCable.mp3",
+      "expected_md5": "521cdfdb08cf46eadd5a7b8ae53c5775",
+      "expected_bytes": 3718144,
+      "provider_original": "06-Burns_FeaturingCable_192kb.mp3"
+    }
+  ],
+  "record_hash": "e90b1339dbb8830b8e30430059691c7a0c68a77ade58a1ee99cf5394ceb76c12"
+}

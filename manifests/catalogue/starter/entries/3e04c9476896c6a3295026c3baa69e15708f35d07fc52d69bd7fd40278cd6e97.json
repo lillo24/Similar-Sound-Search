@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSOG0062/track:8",
+    "title": "Amaterasu",
+    "artist": "Cutside",
+    "album": "Point Of No Return",
+    "version": "Archive file mtime=1485864556; md5=50ff49efd1ebbf0be959338c47d6642c",
+    "source_item_id": "BSOG0062",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSOG0062/track:8"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSOG0062/08-Amaterasu_192kb.mp3",
+    "source_page": "https://archive.org/details/BSOG0062",
+    "acquired_at": "2026-10-12T10:26:19.902739+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSOG0062",
+      "sha256": "ac2e00ab8b13f53d0ef854381df6425e30002ae939fc2fa63edd3e61e9889d28",
+      "acquired_at": "2026-10-12T10:23:00.134720+00:00",
+      "bytes": 25788
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSOG0062",
+      "evidence_sha256": "ac2e00ab8b13f53d0ef854381df6425e30002ae939fc2fa63edd3e61e9889d28",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Cutside \u2014 Amaterasu; Cutside - Point Of No Return; https://archive.org/download/BSOG0062/08-Amaterasu_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "50ff49efd1ebbf0be959338c47d6642c",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSOG0062/08-Amaterasu.mp3",
+        "expected_md5": "0854bdf7dcffd19695586ba134354543",
+        "expected_bytes": 4297216,
+        "provider_original": "08-Amaterasu_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "af70901c3314f7b2ba988721a76d8259fcb9edd9435d5a19ca57111f8c66ad43",
+    "file_bytes": 4722602,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 7697455,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 174.54546485260772,
+    "measurement": {
+      "peak_per_channel": [
+        1.1786433458328247,
+        1.2650747299194336
+      ],
+      "rms_per_channel": [
+        0.3890598457581515,
+        0.3672823803329403
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 7697455,
+      "sha256": "80261a585e48a04654d86693f3dc224956c74d89dc18ec7295cb5b496a86304d"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:af70901c3314f7b2ba988721a76d8259fcb9edd9435d5a19ca57111f8c66ad43",
+    "local_path": "data/audio/catalogue/originals/af70901c3314f7b2ba988721a76d8259fcb9edd9435d5a19ca57111f8c66ad43.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:695b407c32d6556d4de3fa9d385d4eff85546fcd9b8832b6f7bf4853716be248",
+    "local_path": "data/audio/prepared/e33800dd2c42f181a8a7f24042d18101252297869519be933330e01364fe8549/audio.wav",
+    "sha256": "695b407c32d6556d4de3fa9d385d4eff85546fcd9b8832b6f7bf4853716be248",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        1.1187869310379028,
+        1.1583794355392456
+      ],
+      "rms_per_channel": [
+        0.36692553233853886,
+        0.35000864301814055
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:695b407c32d6556d4de3fa9d385d4eff85546fcd9b8832b6f7bf4853716be248",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 72.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "e33800dd2c42f181a8a7f24042d18101252297869519be933330e01364fe8549",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:af70901c3314f7b2ba988721a76d8259fcb9edd9435d5a19ca57111f8c66ad43",
+      "input_path": "data/audio/catalogue/originals/af70901c3314f7b2ba988721a76d8259fcb9edd9435d5a19ca57111f8c66ad43.mp3",
+      "input_sha256": "af70901c3314f7b2ba988721a76d8259fcb9edd9435d5a19ca57111f8c66ad43",
+      "output_asset_id": "sha256:695b407c32d6556d4de3fa9d385d4eff85546fcd9b8832b6f7bf4853716be248",
+      "output_sha256": "695b407c32d6556d4de3fa9d385d4eff85546fcd9b8832b6f7bf4853716be248",
+      "output_path": "data/audio/prepared/e33800dd2c42f181a8a7f24042d18101252297869519be933330e01364fe8549/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 3175200,
+        "crop_end_frame": 4498200,
+        "requested_start_seconds": "72",
+        "requested_end_seconds": "102",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "34f9b5370bcaca5f80bb88fa9be5b68af59003d71619ac5fb173a49301e47264",
+      "time_map": {
+        "asset_id": "sha256:695b407c32d6556d4de3fa9d385d4eff85546fcd9b8832b6f7bf4853716be248",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 72.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "e33800dd2c42f181a8a7f24042d18101252297869519be933330e01364fe8549",
+  "prepared_record_hash": "bc8f61f4c0fdfe094b0f17ace8f96c807bff64878e5639f562d7e6be45a28f5d",
+  "prepared_record_path": "data/audio/prepared/e33800dd2c42f181a8a7f24042d18101252297869519be933330e01364fe8549/record.json",
+  "ingestion_identity": "6e6c7a157dc146ca72884fcf3d7c2c5f9fff0604c33124fe8cc3dadd1525233d",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "4c9fa11e64824f7881885186ee65fbbe081373e1e765f4c8b14a398798ff13bc"
+}

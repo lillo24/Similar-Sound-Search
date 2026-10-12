@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "MG0016/track:01",
+  "source_item_id": "MG0016",
+  "file_name": "01-Essence118.mp3",
+  "origin_url": "https://archive.org/download/MG0016/01-Essence118.mp3",
+  "source_page": "https://archive.org/details/MG0016",
+  "expected_bytes": 4315136,
+  "expected_md5": "6c694fc2f1b5329a42915a3e67d5c207",
+  "provider_mtime": "1414060436",
+  "provider_original": "01-Essence118_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 187.0,
+  "title": "Essence 118",
+  "artist": "mGee",
+  "album": "Essence 118",
+  "version": "Archive file mtime=1414060436; md5=6c694fc2f1b5329a42915a3e67d5c207",
+  "genre": "Trip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/MG0016",
+    "sha256": "83b6880f237a470597985321c9df352330bf1d85b05217ee4264c24356dbdc61",
+    "acquired_at": "2026-10-12T10:24:06.572820+00:00",
+    "bytes": 5553
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/MG0016",
+    "evidence_sha256": "83b6880f237a470597985321c9df352330bf1d85b05217ee4264c24356dbdc61",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "mGee \u2014 Essence 118; mGee - Essence 118; https://archive.org/download/MG0016/01-Essence118.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "b2463e14ccf305907b72244036a9221cff5948f77ce6741ff7f71d8a607022bd"
+}

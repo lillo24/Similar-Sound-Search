@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "c22be1356a4d0bbed5a1b728f53947f558899d2d45bbd0d343d10f4bdc1ff417",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSMX0157/track:6",
+    "title": "America's Slow Descent Into Madness",
+    "artist": "BIT",
+    "album": "lenna was a test image",
+    "version": "Archive file mtime=1491905547; md5=5ea6f89d87d83911ba6ffb20cfa4bd67",
+    "source_item_id": "BSMX0157",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSMX0157/track:6"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSMX0157/06-AmericasSlowDescentIntoMadness_192kb.mp3",
+    "source_page": "https://archive.org/details/BSMX0157",
+    "acquired_at": "2026-10-12T11:05:17.254987+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSMX0157",
+      "sha256": "982b9b1e66f4f128601e19abab37a9ac6965b8e323b24350916f40a104c9c705",
+      "acquired_at": "2026-10-12T10:26:09.809559+00:00",
+      "bytes": 16489
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSMX0157",
+      "evidence_sha256": "982b9b1e66f4f128601e19abab37a9ac6965b8e323b24350916f40a104c9c705",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "BIT \u2014 America's Slow Descent Into Madness; BIT - lenna was a test image; https://archive.org/download/BSMX0157/06-AmericasSlowDescentIntoMadness_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "5ea6f89d87d83911ba6ffb20cfa4bd67",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSMX0157/06-AmericasSlowDescentIntoMadness.mp3",
+        "expected_md5": "1518e9b29211565cfd102b96eb174244",
+        "expected_bytes": 2039296,
+        "provider_original": "06-AmericasSlowDescentIntoMadness_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "6b161b51b585af728a9fae60ea941828e9bf1f7f7911faff96c71088629d4144",
+    "file_bytes": 2325900,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 3945572,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 89.46875283446713,
+    "measurement": {
+      "peak_per_channel": [
+        0.9314427971839905,
+        0.9322184920310974
+      ],
+      "rms_per_channel": [
+        0.10091878172461873,
+        0.0667024626405216
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 3945572,
+      "sha256": "5006e82ba652a99aefe03aa51bb011307cd8b48d926bd774f95d5784d2bca565"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:6b161b51b585af728a9fae60ea941828e9bf1f7f7911faff96c71088629d4144",
+    "local_path": "data/audio/catalogue/originals/6b161b51b585af728a9fae60ea941828e9bf1f7f7911faff96c71088629d4144.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:367d6cf0e252f070fe25e772e33ec8341ffc097f4ec2c6f86016ef215d535d6d",
+    "local_path": "data/audio/prepared/c6b57e81a2c43d6c1d851f629394b0bf89e584e42348db25f14c81dad791695b/audio.wav",
+    "sha256": "367d6cf0e252f070fe25e772e33ec8341ffc097f4ec2c6f86016ef215d535d6d",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        0.8810528516769409,
+        0.8617748618125916
+      ],
+      "rms_per_channel": [
+        0.12484476325769357,
+        0.08309512714153672
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:367d6cf0e252f070fe25e772e33ec8341ffc097f4ec2c6f86016ef215d535d6d",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 29.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "c6b57e81a2c43d6c1d851f629394b0bf89e584e42348db25f14c81dad791695b",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:6b161b51b585af728a9fae60ea941828e9bf1f7f7911faff96c71088629d4144",
+      "input_path": "data/audio/catalogue/originals/6b161b51b585af728a9fae60ea941828e9bf1f7f7911faff96c71088629d4144.mp3",
+      "input_sha256": "6b161b51b585af728a9fae60ea941828e9bf1f7f7911faff96c71088629d4144",
+      "output_asset_id": "sha256:367d6cf0e252f070fe25e772e33ec8341ffc097f4ec2c6f86016ef215d535d6d",
+      "output_sha256": "367d6cf0e252f070fe25e772e33ec8341ffc097f4ec2c6f86016ef215d535d6d",
+      "output_path": "data/audio/prepared/c6b57e81a2c43d6c1d851f629394b0bf89e584e42348db25f14c81dad791695b/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 1278900,
+        "crop_end_frame": 2601900,
+        "requested_start_seconds": "29",
+        "requested_end_seconds": "59",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "c66802f7fee2b84306100ced8fab3923376b9bffe08a861a25717b9d9c7d8300",
+      "time_map": {
+        "asset_id": "sha256:367d6cf0e252f070fe25e772e33ec8341ffc097f4ec2c6f86016ef215d535d6d",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 29.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "c6b57e81a2c43d6c1d851f629394b0bf89e584e42348db25f14c81dad791695b",
+  "prepared_record_hash": "9718b59b53134161109d090a2d68b87081d00b37e1276654872a792729904359",
+  "prepared_record_path": "data/audio/prepared/c6b57e81a2c43d6c1d851f629394b0bf89e584e42348db25f14c81dad791695b/record.json",
+  "ingestion_identity": "9ccab6be39ce59a12d16bbb868d1972d9eca13f71543080fac0a1d223a82c1c7",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/c22be1356a4d0bbed5a1b728f53947f558899d2d45bbd0d343d10f4bdc1ff417",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "d59d7f6b77f1d5a8e30c029d06d6ae2beb33e3dc95464ac53f22eb90b47c3d61"
+}

@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0175/track:2",
+  "source_item_id": "BSMX0175",
+  "file_name": "02-Away.mp3",
+  "origin_url": "https://archive.org/download/BSMX0175/02-Away.mp3",
+  "source_page": "https://archive.org/details/BSMX0175",
+  "expected_bytes": 4440237,
+  "expected_md5": "ebbde1e2c69f86b5a146205cd0ac142a",
+  "provider_mtime": "1544186800",
+  "provider_original": "02-Away_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 186.0,
+  "title": "Away",
+  "artist": "Mos Emvy",
+  "album": "Mantra",
+  "version": "Archive file mtime=1544186800; md5=ebbde1e2c69f86b5a146205cd0ac142a",
+  "genre": "Electronic / Trap",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0175",
+    "sha256": "6609485a6dd9fa1bedf7ac5ad44b1674d33c52de8ea64bae41f70c1bcae3b1cd",
+    "acquired_at": "2026-10-12T10:21:10.901280+00:00",
+    "bytes": 16753
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0175",
+    "evidence_sha256": "6609485a6dd9fa1bedf7ac5ad44b1674d33c52de8ea64bae41f70c1bcae3b1cd",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Mos Emvy \u2014 Away; Mos Emvy - Mantra; https://archive.org/download/BSMX0175/02-Away.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "3c457c2342e179786c543676212b35107b4ca900d49449ff9b2d4c319f984af1"
+}

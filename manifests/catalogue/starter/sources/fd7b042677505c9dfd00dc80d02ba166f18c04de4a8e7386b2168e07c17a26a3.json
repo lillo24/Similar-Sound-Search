@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0176/track:3",
+  "source_item_id": "BSMX0176",
+  "file_name": "03-RapStyle_TotoroMixx_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0176/03-RapStyle_TotoroMixx_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0176",
+  "expected_bytes": 4866580,
+  "expected_md5": "324319df6a3ac5e253237fb9df3e92b3",
+  "provider_mtime": "1552646783",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 196.91,
+  "title": "Rap Style (Totoro Mixx)",
+  "artist": "Donnie Ozone",
+  "album": "Rap Style (The Cheese N Pot-C Remixes)",
+  "version": "Archive file mtime=1552646783; md5=324319df6a3ac5e253237fb9df3e92b3",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0176",
+    "sha256": "7e0b277605a745f2b8a4d5e2e1cbbda1c87512e01227a0c62130ac11ab5f98eb",
+    "acquired_at": "2026-10-12T10:35:20.032202+00:00",
+    "bytes": 23431
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0176",
+    "evidence_sha256": "7e0b277605a745f2b8a4d5e2e1cbbda1c87512e01227a0c62130ac11ab5f98eb",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Donnie Ozone \u2014 Rap Style (Totoro Mixx); Donnie Ozone - Rap Style (The Cheese N Pot-C Remixes); https://archive.org/download/BSMX0176/03-RapStyle_TotoroMixx_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0176/03-RapStyle_TotoroMixx.mp3",
+      "expected_md5": "0254ae7f580628e7ff3bbcb9e5db7f38",
+      "expected_bytes": 3609769,
+      "provider_original": "03-RapStyle_TotoroMixx_192kb.mp3"
+    }
+  ],
+  "record_hash": "af56fce9e84d0e7edf7648e5b43c54fa34b3692272c60f2ee241de821be972fd"
+}

@@ -1,5 +1,6 @@
-"""Bounded lossless decoding, acoustic plumbing measurements, and explicit inventory."""
+"""Bounded sequential WAV/FLAC/MP3 decoding, PCM identity, and explicit inventory."""
 
+import hashlib
 import os
 from pathlib import Path
 
@@ -7,9 +8,14 @@ import numpy as np
 import soundfile as sf
 
 from .records import candidate
-from .storage import InputError, ResourceError, contained, is_link, sha256
+from .storage import InputError, ResourceError, canonical, contained, is_link, sha256
 
-SUPPORTED = {".wav": {"WAV", "WAVEX", "RF64"}, ".wave": {"WAV", "WAVEX", "RF64"}, ".flac": {"FLAC"}}
+SUPPORTED = {
+    ".wav": {"WAV", "WAVEX", "RF64"},
+    ".wave": {"WAV", "WAVEX", "RF64"},
+    ".flac": {"FLAC"},
+    ".mp3": {"MP3"},
+}
 SUBTYPES = {"PCM_U8", "PCM_S8", "PCM_16", "PCM_24", "PCM_32", "FLOAT", "DOUBLE"}
 SILENCE_PEAK = 1e-12
 
@@ -20,14 +26,15 @@ def probe(path, budget):
     formats = SUPPORTED.get(path.suffix.lower())
     if formats is None:
         raise InputError(
-            f"inspect {path}: unsupported extension; A02 accepts PCM/float WAV and FLAC"
+            f"inspect {path}: unsupported extension; accepts PCM/float WAV, FLAC, MP3 Layer III"
         )
     try:
         info = sf.info(str(path))
     except (sf.SoundFileError, ValueError) as exc:
         raise InputError(f"decode header {path}: {exc}") from exc
     budget.check_time("decode header", path)
-    if info.format not in formats or info.subtype not in SUBTYPES:
+    accepted = {"MPEG_LAYER_III"} if info.format == "MP3" else SUBTYPES
+    if info.format not in formats or info.subtype not in accepted:
         raise InputError(f"decode {path}: unsupported encoding {info.format}/{info.subtype}")
     if info.frames <= 0 or info.samplerate <= 0 or info.channels <= 0:
         raise InputError(f"decode {path}: expected positive frames, sample rate, and channels")
@@ -54,6 +61,26 @@ def measure(samples):
         "silent": bool(np.max(peak) <= SILENCE_PEAK),
         "silence_peak_threshold": SILENCE_PEAK,
     }
+
+
+def pcm_identity(samples, rate):
+    """sss-pcm-f32le-1: header + interleaved float32 LE, signed zero normalized.
+
+    Header is canonical JSON {schema_version,sample_rate_hz,channels,sample_count} + LF.
+    No gain, clipping, resampling, channel reduction, dithering, or perceptual matching.
+    """
+    header = {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": rate,
+        "channels": samples.shape[1],
+        "sample_count": samples.shape[0],
+    }
+    result = hashlib.sha256(canonical(header) + b"\n")
+    for start in range(0, len(samples), 65536):
+        block = samples[start : start + 65536].astype("<f4", copy=True)
+        block[block == 0] = 0
+        result.update(block.tobytes(order="C"))
+    return {**header, "sha256": result.hexdigest()}
 
 
 def decode(path, budget, extra_output_bytes=0, working_bytes=None):
@@ -86,6 +113,22 @@ def decode(path, budget, extra_output_bytes=0, working_bytes=None):
         "channels": info.channels,
         "duration_seconds": info.frames / info.samplerate,
         "measurement": measure(samples),
+        "canonical_pcm": pcm_identity(samples, info.samplerate),
+        "decoder": {
+            "library": "SoundFile",
+            "soundfile": sf.__version__,
+            "libsndfile": sf.__libsndfile_version__,
+            "route": "full_sequential_float32",
+            "time_coordinate": "decoded_available_file",
+            "compressed_seek_verified": False,
+            "timing_note": (
+                "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; "
+                "untagged/other encoders may retain unknown priming/padding. Use sequentially "
+                "decoded analysis/playback; no sample-exact encoded-stream seek claim."
+                if info.format == "MP3"
+                else "Lossless sample timeline; float32 conversion defines canonical identity."
+            ),
+        },
     }
     budget.check_time("measurement", path)
     return samples, metadata

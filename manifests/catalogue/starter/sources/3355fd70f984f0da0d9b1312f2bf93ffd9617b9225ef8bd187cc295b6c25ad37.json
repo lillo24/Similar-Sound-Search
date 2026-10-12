@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0118/track:3",
+  "source_item_id": "BSMX0118",
+  "file_name": "03-HellenKellerWasACommie_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0118/03-HellenKellerWasACommie_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0118",
+  "expected_bytes": 3999649,
+  "expected_md5": "ed44316471470769508f4a06446b4081",
+  "provider_mtime": "1436846177",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 117.73,
+  "title": "Hellen Keller Was A Commie",
+  "artist": "Armie And The Strutters",
+  "album": "Fortress Of Suckitude EP",
+  "version": "Archive file mtime=1436846177; md5=ed44316471470769508f4a06446b4081",
+  "genre": "Punk",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0118",
+    "sha256": "3f0999f2c652d2219a7e67780f6dd0e2b2f4659a868133e9a96bcbf0673904bd",
+    "acquired_at": "2026-10-12T10:21:43.871864+00:00",
+    "bytes": 12913
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0118",
+    "evidence_sha256": "3f0999f2c652d2219a7e67780f6dd0e2b2f4659a868133e9a96bcbf0673904bd",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Armie And The Strutters \u2014 Hellen Keller Was A Commie; Armie And The Strutters - Fortress Of Suckitude EP; https://archive.org/download/BSMX0118/03-HellenKellerWasACommie_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0118/03-HellenKellerWasACommie.mp3",
+      "expected_md5": "ef3032a761187b7397c1932c3d4d2d79",
+      "expected_bytes": 3300864,
+      "provider_original": "03-HellenKellerWasACommie_192kb.mp3"
+    }
+  ],
+  "record_hash": "896007842e838f61b99f830929fb31fa375a356fc15cb32760ad044f7cd759ee"
+}

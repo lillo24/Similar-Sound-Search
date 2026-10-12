@@ -1,0 +1,60 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0075/track:12",
+  "source_item_id": "BSOG0075",
+  "file_name": "02-12-CanWeGetAClapInstrumental_Snippet_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0075/02-12-CanWeGetAClapInstrumental_Snippet_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0075",
+  "expected_bytes": 3125864,
+  "expected_md5": "1f228117ed931c7b3197678dbf8d5687",
+  "provider_mtime": "1519125202",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 87.77,
+  "title": "Can We Get A Clap Instrumental (Snippet)",
+  "artist": "C da 76er",
+  "album": "Out of Necessity (Disc 2)",
+  "version": "Archive file mtime=1519125202; md5=1f228117ed931c7b3197678dbf8d5687",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0075",
+    "sha256": "7bb49053e06995f1691f9178724d059b2a61100806e3125ee8924279107f8daa",
+    "acquired_at": "2026-10-12T10:23:57.312509+00:00",
+    "bytes": 98256
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0075",
+    "evidence_sha256": "7bb49053e06995f1691f9178724d059b2a61100806e3125ee8924279107f8daa",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "C da 76er \u2014 Can We Get A Clap Instrumental (Snippet); C da 76er - Out of Necessity; https://archive.org/download/BSOG0075/02-12-CanWeGetAClapInstrumental_Snippet_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "excerpt",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider track title explicitly labels a snippet/preview/excerpt; original-master start/alignment is unknown.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0075/01-12-CatchABreakInstrumental_Snippet_192kb.mp3",
+      "expected_md5": "cc9217f746f5102230b02b48fd00ee4a",
+      "expected_bytes": 3552177,
+      "provider_original": null
+    },
+    {
+      "origin_url": "https://archive.org/download/BSOG0075/01-12-CatchABreakInstrumental_Snippet.mp3",
+      "expected_md5": "0b844ef3371c97bdabf608f5f7818392",
+      "expected_bytes": 1781227,
+      "provider_original": "01-12-CatchABreakInstrumental_Snippet_192kb.mp3"
+    },
+    {
+      "origin_url": "https://archive.org/download/BSOG0075/02-12-CanWeGetAClapInstrumental_Snippet.mp3",
+      "expected_md5": "3ffe61fd18b6f81c41e5c25ae7692b1a",
+      "expected_bytes": 2303492,
+      "provider_original": "02-12-CanWeGetAClapInstrumental_Snippet_192kb.mp3"
+    }
+  ],
+  "record_hash": "93f927587cc199ccea29964c55d8a4d31feb6a5a03e9ecf1741ea4b4334621d8"
+}

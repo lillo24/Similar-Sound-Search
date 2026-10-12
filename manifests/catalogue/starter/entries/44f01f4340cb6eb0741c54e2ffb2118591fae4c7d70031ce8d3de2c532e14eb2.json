@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "44f01f4340cb6eb0741c54e2ffb2118591fae4c7d70031ce8d3de2c532e14eb2",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSMX0155/track:4",
+    "title": "Dinner Plans",
+    "artist": "Bralitz",
+    "album": "Bralitz",
+    "version": "Archive file mtime=1491310340; md5=517262e2d9bd8ab4f61385b7afe66517",
+    "source_item_id": "BSMX0155",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSMX0155/track:4"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSMX0155/04-DinnerPlans_192kb.mp3",
+    "source_page": "https://archive.org/details/BSMX0155",
+    "acquired_at": "2026-10-12T10:51:06.557233+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSMX0155",
+      "sha256": "db200bec41671db22ebe9f8c32f6031614cd00cbcce3ad2748bbf264648f9b83",
+      "acquired_at": "2026-10-12T10:24:33.929544+00:00",
+      "bytes": 14286
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSMX0155",
+      "evidence_sha256": "db200bec41671db22ebe9f8c32f6031614cd00cbcce3ad2748bbf264648f9b83",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Bralitz \u2014 Dinner Plans; Bralitz - Bralitz; https://archive.org/download/BSMX0155/04-DinnerPlans_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "517262e2d9bd8ab4f61385b7afe66517",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSMX0155/04-DinnerPlans.mp3",
+        "expected_md5": "f098bdebe5e9f2c4595f4dff4172fded",
+        "expected_bytes": 3097600,
+        "provider_original": "04-DinnerPlans_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "17f43b656a405e4e9da5bbd564d603d415cd1434cffeaba29fcf531399011b44",
+    "file_bytes": 4687301,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 6769350,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 153.5,
+    "measurement": {
+      "peak_per_channel": [
+        0.9762346744537354,
+        0.9568796157836914
+      ],
+      "rms_per_channel": [
+        0.14997194529932423,
+        0.12092223251666094
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 6769350,
+      "sha256": "0625714a47ae01dfc661f3e5b6cf93eb891cfac737b2795d746fdb71baaa74cc"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:17f43b656a405e4e9da5bbd564d603d415cd1434cffeaba29fcf531399011b44",
+    "local_path": "data/audio/catalogue/originals/17f43b656a405e4e9da5bbd564d603d415cd1434cffeaba29fcf531399011b44.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:3895d43033a2fb8b69a87a6d8a254d451d52cc8348b97ef9e53d4e2828e18da1",
+    "local_path": "data/audio/prepared/adfe8594c853d444abc46a07a541198bb0a9eee2269df13d51a5d6693ab895b0/audio.wav",
+    "sha256": "3895d43033a2fb8b69a87a6d8a254d451d52cc8348b97ef9e53d4e2828e18da1",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        0.9628093838691711,
+        0.9535561800003052
+      ],
+      "rms_per_channel": [
+        0.14521866021664426,
+        0.15188360011261293
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:3895d43033a2fb8b69a87a6d8a254d451d52cc8348b97ef9e53d4e2828e18da1",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 61.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "adfe8594c853d444abc46a07a541198bb0a9eee2269df13d51a5d6693ab895b0",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:17f43b656a405e4e9da5bbd564d603d415cd1434cffeaba29fcf531399011b44",
+      "input_path": "data/audio/catalogue/originals/17f43b656a405e4e9da5bbd564d603d415cd1434cffeaba29fcf531399011b44.mp3",
+      "input_sha256": "17f43b656a405e4e9da5bbd564d603d415cd1434cffeaba29fcf531399011b44",
+      "output_asset_id": "sha256:3895d43033a2fb8b69a87a6d8a254d451d52cc8348b97ef9e53d4e2828e18da1",
+      "output_sha256": "3895d43033a2fb8b69a87a6d8a254d451d52cc8348b97ef9e53d4e2828e18da1",
+      "output_path": "data/audio/prepared/adfe8594c853d444abc46a07a541198bb0a9eee2269df13d51a5d6693ab895b0/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 2690100,
+        "crop_end_frame": 4013100,
+        "requested_start_seconds": "61",
+        "requested_end_seconds": "91",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "b761799722f4f040e488f7dde62c03e57c241ea3b49060e2ae85c325bdcb452e",
+      "time_map": {
+        "asset_id": "sha256:3895d43033a2fb8b69a87a6d8a254d451d52cc8348b97ef9e53d4e2828e18da1",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 61.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "adfe8594c853d444abc46a07a541198bb0a9eee2269df13d51a5d6693ab895b0",
+  "prepared_record_hash": "ca1dbed823a375cfa66bda42fee48e55acd5b398abaa6f6d7afb157d708838e8",
+  "prepared_record_path": "data/audio/prepared/adfe8594c853d444abc46a07a541198bb0a9eee2269df13d51a5d6693ab895b0/record.json",
+  "ingestion_identity": "b613b52306b1c96eea7e9b4b5cd374aea4c7ce5987468c6a4e518a83b8b585fb",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/44f01f4340cb6eb0741c54e2ffb2118591fae4c7d70031ce8d3de2c532e14eb2",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "910b589cd0dd86f269325238b2eac903ff0223e780cdc2aae0531888b59092ad"
+}

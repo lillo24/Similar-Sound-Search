@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSOG0062/track:2",
+    "title": "Shivering Shadows (Featuring Viktor Van River)",
+    "artist": "Cutside",
+    "album": "Point Of No Return",
+    "version": "Archive file mtime=1485864547; md5=1eeae2fc1ca57a48ae907626afac7b14",
+    "source_item_id": "BSOG0062",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSOG0062/track:2"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSOG0062/02-ShiveringShadows_FeaturingViktorVanRiver_192kb.mp3",
+    "source_page": "https://archive.org/details/BSOG0062",
+    "acquired_at": "2026-10-12T10:47:21.987676+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSOG0062",
+      "sha256": "ac2e00ab8b13f53d0ef854381df6425e30002ae939fc2fa63edd3e61e9889d28",
+      "acquired_at": "2026-10-12T10:23:00.134720+00:00",
+      "bytes": 25788
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSOG0062",
+      "evidence_sha256": "ac2e00ab8b13f53d0ef854381df6425e30002ae939fc2fa63edd3e61e9889d28",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Cutside \u2014 Shivering Shadows (Featuring Viktor Van River); Cutside - Point Of No Return; https://archive.org/download/BSOG0062/02-ShiveringShadows_FeaturingViktorVanRiver_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "1eeae2fc1ca57a48ae907626afac7b14",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSOG0062/02-ShiveringShadows_FeaturingViktorVanRiver.mp3",
+        "expected_md5": "4308d864423fbcec53d59bd305755eec",
+        "expected_bytes": 4935680,
+        "provider_original": "02-ShiveringShadows_FeaturingViktorVanRiver_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "580a091c119c0fd6b60fd8cd58422393d97bb87d1b7402282114aeea5d73a47a",
+    "file_bytes": 5202249,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 8578612,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 194.5263492063492,
+    "measurement": {
+      "peak_per_channel": [
+        1.067595362663269,
+        1.0888582468032837
+      ],
+      "rms_per_channel": [
+        0.304236338477116,
+        0.3282063363374624
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 8578612,
+      "sha256": "dd40ac93b259024053ecc0b53e410031845e720632ada0146a8f7bc81c7cd3fe"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:580a091c119c0fd6b60fd8cd58422393d97bb87d1b7402282114aeea5d73a47a",
+    "local_path": "data/audio/catalogue/originals/580a091c119c0fd6b60fd8cd58422393d97bb87d1b7402282114aeea5d73a47a.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:29999f3578c3485ebce562390bc30d95953d6bff4e77978fce0435a79b4ddc23",
+    "local_path": "data/audio/prepared/8dd9a2cab8f29cbc10292b0a7530875460d316c6c387ee26be8c7cc71595aa20/audio.wav",
+    "sha256": "29999f3578c3485ebce562390bc30d95953d6bff4e77978fce0435a79b4ddc23",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        1.028868556022644,
+        1.0141780376434326
+      ],
+      "rms_per_channel": [
+        0.285596618769526,
+        0.3058565734291281
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:29999f3578c3485ebce562390bc30d95953d6bff4e77978fce0435a79b4ddc23",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 82.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "8dd9a2cab8f29cbc10292b0a7530875460d316c6c387ee26be8c7cc71595aa20",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:580a091c119c0fd6b60fd8cd58422393d97bb87d1b7402282114aeea5d73a47a",
+      "input_path": "data/audio/catalogue/originals/580a091c119c0fd6b60fd8cd58422393d97bb87d1b7402282114aeea5d73a47a.mp3",
+      "input_sha256": "580a091c119c0fd6b60fd8cd58422393d97bb87d1b7402282114aeea5d73a47a",
+      "output_asset_id": "sha256:29999f3578c3485ebce562390bc30d95953d6bff4e77978fce0435a79b4ddc23",
+      "output_sha256": "29999f3578c3485ebce562390bc30d95953d6bff4e77978fce0435a79b4ddc23",
+      "output_path": "data/audio/prepared/8dd9a2cab8f29cbc10292b0a7530875460d316c6c387ee26be8c7cc71595aa20/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 3616200,
+        "crop_end_frame": 4939200,
+        "requested_start_seconds": "82",
+        "requested_end_seconds": "112",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "843f882c8ab2764995a0f8536a511cd58b4d4eaccb63cc156aa8f6d5fab21ae7",
+      "time_map": {
+        "asset_id": "sha256:29999f3578c3485ebce562390bc30d95953d6bff4e77978fce0435a79b4ddc23",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 82.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "8dd9a2cab8f29cbc10292b0a7530875460d316c6c387ee26be8c7cc71595aa20",
+  "prepared_record_hash": "3580a4c68e052243e73d060c399b55a248fec5fe3cfe558730fb9ecf39af214f",
+  "prepared_record_path": "data/audio/prepared/8dd9a2cab8f29cbc10292b0a7530875460d316c6c387ee26be8c7cc71595aa20/record.json",
+  "ingestion_identity": "410ae515761d2dea0d431943f05bc7b74151c8c3b9c7dac97c7dba49846921f2",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "f083c13b7991140770e87b43c1aa884c3436515189f9b9296b9795763082c500"
+}

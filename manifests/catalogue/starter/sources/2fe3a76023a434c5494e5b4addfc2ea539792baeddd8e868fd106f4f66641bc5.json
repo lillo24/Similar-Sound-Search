@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0044/track:6",
+  "source_item_id": "BSOG0044",
+  "file_name": "06-MrAndMrsSmith-OhNoNotAgainThisTime_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0044/06-MrAndMrsSmith-OhNoNotAgainThisTime_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0044",
+  "expected_bytes": 2231752,
+  "expected_md5": "3634c1fd61b5c4c4b13effc910d4188c",
+  "provider_mtime": "1424787785",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 63.69,
+  "title": "Oh No Not Again, This Time",
+  "artist": "Mr. & Mrs. Smith",
+  "album": "Trophies",
+  "version": "Archive file mtime=1424787785; md5=3634c1fd61b5c4c4b13effc910d4188c",
+  "genre": "Folk",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0044",
+    "sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+    "acquired_at": "2026-10-12T10:25:41.663802+00:00",
+    "bytes": 27557
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0044",
+    "evidence_sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Mr. & Mrs. Smith \u2014 Oh No Not Again, This Time; Mr. & Mrs. Smith - Trophies; https://archive.org/download/BSOG0044/06-MrAndMrsSmith-OhNoNotAgainThisTime_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0044/06-MrAndMrsSmith-OhNoNotAgainThisTime.mp3",
+      "expected_md5": "dcda8b691f7283247698a703d5962a32",
+      "expected_bytes": 1370112,
+      "provider_original": "06-MrAndMrsSmith-OhNoNotAgainThisTime_192kb.mp3"
+    }
+  ],
+  "record_hash": "be14398134d035508681e145a1895d0ecfe19ed28c67efdf38b775b212174a36"
+}

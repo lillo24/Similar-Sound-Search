@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0070/track:7",
+  "source_item_id": "BSOG0070",
+  "file_name": "07-Conviction_FeaturingBreez.mp3",
+  "origin_url": "https://archive.org/download/BSOG0070/07-Conviction_FeaturingBreez.mp3",
+  "source_page": "https://archive.org/details/BSOG0070",
+  "expected_bytes": 4491264,
+  "expected_md5": "ea76ddd7d2a4beebaaddddf8d7e6c153",
+  "provider_mtime": "1503398714",
+  "provider_original": "07-Conviction_FeaturingBreez_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 198.0,
+  "title": "Conviction (Featuring Breez)",
+  "artist": "KIN/LUCK",
+  "album": "Antithesis",
+  "version": "Archive file mtime=1503398714; md5=ea76ddd7d2a4beebaaddddf8d7e6c153",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0070",
+    "sha256": "1283078a0abba6e60315478572395049a448b8457602446fe78f4ce3f2ee772d",
+    "acquired_at": "2026-10-12T10:23:17.252253+00:00",
+    "bytes": 26676
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0070",
+    "evidence_sha256": "1283078a0abba6e60315478572395049a448b8457602446fe78f4ce3f2ee772d",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "KIN/LUCK \u2014 Conviction (Featuring Breez); KIN/LUCK - Antithesis; https://archive.org/download/BSOG0070/07-Conviction_FeaturingBreez.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "bacba05fc6e9fcb65f4c6af299ba3d9e8442fc0999c649e6c2a32f485e936a14"
+}

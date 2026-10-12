@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSXE0019/track:4",
+  "source_item_id": "BSXE0019",
+  "file_name": "02-04-SensitiveInformation_Instrumental.mp3",
+  "origin_url": "https://archive.org/download/BSXE0019/02-04-SensitiveInformation_Instrumental.mp3",
+  "source_page": "https://archive.org/details/BSXE0019",
+  "expected_bytes": 5063487,
+  "expected_md5": "e8a03520c460e8443b57b43d6d5a7c24",
+  "provider_mtime": "1529404587",
+  "provider_original": "02-04-SensitiveInformation_Instrumental_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 214.0,
+  "title": "Sensitive Information (Instrumental)",
+  "artist": "Mported Flows",
+  "album": "Sensitive Information XE",
+  "version": "Archive file mtime=1529404587; md5=e8a03520c460e8443b57b43d6d5a7c24",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSXE0019",
+    "sha256": "2ae1d0296d2b5650a3eea8e444d766df8d6b29379b5eee39ac88c65d498b6aa5",
+    "acquired_at": "2026-10-12T10:24:01.793059+00:00",
+    "bytes": 51353
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSXE0019",
+    "evidence_sha256": "2ae1d0296d2b5650a3eea8e444d766df8d6b29379b5eee39ac88c65d498b6aa5",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Mported Flows \u2014 Sensitive Information (Instrumental); Mported Flows - Sensitive Information XE; https://archive.org/download/BSXE0019/02-04-SensitiveInformation_Instrumental.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSXE0019/01-04-SensitiveInformation.mp3",
+      "expected_md5": "abb898b8e37bb78b68394cf0d4b1da45",
+      "expected_bytes": 5209723,
+      "provider_original": "01-04-SensitiveInformation_192kb.mp3"
+    }
+  ],
+  "record_hash": "ee3ec341f027dfa05a1ee160d66d755ffd21d5b08aea60176a3dc7cada53c931"
+}

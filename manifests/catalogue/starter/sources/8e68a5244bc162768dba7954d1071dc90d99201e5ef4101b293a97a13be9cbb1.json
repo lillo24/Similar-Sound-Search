@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSSP0002/track:1",
+  "source_item_id": "BSSP0002",
+  "file_name": "01-MK31SamplePackDemo_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSSP0002/01-MK31SamplePackDemo_192kb.mp3",
+  "source_page": "https://archive.org/details/BSSP0002",
+  "expected_bytes": 1658880,
+  "expected_md5": "17d8968bcc1a9f58ab6582c93c8af841",
+  "provider_mtime": "1468515098",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 63.87,
+  "title": "MK31 Sample Pack Demo",
+  "artist": "mGee",
+  "album": "MK31 Sample Pack",
+  "version": "Archive file mtime=1468515098; md5=17d8968bcc1a9f58ab6582c93c8af841",
+  "genre": "Electronic",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSSP0002",
+    "sha256": "2a0d5ec3ea7136339a325a30cff542b46d7ce153668b936e78cd410993507f58",
+    "acquired_at": "2026-10-12T10:20:13.804725+00:00",
+    "bytes": 7934
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by/3.0/",
+    "audio_licence": "CC BY 3.0",
+    "evidence_url": "https://archive.org/metadata/BSSP0002",
+    "evidence_sha256": "2a0d5ec3ea7136339a325a30cff542b46d7ce153668b936e78cd410993507f58",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "mGee \u2014 MK31 Sample Pack Demo; mGee - MK31 Sample Pack; https://archive.org/download/BSSP0002/01-MK31SamplePackDemo_192kb.mp3; http://creativecommons.org/licenses/by/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSSP0002/01-MK31SamplePackDemo.mp3",
+      "expected_md5": "a6cb8d18a98de63250b6bd4d62556e0d",
+      "expected_bytes": 1448960,
+      "provider_original": "01-MK31SamplePackDemo_192kb.mp3"
+    }
+  ],
+  "record_hash": "57247330d639155455439e3a4db28da7b8e1235abd0258f74af5a23e75b06dbe"
+}

@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSIM0002/track:13",
+  "source_item_id": "BSIM0002",
+  "file_name": "13-BendTheKnee_Interlude_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSIM0002/13-BendTheKnee_Interlude_192kb.mp3",
+  "source_page": "https://archive.org/details/BSIM0002",
+  "expected_bytes": 2247245,
+  "expected_md5": "7c5fdf670abb71fe38b36b8ad28a2973",
+  "provider_mtime": "1525775590",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 67.89,
+  "title": "Bend The Knee (Interlude)",
+  "artist": "Eli & The Mannings",
+  "album": "Magical Cookies",
+  "version": "Archive file mtime=1525775590; md5=7c5fdf670abb71fe38b36b8ad28a2973",
+  "genre": "Improvisation",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSIM0002",
+    "sha256": "76b4f822e0b31d5ad06643903bbdbd59c562788a813764945232bb2909a98cfe",
+    "acquired_at": "2026-10-12T10:25:22.702157+00:00",
+    "bytes": 73023
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSIM0002",
+    "evidence_sha256": "76b4f822e0b31d5ad06643903bbdbd59c562788a813764945232bb2909a98cfe",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Eli & The Mannings \u2014 Bend The Knee (Interlude); Eli & The Mannings - Magical Cookies; https://archive.org/download/BSIM0002/13-BendTheKnee_Interlude_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSIM0002/13-BendTheKnee_Interlude.mp3",
+      "expected_md5": "c4ea5d5ca55e4554f2a02fe64ba912c1",
+      "expected_bytes": 1739271,
+      "provider_original": "13-BendTheKnee_Interlude_192kb.mp3"
+    }
+  ],
+  "record_hash": "ae0244e6c87fd54b0301d91a3f169413a6926e6c53556110aea23f028d439a5e"
+}

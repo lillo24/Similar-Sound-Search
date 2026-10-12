@@ -1,0 +1,54 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0075/track:13",
+  "source_item_id": "BSOG0075",
+  "file_name": "02-13-UndergroundAddressInstrumental_Snippet_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0075/02-13-UndergroundAddressInstrumental_Snippet_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0075",
+  "expected_bytes": 3775374,
+  "expected_md5": "c72c5f935e055e0faaa3e9c0769bf46e",
+  "provider_mtime": "1519125134",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 114.83,
+  "title": "Underground Address Instrumental (Snippet)",
+  "artist": "C da 76er",
+  "album": "Out of Necessity (Disc 2)",
+  "version": "Archive file mtime=1519125134; md5=c72c5f935e055e0faaa3e9c0769bf46e",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0075",
+    "sha256": "7bb49053e06995f1691f9178724d059b2a61100806e3125ee8924279107f8daa",
+    "acquired_at": "2026-10-12T10:23:57.312509+00:00",
+    "bytes": 98256
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0075",
+    "evidence_sha256": "7bb49053e06995f1691f9178724d059b2a61100806e3125ee8924279107f8daa",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "C da 76er \u2014 Underground Address Instrumental (Snippet); C da 76er - Out of Necessity; https://archive.org/download/BSOG0075/02-13-UndergroundAddressInstrumental_Snippet_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "excerpt",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider track title explicitly labels a snippet/preview/excerpt; original-master start/alignment is unknown.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0075/02-13-UndergroundAddressInstrumental_Snippet.mp3",
+      "expected_md5": "ff791ac17b7051881b571752930fc7bf",
+      "expected_bytes": 2655002,
+      "provider_original": "02-13-UndergroundAddressInstrumental_Snippet_192kb.mp3"
+    },
+    {
+      "origin_url": "https://archive.org/download/BSOG0075/01-13-Garmisch-UFineRemixInstrumental.mp3",
+      "expected_md5": "65a3e9af1dcd0508510d90f478fb7d5b",
+      "expected_bytes": 4561349,
+      "provider_original": "01-13-Garmisch-UFineRemixInstrumental_192kb.mp3"
+    }
+  ],
+  "record_hash": "fb92b3662bd2568712e8a05b4f720e313583520ec0a2210ac33143c8cac7980e"
+}

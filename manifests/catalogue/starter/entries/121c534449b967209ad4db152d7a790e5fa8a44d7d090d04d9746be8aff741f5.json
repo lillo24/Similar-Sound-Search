@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "121c534449b967209ad4db152d7a790e5fa8a44d7d090d04d9746be8aff741f5",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSMX0148/track:4",
+    "title": "The Rooftop",
+    "artist": "Ant The Symbol",
+    "album": "You Are Here: Midnight",
+    "version": "Archive file mtime=1478047680; md5=69d2667988b556f6abcb7c03b310f424",
+    "source_item_id": "BSMX0148",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSMX0148/track:4"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSMX0148/04-TheRooftop_192kb.mp3",
+    "source_page": "https://archive.org/details/BSMX0148",
+    "acquired_at": "2026-10-12T10:26:30.774484+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSMX0148",
+      "sha256": "beaee87ba127e6bcbc48701dafdb9f98125fedb49a9ee36d6aebb5034c738f93",
+      "acquired_at": "2026-10-12T10:21:03.643266+00:00",
+      "bytes": 16410
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSMX0148",
+      "evidence_sha256": "beaee87ba127e6bcbc48701dafdb9f98125fedb49a9ee36d6aebb5034c738f93",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Ant The Symbol \u2014 The Rooftop; Ant The Symbol - You Are Here: Midnight; https://archive.org/download/BSMX0148/04-TheRooftop_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "69d2667988b556f6abcb7c03b310f424",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSMX0148/04-TheRooftop.mp3",
+        "expected_md5": "5c92f93f1a6fe60498adfdb07028a526",
+        "expected_bytes": 4779008,
+        "provider_original": "04-TheRooftop_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "f81650e9b1e2ac6ec90b72c2c6b16baf2dfe4b95f445962b9ec4cf8b4ea8441b",
+    "file_bytes": 4678240,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 7362348,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 166.94666666666666,
+    "measurement": {
+      "peak_per_channel": [
+        1.1452921628952026,
+        1.1202740669250488
+      ],
+      "rms_per_channel": [
+        0.19871816857937546,
+        0.20046435064467985
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 7362348,
+      "sha256": "b04865e65854323138e9d76c3e0bef1e3b54cf4bdd4d9690b4412f4a4a1dbaaf"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:f81650e9b1e2ac6ec90b72c2c6b16baf2dfe4b95f445962b9ec4cf8b4ea8441b",
+    "local_path": "data/audio/catalogue/originals/f81650e9b1e2ac6ec90b72c2c6b16baf2dfe4b95f445962b9ec4cf8b4ea8441b.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:b17c8b0cff6a3e658fdc158a76c4407ba0d593ba3728b4850ed35ff19bf81f0c",
+    "local_path": "data/audio/prepared/997bc04860d3cda6031c675ca21db00f63e141d47f81bb1d557e361187bc36c6/audio.wav",
+    "sha256": "b17c8b0cff6a3e658fdc158a76c4407ba0d593ba3728b4850ed35ff19bf81f0c",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        1.13444983959198,
+        1.1127740144729614
+      ],
+      "rms_per_channel": [
+        0.23274295887781563,
+        0.2344439904767148
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:b17c8b0cff6a3e658fdc158a76c4407ba0d593ba3728b4850ed35ff19bf81f0c",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 68.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "997bc04860d3cda6031c675ca21db00f63e141d47f81bb1d557e361187bc36c6",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:f81650e9b1e2ac6ec90b72c2c6b16baf2dfe4b95f445962b9ec4cf8b4ea8441b",
+      "input_path": "data/audio/catalogue/originals/f81650e9b1e2ac6ec90b72c2c6b16baf2dfe4b95f445962b9ec4cf8b4ea8441b.mp3",
+      "input_sha256": "f81650e9b1e2ac6ec90b72c2c6b16baf2dfe4b95f445962b9ec4cf8b4ea8441b",
+      "output_asset_id": "sha256:b17c8b0cff6a3e658fdc158a76c4407ba0d593ba3728b4850ed35ff19bf81f0c",
+      "output_sha256": "b17c8b0cff6a3e658fdc158a76c4407ba0d593ba3728b4850ed35ff19bf81f0c",
+      "output_path": "data/audio/prepared/997bc04860d3cda6031c675ca21db00f63e141d47f81bb1d557e361187bc36c6/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 2998800,
+        "crop_end_frame": 4321800,
+        "requested_start_seconds": "68",
+        "requested_end_seconds": "98",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "81fd9dd059e2a87ed7df6a59ca535399355ac43f81716cc87c8686b07e014f58",
+      "time_map": {
+        "asset_id": "sha256:b17c8b0cff6a3e658fdc158a76c4407ba0d593ba3728b4850ed35ff19bf81f0c",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 68.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "997bc04860d3cda6031c675ca21db00f63e141d47f81bb1d557e361187bc36c6",
+  "prepared_record_hash": "c1839b561240d0879137dbe3332ed4af4135af157e5dcf2a7bbab906915ef33f",
+  "prepared_record_path": "data/audio/prepared/997bc04860d3cda6031c675ca21db00f63e141d47f81bb1d557e361187bc36c6/record.json",
+  "ingestion_identity": "6b649d15997253407d678b4825543645ef973d3695d519eb9c8b862fb3c10d18",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/121c534449b967209ad4db152d7a790e5fa8a44d7d090d04d9746be8aff741f5",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "a1ae1e794d0b0c00c97ba96190680de9645bdce9f30f286383b53708f9285c75"
+}

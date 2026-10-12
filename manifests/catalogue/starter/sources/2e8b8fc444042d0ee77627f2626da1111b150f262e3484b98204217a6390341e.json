@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0173/track:4",
+  "source_item_id": "BSMX0173",
+  "file_name": "04-GladiatorSkool.mp3",
+  "origin_url": "https://archive.org/download/BSMX0173/04-GladiatorSkool.mp3",
+  "source_page": "https://archive.org/details/BSMX0173",
+  "expected_bytes": 5070844,
+  "expected_md5": "6e391be7d85a7161021b42ea00f9ce24",
+  "provider_mtime": "1528460125",
+  "provider_original": "04-GladiatorSkool_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 215.0,
+  "title": "Gladiator Skool",
+  "artist": "GLD8TRZ",
+  "album": "Gladiator Muzik",
+  "version": "Archive file mtime=1528460125; md5=6e391be7d85a7161021b42ea00f9ce24",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0173",
+    "sha256": "080879763be770d7a26c0625b81a8c0519f5507251f3d84cd970fbaed0c73424",
+    "acquired_at": "2026-10-12T10:35:49.222813+00:00",
+    "bytes": 18471
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0173",
+    "evidence_sha256": "080879763be770d7a26c0625b81a8c0519f5507251f3d84cd970fbaed0c73424",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "GLD8TRZ \u2014 Gladiator Skool; GLD8TRZ - Gladiator Muzik; https://archive.org/download/BSMX0173/04-GladiatorSkool.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "6b2e3b7e4668efa5a8f60926b215aca94e84bd403ec712a4e38e4fe66f55b546"
+}

@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0070/track:9",
+  "source_item_id": "BSOG0070",
+  "file_name": "09-Bad_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0070/09-Bad_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0070",
+  "expected_bytes": 4713645,
+  "expected_md5": "3bbd66a7cfd61f5b31657c139c3295c5",
+  "provider_mtime": "1503398658",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 167.92,
+  "title": "Bad",
+  "artist": "KIN/LUCK",
+  "album": "Antithesis",
+  "version": "Archive file mtime=1503398658; md5=3bbd66a7cfd61f5b31657c139c3295c5",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0070",
+    "sha256": "1283078a0abba6e60315478572395049a448b8457602446fe78f4ce3f2ee772d",
+    "acquired_at": "2026-10-12T10:23:17.252253+00:00",
+    "bytes": 26676
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0070",
+    "evidence_sha256": "1283078a0abba6e60315478572395049a448b8457602446fe78f4ce3f2ee772d",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "KIN/LUCK \u2014 Bad; KIN/LUCK - Antithesis; https://archive.org/download/BSOG0070/09-Bad_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0070/09-Bad.mp3",
+      "expected_md5": "fd460b4edb7e6528c2a086ce75d91690",
+      "expected_bytes": 4306944,
+      "provider_original": "09-Bad_192kb.mp3"
+    }
+  ],
+  "record_hash": "3aff657901d0c28320e689e788e6f303118db1c899a0813c4b7155fdb47c6eb4"
+}

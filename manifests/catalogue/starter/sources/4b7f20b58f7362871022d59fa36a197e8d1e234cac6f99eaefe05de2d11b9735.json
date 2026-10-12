@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0122/track:9",
+  "source_item_id": "BSMX0122",
+  "file_name": "09-FunkyMotion_AUG8thMixxInstrumental.mp3",
+  "origin_url": "https://archive.org/download/BSMX0122/09-FunkyMotion_AUG8thMixxInstrumental.mp3",
+  "source_page": "https://archive.org/details/BSMX0122",
+  "expected_bytes": 3537920,
+  "expected_md5": "72503ae9c7223924d804dad4e016bfed",
+  "provider_mtime": "1452000270",
+  "provider_original": "09-FunkyMotion_AUG8thMixxInstrumental_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 201.0,
+  "title": "Funky Motion (AUG 8th Mixx Instrumental)",
+  "artist": "Cheese N Pot-C",
+  "album": "Funky Motion",
+  "version": "Archive file mtime=1452000270; md5=72503ae9c7223924d804dad4e016bfed",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0122",
+    "sha256": "6eccc8b86a6996321ec29e2e29c7f6322c5b0b5cb60965460601cbce0692a628",
+    "acquired_at": "2026-10-12T10:33:44.294158+00:00",
+    "bytes": 45894
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0122",
+    "evidence_sha256": "6eccc8b86a6996321ec29e2e29c7f6322c5b0b5cb60965460601cbce0692a628",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Cheese N Pot-C \u2014 Funky Motion (AUG 8th Mixx Instrumental); Cheese N Pot-C - Funky Motion; https://archive.org/download/BSMX0122/09-FunkyMotion_AUG8thMixxInstrumental.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "881c6168fe7993dd4398a5c4a880ad610b50c91af9596f17c61cdb8b77daa90d"
+}

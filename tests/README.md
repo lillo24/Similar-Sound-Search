@@ -1,4 +1,4 @@
-# A02 correctness tests
+# Runtime and catalogue correctness tests
 
 These small offline tests own engineering correctness, not A04 retrieval/perceptual benchmarks. Run `python -m unittest discover -s tests -v` in the installed project environment.
 
@@ -6,5 +6,6 @@ These small offline tests own engineering correctness, not A04 retrieval/percept
 - `test_inputs.py` checks hashes/known measurements, all accepted container/encoding combinations, corrupt/unsupported/silent/non-finite data, bounded inventory, and incomplete context.
 - `test_preparation.py` checks channels, sample rounding, independent event timing, all three source-time cases, composed maps/padding, immutability/reuse/invalidation, and allocation/write failure recovery.
 - `test_boundaries.py` runs the delivered CLI and worker, including missing-reference smoke, hard timeout, process locking, report containment/atomicity, and invalid profiles.
+- `test_catalogue.py` exercises deterministic localhost transfers, retry/redirect/truncation/timeout and durable byte/time limits; shared local/network ingestion, atomic readiness/recovery and corruption/version invalidation; independent PCM identity and MP3 delay/padding fixtures; source selection/licence aliases and explicit unknown-offset snippet declarations, duplicate grouping, locked disk accounting, private import, and batch progress beyond the first bounded invocation. Generated test audio is not real catalogue acquisition evidence.
 
-Fixtures are made in disposable temporary directories. Tests neither download audio/models nor change the real reference record. [RUNTIME.md](../docs/RUNTIME.md#validation) gives the complete formatting/static/test/smoke commands.
+Fixtures are made in disposable temporary directories. Tests neither contact live providers/download models nor change the real reference record. [RUNTIME.md](../docs/RUNTIME.md#validation) and [CATALOGUE.md](../docs/CATALOGUE.md#validation) give formatting/static/test/smoke commands. Live acquisition/resumption is separately recorded in the A03 evidence report. OGG replaces MP3 in A02's unsupported-extension test because A03 intentionally adds MP3 Layer III, with dedicated sequential timing/truncation checks.

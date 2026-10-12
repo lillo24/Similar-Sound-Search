@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0066/track:2",
+  "source_item_id": "BSOG0066",
+  "file_name": "02-EscapeDestiny_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0066/02-EscapeDestiny_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0066",
+  "expected_bytes": 2933035,
+  "expected_md5": "b19e40a28386f28d4a6c140ed2de402c",
+  "provider_mtime": "1497622911",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 74.03,
+  "title": "Escape Destiny",
+  "artist": "BADLUCK",
+  "album": "Eternity Project",
+  "version": "Archive file mtime=1497622911; md5=b19e40a28386f28d4a6c140ed2de402c",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0066",
+    "sha256": "972d3c7108b33745caf6f059c571835713d295b43c4a818421c56d3a38f98260",
+    "acquired_at": "2026-10-12T10:22:37.167530+00:00",
+    "bytes": 30087
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0066",
+    "evidence_sha256": "972d3c7108b33745caf6f059c571835713d295b43c4a818421c56d3a38f98260",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "BADLUCK \u2014 Escape Destiny; BADLUCK - Eternity Project; https://archive.org/download/BSOG0066/02-EscapeDestiny_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0066/02-EscapeDestiny.mp3",
+      "expected_md5": "26d7ce48f7c931ae3b42d043cb63f10b",
+      "expected_bytes": 1729536,
+      "provider_original": "02-EscapeDestiny_192kb.mp3"
+    }
+  ],
+  "record_hash": "cd523f2b85bc7fbe3d79bcd6f2d13a0702f580d0de8f73422a79affe269f4349"
+}

@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0066/track:11",
+  "source_item_id": "BSOG0066",
+  "file_name": "11-ExpiredInspiration_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0066/11-ExpiredInspiration_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0066",
+  "expected_bytes": 4419514,
+  "expected_md5": "d01be70652bb9b320bb9c9010448df46",
+  "provider_mtime": "1497622877",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 135.97,
+  "title": "Expired Inspiration",
+  "artist": "BADLUCK",
+  "album": "Eternity Project",
+  "version": "Archive file mtime=1497622877; md5=d01be70652bb9b320bb9c9010448df46",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0066",
+    "sha256": "972d3c7108b33745caf6f059c571835713d295b43c4a818421c56d3a38f98260",
+    "acquired_at": "2026-10-12T10:22:37.167530+00:00",
+    "bytes": 30087
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0066",
+    "evidence_sha256": "972d3c7108b33745caf6f059c571835713d295b43c4a818421c56d3a38f98260",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "BADLUCK \u2014 Expired Inspiration; BADLUCK - Eternity Project; https://archive.org/download/BSOG0066/11-ExpiredInspiration_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0066/11-ExpiredInspiration.mp3",
+      "expected_md5": "a8748a8ef1238ecd5c199eebbe747bf5",
+      "expected_bytes": 3253248,
+      "provider_original": "11-ExpiredInspiration_192kb.mp3"
+    }
+  ],
+  "record_hash": "d45d1197f3e2136ffdb7b048f88fb4426d33e0cf579f247b67bd88cee7e0434c"
+}

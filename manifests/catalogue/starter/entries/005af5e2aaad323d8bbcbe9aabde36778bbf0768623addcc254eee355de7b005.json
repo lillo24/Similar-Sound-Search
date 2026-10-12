@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "005af5e2aaad323d8bbcbe9aabde36778bbf0768623addcc254eee355de7b005",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BS450034/track:1",
+    "title": "Christmas Shopping at the Dollar Store",
+    "artist": "Donnie Ozone",
+    "album": "The Xmas Split",
+    "version": "Archive file mtime=1481914116; md5=76c080b0a53d7208cfd80ebcb0ead23d",
+    "source_item_id": "BS450034",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BS450034/track:1"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BS450034/01-DonnieOzone-ChristmasShoppingattheDollarStore_192kb.mp3",
+    "source_page": "https://archive.org/details/BS450034",
+    "acquired_at": "2026-10-12T10:38:55.848625+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BS450034",
+      "sha256": "2e9c88f1d262ed35c75ae9859a921589271bf61879171e8e65e3c5d0fc41c5d2",
+      "acquired_at": "2026-10-12T10:25:27.593800+00:00",
+      "bytes": 10120
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BS450034",
+      "evidence_sha256": "2e9c88f1d262ed35c75ae9859a921589271bf61879171e8e65e3c5d0fc41c5d2",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Donnie Ozone \u2014 Christmas Shopping at the Dollar Store; Donnie Ozone & The Impossebulls - The Xmas Split; https://archive.org/download/BS450034/01-DonnieOzone-ChristmasShoppingattheDollarStore_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "76c080b0a53d7208cfd80ebcb0ead23d",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BS450034/01-DonnieOzone-ChristmasShoppingattheDollarStore.mp3",
+        "expected_md5": "7ba2102623b348e39b3495f699729903",
+        "expected_bytes": 2102784,
+        "provider_original": "01-DonnieOzone-ChristmasShoppingattheDollarStore_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31",
+    "file_bytes": 2709468,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 3784299,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 85.811768707483,
+    "measurement": {
+      "peak_per_channel": [
+        1.0489953756332397,
+        1.0438288450241089
+      ],
+      "rms_per_channel": [
+        0.2235742529839882,
+        0.2108733676591787
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 3784299,
+      "sha256": "c253eabc86ea8fba4345bb688dd6f6f38c4b5c2d512951674cc5f344e14427a0"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31",
+    "local_path": "data/audio/catalogue/originals/8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:0453338abb72f096baa637178906ba8753766f69aa48f0ec07465ed514256d0a",
+    "local_path": "data/audio/prepared/df4d130e311f3f662f67c57d8a4dca736d67deceaad1996baf1a4f2f44ea93bb/audio.wav",
+    "sha256": "0453338abb72f096baa637178906ba8753766f69aa48f0ec07465ed514256d0a",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        0.9884753823280334,
+        0.9784699082374573
+      ],
+      "rms_per_channel": [
+        0.22857722995464141,
+        0.21536725079518562
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:0453338abb72f096baa637178906ba8753766f69aa48f0ec07465ed514256d0a",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 27.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "df4d130e311f3f662f67c57d8a4dca736d67deceaad1996baf1a4f2f44ea93bb",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31",
+      "input_path": "data/audio/catalogue/originals/8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31.mp3",
+      "input_sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31",
+      "output_asset_id": "sha256:0453338abb72f096baa637178906ba8753766f69aa48f0ec07465ed514256d0a",
+      "output_sha256": "0453338abb72f096baa637178906ba8753766f69aa48f0ec07465ed514256d0a",
+      "output_path": "data/audio/prepared/df4d130e311f3f662f67c57d8a4dca736d67deceaad1996baf1a4f2f44ea93bb/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 1190700,
+        "crop_end_frame": 2513700,
+        "requested_start_seconds": "27",
+        "requested_end_seconds": "57",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "e1b390eb3a3b26fbdfc56f739353eac708d80cb3034712ad6bce2f5ff62f30b3",
+      "time_map": {
+        "asset_id": "sha256:0453338abb72f096baa637178906ba8753766f69aa48f0ec07465ed514256d0a",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 27.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "df4d130e311f3f662f67c57d8a4dca736d67deceaad1996baf1a4f2f44ea93bb",
+  "prepared_record_hash": "057a6b7bdbe9a1b6a0421f1265e7c25634e9ae7b9028decc83e2cb09edaae910",
+  "prepared_record_path": "data/audio/prepared/df4d130e311f3f662f67c57d8a4dca736d67deceaad1996baf1a4f2f44ea93bb/record.json",
+  "ingestion_identity": "41406a67cf4ec06abdbd5fc6ea2db4fb10a62842da1fcfa16d5434eedfe9060f",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/005af5e2aaad323d8bbcbe9aabde36778bbf0768623addcc254eee355de7b005",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "44ffbfc17e05b20b0c7d963d2a404d9fedf3b0889eecb448988bb466a676ed14"
+}

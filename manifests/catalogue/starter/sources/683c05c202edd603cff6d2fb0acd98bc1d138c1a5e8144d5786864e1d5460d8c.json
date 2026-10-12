@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0140/track:4",
+  "source_item_id": "BSMX0140",
+  "file_name": "04-UFOLessons_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0140/04-UFOLessons_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0140",
+  "expected_bytes": 5211008,
+  "expected_md5": "ab41da9f05f0c618c69566979f4b5a62",
+  "provider_mtime": "1473168491",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 188.6,
+  "title": "UFO Lessons",
+  "artist": "Electric Mirrors",
+  "album": "Neon Jesus Wins the World Cup",
+  "version": "Archive file mtime=1473168491; md5=ab41da9f05f0c618c69566979f4b5a62",
+  "genre": "Electropop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0140",
+    "sha256": "52de2c26c0e6b33307da48c0df14176934b5e54b4d06a9b63fd07bec292b8949",
+    "acquired_at": "2026-10-12T10:22:02.269724+00:00",
+    "bytes": 13459
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0140",
+    "evidence_sha256": "52de2c26c0e6b33307da48c0df14176934b5e54b4d06a9b63fd07bec292b8949",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Electric Mirrors \u2014 UFO Lessons; Electric Mirrors - Neon Jesus Wins The World Cup; https://archive.org/download/BSMX0140/04-UFOLessons_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0140/04-UFOLessons.mp3",
+      "expected_md5": "f173eef465b3115911c27089b803fd81",
+      "expected_bytes": 4361728,
+      "provider_original": "04-UFOLessons_192kb.mp3"
+    }
+  ],
+  "record_hash": "45875d4cc014e900b30248b63092bb1bf8899454fffcbec5d74d78b8f9441e8b"
+}

@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "72c4bd15df2838cb283a619991aa5f00b3b6a859626aea942b7336935c6ba4ec",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BS450029/track:1",
+    "title": "Bad Cop (7inch Mixx)",
+    "artist": "The Impossebulls",
+    "album": "Bad Cop",
+    "version": "Archive file mtime=1467892044; md5=7f399a4fc193ef4f5c8ab067ea9b3a53",
+    "source_item_id": "BS450029",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BS450029/track:1"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BS450029/01-BadCop_7inchMixx_192kb.mp3",
+    "source_page": "https://archive.org/details/BS450029",
+    "acquired_at": "2026-10-12T11:08:22.265626+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BS450029",
+      "sha256": "16d40bd9ca02729cd9eb04097c6914f9c85ac603754637f4d1b0822862c816fb",
+      "acquired_at": "2026-10-12T10:24:57.045960+00:00",
+      "bytes": 9171
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BS450029",
+      "evidence_sha256": "16d40bd9ca02729cd9eb04097c6914f9c85ac603754637f4d1b0822862c816fb",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "The Impossebulls \u2014 Bad Cop (7inch Mixx); The Impossebulls - Bad Cop; https://archive.org/download/BS450029/01-BadCop_7inchMixx_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "7f399a4fc193ef4f5c8ab067ea9b3a53",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BS450029/01-BadCop_7inchMixx.mp3",
+        "expected_md5": "431fba0c69460f7327e711fd0cff447f",
+        "expected_bytes": 3746816,
+        "provider_original": "01-BadCop_7inchMixx_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "58c3b58539155ad8ef4c852d0e8535c6a879afff37e2551a6108386542de9cfb",
+    "file_bytes": 4559733,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 6868968,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 155.75891156462586,
+    "measurement": {
+      "peak_per_channel": [
+        1.0445795059204102,
+        1.003645896911621
+      ],
+      "rms_per_channel": [
+        0.23880756346825407,
+        0.2306380849083355
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 6868968,
+      "sha256": "1858f148f361b5acdff5faf33bedf3d4b81d81c4b096269733fc3f043321f93d"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:58c3b58539155ad8ef4c852d0e8535c6a879afff37e2551a6108386542de9cfb",
+    "local_path": "data/audio/catalogue/originals/58c3b58539155ad8ef4c852d0e8535c6a879afff37e2551a6108386542de9cfb.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:08adabc77dbd85e56ea8e713c2f42d20fce7ecb82c4e7c3c0ec2ca605d652712",
+    "local_path": "data/audio/prepared/d6181a0cd2c2bede0b8c96a8d099b2a9e41142f845fef6dac20b3dac05545795/audio.wav",
+    "sha256": "08adabc77dbd85e56ea8e713c2f42d20fce7ecb82c4e7c3c0ec2ca605d652712",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        1.0209273099899292,
+        0.9672221541404724
+      ],
+      "rms_per_channel": [
+        0.25826038350995756,
+        0.24993753268369312
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:08adabc77dbd85e56ea8e713c2f42d20fce7ecb82c4e7c3c0ec2ca605d652712",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 62.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "d6181a0cd2c2bede0b8c96a8d099b2a9e41142f845fef6dac20b3dac05545795",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:58c3b58539155ad8ef4c852d0e8535c6a879afff37e2551a6108386542de9cfb",
+      "input_path": "data/audio/catalogue/originals/58c3b58539155ad8ef4c852d0e8535c6a879afff37e2551a6108386542de9cfb.mp3",
+      "input_sha256": "58c3b58539155ad8ef4c852d0e8535c6a879afff37e2551a6108386542de9cfb",
+      "output_asset_id": "sha256:08adabc77dbd85e56ea8e713c2f42d20fce7ecb82c4e7c3c0ec2ca605d652712",
+      "output_sha256": "08adabc77dbd85e56ea8e713c2f42d20fce7ecb82c4e7c3c0ec2ca605d652712",
+      "output_path": "data/audio/prepared/d6181a0cd2c2bede0b8c96a8d099b2a9e41142f845fef6dac20b3dac05545795/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 2734200,
+        "crop_end_frame": 4057200,
+        "requested_start_seconds": "62",
+        "requested_end_seconds": "92",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "0bfe94b30035af99bac9a71add5d8978454833ce758a7027917fd33cb96473e8",
+      "time_map": {
+        "asset_id": "sha256:08adabc77dbd85e56ea8e713c2f42d20fce7ecb82c4e7c3c0ec2ca605d652712",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 62.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "d6181a0cd2c2bede0b8c96a8d099b2a9e41142f845fef6dac20b3dac05545795",
+  "prepared_record_hash": "40d43e54c8993597df2b3526d8157e33f84d323e8237b68d34a730f0afa6a614",
+  "prepared_record_path": "data/audio/prepared/d6181a0cd2c2bede0b8c96a8d099b2a9e41142f845fef6dac20b3dac05545795/record.json",
+  "ingestion_identity": "8124342e214ba0d11557ae607abd58e7d4af95fa450429de60095cc4112a46e6",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/72c4bd15df2838cb283a619991aa5f00b3b6a859626aea942b7336935c6ba4ec",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "68190250968b844b46ef3507d466a1066ff6e525435e882169e8dd856f5daa7b"
+}

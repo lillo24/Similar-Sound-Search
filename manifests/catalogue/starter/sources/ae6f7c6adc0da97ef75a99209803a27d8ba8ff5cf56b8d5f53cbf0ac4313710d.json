@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0174/track:1",
+  "source_item_id": "BSMX0174",
+  "file_name": "01-Waitasecond_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0174/01-Waitasecond_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0174",
+  "expected_bytes": 3793753,
+  "expected_md5": "f192bc6a9315b01224963b753f8b856a",
+  "provider_mtime": "1530876682",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 134.64,
+  "title": "Wait a second",
+  "artist": "Viktor Van River",
+  "album": "Biorobot EP",
+  "version": "Archive file mtime=1530876682; md5=f192bc6a9315b01224963b753f8b856a",
+  "genre": "Downtempo/Trip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0174",
+    "sha256": "faa0fad49f5cd50f6935aaccf8f620d2b461d4582191df3115ad3f9047f7270c",
+    "acquired_at": "2026-10-12T10:25:01.215784+00:00",
+    "bytes": 15816
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0174",
+    "evidence_sha256": "faa0fad49f5cd50f6935aaccf8f620d2b461d4582191df3115ad3f9047f7270c",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Viktor Van River \u2014 Wait a second; Viktor Van River - Biorobot; https://archive.org/download/BSMX0174/01-Waitasecond_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0174/01-Waitasecond.mp3",
+      "expected_md5": "c33d637361406a05df90ebb68932fb95",
+      "expected_bytes": 3302948,
+      "provider_original": "01-Waitasecond_192kb.mp3"
+    }
+  ],
+  "record_hash": "515a52223ed3e7bef39faf211043a2d322052b1e838e741796c7d748331697f1"
+}

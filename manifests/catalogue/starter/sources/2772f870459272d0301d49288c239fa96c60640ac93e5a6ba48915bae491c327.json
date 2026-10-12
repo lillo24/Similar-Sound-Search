@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0173/track:1",
+  "source_item_id": "BSMX0173",
+  "file_name": "01-GetReady_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0173/01-GetReady_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0173",
+  "expected_bytes": 4645904,
+  "expected_md5": "5653867d057ad3fcd136cab78ce957ea",
+  "provider_mtime": "1528460064",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 165.28,
+  "title": "Get Ready",
+  "artist": "GLD8TRZ",
+  "album": "Gladiator Muzik",
+  "version": "Archive file mtime=1528460064; md5=5653867d057ad3fcd136cab78ce957ea",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0173",
+    "sha256": "080879763be770d7a26c0625b81a8c0519f5507251f3d84cd970fbaed0c73424",
+    "acquired_at": "2026-10-12T10:35:49.222813+00:00",
+    "bytes": 18471
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0173",
+    "evidence_sha256": "080879763be770d7a26c0625b81a8c0519f5507251f3d84cd970fbaed0c73424",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "GLD8TRZ \u2014 Get Ready; GLD8TRZ - Gladiator Muzik; https://archive.org/download/BSMX0173/01-GetReady_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0173/01-GetReady.mp3",
+      "expected_md5": "b107e0e49acca128b55cd545020fb1e5",
+      "expected_bytes": 3897519,
+      "provider_original": "01-GetReady_192kb.mp3"
+    }
+  ],
+  "record_hash": "ed65d4b60a7db49fa55378cfc03f8e93910cd6fbb430a1bb7a2c0c9a304c39f0"
+}

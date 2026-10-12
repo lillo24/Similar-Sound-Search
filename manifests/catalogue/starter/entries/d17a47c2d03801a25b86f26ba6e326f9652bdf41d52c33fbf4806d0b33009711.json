@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "d17a47c2d03801a25b86f26ba6e326f9652bdf41d52c33fbf4806d0b33009711",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSOG0044/track:5",
+    "title": "Tiger Of A Tale",
+    "artist": "Mr. & Mrs. Smith",
+    "album": "Trophies",
+    "version": "Archive file mtime=1424787764; md5=04b4d48fa1969ee74af350ceee9ea2ad",
+    "source_item_id": "BSOG0044",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSOG0044/track:5"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSOG0044/05-MrAndMrsSmith-TigerOfATale_192kb.mp3",
+    "source_page": "https://archive.org/details/BSOG0044",
+    "acquired_at": "2026-10-12T11:03:05.922083+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSOG0044",
+      "sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+      "acquired_at": "2026-10-12T10:25:41.663802+00:00",
+      "bytes": 27557
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSOG0044",
+      "evidence_sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Mr. & Mrs. Smith \u2014 Tiger Of A Tale; Mr. & Mrs. Smith - Trophies; https://archive.org/download/BSOG0044/05-MrAndMrsSmith-TigerOfATale_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "04b4d48fa1969ee74af350ceee9ea2ad",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSOG0044/05-MrAndMrsSmith-TigerOfATale.mp3",
+        "expected_md5": "6e4c5be7c629cc0818f66d5451775c06",
+        "expected_bytes": 1798144,
+        "provider_original": "05-MrAndMrsSmith-TigerOfATale_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "4a47bc3da42b3e28afb2e43d453d2a20fc43aaa5bf1f267de1f4f1c61bf644a5",
+    "file_bytes": 2915104,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 4063100,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 92.13378684807256,
+    "measurement": {
+      "peak_per_channel": [
+        0.9830685257911682,
+        0.9775059223175049
+      ],
+      "rms_per_channel": [
+        0.23369483687213058,
+        0.194986086471199
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 4063100,
+      "sha256": "9f783ffa621a222dbb20b559bb492cd47a837f34283c68032db1156b0df1f8a6"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:4a47bc3da42b3e28afb2e43d453d2a20fc43aaa5bf1f267de1f4f1c61bf644a5",
+    "local_path": "data/audio/catalogue/originals/4a47bc3da42b3e28afb2e43d453d2a20fc43aaa5bf1f267de1f4f1c61bf644a5.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:12154837ebeb4d33cd6ec9ae7adbd2b5c185d1ddd20c797540ee638cbf61c91b",
+    "local_path": "data/audio/prepared/81557936745975daa8664fa9424f2deb7bd47526679c09e9b55dd8123a20234a/audio.wav",
+    "sha256": "12154837ebeb4d33cd6ec9ae7adbd2b5c185d1ddd20c797540ee638cbf61c91b",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        0.9732839465141296,
+        0.9668347239494324
+      ],
+      "rms_per_channel": [
+        0.25665782645409535,
+        0.21266630330550065
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:12154837ebeb4d33cd6ec9ae7adbd2b5c185d1ddd20c797540ee638cbf61c91b",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 31.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "81557936745975daa8664fa9424f2deb7bd47526679c09e9b55dd8123a20234a",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:4a47bc3da42b3e28afb2e43d453d2a20fc43aaa5bf1f267de1f4f1c61bf644a5",
+      "input_path": "data/audio/catalogue/originals/4a47bc3da42b3e28afb2e43d453d2a20fc43aaa5bf1f267de1f4f1c61bf644a5.mp3",
+      "input_sha256": "4a47bc3da42b3e28afb2e43d453d2a20fc43aaa5bf1f267de1f4f1c61bf644a5",
+      "output_asset_id": "sha256:12154837ebeb4d33cd6ec9ae7adbd2b5c185d1ddd20c797540ee638cbf61c91b",
+      "output_sha256": "12154837ebeb4d33cd6ec9ae7adbd2b5c185d1ddd20c797540ee638cbf61c91b",
+      "output_path": "data/audio/prepared/81557936745975daa8664fa9424f2deb7bd47526679c09e9b55dd8123a20234a/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 1367100,
+        "crop_end_frame": 2690100,
+        "requested_start_seconds": "31",
+        "requested_end_seconds": "61",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "7149263ce5af7774f7bebd3d22d98c3db3579e5d0462eb0a4c286f6ab2a52504",
+      "time_map": {
+        "asset_id": "sha256:12154837ebeb4d33cd6ec9ae7adbd2b5c185d1ddd20c797540ee638cbf61c91b",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 31.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "81557936745975daa8664fa9424f2deb7bd47526679c09e9b55dd8123a20234a",
+  "prepared_record_hash": "2fecdf2e883dec18351d5b2ee0c8770f90bd9c3691249fec9a7868d9dc9df62e",
+  "prepared_record_path": "data/audio/prepared/81557936745975daa8664fa9424f2deb7bd47526679c09e9b55dd8123a20234a/record.json",
+  "ingestion_identity": "a7305ecf93eb2220b29376781671dd80ca2c4d24c73923d97e186a80e5bbd4a9",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/d17a47c2d03801a25b86f26ba6e326f9652bdf41d52c33fbf4806d0b33009711",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "f0f24ea5b8915448ad331360e79dab373778dd20a0c7696dabd8b125e06d02c1"
+}

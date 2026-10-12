@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSUNI0001/track:1",
+  "source_item_id": "BSUNI0001",
+  "file_name": "01-SubwayCameo.mp3",
+  "origin_url": "https://archive.org/download/BSUNI0001/01-SubwayCameo.mp3",
+  "source_page": "https://archive.org/details/BSUNI0001",
+  "expected_bytes": 4881920,
+  "expected_md5": "772d458a1e6701c4b6d6d7cc732e05d0",
+  "provider_mtime": "1455282045",
+  "provider_original": "01-SubwayCameo_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 211.0,
+  "title": "Subway Cameo",
+  "artist": "Pete Lund",
+  "album": "Subway Cameo",
+  "version": "Archive file mtime=1455282045; md5=772d458a1e6701c4b6d6d7cc732e05d0",
+  "genre": "Rock",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSUNI0001",
+    "sha256": "dd2e617f9dccf60825eebb110892d0e281387a59f8a6d59a36f69c3975003db7",
+    "acquired_at": "2026-10-12T10:36:01.136779+00:00",
+    "bytes": 9202
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSUNI0001",
+    "evidence_sha256": "dd2e617f9dccf60825eebb110892d0e281387a59f8a6d59a36f69c3975003db7",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Pete Lund \u2014 Subway Cameo; Pete Lund - Subway Cameo; https://archive.org/download/BSUNI0001/01-SubwayCameo.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "5d873ef4050c5348bbb7b60325ee99d97d4ba192bbf17587f9961f67c1426513"
+}

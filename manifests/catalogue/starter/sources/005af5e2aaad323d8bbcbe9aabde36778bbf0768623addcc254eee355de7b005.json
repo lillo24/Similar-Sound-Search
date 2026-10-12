@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BS450034/track:1",
+  "source_item_id": "BS450034",
+  "file_name": "01-DonnieOzone-ChristmasShoppingattheDollarStore_192kb.mp3",
+  "origin_url": "https://archive.org/download/BS450034/01-DonnieOzone-ChristmasShoppingattheDollarStore_192kb.mp3",
+  "source_page": "https://archive.org/details/BS450034",
+  "expected_bytes": 2709468,
+  "expected_md5": "76c080b0a53d7208cfd80ebcb0ead23d",
+  "provider_mtime": "1481914116",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 85.84,
+  "title": "Christmas Shopping at the Dollar Store",
+  "artist": "Donnie Ozone",
+  "album": "The Xmas Split",
+  "version": "Archive file mtime=1481914116; md5=76c080b0a53d7208cfd80ebcb0ead23d",
+  "genre": "Hip-Hop / Holiday",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BS450034",
+    "sha256": "2e9c88f1d262ed35c75ae9859a921589271bf61879171e8e65e3c5d0fc41c5d2",
+    "acquired_at": "2026-10-12T10:25:27.593800+00:00",
+    "bytes": 10120
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BS450034",
+    "evidence_sha256": "2e9c88f1d262ed35c75ae9859a921589271bf61879171e8e65e3c5d0fc41c5d2",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Donnie Ozone \u2014 Christmas Shopping at the Dollar Store; Donnie Ozone & The Impossebulls - The Xmas Split; https://archive.org/download/BS450034/01-DonnieOzone-ChristmasShoppingattheDollarStore_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BS450034/01-DonnieOzone-ChristmasShoppingattheDollarStore.mp3",
+      "expected_md5": "7ba2102623b348e39b3495f699729903",
+      "expected_bytes": 2102784,
+      "provider_original": "01-DonnieOzone-ChristmasShoppingattheDollarStore_192kb.mp3"
+    }
+  ],
+  "record_hash": "0935c4f9a443b48b1849922121d03eb401bd3c282070828dcab37c5886f32c8a"
+}

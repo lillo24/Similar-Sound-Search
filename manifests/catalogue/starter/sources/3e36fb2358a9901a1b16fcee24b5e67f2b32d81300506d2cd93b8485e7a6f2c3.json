@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSIM0002/track:5",
+  "source_item_id": "BSIM0002",
+  "file_name": "05-ElevenYears_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSIM0002/05-ElevenYears_192kb.mp3",
+  "source_page": "https://archive.org/details/BSIM0002",
+  "expected_bytes": 3464748,
+  "expected_md5": "c9b204901e989de014f4b10843439af4",
+  "provider_mtime": "1525775566",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 118.62,
+  "title": "Eleven Years",
+  "artist": "Eli & The Mannings",
+  "album": "Magical Cookies",
+  "version": "Archive file mtime=1525775566; md5=c9b204901e989de014f4b10843439af4",
+  "genre": "Improvisation",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSIM0002",
+    "sha256": "76b4f822e0b31d5ad06643903bbdbd59c562788a813764945232bb2909a98cfe",
+    "acquired_at": "2026-10-12T10:25:22.702157+00:00",
+    "bytes": 73023
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSIM0002",
+    "evidence_sha256": "76b4f822e0b31d5ad06643903bbdbd59c562788a813764945232bb2909a98cfe",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Eli & The Mannings \u2014 Eleven Years; Eli & The Mannings - Magical Cookies; https://archive.org/download/BSIM0002/05-ElevenYears_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSIM0002/05-ElevenYears.mp3",
+      "expected_md5": "5e6ef28a45231b03e62f3a7d793f123c",
+      "expected_bytes": 2677895,
+      "provider_original": "05-ElevenYears_192kb.mp3"
+    }
+  ],
+  "record_hash": "7f222a6954f2f9814d2df0d51ca3970fad1764b98d442907b597e9ef8009229c"
+}

@@ -8,12 +8,12 @@ import sys
 import time
 from pathlib import Path
 
-from .resources import Budget, load_limits
+from .resources import Budget, CatalogueBudget, load_limits
 from .storage import InputError, ResourceError, atomic_json, contained, project_lock, read_json
 
 
 def parser():
-    command = argparse.ArgumentParser(description="Offline bounded audio input tooling (A02)")
+    command = argparse.ArgumentParser(description="Bounded audio runtime and discovery catalogue")
     command.add_argument(
         "--root", type=Path, default=Path.cwd(), help="project root (default: current directory)"
     )
@@ -51,6 +51,29 @@ def parser():
     preparation.add_argument(
         "--parent-record", type=Path, help="previous A02 bundle record for composed lineage"
     )
+    catalogue = subcommands.add_parser("catalogue", help="bounded real-audio acquisition/import")
+    catalogue.add_argument("catalogue_action", choices=("acquire", "import", "verify"))
+    catalogue.add_argument("input", type=Path, nargs="?", help="explicit local import file only")
+    catalogue.add_argument(
+        "--context", type=Path, help="A02 context with permitted-use evidence for local import"
+    )
+    catalogue.add_argument("--job", default="starter", help="stable job name; repeat to resume")
+    catalogue.add_argument("--take", type=int, help="process first N selected recordings (pilot)")
+    catalogue.add_argument(
+        "--reselect",
+        action="store_true",
+        help="explicitly revise coverage policy using the frozen search; keeps cumulative budget",
+    )
+    catalogue.add_argument(
+        "--data-role",
+        choices=("real_recording_discovery", "engineering"),
+        default="real_recording_discovery",
+        help="role of an explicit local import",
+    )
+    catalogue.add_argument(
+        "--refresh", action="store_true", help="explicitly re-download/check pinned remote payloads"
+    )
+    catalogue.add_argument("--catalogue-policy", type=Path, help="explicit finite catalogue policy")
     return command
 
 
@@ -58,7 +81,8 @@ def _worker(request):
     """Broad catches belong here, at the process boundary, and always return failure."""
     try:
         root = Path(request["root"])
-        budget = Budget(root, request["limits"])
+        budget_type = CatalogueBudget if request["command"] == "catalogue_step" else Budget
+        budget = budget_type(root, request["limits"])
         context = read_json(request["context"]) if request.get("context") else None
         if request["command"] == "smoke":
             from .diagnostics import smoke
@@ -82,6 +106,10 @@ def _worker(request):
                 context,
                 parent,
             )
+        elif request["command"] == "catalogue_step":
+            from .catalogue.job import worker
+
+            result = worker(request, budget)
         else:
             raise InputError(f"unknown worker operation {request['command']!r}")
         budget.check_time("complete", request["command"])
@@ -170,8 +198,24 @@ def main(argv=None):
         }
         request.update({"root": str(root), "limits": limits})
         with project_lock(root):
+            # Refuse an orphaned A03 child before touching its ledger or starting any operation.
+            with project_lock(root, ".a03-worker.lock"):
+                pass
             Budget(root, limits).reserve(65536)
-            result = execute(request)
+            if args.command == "catalogue":
+                from .catalogue.job import run
+
+                if args.catalogue_action == "import" and (
+                    args.input is None or args.context is None
+                ):
+                    raise InputError("catalogue import: explicit input file and --context required")
+                if args.catalogue_action != "import" and (
+                    args.input is not None or args.context is not None
+                ):
+                    raise InputError("catalogue: input/--context belong to explicit local import")
+                result = run(request, execute)
+            else:
+                result = execute(request)
             result.update(
                 {
                     "command": args.command,

@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0127/track:3",
+  "source_item_id": "BSMX0127",
+  "file_name": "03-AbsurdiusRex_CutsideRemix_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0127/03-AbsurdiusRex_CutsideRemix_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0127",
+  "expected_bytes": 5107638,
+  "expected_md5": "20875520d6329856a2d43f39cf2a36c9",
+  "provider_mtime": "1461071579",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 180.04,
+  "title": "Absurdius Rex (Cutside Remix)",
+  "artist": "Jovian Year",
+  "album": "Absurdius Rex",
+  "version": "Archive file mtime=1461071579; md5=20875520d6329856a2d43f39cf2a36c9",
+  "genre": "Indie",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0127",
+    "sha256": "d0f9fc427aba15de271c0ef8967dc59f891af2665eed3f9bab011a630baa71a9",
+    "acquired_at": "2026-10-12T10:32:48.188930+00:00",
+    "bytes": 15537
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0127",
+    "evidence_sha256": "d0f9fc427aba15de271c0ef8967dc59f891af2665eed3f9bab011a630baa71a9",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Jovian Year \u2014 Absurdius Rex (Cutside Remix); Jovian Year - Absurdius Rex; https://archive.org/download/BSMX0127/03-AbsurdiusRex_CutsideRemix_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0127/03-AbsurdiusRex_CutsideRemix.mp3",
+      "expected_md5": "22e35680ee9857475ebe5c55a12cafaf",
+      "expected_bytes": 4393472,
+      "provider_original": "03-AbsurdiusRex_CutsideRemix_192kb.mp3"
+    }
+  ],
+  "record_hash": "dd42107362a89934abe8b4e5d7f0cf25f47af8ad0842f8199c9dcd23b6f56197"
+}

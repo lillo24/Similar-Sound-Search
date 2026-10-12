@@ -1,0 +1,201 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "MG0016/track:01",
+    "title": "Essence 118",
+    "artist": "mGee",
+    "album": "Essence 118",
+    "version": "Archive file mtime=1414060436; md5=6c694fc2f1b5329a42915a3e67d5c207",
+    "source_item_id": "MG0016",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "MG0016/track:01"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/MG0016/01-Essence118.mp3",
+    "source_page": "https://archive.org/details/MG0016",
+    "acquired_at": "2026-10-12T10:52:14.699036+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/MG0016",
+      "sha256": "83b6880f237a470597985321c9df352330bf1d85b05217ee4264c24356dbdc61",
+      "acquired_at": "2026-10-12T10:24:06.572820+00:00",
+      "bytes": 5553
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/MG0016",
+      "evidence_sha256": "83b6880f237a470597985321c9df352330bf1d85b05217ee4264c24356dbdc61",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "mGee \u2014 Essence 118; mGee - Essence 118; https://archive.org/download/MG0016/01-Essence118.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "6c694fc2f1b5329a42915a3e67d5c207",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": []
+  },
+  "source_asset": {
+    "sha256": "d2966565777d51560f28bca90b98b788d295644470ce3493b5dee4d80ad23916",
+    "file_bytes": 4315136,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 8252975,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 187.1422902494331,
+    "measurement": {
+      "peak_per_channel": [
+        1.0396727323532104,
+        1.0040524005889893
+      ],
+      "rms_per_channel": [
+        0.19332487762582448,
+        0.19795732543792555
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 8252975,
+      "sha256": "ecd7f09eb1ff3605a11760f97676fe22e342b9162e66d50cf97eea0a9eaf0091"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:d2966565777d51560f28bca90b98b788d295644470ce3493b5dee4d80ad23916",
+    "local_path": "data/audio/catalogue/originals/d2966565777d51560f28bca90b98b788d295644470ce3493b5dee4d80ad23916.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:640c0f4b6a881b22b33d40652ecffff71594e6eebf24a53dff687dd81f9ab88b",
+    "local_path": "data/audio/prepared/7863488b5c9752b74f620b992366f5d456650d6db0c20136adeffdd5adcbeb91/audio.wav",
+    "sha256": "640c0f4b6a881b22b33d40652ecffff71594e6eebf24a53dff687dd81f9ab88b",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        0.9571627378463745,
+        0.9998548626899719
+      ],
+      "rms_per_channel": [
+        0.20580943379716912,
+        0.20892205585972626
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:640c0f4b6a881b22b33d40652ecffff71594e6eebf24a53dff687dd81f9ab88b",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 78.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "7863488b5c9752b74f620b992366f5d456650d6db0c20136adeffdd5adcbeb91",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:d2966565777d51560f28bca90b98b788d295644470ce3493b5dee4d80ad23916",
+      "input_path": "data/audio/catalogue/originals/d2966565777d51560f28bca90b98b788d295644470ce3493b5dee4d80ad23916.mp3",
+      "input_sha256": "d2966565777d51560f28bca90b98b788d295644470ce3493b5dee4d80ad23916",
+      "output_asset_id": "sha256:640c0f4b6a881b22b33d40652ecffff71594e6eebf24a53dff687dd81f9ab88b",
+      "output_sha256": "640c0f4b6a881b22b33d40652ecffff71594e6eebf24a53dff687dd81f9ab88b",
+      "output_path": "data/audio/prepared/7863488b5c9752b74f620b992366f5d456650d6db0c20136adeffdd5adcbeb91/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 3439800,
+        "crop_end_frame": 4762800,
+        "requested_start_seconds": "78",
+        "requested_end_seconds": "108",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "727ff97e4d68f35ad3e6cfe78356643eb100a4aa6891c1a65ecf6e2b95397797",
+      "time_map": {
+        "asset_id": "sha256:640c0f4b6a881b22b33d40652ecffff71594e6eebf24a53dff687dd81f9ab88b",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 78.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "7863488b5c9752b74f620b992366f5d456650d6db0c20136adeffdd5adcbeb91",
+  "prepared_record_hash": "5bb735a4c30b767c71133af062fd122bd64402166b4c6e9034afb08cd459734d",
+  "prepared_record_path": "data/audio/prepared/7863488b5c9752b74f620b992366f5d456650d6db0c20136adeffdd5adcbeb91/record.json",
+  "ingestion_identity": "42646f644291a7842dba0f1bf6a262338ebd8c4bb1bc4b14328948c27216eb32",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "d8fa0f8d54fa22bd899c7884f8771e52b2b9c4d39b82ae387eebdc8f77cbb0cf"
+}

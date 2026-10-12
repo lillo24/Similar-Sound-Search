@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0069/track:9",
+  "source_item_id": "BSOG0069",
+  "file_name": "09-ToMyRecollection.mp3",
+  "origin_url": "https://archive.org/download/BSOG0069/09-ToMyRecollection.mp3",
+  "source_page": "https://archive.org/details/BSOG0069",
+  "expected_bytes": 4455424,
+  "expected_md5": "4b1692f9652acb36f1234cd87d056f17",
+  "provider_mtime": "1500058858",
+  "provider_original": "09-ToMyRecollection_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 193.0,
+  "title": "To My Recollection",
+  "artist": "Luck & Doc",
+  "album": "Live At The Wake",
+  "version": "Archive file mtime=1500058858; md5=4b1692f9652acb36f1234cd87d056f17",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0069",
+    "sha256": "48e992fb936bbae6999760ed4770593a81a4591dd641efc762a86e9f74f3e72f",
+    "acquired_at": "2026-10-12T10:25:59.800432+00:00",
+    "bytes": 23783
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0069",
+    "evidence_sha256": "48e992fb936bbae6999760ed4770593a81a4591dd641efc762a86e9f74f3e72f",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Luck & Doc \u2014 To My Recollection; Luck & Doc - Live At The Wake; https://archive.org/download/BSOG0069/09-ToMyRecollection.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "4f63e4182ebef927987e5cc08b7e3e2bf13df20f6a1fba7eb686ee44af3337db"
+}

@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0152/track:1",
+  "source_item_id": "BSMX0152",
+  "file_name": "01-Nuthin.mp3",
+  "origin_url": "https://archive.org/download/BSMX0152/01-Nuthin.mp3",
+  "source_page": "https://archive.org/details/BSMX0152",
+  "expected_bytes": 5065728,
+  "expected_md5": "0eada0098dd4af29a203085237aa8620",
+  "provider_mtime": "1481057968",
+  "provider_original": "01-Nuthin_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 215.0,
+  "title": "Nuthin'",
+  "artist": "Deadly Combo",
+  "album": "The Vault",
+  "version": "Archive file mtime=1481057968; md5=0eada0098dd4af29a203085237aa8620",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0152",
+    "sha256": "a76c128b25a45b9efba9f96ea2146d8b78c6895ab151899827a3b52fca367d69",
+    "acquired_at": "2026-10-12T10:36:08.037156+00:00",
+    "bytes": 17195
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0152",
+    "evidence_sha256": "a76c128b25a45b9efba9f96ea2146d8b78c6895ab151899827a3b52fca367d69",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Deadly Combo \u2014 Nuthin'; Deadly Combo - The Vault; https://archive.org/download/BSMX0152/01-Nuthin.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "10aa06aeef76001277f5b83fb651c8880760b4078001ed81b737d4b916f7b4c8"
+}

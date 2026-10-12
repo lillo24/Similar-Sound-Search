@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0174/track:2",
+  "source_item_id": "BSMX0174",
+  "file_name": "02-Bodysoul_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0174/02-Bodysoul_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0174",
+  "expected_bytes": 4662687,
+  "expected_md5": "ee5e2690adb661454c775be7b1f05dce",
+  "provider_mtime": "1530876671",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 170.84,
+  "title": "Body, soul",
+  "artist": "Viktor Van River",
+  "album": "Biorobot EP",
+  "version": "Archive file mtime=1530876671; md5=ee5e2690adb661454c775be7b1f05dce",
+  "genre": "Downtempo/Trip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0174",
+    "sha256": "faa0fad49f5cd50f6935aaccf8f620d2b461d4582191df3115ad3f9047f7270c",
+    "acquired_at": "2026-10-12T10:25:01.215784+00:00",
+    "bytes": 15816
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0174",
+    "evidence_sha256": "faa0fad49f5cd50f6935aaccf8f620d2b461d4582191df3115ad3f9047f7270c",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Viktor Van River \u2014 Body, soul; Viktor Van River - Biorobot; https://archive.org/download/BSMX0174/02-Bodysoul_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0174/02-Bodysoul.mp3",
+      "expected_md5": "295f71247bf78fa4028f67971e5e6cbe",
+      "expected_bytes": 3824539,
+      "provider_original": "02-Bodysoul_192kb.mp3"
+    }
+  ],
+  "record_hash": "da9decabac4ed2d33fe77f3a5af75838833b62ac028e3b7866a2a0408013d2b5"
+}

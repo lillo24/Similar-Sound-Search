@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0070/track:4",
+  "source_item_id": "BSOG0070",
+  "file_name": "04-ShowMe_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0070/04-ShowMe_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0070",
+  "expected_bytes": 4725562,
+  "expected_md5": "4df21cf400f9a3486909438f41111521",
+  "provider_mtime": "1503398650",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 168.41,
+  "title": "Show Me",
+  "artist": "KIN/LUCK",
+  "album": "Antithesis",
+  "version": "Archive file mtime=1503398650; md5=4df21cf400f9a3486909438f41111521",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0070",
+    "sha256": "1283078a0abba6e60315478572395049a448b8457602446fe78f4ce3f2ee772d",
+    "acquired_at": "2026-10-12T10:23:17.252253+00:00",
+    "bytes": 26676
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0070",
+    "evidence_sha256": "1283078a0abba6e60315478572395049a448b8457602446fe78f4ce3f2ee772d",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "KIN/LUCK \u2014 Show Me; KIN/LUCK - Antithesis; https://archive.org/download/BSOG0070/04-ShowMe_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0070/04-ShowMe.mp3",
+      "expected_md5": "5b894c9d759b98b38705685b656f1d09",
+      "expected_bytes": 4273664,
+      "provider_original": "04-ShowMe_192kb.mp3"
+    }
+  ],
+  "record_hash": "45b21f067d362eb6e1445f63c61ae636971571e9330ad3c39c29b0657f31e8c9"
+}
