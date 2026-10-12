@@ -424,3 +424,45 @@ def duplicate_groups(records):
             "detected; titles never establish equality."
         ),
     }
+
+
+def validate_local_ready(record, budget, job="starter"):
+    """Read-only consumer validation; never opens an acquisition ledger or changes state.
+
+    Public readiness alone is insufficient. Require matching private registration, full
+    sequential original decoding and canonical identity, plus the immutable A02 bundle.
+    The caller owns its independent processing deadline, lock and accounting.
+    """
+    key = record["entry_id"]
+    if record.get("state") != "ready" or record.get("record_hash") != digest(
+        {k: v for k, v in record.items() if k != "record_hash"}
+    ):
+        raise InputError(f"catalogue consumer {key}: invalid public ready record")
+    private = contained(
+        budget.root / "data/runs/catalogue" / job / "entries" / (key + ".json"),
+        budget.root / "data/runs/catalogue",
+    )
+    if not private.is_file():
+        raise InputError(f"catalogue consumer {key}: private local registration missing")
+    registration = read_json(private)
+    if registration.get("state") != "ready" or registration.get("record") != record:
+        raise InputError(f"catalogue consumer {key}: private/public registration differs")
+    original = contained(
+        budget.root / record["source_asset"]["local_path"],
+        budget.root / "data/audio/catalogue/originals",
+    )
+    _, metadata = decode(original, budget)
+    for field in ("sha256", "canonical_pcm", "sample_count", "sample_rate_hz", "channels"):
+        if metadata[field] != record["source_asset"][field]:
+            raise InputError(f"catalogue consumer {key}: original {field} changed")
+    bundle = contained(
+        budget.root / Path(record["analysis_derivative"]["local_path"]).parent,
+        budget.root / "data/audio/prepared",
+    )
+    prepared = _reuse(bundle, record["preparation_key"], budget)["record"]
+    if prepared["record_hash"] != record["prepared_record_hash"]:
+        raise InputError(f"catalogue consumer {key}: preparation record changed")
+    samples, derivative = decode(bundle / "audio.wav", budget)
+    if derivative["sha256"] != record["analysis_derivative"]["sha256"]:
+        raise InputError(f"catalogue consumer {key}: analysis bytes changed")
+    return samples, prepared

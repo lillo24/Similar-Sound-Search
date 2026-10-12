@@ -1,6 +1,6 @@
 # Audio input runtime
 
-`similar_sound_search/` owns the CPU input pipeline and A03 discovery catalogue acquisition. It has no model or retrieval code. The installed `sound-search` command and `python -m similar_sound_search` both enter `cli.py`.
+`similar_sound_search/` owns the CPU input pipeline, A03 catalogue acquisition and A04 evaluation construction/scoring. It has no acoustic model or retrieval index. The installed `sound-search` command and `python -m similar_sound_search` both enter `cli.py`.
 
 | File | Responsibility and relationship |
 | --- | --- |
@@ -8,10 +8,11 @@
 | `similar_sound_search/cli.py` | Parse explicit operations, hold the project lock, run a worker with a hard timeout, and publish private JSON reports |
 | `similar_sound_search/resources.py` | Validate tier limits; enforce file/allocation/disk/inventory/time boundaries; account locked catalogue writes without repeated full disk walks |
 | `similar_sound_search/storage.py` | Hash/JSON identity, path containment, atomic reports, errors, and OS process lock |
-| `similar_sound_search/inputs.py` | Probe/decode bounded WAV/FLAC/MP3, canonical PCM identity, peak/RMS/silence, and explicit files/directories |
+| `similar_sound_search/inputs.py` | Probe/decode bounded WAV/FLAC/MP3/AIFF, canonical PCM identity, peak/RMS/silence, and explicit files/directories |
 | `similar_sound_search/records.py` | Validate supplied context and compose elapsed-time mappings independently of recording identity |
 | `similar_sound_search/preparation.py` | Apply explicit crop/channel/resample choices; publish immutable bundles and validate reuse/lineage |
 | `similar_sound_search/diagnostics.py` | Generate deterministic plumbing fixtures, check independent known answers, and report actual environment capabilities |
 | `similar_sound_search/catalogue/` | [Subsystem map](similar_sound_search/catalogue/README.md): bounded HTTP/ledger, single provider, shared ingestion, duplicates and durable batches |
+| `similar_sound_search/evaluation/` | [Subsystem map](similar_sound_search/evaluation/README.md): benchmark quarantine, procedural recipes, family splits, independent mixture audits and prediction scorers |
 
 The CLI imports numerical/decoder libraries only in the bounded worker. Inputs feed candidate records; preparation retains those source records and composes maps back to the original available file. Storage and resource checks are shared across both paths. See [runtime commands and limitations](../docs/RUNTIME.md) and [record fields](../docs/RECORDS.md).

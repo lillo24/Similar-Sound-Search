@@ -25,7 +25,13 @@ LIMITS = {
     "max_download_bytes",
     "max_model_candidates",
 }
-MANAGED = ("data", "reports/local", "manifests/private", "manifests/catalogue")
+MANAGED = (
+    "data",
+    "reports/local",
+    "manifests/private",
+    "manifests/catalogue",
+    "manifests/evaluation",
+)
 
 
 def load_limits(path, tier):

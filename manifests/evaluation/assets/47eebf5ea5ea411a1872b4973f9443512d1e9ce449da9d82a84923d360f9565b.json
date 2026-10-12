@@ -1,0 +1,107 @@
+{
+  "schema_version": "a04-asset-1",
+  "asset_id": "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+  "identity": {
+    "version": "a04-suite-1",
+    "tools": {
+      "pipeline": "a02-preparation-3",
+      "package": "0.3.0",
+      "python": "3.12.14",
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2"
+    },
+    "recipe": {
+      "kind": "tone",
+      "frames": 57600,
+      "rate": 24000,
+      "preset": {
+        "family": "procedural:fm:0",
+        "mechanism": "fm",
+        "variant": 1,
+        "colour": 0,
+        "split": "development",
+        "preset_id": "d26c634f4fd5d239d42d3cf79a200da845530c0e14bb1ac83a85a5572b966f34",
+        "parameters": {
+          "spectral_slope": 1.15,
+          "fm_ratio": 1.494,
+          "cutoff_hz": 1080
+        }
+      },
+      "performance": 1,
+      "pitch_semitones": 0,
+      "seed": 42114,
+      "transformation": "native procedural rendering; not human equivalence"
+    }
+  },
+  "data_role": "generated_engineering",
+  "audio": {
+    "sha256": "1abdcca8efa37b10102b006e77b7dc55a0343ff7c4b3150274e715cf1a01ff5d",
+    "file_bytes": 230458,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "sample_count": 57600,
+    "sample_rate_hz": 24000,
+    "channels": 1,
+    "duration_seconds": 2.4,
+    "measurement": {
+      "peak_per_channel": [
+        0.25192901492118835
+      ],
+      "rms_per_channel": [
+        0.08000000000041314
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 24000,
+      "channels": 1,
+      "sample_count": 57600,
+      "sha256": "237ea865995bcbaac7c455c0ea3c5e4613f7ee121bc775f531ad4cc90127cb63"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "Lossless sample timeline; float32 conversion defines canonical identity."
+    }
+  },
+  "local_path": "data/audio/evaluation/generated/47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b.wav",
+  "events": [
+    {
+      "start_frame": 0,
+      "end_frame": 26400,
+      "midi_note": 67
+    },
+    {
+      "start_frame": 15600,
+      "end_frame": 42000,
+      "midi_note": 60
+    },
+    {
+      "start_frame": 31200,
+      "end_frame": 57600,
+      "midi_note": 64
+    }
+  ],
+  "level_policy": "whole-render RMS 0.08; peak <=0.9",
+  "source_identity_proxy": true,
+  "families": [
+    "procedural:fm:0"
+  ],
+  "split": "development",
+  "source_id": "d26c634f4fd5d239d42d3cf79a200da845530c0e14bb1ac83a85a5572b966f34",
+  "parents": [],
+  "time_mapping": {
+    "basis": "constructed_file",
+    "source_start_seconds": 0,
+    "original_recording_offset_seconds": 0
+  },
+  "record_hash": "01d39375b743f0880aa124b7a472ba74037144dc1e6ee7ce5107189646d00520"
+}

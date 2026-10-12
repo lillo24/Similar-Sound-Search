@@ -1,0 +1,13 @@
+{
+  "schema_version": "a04-policy-1",
+  "max_download_bytes": 16777216,
+  "max_http_attempts": 64,
+  "max_job_seconds": 2400,
+  "max_generation_bytes": 134217728,
+  "max_generation_seconds": 1600,
+  "max_generation_items": 512,
+  "request_timeout_seconds": 10,
+  "attempts_per_url": 2,
+  "max_redirects": 2,
+  "backoff_seconds": 0.25
+}

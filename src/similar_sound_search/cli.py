@@ -74,6 +74,21 @@ def parser():
         "--refresh", action="store_true", help="explicitly re-download/check pinned remote payloads"
     )
     catalogue.add_argument("--catalogue-policy", type=Path, help="explicit finite catalogue policy")
+    evaluation = subcommands.add_parser(
+        "evaluation", help="A04 benchmark/fixture/scoring operations"
+    )
+    evaluation.add_argument(
+        "evaluation_action",
+        choices=("acquire", "generate", "validate", "maps", "known-answer", "score"),
+    )
+    evaluation.add_argument("input", type=Path, nargs="?", help="prediction JSON for score only")
+    evaluation.add_argument(
+        "--split", choices=("development", "held_out", "all"), default="development"
+    )
+    evaluation.add_argument("--pilot", action="store_true", help="generate first two presets only")
+    evaluation.add_argument(
+        "--final-choice", type=Path, help="A06 frozen development model/config choice"
+    )
     return command
 
 
@@ -81,7 +96,11 @@ def _worker(request):
     """Broad catches belong here, at the process boundary, and always return failure."""
     try:
         root = Path(request["root"])
-        budget_type = CatalogueBudget if request["command"] == "catalogue_step" else Budget
+        budget_type = (
+            CatalogueBudget
+            if request["command"] in {"catalogue_step", "evaluation_step"}
+            else Budget
+        )
         budget = budget_type(root, request["limits"])
         context = read_json(request["context"]) if request.get("context") else None
         if request["command"] == "smoke":
@@ -108,6 +127,10 @@ def _worker(request):
             )
         elif request["command"] == "catalogue_step":
             from .catalogue.job import worker
+
+            result = worker(request, budget)
+        elif request["command"] == "evaluation_step":
+            from .evaluation.job import worker
 
             result = worker(request, budget)
         else:
@@ -198,8 +221,10 @@ def main(argv=None):
         }
         request.update({"root": str(root), "limits": limits})
         with project_lock(root):
-            # Refuse an orphaned A03 child before touching its ledger or starting any operation.
+            # Refuse orphaned acquisition/evaluation children before starting an operation.
             with project_lock(root, ".a03-worker.lock"):
+                pass
+            with project_lock(root, ".a04-worker.lock"):
                 pass
             Budget(root, limits).reserve(65536)
             if args.command == "catalogue":
@@ -213,6 +238,14 @@ def main(argv=None):
                     args.input is not None or args.context is not None
                 ):
                     raise InputError("catalogue: input/--context belong to explicit local import")
+                result = run(request, execute)
+            elif args.command == "evaluation":
+                from .evaluation.job import run
+
+                if args.input is not None and args.evaluation_action != "score":
+                    raise InputError("evaluation: input belongs to score only")
+                if args.pilot and args.evaluation_action != "generate":
+                    raise InputError("evaluation: --pilot belongs to generate only")
                 result = run(request, execute)
             else:
                 result = execute(request)

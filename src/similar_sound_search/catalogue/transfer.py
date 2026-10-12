@@ -26,7 +26,7 @@ def utc_now():
 class Ledger:
     """Caller holds the project lock. Unsettled read/time reservations stay charged."""
 
-    def __init__(self, directory, budget, policy):
+    def __init__(self, directory, budget, policy, schema="a03-ledger-1"):
         self.directory = Path(directory)
         self.path = self.directory / "ledger.json"
         self.budget = budget
@@ -38,7 +38,7 @@ class Ledger:
         }
         if self.path.exists():
             self.value = read_json(self.path)
-            if self.value.get("schema_version") != "a03-ledger-1":
+            if self.value.get("schema_version") != schema:
                 raise InputError("catalogue ledger: invalid schema")
             counters = (
                 "charged_bytes",
@@ -74,7 +74,7 @@ class Ledger:
                 self.value["ceilings"][key] = min(limit, self.value["ceilings"][key])
         else:
             self.value = {
-                "schema_version": "a03-ledger-1",
+                "schema_version": schema,
                 "created_at": utc_now(),
                 "ceilings": ceilings,
                 "charged_bytes": 0,
@@ -155,7 +155,7 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         return None
 
 
-def public_url(url, allow_local=False):
+def public_url(url, allow_local=False, source="archive"):
     parsed = urllib.parse.urlsplit(url)
     if (
         parsed.scheme not in {"https", "http"}
@@ -170,12 +170,32 @@ def public_url(url, allow_local=False):
     if allow_local and parsed.hostname in {"127.0.0.1", "localhost"}:
         return url
     host = parsed.hostname
+    if source == "timbre_github":
+        prefix = (
+            "/ben-hayes/timbre-dissimilarity-metrics/"
+            "262ca43c2105483eac03c775cd1adba6273a9e6b/timbremetrics/"
+        )
+        if (
+            parsed.scheme != "https"
+            or host != "raw.githubusercontent.com"
+            or parsed.port not in {None, 443}
+            or parsed.query
+            or not parsed.path.startswith(prefix)
+            or any(part in {".", ".."} for part in parsed.path.split("/"))
+            or "%" in parsed.path
+        ):
+            raise InputError("benchmark: only pinned public timbremetrics raw files allowed")
+        return url
+    if source != "archive":
+        raise InputError("HTTP source: unknown trust policy")
     if parsed.scheme != "https" or not (host == "archive.org" or host.endswith(".archive.org")):
         raise InputError(f"acquire: unsupported source/redirect host {host!r}")
     return url
 
 
-def fetch(url, destination, ledger, max_bytes, expected_bytes=None, allow_local=False):
+def fetch(
+    url, destination, ledger, max_bytes, expected_bytes=None, allow_local=False, source="archive"
+):
     """Two attempts, up to three redirects each; identity encoding, bounded bodies, no ranges.
 
     Destination is an owned staging file, never a ready asset. All application-read response
@@ -187,14 +207,15 @@ def fetch(url, destination, ledger, max_bytes, expected_bytes=None, allow_local=
         raise ResourceError(f"acquire {url}: advertised asset exceeds remaining byte allowance")
     if is_link(destination):
         raise InputError("HTTP staging: symlink output refused")
-    destination = contained(destination, budget.root / "data/runs/catalogue")
+    namespace = "evaluation" if source == "timbre_github" else "catalogue"
+    destination = contained(destination, budget.root / "data/runs" / namespace)
     destination.parent.mkdir(parents=True, exist_ok=True)
     # Native trust verifies TLS and fetches missing intermediates on Windows. Never disable TLS.
     context = truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
     opener = urllib.request.build_opener(NoRedirect(), urllib.request.HTTPSHandler(context=context))
     last_error = None
     for retry in range(ledger.policy["attempts_per_url"]):
-        current = public_url(url, allow_local)
+        current = public_url(url, allow_local, source)
         try:
             for redirect in range(ledger.policy["max_redirects"] + 1):
                 budget.check_time("request", current)
@@ -244,7 +265,7 @@ def fetch(url, destination, ledger, max_bytes, expected_bytes=None, allow_local=
                                 if not location:
                                     raise InputError("HTTP redirect has no Location")
                                 current = public_url(
-                                    urllib.parse.urljoin(current, location), allow_local
+                                    urllib.parse.urljoin(current, location), allow_local, source
                                 )
                                 audit["status"] = "redirect"
                                 continue

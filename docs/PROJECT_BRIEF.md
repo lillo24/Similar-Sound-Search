@@ -33,7 +33,7 @@ Keep original audio unchanged. Record provenance and permitted use; metadata acc
 | A01 | Target and success definition; repository foundation | Complete; documentation and workspace |
 | A02 | Runtime, inputs, and resource limits | Complete; bounded CPU WAV/FLAC pipeline, see [runtime](RUNTIME.md) |
 | A03 | Automated starter catalogue | Implemented; real bounded blocSonic acquisition, [partial catalogue evidence](../reports/A03_CATALOGUE.md) |
-| A04 | Benchmarks and controlled test generation | Uses A02 runtime; keeps evaluation audio separate from A03 discovery audio |
+| A04 | Benchmarks and controlled test generation | Implemented; frozen controlled suite/harness, published data quarantined; [evidence](../reports/A04_BENCHMARKS.md) |
 | A05 | Candidate matchers and comparison harness | Uses A04 protocols and available A02 resources |
 | A06 | First complete search baseline with playable passages | Integrates A03 catalogue and A05 matcher; internal report, no user rating gate |
 | B01–B03 | Event selection, optional separation, reusable queries, and pitch preference | Extends the baseline; measures query and separation choices |
@@ -42,7 +42,7 @@ Keep original audio unchanged. Record provenance and permitted use; metadata acc
 | E01–E03 | Broader catalogue sources, measured optimisation, and maintenance | Expands the bounded prototype with explicit resource costs |
 | F01–F03 | Conditional learned ranking, representation fine-tuning, and future rhythm target | Optional improvements after measured need; not prerequisites |
 
-Dependent B/C/D engineering may interleave without changing identifiers or adding listening/approval gates. A01–A03 are implemented; A03's real catalogue remains explicitly partial against its requested count. A04 is next; later prompts define their own work. The D04 goal is about ten distinct-song candidates, timestamps, direct playback, and an evidence report with optional feedback. Report weak or fewer candidates honestly rather than padding apparent successes.
+Dependent B/C/D engineering may interleave without changing identifiers or adding listening/approval gates. A01–A04 engineering is implemented; A03's catalogue and A04's published human evidence remain explicitly partial. A05 is next; later prompts define their own work. The D04 goal is about ten distinct-song candidates, timestamps, direct playback, and an evidence report with optional feedback. Report weak or fewer candidates honestly rather than padding apparent successes.
 
 ## Workspace layout
 
@@ -52,7 +52,7 @@ Dependent B/C/D engineering may interleave without changing identifiers or addin
 | `config/` | Reproducible resource/input contracts; [config map](../config/README.md) | Versioned without secrets; `config/local/` and `*.local.*` ignored |
 | `manifests/references/` | Reference records | Sanitized metadata versioned; initial Loulou record is unverified |
 | `manifests/catalogue/` | Frozen source descriptors, ready identities, provenance, hashes, and duplicate groups | Sanitized records versioned; audio availability verified locally |
-| `manifests/evaluation/` | Future dataset versions, splits, seeds, and frozen protocols | Sanitized reproducibility records versioned |
+| `manifests/evaluation/` | A04 dataset versions, recipes, ground truth, family splits and frozen protocol | Sanitized reproducibility records versioned; audio remains local |
 | `manifests/private/` | Private paths, access details, or sensitive metadata | Ignored |
 | `data/audio/` | Immutable catalogue originals, separate engineering fixtures and prepared bundles; later evaluation audio | Contents ignored except directory markers |
 | `data/features/`, `data/indexes/` | Derived features and versioned-by-key indexes | Contents ignored except directory markers |
