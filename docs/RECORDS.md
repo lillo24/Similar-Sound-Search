@@ -132,3 +132,43 @@ Source technical metadata in existing 0.2 records gains additive `decoder` and `
 The layout is bounded per document: small selection header and ordered entry IDs/hashes, one sanitized source descriptor and one ready/failure record per asset, and bounded group/summary records. Raw provider metadata, request receipts, explicit local contexts/paths, cumulative ledger and batch cursor stay ignored. Public summaries omit private error paths; actionable full failures remain in the local CLI report. All asset references are repository-relative. Neither a committed manifest nor a metadata response constitutes locally acquired audio.
 
 For MP3, sample/time coordinates refer to **full sequential decoder output**, with decoder-interpreted priming/padding and residual uncertainty recorded. Source bytes stay MP3 and analysis WAV stays a lossy-source derivative. Ordinary provider full-track files and explicitly labelled snippets have null master offsets unless independently evidenced; snippets are excerpt-kind records, and available-file timing remains usable. Known local full-track/known-excerpt/unknown-excerpt contexts retain their original A02 semantics, applying a verified offset once. No sample-exact MP3 random seek, reference association, or relevance result is inferred.
+
+## A04 evaluation records
+
+Evaluation uses its own versioned adapter, sharing the input/preparation tools without expanding catalogue import roles. Reference 0.1, prepared 0.2 and catalogue 0.3 remain intact. `a04-asset-1` records represent **generated engineering** audio; `a04-human-1` represents native published-study material in quarantine. Neither enters real discovery counts. AIFF follows the same bounded sequential decoder and canonical float32 PCM definition as other supported containers.
+
+The [evaluation map](../manifests/evaluation/README.md) connects `a04-protocol-1`, `a04-suite-1`, per-asset records and published summaries. Each public JSON has a SHA256 `record_hash` over canonical content excluding that field, with the existing 1 MiB reader limit. Generated asset IDs are SHA256 of evaluation version, pinned tool versions and complete recipe, distinct from byte/PCM hashes. Recipes retain preset identity versus related family, phrase, pitch, seed, transformation, parent IDs and mixing/background lineage. Time spans use half-open integer sample bounds; sample rate/channels/count and coordinate basis stay explicit. Mixture source time is the constructed mixture file; a background's original-file offset is separate ancestry, never added to a target prediction.
+
+Prediction files use `a04-predictions-1` and match **both** current protocol and suite self-hashes. Minimal shape (replace illustrative IDs/hashes with actual manifest values):
+
+```json
+{
+  "schema_version": "a04-predictions-1",
+  "protocol_hash": "PROTOCOL_SHA256",
+  "suite_hash": "SUITE_SHA256",
+  "run_id": "explicit-run-id",
+  "method_id": "explicit-method-version",
+  "configuration": {"representation": "explicit-version"},
+  "config_hash": "SHA256_OF_CANONICAL_CONFIGURATION",
+  "split": "development",
+  "coordinate_basis": "decoded_available_file",
+  "score_direction": "higher_better",
+  "evidence_kind": "matcher",
+  "cost": {
+    "wall_seconds": 0,
+    "processed_audio_seconds": 0,
+    "storage_bytes": 0,
+    "peak_working_bytes_estimate": 0
+  },
+  "human_predictions": [],
+  "queries": [{
+    "query_id": "QUERY_ID_FROM_SUITE",
+    "candidate": [{"asset_id": "ASSET_ID", "start_frame": 0, "end_frame": 24000, "score": 0.5}],
+    "refined": []
+  }]
+}
+```
+
+Costs in this schema are caller-reported measurements, with working bytes explicitly an estimate; zero in the illustration is not a measured model run. A04 harness examples process no audio with a matcher and report zero matcher cost, while scorer/worker wall time is measured separately. `evidence_kind` is `matcher`, `harness_oracle`, `harness_wrong` or `harness_missing`; every output/report retains the distinction. Direction is `higher_better` or `lower_better`. Each stage accepts at most 128 scored intervals per query; integers/finite scores, exact permitted IDs, bounds, config identity and stage ancestry are checked. Duplicate query IDs, stale protocol/suite hashes, unknown/cross-split assets and malformed results fail. Missing queries are explicit misses with original denominators, not deleted observations.
+
+Ranking, duplicate/K behavior, one-to-one temporal rules, absence reporting and the A06 frozen-choice declaration are defined in [EVALUATION.md](EVALUATION.md#a04-delivered-commands-and-protocol) and the protocol. Human predictions are currently refused because the selected dataset is unavailable for scoring. A future reviewed human adapter must preserve original observations/masks and source-group split restrictions; it cannot quietly turn quarantined values into evidence. Raw dataset audio/matrix, absolute machine paths, worker ledgers and full score files remain under ignored `data/` or `reports/local/`.

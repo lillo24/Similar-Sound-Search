@@ -1,4 +1,4 @@
-"""Bounded sequential WAV/FLAC/MP3 decoding, PCM identity, and explicit inventory."""
+"""Bounded sequential audio decoding, PCM identity, and explicit inventory."""
 
 import hashlib
 import os
@@ -15,6 +15,8 @@ SUPPORTED = {
     ".wave": {"WAV", "WAVEX", "RF64"},
     ".flac": {"FLAC"},
     ".mp3": {"MP3"},
+    ".aiff": {"AIFF"},
+    ".aif": {"AIFF"},
 }
 SUBTYPES = {"PCM_U8", "PCM_S8", "PCM_16", "PCM_24", "PCM_32", "FLOAT", "DOUBLE"}
 SILENCE_PEAK = 1e-12
@@ -26,7 +28,8 @@ def probe(path, budget):
     formats = SUPPORTED.get(path.suffix.lower())
     if formats is None:
         raise InputError(
-            f"inspect {path}: unsupported extension; accepts PCM/float WAV, FLAC, MP3 Layer III"
+            f"inspect {path}: unsupported extension; "
+            "accepts PCM/float WAV/AIFF, FLAC, MP3 Layer III"
         )
     try:
         info = sf.info(str(path))

@@ -1,0 +1,119 @@
+{
+  "schema_version": "a04-published-source-1",
+  "dataset": "Grey1977",
+  "revision": "262ca43c2105483eac03c775cd1adba6273a9e6b",
+  "original_revision": "0a34e76101a192ad0e5945f22193ef9d60c8065a",
+  "repository": "ben-hayes/timbre-dissimilarity-metrics",
+  "study_doi": "10.1121/1.381428",
+  "task": "overall_timbre",
+  "direction": "higher_dissimilarity",
+  "storage": "upper_triangle",
+  "mapping_status": "upstream_loader_order_only_original_row_key_unavailable",
+  "rights_status": "unresolved_no_asset_licence_found",
+  "scoring_eligible": false,
+  "files": [
+    {
+      "path": "timbremetrics/data/Grey1977_dissimilarity_matrix.txt",
+      "bytes": 2431,
+      "git_blob_sha1": "5e52a004d8b0d007b8b7c9465a557712d6a3cbdb"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/BN.aiff",
+      "bytes": 20790,
+      "git_blob_sha1": "5bd7728da5fa0798eebac0a84c367cbcbe1b8b3f"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/C1.aiff",
+      "bytes": 23638,
+      "git_blob_sha1": "e45dc802b02acf62694dcc7a34c5e5e2d83bdc9f"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/C2.aiff",
+      "bytes": 25114,
+      "git_blob_sha1": "fe93f1c7ee355d594767781ac56763072eb2ea8d"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/EH.aiff",
+      "bytes": 20500,
+      "git_blob_sha1": "62cadb7ff49b6b3bd5ddfcc162c207b67ca8df3f"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/FH.aiff",
+      "bytes": 22574,
+      "git_blob_sha1": "d17238d9f1877e726c60ea2feb1d4108fd6d812c"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/FL.aiff",
+      "bytes": 25758,
+      "git_blob_sha1": "abbfbb27114d80830b8ec10ed6b772e77d06e457"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/O1.aiff",
+      "bytes": 22202,
+      "git_blob_sha1": "11a90cb4886207cb6c2128ec5ee545f66a37a021"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/O2.aiff",
+      "bytes": 21728,
+      "git_blob_sha1": "e297a13cd964f1d8c9e51be72100e8dd130b0399"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/S1.aiff",
+      "bytes": 29346,
+      "git_blob_sha1": "bdc1d1b8f5ba0c051a2a2f532a69ba65fb3e99d7"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/S2.aiff",
+      "bytes": 28184,
+      "git_blob_sha1": "3d0c2482258b7ebda034e3a7ebaa0b08e17fe2d2"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/S3.aiff",
+      "bytes": 22950,
+      "git_blob_sha1": "5b08a34b7b20772202ed1a8bd508b4882b8d844c"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/TM.aiff",
+      "bytes": 23568,
+      "git_blob_sha1": "d393eef2f959d7ddcb611381c5430ffa8642bcde"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/TP.aiff",
+      "bytes": 25840,
+      "git_blob_sha1": "d757d0921596d0bd320a31589653b50189e6900f"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/X1.aiff",
+      "bytes": 24004,
+      "git_blob_sha1": "edb359bf93d85bfb2b673487d376a9afde40e377"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/X2.aiff",
+      "bytes": 22590,
+      "git_blob_sha1": "04d8ac3ba23789ef659dbcdb535890eb6af81a65"
+    },
+    {
+      "path": "timbremetrics/sounds/Grey1977/X3.aiff",
+      "bytes": 22972,
+      "git_blob_sha1": "d3afe15b735e39f000ea6419acc40affe81d5cf9"
+    }
+  ],
+  "order": [
+    "BN.aiff",
+    "C1.aiff",
+    "C2.aiff",
+    "EH.aiff",
+    "FH.aiff",
+    "FL.aiff",
+    "O1.aiff",
+    "O2.aiff",
+    "S1.aiff",
+    "S2.aiff",
+    "S3.aiff",
+    "TM.aiff",
+    "TP.aiff",
+    "X1.aiff",
+    "X2.aiff",
+    "X3.aiff"
+  ]
+}

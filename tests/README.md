@@ -1,8 +1,9 @@
 # Runtime and catalogue correctness tests
 
-These small offline tests own engineering correctness, not A04 retrieval/perceptual benchmarks. Run `python -m unittest discover -s tests -v` in the installed project environment.
+These offline tests own runtime/catalogue and A04 harness correctness. They do not measure an acoustic matcher or perceptual quality. Run `python -m unittest discover -s tests -v` in the installed project environment.
 
 - `helpers.py` builds independent PCM fixtures and temporary project roots, copied resource limits, and the unchanged missing-reference manifest.
+- `test_evaluation.py` checks independent big-endian AIFF samples/limits, unique rating masks/zeros, signed nontrivial/tied ranks, procedural mechanisms/levels/tails, active-interval mixing, output/recipe/tool invalidation, durable counters, read-only catalogue consumption, split leakage, candidate/refined omissions, duplicate/wrong-asset/boundary hits, absence/missing/non-finite outputs, held-out gating and a complete offline procedural suite/oracle run.
 - `test_inputs.py` checks hashes/known measurements, all accepted container/encoding combinations, corrupt/unsupported/silent/non-finite data, bounded inventory, and incomplete context.
 - `test_preparation.py` checks channels, sample rounding, independent event timing, all three source-time cases, composed maps/padding, immutability/reuse/invalidation, and allocation/write failure recovery.
 - `test_boundaries.py` runs the delivered CLI and worker, including missing-reference smoke, hard timeout, process locking, report containment/atomicity, and invalid profiles.

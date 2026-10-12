@@ -1,6 +1,6 @@
 # Evaluation contract
 
-Adopted for A01 on 11 October 2026. **No retrieval/perceptual benchmark has been run.** A02 exercised deterministic input/runtime/time-map engineering checks ([evidence](../reports/A02_RUNTIME.md)); A03 adds real discovery audio and acquisition/decoder/identity/recovery checks ([evidence](../reports/A03_CATALOGUE.md)). Source genres and artist coverage are selection metadata, not timbre labels. A04 implements the retrieval benchmark; A05 compares matchers; A06 checks the baseline workflow; D02 runs integrated evaluation before D04 listening. The [record contract](RECORDS.md) defines source identity and time coordinates.
+Adopted for A01 on 11 October 2026; extended by A04 on 12 October. **A04 construction and scorer correctness have been exercised; acoustic model/perceptual quality remains unmeasured.** [A04 evidence](../reports/A04_BENCHMARKS.md) records controlled inputs and the published-data exclusion. A02/A03 reports preserve runtime/catalogue evidence. Source genres and artist coverage are selection metadata, not timbre labels. A05 compares matchers; A06 checks the baseline; D02 runs integrated evaluation before D04 listening. The [record contract](RECORDS.md) defines source identity and coordinates.
 
 ## Separate questions and evidence
 
@@ -47,6 +47,52 @@ A01 reviewed the contract and manifest structure. A02 tests the applicable input
 No numerical perceptual-quality target is adopted in A01: no selected dataset, user-independent baseline, or measured variance supports one yet. Any later quality threshold needs a written basis (published comparable evidence, a pre-existing external reference, or development-only evidence), its metric/population, uncertainty rule, date, and rationale **before examining the comparison it governs**. If the basis is insufficient, report descriptive results rather than inventing a universal timbre-accuracy percentage. Technical tolerances derive from file/decoder precision; K and run limits derive from the intended interface and resource budget, not observed success.
 
 The matcher's own similarity scores are not an independent evaluation label. Generated-source truth establishes identity/location, human-rated datasets establish perceptual agreement within their domain, and D04 judgments establish relevance of listened-to real candidates. Report those three claims separately. Measuring general catalogue recall would require an independently assessed candidate population beyond the returned top results; that evidence is not supplied by A01.
+
+## A04 delivered commands and protocol
+
+Run from the repository root after the pinned Python 3.12 setup. Global options precede the subcommand. A04 routines use the existing single-worker/thread, input, 1 GiB working-memory, 120s hard deadline, 4 GiB managed-disk and 4 GiB free-headroom ceilings. The populated delivery checkout requires `--tier starter`.
+
+```powershell
+# Explicit network inspection only; does not enable human scoring.
+.\.venv\Scripts\sound-search.exe --tier starter evaluation acquire
+# Small measured pilot, then complete construction/resumption.
+.\.venv\Scripts\sound-search.exe --tier starter evaluation generate --pilot
+.\.venv\Scripts\sound-search.exe --tier starter evaluation generate
+# Asset/ancestry/construction integrity may include held-out; no model scores are computed.
+.\.venv\Scripts\sound-search.exe --tier starter evaluation validate --split all
+.\.venv\Scripts\sound-search.exe --tier starter evaluation maps
+# Offline development-only oracle, wrong and missing-output harness checks.
+.\.venv\Scripts\sound-search.exe --tier starter evaluation known-answer
+.\.venv\Scripts\sound-search.exe --tier starter evaluation score data/runs/evaluation/predictions-development-oracle.json
+```
+
+The delivered [protocol](../manifests/evaluation/protocol.json) uses four synthesis mechanisms, eight related-preset families, sixteen presets, three note-order performances and two nearby pitch conditions. All identities share pitches, note sequences, duration and whole-render RMS policy. Each partition contains four procedural families (one per mechanism), eight presets, 48 renders and 56 mixtures: 80 queries and 88 target events including eight absent cases. Related presets share a partition; this tests preset-family generalisation within known synthesis engines. Same-source truth is a controlled proxy, never a human timbre judgment. Exact-waveform/instance diagnostics are reported separately.
+
+Four validated A03 excerpts supply real accompaniment (two artist/duplicate families per split), alongside procedural backgrounds. A03 duplicate-group and provider-artist links are unioned before partition assignment, across target/accompaniment roles. Backgrounds use **seconds 2..10 of a centred 30s derivative**, mean channels and polyphase 16-to-24 kHz resampling; lineage records the corresponding sequential-original interval and unknown master offset. Originals are fully decoded for validation and remain unchanged. A03's exhausted ledger is never opened by this consumer. Unknown lossy copies/pretrained training overlap remain unknown.
+
+Mixtures distinguish exact insertion, separate-performance/source consistency and designated-source absence. Requested ratios are -12/0/+12 dB, measured over the union of complete target-render intervals, including releases. Both end boundaries and two-event cases are present. Saved gains/common scaling preserve the ratio while limiting peak to 0.9. Validation reconstructs stems and gains independently of the mixture renderer and compares emitted float32 samples, ratios and intervals. Known/unknown excerpt offsets are separately exercised through actual A02 crops and 24/16/24 kHz composed derivatives.
+
+The Grey1977 adapter downloads pinned individual AIFF/matrix files, retains native mono 44.1 kHz PCM16 and the explicit upstream lexicographic stimulus order, and preserves raw supplied matrix values plus the upper-triangle mask privately. Original study-to-row mapping and audio/data reuse permission remain unresolved; all 120 observed pairs are excluded from model scoring. The provisional family split retains 3 development and 78 held-out pairs and drops 39 cross-split pairs **before** that rights/mapping exclusion. Tiny dependent groups justify descriptive reporting only, without an independent-cell confidence interval. This is not a usable published perceptual evaluation yet. See source evidence and original-study versus supplied-matrix scale distinctions in the report.
+
+Scoring takes the [versioned prediction contract](RECORDS.md#a04-evaluation-records). K is frozen at 1/5/10 for shortlists up to the intended ten candidates. Valid unique intervals are ordered by score direction, then asset/start/end; exact duplicate intervals collapse before K and conflicting duplicate scores fail. K beyond the provided list uses all available unique predictions. Missing queries retain their expected-query/target denominators. Candidate and refined lists are scored separately; refined intervals must be contained in a supplied candidate of the same asset.
+
+Matching requires the exact available-file asset and IoU >=0.5, then maximum one-to-one assignment. The criterion requires at least half overlap and limits overly broad intervals; it is a frozen temporal matching convention, not a timbre-quality threshold. A broad/overlapping prediction can recover at most one target. Localisation reports signed endpoint error/IoU and mean absolute boundary error conditional on successful matches, alongside missed targets. Technical mapping tolerance is one decoded source sample from floor/ceil rounding; arbitrary compressed seek remains unverified. Absent-case score/rank distributions never imply presence; no rejection rule is fitted, so false accepts are explicitly undefined.
+
+Signed Spearman uses average **per-observation ranks** on valid unique non-diagonal pairs, with high-similarity scores negated against dissimilarity. Constants/insufficient data return null with reason/denominator; non-finite data fail. There is no pooled human score, calibration or independent-pair uncertainty claim. Current published data cannot enter this metric. Tiny independent known answers verify it without borrowing upstream Torch/argsort implementations.
+
+The frozen A05 development rule first requires technical correctness, complete query outputs and resource compliance for at most three candidates. Select by macro candidate hit@10 over the three source-consistency mixture levels, then macro controlled performance/pitch hit@5; ties use measured model wall time and lexical method/config identity. Exact-instance diagnostics do not select a winner. If no eligible run exists, select none. Human evidence is reported separately; enabling it requires a reviewed protocol revision before comparisons. No universal accuracy threshold is invented.
+
+Scoring defaults to `development`. A held-out matcher run requires `--split held_out --final-choice FILE`, where FILE declares matching `protocol_hash`, `method_id`, `config_hash`, `selected_on: development`, and `stage: A06`. This makes the final check explicit after A05 choices are frozen; it does not prevent a person from inspecting files. Later tuning on held-out results must disclose contamination. A04 never runs acoustic matchers on either split.
+
+### A04 accounting and recovery
+
+`config/evaluation.json` is the source of finite allowances: 16 MiB response payload, 64 attempts, 2,400 cumulative worker seconds, 128 MiB conservative generated allocation, 1,600 generated audio seconds and 512 construction attempts. No CLI job name can create replacement allowances. The tier can reduce the download ceiling; it cannot replenish it. Shared transport retains TLS verification, bounded retries/read reservations, checksums and same-source redirects; only the exact pinned raw-GitHub repository/revision is allowed for benchmark inspection. Catalogue defaults remain Archive-only. Research browsing/setup traffic is separate from metered acquisition payload.
+
+The A04 ledger is `data/runs/evaluation/ledger.json`; `construction.json` separately charges each new render **before** allocation/write, including 4096 header bytes, and never refunds uncertain work after interruption. Reuse validates recipe/tool identity, full decoded metadata, byte/PCM hashes and suite record hashes before returning. Changed recipes produce different asset IDs; changed tool versions invalidate stale audio. Mapping diagnostics conservatively charge six small bundles per attempted command, including reuse. All evaluation records count toward managed disk and obey the 1 MiB reader limit. Cost reports distinguish actual WAV bytes from conservative reservations, reported model cost from measured scorer/worker time, and memory estimates from OS evidence.
+
+Repeat the same explicit command after a bounded stop. Complete verified assets reuse; a missing/corrupt asset or orphan audio fails with its owned artifact ID. Preserve the evidence, explicitly remove/quarantine only that damaged owned artifact and rerun under the same ledger. Never remove a ledger, raise caps or alter A03 acquisition state to evade a stop. A fresh checkout must restore the frozen background files/private registration; unavailable inputs fail visibly rather than silently changing to procedural backgrounds. An independently documented protocol without real backgrounds is possible before model comparisons, with the limitation retained.
+
+`protocol-history/` preserves pre-model pilot/construction protocols; the current version includes the final explicit development selection rule. No acoustic scores informed these revisions. Any later protocol/recipe/input change needs a deliberate new version and contamination assessment, retaining existing ledgers. Network-dependent acquisition/full evaluation remain explicit; ordinary tests are offline and small. Full validation uses the standard setup, `pip check`, Ruff lint/format, all unittest tests and `--tier starter smoke`. No hosted CI exists or is claimed.
 
 ## Future evidence report
 

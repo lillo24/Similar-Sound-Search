@@ -1,6 +1,6 @@
 # Audio runtime and input tooling
 
-A02 provides offline CPU audio plumbing, input registration and bounded preparation. A03 extends the shared decoder to MP3 and adds [bounded catalogue acquisition](CATALOGUE.md). Event/model selection, search, result playback and retrieval quality remain future work. [A02 evidence](../reports/A02_RUNTIME.md) is the historical foundation; [A03 evidence](../reports/A03_CATALOGUE.md) and [STATUS.md](STATUS.md) describe current delivery.
+A02 provides offline CPU audio plumbing, input registration and bounded preparation. A03 adds MP3 and [catalogue acquisition](CATALOGUE.md); A04 adds bounded PCM/float AIFF and [evaluation construction/scoring](EVALUATION.md#a04-delivered-commands-and-protocol). Acoustic model selection, search, result playback and retrieval quality remain future work. Historical A02/A03 reports remain unchanged; [STATUS.md](STATUS.md) records current delivery.
 
 ## Setup
 
@@ -76,7 +76,7 @@ JSON reports and bundle records may contain private input paths/provenance; they
 
 Accepted extensions are `.wav`, `.wave`, `.flac`, and A03's `.mp3` (case insensitive); the decoded container and encoding must also agree. Tests exercised all 21 supported combinations on exact small samples: WAV, WAVEX, and RF64 with PCM_U8/16/24/32 or FLOAT/DOUBLE; FLAC with PCM_S8/16/24. The offline smoke specifically exercises WAV/PCM_16, FLAC/PCM_16, and prepared WAV/FLOAT. It reports libsndfile's advertised formats separately from the CLI's accepted formats and exercised smoke decoders.
 
-A03 adds MP3/MPEG Layer III through the existing pinned decoder, using full sequential float32 reads. Known gapless-tagged fixtures establish counts/event positions for this route; arbitrary encoder priming/padding and compressed random seek remain unverified. [CATALOGUE.md](CATALOGUE.md#decoder-and-analysis-policy) documents limitations. AAC/M4A, OGG/Opus, AIFF, MPEG Layer I/II, ADPCM/companded WAV and other codecs remain refused. FFmpeg/ffprobe are not required. No compressed-seek or result-playback guarantee is claimed.
+A03 adds MP3/MPEG Layer III through the pinned decoder with full sequential float32 reads. Known gapless-tagged fixtures establish counts/event positions; arbitrary priming/padding and compressed seek remain unverified. A04 adds `.aif`/`.aiff` with the existing PCM/IEEE-float subtype allowlist through the same bounded decoder and A02 preparation. Companded/compressed AIFF is refused. Native benchmark originals are preserved without automatic catalogue cropping/resampling. AAC/M4A, OGG/Opus, MPEG Layer I/II, ADPCM/companded WAV and other codecs remain refused. FFmpeg/ffprobe are not required. No compressed-seek or result-playback guarantee is claimed.
 
 ## Context and timestamps
 
@@ -121,23 +121,23 @@ Enforced now: file bytes before header probing; declared duration/rate/channels 
 
 Preparation's working estimate is `16 * input_frames * input_channels + 32 * output_frames * output_channels + 32 MiB`; inspection uses `16 * input_frames * input_channels + 32 MiB`. These are conservative array/workspace estimates, **not an OS RSS enforcement guarantee**. Output reserve includes float32 audio, 4096 header bytes, and 1 MiB record headroom. Actual output is checked before publication. File decoding is full sequential reading rather than random seeking, and the CLI kills even a stuck decoder at its wall deadline. Use the CLI for hard timeout and concurrency guarantees; direct Python helpers only perform cooperative checks.
 
-Managed bytes cover `data/`, `reports/local/`, `manifests/private/`, and A03's `manifests/catalogue/`, including incomplete staging. Inputs outside those locations, `.venv/`, `.cache/pip/`, and package-download caches are separate; free-space checks still see their disk cost. Setup's approximately 67.7 MB of wheel downloads and roughly 247 MiB environment are separately reported, not counted as an offline smoke download. A03 enforces `max_download_bytes` cumulatively at the real HTTP boundary, including metadata/retries/partials and crash reservations. Its finite job/worker/disk accounting is specified in [CATALOGUE.md](CATALOGUE.md#durable-accounting-and-recovery). `max_model_candidates` remains a future A05 contract; no model or index is implemented. No paid services, private-audio uploads, or public deployment are authorized by either tier.
+Managed bytes cover `data/`, `reports/local/`, `manifests/private/`, `manifests/catalogue/`, and A04's `manifests/evaluation/`, including incomplete staging. Inputs outside those locations, `.venv/`, `.cache/pip/`, and package-download caches are separate; free-space checks still see their disk cost. Setup's approximately 67.7 MB of wheel downloads and roughly 247 MiB environment are separately reported, not counted as an offline smoke download. A03 enforces `max_download_bytes` cumulatively at the real HTTP boundary, including metadata/retries/partials and crash reservations. Its finite job/worker/disk accounting is specified in [CATALOGUE.md](CATALOGUE.md#durable-accounting-and-recovery); A04 uses separate [evaluation allowances](EVALUATION.md#a04-accounting-and-recovery) without replenishing A03. `max_model_candidates` remains a future A05 contract; no model or index is implemented. No paid services, private-audio uploads, or public deployment are authorized by either tier.
 
 The A02 machine had four CPU threads, ~16 GiB RAM with ~8 GiB available, ample local disk, and optional 6 GiB VRAM. Its small pilot took about a second; fixtures and a prepared bundle totaled <1 MiB. The 1 GiB working ceiling leaves substantial RAM headroom; 4 GiB managed disk, 512 MiB cumulative acquisition payload and three future model candidates bound the starter attempt. A03 measures actual catalogue throughput separately. The 120s starter worker limit is a deadline, not a batch-throughput prediction. Stop on refusal and keep completed work; do not silently increase budgets.
 
 ## Validation
 
-Complete local A02 validation, without model/network/catalogue checks:
+Complete local validation, including offline A02/A03/A04 tests and without model/network acquisition:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip check
 .\.venv\Scripts\python.exe -m ruff check src tests
 .\.venv\Scripts\python.exe -m ruff format --check src tests
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
-.\.venv\Scripts\sound-search.exe smoke
+.\.venv\Scripts\sound-search.exe --tier starter smoke
 git diff --check
 ```
 
-The setup's successful editable wheel build checks packaging and the installed console entry point is exercised separately. [Tests](../tests/README.md) assert independent PCM sample/RMS answers, known event coordinates and frame counts, three source-time cases, parent composition, corrupt/unsupported/silent inputs, refusal/recovery, and source/cache identity. There is no existing GitHub Actions workflow or required status check; A02 adds no recurring CI cost. These complete commands remain an explicit manual validation route for later integration checkpoints. Linux execution, GPU compute, lossy decoding/seek, actual Loulou inspection, and retrieval quality have not been validated by this Windows run.
+The setup's successful editable wheel build checks packaging and the installed console entry point is exercised separately. [Tests](../tests/README.md) assert independent PCM sample/RMS answers, known event coordinates and frame counts, three source-time cases, parent composition, corrupt/unsupported/silent inputs, refusal/recovery, and source/cache identity. A03 adds sequential MP3 fixtures; A04 adds AIFF, evaluation construction, split and scorer tests. There is no existing GitHub Actions workflow or required status check; these stages add no recurring CI cost. These complete commands remain an explicit manual validation route for later integration checkpoints. Linux execution, GPU compute, arbitrary compressed seek, actual Loulou inspection, and retrieval quality have not been validated by this Windows delivery. A04's separate [actual evaluation runs](../reports/A04_BENCHMARKS.md) include native AIFF decoding and read-only sequential validation of its four MP3 backgrounds.
 
 After acquiring a catalogue larger than the smoke tier's 256 MiB managed-disk cap, use `sound-search --tier starter smoke` for the same offline diagnostic. The tier ceilings remain unchanged. See [catalogue commands/recovery](CATALOGUE.md) for the complete A03 validation.

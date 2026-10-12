@@ -1,0 +1,155 @@
+{
+  "schema_version": "a04-suite-1",
+  "protocol_hash": "8ee880382ab32a4f7d90bb90d495f58e0cc2a7cf5fbfdba7dcacc4ba073ebe6c",
+  "pilot": true,
+  "assets": [
+    "1380c65ba713ffadf81778c33c872cfcb18dff66a78dd0b5334f57050b02d2e9",
+    "2445688d77e73106280fcf9549472ff8c961a72284545e654cf0802f5e41331a",
+    "286f17b655cf610d15097bca8c7c25155d7cf2a7bb7213d446d2bcb45f38a58f",
+    "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+    "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+    "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+    "924b532e075ca488bb7959a70cbee9c4a6abaf5d3d6cbed974e73cb454290374",
+    "92c8f5b9d15e6ea6c95bb2c96f939a988e1e7373d99f03577f5bdcd13cbce2fe",
+    "a0583d1b4a8e74a8d669c5c8e09faf284a46e0039d9e8c855d4ac70c2c5c0448",
+    "a122c73c6b235a21c72217006f4bd8ce6e9ffe56705a7c52ac7b1e29954d4aef",
+    "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+    "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246"
+  ],
+  "queries": [
+    {
+      "query_id": "9e085eb8fa56d71b2ef74ea65fe6e3fba828adee651cb3680e0501487a376bd6",
+      "query_asset_id": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "split": "development",
+      "condition": "exact_waveform",
+      "task": "controlled",
+      "candidate_assets": [
+        "92c8f5b9d15e6ea6c95bb2c96f939a988e1e7373d99f03577f5bdcd13cbce2fe",
+        "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246"
+      ],
+      "targets": [
+        {
+          "asset_id": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+          "start_frame": 0,
+          "end_frame": 57600
+        }
+      ],
+      "designated_source": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "absent_by_construction": false
+    },
+    {
+      "query_id": "58b677cf24587f0199909a17dfeffdc641540b51f67baaeb130807213d1513ed",
+      "query_asset_id": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "split": "development",
+      "condition": "performance",
+      "task": "controlled",
+      "candidate_assets": [
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c"
+      ],
+      "targets": [
+        {
+          "asset_id": "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+          "start_frame": 0,
+          "end_frame": 57600
+        }
+      ],
+      "designated_source": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "absent_by_construction": false
+    },
+    {
+      "query_id": "a709dd22b2f07d1c28f21d2dbddd29340ba8c1e396415032db57ab95f2bbf1bf",
+      "query_asset_id": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "split": "development",
+      "condition": "pitch",
+      "task": "controlled",
+      "candidate_assets": [
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a"
+      ],
+      "targets": [
+        {
+          "asset_id": "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+          "start_frame": 0,
+          "end_frame": 57600
+        }
+      ],
+      "designated_source": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "absent_by_construction": false
+    },
+    {
+      "query_id": "89f42fd1c62e808d88cd8e4e0976e56a45d584e90b3abb37b3b5fcaa7b5045df",
+      "query_asset_id": "92c8f5b9d15e6ea6c95bb2c96f939a988e1e7373d99f03577f5bdcd13cbce2fe",
+      "split": "development",
+      "condition": "exact_waveform",
+      "task": "controlled",
+      "candidate_assets": [
+        "92c8f5b9d15e6ea6c95bb2c96f939a988e1e7373d99f03577f5bdcd13cbce2fe",
+        "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246"
+      ],
+      "targets": [
+        {
+          "asset_id": "92c8f5b9d15e6ea6c95bb2c96f939a988e1e7373d99f03577f5bdcd13cbce2fe",
+          "start_frame": 0,
+          "end_frame": 57600
+        }
+      ],
+      "designated_source": "704e3be42884d3c693e213787b4f7fc2bfde9cf35726300835bfa74932fa4295",
+      "absent_by_construction": false
+    },
+    {
+      "query_id": "101957f426b9cb457027902d8015830e59874052dd39ca47e87c931dcc3ff732",
+      "query_asset_id": "92c8f5b9d15e6ea6c95bb2c96f939a988e1e7373d99f03577f5bdcd13cbce2fe",
+      "split": "development",
+      "condition": "performance",
+      "task": "controlled",
+      "candidate_assets": [
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c"
+      ],
+      "targets": [
+        {
+          "asset_id": "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+          "start_frame": 0,
+          "end_frame": 57600
+        }
+      ],
+      "designated_source": "704e3be42884d3c693e213787b4f7fc2bfde9cf35726300835bfa74932fa4295",
+      "absent_by_construction": false
+    },
+    {
+      "query_id": "e1a36477caa4e59c9bcd39f239cee60acc1f1a9af34b01e58aa4245cc326b6a7",
+      "query_asset_id": "92c8f5b9d15e6ea6c95bb2c96f939a988e1e7373d99f03577f5bdcd13cbce2fe",
+      "split": "development",
+      "condition": "pitch",
+      "task": "controlled",
+      "candidate_assets": [
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a"
+      ],
+      "targets": [
+        {
+          "asset_id": "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+          "start_frame": 0,
+          "end_frame": 57600
+        }
+      ],
+      "designated_source": "704e3be42884d3c693e213787b4f7fc2bfde9cf35726300835bfa74932fa4295",
+      "absent_by_construction": false
+    }
+  ],
+  "split_counts": {
+    "assets": {
+      "development": 12
+    },
+    "used_families": {
+      "development": 1
+    }
+  },
+  "condition_counts": {
+    "exact_waveform": 2,
+    "performance": 2,
+    "pitch": 2
+  },
+  "record_hash": "59e23c642ae44ae56301b00e302ea7aa8db1eeda6b46891c5a36e06a0ef99300"
+}

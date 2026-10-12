@@ -1,6 +1,6 @@
 # Project status
 
-Updated 12 October 2026. **A03 ingestion implemented; real catalogue assessment partial: 72/120 distinct recordings, 35 artists. Ready for A04 — Benchmarks and controlled test generation.** No retrieval/perceptual result is claimed. Follow [AGENTS.md](../AGENTS.md) for branch/PR/merge/cleanup delivery.
+Updated 12 October 2026. **A04 harness and controlled suite implemented and exercised; ready for A05 — Candidate matchers and comparison harness.** Published human evidence remains partial/unavailable for scoring; A03 remains partial at 72/120 recordings, 35 artists. No acoustic matcher/perceptual/Loulou result is claimed. Follow [AGENTS.md](../AGENTS.md) for branch/PR/merge/cleanup delivery.
 
 ## Foundation and current delivery
 
@@ -39,16 +39,17 @@ No GitHub Actions workflow/required CI check exists in the inspected repository;
 | A02 Python/input/resource runtime | Complete; bounded CPU WAV/FLAC foundation |
 | A03 acquisition/ingestion | Implemented and exercised; real local discovery subset, explicitly partial against 120 requested |
 | Actual Loulou input | Missing; manifest unverified; reference experiment not run |
-| A04 retrieval benchmarks/controlled test generation | Next; not implemented or run |
+| A04 controlled construction and evaluation harness | Complete engineering delivery: 208 assets, 160 queries; 88 tests; [evidence](../reports/A04_BENCHMARKS.md) |
+| A04 published human evidence | Partial: 16 AIFF stimuli + 120 observations downloaded/validated; zero eligible scoring pairs due to unresolved rights/original mapping |
 | A05 matcher comparison / A06 search and playable results | Not implemented or run |
 | B–D event selection, separation, indexing/refinement, interface/package | Future; first required listening review D04 |
 | Perceptual quality, mixture recovery, Loulou relevance | Unmeasured |
 | Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 
-## A04 handoff
+## A05 handoff
 
-Reinspect current instructions/main, [brief](PROJECT_BRIEF.md), [records](RECORDS.md), [evaluation](EVALUATION.md), [decisions](DECISIONS.md), [A03 evidence](../reports/A03_CATALOGUE.md), source/config maps and the actual implementation. Use a separate A04 branch/PR. Keep discovery audio separate from generated engineering and published human-rated evaluation material. Retain current duplicate-family groups for later copy/leakage control; unknown lossy near-duplicates remain outside established coverage. Freeze benchmark protocols before A05 comparisons; genres and matcher scores are not independent relevance labels.
+Reinspect current instructions/main, [brief](PROJECT_BRIEF.md), [records](RECORDS.md), [evaluation commands](EVALUATION.md#a04-delivered-commands-and-protocol), [A04 evidence](../reports/A04_BENCHMARKS.md), source/config maps and the actual implementation. Use a separate A05 branch/PR. The frozen protocol/suite use 104 assets and 80 queries per partition, four procedural families and two real-background families per split. Development choice uses source-consistency candidate coverage then controlled performance/pitch coverage and cost; exact-instance diagnostics do not select the winner. Preserve the explicit published-data exclusion and reserve held-out model scores for A06. No A04 model, checkpoint, acoustic baseline, retrieval index, separation or UI was implemented.
 
-The existing validated local subset can support independent A04 work without replenishing an exhausted acquisition ledger. Analysis excerpts cover at most 30 seconds per full retained original; their decoded-file maps and unknown external-master offsets must be respected. Download limits now have a real consumer; the model-candidate cap remains an A05 contract.
+The A04 read-only consumer verifies the four music backgrounds under its separate finite budget, without touching exhausted A03 accounting. Backgrounds use seconds 2..10 of the centred 30-second derivatives; sequential-original intervals and unknown master offsets are recorded. The generated suite has 96 renders, 112 mixtures, three performances/two pitch conditions, -12/0/+12 dB levels and absent/multiple-event cases. Full original bytes and reference remain unchanged. The model-candidate cap of three remains an A05 contract. [A04 commands](EVALUATION.md#a04-delivered-commands-and-protocol) cover local restoration, generation/reuse, independent validation and scoring recovery.
 
 Still needed for a reference-specific experiment: the actual **daoud — Loulou & the loulous** file from the marked version (full recording or existing approximately 3:38–4:00 excerpt), with any version/provenance and verified excerpt-start evidence. Unknowns stay unknown; never crop an already-short excerpt at second 218. Exact target-event selection remains B01. Missing audio does not block independent A04 work, and no labels/listening review are requested now.
