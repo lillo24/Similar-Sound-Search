@@ -1,0 +1,23 @@
+{
+  "schema_version": "a03-policy-1",
+  "source": "internet_archive",
+  "query": "collection:blocsonic AND mediatype:audio AND licenseurl:*",
+  "search_rows": 600,
+  "max_source_items": 80,
+  "max_requested_recordings": 120,
+  "max_tracks_per_artist": 4,
+  "max_audio_bytes": 5242880,
+  "min_duration_seconds": 30,
+  "max_duration_seconds": 360,
+  "analysis_rate_hz": 16000,
+  "analysis_seconds": 30,
+  "analysis_channels": "preserve",
+  "max_http_attempts": 600,
+  "max_job_seconds": 2400,
+  "max_invocation_seconds": 600,
+  "max_operations_per_invocation": 64,
+  "request_timeout_seconds": 10,
+  "attempts_per_url": 2,
+  "max_redirects": 3,
+  "backoff_seconds": 0.25
+}

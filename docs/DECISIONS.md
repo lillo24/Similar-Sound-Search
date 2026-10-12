@@ -40,3 +40,16 @@ A02 additions, 11 October 2026:
 | Separation benefit, generalisation, and real-song relevance | Unrun hypotheses; compare separation later, reserve held-out checks, and obtain the first relevance review at D04. | No |
 
 The linked design context was readable during A01 and agrees with the archived task. Its older Tom's Diner example remains optional future context; the explicit Loulou reference and v2 roadmap govern this foundation. No external audio/dataset/model download was needed for A01.
+
+## A03 catalogue decisions
+
+A03 additions, 12 October 2026; [commands/contracts](CATALOGUE.md) and [measured evidence](../reports/A03_CATALOGUE.md) supersede the historical A02 catalogue/MP3 unknowns above.
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-017 | One selectively downloadable Internet Archive/blocSonic adapter with explicit audio-licence evidence and deterministic artist/genre coverage. | FMA/MTG-Jamendo bulk audio exceeds the starter transfer policy. Retain actual local music, exact source snapshot/ordering/exclusions and honest label/genre bias; explicit provider snippet qualifiers remain unknown-offset excerpts. No metadata-based similarity claim. Pilot expands 60 to 80 releases under the same durable allowance. |
+| DEC-018 | Add sequential MP3 Layer III through pinned SoundFile/libsndfile; native verified TLS through pinned truststore 0.10.4. | Existing decoder can handle the selected source without FFmpeg/GPU. Native Windows trust resolves the observed certificate-chain failure without disabling verification. Known MP3 fixtures measure this route; arbitrary seek/master alignment remains unknown. |
+| DEC-019 | Immutable original bytes, versioned canonical float32 PCM identity and a centred 30s preserved-channel 16 kHz analysis derivative. | Original full-track mixtures remain available. Explicit limited analysis coverage fits disk/output/memory policy and maps back through A02; decoded MP3 derivatives are not described as lossless originals. |
+| DEC-020 | Durable per-job payload/attempt/worker-time ledger, finite invocations, locked owned-write disk accounting and asset cursor. | Metadata/retries/partials/resumption/crashes cannot replenish download/time allowance. Worker/disk caps remain unchanged. Pilot measurements justify reducing per-read fsync/inventory overhead with a 1 MiB conservative reservation; every worker scans actual disk and refreshes around preparation. |
+| DEC-021 | Add catalogue schema 0.3 with per-entry public descriptors, private local registration, explicit lifecycle and established duplicate-family edges. | Manifests stay within 1 MiB, fresh checkout reconstruction uses frozen descriptors, metadata alone cannot count as local readiness, and aliases retain provenance. No title-only/fuzzy grouping or A04 splits. |
+| DEC-022 | Keep live acquisition separate from fully offline HTTP/decoder tests and the unchanged missing-reference diagnostic. | Report actual quantities/access/costs, not mocked network success. A03 does not claim retrieval relevance or request a listening review; A04 is next. |

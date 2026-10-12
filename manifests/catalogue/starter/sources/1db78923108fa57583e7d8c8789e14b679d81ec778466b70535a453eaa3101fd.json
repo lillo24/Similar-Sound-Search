@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0064/track:8",
+  "source_item_id": "BSOG0064",
+  "file_name": "08-WhatDoesItMean.mp3",
+  "origin_url": "https://archive.org/download/BSOG0064/08-WhatDoesItMean.mp3",
+  "source_page": "https://archive.org/details/BSOG0064",
+  "expected_bytes": 4965888,
+  "expected_md5": "d584098f505a69f549ac9e7afd119dd5",
+  "provider_mtime": "1494929225",
+  "provider_original": "08-WhatDoesItMean_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 216.0,
+  "title": "What Does It Mean",
+  "artist": "Graphic Antics",
+  "album": "What Does It Mean?",
+  "version": "Archive file mtime=1494929225; md5=d584098f505a69f549ac9e7afd119dd5",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0064",
+    "sha256": "1ec516df10ceae4051f13b4a4732e56329ce331c78ac3ccc08506bec72c89224",
+    "acquired_at": "2026-10-12T10:22:43.232267+00:00",
+    "bytes": 29837
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0064",
+    "evidence_sha256": "1ec516df10ceae4051f13b4a4732e56329ce331c78ac3ccc08506bec72c89224",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Graphic Antics \u2014 What Does It Mean; Graphic Antics - What Does It Mean?; https://archive.org/download/BSOG0064/08-WhatDoesItMean.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "0d46647867b754c42ffc2bca2dcb13eb6eeed9eec7c90260d7b01098bfd44cc9"
+}

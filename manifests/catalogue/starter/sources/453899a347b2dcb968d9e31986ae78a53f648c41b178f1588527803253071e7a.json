@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0167/track:86",
+  "source_item_id": "BSMX0167",
+  "file_name": "86-HouseofBoos_Remixx.mp3",
+  "origin_url": "https://archive.org/download/BSMX0167/86-HouseofBoos_Remixx.mp3",
+  "source_page": "https://archive.org/details/BSMX0167",
+  "expected_bytes": 4792832,
+  "expected_md5": "df8fc54cbc84c93f76b9342dbd599970",
+  "provider_mtime": "1506420097",
+  "provider_original": "86-HouseofBoos_Remixx_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 210.0,
+  "title": "House of Boos (Remixx)",
+  "artist": "LOWdown",
+  "album": "PayDay Poets (Maxi-Single)",
+  "version": "Archive file mtime=1506420097; md5=df8fc54cbc84c93f76b9342dbd599970",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0167",
+    "sha256": "018ffac35c3a053f26b55f4ad4a65432924c1fe1848a40e522730a6cad846795",
+    "acquired_at": "2026-10-12T10:23:35.004466+00:00",
+    "bytes": 17047
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0167",
+    "evidence_sha256": "018ffac35c3a053f26b55f4ad4a65432924c1fe1848a40e522730a6cad846795",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "LOWdown \u2014 House of Boos (Remixx); LOWdown - PayDay Poetry; https://archive.org/download/BSMX0167/86-HouseofBoos_Remixx.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "07b405d5fe3e56e773159666ebbcb228b82338b24c815f8e7424e1b11976acd4"
+}

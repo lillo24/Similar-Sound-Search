@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0140/track:1",
+  "source_item_id": "BSMX0140",
+  "file_name": "01-NeonJesusWinstheWorldCup.mp3",
+  "origin_url": "https://archive.org/download/BSMX0140/01-NeonJesusWinstheWorldCup.mp3",
+  "source_page": "https://archive.org/details/BSMX0140",
+  "expected_bytes": 4551680,
+  "expected_md5": "643f8010cf19f4faeece546e527ef84d",
+  "provider_mtime": "1473168942",
+  "provider_original": "01-NeonJesusWinstheWorldCup_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 194.0,
+  "title": "Neon Jesus Wins the World Cup",
+  "artist": "Electric Mirrors",
+  "album": "Neon Jesus Wins the World Cup",
+  "version": "Archive file mtime=1473168942; md5=643f8010cf19f4faeece546e527ef84d",
+  "genre": "Electropop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0140",
+    "sha256": "52de2c26c0e6b33307da48c0df14176934b5e54b4d06a9b63fd07bec292b8949",
+    "acquired_at": "2026-10-12T10:22:02.269724+00:00",
+    "bytes": 13459
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0140",
+    "evidence_sha256": "52de2c26c0e6b33307da48c0df14176934b5e54b4d06a9b63fd07bec292b8949",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Electric Mirrors \u2014 Neon Jesus Wins the World Cup; Electric Mirrors - Neon Jesus Wins The World Cup; https://archive.org/download/BSMX0140/01-NeonJesusWinstheWorldCup.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "00ec74620967f6851f2cd54e5b0c2cb2af64ed5b24062719a93e77a062475008"
+}

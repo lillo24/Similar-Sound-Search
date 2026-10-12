@@ -1,0 +1,201 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "4b7f20b58f7362871022d59fa36a197e8d1e234cac6f99eaefe05de2d11b9735",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSMX0122/track:9",
+    "title": "Funky Motion (AUG 8th Mixx Instrumental)",
+    "artist": "Cheese N Pot-C",
+    "album": "Funky Motion",
+    "version": "Archive file mtime=1452000270; md5=72503ae9c7223924d804dad4e016bfed",
+    "source_item_id": "BSMX0122",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSMX0122/track:9"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSMX0122/09-FunkyMotion_AUG8thMixxInstrumental.mp3",
+    "source_page": "https://archive.org/details/BSMX0122",
+    "acquired_at": "2026-10-12T11:01:05.349496+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSMX0122",
+      "sha256": "6eccc8b86a6996321ec29e2e29c7f6322c5b0b5cb60965460601cbce0692a628",
+      "acquired_at": "2026-10-12T10:33:44.294158+00:00",
+      "bytes": 45894
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSMX0122",
+      "evidence_sha256": "6eccc8b86a6996321ec29e2e29c7f6322c5b0b5cb60965460601cbce0692a628",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Cheese N Pot-C \u2014 Funky Motion (AUG 8th Mixx Instrumental); Cheese N Pot-C - Funky Motion; https://archive.org/download/BSMX0122/09-FunkyMotion_AUG8thMixxInstrumental.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "72503ae9c7223924d804dad4e016bfed",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": []
+  },
+  "source_asset": {
+    "sha256": "099dc879031e60d212519486761cac015f601570403b1999f69e9b406c3b885a",
+    "file_bytes": 3537920,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 8864687,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 201.01331065759638,
+    "measurement": {
+      "peak_per_channel": [
+        0.9248602986335754,
+        0.9248615503311157
+      ],
+      "rms_per_channel": [
+        0.12860913257566606,
+        0.12860912982465145
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 8864687,
+      "sha256": "411bc93ab46ee2df76c46823fe00236b5f28d90c45379d4a57e666cf37ea82ee"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:099dc879031e60d212519486761cac015f601570403b1999f69e9b406c3b885a",
+    "local_path": "data/audio/catalogue/originals/099dc879031e60d212519486761cac015f601570403b1999f69e9b406c3b885a.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:37e39eff7af490a2844907e18423f25fb99a1d9e1c30b3f135cf0b8eb3cdf59f",
+    "local_path": "data/audio/prepared/2745097f559fc7a6ca211d532d2a9beb909823e8bd77e4c8a92344eeb3550861/audio.wav",
+    "sha256": "37e39eff7af490a2844907e18423f25fb99a1d9e1c30b3f135cf0b8eb3cdf59f",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        0.8562549948692322,
+        0.856249988079071
+      ],
+      "rms_per_channel": [
+        0.1184843472451023,
+        0.11848434490903978
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:37e39eff7af490a2844907e18423f25fb99a1d9e1c30b3f135cf0b8eb3cdf59f",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 85.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "2745097f559fc7a6ca211d532d2a9beb909823e8bd77e4c8a92344eeb3550861",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:099dc879031e60d212519486761cac015f601570403b1999f69e9b406c3b885a",
+      "input_path": "data/audio/catalogue/originals/099dc879031e60d212519486761cac015f601570403b1999f69e9b406c3b885a.mp3",
+      "input_sha256": "099dc879031e60d212519486761cac015f601570403b1999f69e9b406c3b885a",
+      "output_asset_id": "sha256:37e39eff7af490a2844907e18423f25fb99a1d9e1c30b3f135cf0b8eb3cdf59f",
+      "output_sha256": "37e39eff7af490a2844907e18423f25fb99a1d9e1c30b3f135cf0b8eb3cdf59f",
+      "output_path": "data/audio/prepared/2745097f559fc7a6ca211d532d2a9beb909823e8bd77e4c8a92344eeb3550861/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 3748500,
+        "crop_end_frame": 5071500,
+        "requested_start_seconds": "85",
+        "requested_end_seconds": "115",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "b991e84e863e9897bce346d8795b629ed6f75bfa7307d61e66431230efbcc60e",
+      "time_map": {
+        "asset_id": "sha256:37e39eff7af490a2844907e18423f25fb99a1d9e1c30b3f135cf0b8eb3cdf59f",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 85.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "2745097f559fc7a6ca211d532d2a9beb909823e8bd77e4c8a92344eeb3550861",
+  "prepared_record_hash": "22fdc7c0d78ab9e4f6cd3806b84022a866ced734585c0a0831d6d03ff6bfb668",
+  "prepared_record_path": "data/audio/prepared/2745097f559fc7a6ca211d532d2a9beb909823e8bd77e4c8a92344eeb3550861/record.json",
+  "ingestion_identity": "da2206686db04d5b79a09641f2e13cc764c5bfe0ae970715fd4928a48ae26bee",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/4b7f20b58f7362871022d59fa36a197e8d1e234cac6f99eaefe05de2d11b9735",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "72793e83117a23d1eabdd7e8b7795ca58bd180c871a2d4f79e2e4562964db9c5"
+}

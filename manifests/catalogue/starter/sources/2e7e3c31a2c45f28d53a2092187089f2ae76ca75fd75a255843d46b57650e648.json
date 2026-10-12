@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0162/track:4",
+  "source_item_id": "BSMX0162",
+  "file_name": "04-ExpiredInspiration_DocsRemixx.mp3",
+  "origin_url": "https://archive.org/download/BSMX0162/04-ExpiredInspiration_DocsRemixx.mp3",
+  "source_page": "https://archive.org/details/BSMX0162",
+  "expected_bytes": 4627968,
+  "expected_md5": "e72ee17326acf4bc5023f4528208f5b9",
+  "provider_mtime": "1499170638",
+  "provider_original": "04-ExpiredInspiration_DocsRemixx_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 195.0,
+  "title": "Expired Inspiration (Doc's Remixx)",
+  "artist": "Luck & Doc",
+  "album": "Take Time (Maxi Single)",
+  "version": "Archive file mtime=1499170638; md5=e72ee17326acf4bc5023f4528208f5b9",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0162",
+    "sha256": "0a6d9dbeaba11626111ac7702932e153efe47616b621ad48537ade3fac331686",
+    "acquired_at": "2026-10-12T10:25:50.298515+00:00",
+    "bytes": 17860
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0162",
+    "evidence_sha256": "0a6d9dbeaba11626111ac7702932e153efe47616b621ad48537ade3fac331686",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Luck & Doc \u2014 Expired Inspiration (Doc's Remixx); Luck & Doc - Take Time (Maxi Single); https://archive.org/download/BSMX0162/04-ExpiredInspiration_DocsRemixx.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "98e7079b819bfe2a572cae12226125f3f3733e87e2ed62225d292eab2bed373d"
+}

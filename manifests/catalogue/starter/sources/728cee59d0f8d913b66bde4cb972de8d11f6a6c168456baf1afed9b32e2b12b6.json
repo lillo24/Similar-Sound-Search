@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0060/track:54",
+  "source_item_id": "BSOG0060",
+  "file_name": "54-SoOnandYo_Instrumental.mp3",
+  "origin_url": "https://archive.org/download/BSOG0060/54-SoOnandYo_Instrumental.mp3",
+  "source_page": "https://archive.org/details/BSOG0060",
+  "expected_bytes": 4033536,
+  "expected_md5": "541007b8ce5e8b98c5405da5d151cc35",
+  "provider_mtime": "1476794184",
+  "provider_original": "54-SoOnandYo_Instrumental_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 198.0,
+  "title": "So On and Yo! (Instrumental)",
+  "artist": "LOWdown",
+  "album": "soBELOW (THE groundZERO SINGLES 2006-2016)",
+  "version": "Archive file mtime=1476794184; md5=541007b8ce5e8b98c5405da5d151cc35",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0060",
+    "sha256": "bf16cb2732d3ef422f833659933a97f88f7c2e2a0505608bb0819761bd3d1405",
+    "acquired_at": "2026-10-12T10:25:19.885103+00:00",
+    "bytes": 43489
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0060",
+    "evidence_sha256": "bf16cb2732d3ef422f833659933a97f88f7c2e2a0505608bb0819761bd3d1405",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "LOWdown \u2014 So On and Yo! (Instrumental); LOWdown - soBELOW (THE groundZERO SINGLES 2006-2016); https://archive.org/download/BSOG0060/54-SoOnandYo_Instrumental.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "d1ba5001bedc85bf15e89ecc4d060d11b583f16787f951e2f58fc77b80612e46"
+}

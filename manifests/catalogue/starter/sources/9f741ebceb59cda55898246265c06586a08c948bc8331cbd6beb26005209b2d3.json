@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BS450039/track:2",
+  "source_item_id": "BS450039",
+  "file_name": "02-Away_192kb.mp3",
+  "origin_url": "https://archive.org/download/BS450039/02-Away_192kb.mp3",
+  "source_page": "https://archive.org/details/BS450039",
+  "expected_bytes": 5163708,
+  "expected_md5": "4b5e857558ce91f051b7f7312f9338b9",
+  "provider_mtime": "1524826520",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 185.81,
+  "title": "Away",
+  "artist": "Mos Emvy",
+  "album": "Confusion",
+  "version": "Archive file mtime=1524826520; md5=4b5e857558ce91f051b7f7312f9338b9",
+  "genre": "Trap",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BS450039",
+    "sha256": "23eb424ee6e7af98cb49e803143c34599898ca04fbf58ac42d5f941f4cc90538",
+    "acquired_at": "2026-10-12T10:25:10.400205+00:00",
+    "bytes": 9385
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BS450039",
+    "evidence_sha256": "23eb424ee6e7af98cb49e803143c34599898ca04fbf58ac42d5f941f4cc90538",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Mos Emvy \u2014 Away; Mos Emvy - Confusion; https://archive.org/download/BS450039/02-Away_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BS450039/02-Away.mp3",
+      "expected_md5": "fc0c5da0a38e2467d1c920b6c0c57c93",
+      "expected_bytes": 4382630,
+      "provider_original": "02-Away_192kb.mp3"
+    }
+  ],
+  "record_hash": "4dfea381d56a6a2368ddd870f45c42ba6070ecfe9f81a0871e83ec6f24d0452b"
+}

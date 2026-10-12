@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "2fe3a76023a434c5494e5b4addfc2ea539792baeddd8e868fd106f4f66641bc5",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSOG0044/track:6",
+    "title": "Oh No Not Again, This Time",
+    "artist": "Mr. & Mrs. Smith",
+    "album": "Trophies",
+    "version": "Archive file mtime=1424787785; md5=3634c1fd61b5c4c4b13effc910d4188c",
+    "source_item_id": "BSOG0044",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSOG0044/track:6"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSOG0044/06-MrAndMrsSmith-OhNoNotAgainThisTime_192kb.mp3",
+    "source_page": "https://archive.org/details/BSOG0044",
+    "acquired_at": "2026-10-12T11:00:53.502735+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSOG0044",
+      "sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+      "acquired_at": "2026-10-12T10:25:41.663802+00:00",
+      "bytes": 27557
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSOG0044",
+      "evidence_sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Mr. & Mrs. Smith \u2014 Oh No Not Again, This Time; Mr. & Mrs. Smith - Trophies; https://archive.org/download/BSOG0044/06-MrAndMrsSmith-OhNoNotAgainThisTime_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "3634c1fd61b5c4c4b13effc910d4188c",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSOG0044/06-MrAndMrsSmith-OhNoNotAgainThisTime.mp3",
+        "expected_md5": "dcda8b691f7283247698a703d5962a32",
+        "expected_bytes": 1370112,
+        "provider_original": "06-MrAndMrsSmith-OhNoNotAgainThisTime_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "72a617e0e041e24feb4ad0d0f4e3e8b1a4faf7255b64caadf873ac28efdc2a3f",
+    "file_bytes": 2231752,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 2806482,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 63.639047619047616,
+    "measurement": {
+      "peak_per_channel": [
+        0.8221449255943298,
+        0.8338139653205872
+      ],
+      "rms_per_channel": [
+        0.16823450514722899,
+        0.16448903188990915
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 2806482,
+      "sha256": "08a3e7a1dce88de9483aa08d2e2705dd0e064d729f5e2fe27d1b1fbebf5cda94"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:72a617e0e041e24feb4ad0d0f4e3e8b1a4faf7255b64caadf873ac28efdc2a3f",
+    "local_path": "data/audio/catalogue/originals/72a617e0e041e24feb4ad0d0f4e3e8b1a4faf7255b64caadf873ac28efdc2a3f.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:21b5cb08f3d93c8d643c7e1b70033c8e31acaab36f900485eebe9bc4114bc9f6",
+    "local_path": "data/audio/prepared/1eb5271ad5731d46f2a6d454f2d51bee5ae8dafe10e314a8db7f65f5fd9b8253/audio.wav",
+    "sha256": "21b5cb08f3d93c8d643c7e1b70033c8e31acaab36f900485eebe9bc4114bc9f6",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        0.7815711498260498,
+        0.7745150327682495
+      ],
+      "rms_per_channel": [
+        0.1791167386765702,
+        0.1744086832509494
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:21b5cb08f3d93c8d643c7e1b70033c8e31acaab36f900485eebe9bc4114bc9f6",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 16.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "1eb5271ad5731d46f2a6d454f2d51bee5ae8dafe10e314a8db7f65f5fd9b8253",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:72a617e0e041e24feb4ad0d0f4e3e8b1a4faf7255b64caadf873ac28efdc2a3f",
+      "input_path": "data/audio/catalogue/originals/72a617e0e041e24feb4ad0d0f4e3e8b1a4faf7255b64caadf873ac28efdc2a3f.mp3",
+      "input_sha256": "72a617e0e041e24feb4ad0d0f4e3e8b1a4faf7255b64caadf873ac28efdc2a3f",
+      "output_asset_id": "sha256:21b5cb08f3d93c8d643c7e1b70033c8e31acaab36f900485eebe9bc4114bc9f6",
+      "output_sha256": "21b5cb08f3d93c8d643c7e1b70033c8e31acaab36f900485eebe9bc4114bc9f6",
+      "output_path": "data/audio/prepared/1eb5271ad5731d46f2a6d454f2d51bee5ae8dafe10e314a8db7f65f5fd9b8253/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 705600,
+        "crop_end_frame": 2028600,
+        "requested_start_seconds": "16",
+        "requested_end_seconds": "46",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "b954a123ed30e05661b9022cc22f5388d6e39c2fd49038357e98f2e8d96631bc",
+      "time_map": {
+        "asset_id": "sha256:21b5cb08f3d93c8d643c7e1b70033c8e31acaab36f900485eebe9bc4114bc9f6",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 16.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "1eb5271ad5731d46f2a6d454f2d51bee5ae8dafe10e314a8db7f65f5fd9b8253",
+  "prepared_record_hash": "e1116af157c5ee6b7f5da57ac73cce309127d988494c4d7ad8a2972b26db95d9",
+  "prepared_record_path": "data/audio/prepared/1eb5271ad5731d46f2a6d454f2d51bee5ae8dafe10e314a8db7f65f5fd9b8253/record.json",
+  "ingestion_identity": "fdb460011a5c08d2bd645111b38a697517bd7bf255119c431ae520421e9e8448",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/2fe3a76023a434c5494e5b4addfc2ea539792baeddd8e868fd106f4f66641bc5",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "54260559408a23afb80ecf4bc95433ce6da15eed094bde8007a7276cecc1680e"
+}

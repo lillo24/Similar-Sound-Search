@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "d09cb9d597a4ae2361864ddc901d47e5fe095c7deb510d32a4eed923c77ff715",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSMX0155/track:5",
+    "title": "Pledge of Allegiance",
+    "artist": "Bralitz",
+    "album": "Bralitz",
+    "version": "Archive file mtime=1491310372; md5=1a3585ddafaa9c7f2c420d1d02307013",
+    "source_item_id": "BSMX0155",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSMX0155/track:5"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSMX0155/05-PledgeofAllegiance_192kb.mp3",
+    "source_page": "https://archive.org/details/BSMX0155",
+    "acquired_at": "2026-10-12T11:05:34.599664+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSMX0155",
+      "sha256": "db200bec41671db22ebe9f8c32f6031614cd00cbcce3ad2748bbf264648f9b83",
+      "acquired_at": "2026-10-12T10:24:33.929544+00:00",
+      "bytes": 14286
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSMX0155",
+      "evidence_sha256": "db200bec41671db22ebe9f8c32f6031614cd00cbcce3ad2748bbf264648f9b83",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Bralitz \u2014 Pledge of Allegiance; Bralitz - Bralitz; https://archive.org/download/BSMX0155/05-PledgeofAllegiance_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "1a3585ddafaa9c7f2c420d1d02307013",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSMX0155/05-PledgeofAllegiance.mp3",
+        "expected_md5": "5a07ccfff0c881ef6f30d8ee61dd042d",
+        "expected_bytes": 2231808,
+        "provider_original": "05-PledgeofAllegiance_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "553b1d643b5719d86308d188c5cd03212527c96d117e720002295971bff2c60f",
+    "file_bytes": 3590166,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 4753474,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 107.7885260770975,
+    "measurement": {
+      "peak_per_channel": [
+        0.9139132499694824,
+        0.9439889788627625
+      ],
+      "rms_per_channel": [
+        0.2398676571758923,
+        0.24810406298140733
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 4753474,
+      "sha256": "989a7b89b4b5761b3f3b02426cd4d714c879454c8413e871c4caad530d1d7923"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:553b1d643b5719d86308d188c5cd03212527c96d117e720002295971bff2c60f",
+    "local_path": "data/audio/catalogue/originals/553b1d643b5719d86308d188c5cd03212527c96d117e720002295971bff2c60f.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:441f5e502bb3339854825e7cf574a26674de33c938c8777816c683b96707ef66",
+    "local_path": "data/audio/prepared/119b18f1c7cafdf2e98eeb778c18f9b605e8ee8dd949bfcf13799653535b606b/audio.wav",
+    "sha256": "441f5e502bb3339854825e7cf574a26674de33c938c8777816c683b96707ef66",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        0.8663100004196167,
+        0.8706642389297485
+      ],
+      "rms_per_channel": [
+        0.2517341798765189,
+        0.2669304665611013
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:441f5e502bb3339854825e7cf574a26674de33c938c8777816c683b96707ef66",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 38.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "119b18f1c7cafdf2e98eeb778c18f9b605e8ee8dd949bfcf13799653535b606b",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:553b1d643b5719d86308d188c5cd03212527c96d117e720002295971bff2c60f",
+      "input_path": "data/audio/catalogue/originals/553b1d643b5719d86308d188c5cd03212527c96d117e720002295971bff2c60f.mp3",
+      "input_sha256": "553b1d643b5719d86308d188c5cd03212527c96d117e720002295971bff2c60f",
+      "output_asset_id": "sha256:441f5e502bb3339854825e7cf574a26674de33c938c8777816c683b96707ef66",
+      "output_sha256": "441f5e502bb3339854825e7cf574a26674de33c938c8777816c683b96707ef66",
+      "output_path": "data/audio/prepared/119b18f1c7cafdf2e98eeb778c18f9b605e8ee8dd949bfcf13799653535b606b/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 1675800,
+        "crop_end_frame": 2998800,
+        "requested_start_seconds": "38",
+        "requested_end_seconds": "68",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "208fd6589963147d21e95197c96b4ac87d1f37e819da9e2c9b9a225ee8c7420a",
+      "time_map": {
+        "asset_id": "sha256:441f5e502bb3339854825e7cf574a26674de33c938c8777816c683b96707ef66",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 38.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "119b18f1c7cafdf2e98eeb778c18f9b605e8ee8dd949bfcf13799653535b606b",
+  "prepared_record_hash": "ba10030e7f3beb49b600cc4bd2d3f9ad4b807c9048a04e02d7c65406f1bf5b12",
+  "prepared_record_path": "data/audio/prepared/119b18f1c7cafdf2e98eeb778c18f9b605e8ee8dd949bfcf13799653535b606b/record.json",
+  "ingestion_identity": "f404ed45e9228dbe49317927f8b59ce56af155f20f8935aecc6dfe494b514d12",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/d09cb9d597a4ae2361864ddc901d47e5fe095c7deb510d32a4eed923c77ff715",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "2ae5e85c350e5541037d08dfb0aee7e7851ef573fca5123f6c23cb7eb229dd65"
+}

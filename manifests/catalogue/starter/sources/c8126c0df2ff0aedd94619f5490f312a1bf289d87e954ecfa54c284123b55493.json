@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0157/track:4",
+  "source_item_id": "BSMX0157",
+  "file_name": "04-QuickBrownFox_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0157/04-QuickBrownFox_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0157",
+  "expected_bytes": 1132814,
+  "expected_md5": "861211aad59170c75fba657655494881",
+  "provider_mtime": "1491905559",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 39.78,
+  "title": "Quick Brown Fox",
+  "artist": "BIT",
+  "album": "lenna was a test image",
+  "version": "Archive file mtime=1491905559; md5=861211aad59170c75fba657655494881",
+  "genre": "Indie",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0157",
+    "sha256": "982b9b1e66f4f128601e19abab37a9ac6965b8e323b24350916f40a104c9c705",
+    "acquired_at": "2026-10-12T10:26:09.809559+00:00",
+    "bytes": 16489
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0157",
+    "evidence_sha256": "982b9b1e66f4f128601e19abab37a9ac6965b8e323b24350916f40a104c9c705",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "BIT \u2014 Quick Brown Fox; BIT - lenna was a test image; https://archive.org/download/BSMX0157/04-QuickBrownFox_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0157/04-QuickBrownFox.mp3",
+      "expected_md5": "2b2a1384cdccb7f04298cf282899a680",
+      "expected_bytes": 1111040,
+      "provider_original": "04-QuickBrownFox_192kb.mp3"
+    }
+  ],
+  "record_hash": "b73f10119150bbc9329d53cfcdbdfdf5a1a2582934341b45ed04c6c7bf07c21b"
+}

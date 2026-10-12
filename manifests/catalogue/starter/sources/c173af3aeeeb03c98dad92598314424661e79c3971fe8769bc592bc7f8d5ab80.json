@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0062/track:5",
+  "source_item_id": "BSOG0062",
+  "file_name": "05-MessageForUs_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0062/05-MessageForUs_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0062",
+  "expected_bytes": 4510703,
+  "expected_md5": "2281516f80fd910fc1f5f81a3647f187",
+  "provider_mtime": "1485864564",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 165.75,
+  "title": "Message For Us",
+  "artist": "Cutside",
+  "album": "Point Of No Return",
+  "version": "Archive file mtime=1485864564; md5=2281516f80fd910fc1f5f81a3647f187",
+  "genre": "(4294967295)",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0062",
+    "sha256": "ac2e00ab8b13f53d0ef854381df6425e30002ae939fc2fa63edd3e61e9889d28",
+    "acquired_at": "2026-10-12T10:23:00.134720+00:00",
+    "bytes": 25788
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0062",
+    "evidence_sha256": "ac2e00ab8b13f53d0ef854381df6425e30002ae939fc2fa63edd3e61e9889d28",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Cutside \u2014 Message For Us; Cutside - Point Of No Return; https://archive.org/download/BSOG0062/05-MessageForUs_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0062/05-MessageForUs.mp3",
+      "expected_md5": "1bdb2f00ba49312fa36c28e4e5c082e8",
+      "expected_bytes": 4000768,
+      "provider_original": "05-MessageForUs_192kb.mp3"
+    }
+  ],
+  "record_hash": "29ed6e5faf2b70358dead50419ed77558ffe227b963769bee18aa2667ba83da5"
+}

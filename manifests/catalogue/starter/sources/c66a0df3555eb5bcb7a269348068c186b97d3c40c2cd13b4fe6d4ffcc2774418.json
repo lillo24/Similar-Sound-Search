@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSXE0016/track:2",
+  "source_item_id": "BSXE0016",
+  "file_name": "01-02-TilItHurts.mp3",
+  "origin_url": "https://archive.org/download/BSXE0016/01-02-TilItHurts.mp3",
+  "source_page": "https://archive.org/details/BSXE0016",
+  "expected_bytes": 4898816,
+  "expected_md5": "454cbcce650f2b2313b6b8b13154ab3f",
+  "provider_mtime": "1452266225",
+  "provider_original": "01-02-TilItHurts_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 200.0,
+  "title": "Til It Hurts",
+  "artist": "Pot-C",
+  "album": "Baldest N Fattest XE (Disc 1 - Balder N Fatter)",
+  "version": "Archive file mtime=1452266225; md5=454cbcce650f2b2313b6b8b13154ab3f",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSXE0016",
+    "sha256": "72b661969c051e5e1b5960672e6968c3220e380f06688f0626d34233fb57d8a9",
+    "acquired_at": "2026-10-12T10:25:45.758192+00:00",
+    "bytes": 101999
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSXE0016",
+    "evidence_sha256": "72b661969c051e5e1b5960672e6968c3220e380f06688f0626d34233fb57d8a9",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Pot-C \u2014 Til It Hurts; Pot-C - Baldest N Fattest XE; https://archive.org/download/BSXE0016/01-02-TilItHurts.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "4eff328a122eafd6f8dfe555decd3be37d429e776d0b63ac2676678877e7fcb7"
+}

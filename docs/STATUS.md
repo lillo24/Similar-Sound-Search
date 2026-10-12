@@ -1,50 +1,54 @@
 # Project status
 
-Updated 11 October 2026. **A02 complete; ready for A03 — Automated starter catalogue.** Working audio plumbing is established; no retrieval/perceptual result is claimed. Delivery follows the branch/PR/merge/cleanup workflow in [AGENTS.md](../AGENTS.md).
+Updated 12 October 2026. **A03 ingestion implemented; real catalogue assessment partial: 72/120 distinct recordings, 35 artists. Ready for A04 — Benchmarks and controlled test generation.** No retrieval/perceptual result is claimed. Follow [AGENTS.md](../AGENTS.md) for branch/PR/merge/cleanup delivery.
 
 ## Foundation and current delivery
 
-- A01 merged through [PR #1](https://github.com/lillo24/Similar-Sound-Search/pull/1), merge `c6e0068692460f3ff64fba8711e2fc9e9589a1cb`. It established the brief, evaluation/record contracts, unverified Loulou reference, and private-artifact exclusions. Its archived prompt and user-owned `AGENTS.md` are preserved.
-- A02 pulled current `main` at `6bce07d` (the A02 handoff, PR #2), inspected the actual repository/machine, and uses the dedicated `codex/a02-runtime-inputs` branch with a PR into `main`. The GitHub PR/merge history is the durable delivery record.
-- No supplied audio/task attachment was present; explicit project audio locations initially contained only directory markers. The created local audio is labelled deterministic engineering material.
+- A01 merged through [PR #1](https://github.com/lillo24/Similar-Sound-Search/pull/1), merge `c6e0068692460f3ff64fba8711e2fc9e9589a1cb`: adopted brief/evaluation/records, unverified Loulou reference and private-artifact exclusions.
+- A02 merged through [PR #3](https://github.com/lillo24/Similar-Sound-Search/pull/3), merge `2a14cb0c0065d53149269296b84f0c39acdaf1de`: pinned Python CPU runtime, WAV/FLAC inspection/preparation, resource tiers and 32 tests. Its [historical report](../reports/A02_RUNTIME.md) remains unchanged.
+- A03 pulled current main `3c1f469` and uses isolated branch `codex/a03-starter-catalogue`; the resulting GitHub PR/merge is the durable delivery record. No extra worktree was created.
+- Explicit project input locations contained no supplied local music or Loulou audio. Generated fixtures remain engineering material; the unchanged reference is still missing/unverified.
 
-## Delivered in A02
+## Delivered in A03
 
 | Area | Evidence |
 | --- | --- |
-| Reproducible project-local Python 3.12 environment | [pyproject.toml](../pyproject.toml), [complete pins](../requirements.lock), [executed PowerShell setup](../scripts/setup.ps1) |
-| Offline diagnostic and actual CPU/decoder route | `sound-search smoke`; [runtime instructions](RUNTIME.md), [sanitized measured evidence](../reports/A02_RUNTIME.md) |
-| Explicit file/bounded project inventory | Candidate records with hashes, samples/duration/channels, known provenance and explicit identity unknowns |
-| Immutable channel/crop/resample preparation | Atomic bundles, validated reuse, source/derivative hashes, sample counts, tools/parameters and composed maps |
-| Conservative numeric tiers and enforced preparation boundaries | [resource profile](../config/resource_limits.json), [enforcement and future-only contracts](RUNTIME.md#resource-policy) |
-| Additive input/prepared contract | [0.2 record fields](RECORDS.md#a02-input-and-prepared-records-version-02), [unverified excerpt example](../config/input_context.example.json); original 0.1 Loulou manifest unchanged |
-| Meaningful offline correctness validation | [test map](../tests/README.md), Ruff formatting/static checks, packaging/dependency checks and delivered CLI execution |
+| Real selectively downloaded discovery music | [Measured quantities/costs/shortfall](../reports/A03_CATALOGUE.md), [frozen selection](../manifests/catalogue/starter/selection.json), [current local-run summary](../manifests/catalogue/starter/summary.json) |
+| One source and explicit local import through shared A02 preparation | Internet Archive/blocSonic; explicit permitted-use context, no personal-library scan; [commands/recovery](CATALOGUE.md) |
+| Small tested decoder extension | MP3 Layer III through pinned SoundFile/libsndfile, sequential decode, preserved original bytes and channels, explicit timing uncertainty |
+| Reproducible provenance and duplicate grouping | Additive [0.3 catalogue records](RECORDS.md#a03-catalogue-records-version-03), original SHA-256 and canonical PCM identity, source snapshots/rights/aliases, [group mapping](../manifests/catalogue/starter/groups.json) |
+| Durable bounded acquisition/resumption | Existing numeric tier ceilings unchanged; cumulative payload/retry/partial/crash accounting, finite 2,400-second worker-time/600-attempt job, bounded cursor and worker locks |
+| Actual pilot and repeat evidence | 12 real recordings/11 artists in the expanded pilot; subsequent acquisition/resumption and local-ready verification quantified in the report |
+| Change-complete offline validation | 58 tests (32 A02 + 26 catalogue), Ruff, setup/dependency/package checks, offline starter smoke and delivered CLI checks; [test map](../tests/README.md) |
 
-## Verification and actual environment
+The frozen 80-release sample contains 370 eligible provider recordings/35 artists and selects 106 for 120 requested under file/duration/artist-coverage filters. Fourteen requested places are unavailable under that frozen selection; acquisition's additional limit/failure shortfall is measured separately. Public ready records are delivery-machine evidence, not proof of local audio in a fresh checkout. Verify local assets/private registration before consumption. No catalogue audio, raw provider snapshots, private paths, caches, environment or ledgers are committed.
 
-Setup created/reused `.venv`, installed the pinned binary resolution, built the editable package, and passed `pip check`. Python 3.12.14, NumPy 2.2.6, SciPy 1.15.3, SoundFile 0.13.1/libsndfile 1.2.2 were executed. Windows 11 x64 exposed four CPU threads and ~16 GiB RAM; a GTX 1660 SUPER with 6144 MiB was detected via `nvidia-smi` without installing a GPU framework. The runtime uses CPU. No working PATH Python beyond Store aliases, FFmpeg, ffprobe, uv, or py launcher was found; bundled Python supplied the project environment.
+## Environment and verification
 
-The complete local checks are in [RUNTIME.md](RUNTIME.md#validation). They cover independent known PCM/hash/RMS answers; 21 accepted encoding/container combinations; corrupt/unsupported/silent/non-finite input; explicit channels and resampler event/count rounding; full-track/known-excerpt/unknown-excerpt maps; composition/offset-once/padding; invalid context/bounds; immutable source, reuse/corruption/change invalidation; disk/memory/output refusals and recovery; atomic write containment, concurrency, hard worker timeout; and missing-Loulou offline smoke. The [evidence report](../reports/A02_RUNTIME.md) records exact results and measured pilot costs.
+Windows 11 x64, Python 3.12.14, four CPU threads, approximately 16 GiB RAM; CPU processing with NumPy 2.2.6, SciPy 1.15.3, SoundFile 0.13.1/libsndfile 1.2.2. Native TLS uses pinned truststore 0.10.4 after verified default-context certificate-chain failure. A detected 6 GiB GPU is unused; no FFmpeg/GPU framework is required. [Runtime](RUNTIME.md) retains setup, A02 commands and numeric limits; [catalogue documentation](CATALOGUE.md) owns acquisition-specific behavior.
 
-No GitHub Actions workflow or required CI check exists in the inspected repository; no CI pass is claimed. A02 adds no hosted workflow. Before merge, check current main/head, PR mergeability/reviews/status/check runs and intended diff. Keep local machine/input reports, generated audio, environment, caches and run output ignored. Confirm the archived A01/A02 prompts, `AGENTS.md`, and reference manifest are unchanged.
+Full local validation includes independent PCM answers; accepted WAV/FLAC encodings and MP3 timing/truncation; channel/crop/resample/composed maps; original/derivative immutability and corruption; controlled HTTP failures/limits/retries; lifecycle/recovery/cumulative budgets; deterministic selection/grouping and actual CLI batch/lock behavior. The offline diagnostic remains reference-independent and network-free. Use `--tier starter smoke` when the real workspace exceeds the unchanged smoke tier's 256 MiB managed cap.
 
-Repeatable foundation checks still apply: `git diff --check` and staged equivalent; resolve local Markdown links; parse the reference JSON; inspect the intended staged files. Exclusion checks can use `git -c core.ignorecase=false check-ignore --no-index -- data/audio/private.WAV .env manifests/private/source.json` (all should print). Versionable metadata/markers such as `manifests/references/loulou.json`, `reports/A02_RUNTIME.md`, and `data/audio/.gitkeep` must not print when checked separately; exit 1 then means none is ignored.
+No GitHub Actions workflow/required CI check exists in the inspected repository; no CI pass is claimed and none was added. Before merge, check latest main/head, mergeability/reviews/status/check runs and intended diff. The evidence report records actual local check outcomes and limits. Preserve `AGENTS.md`, archived A01/A02/A03 prompts and `manifests/references/loulou.json`.
 
 ## Capability and stage status
 
 | Item | State |
 | --- | --- |
 | A01 durable foundation | Complete; PR #1 |
-| A02 Python/input/resource runtime | Complete; Windows CPU WAV/FLAC engineering path exercised |
+| A02 Python/input/resource runtime | Complete; bounded CPU WAV/FLAC foundation |
+| A03 acquisition/ingestion | Implemented and exercised; real local discovery subset, explicitly partial against 120 requested |
 | Actual Loulou input | Missing; manifest unverified; reference experiment not run |
-| A03 catalogue / A04 retrieval benchmarks | Not implemented or run |
+| A04 retrieval benchmarks/controlled test generation | Next; not implemented or run |
 | A05 matcher comparison / A06 search and playable results | Not implemented or run |
-| B–D event selection, separation, indexing/refinement, interface/package | Future work; first required listening review D04 |
+| B–D event selection, separation, indexing/refinement, interface/package | Future; first required listening review D04 |
 | Perceptual quality, mixture recovery, Loulou relevance | Unmeasured |
-| Linux execution, GPU compute, lossy decoding and compressed seek | Unverified/unsupported as described in runtime docs |
+| Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 
-## A03 handoff
+## A04 handoff
 
-Reinspect instructions, current main, the [brief](PROJECT_BRIEF.md), [records](RECORDS.md), [evaluation contract](EVALUATION.md), [decisions](DECISIONS.md), source/config maps, and runtime commands. Use a separate A03 branch/PR. Catalogue acquisition must establish real analysable audio and permitted use, enforce the starter download/disk/time/concurrency caps, and keep discovery audio separate from engineering/human-rated evaluation data. A02's download and future model-shortlist limits are configuration contracts awaiting their actual consumers, not implemented download/model controls.
+Reinspect current instructions/main, [brief](PROJECT_BRIEF.md), [records](RECORDS.md), [evaluation](EVALUATION.md), [decisions](DECISIONS.md), [A03 evidence](../reports/A03_CATALOGUE.md), source/config maps and the actual implementation. Use a separate A04 branch/PR. Keep discovery audio separate from generated engineering and published human-rated evaluation material. Retain current duplicate-family groups for later copy/leakage control; unknown lossy near-duplicates remain outside established coverage. Freeze benchmark protocols before A05 comparisons; genres and matcher scores are not independent relevance labels.
 
-Still needed for a reference-specific experiment: the actual **daoud — Loulou & the loulous** file from the marked version (full recording or existing excerpt around 3:38–4:00), with any available version/provenance and verified excerpt-start evidence. Unknown facts must stay unknown; never crop a short excerpt at 218 seconds from the approximate request. `inspect`/`prepare` can register a candidate without verifying its association; exact target-event selection remains B01. Missing audio does not block independent A03 work, and no similar/dissimilar examples or listening review are requested now.
+The existing validated local subset can support independent A04 work without replenishing an exhausted acquisition ledger. Analysis excerpts cover at most 30 seconds per full retained original; their decoded-file maps and unknown external-master offsets must be respected. Download limits now have a real consumer; the model-candidate cap remains an A05 contract.
+
+Still needed for a reference-specific experiment: the actual **daoud — Loulou & the loulous** file from the marked version (full recording or existing approximately 3:38–4:00 excerpt), with any version/provenance and verified excerpt-start evidence. Unknowns stay unknown; never crop an already-short excerpt at second 218. Exact target-event selection remains B01. Missing audio does not block independent A04 work, and no labels/listening review are requested now.

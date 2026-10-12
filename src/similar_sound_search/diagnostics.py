@@ -98,9 +98,11 @@ def environment(root):
         "gpu": gpu,
         "processing_device": "cpu",
         "advertised_libsndfile_formats": sf.available_formats(),
-        "accepted_inputs": ["PCM/IEEE-float WAV", "FLAC"],
+        "accepted_inputs": ["PCM/IEEE-float WAV", "FLAC", "MP3/MPEG_LAYER_III"],
         "exercised_decoders": ["WAV/PCM_16", "WAV/FLOAT", "FLAC/PCM_16"],
-        "compressed_seek": "unverified; no lossy decoder or random-seek support in A02",
+        "compressed_seek": (
+            "unverified; MP3 uses full sequential decoding; no random-seek guarantee"
+        ),
     }
 
 

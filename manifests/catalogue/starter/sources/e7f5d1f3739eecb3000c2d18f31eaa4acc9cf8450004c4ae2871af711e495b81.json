@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0174/track:5",
+  "source_item_id": "BSMX0174",
+  "file_name": "05-Ministry_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0174/05-Ministry_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0174",
+  "expected_bytes": 4164269,
+  "expected_md5": "00d4524fa8b51da5d8ca8ab0b3a6058b",
+  "provider_mtime": "1530876676",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 150.07,
+  "title": "Ministry",
+  "artist": "Viktor Van River",
+  "album": "Biorobot EP",
+  "version": "Archive file mtime=1530876676; md5=00d4524fa8b51da5d8ca8ab0b3a6058b",
+  "genre": "Downtempo/Trip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0174",
+    "sha256": "faa0fad49f5cd50f6935aaccf8f620d2b461d4582191df3115ad3f9047f7270c",
+    "acquired_at": "2026-10-12T10:25:01.215784+00:00",
+    "bytes": 15816
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0174",
+    "evidence_sha256": "faa0fad49f5cd50f6935aaccf8f620d2b461d4582191df3115ad3f9047f7270c",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Viktor Van River \u2014 Ministry; Viktor Van River - Biorobot; https://archive.org/download/BSMX0174/05-Ministry_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0174/05-Ministry.mp3",
+      "expected_md5": "7d4b697be4eb95d125cff95c8809a43b",
+      "expected_bytes": 3221140,
+      "provider_original": "05-Ministry_192kb.mp3"
+    }
+  ],
+  "record_hash": "f1ac830835936e5de9da10cf76368bb05a2b19bd8174c4773f48ce6033fa492e"
+}

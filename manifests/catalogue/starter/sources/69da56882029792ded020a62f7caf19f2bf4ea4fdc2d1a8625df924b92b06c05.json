@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0063/track:4",
+  "source_item_id": "BSOG0063",
+  "file_name": "04-Chopshop_Interlude_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0063/04-Chopshop_Interlude_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0063",
+  "expected_bytes": 2206877,
+  "expected_md5": "ecdadaedbb7b39507b742dcc28206438",
+  "provider_mtime": "1492506867",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 39.84,
+  "title": "Chopshop (Interlude)",
+  "artist": "Timezone LaFontaine",
+  "album": "Soul Night",
+  "version": "Archive file mtime=1492506867; md5=ecdadaedbb7b39507b742dcc28206438",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0063",
+    "sha256": "2ff298354c266a0ad47d5880ce4c9473ae1f9e10effc87745de2cf1a62dd65b0",
+    "acquired_at": "2026-10-12T10:25:35.817455+00:00",
+    "bytes": 27647
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0063",
+    "evidence_sha256": "2ff298354c266a0ad47d5880ce4c9473ae1f9e10effc87745de2cf1a62dd65b0",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Timezone LaFontaine \u2014 Chopshop (Interlude); Timezone LaFontaine - Soul Night; https://archive.org/download/BSOG0063/04-Chopshop_Interlude_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0063/04-Chopshop_Interlude.mp3",
+      "expected_md5": "24e64b3356297df3e5f4e7af8be7d24f",
+      "expected_bytes": 1390592,
+      "provider_original": "04-Chopshop_Interlude_192kb.mp3"
+    }
+  ],
+  "record_hash": "3b755ca0f24c23d844fabf2800d0dc298745b36dcfee13f908ac2c51abc0b89f"
+}

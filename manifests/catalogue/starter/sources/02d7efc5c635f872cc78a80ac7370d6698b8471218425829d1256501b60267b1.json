@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0054/track:10",
+  "source_item_id": "BSOG0054",
+  "file_name": "10-UndergroundPressFeaturingTimezoneLaFontaine.mp3",
+  "origin_url": "https://archive.org/download/BSOG0054/10-UndergroundPressFeaturingTimezoneLaFontaine.mp3",
+  "source_page": "https://archive.org/details/BSOG0054",
+  "expected_bytes": 4282368,
+  "expected_md5": "c49f430756589f93d7d8982a281a7359",
+  "provider_mtime": "1463491269",
+  "provider_original": "10-UndergroundPressFeaturingTimezoneLaFontaine_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 212.0,
+  "title": "Underground Press featuring Timezone LaFontaine",
+  "artist": "C-Doc",
+  "album": "DocSonic",
+  "version": "Archive file mtime=1463491269; md5=c49f430756589f93d7d8982a281a7359",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0054",
+    "sha256": "94380c60101d3f495198453968abfc4ee8cd57b3b731745b09f00de6abfae7be",
+    "acquired_at": "2026-10-12T10:23:52.216945+00:00",
+    "bytes": 33762
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0054",
+    "evidence_sha256": "94380c60101d3f495198453968abfc4ee8cd57b3b731745b09f00de6abfae7be",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "C-Doc \u2014 Underground Press featuring Timezone LaFontaine; C-Doc - DocSonic; https://archive.org/download/BSOG0054/10-UndergroundPressFeaturingTimezoneLaFontaine.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "5835341ff53985d12f91ac09a6841de588745a4e2e7c01b6baea824f08f5b6af"
+}

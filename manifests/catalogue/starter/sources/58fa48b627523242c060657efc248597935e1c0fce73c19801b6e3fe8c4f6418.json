@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0080/track:4",
+  "source_item_id": "BSOG0080",
+  "file_name": "02-04-pictures_Amended_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0080/02-04-pictures_Amended_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0080",
+  "expected_bytes": 4612124,
+  "expected_md5": "b75673eeff08955b5c2249833c7adb77",
+  "provider_mtime": "1536658981",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 166.79,
+  "title": "pictures (Amended)",
+  "artist": "Tha Silent Partner",
+  "album": "(muted) Sessions (Disc 2 - (muted) Rarities)",
+  "version": "Archive file mtime=1536658981; md5=b75673eeff08955b5c2249833c7adb77",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0080",
+    "sha256": "2414defc0c5bf94eb5d620cc276c2f8cc88daf6b50eded24fa6eb649744cfd90",
+    "acquired_at": "2026-10-12T10:36:18.222558+00:00",
+    "bytes": 41959
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0080",
+    "evidence_sha256": "2414defc0c5bf94eb5d620cc276c2f8cc88daf6b50eded24fa6eb649744cfd90",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Tha Silent Partner \u2014 pictures (Amended); Tha Silent Partner - (muted) Sessions; https://archive.org/download/BSOG0080/02-04-pictures_Amended_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0080/02-04-pictures_Amended.mp3",
+      "expected_md5": "6a3e20e738894fcd5284c02384acf275",
+      "expected_bytes": 3683222,
+      "provider_original": "02-04-pictures_Amended_192kb.mp3"
+    }
+  ],
+  "record_hash": "f772516a8013f9149f1c3d75f4d8d965dcbc146a76c2c6b0a28e2e9622bf4edb"
+}

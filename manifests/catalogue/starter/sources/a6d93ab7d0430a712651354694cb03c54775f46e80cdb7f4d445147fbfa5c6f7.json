@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0169/track:3",
+  "source_item_id": "BSMX0169",
+  "file_name": "03-Pearl_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0169/03-Pearl_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0169",
+  "expected_bytes": 4441207,
+  "expected_md5": "26547d6970f7e3b4f66bd0fe2c8ebfa7",
+  "provider_mtime": "1509112249",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 139.89,
+  "title": "Pearl",
+  "artist": "Bralitz",
+  "album": "Bralitz II",
+  "version": "Archive file mtime=1509112249; md5=26547d6970f7e3b4f66bd0fe2c8ebfa7",
+  "genre": "Indie",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0169",
+    "sha256": "2876145be3e0c094d2f79e513b4767695ec2a0a37823fe3123b8a3e1b6fafba5",
+    "acquired_at": "2026-10-12T10:26:03.889906+00:00",
+    "bytes": 13723
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0169",
+    "evidence_sha256": "2876145be3e0c094d2f79e513b4767695ec2a0a37823fe3123b8a3e1b6fafba5",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Bralitz \u2014 Pearl; Bralitz - Bralitz II; https://archive.org/download/BSMX0169/03-Pearl_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0169/03-Pearl.mp3",
+      "expected_md5": "dbbca8bb5537601c8e90d356f3144b4d",
+      "expected_bytes": 3546624,
+      "provider_original": "03-Pearl_192kb.mp3"
+    }
+  ],
+  "record_hash": "fdca52feffb4fba31c68dc366c987ace45cd526b241af77753b7e755c45b4c10"
+}

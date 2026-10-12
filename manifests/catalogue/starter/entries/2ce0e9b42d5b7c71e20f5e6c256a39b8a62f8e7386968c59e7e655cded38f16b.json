@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSMX0176/track:1",
+    "title": "Rap Style (Four Track Mixx)",
+    "artist": "Donnie Ozone",
+    "album": "Rap Style (The Cheese N Pot-C Remixes)",
+    "version": "Archive file mtime=1552646814; md5=5b36823d5db95799379803d3a5c30010",
+    "source_item_id": "BSMX0176",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSMX0176/track:1"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSMX0176/01-RapStyle_FourTrackMixx_192kb.mp3",
+    "source_page": "https://archive.org/details/BSMX0176",
+    "acquired_at": "2026-10-12T11:19:34.071129+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSMX0176",
+      "sha256": "7e0b277605a745f2b8a4d5e2e1cbbda1c87512e01227a0c62130ac11ab5f98eb",
+      "acquired_at": "2026-10-12T10:35:20.032202+00:00",
+      "bytes": 23431
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "audio_licence": "CC BY-NC-SA 4.0",
+      "evidence_url": "https://archive.org/metadata/BSMX0176",
+      "evidence_sha256": "7e0b277605a745f2b8a4d5e2e1cbbda1c87512e01227a0c62130ac11ab5f98eb",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Donnie Ozone \u2014 Rap Style (Four Track Mixx); Donnie Ozone - Rap Style (The Cheese N Pot-C Remixes); https://archive.org/download/BSMX0176/01-RapStyle_FourTrackMixx_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "5b36823d5db95799379803d3a5c30010",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSMX0176/01-RapStyle_FourTrackMixx.mp3",
+        "expected_md5": "bdb2ab48cb063d592aaba37e5fb388b4",
+        "expected_bytes": 3506702,
+        "provider_original": "01-RapStyle_FourTrackMixx_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "ae0c5d4dd2f6b2b2813041a37fbddf326e93315813e6452ab193ef5edbfc7311",
+    "file_bytes": 4788844,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 8539393,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 193.63702947845806,
+    "measurement": {
+      "peak_per_channel": [
+        1.0217348337173462,
+        1.0217440128326416
+      ],
+      "rms_per_channel": [
+        0.23987410912066445,
+        0.2398747374374429
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 8539393,
+      "sha256": "8fa1935fee4b63262c4f25cc5e3ecdfcd40bf62f96959fcc97ecce5943124188"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:ae0c5d4dd2f6b2b2813041a37fbddf326e93315813e6452ab193ef5edbfc7311",
+    "local_path": "data/audio/catalogue/originals/ae0c5d4dd2f6b2b2813041a37fbddf326e93315813e6452ab193ef5edbfc7311.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:6732a7c76600ae0dc5a6e144b7c615b11925147a1b541d5318c5dd966bc27b13",
+    "local_path": "data/audio/prepared/50ca7c374d56214624ca35ffacd195a897ace538d44b9ad92ec97ab05f35bb50/audio.wav",
+    "sha256": "6732a7c76600ae0dc5a6e144b7c615b11925147a1b541d5318c5dd966bc27b13",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        1.0165534019470215,
+        1.016553521156311
+      ],
+      "rms_per_channel": [
+        0.27893042102939486,
+        0.27893032871725326
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:6732a7c76600ae0dc5a6e144b7c615b11925147a1b541d5318c5dd966bc27b13",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 81.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "50ca7c374d56214624ca35ffacd195a897ace538d44b9ad92ec97ab05f35bb50",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:ae0c5d4dd2f6b2b2813041a37fbddf326e93315813e6452ab193ef5edbfc7311",
+      "input_path": "data/audio/catalogue/originals/ae0c5d4dd2f6b2b2813041a37fbddf326e93315813e6452ab193ef5edbfc7311.mp3",
+      "input_sha256": "ae0c5d4dd2f6b2b2813041a37fbddf326e93315813e6452ab193ef5edbfc7311",
+      "output_asset_id": "sha256:6732a7c76600ae0dc5a6e144b7c615b11925147a1b541d5318c5dd966bc27b13",
+      "output_sha256": "6732a7c76600ae0dc5a6e144b7c615b11925147a1b541d5318c5dd966bc27b13",
+      "output_path": "data/audio/prepared/50ca7c374d56214624ca35ffacd195a897ace538d44b9ad92ec97ab05f35bb50/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 3572100,
+        "crop_end_frame": 4895100,
+        "requested_start_seconds": "81",
+        "requested_end_seconds": "111",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "9bc35d82756c48433aeb4097c01463fe085ef5e3c68b1e70b4fda8220b1cb061",
+      "time_map": {
+        "asset_id": "sha256:6732a7c76600ae0dc5a6e144b7c615b11925147a1b541d5318c5dd966bc27b13",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 81.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "50ca7c374d56214624ca35ffacd195a897ace538d44b9ad92ec97ab05f35bb50",
+  "prepared_record_hash": "f743791078ba2e1e6b0a7d17f82170411171c7b365f7f786642e1bb9f563f5b2",
+  "prepared_record_path": "data/audio/prepared/50ca7c374d56214624ca35ffacd195a897ace538d44b9ad92ec97ab05f35bb50/record.json",
+  "ingestion_identity": "df263d900707efa03e5cf682a249dea978e2a992804804d62c4d1fd425655b2e",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "246c5b91a75605ef5e1b4e04aa89ab6c58656662d03eb36496375636da4940c9"
+}

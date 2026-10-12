@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0133/track:4",
+  "source_item_id": "BSMX0133",
+  "file_name": "04-B-263-54_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0133/04-B-263-54_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0133",
+  "expected_bytes": 3845614,
+  "expected_md5": "a44522b29fa57fe66a41138bd0fb20f4",
+  "provider_mtime": "1467721489",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 159.37,
+  "title": "B-263-54",
+  "artist": "C-Doc",
+  "album": "Quit",
+  "version": "Archive file mtime=1467721489; md5=a44522b29fa57fe66a41138bd0fb20f4",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0133",
+    "sha256": "4caa45fef9e0c1161de36f49773b6d2dccc2083bf5326dff3e738b0088070cb6",
+    "acquired_at": "2026-10-12T10:34:30.939346+00:00",
+    "bytes": 14181
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0133",
+    "evidence_sha256": "4caa45fef9e0c1161de36f49773b6d2dccc2083bf5326dff3e738b0088070cb6",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "C-Doc \u2014 B-263-54; C-Doc - Quit; https://archive.org/download/BSMX0133/04-B-263-54_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0133/04-B-263-54.mp3",
+      "expected_md5": "9eba01c72f983a163d771e01583240f8",
+      "expected_bytes": 3955200,
+      "provider_original": "04-B-263-54_192kb.mp3"
+    }
+  ],
+  "record_hash": "fea5f064a6b60e8ca8a20003a5ee19f1c3d28f8464fddddc97426af418c36d9e"
+}

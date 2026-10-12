@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "c5ae126f76a53b74eee0b5d64fbcc247b1869c028435e8bca74a4731066f9d30",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSIM0002/track:27",
+    "title": "Shame",
+    "artist": "Eli & The Mannings",
+    "album": "Magical Cookies",
+    "version": "Archive file mtime=1525775503; md5=7befc49e220fd7dcba003db44845aacf",
+    "source_item_id": "BSIM0002",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSIM0002/track:27"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSIM0002/27-Shame_192kb.mp3",
+    "source_page": "https://archive.org/details/BSIM0002",
+    "acquired_at": "2026-10-12T10:39:14.223057+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSIM0002",
+      "sha256": "76b4f822e0b31d5ad06643903bbdbd59c562788a813764945232bb2909a98cfe",
+      "acquired_at": "2026-10-12T10:25:22.702157+00:00",
+      "bytes": 73023
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "audio_licence": "CC BY-NC-SA 4.0",
+      "evidence_url": "https://archive.org/metadata/BSIM0002",
+      "evidence_sha256": "76b4f822e0b31d5ad06643903bbdbd59c562788a813764945232bb2909a98cfe",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Eli & The Mannings \u2014 Shame; Eli & The Mannings - Magical Cookies; https://archive.org/download/BSIM0002/27-Shame_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "7befc49e220fd7dcba003db44845aacf",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSIM0002/27-Shame.mp3",
+        "expected_md5": "08b753db0add48aa66466537dce441dd",
+        "expected_bytes": 4403023,
+        "provider_original": "27-Shame_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "f25e91e3fa27db595cb9e1620db4146f40d1ccab8e2af6c0978f18ebd4ae6b30",
+    "file_bytes": 5003248,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 8056736,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 182.6924263038549,
+    "measurement": {
+      "peak_per_channel": [
+        0.9626284837722778,
+        0.9557451009750366
+      ],
+      "rms_per_channel": [
+        0.1577580877502407,
+        0.1373734347891515
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 8056736,
+      "sha256": "1dbbe52e0b8dd7eeff1a50b73c3c26dfc69542be5ea098fb6b1903db6d422d02"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:f25e91e3fa27db595cb9e1620db4146f40d1ccab8e2af6c0978f18ebd4ae6b30",
+    "local_path": "data/audio/catalogue/originals/f25e91e3fa27db595cb9e1620db4146f40d1ccab8e2af6c0978f18ebd4ae6b30.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:ed5703dcdd379676366dd3fde8780219c049e300160173da9a6f985a6f94f668",
+    "local_path": "data/audio/prepared/f44a0f3f36c4212dbb4e5362bd410cd078aea02b5762a2d8c4d4fe54d4ceea96/audio.wav",
+    "sha256": "ed5703dcdd379676366dd3fde8780219c049e300160173da9a6f985a6f94f668",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        0.9405930638313293,
+        0.8759409785270691
+      ],
+      "rms_per_channel": [
+        0.17038044496491847,
+        0.14760344296747244
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:ed5703dcdd379676366dd3fde8780219c049e300160173da9a6f985a6f94f668",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 76.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "f44a0f3f36c4212dbb4e5362bd410cd078aea02b5762a2d8c4d4fe54d4ceea96",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:f25e91e3fa27db595cb9e1620db4146f40d1ccab8e2af6c0978f18ebd4ae6b30",
+      "input_path": "data/audio/catalogue/originals/f25e91e3fa27db595cb9e1620db4146f40d1ccab8e2af6c0978f18ebd4ae6b30.mp3",
+      "input_sha256": "f25e91e3fa27db595cb9e1620db4146f40d1ccab8e2af6c0978f18ebd4ae6b30",
+      "output_asset_id": "sha256:ed5703dcdd379676366dd3fde8780219c049e300160173da9a6f985a6f94f668",
+      "output_sha256": "ed5703dcdd379676366dd3fde8780219c049e300160173da9a6f985a6f94f668",
+      "output_path": "data/audio/prepared/f44a0f3f36c4212dbb4e5362bd410cd078aea02b5762a2d8c4d4fe54d4ceea96/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 3351600,
+        "crop_end_frame": 4674600,
+        "requested_start_seconds": "76",
+        "requested_end_seconds": "106",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "7573cd3723582766a4375c2f1a9a6b237abe40e554e7f3db4a174f99fb60eb58",
+      "time_map": {
+        "asset_id": "sha256:ed5703dcdd379676366dd3fde8780219c049e300160173da9a6f985a6f94f668",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 76.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "f44a0f3f36c4212dbb4e5362bd410cd078aea02b5762a2d8c4d4fe54d4ceea96",
+  "prepared_record_hash": "3404a35ee1383816e6d40db10bab12968bd8e2568bcafb6c39e0ec1bae29bbb1",
+  "prepared_record_path": "data/audio/prepared/f44a0f3f36c4212dbb4e5362bd410cd078aea02b5762a2d8c4d4fe54d4ceea96/record.json",
+  "ingestion_identity": "46145263b8e5f752c5fe4e4217400cf803fec19913313bc3723150f95b835c15",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/c5ae126f76a53b74eee0b5d64fbcc247b1869c028435e8bca74a4731066f9d30",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "c32a2b979c1a99b066761212ca224aaf8c968700dc270e72eefe36b46102a315"
+}

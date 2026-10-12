@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0080/track:10",
+  "source_item_id": "BSOG0080",
+  "file_name": "01-10-sadsong.mp3",
+  "origin_url": "https://archive.org/download/BSOG0080/01-10-sadsong.mp3",
+  "source_page": "https://archive.org/details/BSOG0080",
+  "expected_bytes": 4205623,
+  "expected_md5": "adb24d3b3a7ee2baa63dad08a7bd98ec",
+  "provider_mtime": "1536659240",
+  "provider_original": "01-10-sadsong_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 219.0,
+  "title": "sad song",
+  "artist": "Tha Silent Partner",
+  "album": "(muted) Sessions (Disc 1)",
+  "version": "Archive file mtime=1536659240; md5=adb24d3b3a7ee2baa63dad08a7bd98ec",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0080",
+    "sha256": "2414defc0c5bf94eb5d620cc276c2f8cc88daf6b50eded24fa6eb649744cfd90",
+    "acquired_at": "2026-10-12T10:36:18.222558+00:00",
+    "bytes": 41959
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0080",
+    "evidence_sha256": "2414defc0c5bf94eb5d620cc276c2f8cc88daf6b50eded24fa6eb649744cfd90",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Tha Silent Partner \u2014 sad song; Tha Silent Partner - (muted) Sessions; https://archive.org/download/BSOG0080/01-10-sadsong.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "2709bec9c5b53cda6cd713b3d7f5c55659bc89d5ac484ce1e47b66d737ec9aee"
+}

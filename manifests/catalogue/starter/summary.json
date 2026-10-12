@@ -1,0 +1,71 @@
+{
+  "status": "failed",
+  "assessment": "partial",
+  "job": "starter",
+  "counts": {
+    "requested": 120,
+    "selected": 106,
+    "ready_assets": 72,
+    "distinct_recordings": 72,
+    "artists": 35,
+    "usable_original_seconds": 11152.10133786848,
+    "analysis_seconds": 2160.0,
+    "source_kinds": {
+      "full_track": 70,
+      "excerpt": 2
+    },
+    "known_original_offsets": 0,
+    "duplicate_assets": 0,
+    "data_roles": {
+      "real_recording_discovery": 72
+    },
+    "real_ready_assets": 72,
+    "states": {
+      "ready": 72,
+      "not_ready": 34
+    },
+    "genres": {
+      "(4294967295)": 3,
+      "Downtempo": 1,
+      "Downtempo/Trip-Hop": 4,
+      "Electronic": 1,
+      "Electronic / Trap": 2,
+      "Electropop": 3,
+      "Folk": 8,
+      "Hip-Hop": 25,
+      "Hip-Hop / Holiday": 2,
+      "Improvisation": 4,
+      "Indie": 10,
+      "Pop/Rock": 1,
+      "Punk": 3,
+      "Rock": 1,
+      "Trap": 2,
+      "Trip-Hop": 2
+    }
+  },
+  "stop_reason": "See private CLI report for step/resource details",
+  "operations_this_invocation": 0,
+  "reused_this_invocation": 0,
+  "failures_this_invocation": [],
+  "ledger": {
+    "schema_version": "a03-ledger-1",
+    "created_at": "2026-10-12T10:06:05.776175+00:00",
+    "ceilings": {
+      "download_bytes": 536870912,
+      "attempts": 600,
+      "worker_seconds": 2400
+    },
+    "charged_bytes": 305221282,
+    "received_bytes": 305221282,
+    "http_attempts": 256,
+    "charged_worker_seconds": 2400.257999999987,
+    "pending_read_bytes": 0,
+    "pending_worker_seconds": 0
+  },
+  "managed_bytes": 588612854,
+  "invocation_seconds": 1.9380000000019209,
+  "catalogue_path": "manifests/catalogue/starter",
+  "resume": "Repeat the same command; policy/source selection and cumulative allowances are pinned",
+  "retrieval_quality": "not_measured",
+  "record_hash": "1b34c9b544618c3cefa498b6856ce2a69c0408fbc9eb55a07324b6a1fdc1eabe"
+}

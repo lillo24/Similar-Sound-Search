@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "c8126c0df2ff0aedd94619f5490f312a1bf289d87e954ecfa54c284123b55493",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSMX0157/track:4",
+    "title": "Quick Brown Fox",
+    "artist": "BIT",
+    "album": "lenna was a test image",
+    "version": "Archive file mtime=1491905559; md5=861211aad59170c75fba657655494881",
+    "source_item_id": "BSMX0157",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSMX0157/track:4"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSMX0157/04-QuickBrownFox_192kb.mp3",
+    "source_page": "https://archive.org/details/BSMX0157",
+    "acquired_at": "2026-10-12T10:39:43.361138+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSMX0157",
+      "sha256": "982b9b1e66f4f128601e19abab37a9ac6965b8e323b24350916f40a104c9c705",
+      "acquired_at": "2026-10-12T10:26:09.809559+00:00",
+      "bytes": 16489
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSMX0157",
+      "evidence_sha256": "982b9b1e66f4f128601e19abab37a9ac6965b8e323b24350916f40a104c9c705",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "BIT \u2014 Quick Brown Fox; BIT - lenna was a test image; https://archive.org/download/BSMX0157/04-QuickBrownFox_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "861211aad59170c75fba657655494881",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSMX0157/04-QuickBrownFox.mp3",
+        "expected_md5": "2b2a1384cdccb7f04298cf282899a680",
+        "expected_bytes": 1111040,
+        "provider_original": "04-QuickBrownFox_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "afdebd73cbc4bd1248b8ddf6335ee2c5e33375e0b925dd7a0b8de661a658f239",
+    "file_bytes": 1132814,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 1752677,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 39.74324263038549,
+    "measurement": {
+      "peak_per_channel": [
+        0.6907564401626587,
+        0.749505877494812
+      ],
+      "rms_per_channel": [
+        0.1007630857040975,
+        0.10120248503051105
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 1752677,
+      "sha256": "e7b95711833c1d814739532fcda64b3d3b05a8bf46f30eb582db69126fe128f9"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:afdebd73cbc4bd1248b8ddf6335ee2c5e33375e0b925dd7a0b8de661a658f239",
+    "local_path": "data/audio/catalogue/originals/afdebd73cbc4bd1248b8ddf6335ee2c5e33375e0b925dd7a0b8de661a658f239.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:1152604d6b887bf91c0e5672a6192230528c0bdbf6826f6eba6541bd80b5464d",
+    "local_path": "data/audio/prepared/747bee6c7ee456bbb999494e3703f8696086af0515ae4e9d6c8c2a4a0b75bb12/audio.wav",
+    "sha256": "1152604d6b887bf91c0e5672a6192230528c0bdbf6826f6eba6541bd80b5464d",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        0.6563882231712341,
+        0.7043229937553406
+      ],
+      "rms_per_channel": [
+        0.09780932654675925,
+        0.09843279685284086
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:1152604d6b887bf91c0e5672a6192230528c0bdbf6826f6eba6541bd80b5464d",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 4.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "747bee6c7ee456bbb999494e3703f8696086af0515ae4e9d6c8c2a4a0b75bb12",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:afdebd73cbc4bd1248b8ddf6335ee2c5e33375e0b925dd7a0b8de661a658f239",
+      "input_path": "data/audio/catalogue/originals/afdebd73cbc4bd1248b8ddf6335ee2c5e33375e0b925dd7a0b8de661a658f239.mp3",
+      "input_sha256": "afdebd73cbc4bd1248b8ddf6335ee2c5e33375e0b925dd7a0b8de661a658f239",
+      "output_asset_id": "sha256:1152604d6b887bf91c0e5672a6192230528c0bdbf6826f6eba6541bd80b5464d",
+      "output_sha256": "1152604d6b887bf91c0e5672a6192230528c0bdbf6826f6eba6541bd80b5464d",
+      "output_path": "data/audio/prepared/747bee6c7ee456bbb999494e3703f8696086af0515ae4e9d6c8c2a4a0b75bb12/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 176400,
+        "crop_end_frame": 1499400,
+        "requested_start_seconds": "4",
+        "requested_end_seconds": "34",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "9ac459fa57de95650e89e53bea9403acbd8b56d38f8e81eca790b56305ef4387",
+      "time_map": {
+        "asset_id": "sha256:1152604d6b887bf91c0e5672a6192230528c0bdbf6826f6eba6541bd80b5464d",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 4.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "747bee6c7ee456bbb999494e3703f8696086af0515ae4e9d6c8c2a4a0b75bb12",
+  "prepared_record_hash": "834ed20d10c149e7b476562a623ca63c227e047fcaae905f7160db65f017366c",
+  "prepared_record_path": "data/audio/prepared/747bee6c7ee456bbb999494e3703f8696086af0515ae4e9d6c8c2a4a0b75bb12/record.json",
+  "ingestion_identity": "d032d4d9600e10ded60f7077bcd44d6829e566cd27acf8439268f3aa0dfe0a85",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/c8126c0df2ff0aedd94619f5490f312a1bf289d87e954ecfa54c284123b55493",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "f77d1038197d1775ce26b410ab4d5575e46f71ee7d21d2e71e72a88ea4ed9700"
+}

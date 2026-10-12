@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0154/track:4",
+  "source_item_id": "BSMX0154",
+  "file_name": "04-MamonoToNoTatakai.mp3",
+  "origin_url": "https://archive.org/download/BSMX0154/04-MamonoToNoTatakai.mp3",
+  "source_page": "https://archive.org/details/BSMX0154",
+  "expected_bytes": 4756480,
+  "expected_md5": "e4a507eb68e020028dcd708b77bb6add",
+  "provider_mtime": "1485788346",
+  "provider_original": "04-MamonoToNoTatakai_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 192.0,
+  "title": "Mamono To No Tatakai",
+  "artist": "Cheese N Pot-C",
+  "album": "TA2MI Presents: Cheese N Pot-C N Pals",
+  "version": "Archive file mtime=1485788346; md5=e4a507eb68e020028dcd708b77bb6add",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0154",
+    "sha256": "01cca98bb426268287ce070a41b3bee36a8af80c488c879d286d1dc45c388cb2",
+    "acquired_at": "2026-10-12T10:33:33.589838+00:00",
+    "bytes": 33150
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0154",
+    "evidence_sha256": "01cca98bb426268287ce070a41b3bee36a8af80c488c879d286d1dc45c388cb2",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Cheese N Pot-C \u2014 Mamono To No Tatakai; Cheese N Pot-C - TA2MI Presents: Cheese N Pot-C N Pals; https://archive.org/download/BSMX0154/04-MamonoToNoTatakai.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "42096e4b66a0160cfedc809874ec0dc5840742c93cf132d41215f47770084275"
+}

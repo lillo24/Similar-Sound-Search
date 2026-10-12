@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "920237237b9dde0f1c2671fe823646ac8236a9ac76e45231b0e1c4ff59e11a43",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSMX0127/track:3",
+    "title": "Absurdius Rex (Cutside Remix)",
+    "artist": "Jovian Year",
+    "album": "Absurdius Rex",
+    "version": "Archive file mtime=1461071579; md5=20875520d6329856a2d43f39cf2a36c9",
+    "source_item_id": "BSMX0127",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSMX0127/track:3"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSMX0127/03-AbsurdiusRex_CutsideRemix_192kb.mp3",
+    "source_page": "https://archive.org/details/BSMX0127",
+    "acquired_at": "2026-10-12T11:04:11.818558+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSMX0127",
+      "sha256": "d0f9fc427aba15de271c0ef8967dc59f891af2665eed3f9bab011a630baa71a9",
+      "acquired_at": "2026-10-12T10:32:48.188930+00:00",
+      "bytes": 15537
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSMX0127",
+      "evidence_sha256": "d0f9fc427aba15de271c0ef8967dc59f891af2665eed3f9bab011a630baa71a9",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Jovian Year \u2014 Absurdius Rex (Cutside Remix); Jovian Year - Absurdius Rex; https://archive.org/download/BSMX0127/03-AbsurdiusRex_CutsideRemix_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "20875520d6329856a2d43f39cf2a36c9",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSMX0127/03-AbsurdiusRex_CutsideRemix.mp3",
+        "expected_md5": "22e35680ee9857475ebe5c55a12cafaf",
+        "expected_bytes": 4393472,
+        "provider_original": "03-AbsurdiusRex_CutsideRemix_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "06e212095eb2a007f10f1789de0c1f362f59d0a7f47f90a3c5f47fae7e49bf86",
+    "file_bytes": 5107638,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 7938000,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 180.0,
+    "measurement": {
+      "peak_per_channel": [
+        1.0930278301239014,
+        1.0778183937072754
+      ],
+      "rms_per_channel": [
+        0.33016971102323645,
+        0.35033401059739966
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 7938000,
+      "sha256": "9cd80a990e9c49b8212eb1f8a9128734196a14f1a5ad03b56c820ff7c6658a76"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:06e212095eb2a007f10f1789de0c1f362f59d0a7f47f90a3c5f47fae7e49bf86",
+    "local_path": "data/audio/catalogue/originals/06e212095eb2a007f10f1789de0c1f362f59d0a7f47f90a3c5f47fae7e49bf86.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:14da32302bf5e37e92728c0731e1893db84a623bc2aaa6a5b0ebd9702a74cf44",
+    "local_path": "data/audio/prepared/0de7fce050beca79655c663c38f577a5e19aa18e2e308a8a9f48f2d6ce386e08/audio.wav",
+    "sha256": "14da32302bf5e37e92728c0731e1893db84a623bc2aaa6a5b0ebd9702a74cf44",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        1.0068116188049316,
+        1.0444074869155884
+      ],
+      "rms_per_channel": [
+        0.3449657591619846,
+        0.37997979456309533
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:14da32302bf5e37e92728c0731e1893db84a623bc2aaa6a5b0ebd9702a74cf44",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 75.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "0de7fce050beca79655c663c38f577a5e19aa18e2e308a8a9f48f2d6ce386e08",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:06e212095eb2a007f10f1789de0c1f362f59d0a7f47f90a3c5f47fae7e49bf86",
+      "input_path": "data/audio/catalogue/originals/06e212095eb2a007f10f1789de0c1f362f59d0a7f47f90a3c5f47fae7e49bf86.mp3",
+      "input_sha256": "06e212095eb2a007f10f1789de0c1f362f59d0a7f47f90a3c5f47fae7e49bf86",
+      "output_asset_id": "sha256:14da32302bf5e37e92728c0731e1893db84a623bc2aaa6a5b0ebd9702a74cf44",
+      "output_sha256": "14da32302bf5e37e92728c0731e1893db84a623bc2aaa6a5b0ebd9702a74cf44",
+      "output_path": "data/audio/prepared/0de7fce050beca79655c663c38f577a5e19aa18e2e308a8a9f48f2d6ce386e08/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 3307500,
+        "crop_end_frame": 4630500,
+        "requested_start_seconds": "75",
+        "requested_end_seconds": "105",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "4aeb89fd7d0492f967d0d5b344001159a83ee61302fbc9083422dca06f8808ab",
+      "time_map": {
+        "asset_id": "sha256:14da32302bf5e37e92728c0731e1893db84a623bc2aaa6a5b0ebd9702a74cf44",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 75.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "0de7fce050beca79655c663c38f577a5e19aa18e2e308a8a9f48f2d6ce386e08",
+  "prepared_record_hash": "6519d5ea688fa04502f93c44176435290b19ebadc41756d65da29105fea97931",
+  "prepared_record_path": "data/audio/prepared/0de7fce050beca79655c663c38f577a5e19aa18e2e308a8a9f48f2d6ce386e08/record.json",
+  "ingestion_identity": "08ed511fa331396b985f26ea202172d3ab14fbb391ef3fdf795b0a681a3385ca",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/920237237b9dde0f1c2671fe823646ac8236a9ac76e45231b0e1c4ff59e11a43",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "450d172711416dcc941412ec91ff09b46c0e7a40d472ec9ba883e482f0123668"
+}

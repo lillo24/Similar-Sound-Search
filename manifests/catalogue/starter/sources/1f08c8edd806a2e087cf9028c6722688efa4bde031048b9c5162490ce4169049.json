@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0044/track:1",
+  "source_item_id": "BSOG0044",
+  "file_name": "01-CarlandJeannine-Autopsy_Electric_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0044/01-CarlandJeannine-Autopsy_Electric_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0044",
+  "expected_bytes": 3443617,
+  "expected_md5": "a4d248045681bd7c915b12c07b3c10a4",
+  "provider_mtime": "1424787737",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 114.18,
+  "title": "Autopsy (Electric)",
+  "artist": "Carl and Jeannine",
+  "album": "Trophies",
+  "version": "Archive file mtime=1424787737; md5=a4d248045681bd7c915b12c07b3c10a4",
+  "genre": "Folk",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0044",
+    "sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+    "acquired_at": "2026-10-12T10:25:41.663802+00:00",
+    "bytes": 27557
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0044",
+    "evidence_sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Carl and Jeannine \u2014 Autopsy (Electric); Mr. & Mrs. Smith - Trophies; https://archive.org/download/BSOG0044/01-CarlandJeannine-Autopsy_Electric_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0044/01-CarlandJeannine-Autopsy_Electric.mp3",
+      "expected_md5": "e00fadd1855cffcbfa5cac58ba5353cc",
+      "expected_bytes": 2289664,
+      "provider_original": "01-CarlandJeannine-Autopsy_Electric_192kb.mp3"
+    }
+  ],
+  "record_hash": "ed0ffe5e3087dd81fcb96fbb54c3d8fd5cac6d08cd6b5303d404c212a8127922"
+}

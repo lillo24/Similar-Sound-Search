@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BS450041/track:4",
+  "source_item_id": "BS450041",
+  "file_name": "04-ShittinChicklets_192kb.mp3",
+  "origin_url": "https://archive.org/download/BS450041/04-ShittinChicklets_192kb.mp3",
+  "source_page": "https://archive.org/details/BS450041",
+  "expected_bytes": 3368391,
+  "expected_md5": "f2cf566dabf06ced50f5e61092f87485",
+  "provider_mtime": "1542472370",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 104.25,
+  "title": "Shittin' Chicklets",
+  "artist": "Pot-C",
+  "album": "SIX ONNA 7 (Part 1)",
+  "version": "Archive file mtime=1542472370; md5=f2cf566dabf06ced50f5e61092f87485",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BS450041",
+    "sha256": "7be85f688635ce7f85e339b2e77675b2c483d8a0fcd94ed7ef5ddd799858317b",
+    "acquired_at": "2026-10-12T10:22:06.322461+00:00",
+    "bytes": 18509
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BS450041",
+    "evidence_sha256": "7be85f688635ce7f85e339b2e77675b2c483d8a0fcd94ed7ef5ddd799858317b",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Pot-C \u2014 Shittin' Chicklets; Pot-C - SIX ONNA 7 (Part 1); https://archive.org/download/BS450041/04-ShittinChicklets_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BS450041/04-ShittinChicklets.mp3",
+      "expected_md5": "b20a008d9a5e2cc24cceb253cf803d37",
+      "expected_bytes": 2688506,
+      "provider_original": "04-ShittinChicklets_192kb.mp3"
+    }
+  ],
+  "record_hash": "b95f931bcebb7d0e593786a69ba5792a76b9c076cfd2a0c36b5be71ebc90d2d2"
+}

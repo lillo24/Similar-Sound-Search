@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0069/track:8",
+  "source_item_id": "BSOG0069",
+  "file_name": "08-ComeKickIt_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0069/08-ComeKickIt_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0069",
+  "expected_bytes": 5214785,
+  "expected_md5": "3f6bb3ea7b22bbbe4246789c651340c1",
+  "provider_mtime": "1500058694",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 168.88,
+  "title": "Come Kick It",
+  "artist": "Luck & Doc",
+  "album": "Live At The Wake",
+  "version": "Archive file mtime=1500058694; md5=3f6bb3ea7b22bbbe4246789c651340c1",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0069",
+    "sha256": "48e992fb936bbae6999760ed4770593a81a4591dd641efc762a86e9f74f3e72f",
+    "acquired_at": "2026-10-12T10:25:59.800432+00:00",
+    "bytes": 23783
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0069",
+    "evidence_sha256": "48e992fb936bbae6999760ed4770593a81a4591dd641efc762a86e9f74f3e72f",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Luck & Doc \u2014 Come Kick It; Luck & Doc - Live At The Wake; https://archive.org/download/BSOG0069/08-ComeKickIt_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0069/08-ComeKickIt.mp3",
+      "expected_md5": "40122aa9c2b365963822a134ccb8e509",
+      "expected_bytes": 4267520,
+      "provider_original": "08-ComeKickIt_192kb.mp3"
+    }
+  ],
+  "record_hash": "c76881702885ca6b95b25c967d46331617a887534b7a2f2a37908751c2a98066"
+}

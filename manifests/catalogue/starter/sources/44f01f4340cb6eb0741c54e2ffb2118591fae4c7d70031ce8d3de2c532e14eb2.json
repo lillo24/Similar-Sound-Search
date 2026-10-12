@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0155/track:4",
+  "source_item_id": "BSMX0155",
+  "file_name": "04-DinnerPlans_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0155/04-DinnerPlans_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0155",
+  "expected_bytes": 4687301,
+  "expected_md5": "517262e2d9bd8ab4f61385b7afe66517",
+  "provider_mtime": "1491310340",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 153.55,
+  "title": "Dinner Plans",
+  "artist": "Bralitz",
+  "album": "Bralitz",
+  "version": "Archive file mtime=1491310340; md5=517262e2d9bd8ab4f61385b7afe66517",
+  "genre": "Indie",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0155",
+    "sha256": "db200bec41671db22ebe9f8c32f6031614cd00cbcce3ad2748bbf264648f9b83",
+    "acquired_at": "2026-10-12T10:24:33.929544+00:00",
+    "bytes": 14286
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0155",
+    "evidence_sha256": "db200bec41671db22ebe9f8c32f6031614cd00cbcce3ad2748bbf264648f9b83",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Bralitz \u2014 Dinner Plans; Bralitz - Bralitz; https://archive.org/download/BSMX0155/04-DinnerPlans_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0155/04-DinnerPlans.mp3",
+      "expected_md5": "f098bdebe5e9f2c4595f4dff4172fded",
+      "expected_bytes": 3097600,
+      "provider_original": "04-DinnerPlans_192kb.mp3"
+    }
+  ],
+  "record_hash": "9fc9e049e6f9012f5c5eba8b42067440eb91e9f06f417365535bf7fa8fb1cd1e"
+}

@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0120/track:3",
+  "source_item_id": "BSMX0120",
+  "file_name": "03-BlueSteel_FeaturingJoeyRipps_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0120/03-BlueSteel_FeaturingJoeyRipps_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0120",
+  "expected_bytes": 3989275,
+  "expected_md5": "abc43acdc30a76fb6433c08679de572a",
+  "provider_mtime": "1448974704",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 143.49,
+  "title": "Blue Steel (Featuring Joey Ripps)",
+  "artist": "Ant The Symbol",
+  "album": "We Can Talk About That (Featuring Johnny Ciggs)",
+  "version": "Archive file mtime=1448974704; md5=abc43acdc30a76fb6433c08679de572a",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0120",
+    "sha256": "b25056342044300b9fed11fd73197081de01e84fb7317d9f2fb2ee0a35c684a5",
+    "acquired_at": "2026-10-12T10:20:29.139821+00:00",
+    "bytes": 16468
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0120",
+    "evidence_sha256": "b25056342044300b9fed11fd73197081de01e84fb7317d9f2fb2ee0a35c684a5",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Ant The Symbol \u2014 Blue Steel (Featuring Joey Ripps); Ant The Symbol - We Can Talk About That (Featuring Johnny Ciggs); https://archive.org/download/BSMX0120/03-BlueSteel_FeaturingJoeyRipps_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0120/03-BlueSteel_FeaturingJoeyRipps.mp3",
+      "expected_md5": "7f24e0687aa6a5167349186d2b9d97c8",
+      "expected_bytes": 3772928,
+      "provider_original": "03-BlueSteel_FeaturingJoeyRipps_192kb.mp3"
+    }
+  ],
+  "record_hash": "7fb557711fd9e00dd72c6cd1dee6d2574bee61df0f7b366126fbb203ef92359b"
+}

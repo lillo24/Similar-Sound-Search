@@ -1,0 +1,60 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0075/track:6",
+  "source_item_id": "BSOG0075",
+  "file_name": "02-06-KonamiCodeInstrumental_Snippet_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0075/02-06-KonamiCodeInstrumental_Snippet_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0075",
+  "expected_bytes": 3202968,
+  "expected_md5": "a330ccf08fd50a7ac046d376c93925ff",
+  "provider_mtime": "1519125178",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 90.98,
+  "title": "Konami Code Instrumental (Snippet)",
+  "artist": "C da 76er",
+  "album": "Out of Necessity (Disc 2)",
+  "version": "Archive file mtime=1519125178; md5=a330ccf08fd50a7ac046d376c93925ff",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0075",
+    "sha256": "7bb49053e06995f1691f9178724d059b2a61100806e3125ee8924279107f8daa",
+    "acquired_at": "2026-10-12T10:23:57.312509+00:00",
+    "bytes": 98256
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0075",
+    "evidence_sha256": "7bb49053e06995f1691f9178724d059b2a61100806e3125ee8924279107f8daa",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "C da 76er \u2014 Konami Code Instrumental (Snippet); C da 76er - Out of Necessity; https://archive.org/download/BSOG0075/02-06-KonamiCodeInstrumental_Snippet_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "excerpt",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider track title explicitly labels a snippet/preview/excerpt; original-master start/alignment is unknown.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0075/01-06-ParkBenchInstrumental_Snippet_192kb.mp3",
+      "expected_md5": "0f364a8c2155ce711ceb393fb1910005",
+      "expected_bytes": 3323968,
+      "provider_original": null
+    },
+    {
+      "origin_url": "https://archive.org/download/BSOG0075/01-06-ParkBenchInstrumental_Snippet.mp3",
+      "expected_md5": "cda6e8ee1b18d0778180d439bb8bcb79",
+      "expected_bytes": 2117058,
+      "provider_original": "01-06-ParkBenchInstrumental_Snippet_192kb.mp3"
+    },
+    {
+      "origin_url": "https://archive.org/download/BSOG0075/02-06-KonamiCodeInstrumental_Snippet.mp3",
+      "expected_md5": "72f8eca6e92b19c90ada4830037b82d2",
+      "expected_bytes": 2331395,
+      "provider_original": "02-06-KonamiCodeInstrumental_Snippet_192kb.mp3"
+    }
+  ],
+  "record_hash": "94d3e4f94afe1518855d3701c8ec19bc4526e05bb3d9806df1d2c183f524f183"
+}

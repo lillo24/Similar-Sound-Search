@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0118/track:2",
+  "source_item_id": "BSMX0118",
+  "file_name": "02-WhatDoIDo_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSMX0118/02-WhatDoIDo_192kb.mp3",
+  "source_page": "https://archive.org/details/BSMX0118",
+  "expected_bytes": 3864843,
+  "expected_md5": "d4f99b92a09ecbc84a8a2e325e50b94f",
+  "provider_mtime": "1436846196",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 112.12,
+  "title": "What Do I Do?",
+  "artist": "Armie And The Strutters",
+  "album": "Fortress Of Suckitude EP",
+  "version": "Archive file mtime=1436846196; md5=d4f99b92a09ecbc84a8a2e325e50b94f",
+  "genre": "Punk",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0118",
+    "sha256": "3f0999f2c652d2219a7e67780f6dd0e2b2f4659a868133e9a96bcbf0673904bd",
+    "acquired_at": "2026-10-12T10:21:43.871864+00:00",
+    "bytes": 12913
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0118",
+    "evidence_sha256": "3f0999f2c652d2219a7e67780f6dd0e2b2f4659a868133e9a96bcbf0673904bd",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Armie And The Strutters \u2014 What Do I Do?; Armie And The Strutters - Fortress Of Suckitude EP; https://archive.org/download/BSMX0118/02-WhatDoIDo_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSMX0118/02-WhatDoIDo.mp3",
+      "expected_md5": "b694ee7806e7ec17c5bf5296e688a676",
+      "expected_bytes": 3214848,
+      "provider_original": "02-WhatDoIDo_192kb.mp3"
+    }
+  ],
+  "record_hash": "3f559ed6738f41e11df1ffad0fb66c8c9315d361479a531b023a4b050ae0ff50"
+}

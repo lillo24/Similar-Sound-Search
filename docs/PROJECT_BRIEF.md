@@ -32,7 +32,7 @@ Keep original audio unchanged. Record provenance and permitted use; metadata acc
 | --- | --- | --- |
 | A01 | Target and success definition; repository foundation | Complete; documentation and workspace |
 | A02 | Runtime, inputs, and resource limits | Complete; bounded CPU WAV/FLAC pipeline, see [runtime](RUNTIME.md) |
-| A03 | Automated starter catalogue | Uses A02 access and resource evidence |
+| A03 | Automated starter catalogue | Implemented; real bounded blocSonic acquisition, [partial catalogue evidence](../reports/A03_CATALOGUE.md) |
 | A04 | Benchmarks and controlled test generation | Uses A02 runtime; keeps evaluation audio separate from A03 discovery audio |
 | A05 | Candidate matchers and comparison harness | Uses A04 protocols and available A02 resources |
 | A06 | First complete search baseline with playable passages | Integrates A03 catalogue and A05 matcher; internal report, no user rating gate |
@@ -42,25 +42,25 @@ Keep original audio unchanged. Record provenance and permitted use; metadata acc
 | E01–E03 | Broader catalogue sources, measured optimisation, and maintenance | Expands the bounded prototype with explicit resource costs |
 | F01–F03 | Conditional learned ranking, representation fine-tuning, and future rhythm target | Optional improvements after measured need; not prerequisites |
 
-Dependent B/C/D engineering may interleave without changing identifiers or adding listening/approval gates. A01 and A02 are implemented; later prompts define their own work. The D04 goal is about ten distinct-song candidates, timestamps, direct playback, and an evidence report with optional feedback. Report weak or fewer candidates honestly rather than padding apparent successes.
+Dependent B/C/D engineering may interleave without changing identifiers or adding listening/approval gates. A01–A03 are implemented; A03's real catalogue remains explicitly partial against its requested count. A04 is next; later prompts define their own work. The D04 goal is about ten distinct-song candidates, timestamps, direct playback, and an evidence report with optional feedback. Report weak or fewer candidates honestly rather than padding apparent successes.
 
 ## Workspace layout
 
 | Location | Purpose | Version-control policy |
 | --- | --- | --- |
-| `src/` | Python audio input/runtime core; [source map](../src/README.md) | Source versioned; A02 has no search/model code |
+| `src/` | Shared audio input/runtime and bounded catalogue ingestion; [source map](../src/README.md) | Source versioned; no search/model code |
 | `config/` | Reproducible resource/input contracts; [config map](../config/README.md) | Versioned without secrets; `config/local/` and `*.local.*` ignored |
 | `manifests/references/` | Reference records | Sanitized metadata versioned; initial Loulou record is unverified |
-| `manifests/catalogue/` | Future source identities, provenance, hashes, and duplicate groups | Sanitized records versioned |
+| `manifests/catalogue/` | Frozen source descriptors, ready identities, provenance, hashes, and duplicate groups | Sanitized records versioned; audio availability verified locally |
 | `manifests/evaluation/` | Future dataset versions, splits, seeds, and frozen protocols | Sanitized reproducibility records versioned |
 | `manifests/private/` | Private paths, access details, or sensitive metadata | Ignored |
-| `data/audio/` | Local originals, A02 `engineering/` fixtures and `prepared/` bundles; later discovery/evaluation audio | Contents ignored except directory markers |
+| `data/audio/` | Immutable catalogue originals, separate engineering fixtures and prepared bundles; later evaluation audio | Contents ignored except directory markers |
 | `data/features/`, `data/indexes/` | Derived features and versioned-by-key indexes | Contents ignored except directory markers |
 | `data/models/`, `data/runs/` | Model weights, raw run output, and temporary products | Contents ignored except directory markers |
 | `reports/` | Shareable evidence summaries and selected reproducibility records | Versioned after privacy review; `reports/local/` ignored |
 | `docs/`, `history-implementations/` | Durable context and archived task prompts | Versioned |
 
-Remaining directory markers reserve later-stage locations. A02's runtime is implemented in source, with private outputs generated locally. Git exclusions apply only to untracked files and are not a substitute for reviewing a diff before publishing.
+Remaining directory markers reserve later-stage locations. A02's runtime and A03's acquisition are implemented in source, with audio/raw source snapshots/ledgers generated privately. Git exclusions apply only to untracked files and are not a substitute for reviewing a diff before publishing.
 
 ## Context and evidence
 

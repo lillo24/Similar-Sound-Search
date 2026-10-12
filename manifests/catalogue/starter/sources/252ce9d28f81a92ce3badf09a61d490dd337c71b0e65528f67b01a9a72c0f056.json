@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0057/track:7",
+  "source_item_id": "BSOG0057",
+  "file_name": "07-WhoKilledTheCactus.mp3",
+  "origin_url": "https://archive.org/download/BSOG0057/07-WhoKilledTheCactus.mp3",
+  "source_page": "https://archive.org/details/BSOG0057",
+  "expected_bytes": 3651072,
+  "expected_md5": "cee5cccfd098847d0c9ccf90fb06f9cf",
+  "provider_mtime": "1469541376",
+  "provider_original": "07-WhoKilledTheCactus_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 187.0,
+  "title": "Who Killed The Cactus?",
+  "artist": "The Impossebulls",
+  "album": "The Devils You Know",
+  "version": "Archive file mtime=1469541376; md5=cee5cccfd098847d0c9ccf90fb06f9cf",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0057",
+    "sha256": "e438b487daea905e5113cf4e35a2b0b8f1abcef74bd70b53adec2c32484c9f2f",
+    "acquired_at": "2026-10-12T10:34:00.450677+00:00",
+    "bytes": 27628
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0057",
+    "evidence_sha256": "e438b487daea905e5113cf4e35a2b0b8f1abcef74bd70b53adec2c32484c9f2f",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "The Impossebulls \u2014 Who Killed The Cactus?; The Impossebulls - The Devils You Know; https://archive.org/download/BSOG0057/07-WhoKilledTheCactus.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "61af468d804e50c18fc9e4c8fb4391e78f9fdfeeb6dd369af6b7b0d8a079a6c8"
+}

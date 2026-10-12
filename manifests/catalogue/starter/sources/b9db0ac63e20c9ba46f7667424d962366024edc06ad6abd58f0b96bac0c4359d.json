@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0063/track:8",
+  "source_item_id": "BSOG0063",
+  "file_name": "08-OnTilDawn_Interlude_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0063/08-OnTilDawn_Interlude_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0063",
+  "expected_bytes": 2263304,
+  "expected_md5": "baf43a75764968a8a27d5adea3d81bd3",
+  "provider_mtime": "1492506863",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 42.19,
+  "title": "On Til Dawn (Interlude)",
+  "artist": "Timezone LaFontaine",
+  "album": "Soul Night",
+  "version": "Archive file mtime=1492506863; md5=baf43a75764968a8a27d5adea3d81bd3",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0063",
+    "sha256": "2ff298354c266a0ad47d5880ce4c9473ae1f9e10effc87745de2cf1a62dd65b0",
+    "acquired_at": "2026-10-12T10:25:35.817455+00:00",
+    "bytes": 27647
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0063",
+    "evidence_sha256": "2ff298354c266a0ad47d5880ce4c9473ae1f9e10effc87745de2cf1a62dd65b0",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Timezone LaFontaine \u2014 On Til Dawn (Interlude); Timezone LaFontaine - Soul Night; https://archive.org/download/BSOG0063/08-OnTilDawn_Interlude_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0063/08-OnTilDawn_Interlude.mp3",
+      "expected_md5": "42e31e99e88742a73efc42f37b799f7b",
+      "expected_bytes": 1391616,
+      "provider_original": "08-OnTilDawn_Interlude_192kb.mp3"
+    }
+  ],
+  "record_hash": "c10b440574d062bbd55223f7d7439cb7b1cd1ef7a5616a5a0dfd6847aabf7d9a"
+}

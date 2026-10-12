@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0128/track:2",
+  "source_item_id": "BSMX0128",
+  "file_name": "02-Untiltheendoftheworld_TimezoneLaFontaineRemix.mp3",
+  "origin_url": "https://archive.org/download/BSMX0128/02-Untiltheendoftheworld_TimezoneLaFontaineRemix.mp3",
+  "source_page": "https://archive.org/details/BSMX0128",
+  "expected_bytes": 5024768,
+  "expected_md5": "996039af429e588f836fa91339b31837",
+  "provider_mtime": "1461674893",
+  "provider_original": "02-Untiltheendoftheworld_TimezoneLaFontaineRemix_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 195.0,
+  "title": "Until the end of the world (Timezone LaFontaine Remix)",
+  "artist": "Daily Khaos delivery",
+  "album": "Cosmic yell",
+  "version": "Archive file mtime=1461674893; md5=996039af429e588f836fa91339b31837",
+  "genre": "Pop/Rock",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0128",
+    "sha256": "6ac92349be934521e371d5aeb5e203ad5b2c1850e2569a93e17561ad3903e143",
+    "acquired_at": "2026-10-12T10:20:49.241555+00:00",
+    "bytes": 18621
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0128",
+    "evidence_sha256": "6ac92349be934521e371d5aeb5e203ad5b2c1850e2569a93e17561ad3903e143",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Daily Khaos delivery \u2014 Until the end of the world (Timezone LaFontaine Remix); Daily Khaos delivery - Cosmic yell; https://archive.org/download/BSMX0128/02-Untiltheendoftheworld_TimezoneLaFontaineRemix.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "8e294410a66c442d07e480420032139767302f2e165748113245c6a2ac4ea51c"
+}

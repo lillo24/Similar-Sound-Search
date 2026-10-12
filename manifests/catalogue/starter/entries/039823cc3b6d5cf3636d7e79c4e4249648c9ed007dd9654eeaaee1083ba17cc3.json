@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.3",
+  "kind": "catalogue_asset",
+  "entry_id": "039823cc3b6d5cf3636d7e79c4e4249648c9ed007dd9654eeaaee1083ba17cc3",
+  "state": "ready",
+  "data_role": "real_recording_discovery",
+  "recording": {
+    "provider_recording_id": "BSOG0044/track:8",
+    "title": "Autopsy (While Doin' Dishes)",
+    "artist": "Jeannine Lyons",
+    "album": "Trophies",
+    "version": "Archive file mtime=1424787751; md5=1ff039b8ea480153e273e072a3c37fa1",
+    "source_item_id": "BSOG0044",
+    "known_family_id": null,
+    "identity_status": "verified",
+    "identity_evidence": "Provider file/track association in SHA256-pinned metadata snapshot",
+    "external_ids": {
+      "internet_archive": "BSOG0044/track:8"
+    }
+  },
+  "provider": "internet_archive",
+  "acquisition": {
+    "origin_url": "https://archive.org/download/BSOG0044/08-JeannineLyons-Autopsy_WhileDoinDishes_192kb.mp3",
+    "source_page": "https://archive.org/details/BSOG0044",
+    "acquired_at": "2026-10-12T10:53:10.364414+00:00",
+    "snapshot": {
+      "url": "https://archive.org/metadata/BSOG0044",
+      "sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+      "acquired_at": "2026-10-12T10:25:41.663802+00:00",
+      "bytes": 27557
+    },
+    "rights": {
+      "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "audio_licence": "CC BY-NC-SA 3.0",
+      "evidence_url": "https://archive.org/metadata/BSOG0044",
+      "evidence_sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+      "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+      "attribution": "Jeannine Lyons \u2014 Autopsy (While Doin' Dishes); Mr. & Mrs. Smith - Trophies; https://archive.org/download/BSOG0044/08-JeannineLyons-Autopsy_WhileDoinDishes_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+    },
+    "expected_md5": "1ff039b8ea480153e273e072a3c37fa1",
+    "remote_freshness": "Pinned metadata/file snapshot; --refresh checks payload; unchanged resumes do not poll remote",
+    "available_aliases": [
+      {
+        "origin_url": "https://archive.org/download/BSOG0044/08-JeannineLyons-Autopsy_WhileDoinDishes.mp3",
+        "expected_md5": "3e2d1a3c4479ed06ce51150a8361ca67",
+        "expected_bytes": 1779200,
+        "provider_original": "08-JeannineLyons-Autopsy_WhileDoinDishes_192kb.mp3"
+      }
+    ]
+  },
+  "source_asset": {
+    "sha256": "2f6e5907d8599cbe5ba7e8546531ebe3b15c308a35e88d7fc9d53107a4727199",
+    "file_bytes": 3174041,
+    "format": "MP3",
+    "subtype": "MPEG_LAYER_III",
+    "sample_count": 4538013,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 102.90278911564626,
+    "measurement": {
+      "peak_per_channel": [
+        0.9371527433395386,
+        0.9412807822227478
+      ],
+      "rms_per_channel": [
+        0.11304797370393248,
+        0.11599181369876073
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    },
+    "canonical_pcm": {
+      "schema_version": "sss-pcm-f32le-1",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "sample_count": 4538013,
+      "sha256": "7b386fbda5127e153946eeb07c0362bd4bf43db87f26a52fd92b920a300ee60c"
+    },
+    "decoder": {
+      "library": "SoundFile",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2",
+      "route": "full_sequential_float32",
+      "time_coordinate": "decoded_available_file",
+      "compressed_seek_verified": false,
+      "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+    },
+    "asset_id": "sha256:2f6e5907d8599cbe5ba7e8546531ebe3b15c308a35e88d7fc9d53107a4727199",
+    "local_path": "data/audio/catalogue/originals/2f6e5907d8599cbe5ba7e8546531ebe3b15c308a35e88d7fc9d53107a4727199.mp3",
+    "kind": "full_track"
+  },
+  "analysis_derivative": {
+    "asset_id": "sha256:c42133eb9ac76dce916b1736df78f75a1f12c4efcf50078c789fcdc451dcae92",
+    "local_path": "data/audio/prepared/74c2ade47da863d515b716e0d700af06ab6c4c84193927f5f7910a094dc68a05/audio.wav",
+    "sha256": "c42133eb9ac76dce916b1736df78f75a1f12c4efcf50078c789fcdc451dcae92",
+    "file_bytes": 3840058,
+    "sample_count": 480000,
+    "sample_rate_hz": 16000,
+    "channels": 2,
+    "duration_seconds": 30.0,
+    "format": "WAV",
+    "subtype": "FLOAT",
+    "measurement": {
+      "peak_per_channel": [
+        0.9370543360710144,
+        0.948525071144104
+      ],
+      "rms_per_channel": [
+        0.11713976243626517,
+        0.12016835416891729
+      ],
+      "silent": false,
+      "silence_peak_threshold": 1e-12
+    }
+  },
+  "timestamp_mapping": {
+    "asset_id": "sha256:c42133eb9ac76dce916b1736df78f75a1f12c4efcf50078c789fcdc451dcae92",
+    "status": "verified_file_mapping",
+    "basis": "file",
+    "original_recording_offset_seconds": null,
+    "offset_evidence": null,
+    "segments": [
+      {
+        "asset_start_seconds": 0,
+        "asset_end_seconds": 30.0,
+        "source_start_seconds": 36.0,
+        "source_seconds_per_asset_second": 1
+      }
+    ],
+    "unmapped_tail_seconds": 0
+  },
+  "processing_history": [
+    {
+      "operation_id": "74c2ade47da863d515b716e0d700af06ab6c4c84193927f5f7910a094dc68a05",
+      "type": "crop_channel_resample",
+      "input_asset_id": "sha256:2f6e5907d8599cbe5ba7e8546531ebe3b15c308a35e88d7fc9d53107a4727199",
+      "input_path": "data/audio/catalogue/originals/2f6e5907d8599cbe5ba7e8546531ebe3b15c308a35e88d7fc9d53107a4727199.mp3",
+      "input_sha256": "2f6e5907d8599cbe5ba7e8546531ebe3b15c308a35e88d7fc9d53107a4727199",
+      "output_asset_id": "sha256:c42133eb9ac76dce916b1736df78f75a1f12c4efcf50078c789fcdc451dcae92",
+      "output_sha256": "c42133eb9ac76dce916b1736df78f75a1f12c4efcf50078c789fcdc451dcae92",
+      "output_path": "data/audio/prepared/74c2ade47da863d515b716e0d700af06ab6c4c84193927f5f7910a094dc68a05/audio.wav",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "parameters": {
+        "channel_policy": "preserve",
+        "crop_start_frame": 1587600,
+        "crop_end_frame": 2910600,
+        "requested_start_seconds": "36",
+        "requested_end_seconds": "66",
+        "crop_rounding": "floor_start_ceil_end",
+        "input_sample_rate_hz": 44100,
+        "output_sample_rate_hz": 16000,
+        "resample_up": 160,
+        "resample_down": 441,
+        "resample_window": [
+          "kaiser",
+          5.0
+        ],
+        "resample_padtype": "constant_zero",
+        "output_format": "WAV/FLOAT",
+        "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+      },
+      "config_hash": "5da90dfff459488f7c4093a294516a424ef3d12e14242b329d9e32edf8164eae",
+      "time_map": {
+        "asset_id": "sha256:c42133eb9ac76dce916b1736df78f75a1f12c4efcf50078c789fcdc451dcae92",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 30.0,
+            "source_start_seconds": 36.0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      }
+    }
+  ],
+  "preparation_key": "74c2ade47da863d515b716e0d700af06ab6c4c84193927f5f7910a094dc68a05",
+  "prepared_record_hash": "1ea7151d56af6be66502a3cfd92fe7aebb48217483ff1b224bec5ee050bff415",
+  "prepared_record_path": "data/audio/prepared/74c2ade47da863d515b716e0d700af06ab6c4c84193927f5f7910a094dc68a05/record.json",
+  "ingestion_identity": "36458dfcbbea0ed053bcc807579fb5b3fbd7783eea90cfd1d9256e41bee74c4d",
+  "tools": {
+    "pipeline": "a02-preparation-3",
+    "package": "0.3.0",
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "soundfile": "0.13.1",
+    "libsndfile": "1.2.2"
+  },
+  "duplicate_group_ref": "../groups.json#/entry_groups/039823cc3b6d5cf3636d7e79c4e4249648c9ed007dd9654eeaaee1083ba17cc3",
+  "unknowns": [
+    "No timbre/relevance label; no A04 split; unknown alternate encodings/near-duplicates remain undetected"
+  ],
+  "record_hash": "a353ba51809586412457ba029cad48c4df59258ff9dc60700c22cc07dffac50d"
+}

@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0044/track:3",
+  "source_item_id": "BSOG0044",
+  "file_name": "03-MrAndMrsSmith-BigJetWings.mp3",
+  "origin_url": "https://archive.org/download/BSOG0044/03-MrAndMrsSmith-BigJetWings.mp3",
+  "source_page": "https://archive.org/details/BSOG0044",
+  "expected_bytes": 4295680,
+  "expected_md5": "7da5315c9b5720e7f08506f06cf75dfc",
+  "provider_mtime": "1424788121",
+  "provider_original": "03-MrAndMrsSmith-BigJetWings_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 201.0,
+  "title": "Big Jet Wings",
+  "artist": "Mr. & Mrs. Smith",
+  "album": "Trophies",
+  "version": "Archive file mtime=1424788121; md5=7da5315c9b5720e7f08506f06cf75dfc",
+  "genre": "Folk",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0044",
+    "sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+    "acquired_at": "2026-10-12T10:25:41.663802+00:00",
+    "bytes": 27557
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0044",
+    "evidence_sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Mr. & Mrs. Smith \u2014 Big Jet Wings; Mr. & Mrs. Smith - Trophies; https://archive.org/download/BSOG0044/03-MrAndMrsSmith-BigJetWings.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "6c443071685aa7ceacf3c82b1f3a45793213b19196509c63213aa44ca5a0c926"
+}

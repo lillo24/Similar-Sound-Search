@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSXE0019/track:10",
+  "source_item_id": "BSXE0019",
+  "file_name": "02-10-ExitStageLeft_PreviouslyUnreleasedOriginalTake_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSXE0019/02-10-ExitStageLeft_PreviouslyUnreleasedOriginalTake_192kb.mp3",
+  "source_page": "https://archive.org/details/BSXE0019",
+  "expected_bytes": 3594122,
+  "expected_md5": "f497a9a1570c2ad1ca01e7c6d8b02db9",
+  "provider_mtime": "1529404508",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 117.81,
+  "title": "Exit Stage Left (Previously Unreleased Original Take)",
+  "artist": "Mported Flows",
+  "album": "Sensitive Information XE",
+  "version": "Archive file mtime=1529404508; md5=f497a9a1570c2ad1ca01e7c6d8b02db9",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSXE0019",
+    "sha256": "2ae1d0296d2b5650a3eea8e444d766df8d6b29379b5eee39ac88c65d498b6aa5",
+    "acquired_at": "2026-10-12T10:24:01.793059+00:00",
+    "bytes": 51353
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BSXE0019",
+    "evidence_sha256": "2ae1d0296d2b5650a3eea8e444d766df8d6b29379b5eee39ac88c65d498b6aa5",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Mported Flows \u2014 Exit Stage Left (Previously Unreleased Original Take); Mported Flows - Sensitive Information XE; https://archive.org/download/BSXE0019/02-10-ExitStageLeft_PreviouslyUnreleasedOriginalTake_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSXE0019/02-10-ExitStageLeft_PreviouslyUnreleasedOriginalTake.mp3",
+      "expected_md5": "26397897fd2ccded89e8fee7264ced13",
+      "expected_bytes": 2595670,
+      "provider_original": "02-10-ExitStageLeft_PreviouslyUnreleasedOriginalTake_192kb.mp3"
+    }
+  ],
+  "record_hash": "05b42aed6e28b47f3d0cdd2e59fc98cc619a150790ea288608b09992a66fd105"
+}

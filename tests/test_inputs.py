@@ -73,8 +73,8 @@ class InputTests(AudioCase):
     def test_corrupt_unsupported_missing_and_wrong_container(self):
         corrupt = self.root / "corrupt.wav"
         corrupt.write_bytes(b"RIFFinvalid")
-        unsupported = self.root / "input.mp3"
-        unsupported.write_bytes(b"not really an mp3")
+        unsupported = self.root / "input.ogg"
+        unsupported.write_bytes(b"not really an ogg")
         wrong = self.root / "wrong.flac"
         wrong.write_bytes(self.wav().read_bytes())
         for path, error in (

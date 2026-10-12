@@ -78,6 +78,22 @@ def atomic_json(path, value):
         Path(name).unlink(missing_ok=True)
 
 
+def bounded_json(path, value, budget):
+    """Catalogue metadata uses the same 1 MiB reader contract and managed disk budget."""
+    if is_link(path):
+        raise InputError(f"metadata {path}: symlink output refused")
+    path = contained(path, budget.root)
+    size = len((json.dumps(value, indent=2, allow_nan=False) + "\n").encode("utf-8"))
+    if size > 1024 * 1024:
+        raise InputError(f"metadata {path.name}: exceeds 1 MiB reader limit")
+    budget.reserve(size + 4096)
+    if hasattr(budget, "track_file"):
+        budget.track_file(path)
+    atomic_json(path, value)
+    if hasattr(budget, "account_file"):
+        budget.account_file(path, size)
+
+
 def contained(path, root):
     path = Path(path).resolve()
     if not path.is_relative_to(Path(root).resolve()):
@@ -86,9 +102,11 @@ def contained(path, root):
 
 
 @contextmanager
-def project_lock(root):
+def project_lock(root, name=".a02.lock"):
     """OS lock releases on exit/crash; the persistent byte is not a stale lock."""
-    path = contained(Path(root) / "data/runs/.a02.lock", root)
+    if name not in {".a02.lock", ".a03-worker.lock"}:
+        raise InputError("project lock: unsupported internal lock name")
+    path = contained(Path(root) / "data/runs" / name, root)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a+b") as stream:
         if path.stat().st_size == 0:

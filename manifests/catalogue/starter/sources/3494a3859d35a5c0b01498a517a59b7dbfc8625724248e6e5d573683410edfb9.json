@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0044/track:4",
+  "source_item_id": "BSOG0044",
+  "file_name": "04-MrAndMrsSmith-RecordsOnADirtyShelf_192kb.mp3",
+  "origin_url": "https://archive.org/download/BSOG0044/04-MrAndMrsSmith-RecordsOnADirtyShelf_192kb.mp3",
+  "source_page": "https://archive.org/details/BSOG0044",
+  "expected_bytes": 2479391,
+  "expected_md5": "61659740df2663b135a891f6a869c49a",
+  "provider_mtime": "1424787775",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 74.0,
+  "title": "Records On A Dirty Shelf",
+  "artist": "Mr. & Mrs. Smith",
+  "album": "Trophies",
+  "version": "Archive file mtime=1424787775; md5=61659740df2663b135a891f6a869c49a",
+  "genre": "Folk",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0044",
+    "sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+    "acquired_at": "2026-10-12T10:25:41.663802+00:00",
+    "bytes": 27557
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0044",
+    "evidence_sha256": "bb570a4de85e65b75fe74b5f9080294e975ec35d686c8c83084e8fe2df3e8800",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Mr. & Mrs. Smith \u2014 Records On A Dirty Shelf; Mr. & Mrs. Smith - Trophies; https://archive.org/download/BSOG0044/04-MrAndMrsSmith-RecordsOnADirtyShelf_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BSOG0044/04-MrAndMrsSmith-RecordsOnADirtyShelf.mp3",
+      "expected_md5": "400163c9136675d9da20843bfda709f3",
+      "expected_bytes": 1579008,
+      "provider_original": "04-MrAndMrsSmith-RecordsOnADirtyShelf_192kb.mp3"
+    }
+  ],
+  "record_hash": "68742d45f61ab8f9b629c058364634427f1fa0a80c3a04a27e7bfbb88a4150fc"
+}

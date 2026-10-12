@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BS450041/track:1",
+  "source_item_id": "BS450041",
+  "file_name": "01-SaveYourEnergy_192kb.mp3",
+  "origin_url": "https://archive.org/download/BS450041/01-SaveYourEnergy_192kb.mp3",
+  "source_page": "https://archive.org/details/BS450041",
+  "expected_bytes": 3316353,
+  "expected_md5": "2c8a93d4dd3638174546db4594d98ad2",
+  "provider_mtime": "1542472380",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 102.09,
+  "title": "Save Your Energy",
+  "artist": "Pot-C",
+  "album": "SIX ONNA 7 (Part 1)",
+  "version": "Archive file mtime=1542472380; md5=2c8a93d4dd3638174546db4594d98ad2",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BS450041",
+    "sha256": "7be85f688635ce7f85e339b2e77675b2c483d8a0fcd94ed7ef5ddd799858317b",
+    "acquired_at": "2026-10-12T10:22:06.322461+00:00",
+    "bytes": 18509
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BS450041",
+    "evidence_sha256": "7be85f688635ce7f85e339b2e77675b2c483d8a0fcd94ed7ef5ddd799858317b",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Pot-C \u2014 Save Your Energy; Pot-C - SIX ONNA 7 (Part 1); https://archive.org/download/BS450041/01-SaveYourEnergy_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BS450041/01-SaveYourEnergy.mp3",
+      "expected_md5": "dd599595a3375e9e8e46ee5fa0853641",
+      "expected_bytes": 2086195,
+      "provider_original": "01-SaveYourEnergy_192kb.mp3"
+    }
+  ],
+  "record_hash": "ab7876fdb9732866f25b8e10d9d03f804e0a2abbd6bfb343d5ccced587d3a757"
+}

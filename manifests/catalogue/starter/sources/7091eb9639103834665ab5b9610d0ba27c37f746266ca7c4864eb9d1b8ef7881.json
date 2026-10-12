@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0142/track:3",
+  "source_item_id": "BSMX0142",
+  "file_name": "03-StateoftheUnion.mp3",
+  "origin_url": "https://archive.org/download/BSMX0142/03-StateoftheUnion.mp3",
+  "source_page": "https://archive.org/details/BSMX0142",
+  "expected_bytes": 5088768,
+  "expected_md5": "d185eee50a81613993266c9fdbedbe13",
+  "provider_mtime": "1474980016",
+  "provider_original": "03-StateoftheUnion_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 226.0,
+  "title": "State of the Union",
+  "artist": "Electric Mirrors",
+  "album": "Ritual Meadows",
+  "version": "Archive file mtime=1474980016; md5=d185eee50a81613993266c9fdbedbe13",
+  "genre": "Electropop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0142",
+    "sha256": "2ffce03ebdfff208e59a80c6b2e1088eab34da2c04997e0acd4a8ea20d4a6127",
+    "acquired_at": "2026-10-12T10:23:10.285001+00:00",
+    "bytes": 14432
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0142",
+    "evidence_sha256": "2ffce03ebdfff208e59a80c6b2e1088eab34da2c04997e0acd4a8ea20d4a6127",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Electric Mirrors \u2014 State of the Union; Electric Mirrors - Ritual Meadows; https://archive.org/download/BSMX0142/03-StateoftheUnion.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "9563fd42a5b84b7f480ce0c70512e957ace61d402f5ddde8f019dcf516f2ffb5"
+}

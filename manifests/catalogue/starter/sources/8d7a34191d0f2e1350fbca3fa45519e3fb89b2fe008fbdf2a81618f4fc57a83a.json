@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSOG0061/track:2",
+  "source_item_id": "BSOG0061",
+  "file_name": "02-Riot.mp3",
+  "origin_url": "https://archive.org/download/BSOG0061/02-Riot.mp3",
+  "source_page": "https://archive.org/details/BSOG0061",
+  "expected_bytes": 5019648,
+  "expected_md5": "172956fce56391c2186f0b2f19992cd0",
+  "provider_mtime": "1485788453",
+  "provider_original": "02-Riot_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 211.0,
+  "title": "Riot",
+  "artist": "Mr. Bitterness And The Guilty Pleasures",
+  "album": "Songs From The Surveillance Age",
+  "version": "Archive file mtime=1485788453; md5=172956fce56391c2186f0b2f19992cd0",
+  "genre": "Indie",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSOG0061",
+    "sha256": "96c75d17b49a788ff7c2f3a02cd9abd888c507f67d23949243d15e162a11ee10",
+    "acquired_at": "2026-10-12T10:25:55.433840+00:00",
+    "bytes": 18156
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSOG0061",
+    "evidence_sha256": "96c75d17b49a788ff7c2f3a02cd9abd888c507f67d23949243d15e162a11ee10",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Mr. Bitterness And The Guilty Pleasures \u2014 Riot; Mr. Bitterness And The Guilty Pleasures - Songs From The Surveillance Age; https://archive.org/download/BSOG0061/02-Riot.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "722c7dd5bb7f0501e7bdcc1450e0f1a10a66db9c4961b632c371aacd1d3b074a"
+}

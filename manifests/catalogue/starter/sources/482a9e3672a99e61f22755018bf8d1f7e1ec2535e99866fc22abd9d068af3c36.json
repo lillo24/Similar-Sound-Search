@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BS450040/track:4",
+  "source_item_id": "BS450040",
+  "file_name": "04-NoClue_192kb.mp3",
+  "origin_url": "https://archive.org/download/BS450040/04-NoClue_192kb.mp3",
+  "source_page": "https://archive.org/details/BS450040",
+  "expected_bytes": 5224152,
+  "expected_md5": "f3709794503b45cd66914fd7b7295da3",
+  "provider_mtime": "1530965956",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 164.88,
+  "title": "No Clue",
+  "artist": "Tha Silent Partner",
+  "album": "SIX ONNA 7 (Part 6)",
+  "version": "Archive file mtime=1530965956; md5=f3709794503b45cd66914fd7b7295da3",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BS450040",
+    "sha256": "4245d0392378cebda5b7ae0696928c4ac43d6c17332c4ca6525845ede4185e16",
+    "acquired_at": "2026-10-12T10:25:38.475253+00:00",
+    "bytes": 18154
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BS450040",
+    "evidence_sha256": "4245d0392378cebda5b7ae0696928c4ac43d6c17332c4ca6525845ede4185e16",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Tha Silent Partner \u2014 No Clue; Tha Silent Partner - SIX ONNA 7 (Part 6); https://archive.org/download/BS450040/04-NoClue_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BS450040/04-NoClue.mp3",
+      "expected_md5": "cd2ed452b55ae68bf3bb820f47de0f10",
+      "expected_bytes": 3125795,
+      "provider_original": "04-NoClue_192kb.mp3"
+    }
+  ],
+  "record_hash": "7078363ac859f18e90ba0f4deb57b88d479d4bbf12313a9beaeb5558f493c609"
+}

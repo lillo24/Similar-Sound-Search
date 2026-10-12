@@ -1,0 +1,41 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BSMX0123/track:1",
+  "source_item_id": "BSMX0123",
+  "file_name": "01-TheRapsWell_AlbumVersion.mp3",
+  "origin_url": "https://archive.org/download/BSMX0123/01-TheRapsWell_AlbumVersion.mp3",
+  "source_page": "https://archive.org/details/BSMX0123",
+  "expected_bytes": 4836352,
+  "expected_md5": "655cc60be363f44b030f70a600bc6227",
+  "provider_mtime": "1453817938",
+  "provider_original": "01-TheRapsWell_AlbumVersion_192kb.mp3",
+  "provider_format": "VBR MP3",
+  "provider_duration_seconds": 196.0,
+  "title": "The Raps Well (Album Version)",
+  "artist": "Cheese N Pot-C",
+  "album": "The Raps Well",
+  "version": "Archive file mtime=1453817938; md5=655cc60be363f44b030f70a600bc6227",
+  "genre": "Hip-Hop",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BSMX0123",
+    "sha256": "ffca5b808420ab99d5a82c5dcf380bc81625407916ba30cc5487b3da33640163",
+    "acquired_at": "2026-10-12T10:24:28.133496+00:00",
+    "bytes": 46670
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "audio_licence": "CC BY-NC-SA 3.0",
+    "evidence_url": "https://archive.org/metadata/BSMX0123",
+    "evidence_sha256": "ffca5b808420ab99d5a82c5dcf380bc81625407916ba30cc5487b3da33640163",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Cheese N Pot-C \u2014 The Raps Well (Album Version); Cheese N Pot-C - The Raps Well; https://archive.org/download/BSMX0123/01-TheRapsWell_AlbumVersion.mp3; http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [],
+  "record_hash": "748a293df8b82fc730a85730c7a7c5a814f931ef89384a996e1d9219f0b1abfb"
+}

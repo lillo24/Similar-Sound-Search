@@ -1,0 +1,48 @@
+{
+  "provider": "internet_archive",
+  "provider_recording_id": "BS450039/track:1",
+  "source_item_id": "BS450039",
+  "file_name": "01-Confusion_192kb.mp3",
+  "origin_url": "https://archive.org/download/BS450039/01-Confusion_192kb.mp3",
+  "source_page": "https://archive.org/details/BS450039",
+  "expected_bytes": 4606991,
+  "expected_md5": "ef6a3c0b55d07f480c9f7953462fce46",
+  "provider_mtime": "1524826526",
+  "provider_original": null,
+  "provider_format": "192Kbps MP3",
+  "provider_duration_seconds": 162.61,
+  "title": "Confusion",
+  "artist": "Mos Emvy",
+  "album": "Confusion",
+  "version": "Archive file mtime=1524826526; md5=ef6a3c0b55d07f480c9f7953462fce46",
+  "genre": "Trap",
+  "source_snapshot": {
+    "url": "https://archive.org/metadata/BS450039",
+    "sha256": "23eb424ee6e7af98cb49e803143c34599898ca04fbf58ac42d5f941f4cc90538",
+    "acquired_at": "2026-10-12T10:25:10.400205+00:00",
+    "bytes": 9385
+  },
+  "rights": {
+    "audio_licence_url": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "audio_licence": "CC BY-NC-SA 4.0",
+    "evidence_url": "https://archive.org/metadata/BS450039",
+    "evidence_sha256": "23eb424ee6e7af98cb49e803143c34599898ca04fbf58ac42d5f941f4cc90538",
+    "permitted_use": "Local noncommercial research; retain attribution and licence; no audio publication",
+    "attribution": "Mos Emvy \u2014 Confusion; Mos Emvy - Confusion; https://archive.org/download/BS450039/01-Confusion_192kb.mp3; http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "metadata_licence": "No blanket metadata licence inferred from audio or provider code licence"
+  },
+  "known_family_id": null,
+  "kind": "full_track",
+  "original_recording_offset_seconds": null,
+  "offset_evidence": null,
+  "time_evidence": "Provider release-track file, not a provider preview. External master alignment/MP3 priming unverified.",
+  "available_aliases": [
+    {
+      "origin_url": "https://archive.org/download/BS450039/01-Confusion.mp3",
+      "expected_md5": "3d3d32efec31dcd45b93151a7c0a4ac0",
+      "expected_bytes": 3891333,
+      "provider_original": "01-Confusion_192kb.mp3"
+    }
+  ],
+  "record_hash": "62d9958551d5f44b6eeaadb261061fed86d52b356960ce9c95211c95161722ff"
+}
