@@ -1,0 +1,15 @@
+{
+  "schema_version": "a05-policy-1",
+  "max_download_bytes": 8388608,
+  "max_http_attempts": 16,
+  "max_job_seconds": 2400,
+  "request_timeout_seconds": 10,
+  "attempts_per_url": 2,
+  "max_redirects": 2,
+  "backoff_seconds": 0.25,
+  "max_model_runs": 4,
+  "max_processed_windows": 8000,
+  "max_feature_bytes": 67108864,
+  "windows_per_worker": 96,
+  "max_smoke_windows": 12
+}

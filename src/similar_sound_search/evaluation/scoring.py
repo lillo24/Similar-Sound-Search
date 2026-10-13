@@ -113,6 +113,7 @@ def validate_header(prediction, protocol, split, choice=None):
         "harness_oracle",
         "harness_wrong",
         "harness_missing",
+        "harness_control",
     }:
         raise InputError("predictions: declare matcher versus harness-only evidence")
     cost = prediction.get("cost")

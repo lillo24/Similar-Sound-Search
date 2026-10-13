@@ -170,6 +170,22 @@ def public_url(url, allow_local=False, source="archive"):
     if allow_local and parsed.hostname in {"127.0.0.1", "localhost"}:
         return url
     host = parsed.hostname
+    if source == "efficientat":
+        exact = (
+            "https://github.com/fschmid56/EfficientAT/releases/download/v0.0.1/mn04_as_mAP_432.pt"
+        )
+        redirected = host == "release-assets.githubusercontent.com" and parsed.path.startswith(
+            "/github-production-release-asset/"
+        )
+        if (
+            parsed.scheme != "https"
+            or parsed.port not in {None, 443}
+            or not (url == exact or redirected)
+        ):
+            raise InputError(
+                "EfficientAT: only reviewed release URL and signed GitHub asset redirects allowed"
+            )
+        return url
     if source == "timbre_github":
         prefix = (
             "/ben-hayes/timbre-dissimilarity-metrics/"
@@ -207,7 +223,13 @@ def fetch(
         raise ResourceError(f"acquire {url}: advertised asset exceeds remaining byte allowance")
     if is_link(destination):
         raise InputError("HTTP staging: symlink output refused")
-    namespace = "evaluation" if source == "timbre_github" else "catalogue"
+    namespace = (
+        "matchers"
+        if source == "efficientat"
+        else "evaluation"
+        if source == "timbre_github"
+        else "catalogue"
+    )
     destination = contained(destination, budget.root / "data/runs" / namespace)
     destination.parent.mkdir(parents=True, exist_ok=True)
     # Native trust verifies TLS and fetches missing intermediates on Windows. Never disable TLS.

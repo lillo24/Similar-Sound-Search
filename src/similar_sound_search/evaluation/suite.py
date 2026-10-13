@@ -11,7 +11,7 @@ from ..preparation import prepare
 from ..records import map_time
 from ..storage import InputError, digest
 from .artifacts import load_asset, publish, record, write_record
-from .protocol import freeze, validate_splits
+from .protocol import comparison_pair, freeze, validate_splits
 from .rendering import FRAMES, MIX_FRAMES, RATE, mix, render_tone
 
 
@@ -204,6 +204,11 @@ def build(budget, policy, ledger_directory, pilot=False):
         "split_counts": counts,
         "condition_counts": dict(Counter(q["condition"] for q in queries)),
     }
+    pair = comparison_pair(budget.root)
+    if not pilot and pair and digest(result) != pair[1]["record_hash"]:
+        raise InputError(
+            "construction differs from atomic comparison suite; deliberate revision required"
+        )
     name = "pilot.json" if pilot else "suite.json"
     write_record(budget.root / "manifests/evaluation" / name, result, budget)
     return {
@@ -235,6 +240,9 @@ def make_query(query, condition, pool, truth, task):
 
 
 def load_suite(budget):
+    pair = comparison_pair(budget.root)
+    if pair:
+        return pair
     protocol = record(budget.root / "manifests/evaluation/protocol.json")
     suite = record(budget.root / "manifests/evaluation/suite.json")
     if suite["protocol_hash"] != protocol["record_hash"]:

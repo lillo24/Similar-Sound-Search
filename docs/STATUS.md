@@ -1,6 +1,6 @@
 # Project status
 
-Updated 12 October 2026. **A04 harness and controlled suite implemented and exercised; ready for A05 — Candidate matchers and comparison harness.** Published human evidence remains partial/unavailable for scoring; A03 remains partial at 72/120 recordings, 35 artists. No acoustic matcher/perceptual/Loulou result is claimed. Follow [AGENTS.md](../AGENTS.md) for branch/PR/merge/cleanup delivery.
+Updated 13 October 2026. **A05 acoustic/pretrained development comparison delivered; provisional EfficientAT MN04 default ready for A06.** The corrected hit@1 protocol was frozen before rankings. Human agreement remains unavailable and A03 remains partial. No held-out model, cross-song or Loulou success is claimed. Follow [AGENTS.md](../AGENTS.md) for branch/PR/merge/cleanup delivery.
 
 ## Foundation and current delivery
 
@@ -41,15 +41,18 @@ No GitHub Actions workflow/required CI check exists in the inspected repository;
 | Actual Loulou input | Missing; manifest unverified; reference experiment not run |
 | A04 controlled construction and evaluation harness | Complete engineering delivery: 208 assets, 160 queries; 88 tests; [evidence](../reports/A04_BENCHMARKS.md) |
 | A04 published human evidence | Partial: 16 AIFF stimuli + 120 observations downloaded/validated; zero eligible scoring pairs due to unresolved rights/original mapping |
-| A05 matcher comparison / A06 search and playable results | Not implemented or run |
+| A05 matcher comparison | Complete controlled development comparison: two genuine methods, 80 queries each, provisional EfficientAT MN04; [evidence](../reports/A05_MATCHERS.md) |
+| A06 search, playable results and held-out model check | Next; not implemented or run |
 | B–D event selection, separation, indexing/refinement, interface/package | Future; first required listening review D04 |
-| Perceptual quality, mixture recovery, Loulou relevance | Unmeasured |
+| Perceptual quality, cross-song recovery, Loulou relevance | Unmeasured; controlled mixture/source metrics are separate A05 evidence |
 | Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 
-## A05 handoff
+## A06 handoff
 
-Reinspect current instructions/main, [brief](PROJECT_BRIEF.md), [records](RECORDS.md), [evaluation commands](EVALUATION.md#a04-delivered-commands-and-protocol), [A04 evidence](../reports/A04_BENCHMARKS.md), source/config maps and the actual implementation. Use a separate A05 branch/PR. The frozen protocol/suite use 104 assets and 80 queries per partition, four procedural families and two real-background families per split. Development choice uses source-consistency candidate coverage then controlled performance/pitch coverage and cost; exact-instance diagnostics do not select the winner. Preserve the explicit published-data exclusion and reserve held-out model scores for A06. No A04 model, checkpoint, acoustic baseline, retrieval index, separation or UI was implemented.
+Reinspect current main/instructions, [matcher setup/commands](MATCHERS.md), [A05 measured evidence](../reports/A05_MATCHERS.md), [choice](../manifests/matchers/choice.json), source maps and actual implementation. Use a separate A06 branch/PR. The provisional EfficientAT MN04 choice achieved 24/24 source-consistency development query hits at K=1, versus acoustic 17/24, constant 16/24 and seeded random 9/24. This is a small four-family controlled-source result, not human timbre accuracy. The selected configuration/checkpoint, protocol/suite, preprocessing and distance are frozen; no tuning sweep or held-out model run occurred.
 
-The A04 read-only consumer verifies the four music backgrounds under its separate finite budget, without touching exhausted A03 accounting. Backgrounds use seconds 2..10 of the centred 30-second derivatives; sequential-original intervals and unknown master offsets are recorded. The generated suite has 96 renders, 112 mixtures, three performances/two pitch conditions, -12/0/+12 dB levels and absent/multiple-event cases. Full original bytes and reference remain unchanged. The model-candidate cap of three remains an A05 contract. [A04 commands](EVALUATION.md#a04-delivered-commands-and-protocol) cover local restoration, generation/reuse, independent validation and scoring recovery.
+A06 must explicitly initiate its final check with the exact choice; A05's choice remains `stage: A05` and cannot bypass the held-out guard. A05 has four run operations and twelve smoke attempts already charged; A06 must define its own finite work for its distinct stage, without resetting A03/A04/A05 ledgers or using a replacement job to repeat development tuning. Feature reuse retains original model cost and validates source/checkpoint/config identity. Refinement, a real-catalogue index/search and playable-result delivery remain A06/later work.
 
-Still needed for a reference-specific experiment: the actual **daoud — Loulou & the loulous** file from the marked version (full recording or existing approximately 3:38–4:00 excerpt), with any version/provenance and verified excerpt-start evidence. Unknowns stay unknown; never crop an already-short excerpt at second 218. Exact target-event selection remains B01. Missing audio does not block independent A04 work, and no labels/listening review are requested now.
+The controlled suite retains 104 assets/80 queries per split, unchanged audio/truth/recipes, four procedural families and two real-background families per split. The atomic comparison pair changes only the pre-ranking grid/selection policy. Backgrounds still use seconds 2..10 of the centred A03 derivatives with decoded-original intervals and unknown master offsets. All 396 preserved audio/reference/accounting files retained exact hashes, sizes and modification times. Grey1977 remains quarantined, CIR lacks established terms, and standard CLAP exceeds the download cap.
+
+The actual marked-version daoud — Loulou & the loulous audio and provenance/offset evidence remain unavailable for a verified reference experiment. Never crop a short excerpt at second 218. D04 remains the first required listening review; no new labels are requested for independent A06 engineering.

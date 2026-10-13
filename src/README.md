@@ -1,6 +1,6 @@
 # Audio input runtime
 
-`similar_sound_search/` owns the CPU input pipeline, A03 catalogue acquisition and A04 evaluation construction/scoring. It has no acoustic model or retrieval index. The installed `sound-search` command and `python -m similar_sound_search` both enter `cli.py`.
+`similar_sound_search/` owns the CPU input pipeline, A03 catalogue acquisition, A04 evaluation construction/scoring and A05 development matchers. Production catalogue search/indexing remain future work. The installed `sound-search` command and `python -m similar_sound_search` both enter `cli.py`.
 
 | File | Responsibility and relationship |
 | --- | --- |
@@ -13,6 +13,7 @@
 | `similar_sound_search/preparation.py` | Apply explicit crop/channel/resample choices; publish immutable bundles and validate reuse/lineage |
 | `similar_sound_search/diagnostics.py` | Generate deterministic plumbing fixtures, check independent known answers, and report actual environment capabilities |
 | `similar_sound_search/catalogue/` | [Subsystem map](similar_sound_search/catalogue/README.md): bounded HTTP/ledger, single provider, shared ingestion, duplicates and durable batches |
+| `similar_sound_search/matchers/` | [Subsystem map](similar_sound_search/matchers/README.md): finite optional model acquisition, common representations, feature reuse and development comparison |
 | `similar_sound_search/evaluation/` | [Subsystem map](similar_sound_search/evaluation/README.md): benchmark quarantine, procedural recipes, family splits, independent mixture audits and prediction scorers |
 
 The CLI imports numerical/decoder libraries only in the bounded worker. Inputs feed candidate records; preparation retains those source records and composes maps back to the original available file. Storage and resource checks are shared across both paths. See [runtime commands and limitations](../docs/RUNTIME.md) and [record fields](../docs/RECORDS.md).

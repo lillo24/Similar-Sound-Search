@@ -1,6 +1,6 @@
 {
   "schema_version": "a04-suite-1",
-  "protocol_hash": "b5fd2d1e87040e8a9b929a65a4b3a2d92ae69e99dfab88e3e0c87c28aa70093d",
+  "protocol_hash": "07af66b37db00d6a6dd4bea87c9636b06aa9dbd43c75e8164be4568bd94b0048",
   "pilot": false,
   "assets": [
     "0004c4628c261be0a4cf8ba315f761188a2ac44fa7965980818b98487e113a9a",
@@ -3886,5 +3886,5 @@
     "source_consistency:12": 16,
     "absent:0": 16
   },
-  "record_hash": "59b781f3fbf75a7bad52f49c051e02142528f402cbde1c74041927ef4f081a2a"
+  "record_hash": "d4c59416e5d4bb4aeddfbefa933a3a0f18691a25957e3623f1743d2951806441"
 }

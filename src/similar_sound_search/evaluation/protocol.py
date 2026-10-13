@@ -7,6 +7,29 @@ from .artifacts import record, write_record
 from .rendering import FRAMES, MIX_FRAMES, PHRASES, RATE, presets
 
 SEED = 42104
+INTERVAL_POLICY = {
+    "version": "a05-grid-1",
+    "hop_seconds": 0.25,
+    "tail": "unique end-aligned",
+    "duration": "complete query",
+    "controlled": "complete candidate",
+}
+
+
+def comparison_pair(root):
+    path = root / "manifests/evaluation/comparison.json"
+    if not path.exists():
+        return None
+    bundle = record(path)
+    for name in ("protocol", "suite"):
+        value = bundle[name]
+        if value.get("record_hash") != digest(
+            {k: v for k, v in value.items() if k != "record_hash"}
+        ):
+            raise InputError("comparison transaction: corrupt paired " + name)
+    if bundle["suite"]["protocol_hash"] != bundle["protocol"]["record_hash"]:
+        raise InputError("comparison transaction: protocol/suite mismatch")
+    return bundle["protocol"], bundle["suite"]
 
 
 def catalogue_families(root):
@@ -76,8 +99,9 @@ def split_for(family):
 
 def freeze(budget, policy):
     path = budget.root / "manifests/evaluation/protocol.json"
-    if path.exists():
-        value = record(path)
+    pair = comparison_pair(budget.root)
+    if path.exists() or pair:
+        value = pair[0] if pair else record(path)
         if value["resource_policy"] != policy:
             raise InputError("A04 frozen resource policy differs; preserve protocol and ledger")
         if value.get("published_source_hash") != digest(
@@ -103,7 +127,8 @@ def freeze(budget, policy):
             human_pairs[a if a == b else "dropped_cross_split"] += 1
     value = {
         "schema_version": "a04-protocol-1",
-        "protocol_version": "2026-10-12.2",
+        "protocol_version": "2026-10-13.1",
+        "comparison_interval_policy": INTERVAL_POLICY,
         "seed": SEED,
         "families": families,
         "presets": identities,
@@ -163,7 +188,7 @@ def freeze(budget, policy):
             "partition": "development only; at most three model candidates",
             "eligibility": "technical checks pass, resource limits respected, all expected "
             "query outputs supplied; empty stage lists remain misses",
-            "primary": "macro mean candidate query hit rate at K=10 over the three "
+            "primary": "macro mean candidate query hit rate at K=1 over the three "
             "source_consistency mixture levels",
             "secondary": "macro mean candidate query hit rate at K=5 over controlled "
             "performance and pitch conditions",

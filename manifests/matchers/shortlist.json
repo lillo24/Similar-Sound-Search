@@ -1,0 +1,111 @@
+{
+  "schema_version": "a05-shortlist-1",
+  "protocol_hash": "07af66b37db00d6a6dd4bea87c9636b06aa9dbd43c75e8164be4568bd94b0048",
+  "suite_hash": "d4c59416e5d4bb4aeddfbefa933a3a0f18691a25957e3623f1743d2951806441",
+  "methods": {
+    "acoustic": {
+      "version": "a05-representation-1",
+      "method": "acoustic",
+      "code": {
+        "acoustic.py": "f32624fbce8a9fa904ebe1508d818040309f8039894979aa1286a4a1c97e03be"
+      },
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "grid": {
+        "version": "a05-grid-1",
+        "hop_seconds": 0.25,
+        "tail": "unique end-aligned",
+        "duration": "complete query",
+        "controlled": "complete candidate"
+      },
+      "device": "cpu",
+      "precision": "float32",
+      "channel_policy": "arithmetic mean",
+      "resampling": "resample_poly Kaiser5 constant-zero; elapsed-time scale 1",
+      "admissible_seconds": [
+        0.0001,
+        30
+      ],
+      "truncation": "none; whole selected input",
+      "score_direction": "lower_better",
+      "normalization_fit": "none; fixed declared scales; no held-out fit",
+      "input_rate": 24000,
+      "dimension": 56,
+      "distance": "euclidean",
+      "feature_layer": "13 cepstral mean/std + 5 spectral mean/std + 16 relative RMS bins + 4 envelope descriptors",
+      "frontend": "600 symmetric-Hann samples, FFT1024, hop240 plus unique tail; 40 L1 HTK triangles 40..12000Hz; natural-log normalized power, orthonormal DCT-II; fixed feature scales",
+      "pooling": "mean/std plus relative envelope; explicit level descriptors",
+      "padding": "zero pad only inputs shorter than 600 samples"
+    },
+    "efficientat": {
+      "version": "a05-representation-1",
+      "method": "efficientat",
+      "code": {
+        "acoustic.py": "f32624fbce8a9fa904ebe1508d818040309f8039894979aa1286a4a1c97e03be",
+        "efficientat.py": "c0a7ee50ce402fd5a5371ccd82a5a495f93911f85a2e1ba47eca7819fa57d8e1",
+        "efficientat_model.py": "4f1d5019a54ce0c087eea227cac795848b581803dcb515da98583ce85a281a3d"
+      },
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "grid": {
+        "version": "a05-grid-1",
+        "hop_seconds": 0.25,
+        "tail": "unique end-aligned",
+        "duration": "complete query",
+        "controlled": "complete candidate"
+      },
+      "device": "cpu",
+      "precision": "float32",
+      "channel_policy": "arithmetic mean",
+      "resampling": "resample_poly Kaiser5 constant-zero; elapsed-time scale 1",
+      "admissible_seconds": [
+        0.0001,
+        30
+      ],
+      "truncation": "none; whole selected input",
+      "score_direction": "lower_better",
+      "normalization_fit": "none; fixed declared scales; no held-out fit",
+      "input_rate": 32000,
+      "dimension": 384,
+      "distance": "cosine",
+      "checkpoint": {
+        "repository": "fschmid56/EfficientAT",
+        "code_revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+        "release": "v0.0.1",
+        "asset_id": 84971629,
+        "filename": "mn04_as_mAP_432.pt",
+        "bytes": 4066513,
+        "sha256": "899a8c6217063f6941793102a2780b3dd788ab11fce468d9cf5f0577c453321c",
+        "terms": "Official repository MIT licence; retain copyright and licence; AudioSet pretrained tagging representation, not established timbre accuracy"
+      },
+      "optional_tools": {
+        "torch": "2.6.0+cpu"
+      },
+      "feature_layer": "last convolution before classifier; spatial mean",
+      "pooling": "frequency/time average, no logits",
+      "frontend": "native preemphasis .97; symmetric Hann800 FFT1024 hop320 centered reflect; Kaldi128 mel 0..15000Hz; log(power+1e-5), (x+4.5)/5",
+      "padding": "zero pad only inputs shorter than 1024 samples; no 10-second extension",
+      "augmentation": "disabled; eval/inference_mode; deterministic CPU"
+    }
+  },
+  "exclusions": {
+    "CIR": "Pinned ca551b8df4234e40e3acc84202f8b921854be89c tree has no licence; checkpoint terms unresolved, and AST loader can fetch a second base model. No weights downloaded.",
+    "CLAP": "Official 630k-audioset-best.pt page lists 1.86 GB and SHA256 8053c9775516af2f4902e1e8281e356cc1bf7a85e8b761908170767b77c3f037, beyond 512 MiB. No weights downloaded."
+  },
+  "frozen_before_model_rankings": true,
+  "record_hash": "9718def492e7c65bd8fe0a5f1fc8dbac5c78499361c3062994db1d9df81e829e"
+}

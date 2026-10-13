@@ -2,7 +2,7 @@
 
 Select a particular sound inside a song and find passages in other recordings with a similar sound character, with playable results and trustworthy timestamps. Timbre comes first, approximate pitch second; matching phrase rhythm or note order is deferred.
 
-**Current state: A04 evaluation harness implemented and exercised; ready for A05.** The controlled suite contains 96 varied procedural renders and 112 mixtures, split by source family into 104 development and 104 held-out assets. [A04 evidence](reports/A04_BENCHMARKS.md) separates harness correctness from the quarantined published benchmark: 16 Grey1977 stimuli downloaded/validated, with zero eligible human-scoring pairs pending rights/original-mapping evidence. No acoustic matcher quality is measured. The [A03 discovery catalogue](reports/A03_CATALOGUE.md) remains partial: 72 real recordings, 35 artists.
+**Current state: A05 development comparison delivered; provisional EfficientAT MN04 choice ready for A06.** Both the acoustic baseline and a genuine pretrained CPU model ran all 80 development queries under the prospectively revised hit@1 protocol. [A05 evidence](reports/A05_MATCHERS.md) records controlled-source results, controls, costs and limits. Human agreement remains unavailable: Grey1977 has zero eligible pairs. The A03 catalogue remains partial at 72 recordings/35 artists; real-catalogue search and held-out model checks remain A06 work.
 
 The first reference is **daoud — Loulou & the loulous**, approximately **3:38–4:00** in Leonardo's marked recording. The actual audio is still missing; recording version, excerpt offset, and exact event remain unverified. Engineering fixtures do not substitute for that reference. No new labels or manually discovered similar songs are required; the first required listening review is D04.
 
@@ -35,17 +35,19 @@ The delivered protocol requires its four locally validated A03 backgrounds; a fr
 - [Decisions and unresolved assumptions](docs/DECISIONS.md).
 - [Runtime and commands](docs/RUNTIME.md), [measured A02 evidence](reports/A02_RUNTIME.md), and [resource profile](config/resource_limits.json).
 - [Catalogue commands](docs/CATALOGUE.md), [measured A03 evidence](reports/A03_CATALOGUE.md), and [status/A05 handoff](docs/STATUS.md).
+- [Matcher setup/commands](docs/MATCHERS.md), [measured A05 evidence](reports/A05_MATCHERS.md), and [provisional choice](manifests/matchers/choice.json).
 - [Measured A04 evidence](reports/A04_BENCHMARKS.md) and [frozen protocol](manifests/evaluation/protocol.json).
 - [Initial reference manifest](manifests/references/loulou.json).
 - [Archived A01 prompt](history-implementations/Similar_Sound_Search_A01.md).
 - [Archived A02 prompt](history-implementations/Similar_Sound_Search_A02.md).
 - [Archived A03 prompt](history-implementations/Similar_Sound_Search_A03.md).
 - [Archived A04 prompt](history-implementations/Similar_Sound_Search_A04.md).
+- [Archived A05 prompt](history-implementations/Similar_Sound_Search_A05.md).
 
-## Resume at A05
+## Resume at A06
 
 Follow [AGENTS.md](AGENTS.md) for implementation and GitHub delivery. Each implementation plan uses an isolated branch and a PR into `main`; checks, merge, and branch cleanup are part of completion. Reinspect current code and run the [complete local validation](docs/RUNTIME.md#validation) before extending the pipeline.
 
-A05 compares candidate matchers on the frozen development suite; A06 performs the final held-out baseline check after a development choice is frozen. Exact-instance diagnostics and oracle scores do not measure perceptual quality. A06 is internal; D04 remains the first required user relevance review. Missing Loulou audio prevents a reference-specific experiment. Preserve benchmark exclusions, the A03 shortfall and existing resource ceilings.
+A05 selected the frozen EfficientAT MN04 adapter provisionally on controlled development evidence. A06 integrates the first real-catalogue search and explicitly initiates its held-out check with that exact choice. Exact-instance diagnostics and oracle scores do not measure perceptual quality. A06 is internal; D04 remains the first required user relevance review. Missing Loulou audio prevents a reference-specific experiment. Preserve benchmark exclusions, the A03 shortfall and existing resource ceilings.
 
 The [source map](src/README.md) and [config map](config/README.md) describe ownership. Local audio, features, indexes, weights, run output, and secrets are excluded by [.gitignore](.gitignore). Keep sanitized manifests and shareable evidence reports versionable; see the brief before adding data.

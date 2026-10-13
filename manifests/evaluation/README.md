@@ -9,3 +9,5 @@ This folder connects A04 recipes, ancestry and ground truth to later A05 predict
 - `pilot.json` and `protocol-history/` retain pre-model pilot/construction history. They do not supersede the current protocol or authorise held-out model tuning.
 
 Every JSON is individually bounded by the 1 MiB reader contract. On a fresh checkout, transfer the corresponding permitted local inputs/private A03 registration before using the frozen real backgrounds. Missing files must fail visibly; generating an independent procedural-only suite requires a separately documented protocol, while retaining existing lifetime ledgers.
+
+A05 prospectively revises the primary criterion to hit@1 and freezes shared duration/grid intervals. `comparison.json` is the atomic authoritative pair of revised protocol/suite records; canonical files mirror it. Shared readers validate both inner hashes and their binding. Original A04 identities are preserved in `protocol-history/` and `suite-history/`. Audio recipes, asset record hashes, truth and A04 construction accounting are unchanged. See [correction evidence](../../reports/A05_MATCHERS.md).

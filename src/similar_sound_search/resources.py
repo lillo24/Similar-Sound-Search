@@ -31,6 +31,7 @@ MANAGED = (
     "manifests/private",
     "manifests/catalogue",
     "manifests/evaluation",
+    "manifests/matchers",
 )
 
 
@@ -128,8 +129,9 @@ class CatalogueBudget(Budget):
     """Locked worker disk inventory with explicit accounting for its owned file writes.
 
     Rewalking all catalogue files twice per ledger read/update is quadratic. The worker
-    holds the A03 lock, tracks exact logical file sizes, and refreshes at A02 preparation
-    boundaries. A crash discards this in-memory cache; the next worker scans actual disk,
+    holds the exclusive project operation lock, tracks exact logical file sizes, and
+    refreshes at A02 preparation boundaries. A crash discards this in-memory cache;
+    the next worker scans actual disk,
     including abandoned partials. Free-space checks and all ceilings remain unchanged.
     """
 
