@@ -446,3 +446,8 @@ class MatcherCase(AudioCase):
                 )
         self.assertIsNone(result["selected"])
         self.assertEqual(result["methods"]["acoustic"]["state"], "incomplete")
+
+    def test_checkout_preserves_frozen_representation_source_bytes(self):
+        frozen = record(REPOSITORY / "manifests/matchers/shortlist.json")
+        for method, expected in frozen["methods"].items():
+            self.assertEqual(descriptor(REPOSITORY, method), expected)
