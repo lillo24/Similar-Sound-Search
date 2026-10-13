@@ -171,7 +171,7 @@ Each used procedural family has six source-consistency queries and eight target 
 
 EfficientAT's outer inference run took 185.562 seconds. At the final audit, managed storage was **936,732,073 bytes**, free disk **355,680,051,200 bytes**, the optional environment **1,549,163,236 bytes**, pip cache **219,390,264 bytes**, and feature arrays plus metadata **10,458,099 bytes**. All **222 public evaluation/matcher JSON records** passed self-hash/size checks; largest **229,967 bytes**.
 
-A05 final accounting: **592.520 worker seconds**, two HTTP attempts, 4,066,513 bytes, no pending reservations; **4/4 run operations, 2,748/8,000 processed windows, 47,234,304/67,108,864 reserved feature bytes, and 12/12 smoke attempts**. The charged windows include twelve smoke attempts, including the failed three-case compatibility attempt; successful feature extraction is 2×1,368. Reuse added no features/inference. Lifetime limits remain consumed; do not reset them to repeat development experiments.
+A05 accounting at implementation completion, before the checkout-only follow-up: **592.520 worker seconds**, two HTTP attempts, 4,066,513 bytes, no pending reservations; **4/4 run operations, 2,748/8,000 processed windows, 47,234,304/67,108,864 reserved feature bytes, and 12/12 smoke attempts**. The charged windows include twelve smoke attempts, including the failed three-case compatibility attempt; successful feature extraction is 2×1,368. Reuse added no features/inference. Lifetime limits remain consumed; do not reset them to repeat development experiments.
 
 
 ## A06 handoff
