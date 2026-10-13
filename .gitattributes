@@ -1,0 +1,5 @@
+# A05's frozen code identities bind these captured working-file bytes. Preserve
+# their original EOL styles across Windows/Linux checkout so reuse stays valid.
+src/similar_sound_search/matchers/acoustic.py text eol=crlf
+src/similar_sound_search/matchers/efficientat.py text eol=crlf
+src/similar_sound_search/matchers/efficientat_model.py text eol=lf
