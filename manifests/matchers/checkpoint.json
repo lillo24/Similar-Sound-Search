@@ -1,0 +1,16 @@
+{
+  "source": {
+    "repository": "fschmid56/EfficientAT",
+    "code_revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+    "release": "v0.0.1",
+    "asset_id": 84971629,
+    "filename": "mn04_as_mAP_432.pt",
+    "bytes": 4066513,
+    "sha256": "899a8c6217063f6941793102a2780b3dd788ab11fce468d9cf5f0577c453321c",
+    "terms": "Official repository MIT licence; retain copyright and licence; AudioSet pretrained tagging representation, not established timbre accuracy"
+  },
+  "sha256": "899a8c6217063f6941793102a2780b3dd788ab11fce468d9cf5f0577c453321c",
+  "bytes": 4066513,
+  "checksum_provenance": "captured from bounded official release acquisition; upstream release supplies no digest",
+  "record_hash": "da947f56c78b5a1dd102f349dbb57e46b13c234ac12aabf22e7180e90fa2fbaa"
+}

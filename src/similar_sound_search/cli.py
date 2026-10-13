@@ -89,6 +89,23 @@ def parser():
     evaluation.add_argument(
         "--final-choice", type=Path, help="A06 frozen development model/config choice"
     )
+    matchers = subcommands.add_parser("matchers", help="A05 bounded development comparison")
+    matchers.add_argument(
+        "matcher_action",
+        choices=(
+            "freeze",
+            "validate",
+            "acquire",
+            "smoke",
+            "run",
+            "compare",
+            "known-answer",
+            "score",
+        ),
+    )
+    matchers.add_argument("input", type=Path, nargs="?")
+    matchers.add_argument("--method", choices=("acoustic", "efficientat"))
+    matchers.add_argument("--split", choices=("development", "held_out"), default="development")
     return command
 
 
@@ -98,7 +115,7 @@ def _worker(request):
         root = Path(request["root"])
         budget_type = (
             CatalogueBudget
-            if request["command"] in {"catalogue_step", "evaluation_step"}
+            if request["command"] in {"catalogue_step", "evaluation_step", "matchers_step"}
             else Budget
         )
         budget = budget_type(root, request["limits"])
@@ -131,6 +148,10 @@ def _worker(request):
             result = worker(request, budget)
         elif request["command"] == "evaluation_step":
             from .evaluation.job import worker
+
+            result = worker(request, budget)
+        elif request["command"] == "matchers_step":
+            from .matchers.job import worker
 
             result = worker(request, budget)
         else:
@@ -226,6 +247,8 @@ def main(argv=None):
                 pass
             with project_lock(root, ".a04-worker.lock"):
                 pass
+            with project_lock(root, ".a05-worker.lock"):
+                pass
             Budget(root, limits).reserve(65536)
             if args.command == "catalogue":
                 from .catalogue.job import run
@@ -246,6 +269,12 @@ def main(argv=None):
                     raise InputError("evaluation: input belongs to score only")
                 if args.pilot and args.evaluation_action != "generate":
                     raise InputError("evaluation: --pilot belongs to generate only")
+                result = run(request, execute)
+            elif args.command == "matchers":
+                from .matchers.job import run
+
+                if args.input is not None and args.matcher_action != "score":
+                    raise InputError("matchers: input belongs to score only")
                 result = run(request, execute)
             else:
                 result = execute(request)

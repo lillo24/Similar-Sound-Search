@@ -104,7 +104,7 @@ def contained(path, root):
 @contextmanager
 def project_lock(root, name=".a02.lock"):
     """OS lock releases on exit/crash; the persistent byte is not a stale lock."""
-    if name not in {".a02.lock", ".a03-worker.lock", ".a04-worker.lock"}:
+    if name not in {".a02.lock", ".a03-worker.lock", ".a04-worker.lock", ".a05-worker.lock"}:
         raise InputError("project lock: unsupported internal lock name")
     path = contained(Path(root) / "data/runs" / name, root)
     path.parent.mkdir(parents=True, exist_ok=True)

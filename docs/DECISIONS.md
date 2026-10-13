@@ -67,3 +67,16 @@ A03 additions, 12 October 2026; [commands/contracts](CATALOGUE.md) and [measured
 | DEC-027 | Separate durable A04 transfer/time/construction ledgers and read-only catalogue consumer. | Exhausted A03 allowance and immutable originals remain unchanged. Existing worker/memory/disk ceilings are retained; crash work remains conservatively charged. |
 | DEC-028 | Explicit candidate/refined prediction contract, signed average ranks, one-to-one event assignment and missing denominators. | Candidate omissions cannot be hidden by refined output, overlapping hits cannot inflate target recall, constants remain undefined, and forced rankings cannot assert presence. Oracle checks prove harness behavior only. |
 | DEC-029 | Development-only lexicographic selection rule frozen before A05; held-out matcher scoring requires an A06 choice declaration. | Exact-instance diagnostics do not choose the winner. Human evidence stays unavailable unless a reviewed protocol revision establishes permission/alignment. Later held-out tuning must disclose contamination; D04 remains the first listening review. |
+
+## A05 development comparison decisions
+
+13 October 2026; [protocol/commands](MATCHERS.md) and [measured evidence](../reports/A05_MATCHERS.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-030 | Prospectively replace saturated primary hit@10 with source-consistency candidate query hit@1, preserving secondary/ties, pools, truth, K and IoU. | Actual constant chronological hit@10 is 100%; analytical random expectation 99.2028238%. Freeze query-length/.25s/tail grid before rankings and atomically bind revised protocol/suite; retain originals in history without audio regeneration. |
+| DEC-031 | Freeze one fixed-scale spectral/cepstral/envelope baseline and one MIT EfficientAT MN04 checkpoint. | Four-megabyte pretrained model fits CPU limits; CIR lacks established terms, standard CLAP exceeds transfer cap. No second checkpoint, hyperparameter sweep, learned fit or hidden pitch term. |
+| DEC-032 | Optional hash-pinned Windows CPU Torch setup; reproduce native evaluation mel equations without TorchAudio extension. | TorchAudio DLL loading failed; all 65,664 coefficients match pinned native source exactly. Root renderer versions remain unchanged. Strict local weights/eval mode and network refusal prevent hidden downloads. |
+| DEC-033 | Waveform/rate-only representation boundary, truth-independent grid, source-bound feature cache and prediction publication before scoring. | Labels/filenames/truth cannot reach features; finite shape/hash checks and explicit missing/error states prevent fabricated embeddings or success-shaped failures. |
+| DEC-034 | Separate finite A05 ledger and exact locked owned-array disk accounting. | Original audio and A03/A04 accounting remain intact; crash reservations persist. Replacing repeated disk scans changes publication overhead only, while model cost separately measures loads, unique extraction and ranking and survives cache reuse. |
+| DEC-035 | Provisional EfficientAT default by the frozen rule; reserve held-out/cross-song/human conclusions. | Development source-consistency hit@1 is 24/24 versus baseline 17/24, constant 16/24 and seeded random 9/24. Query hits do not mean perfect localisation/multiple-event recall. Choice remains A05; A06 must explicitly initiate final checks. |

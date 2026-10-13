@@ -1,6 +1,6 @@
 {
   "schema_version": "a04-protocol-1",
-  "protocol_version": "2026-10-12.2",
+  "protocol_version": "2026-10-13.1",
   "seed": 42104,
   "families": {
     "procedural:harmonic:0": "development",
@@ -548,7 +548,7 @@
   "selection_rule": {
     "partition": "development only; at most three model candidates",
     "eligibility": "technical checks pass, resource limits respected, all expected query outputs supplied; empty stage lists remain misses",
-    "primary": "macro mean candidate query hit rate at K=10 over the three source_consistency mixture levels",
+    "primary": "macro mean candidate query hit rate at K=1 over the three source_consistency mixture levels",
     "secondary": "macro mean candidate query hit rate at K=5 over controlled performance and pitch conditions",
     "ties": "lower measured model wall time, then lexical method_id/config_hash",
     "human": "Grey1977 unavailable; report separately. Enabling a human metric requires a reviewed protocol revision before model comparison",
@@ -556,5 +556,17 @@
     "failure": "if no technically eligible run exists, report no selection"
   },
   "overlap_limits": "preset-family split, not unseen synthesis-engine split; catalogue artist/established duplicate union only; unknown lossy copies and pretraining overlap unknown",
-  "record_hash": "b5fd2d1e87040e8a9b929a65a4b3a2d92ae69e99dfab88e3e0c87c28aa70093d"
+  "comparison_interval_policy": {
+    "version": "a05-grid-1",
+    "hop_seconds": 0.25,
+    "tail": "unique end-aligned",
+    "duration": "complete query",
+    "controlled": "complete candidate"
+  },
+  "comparison_revision": {
+    "prior_protocol": "b5fd2d1e87040e8a9b929a65a4b3a2d92ae69e99dfab88e3e0c87c28aa70093d",
+    "prior_suite": "59b781f3fbf75a7bad52f49c051e02142528f402cbde1c74041927ef4f081a2a",
+    "reason": "hit@10 geometry saturation; prospective A05 correction"
+  },
+  "record_hash": "07af66b37db00d6a6dd4bea87c9636b06aa9dbd43c75e8164be4568bd94b0048"
 }

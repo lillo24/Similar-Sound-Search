@@ -34,7 +34,7 @@ Keep original audio unchanged. Record provenance and permitted use; metadata acc
 | A02 | Runtime, inputs, and resource limits | Complete; bounded CPU WAV/FLAC pipeline, see [runtime](RUNTIME.md) |
 | A03 | Automated starter catalogue | Implemented; real bounded blocSonic acquisition, [partial catalogue evidence](../reports/A03_CATALOGUE.md) |
 | A04 | Benchmarks and controlled test generation | Implemented; frozen controlled suite/harness, published data quarantined; [evidence](../reports/A04_BENCHMARKS.md) |
-| A05 | Candidate matchers and comparison harness | Uses A04 protocols and available A02 resources |
+| A05 | Candidate matchers and comparison harness | Delivered acoustic/MN04 development comparison and provisional choice; [evidence](../reports/A05_MATCHERS.md) |
 | A06 | First complete search baseline with playable passages | Integrates A03 catalogue and A05 matcher; internal report, no user rating gate |
 | B01–B03 | Event selection, optional separation, reusable queries, and pitch preference | Extends the baseline; measures query and separation choices |
 | C01–C04 | Passage/stem indexing, candidate retrieval, refinement, and resumable processing | Uses reproducible queries; measures shortlist coverage before refinement |
@@ -42,13 +42,13 @@ Keep original audio unchanged. Record provenance and permitted use; metadata acc
 | E01–E03 | Broader catalogue sources, measured optimisation, and maintenance | Expands the bounded prototype with explicit resource costs |
 | F01–F03 | Conditional learned ranking, representation fine-tuning, and future rhythm target | Optional improvements after measured need; not prerequisites |
 
-Dependent B/C/D engineering may interleave without changing identifiers or adding listening/approval gates. A01–A04 engineering is implemented; A03's catalogue and A04's published human evidence remain explicitly partial. A05 is next; later prompts define their own work. The D04 goal is about ten distinct-song candidates, timestamps, direct playback, and an evidence report with optional feedback. Report weak or fewer candidates honestly rather than padding apparent successes.
+Dependent B/C/D engineering may interleave without changing identifiers or adding listening/approval gates. A01–A04 engineering is implemented; A03's catalogue and A04's published human evidence remain explicitly partial. A05 development comparison is implemented; A06 is next. Later prompts define their own work. The D04 goal is about ten distinct-song candidates, timestamps, direct playback, and an evidence report with optional feedback. Report weak or fewer candidates honestly rather than padding apparent successes.
 
 ## Workspace layout
 
 | Location | Purpose | Version-control policy |
 | --- | --- | --- |
-| `src/` | Shared audio input/runtime and bounded catalogue ingestion; [source map](../src/README.md) | Source versioned; no search/model code |
+| `src/` | Shared audio input/runtime and bounded catalogue ingestion; [source map](../src/README.md) | Source versioned; bounded A05 models, no production search/index |
 | `config/` | Reproducible resource/input contracts; [config map](../config/README.md) | Versioned without secrets; `config/local/` and `*.local.*` ignored |
 | `manifests/references/` | Reference records | Sanitized metadata versioned; initial Loulou record is unverified |
 | `manifests/catalogue/` | Frozen source descriptors, ready identities, provenance, hashes, and duplicate groups | Sanitized records versioned; audio availability verified locally |
