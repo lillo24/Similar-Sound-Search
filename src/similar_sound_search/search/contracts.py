@@ -1,5 +1,6 @@
 """Search policy, frozen representation bindings, integer grids and array integrity."""
 
+import ast
 import hashlib
 import os
 import tempfile
@@ -17,6 +18,20 @@ CHOICE = "95dce46b16760b002358b1aec3db8adb9b5df1c1f2033ee70b0b5121c2dea051"
 PROTOCOL = "07af66b37db00d6a6dd4bea87c9636b06aa9dbd43c75e8164be4568bd94b0048"
 SUITE = "d4c59416e5d4bb4aeddfbefa933a3a0f18691a25957e3623f1743d2951806441"
 CONFIG = "5a487b946d748d48ec2945dae97e51f07bd0e8b106fa6c49c98df9e84a4035e9"
+PROTECTED = {
+    "search/ranking.py": ("distances", "sort_key", "timbre_key", "excluded_source"),
+    "search/contracts.py": (
+        "configuration",
+        "frozen",
+        "code_identity",
+        "grid",
+        "union_frames",
+        "save_array",
+        "load_array",
+    ),
+    "search/index.py": ("shard_identity", "step", "coverage"),
+    "search/final.py": ("self_hash", "validate_guard", "final_shard", "run_step", "score_saved"),
+}
 
 
 def configuration(root):
@@ -130,6 +145,62 @@ def code_identity():
         ).hexdigest()
         for p in sorted(paths)
     }
+
+
+def function_identity(path, names):
+    return source_function_identity(path.read_text(encoding="utf-8"), names)
+
+
+def source_function_identity(source, names):
+    tree = ast.parse(source)
+    functions = {
+        n.name: n for n in tree.body if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))
+    }
+    if set(names) - set(functions):
+        raise InputError("execution repair: required unchanged function missing")
+    return {
+        name: hashlib.sha256(
+            ast.dump(functions[name], include_attributes=False).encode()
+        ).hexdigest()
+        for name in names
+    }
+
+
+def recipe_code(root):
+    """Audit a post-inspection execution repair without changing frozen feature recipes."""
+    current = code_identity()
+    path = root / "manifests/search/execution-repair.json"
+    if not path.exists():
+        return current
+    repair = record(path)
+    declaration = record(root / "manifests/search/final-check.json")
+    allowed = {"search/contracts.py", "search/index.py", "search/ranking.py", "search/final.py"}
+    before, after = repair.get("before"), repair.get("after")
+    if (
+        repair.get("schema_version") != "a06-execution-repair-1"
+        or repair.get("held_out_previously_inspected") is not True
+        or repair.get("declaration_hash") != declaration["record_hash"]
+        or before != declaration["binding"]["code"]
+        or after != current
+        or set(before) != set(after)
+        or {k for k in before if before[k] != after[k]} - allowed
+    ):
+        raise InputError("execution repair: unaudited code/provenance drift; preserve artifacts")
+    base = Path(__file__).resolve().parents[1]
+    if set(repair.get("original_sources", {})) != set(PROTECTED):
+        raise InputError("execution repair: complete original source proof required")
+    for relative, names in PROTECTED.items():
+        original = repair["original_sources"][relative]
+        if hashlib.sha256(original.encode()).hexdigest() != before[relative]:
+            raise InputError("execution repair: original source hash differs: " + relative)
+        expected = source_function_identity(original, names)
+        if function_identity(base / relative, names) != expected:
+            raise InputError("execution repair: algorithm/metric function changed: " + relative)
+    return before
+
+
+def compatible_code(root, saved):
+    return recipe_code(root) == saved
 
 
 def grid(frames, rate, cfg):

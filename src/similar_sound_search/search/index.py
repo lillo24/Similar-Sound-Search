@@ -11,11 +11,12 @@ from ..matchers.runner import memory_check
 from ..storage import InputError, contained, digest
 from . import sources
 from .contracts import (
-    code_identity,
+    compatible_code,
     configuration,
     frozen,
     grid,
     load_array,
+    recipe_code,
     save_array,
     union_frames,
 )
@@ -38,7 +39,7 @@ def initialize(budget, method, engineering=None):
         "version": "a06-index-1",
         "configuration": cfg,
         "representation": desc,
-        "code": code_identity(),
+        "code": recipe_code(budget.root),
         "groups_hash": groups_hash,
         "sources": [[v["recording_id"], v["record_hash"]] for v in population],
     }
@@ -239,7 +240,7 @@ def open_index(budget, path, allow_partial=False):
     if (
         value["identity"]["configuration"] != cfg
         or value["identity"]["representation"] != desc
-        or value["identity"]["code"] != code_identity()
+        or not compatible_code(budget.root, value["identity"]["code"])
     ):
         raise InputError(
             "index: stale search recipe/code/representation; preserve original evidence"

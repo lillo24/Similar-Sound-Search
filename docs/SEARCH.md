@@ -164,3 +164,22 @@ immutable declaration/run and retained charges; re-scoring is the same experimen
 configuration drift refuses further inference. Document any inspected results before a fix;
 do not select/tune models using final outcomes. Human Grey1977 and Loulou relevance stay
 unavailable and D04 remains the first required listening review.
+
+
+## Recorded execution repair after final-score inspection
+
+The first full-catalogue rank exceeded one 120-second worker. Ranking now validates
+and scores four recordings per serial worker, persisting bounded progress before the
+next worker. Distance, mean aggregation, tie/exclusion/pitch rules and scored intervals
+are unchanged. A repeat verifies sources/shards and retains the same result identity.
+No feature is re-embedded by this repair and all interrupted work remains charged.
+
+`manifests/search/execution-repair.json` records that held-out scores were already
+inspected, the exact old/current executing-code maps, the unchanged declaration/index
+identities, and complete original source proofs. Runtime checks those original bytes
+against the frozen declaration and compares syntax trees of the unchanged math,
+extraction and scorer functions. Only the four listed coordinator/identity modules may
+differ; additional drift fails. The original pre-inference declaration and saved final
+predictions/results stay unchanged. This is a technical execution repair, not another
+held-out experiment or model/algorithm choice. Physical workers still have 120 seconds,
+concurrency one, and the original A06 lifetime caps.

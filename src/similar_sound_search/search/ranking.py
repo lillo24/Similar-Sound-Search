@@ -90,13 +90,32 @@ def rank(request, budget):
     path = budget.root / "data/runs/search/results" / (key + ".json")
     # Initial ranks and repeats validate originals/shards under finite read/time caps.
     excluded = set() if request.get("include_self") else set(query["identity"]["excluded_groups"])
-    best, scored = {}, 0
+    cursor = request.get("cursor", 0)
+    progress_path = budget.root / "data/runs/search/rank-progress" / (key + ".json")
+    if cursor == 0:
+        if not progress_path.exists() and not path.exists():
+            charge(budget, query_jobs=1)
+        progress_state = {
+            "identity": identity,
+            "best": {},
+            "scored": 0,
+            "seconds": 0,
+            "state": "in_progress",
+        }
+        write_record(progress_path, progress_state, budget)
+    else:
+        progress_state = record(progress_path)
+        if progress_state["identity"] != identity:
+            raise InputError("rank progress: index/query recipe differs")
+    best, scored = progress_state["best"], progress_state["scored"]
     started = time.perf_counter()
-    for entry in sorted(manifest["entries"]):
+    entries = sorted(manifest["entries"])
+    for entry in entries[cursor : cursor + 4]:
         progress = record(base / "entries" / (entry + ".json"))
         source = progress["source"]
         samples = sources.load(budget, source)
         if excluded_source(source, query, request.get("include_self", False)):
+            del samples
             continue
         for shard in progress["shards"]:
             directory = base / "shards" / shard
@@ -141,6 +160,23 @@ def rank(request, budget):
             )
         del samples
         memory_check(budget)
+    cursor = min(len(entries), cursor + 4)
+    progress_state.update(
+        best=best,
+        scored=scored,
+        seconds=progress_state["seconds"] + time.perf_counter() - started,
+        cursor=cursor,
+        state="complete" if cursor == len(entries) else "in_progress",
+    )
+    write_record(progress_path, progress_state, budget)
+    if cursor < len(entries):
+        return {
+            "status": "ok",
+            "state": "in_progress",
+            "cursor": cursor,
+            "recordings_validated": cursor,
+            "expected_recordings": len(entries),
+        }
     hits = sorted(best.values(), key=sort_key)[: cfg["results"]]
     value = {
         "schema_version": "a06-result-1",
@@ -157,7 +193,7 @@ def rank(request, budget):
         "scored_windows": scored,
         "coverage": coverage(base, manifest),
         "interpretation": "Ranked candidates; no calibrated probability or presence threshold",
-        "ranking_validation_seconds": time.perf_counter() - started,
+        "ranking_validation_seconds": progress_state["seconds"],
         "peak_working_bytes": memory_check(budget),
     }
     if path.exists():
@@ -166,7 +202,6 @@ def rank(request, budget):
             raise InputError("result reuse: ranking/source identity differs")
         reused = True
     else:
-        charge(budget, query_jobs=1)
         write_record(path, value, budget)
         reused = False
     return {

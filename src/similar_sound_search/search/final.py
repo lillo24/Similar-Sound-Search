@@ -20,6 +20,7 @@ from .contracts import (
     PROTOCOL,
     SUITE,
     code_identity,
+    compatible_code,
     configuration,
     frozen,
     load_array,
@@ -157,7 +158,7 @@ def declaration_for(budget):
     _, _, protocol, suite, desc = frozen(budget)
     header = {**value["binding"], "run_id": value["run_id"]}
     validate_guard(value, protocol, header)
-    if value["binding"]["code"] != code_identity() or value["binding"][
+    if not compatible_code(budget.root, value["binding"]["code"]) or value["binding"][
         "search_configuration"
     ] != configuration(budget.root):
         raise InputError("final check: code/search policy changed after declaration; preserve run")

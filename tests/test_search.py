@@ -15,11 +15,12 @@ from similar_sound_search.matchers.models import descriptor
 from similar_sound_search.records import map_time
 from similar_sound_search.resources import CatalogueBudget, load_limits
 from similar_sound_search.search import final as final_check
-from similar_sound_search.search import index, query, sources
+from similar_sound_search.search import index, query, ranking, sources
 from similar_sound_search.search.contracts import (
     configuration,
     grid,
     load_array,
+    recipe_code,
     save_array,
     union_frames,
 )
@@ -493,6 +494,59 @@ class SearchCase(AudioCase):
         self.assertEqual(result["status"], "failed")
         self.assertGreater(result["ledger"]["charged_worker_seconds"], 0)
         self.assertEqual(result["work"]["counts"]["workers"], 1)
+
+    def test_four_record_ranking_workers_preserve_exact_result_and_reuse(self):
+        _, _, path = self.build_index()
+        manifest = record(path)
+        original_key = next(iter(manifest["entries"]))
+        entry = record(path.parent / "entries" / (original_key + ".json"))
+        keys = [f"test-entry-{n}" for n in range(6)]
+        for key in keys:
+            write_record(path.parent / "entries" / (key + ".json"), entry, self.sbudget())
+        manifest.update(
+            entries={k: "complete" for k in keys},
+            expected_recordings=6,
+            expected_original_seconds=24,
+        )
+        fake_query = {
+            "query_id": "test-query",
+            "identity": {"excluded_groups": []},
+            "examples": [{"audio": {"duration_seconds": 2.4}, "pitch": {"hz": None}}],
+        }
+        request = {"index": str(path), "query": "test", "include_self": True, "cursor": 0}
+        with (
+            patch.object(
+                ranking, "open_index", return_value=(path.parent, manifest, self.desc, self.cfg)
+            ),
+            patch.object(
+                ranking, "load_query", return_value=(fake_query, np.ones((1, 56), np.float32))
+            ),
+        ):
+            first = rank(request, self.sbudget())
+            self.assertEqual(first["cursor"], 4)
+            self.assertEqual(first["state"], "in_progress")
+            last = rank({**request, "cursor": first["cursor"]}, self.sbudget())
+            first_again = rank(request, self.sbudget())
+            repeated = rank({**request, "cursor": first_again["cursor"]}, self.sbudget())
+        self.assertEqual(last["candidates"], 1)
+        self.assertEqual(last["result"], repeated["result"])
+        self.assertTrue(repeated["reused"])
+        self.assertEqual(
+            record(self.root / last["result"])["candidates"][0]["recording_id"], keys[0]
+        )
+
+    def test_execution_repair_binds_original_sources_and_rejects_drift(self):
+        destination = self.root / "manifests/search"
+        destination.mkdir(parents=True)
+        for name in ("final-check.json", "execution-repair.json"):
+            shutil.copyfile(REPOSITORY / "manifests/search" / name, destination / name)
+        declared = record(destination / "final-check.json")
+        self.assertEqual(recipe_code(self.root), declared["binding"]["code"])
+        repair = record(destination / "execution-repair.json")
+        repair["after"]["search/ranking.py"] = "invalid executing source hash"
+        write_record(destination / "execution-repair.json", repair, self.sbudget())
+        with self.assertRaisesRegex(InputError, "unaudited"):
+            recipe_code(self.root)
 
     def test_stable_ties_do_not_use_titles(self):
         hits = [

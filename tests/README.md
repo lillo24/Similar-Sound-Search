@@ -21,3 +21,5 @@ original stereo crop conversion, finite retained charges and the provenance-boun
 final guard. A synthetic coordinator interruption/resume/reuse test never invokes
 pretrained inference or consumes the delivery final run. A small actual acoustic
 query/index/rank/playback path uses only disposable generated data.
+
+The A06 execution-repair tests additionally verify four-record rank workers, exact result/reuse identities, preserved original function syntax, and refusal of unaudited source drift.
