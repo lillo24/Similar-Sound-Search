@@ -1,6 +1,6 @@
 # Project status
 
-Updated 13 October 2026. **A05 acoustic/pretrained development comparison delivered; provisional EfficientAT MN04 default ready for A06.** The corrected hit@1 protocol was frozen before rankings. Human agreement remains unavailable and A03 remains partial. No held-out model, cross-song or Loulou success is claimed. Follow [AGENTS.md](../AGENTS.md) for branch/PR/merge/cleanup delivery.
+Updated 14 October 2026. **A06 local exact passage search and original playback delivered.** All 72 local A03 recordings are indexed over full available durations, with single/multiple-example demos and one unchanged EfficientAT held-out check. Human agreement and Loulou relevance remain unavailable; A03 remains partial against its acquisition target. Follow [AGENTS.md](../AGENTS.md) for branch/PR/merge/cleanup delivery.
 
 ## Foundation and current delivery
 
@@ -42,17 +42,28 @@ No GitHub Actions workflow/required CI check exists in the inspected repository;
 | A04 controlled construction and evaluation harness | Complete engineering delivery: 208 assets, 160 queries; 88 tests; [evidence](../reports/A04_BENCHMARKS.md) |
 | A04 published human evidence | Partial: 16 AIFF stimuli + 120 observations downloaded/validated; zero eligible scoring pairs due to unresolved rights/original mapping |
 | A05 matcher comparison | Complete controlled development comparison: two genuine methods, 80 queries each, provisional EfficientAT MN04; [evidence](../reports/A05_MATCHERS.md) |
-| A06 search, playable results and held-out model check | Next; not implemented or run |
+| A06 search, playable results and held-out model check | Implementation/index/demos/final check complete: 72/72 local recordings, 44,025 passages, original stereo clips; 21/24 source-consistency held-out query hits at K=1 and 32/32 events at K=10. Extra whole-index repeat partial at the fixed cap; later catalogue browser controls unavailable. [Evidence](../reports/A06_SEARCH.md) |
 | B–D event selection, separation, indexing/refinement, interface/package | Future; first required listening review D04 |
-| Perceptual quality, cross-song recovery, Loulou relevance | Unmeasured; controlled mixture/source metrics are separate A05 evidence |
+| Perceptual quality and Loulou relevance | Unmeasured; real-catalogue candidates are not confirmed matches; controlled A05/A06 metrics remain separate |
 | Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 
-## A06 handoff
+## A06 delivery and handoff
 
-Reinspect current main/instructions, [matcher setup/commands](MATCHERS.md), [A05 measured evidence](../reports/A05_MATCHERS.md), [choice](../manifests/matchers/choice.json), source maps and actual implementation. Use a separate A06 branch/PR. The provisional EfficientAT MN04 choice achieved 24/24 source-consistency development query hits at K=1, versus acoustic 17/24, constant 16/24 and seeded random 9/24. This is a small four-family controlled-source result, not human timbre accuracy. The selected configuration/checkpoint, protocol/suite, preprocessing and distance are frozen; no tuning sweep or held-out model run occurred.
+The [A06 evidence](../reports/A06_SEARCH.md), [search commands](SEARCH.md) and [public records](../manifests/search/README.md) own current search behavior. A05's choice stays stage A05. A06 declared its immutable final run before inference, then ran all eighty held-out queries using that exact configuration/checkpoint/protocol/suite, preprocessing/grid, cosine distance, pitch zero and empty refinement. Its 21/24 source-consistency query hit@1 compares with development 24/24; no retuning or second model was selected.
 
-A06 must explicitly initiate its final check with the exact choice; A05's choice remains `stage: A05` and cannot bypass the held-out guard. A05 has four run operations and twelve smoke attempts already charged; A06 must define its own finite work for its distinct stage, without resetting A03/A04/A05 ledgers or using a replacement job to repeat development tuning. Feature reuse retains original model cost and validates source/checkpoint/config identity. Refinement, a real-catalogue index/search and playable-result delivery remain A06/later work.
+A06 has its own fixed finite indexing/query/final-check ledger; old A03/A04/A05 ledgers and all prior inputs/evidence remain unchanged. The 72-file index contains 123 compact shards, 67,638,144 vector-file bytes and 3.098 unique source hours. Parent recordings/known duplicates are excluded; each demo returns ten distinct recording candidates. Original native-channel/rate crops are verified sample by sample and exported as PCM16 WAV. Unknown master offsets remain visibly available-file/excerpt-relative.
 
-The controlled suite retains 104 assets/80 queries per split, unchanged audio/truth/recipes, four procedural families and two real-background families per split. The atomic comparison pair changes only the pre-ranking grid/selection policy. Backgrounds still use seconds 2..10 of the centred A03 derivatives with decoded-original intervals and unknown master offsets. All 396 preserved audio/reference/accounting files retained exact hashes, sizes and modification times. Grey1977 remains quarantined, CIR lacks established terms, and standard CLAP exceeds the download cap.
+Run `.\scripts\listen-search.ps1` from the repository root and visit `http://127.0.0.1:8766/`; Ctrl+C stops the owned loopback listener. The completed index/query/report remain ignored in this delivery checkout after merge. A fresh checkout needs its matching private inputs/checkpoint/registrations; it cannot infer availability from public manifests. Reuse still consumes finite read/worker allowance. The post-inspection repair only splits catalogue ranking into four-recording serial workers and validates unchanged math/extraction/scoring against frozen source proofs.
+
+The fixed A06 worker-time allowance is consumed; further compute refuses without
+resetting/increasing anything. All 123 immutable arrays remained unchanged, both complete
+catalogue ranks reused eligible shards, and single-query preparation returned reuse.
+An extra full-index repeat refreshed 57/72 receipts before its final bounded worker
+was terminated. Later Chrome control required an extension update; catalogue play/pause/
+seek is not claimed, while earlier engineering playback checks passed on identical code.
+The listener remains independent of the exhausted compute job. [Resource record](../manifests/search/resources.json)
+retains all costs and gaps.
+
+The controlled suite retains 104 assets/80 queries per split, unchanged audio/truth/recipes, four procedural families and two real-background families per split. Backgrounds still use seconds 2..10 of the centred A03 derivatives with decoded-original intervals and unknown master offsets. A06 preservation audits cover 7,121 earlier files. Grey1977 remains quarantined, CIR lacks established terms, and standard CLAP exceeds the download cap.
 
 The actual marked-version daoud — Loulou & the loulous audio and provenance/offset evidence remain unavailable for a verified reference experiment. Never crop a short excerpt at second 218. D04 remains the first required listening review; no new labels are requested for independent A06 engineering.

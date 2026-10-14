@@ -1,0 +1,359 @@
+{
+  "schema_version": "a06-pilot-1",
+  "configuration": {
+    "schema_version": "a06-search-1",
+    "window_milliseconds": 2400,
+    "hop_milliseconds": 250,
+    "windows_per_shard": 512,
+    "rank_block_windows": 512,
+    "max_query_examples": 8,
+    "max_query_seconds": 30,
+    "results": 10,
+    "playback_context_milliseconds": 1000,
+    "pitch_weight_default": 0,
+    "pitch_weight_max": 0.05,
+    "pitch_tolerance_semitones": 12,
+    "policy": {
+      "max_job_seconds": 7200,
+      "max_http_attempts": 0,
+      "max_download_bytes": 0,
+      "max_workers": 512,
+      "max_indexed_windows": 60000,
+      "max_processed_window_seconds": 160000,
+      "max_read_audio_seconds": 180000,
+      "max_feature_bytes": 268435456,
+      "max_query_jobs": 24,
+      "max_query_preparation_bytes": 67108864,
+      "max_final_attempts": 1,
+      "max_final_windows": 2000,
+      "max_pilot_windows": 64,
+      "max_clips": 64,
+      "max_clip_bytes": 134217728
+    }
+  },
+  "representation": {
+    "version": "a05-representation-1",
+    "method": "efficientat",
+    "code": {
+      "acoustic.py": "f32624fbce8a9fa904ebe1508d818040309f8039894979aa1286a4a1c97e03be",
+      "efficientat.py": "c0a7ee50ce402fd5a5371ccd82a5a495f93911f85a2e1ba47eca7819fa57d8e1",
+      "efficientat_model.py": "4f1d5019a54ce0c087eea227cac795848b581803dcb515da98583ce85a281a3d"
+    },
+    "tools": {
+      "pipeline": "a02-preparation-3",
+      "package": "0.3.0",
+      "python": "3.12.14",
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2"
+    },
+    "grid": {
+      "version": "a05-grid-1",
+      "hop_seconds": 0.25,
+      "tail": "unique end-aligned",
+      "duration": "complete query",
+      "controlled": "complete candidate"
+    },
+    "device": "cpu",
+    "precision": "float32",
+    "channel_policy": "arithmetic mean",
+    "resampling": "resample_poly Kaiser5 constant-zero; elapsed-time scale 1",
+    "admissible_seconds": [
+      0.0001,
+      30
+    ],
+    "truncation": "none; whole selected input",
+    "score_direction": "lower_better",
+    "normalization_fit": "none; fixed declared scales; no held-out fit",
+    "input_rate": 32000,
+    "dimension": 384,
+    "distance": "cosine",
+    "checkpoint": {
+      "repository": "fschmid56/EfficientAT",
+      "code_revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+      "release": "v0.0.1",
+      "asset_id": 84971629,
+      "filename": "mn04_as_mAP_432.pt",
+      "bytes": 4066513,
+      "sha256": "899a8c6217063f6941793102a2780b3dd788ab11fce468d9cf5f0577c453321c",
+      "terms": "Official repository MIT licence; retain copyright and licence; AudioSet pretrained tagging representation, not established timbre accuracy"
+    },
+    "optional_tools": {
+      "torch": "2.6.0+cpu"
+    },
+    "feature_layer": "last convolution before classifier; spatial mean",
+    "pooling": "frequency/time average, no logits",
+    "frontend": "native preemphasis .97; symmetric Hann800 FFT1024 hop320 centered reflect; Kaldi128 mel 0..15000Hz; log(power+1e-5), (x+4.5)/5",
+    "padding": "zero pad only inputs shorter than 1024 samples; no 10-second extension",
+    "augmentation": "disabled; eval/inference_mode; deterministic CPU"
+  },
+  "source_id": "02e9c5776b23f68fc3ac3fdd3fbb36b0c497701c3a1a346e22f3ed76051b2064",
+  "split": "development",
+  "bounds": [
+    [
+      0,
+      105840
+    ],
+    [
+      11025,
+      116865
+    ],
+    [
+      22050,
+      127890
+    ],
+    [
+      33075,
+      138915
+    ],
+    [
+      44100,
+      149940
+    ],
+    [
+      55125,
+      160965
+    ],
+    [
+      66150,
+      171990
+    ],
+    [
+      77175,
+      183015
+    ],
+    [
+      88200,
+      194040
+    ],
+    [
+      99225,
+      205065
+    ],
+    [
+      110250,
+      216090
+    ],
+    [
+      121275,
+      227115
+    ],
+    [
+      132300,
+      238140
+    ],
+    [
+      143325,
+      249165
+    ],
+    [
+      154350,
+      260190
+    ],
+    [
+      165375,
+      271215
+    ],
+    [
+      176400,
+      282240
+    ],
+    [
+      187425,
+      293265
+    ],
+    [
+      198450,
+      304290
+    ],
+    [
+      209475,
+      315315
+    ],
+    [
+      220500,
+      326340
+    ],
+    [
+      231525,
+      337365
+    ],
+    [
+      242550,
+      348390
+    ],
+    [
+      253575,
+      359415
+    ],
+    [
+      264600,
+      370440
+    ],
+    [
+      275625,
+      381465
+    ],
+    [
+      286650,
+      392490
+    ],
+    [
+      297675,
+      403515
+    ],
+    [
+      308700,
+      414540
+    ],
+    [
+      319725,
+      425565
+    ],
+    [
+      330750,
+      436590
+    ],
+    [
+      341775,
+      447615
+    ],
+    [
+      352800,
+      458640
+    ],
+    [
+      363825,
+      469665
+    ],
+    [
+      374850,
+      480690
+    ],
+    [
+      385875,
+      491715
+    ],
+    [
+      396900,
+      502740
+    ],
+    [
+      407925,
+      513765
+    ],
+    [
+      418950,
+      524790
+    ],
+    [
+      429975,
+      535815
+    ],
+    [
+      441000,
+      546840
+    ],
+    [
+      452025,
+      557865
+    ],
+    [
+      463050,
+      568890
+    ],
+    [
+      474075,
+      579915
+    ],
+    [
+      485100,
+      590940
+    ],
+    [
+      496125,
+      601965
+    ],
+    [
+      507150,
+      612990
+    ],
+    [
+      518175,
+      624015
+    ],
+    [
+      529200,
+      635040
+    ],
+    [
+      540225,
+      646065
+    ],
+    [
+      551250,
+      657090
+    ],
+    [
+      562275,
+      668115
+    ],
+    [
+      573300,
+      679140
+    ],
+    [
+      584325,
+      690165
+    ],
+    [
+      595350,
+      701190
+    ],
+    [
+      606375,
+      712215
+    ],
+    [
+      617400,
+      723240
+    ],
+    [
+      628425,
+      734265
+    ],
+    [
+      639450,
+      745290
+    ],
+    [
+      650475,
+      756315
+    ],
+    [
+      661500,
+      767340
+    ],
+    [
+      672525,
+      778365
+    ],
+    [
+      683550,
+      789390
+    ],
+    [
+      694575,
+      800415
+    ]
+  ],
+  "windows": 64,
+  "load_seconds": 5.691112100000282,
+  "extraction_seconds": 2.1354928999999174,
+  "peak_working_bytes": 326160384,
+  "catalogue_rankings_inspected": false,
+  "decision": "Retain 2.4s/.25s grid and 512-window shards; no second duration",
+  "estimated_full_extraction_seconds": 1468.9855456640057,
+  "record_hash": "d744387099f906814c3f7340a59322a85199f94cf1ccbadda651dc290ee4b559"
+}

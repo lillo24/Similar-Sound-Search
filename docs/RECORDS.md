@@ -182,3 +182,36 @@ Predictions retain `a04-predictions-1`, with genuine `evidence_kind: matcher`, t
 Feature identity binds audio byte/PCM identity, interval/rate, deterministic preparation/tool versions, representation source/checkpoint/layer/scaling, precision/device and versions. Ignored `a05-feature-1` records bind deterministic float32 arrays to hashes and actual original extraction duration. Reuse checks referenced source audio and array integrity and retains cold inference cost. Progress is explicit in-progress/complete; unsuccessful inference returns failure. The four lifetime run operations count complete reuse as well as original runs.
 
 `a05-choice-1` records `stage: A05`, `selected_on: development`, method/config/protocol/suite/shortlist identities, full representation configuration, development criteria/costs, unavailable methods, control comparisons and limits. It cannot satisfy the existing A06 guard. A06 must explicitly initiate its final check with the exact frozen choice and correct stage; no A05 command enables held-out inference/scoring.
+
+## A06 search and playback records
+
+`a06-index-1` binds a separately versioned search policy, canonical source-code identity,
+unchanged representation, current catalogue/group record hashes and explicit source
+population. Per-original records retain native source metadata/provenance/mapping,
+immutable shard keys and partial/complete progress. `a06-shard-1` validates content keys,
+shared half-open native bounds, dimension/float32/finite values and array SHA256. Coverage
+reports full-original seconds, union of indexed intervals and overlapping processed
+window seconds separately; historical ready metadata is not local availability.
+
+`a06-query-1` retains complete A02 records, source/selected byte/PCM hashes, lineage and
+map/offset evidence for each unique example. Equal selected PCM cannot silently reweight
+the unordered mean-distance query. `a06-result-1` binds the index/shard set and query,
+metric/direction/representation, explicit pitch preference and diagnostic inclusion.
+It retains per-example/aggregate timbre distances, optional pitch contribution,
+duration mismatch, recording/group/source URLs and scored native intervals. The mismatch
+is candidate duration minus each example's duration, in seconds. One best passage per
+group suppresses overlapping alternatives; it never assigns a score to a
+merged/unscored interval. Results are candidates without calibrated presence/probability.
+
+`a06-playback-1` binds original crops, frame/rate/channel counts, clip-zero source offsets,
+known/unknown master offsets, PCM16 conversion/gain, exact sample verification, byte
+hashes and safe local HTML. Context and scored bounds remain distinct. Bundle allowlists
+exclude all unrelated paths. Missing/corrupt source, shard or media fails visibly.
+
+`a06-final-1` is declared before inference and embeds self-hashed unchanged A05 choice
+and shortlist, their hashes, protocol/suite, exact checkpoint/config, frozen held-out
+grid/split/no-pitch/refinement policy, committed implementation, code/environment and
+one finite run identity. Original `choice.json` stays A05. A04's guard validates these
+bindings, rejecting a free-form `stage:A06` object. Predictions retain A04's <=128 interval
+contract and all eighty query denominators, and are published before scoring. The
+catalogue's exact search has a separate sharded contract and no 128-window restriction.

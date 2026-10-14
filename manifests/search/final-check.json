@@ -1,0 +1,394 @@
+{
+  "schema_version": "a06-final-1",
+  "stage": "A06",
+  "selected_on": "development",
+  "declared_before_inference": true,
+  "held_out_scores_previously_inspected": false,
+  "run_id": "a06-final-4b0b011a0bf4869e5625bf138f4b145bd4ceb20c438116084b122a51d363a389",
+  "binding": {
+    "choice_hash": "95dce46b16760b002358b1aec3db8adb9b5df1c1f2033ee70b0b5121c2dea051",
+    "shortlist_hash": "9718def492e7c65bd8fe0a5f1fc8dbac5c78499361c3062994db1d9df81e829e",
+    "protocol_hash": "07af66b37db00d6a6dd4bea87c9636b06aa9dbd43c75e8164be4568bd94b0048",
+    "suite_hash": "d4c59416e5d4bb4aeddfbefa933a3a0f18691a25957e3623f1743d2951806441",
+    "method_id": "efficientat",
+    "configuration": {
+      "version": "a05-representation-1",
+      "method": "efficientat",
+      "code": {
+        "acoustic.py": "f32624fbce8a9fa904ebe1508d818040309f8039894979aa1286a4a1c97e03be",
+        "efficientat.py": "c0a7ee50ce402fd5a5371ccd82a5a495f93911f85a2e1ba47eca7819fa57d8e1",
+        "efficientat_model.py": "4f1d5019a54ce0c087eea227cac795848b581803dcb515da98583ce85a281a3d"
+      },
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "grid": {
+        "version": "a05-grid-1",
+        "hop_seconds": 0.25,
+        "tail": "unique end-aligned",
+        "duration": "complete query",
+        "controlled": "complete candidate"
+      },
+      "device": "cpu",
+      "precision": "float32",
+      "channel_policy": "arithmetic mean",
+      "resampling": "resample_poly Kaiser5 constant-zero; elapsed-time scale 1",
+      "admissible_seconds": [
+        0.0001,
+        30
+      ],
+      "truncation": "none; whole selected input",
+      "score_direction": "lower_better",
+      "normalization_fit": "none; fixed declared scales; no held-out fit",
+      "input_rate": 32000,
+      "dimension": 384,
+      "distance": "cosine",
+      "checkpoint": {
+        "repository": "fschmid56/EfficientAT",
+        "code_revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+        "release": "v0.0.1",
+        "asset_id": 84971629,
+        "filename": "mn04_as_mAP_432.pt",
+        "bytes": 4066513,
+        "sha256": "899a8c6217063f6941793102a2780b3dd788ab11fce468d9cf5f0577c453321c",
+        "terms": "Official repository MIT licence; retain copyright and licence; AudioSet pretrained tagging representation, not established timbre accuracy"
+      },
+      "optional_tools": {
+        "torch": "2.6.0+cpu"
+      },
+      "feature_layer": "last convolution before classifier; spatial mean",
+      "pooling": "frequency/time average, no logits",
+      "frontend": "native preemphasis .97; symmetric Hann800 FFT1024 hop320 centered reflect; Kaldi128 mel 0..15000Hz; log(power+1e-5), (x+4.5)/5",
+      "padding": "zero pad only inputs shorter than 1024 samples; no 10-second extension",
+      "augmentation": "disabled; eval/inference_mode; deterministic CPU"
+    },
+    "config_hash": "5a487b946d748d48ec2945dae97e51f07bd0e8b106fa6c49c98df9e84a4035e9",
+    "checkpoint": {
+      "repository": "fschmid56/EfficientAT",
+      "code_revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+      "release": "v0.0.1",
+      "asset_id": 84971629,
+      "filename": "mn04_as_mAP_432.pt",
+      "bytes": 4066513,
+      "sha256": "899a8c6217063f6941793102a2780b3dd788ab11fce468d9cf5f0577c453321c",
+      "terms": "Official repository MIT licence; retain copyright and licence; AudioSet pretrained tagging representation, not established timbre accuracy"
+    },
+    "grid": {
+      "version": "a05-grid-1",
+      "hop_seconds": 0.25,
+      "tail": "unique end-aligned",
+      "duration": "complete query",
+      "controlled": "complete candidate"
+    },
+    "split": "held_out",
+    "query_count": 80,
+    "pitch_weight": 0,
+    "refinement": "empty",
+    "attempt": 1,
+    "code": {
+      "__init__.py": "64c5ccaaa4d011635e582ab1ed3890c2c7c6e81463518bf2a7ad66dc50f407eb",
+      "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "catalogue/__init__.py": "cb2f9dd3009b8ddda5243414de0433f48862b542b0f1ef65268b3a4b905b2b08",
+      "catalogue/ingestion.py": "cde055f915935507cbdb187b0409609d0066956b4bdc7cd446519935ca11af94",
+      "catalogue/job.py": "6957f866693d976055970ffbe85b5d827cd14534e1d39c635bfceb354e0e6b3b",
+      "catalogue/source.py": "9c7d60b669fcb5e82b8228dba0dc80afe60d6bfb8629042cde342801c9a94758",
+      "catalogue/transfer.py": "42ba07924642afbb0467043e801071cc284372f454ccb7275066b0b319be6a21",
+      "cli.py": "f79319c78a62cc60708b29d8903ae298dbbd74aee3fae7003f69616a24ef20cd",
+      "diagnostics.py": "19577dbeaf4f66ebcdb3da603a12e79a5b865e8932de6d5bbcb5a226df668887",
+      "evaluation/__init__.py": "754c065ca98f2121f9228d4985f42df2f39b3c2ef4d8214a64e5fcc6867fbe2c",
+      "evaluation/artifacts.py": "10d1e480df9401e0fd91aa3ab47a3f28b01030f5b86782d8150440d7b009b8f4",
+      "evaluation/job.py": "4a56f4b61a32af1a7c25af0c61dd60947c5d3a0e5446de9c34bf78608d04bf4b",
+      "evaluation/protocol.py": "50fdcc21f20372b85559d7db2388afd56adf4640dad3d4cfccdcbb97bf525f9a",
+      "evaluation/published.py": "85ead81b2162fbe96543f86215234b1404c8ebd01c1e381dbd221a1af19aa2db",
+      "evaluation/rendering.py": "41aa414d82eb325108288d5afcd890dd7bdf7b466a0ebbbbb7aba41b94c8d1f4",
+      "evaluation/scoring.py": "1f1e857d11d6460bf234db2e713158ade9cf6be2e91f612884ac01815cb2cb4d",
+      "evaluation/suite.py": "2f1576d8f335231279a5ad9f6b7f8463d281dde8cccc9e0b009968c3a4ac5af9",
+      "inputs.py": "fd66a4ce0b2ffd553a04dbffaf10100a1a2f0c855dae1fb317dc57c5b75a21e5",
+      "matchers/__init__.py": "25e2bdd52f6be7117deee1ff46720022040572c1642631e8b67648c4ec671dc8",
+      "matchers/acoustic.py": "9b6dcc469691c72c8de62e33da3c86621265fc08b33270c261e6a4d20b474127",
+      "matchers/cache.py": "410e6d1b2996f2ba1ccdad24d0f00ef1cdd444619aad27eb42477c163f8bb0a6",
+      "matchers/correction.py": "12e3572a28caffbfcded563198b3e731fb0cff36f6e3739ee907169c72ec9084",
+      "matchers/efficientat.py": "877cfe3cac1390dd252689f1f61199fdaaf5997899e66fdac3ab6ab589350475",
+      "matchers/efficientat_model.py": "4f1d5019a54ce0c087eea227cac795848b581803dcb515da98583ce85a281a3d",
+      "matchers/job.py": "65fa00469b53f70b0228650cc76d3f1b9b4b53df49b175e93d827b76a01dcfaf",
+      "matchers/models.py": "04e0e1b8317e874caaeac87e3d1c1bf5ab13de3276bf6a4a344c84de3d523aa1",
+      "matchers/runner.py": "3441c283771422577280dc1be80313c7b597740271cab011eb3ce2af8958293d",
+      "matchers/selection.py": "6c023f0e479dc6737f48d86e6644c8aa057c098c5ffb58d324c4f6a36d25974a",
+      "matchers/windows.py": "689e3035f61d368cdf3d0cc8dfc3ee60a5c03a8d3861f570ea7544a1c558fca9",
+      "preparation.py": "d14ac0709b3cc0c2b91bc38d436969786d2c75c3dcf19a489f5cb5aea217228a",
+      "records.py": "fa3996c41d09104e546d8fc3881977032142ba9d6a5800db1d8f7965f372395c",
+      "resources.py": "a8dab7ecb2670cea9b35f5f1d7a3c3a20d10d2b1d8aa2da452d663fb7e4aa863",
+      "search/__init__.py": "d82102fbd6007b4678ebca808b5916d03114b54861f8c3145cfa955f4a9ac1c7",
+      "search/commands.py": "ecfaeb0a40b688bd134984919225de9ff8d718f10275376bb5f99e88a35ee588",
+      "search/contracts.py": "8db9bd2d03297e327bfabdcb3aedd5f4f99364cec9bedca3be00875cbb50a78e",
+      "search/final.py": "255b9f2ee91c0a2fc3dafb62076ccd4568821d2ceee1d667c69a7885b9c1ad6d",
+      "search/index.py": "587cf4758ae35c283a4433b9bdcebfaa0b98d3ade74bbac785893eb0b18a9623",
+      "search/job.py": "09fbb0f8319496868f713b079ae75131f08da0b0e4c712aca9d91843c96c649a",
+      "search/pitch.py": "c0e049eab1181ab305c1a9bde1bdd6b04ccb337572975017ae33862796b8b57b",
+      "search/query.py": "164542eeef48039143dbf3e04ba8460cf15681f7c2c6266c3ab3fa8c763b1161",
+      "search/ranking.py": "e9520ee5edac45ba9e6b4c55c683f13fde6828143a6adbeddc95fca9d166e326",
+      "search/report.py": "9b8a8dff6077117c3d8c8c62bd6b21c539b891333399524fcbe14f2c5942601a",
+      "search/sources.py": "a334f4004dc3cc5c097d52ff72d06d84981e327a3e95690acb46b1bc8a740d6a",
+      "storage.py": "aa6f4cd48b476c1a8220df9c339a7b51e1bfd741b4206dd9e23368a31c6fde27"
+    },
+    "search_configuration": {
+      "schema_version": "a06-search-1",
+      "window_milliseconds": 2400,
+      "hop_milliseconds": 250,
+      "windows_per_shard": 512,
+      "rank_block_windows": 512,
+      "max_query_examples": 8,
+      "max_query_seconds": 30,
+      "results": 10,
+      "playback_context_milliseconds": 1000,
+      "pitch_weight_default": 0,
+      "pitch_weight_max": 0.05,
+      "pitch_tolerance_semitones": 12,
+      "policy": {
+        "max_job_seconds": 7200,
+        "max_http_attempts": 0,
+        "max_download_bytes": 0,
+        "max_workers": 512,
+        "max_indexed_windows": 60000,
+        "max_processed_window_seconds": 160000,
+        "max_read_audio_seconds": 180000,
+        "max_feature_bytes": 268435456,
+        "max_query_jobs": 24,
+        "max_query_preparation_bytes": 67108864,
+        "max_final_attempts": 1,
+        "max_final_windows": 2000,
+        "max_pilot_windows": 64,
+        "max_clips": 64,
+        "max_clip_bytes": 134217728
+      }
+    },
+    "environment": {
+      "python": "3.12.14",
+      "platform": "Windows-11-10.0.22000-SP0",
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "torch": "2.6.0+cpu",
+      "numerical_threads": 1
+    },
+    "implementation_commit": "564ba0cebb915425f99c09b2a985decffd9053b7",
+    "accounting_owner": "data/runs/search",
+    "final_windows_cap": 2000
+  },
+  "a05_choice": {
+    "schema_version": "a05-choice-1",
+    "stage": "A05",
+    "selected_on": "development",
+    "protocol_hash": "07af66b37db00d6a6dd4bea87c9636b06aa9dbd43c75e8164be4568bd94b0048",
+    "suite_hash": "d4c59416e5d4bb4aeddfbefa933a3a0f18691a25957e3623f1743d2951806441",
+    "shortlist_hash": "9718def492e7c65bd8fe0a5f1fc8dbac5c78499361c3062994db1d9df81e829e",
+    "method_id": "efficientat",
+    "config_hash": "5a487b946d748d48ec2945dae97e51f07bd0e8b106fa6c49c98df9e84a4035e9",
+    "configuration": {
+      "version": "a05-representation-1",
+      "method": "efficientat",
+      "code": {
+        "acoustic.py": "f32624fbce8a9fa904ebe1508d818040309f8039894979aa1286a4a1c97e03be",
+        "efficientat.py": "c0a7ee50ce402fd5a5371ccd82a5a495f93911f85a2e1ba47eca7819fa57d8e1",
+        "efficientat_model.py": "4f1d5019a54ce0c087eea227cac795848b581803dcb515da98583ce85a281a3d"
+      },
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "grid": {
+        "version": "a05-grid-1",
+        "hop_seconds": 0.25,
+        "tail": "unique end-aligned",
+        "duration": "complete query",
+        "controlled": "complete candidate"
+      },
+      "device": "cpu",
+      "precision": "float32",
+      "channel_policy": "arithmetic mean",
+      "resampling": "resample_poly Kaiser5 constant-zero; elapsed-time scale 1",
+      "admissible_seconds": [
+        0.0001,
+        30
+      ],
+      "truncation": "none; whole selected input",
+      "score_direction": "lower_better",
+      "normalization_fit": "none; fixed declared scales; no held-out fit",
+      "input_rate": 32000,
+      "dimension": 384,
+      "distance": "cosine",
+      "checkpoint": {
+        "repository": "fschmid56/EfficientAT",
+        "code_revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+        "release": "v0.0.1",
+        "asset_id": 84971629,
+        "filename": "mn04_as_mAP_432.pt",
+        "bytes": 4066513,
+        "sha256": "899a8c6217063f6941793102a2780b3dd788ab11fce468d9cf5f0577c453321c",
+        "terms": "Official repository MIT licence; retain copyright and licence; AudioSet pretrained tagging representation, not established timbre accuracy"
+      },
+      "optional_tools": {
+        "torch": "2.6.0+cpu"
+      },
+      "feature_layer": "last convolution before classifier; spatial mean",
+      "pooling": "frequency/time average, no logits",
+      "frontend": "native preemphasis .97; symmetric Hann800 FFT1024 hop320 centered reflect; Kaldi128 mel 0..15000Hz; log(power+1e-5), (x+4.5)/5",
+      "padding": "zero pad only inputs shorter than 1024 samples; no 10-second extension",
+      "augmentation": "disabled; eval/inference_mode; deterministic CPU"
+    },
+    "development_runs": {
+      "acoustic": {
+        "primary_hit_at_1": 0.7083333333333334,
+        "secondary_hit_at_5": 1.0,
+        "former_primary_hit_at_10": 0.8333333333333334,
+        "model_wall_seconds": 13.216192899708403
+      },
+      "efficientat": {
+        "primary_hit_at_1": 1.0,
+        "secondary_hit_at_5": 1.0,
+        "former_primary_hit_at_10": 1.0,
+        "model_wall_seconds": 50.586894599255174
+      }
+    },
+    "exclusions": {
+      "CIR": "Pinned ca551b8df4234e40e3acc84202f8b921854be89c tree has no licence; checkpoint terms unresolved, and AST loader can fetch a second base model. No weights downloaded.",
+      "CLAP": "Official 630k-audioset-best.pt page lists 1.86 GB and SHA256 8053c9775516af2f4902e1e8281e356cc1bf7a85e8b761908170767b77c3f037, beyond 512 MiB. No weights downloaded."
+    },
+    "control_primary": {
+      "constant": 0.6666666666666666,
+      "random": 0.375
+    },
+    "outperforms_both_controls": true,
+    "limitations": "provisional controlled-source evidence; placement bias; four related families, reused backgrounds; no human evidence, cross-song test, Loulou or held-out claim; unknown pretraining overlap",
+    "record_hash": "95dce46b16760b002358b1aec3db8adb9b5df1c1f2033ee70b0b5121c2dea051"
+  },
+  "a05_shortlist": {
+    "schema_version": "a05-shortlist-1",
+    "protocol_hash": "07af66b37db00d6a6dd4bea87c9636b06aa9dbd43c75e8164be4568bd94b0048",
+    "suite_hash": "d4c59416e5d4bb4aeddfbefa933a3a0f18691a25957e3623f1743d2951806441",
+    "methods": {
+      "acoustic": {
+        "version": "a05-representation-1",
+        "method": "acoustic",
+        "code": {
+          "acoustic.py": "f32624fbce8a9fa904ebe1508d818040309f8039894979aa1286a4a1c97e03be"
+        },
+        "tools": {
+          "pipeline": "a02-preparation-3",
+          "package": "0.3.0",
+          "python": "3.12.14",
+          "numpy": "2.2.6",
+          "scipy": "1.15.3",
+          "soundfile": "0.13.1",
+          "libsndfile": "1.2.2"
+        },
+        "grid": {
+          "version": "a05-grid-1",
+          "hop_seconds": 0.25,
+          "tail": "unique end-aligned",
+          "duration": "complete query",
+          "controlled": "complete candidate"
+        },
+        "device": "cpu",
+        "precision": "float32",
+        "channel_policy": "arithmetic mean",
+        "resampling": "resample_poly Kaiser5 constant-zero; elapsed-time scale 1",
+        "admissible_seconds": [
+          0.0001,
+          30
+        ],
+        "truncation": "none; whole selected input",
+        "score_direction": "lower_better",
+        "normalization_fit": "none; fixed declared scales; no held-out fit",
+        "input_rate": 24000,
+        "dimension": 56,
+        "distance": "euclidean",
+        "feature_layer": "13 cepstral mean/std + 5 spectral mean/std + 16 relative RMS bins + 4 envelope descriptors",
+        "frontend": "600 symmetric-Hann samples, FFT1024, hop240 plus unique tail; 40 L1 HTK triangles 40..12000Hz; natural-log normalized power, orthonormal DCT-II; fixed feature scales",
+        "pooling": "mean/std plus relative envelope; explicit level descriptors",
+        "padding": "zero pad only inputs shorter than 600 samples"
+      },
+      "efficientat": {
+        "version": "a05-representation-1",
+        "method": "efficientat",
+        "code": {
+          "acoustic.py": "f32624fbce8a9fa904ebe1508d818040309f8039894979aa1286a4a1c97e03be",
+          "efficientat.py": "c0a7ee50ce402fd5a5371ccd82a5a495f93911f85a2e1ba47eca7819fa57d8e1",
+          "efficientat_model.py": "4f1d5019a54ce0c087eea227cac795848b581803dcb515da98583ce85a281a3d"
+        },
+        "tools": {
+          "pipeline": "a02-preparation-3",
+          "package": "0.3.0",
+          "python": "3.12.14",
+          "numpy": "2.2.6",
+          "scipy": "1.15.3",
+          "soundfile": "0.13.1",
+          "libsndfile": "1.2.2"
+        },
+        "grid": {
+          "version": "a05-grid-1",
+          "hop_seconds": 0.25,
+          "tail": "unique end-aligned",
+          "duration": "complete query",
+          "controlled": "complete candidate"
+        },
+        "device": "cpu",
+        "precision": "float32",
+        "channel_policy": "arithmetic mean",
+        "resampling": "resample_poly Kaiser5 constant-zero; elapsed-time scale 1",
+        "admissible_seconds": [
+          0.0001,
+          30
+        ],
+        "truncation": "none; whole selected input",
+        "score_direction": "lower_better",
+        "normalization_fit": "none; fixed declared scales; no held-out fit",
+        "input_rate": 32000,
+        "dimension": 384,
+        "distance": "cosine",
+        "checkpoint": {
+          "repository": "fschmid56/EfficientAT",
+          "code_revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+          "release": "v0.0.1",
+          "asset_id": 84971629,
+          "filename": "mn04_as_mAP_432.pt",
+          "bytes": 4066513,
+          "sha256": "899a8c6217063f6941793102a2780b3dd788ab11fce468d9cf5f0577c453321c",
+          "terms": "Official repository MIT licence; retain copyright and licence; AudioSet pretrained tagging representation, not established timbre accuracy"
+        },
+        "optional_tools": {
+          "torch": "2.6.0+cpu"
+        },
+        "feature_layer": "last convolution before classifier; spatial mean",
+        "pooling": "frequency/time average, no logits",
+        "frontend": "native preemphasis .97; symmetric Hann800 FFT1024 hop320 centered reflect; Kaldi128 mel 0..15000Hz; log(power+1e-5), (x+4.5)/5",
+        "padding": "zero pad only inputs shorter than 1024 samples; no 10-second extension",
+        "augmentation": "disabled; eval/inference_mode; deterministic CPU"
+      }
+    },
+    "exclusions": {
+      "CIR": "Pinned ca551b8df4234e40e3acc84202f8b921854be89c tree has no licence; checkpoint terms unresolved, and AST loader can fetch a second base model. No weights downloaded.",
+      "CLAP": "Official 630k-audioset-best.pt page lists 1.86 GB and SHA256 8053c9775516af2f4902e1e8281e356cc1bf7a85e8b761908170767b77c3f037, beyond 512 MiB. No weights downloaded."
+    },
+    "frozen_before_model_rankings": true,
+    "record_hash": "9718def492e7c65bd8fe0a5f1fc8dbac5c78499361c3062994db1d9df81e829e"
+  },
+  "record_hash": "5885ce947f3a4bae9a21c129f19e091bb2778903781b5a6875c75fefe16258b2"
+}

@@ -12,3 +12,14 @@ These offline tests own runtime/catalogue and A04 harness correctness. They do n
 Fixtures are made in disposable temporary directories. Tests neither contact live providers/download models nor change the real reference record. [RUNTIME.md](../docs/RUNTIME.md#validation) and [CATALOGUE.md](../docs/CATALOGUE.md#validation) give formatting/static/test/smoke commands. Live acquisition/resumption is separately recorded in the A03 evidence report. OGG replaces MP3 in A02's unsupported-extension test because A03 intentionally adds MP3 Layer III, with dedicated sequential timing/truncation checks.
 
 `test_matchers.py` owns A05 independent grid/random/control calculations, source/truth isolation, fixed scaling and finite distances, waveform timing, cache identity/corruption/failure charges, prospective protocol transaction, frozen selection, explicit held-out/network refusal, bounded coordinator failures and a small real acoustic pipeline. No network/model download or pretrained import is needed; actual pretrained smoke/comparison is an explicit integration command.
+
+`test_search.py` owns A06 native-rate/tail/union answers, independent brute-force
+sharded ranking, unordered/deduplicated queries, parent/PCM/group exclusion versus
+artist independence/self diagnostics, partial/resumable index work, source/shard/clip
+corruption and containment, known-note pitch/abstention/off behavior, safe HTML/URLs,
+original stereo crop conversion, finite retained charges and the provenance-bound
+final guard. A synthetic coordinator interruption/resume/reuse test never invokes
+pretrained inference or consumes the delivery final run. A small actual acoustic
+query/index/rank/playback path uses only disposable generated data.
+
+The A06 execution-repair tests additionally verify four-record rank workers, exact result/reuse identities, preserved original function syntax, and refusal of unaudited source drift.

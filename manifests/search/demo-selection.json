@@ -1,0 +1,14 @@
+{
+  "source_id": "02e9c5776b23f68fc3ac3fdd3fbb36b0c497701c3a1a346e22f3ed76051b2064",
+  "source_hash": "ce538669497b5f19e3fd3d66ce5d99c1147d4a2ef044bf73e39b2afd154450d4",
+  "split": "development",
+  "selected_before_rankings": true,
+  "start_frame": 88200,
+  "end_frame": 194040,
+  "rate": 44100,
+  "selection": "first sorted development recording; first non-silent scheduled crop",
+  "label": "Alternative engineering demo \u2014 development catalogue crop; Loulou unavailable",
+  "parent_group": "family-02e9c5776b23f68fc3ac3fdd3fbb36b0c497701c3a1a346e22f3ed76051b2064",
+  "loulou_run": "unrun; missing/unverified",
+  "record_hash": "d6fc80be60f5fae6a39bcb3a527e3c9f68052d1faa5ba1a82d852a20910d02e0"
+}

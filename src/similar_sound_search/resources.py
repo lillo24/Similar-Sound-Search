@@ -32,6 +32,7 @@ MANAGED = (
     "manifests/catalogue",
     "manifests/evaluation",
     "manifests/matchers",
+    "manifests/search",
 )
 
 

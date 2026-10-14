@@ -1,0 +1,18 @@
+{
+  "role": "engineering",
+  "inserted_source_frames": [
+    144000,
+    259200
+  ],
+  "source_rate": 48000,
+  "expected_query_source_seconds": [
+    3.1,
+    5.3
+  ],
+  "expected_query_recording_seconds": [
+    13.1,
+    15.3
+  ],
+  "offset": 10,
+  "record_hash": "af8706eac942acf2bd95bb70612419a3bf3794bbee111e3dc51ca4efc8ae2d88"
+}

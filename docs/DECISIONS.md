@@ -80,3 +80,21 @@ A03 additions, 12 October 2026; [commands/contracts](CATALOGUE.md) and [measured
 | DEC-033 | Waveform/rate-only representation boundary, truth-independent grid, source-bound feature cache and prediction publication before scoring. | Labels/filenames/truth cannot reach features; finite shape/hash checks and explicit missing/error states prevent fabricated embeddings or success-shaped failures. |
 | DEC-034 | Separate finite A05 ledger and exact locked owned-array disk accounting. | Original audio and A03/A04 accounting remain intact; crash reservations persist. Replacing repeated disk scans changes publication overhead only, while model cost separately measures loads, unique extraction and ranking and survives cache reuse. |
 | DEC-035 | Provisional EfficientAT default by the frozen rule; reserve held-out/cross-song/human conclusions. | Development source-consistency hit@1 is 24/24 versus baseline 17/24, constant 16/24 and seeded random 9/24. Query hits do not mean perfect localisation/multiple-event recall. Choice remains A05; A06 must explicitly initiate final checks. |
+
+## A06 local search decisions
+
+14 October 2026; [commands/contracts](SEARCH.md) and [measured evidence](../reports/A06_SEARCH.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-036 | Preserve the selected A05 descriptor/checkpoint; freeze separate A06 search policy and a pre-inference declaration for exactly one final check. | All eighty held-out queries retain their denominators. Source-consistency hit@1 is 21/24, event recovery at ten is 32/32; weak results do not select another model. Pitch and refinement remain absent from that check. |
+| DEC-037 | Index every local ready original over its full available-file duration with 2.4s/.25s/unique-tail windows and compact 512-vector shards. | The development cost pilot retained this grid; 72 recordings yield 44,025 windows and 3.098 unique hours. Exact bounded ranking fits this scale without a new dependency/service. Sequential original validation preserves high-frequency input and known coordinate uncertainty. |
+| DEC-038 | Explicit complete-content queries, identical-PCM deduplication and mean per-example distances; one best scored passage per distinct recording/known duplicate group. | Query order and repeated copies cannot change weights. All parents are excluded while another recording by the same artist remains eligible. No title/artist/truth similarity terms or calibrated presence claim are introduced. |
+| DEC-039 | Original native-channel/rate playback clips with declared PCM16 conversion/gain, separately scored/context bounds and a verified loopback allowlist. | Numeric checks establish crop conversion and mapping; browser checks establish load/play/pause/seek and visible missing-media failure. External MP3/master seeking and human relevance remain unverified. |
+| DEC-040 | Separate fixed finite A06 accounting, atomic progress and immutable feature reuse; retain all interruption charges. | No old acquisition/model allowance is reset. Native exit, worker deadline and file-publication failures are explicit and recover under unchanged identities. Reuse consumes read/worker cost; an idle listener performs no indexing. |
+| DEC-041 | After final-score inspection, split catalogue ranking into four-recording serial workers without changing distances, selection, exclusions, intervals or features. | The original all-catalogue worker exceeded 120 seconds. The committed execution-repair proof binds old/current code and validates unchanged critical syntax against exact frozen originals, preserving the declaration, index and results. No second held-out experiment follows. |
+
+Loulou remains missing/unverified. The predetermined development-side catalogue crop
+and separate generated known-target fixture are labelled engineering demos. A06 ends
+this batch; automatic event/layer selection, separation and a listening judgment remain
+later-stage work, with the first required review at D04.

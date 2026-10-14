@@ -426,8 +426,8 @@ def duplicate_groups(records):
     }
 
 
-def validate_local_ready(record, budget, job="starter"):
-    """Read-only consumer validation; never opens an acquisition ledger or changes state.
+def validate_local_original(record, budget, job="starter"):
+    """Read-only full-original consumer; never opens an acquisition ledger.
 
     Public readiness alone is insufficient. Require matching private registration, full
     sequential original decoding and canonical identity, plus the immutable A02 bundle.
@@ -451,7 +451,7 @@ def validate_local_ready(record, budget, job="starter"):
         budget.root / record["source_asset"]["local_path"],
         budget.root / "data/audio/catalogue/originals",
     )
-    _, metadata = decode(original, budget)
+    original_samples, metadata = decode(original, budget)
     for field in ("sha256", "canonical_pcm", "sample_count", "sample_rate_hz", "channels"):
         if metadata[field] != record["source_asset"][field]:
             raise InputError(f"catalogue consumer {key}: original {field} changed")
@@ -462,7 +462,17 @@ def validate_local_ready(record, budget, job="starter"):
     prepared = _reuse(bundle, record["preparation_key"], budget)["record"]
     if prepared["record_hash"] != record["prepared_record_hash"]:
         raise InputError(f"catalogue consumer {key}: preparation record changed")
+    return original_samples, metadata, prepared
+
+
+def validate_local_ready(record, budget, job="starter"):
+    """A04 consumer returns the centred derivative; full search uses the original boundary."""
+    _, _, prepared = validate_local_original(record, budget, job)
+    bundle = contained(
+        budget.root / Path(record["analysis_derivative"]["local_path"]).parent,
+        budget.root / "data/audio/prepared",
+    )
     samples, derivative = decode(bundle / "audio.wav", budget)
     if derivative["sha256"] != record["analysis_derivative"]["sha256"]:
-        raise InputError(f"catalogue consumer {key}: analysis bytes changed")
+        raise InputError(f"catalogue consumer {record['entry_id']}: analysis bytes changed")
     return samples, prepared

@@ -18,3 +18,7 @@ This folder owns A05 representations, finite checkpoint acquisition, development
 | `LICENSE-EfficientAT.md` | Upstream MIT copyright/licence for adapted inference architecture |
 
 The parent retains the shared project lock; each child holds `.a05-worker.lock`. Numerical threads/concurrency remain one. `runner.py` passes only samples and sample rate into an adapter. Filenames, presets, families, insertion truth and conditions never reach feature computation. Predictions are persisted before `selection.py` joins truth through the existing scorer. See [commands/setup](../../../docs/MATCHERS.md), [evaluation policy](../../../docs/EVALUATION.md), and [evidence](../../../reports/A05_MATCHERS.md).
+
+A06's [search owner](../search/README.md) reuses the adapters and split-parametrized
+truth-independent routes through its own accounting/coordinator. A05 CLI/job refusal
+of held-out work remains unchanged. A06 never calls A05 cache publication/charge.

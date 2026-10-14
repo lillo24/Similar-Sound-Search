@@ -1,0 +1,89 @@
+{
+  "schema_version": "a06-resource-evidence-1",
+  "fixed_ledger": {
+    "schema_version": "a06-ledger-1",
+    "created_at": "2026-10-14T08:55:38.630098+00:00",
+    "ceilings": {
+      "download_bytes": 0,
+      "attempts": 0,
+      "worker_seconds": 7200
+    },
+    "charged_bytes": 0,
+    "received_bytes": 0,
+    "http_attempts": 0,
+    "charged_worker_seconds": 7204.555000000002,
+    "pending_read_bytes": 0,
+    "pending_worker_seconds": 0
+  },
+  "work": {
+    "schema_version": "a06-work-1",
+    "counts": {
+      "pilot_windows": 64,
+      "indexed_windows": 44561,
+      "clip_bytes": 18162880,
+      "final_attempts": 1,
+      "workers": 369,
+      "feature_bytes": 84348416,
+      "clips": 25,
+      "processed_window_seconds": 110392.60000000002,
+      "query_jobs": 6,
+      "query_preparation_bytes": 8701824,
+      "read_audio_seconds": 94227.43897959171,
+      "final_windows": 1368
+    },
+    "ceilings": {
+      "pilot_windows": 64,
+      "indexed_windows": 60000,
+      "clip_bytes": 134217728,
+      "final_attempts": 1,
+      "workers": 512,
+      "feature_bytes": 268435456,
+      "clips": 64,
+      "processed_window_seconds": 160000,
+      "query_jobs": 24,
+      "query_preparation_bytes": 67108864,
+      "read_audio_seconds": 180000,
+      "final_windows": 2000
+    },
+    "record_hash": "3db214e5b2a29eb3ccbc9702cf1e6e826860c804de682fa0262da674a64bb8ce"
+  },
+  "worker_seconds_by_action": {
+    "pilot": 18.375,
+    "demo-inputs": 6.407000000000153,
+    "diagnostic-inputs": 8.234000000000378,
+    "index": 6200.875000000008,
+    "prepare-query": 57.016999999998916,
+    "rank": 506.457999999996,
+    "report": 101.3759999999993,
+    "known-answer": 5.9539999999997235,
+    "declare": 4.0,
+    "final-run": 169.125,
+    "final-score": 6.733999999999469
+  },
+  "accounting_note": "Includes 120 seconds of retained uncertain reservation after Windows ledger publication failed; action timing omits that unknown charge. Final forced-termination overrun of 4.555 seconds remains charged above the unchanged 7200-second ceiling. No allowance was raised or reset.",
+  "completed_index_identity": "d027f2cd5ca817bc320542df16a540346325403bcb967fd248216c8c466731e2",
+  "completed_feature_reuse": {
+    "all_123_shards_unchanged": {
+      "status": "ok",
+      "arrays": 123,
+      "sha256_size_mtime_unchanged": true,
+      "validation_wall_seconds": 3.0223552999996173
+    },
+    "real_rankings": "Both complete catalogue ranks loaded existing eligible feature shards, with no additional embedding; every source was validated, including excluded parents.",
+    "query": "Single-example preparation returned reused:true under the same query/feature identity, retaining original extraction/load cost."
+  },
+  "extra_full_index_repeat": {
+    "status": "failed",
+    "error_type": "ResourceError",
+    "reason": "search_step: worker exceeded max_seconds=8.16399999999885 and was terminated",
+    "per_recording_receipts_refreshed": 57,
+    "expected_recordings": 72,
+    "coverage_of_completed_index_remains": "72/72; 44025 windows; full union",
+    "additional_rank_report_self_diagnostic_repeats": "not run after exhausted worker time; original reports and engineering self-match diagnostic remain valid",
+    "outer_cli_wall_seconds": 1343.8439999999973
+  },
+  "zero_acquisition": true,
+  "earlier_allowances_unchanged": true,
+  "browser_gap": "Connected Chrome extension required update for later catalogue controls; original engineering browser playback checks passed.",
+  "record_hash": "ef3e5533361d6306b8cd36aa8a9c9b0833b4432ed3ef0b1e5d74fba66de7373e"
+}
