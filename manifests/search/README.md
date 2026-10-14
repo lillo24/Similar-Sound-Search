@@ -12,10 +12,15 @@ This folder owns sanitized self-hashed A06 evidence, each within the 1 MiB reade
   environment before inference. It leaves `manifests/matchers/choice.json` at stage A05.
 - `final-results.json` records the one final controlled check, condition/family counts,
   misses, absent distributions and costs. It is independent of real-song relevance.
+- `catalogue-index.json` records measured full-original coverage, compact shard costs
+  and retained interruption/recovery evidence.
+- `catalogue-demo.json` records the two predetermined query/result identities, ten
+  distinct candidates per demo, parent exclusions and verified original stereo clips.
+- `execution-repair.json` binds the post-inspection serial ranking repair to exact
+  frozen original source/function proofs and unchanged model/math/feature recipes.
+- `resources.json` retains the fixed lifetime counters, per-action worker costs,
+  unchanged-array/query reuse, extra repeat stopped at the cap and browser-control gap.
 
 Originals, weights, shards/indexes, queries/predictions, ledgers, private paths, exported
 clips and HTML bundles remain ignored. Public records document delivery evidence;
 they do not restore ignored assets or prove readiness on another machine.
-
-`execution-repair.json` explicitly binds the post-inspection bounded rank coordinator repair to original source/function proofs, unchanged model/math/feature recipes and the preserved declaration/index.
-`catalogue-index.json` records measured full-original coverage and compact shard costs, with retained interruption/recovery evidence.

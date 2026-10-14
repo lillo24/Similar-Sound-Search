@@ -2,9 +2,19 @@
 
 Select a particular sound inside a song and find passages in other recordings with a similar sound character, with playable results and trustworthy timestamps. Timbre comes first, approximate pitch second; matching phrase rhythm or note order is deferred.
 
-**Current state: A05 development comparison delivered; provisional EfficientAT MN04 choice ready for A06.** Both the acoustic baseline and a genuine pretrained CPU model ran all 80 development queries under the prospectively revised hit@1 protocol. [A05 evidence](reports/A05_MATCHERS.md) records controlled-source results, controls, costs and limits. Human agreement remains unavailable: Grey1977 has zero eligible pairs. The A03 catalogue remains partial at 72 recordings/35 artists; real-catalogue search and held-out model checks remain A06 work.
+**Current state: A06 local search and original-passage playback delivered.** The unchanged EfficientAT MN04 choice indexes all 72 available recordings over their full available durations: 44,025 passages across 3.098 hours. Single and unordered multiple-example queries return ten distinct recording candidates with parent duplicates excluded. [A06 evidence](reports/A06_SEARCH.md) records operation, costs and the single held-out check: 21/24 source-consistency query hits at rank one and 32/32 target events recovered within ten results. Human agreement remains unavailable; the broader A03 catalogue remains partial at 72 recordings/35 artists.
 
 The first reference is **daoud — Loulou & the loulous**, approximately **3:38–4:00** in Leonardo's marked recording. The actual audio is still missing; recording version, excerpt offset, and exact event remain unverified. Engineering fixtures do not substitute for that reference. No new labels or manually discovered similar songs are required; the first required listening review is D04.
+
+Open the delivered alternative engineering demo from this checkout with:
+
+```powershell
+.\scripts\listen-search.ps1
+```
+
+Visit `http://127.0.0.1:8766/`; Ctrl+C stops the listener. It verifies and serves only the owned report and original stereo clips. [Search setup, explicit queries and recovery](docs/SEARCH.md) cover missing local assets and finite cumulative allowances. Audio, weights and the completed index remain private on this delivery machine; Git does not restore them in a fresh checkout.
+
+The fixed A06 compute allowance is consumed; opening the completed listening reports needs no new compute. An extra full-index repeat stopped at that cap. Later catalogue-page control required a Chrome extension update; earlier engineering browser playback checks passed. These limits are recorded in the evidence report.
 
 ## Run the offline diagnostic
 
@@ -36,6 +46,7 @@ The delivered protocol requires its four locally validated A03 backgrounds; a fr
 - [Runtime and commands](docs/RUNTIME.md), [measured A02 evidence](reports/A02_RUNTIME.md), and [resource profile](config/resource_limits.json).
 - [Catalogue commands](docs/CATALOGUE.md), [measured A03 evidence](reports/A03_CATALOGUE.md), and [status/A05 handoff](docs/STATUS.md).
 - [Matcher setup/commands](docs/MATCHERS.md), [measured A05 evidence](reports/A05_MATCHERS.md), and [provisional choice](manifests/matchers/choice.json).
+- [Local search/playback commands](docs/SEARCH.md), [measured A06 evidence](reports/A06_SEARCH.md), and [search reproducibility records](manifests/search/README.md).
 - [Measured A04 evidence](reports/A04_BENCHMARKS.md) and [frozen protocol](manifests/evaluation/protocol.json).
 - [Initial reference manifest](manifests/references/loulou.json).
 - [Archived A01 prompt](history-implementations/Similar_Sound_Search_A01.md).
@@ -43,11 +54,12 @@ The delivered protocol requires its four locally validated A03 backgrounds; a fr
 - [Archived A03 prompt](history-implementations/Similar_Sound_Search_A03.md).
 - [Archived A04 prompt](history-implementations/Similar_Sound_Search_A04.md).
 - [Archived A05 prompt](history-implementations/Similar_Sound_Search_A05.md).
+- [Archived A06 prompt](history-implementations/Similar_Sound_Search_A06.md).
 
-## Resume at A06
+## A06 handoff
 
 Follow [AGENTS.md](AGENTS.md) for implementation and GitHub delivery. Each implementation plan uses an isolated branch and a PR into `main`; checks, merge, and branch cleanup are part of completion. Reinspect current code and run the [complete local validation](docs/RUNTIME.md#validation) before extending the pipeline.
 
-A05 selected the frozen EfficientAT MN04 adapter provisionally on controlled development evidence. A06 integrates the first real-catalogue search and explicitly initiates its held-out check with that exact choice. Exact-instance diagnostics and oracle scores do not measure perceptual quality. A06 is internal; D04 remains the first required user relevance review. Missing Loulou audio prevents a reference-specific experiment. Preserve benchmark exclusions, the A03 shortfall and existing resource ceilings.
+A06 integrates the frozen A05 choice through A02 preparation, A03 original validation and A04 scoring. Exact ranking, saved-query reuse, bounded resumable shards and verified original playback are implemented. Controlled held-out results and pipeline operation do not establish perceptual quality. This batch ends at A06; later stages need their own prompts. D04 remains the first required user relevance review. Missing Loulou audio prevents its reference-specific experiment. Preserve benchmark exclusions, the A03 shortfall and all lifetime ledgers.
 
 The [source map](src/README.md) and [config map](config/README.md) describe ownership. Local audio, features, indexes, weights, run output, and secrets are excluded by [.gitignore](.gitignore). Keep sanitized manifests and shareable evidence reports versionable; see the brief before adding data.

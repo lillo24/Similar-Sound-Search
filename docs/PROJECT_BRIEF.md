@@ -16,7 +16,7 @@ Tom's Diner's "Thhh" vocal sound is a possible later generalisation example from
 2. **Approximate pitch second:** roughly compatible pitch may help. Keep the pitch preference separately inspectable; its useful tolerance is an experiment, not an adopted numerical rule.
 3. **Phrase rhythm later:** matching melody, rhythm, or note order is unnecessary for the first build. Preserve the evolution of an individual event, including its attack and decay.
 
-A complete event or several examples of the same sound in any order are candidate query forms to compare. Neither is an implemented selection capability. Begin with original audio and compare pretrained representations with a simpler acoustic baseline. Optional separation must earn its cost through measured retrieval improvement, retaining original audio for playback. Clean separation of every source is not assumed. Custom training and rhythm search belong to conditional future work.
+A06 supports an explicitly selected complete event or a bounded unordered collection of examples through local files/crops. Identical examples deduplicate; mean per-example distance is order-invariant. Automatic event/layer selection remains future work. A05 compared original-mixture pretrained representations with a simpler acoustic baseline. Optional separation must earn its cost through measured retrieval improvement, retaining original audio for playback. Clean separation of every source is not assumed. Custom training and rhythm search belong to conditional future work.
 
 ## Autonomy and resources
 
@@ -35,24 +35,25 @@ Keep original audio unchanged. Record provenance and permitted use; metadata acc
 | A03 | Automated starter catalogue | Implemented; real bounded blocSonic acquisition, [partial catalogue evidence](../reports/A03_CATALOGUE.md) |
 | A04 | Benchmarks and controlled test generation | Implemented; frozen controlled suite/harness, published data quarantined; [evidence](../reports/A04_BENCHMARKS.md) |
 | A05 | Candidate matchers and comparison harness | Delivered acoustic/MN04 development comparison and provisional choice; [evidence](../reports/A05_MATCHERS.md) |
-| A06 | First complete search baseline with playable passages | Integrates A03 catalogue and A05 matcher; internal report, no user rating gate |
+| A06 | First complete search baseline with playable passages | Delivered: all 72 local originals, 44,025 passages, explicit queries, original stereo playback, one unchanged held-out check; [evidence](../reports/A06_SEARCH.md) |
 | B01–B03 | Event selection, optional separation, reusable queries, and pitch preference | Extends the baseline; measures query and separation choices |
 | C01–C04 | Passage/stem indexing, candidate retrieval, refinement, and resumable processing | Uses reproducible queries; measures shortlist coverage before refinement |
 | D01–D04 | Interface, automatic evaluation, runnable package, then first listening review | Integrates B/C; automatically tests before the D04 review |
 | E01–E03 | Broader catalogue sources, measured optimisation, and maintenance | Expands the bounded prototype with explicit resource costs |
 | F01–F03 | Conditional learned ranking, representation fine-tuning, and future rhythm target | Optional improvements after measured need; not prerequisites |
 
-Dependent B/C/D engineering may interleave without changing identifiers or adding listening/approval gates. A01–A04 engineering is implemented; A03's catalogue and A04's published human evidence remain explicitly partial. A05 development comparison is implemented; A06 is next. Later prompts define their own work. The D04 goal is about ten distinct-song candidates, timestamps, direct playback, and an evidence report with optional feedback. Report weak or fewer candidates honestly rather than padding apparent successes.
+Dependent B/C/D engineering may interleave without changing identifiers or adding listening/approval gates. A01–A06 engineering is implemented; A03's catalogue and A04's published human evidence remain explicitly partial. A06's pipeline and held-out controlled results are separate from unmeasured human/Loulou relevance. This batch ends at A06; later prompts define their own work. The D04 goal is about ten distinct-song candidates, timestamps, direct playback, and an evidence report with optional feedback. Report weak or fewer candidates honestly rather than padding apparent successes.
 
 ## Workspace layout
 
 | Location | Purpose | Version-control policy |
 | --- | --- | --- |
-| `src/` | Shared audio input/runtime and bounded catalogue ingestion; [source map](../src/README.md) | Source versioned; bounded A05 models, no production search/index |
+| `src/` | Shared audio runtime, catalogue/evaluation/matchers and A06 local search; [source map](../src/README.md) | Source versioned; finite CPU workers and local listening reports |
 | `config/` | Reproducible resource/input contracts; [config map](../config/README.md) | Versioned without secrets; `config/local/` and `*.local.*` ignored |
 | `manifests/references/` | Reference records | Sanitized metadata versioned; initial Loulou record is unverified |
 | `manifests/catalogue/` | Frozen source descriptors, ready identities, provenance, hashes, and duplicate groups | Sanitized records versioned; audio availability verified locally |
 | `manifests/evaluation/` | A04 dataset versions, recipes, ground truth, family splits and frozen protocol | Sanitized reproducibility records versioned; audio remains local |
+| `manifests/search/` | A06 declarations, full-file coverage, query/demo and browser evidence | Sanitized records versioned; private features/predictions/reports stay ignored |
 | `manifests/private/` | Private paths, access details, or sensitive metadata | Ignored |
 | `data/audio/` | Immutable catalogue originals, separate engineering fixtures and prepared bundles; later evaluation audio | Contents ignored except directory markers |
 | `data/features/`, `data/indexes/` | Derived features and versioned-by-key indexes | Contents ignored except directory markers |

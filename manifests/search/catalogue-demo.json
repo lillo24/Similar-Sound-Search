@@ -1,0 +1,616 @@
+{
+  "schema_version": "a06-catalogue-demo-1",
+  "index_id": "d027f2cd5ca817bc320542df16a540346325403bcb967fd248216c8c466731e2",
+  "choice_hash": "95dce46b16760b002358b1aec3db8adb9b5df1c1f2033ee70b0b5121c2dea051",
+  "default_pitch_weight": 0,
+  "query_semantics": "mean cosine distance over distinct selected PCM examples; unordered",
+  "selection_before_rankings": true,
+  "parent_exclusion": "every query original and established A03 duplicate group; artists remain eligible",
+  "demos": [
+    {
+      "name": "single",
+      "query_id": "89a6c264f6a9528efd792be6726287a6f42e7dde86bbef548cc0c96eeb2bd80c",
+      "unique_examples": 1,
+      "result_id": "94fd356a653622972226c45c116b23a008280ac3017b984dbfd1d3d77de03867",
+      "result_hash": "901bd1c831a648f9bd25e30520d39687b731b485e56f9167be7674ad203aa8a6",
+      "excluded_groups": [
+        "family-02e9c5776b23f68fc3ac3fdd3fbb36b0c497701c3a1a346e22f3ed76051b2064"
+      ],
+      "eligible_distinct_groups": 71,
+      "scored_windows": 43402,
+      "ranking_validation_seconds": 74.7404476000047,
+      "peak_working_bytes": 250220544,
+      "query_adapter_load_seconds": 3.786745499999597,
+      "query_extraction_seconds": 0.04404910000084783,
+      "candidates": [
+        {
+          "recording_id": "2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+          "group": "family-2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+          "start_frame": 4972275,
+          "end_frame": 5078115,
+          "score": 0.3654909969651913,
+          "timbre_distance": 0.3654909969651913,
+          "per_example_distances": [
+            0.3654909969651913
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0
+          ],
+          "title": "Rap Style (Four Track Mixx)",
+          "artist": "Donnie Ozone",
+          "source_url": "https://archive.org/download/BSMX0176/01-RapStyle_FourTrackMixx_192kb.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            112.75,
+            115.15
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "def2cbda8a412cd1e4e491190ce33fab60211ec3cfc83b5b38a0bbe3fda7f17a",
+          "group": "family-def2cbda8a412cd1e4e491190ce33fab60211ec3cfc83b5b38a0bbe3fda7f17a",
+          "start_frame": 4310775,
+          "end_frame": 4416615,
+          "score": 0.3707398284414817,
+          "timbre_distance": 0.3707398284414817,
+          "per_example_distances": [
+            0.3707398284414817
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0
+          ],
+          "title": "To My Recollection",
+          "artist": "Luck & Doc",
+          "source_url": "https://archive.org/download/BSOG0069/09-ToMyRecollection.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            97.75,
+            100.15
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "2e8b8fc444042d0ee77627f2626da1111b150f262e3484b98204217a6390341e",
+          "group": "family-2e8b8fc444042d0ee77627f2626da1111b150f262e3484b98204217a6390341e",
+          "start_frame": 5325075,
+          "end_frame": 5430915,
+          "score": 0.396531236092177,
+          "timbre_distance": 0.396531236092177,
+          "per_example_distances": [
+            0.396531236092177
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0
+          ],
+          "title": "Gladiator Skool",
+          "artist": "GLD8TRZ",
+          "source_url": "https://archive.org/download/BSMX0173/04-GladiatorSkool.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            120.75,
+            123.15
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "ebf46fa8340b6982260aa8c13ac60b84dd1967fa0c9463b8fa1a215f94b856d3",
+          "group": "family-ebf46fa8340b6982260aa8c13ac60b84dd1967fa0c9463b8fa1a215f94b856d3",
+          "start_frame": 187425,
+          "end_frame": 293265,
+          "score": 0.4049815865186146,
+          "timbre_distance": 0.4049815865186146,
+          "per_example_distances": [
+            0.4049815865186146
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0
+          ],
+          "title": "Nuthin'",
+          "artist": "Deadly Combo",
+          "source_url": "https://archive.org/download/BSMX0152/01-Nuthin.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            4.25,
+            6.65
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "5cc7ab03e4937da3b6bf0a80cf8108bea24195cc1df8407ded6b2ef162876add",
+          "group": "family-5cc7ab03e4937da3b6bf0a80cf8108bea24195cc1df8407ded6b2ef162876add",
+          "start_frame": 4057200,
+          "end_frame": 4163040,
+          "score": 0.4103798807668436,
+          "timbre_distance": 0.4103798807668436,
+          "per_example_distances": [
+            0.4103798807668436
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0
+          ],
+          "title": "Expired Inspiration",
+          "artist": "BADLUCK",
+          "source_url": "https://archive.org/download/BSOG0066/11-ExpiredInspiration_192kb.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            92.0,
+            94.4
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "7c6a1a08ed5671c3afb22bad523771b5008f8356712b7b013b93585199a912f5",
+          "group": "family-7c6a1a08ed5671c3afb22bad523771b5008f8356712b7b013b93585199a912f5",
+          "start_frame": 1036350,
+          "end_frame": 1142190,
+          "score": 0.41342560435455744,
+          "timbre_distance": 0.41342560435455744,
+          "per_example_distances": [
+            0.41342560435455744
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0
+          ],
+          "title": "Up In Your Discussion",
+          "artist": "Eli & The Mannings",
+          "source_url": "https://archive.org/download/BSIM0002/24-UpInYourDiscussion_192kb.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            23.5,
+            25.9
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "8d7a34191d0f2e1350fbca3fa45519e3fb89b2fe008fbdf2a81618f4fc57a83a",
+          "group": "family-8d7a34191d0f2e1350fbca3fa45519e3fb89b2fe008fbdf2a81618f4fc57a83a",
+          "start_frame": 8687700,
+          "end_frame": 8793540,
+          "score": 0.4183846421257281,
+          "timbre_distance": 0.4183846421257281,
+          "per_example_distances": [
+            0.4183846421257281
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0
+          ],
+          "title": "Riot",
+          "artist": "Mr. Bitterness And The Guilty Pleasures",
+          "source_url": "https://archive.org/download/BSOG0061/02-Riot.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            197.0,
+            199.4
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "3e36fb2358a9901a1b16fcee24b5e67f2b32d81300506d2cd93b8485e7a6f2c3",
+          "group": "family-3e36fb2358a9901a1b16fcee24b5e67f2b32d81300506d2cd93b8485e7a6f2c3",
+          "start_frame": 4884075,
+          "end_frame": 4989915,
+          "score": 0.4256315986882292,
+          "timbre_distance": 0.4256315986882292,
+          "per_example_distances": [
+            0.4256315986882292
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0
+          ],
+          "title": "Eleven Years",
+          "artist": "Eli & The Mannings",
+          "source_url": "https://archive.org/download/BSIM0002/05-ElevenYears_192kb.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            110.75,
+            113.15
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "c06854cf82ae3a189aee93b0980ff54666218a98478e935e610f3ba31fd6092b",
+          "group": "family-c06854cf82ae3a189aee93b0980ff54666218a98478e935e610f3ba31fd6092b",
+          "start_frame": 385875,
+          "end_frame": 491715,
+          "score": 0.4309053490592226,
+          "timbre_distance": 0.4309053490592226,
+          "per_example_distances": [
+            0.4309053490592226
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0
+          ],
+          "title": "Bend The Knee (Interlude)",
+          "artist": "Eli & The Mannings",
+          "source_url": "https://archive.org/download/BSIM0002/13-BendTheKnee_Interlude_192kb.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            8.75,
+            11.15
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "d428b733ac5d06db4b6fa926ea2b096773292d0f78df710374eaec8aa3b93cde",
+          "group": "family-d428b733ac5d06db4b6fa926ea2b096773292d0f78df710374eaec8aa3b93cde",
+          "start_frame": 1664775,
+          "end_frame": 1770615,
+          "score": 0.43225683538029236,
+          "timbre_distance": 0.43225683538029236,
+          "per_example_distances": [
+            0.43225683538029236
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0
+          ],
+          "title": "Lyrikal Tranzportashun (12\" Mixx)",
+          "artist": "LOWdown",
+          "source_url": "https://archive.org/download/BSOG0060/42-LyrikalTranzportashun_12inMixx.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            37.75,
+            40.15
+          ],
+          "master_offset_seconds": null
+        }
+      ],
+      "playback": {
+        "clips": 11,
+        "original_stereo_samples_verified": true,
+        "encoding": "WAV/PCM16",
+        "durations_seconds": [
+          2.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4
+        ],
+        "gains": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9954674192723804
+        ],
+        "report_relative_path": "reports/local/a06/94fd356a653622972226c45c116b23a008280ac3017b984dbfd1d3d77de03867/index.html"
+      }
+    },
+    {
+      "name": "multiple",
+      "query_id": "cf31a1ee58c5b3419ae28fc0c98d90ae8bc492e7381416eeab6ddfcb2f05483a",
+      "unique_examples": 2,
+      "result_id": "975ac0d6713bf63b8e9a07ad157b12e7b04126799d1b16c84583828643b81dc6",
+      "result_hash": "20d3d0bed2f9c2169d630346c5383d0ac121b57ab763ee17f09df86e18b71dcf",
+      "excluded_groups": [
+        "family-02e9c5776b23f68fc3ac3fdd3fbb36b0c497701c3a1a346e22f3ed76051b2064"
+      ],
+      "eligible_distinct_groups": 71,
+      "scored_windows": 43402,
+      "ranking_validation_seconds": 62.30473549999988,
+      "peak_working_bytes": 250216448,
+      "query_adapter_load_seconds": 4.776585999999952,
+      "query_extraction_seconds": 0.11351419999846257,
+      "candidates": [
+        {
+          "recording_id": "f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+          "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+          "start_frame": 4002075,
+          "end_frame": 4107915,
+          "score": 0.454998979094867,
+          "timbre_distance": 0.454998979094867,
+          "per_example_distances": [
+            0.46812439112728543,
+            0.4418735670624485
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0,
+            0.0
+          ],
+          "title": "Shivering Shadows (Featuring Viktor Van River)",
+          "artist": "Cutside",
+          "source_url": "https://archive.org/download/BSOG0062/02-ShiveringShadows_FeaturingViktorVanRiver_192kb.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            90.75,
+            93.15
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "c06854cf82ae3a189aee93b0980ff54666218a98478e935e610f3ba31fd6092b",
+          "group": "family-c06854cf82ae3a189aee93b0980ff54666218a98478e935e610f3ba31fd6092b",
+          "start_frame": 429975,
+          "end_frame": 535815,
+          "score": 0.4771374676225384,
+          "timbre_distance": 0.4771374676225384,
+          "per_example_distances": [
+            0.4432823533820236,
+            0.5109925818630532
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0,
+            0.0
+          ],
+          "title": "Bend The Knee (Interlude)",
+          "artist": "Eli & The Mannings",
+          "source_url": "https://archive.org/download/BSIM0002/13-BendTheKnee_Interlude_192kb.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            9.75,
+            12.15
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "def2cbda8a412cd1e4e491190ce33fab60211ec3cfc83b5b38a0bbe3fda7f17a",
+          "group": "family-def2cbda8a412cd1e4e491190ce33fab60211ec3cfc83b5b38a0bbe3fda7f17a",
+          "start_frame": 7133175,
+          "end_frame": 7239015,
+          "score": 0.4836029667249683,
+          "timbre_distance": 0.4836029667249683,
+          "per_example_distances": [
+            0.4096860802077462,
+            0.5575198532421903
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0,
+            0.0
+          ],
+          "title": "To My Recollection",
+          "artist": "Luck & Doc",
+          "source_url": "https://archive.org/download/BSOG0069/09-ToMyRecollection.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            161.75,
+            164.15
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+          "group": "family-2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+          "start_frame": 7838775,
+          "end_frame": 7944615,
+          "score": 0.49360437091083387,
+          "timbre_distance": 0.49360437091083387,
+          "per_example_distances": [
+            0.48967883268848067,
+            0.49752990913318706
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0,
+            0.0
+          ],
+          "title": "Rap Style (Four Track Mixx)",
+          "artist": "Donnie Ozone",
+          "source_url": "https://archive.org/download/BSMX0176/01-RapStyle_FourTrackMixx_192kb.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            177.75,
+            180.15
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "ebf46fa8340b6982260aa8c13ac60b84dd1967fa0c9463b8fa1a215f94b856d3",
+          "group": "family-ebf46fa8340b6982260aa8c13ac60b84dd1967fa0c9463b8fa1a215f94b856d3",
+          "start_frame": 165375,
+          "end_frame": 271215,
+          "score": 0.4947350482309846,
+          "timbre_distance": 0.4947350482309846,
+          "per_example_distances": [
+            0.4108224614127505,
+            0.5786476350492187
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0,
+            0.0
+          ],
+          "title": "Nuthin'",
+          "artist": "Deadly Combo",
+          "source_url": "https://archive.org/download/BSMX0152/01-Nuthin.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            3.75,
+            6.15
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "2e8b8fc444042d0ee77627f2626da1111b150f262e3484b98204217a6390341e",
+          "group": "family-2e8b8fc444042d0ee77627f2626da1111b150f262e3484b98204217a6390341e",
+          "start_frame": 6945750,
+          "end_frame": 7051590,
+          "score": 0.4948543093826713,
+          "timbre_distance": 0.4948543093826713,
+          "per_example_distances": [
+            0.39932224595995824,
+            0.5903863728053843
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0,
+            0.0
+          ],
+          "title": "Gladiator Skool",
+          "artist": "GLD8TRZ",
+          "source_url": "https://archive.org/download/BSMX0173/04-GladiatorSkool.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            157.5,
+            159.9
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "8d7a34191d0f2e1350fbca3fa45519e3fb89b2fe008fbdf2a81618f4fc57a83a",
+          "group": "family-8d7a34191d0f2e1350fbca3fa45519e3fb89b2fe008fbdf2a81618f4fc57a83a",
+          "start_frame": 8136450,
+          "end_frame": 8242290,
+          "score": 0.49598400793366404,
+          "timbre_distance": 0.49598400793366404,
+          "per_example_distances": [
+            0.43350145006802476,
+            0.5584665657993033
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0,
+            0.0
+          ],
+          "title": "Riot",
+          "artist": "Mr. Bitterness And The Guilty Pleasures",
+          "source_url": "https://archive.org/download/BSOG0061/02-Riot.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            184.5,
+            186.9
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "3e36fb2358a9901a1b16fcee24b5e67f2b32d81300506d2cd93b8485e7a6f2c3",
+          "group": "family-3e36fb2358a9901a1b16fcee24b5e67f2b32d81300506d2cd93b8485e7a6f2c3",
+          "start_frame": 2679075,
+          "end_frame": 2784915,
+          "score": 0.4997307496778384,
+          "timbre_distance": 0.4997307496778384,
+          "per_example_distances": [
+            0.4783087624737824,
+            0.5211527368818945
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0,
+            0.0
+          ],
+          "title": "Eleven Years",
+          "artist": "Eli & The Mannings",
+          "source_url": "https://archive.org/download/BSIM0002/05-ElevenYears_192kb.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            60.75,
+            63.15
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+          "group": "family-241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+          "start_frame": 6096825,
+          "end_frame": 6202665,
+          "score": 0.5053874093443946,
+          "timbre_distance": 0.5053874093443946,
+          "per_example_distances": [
+            0.4902639133592237,
+            0.5205109053295657
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0,
+            0.0
+          ],
+          "title": "Something To See (De Vries Instrumental)",
+          "artist": "Donnie Ozone",
+          "source_url": "https://archive.org/download/BSMX0136/04-SomethingToSee_DeVriesInstrumental_192kb.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            138.25,
+            140.65
+          ],
+          "master_offset_seconds": null
+        },
+        {
+          "recording_id": "d428b733ac5d06db4b6fa926ea2b096773292d0f78df710374eaec8aa3b93cde",
+          "group": "family-d428b733ac5d06db4b6fa926ea2b096773292d0f78df710374eaec8aa3b93cde",
+          "start_frame": 9426375,
+          "end_frame": 9532215,
+          "score": 0.5082293015422853,
+          "timbre_distance": 0.5082293015422853,
+          "per_example_distances": [
+            0.4626223585956142,
+            0.5538362444889564
+          ],
+          "pitch_contribution": 0,
+          "duration_mismatch_seconds": [
+            0.0,
+            0.0
+          ],
+          "title": "Lyrikal Tranzportashun (12\" Mixx)",
+          "artist": "LOWdown",
+          "source_url": "https://archive.org/download/BSOG0060/42-LyrikalTranzportashun_12inMixx.mp3",
+          "rate_hz": 44100,
+          "available_file_interval_seconds": [
+            213.75,
+            216.15
+          ],
+          "master_offset_seconds": null
+        }
+      ],
+      "playback": {
+        "clips": 12,
+        "original_stereo_samples_verified": true,
+        "encoding": "WAV/PCM16",
+        "durations_seconds": [
+          2.4,
+          2.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4,
+          4.4
+        ],
+        "gains": [
+          1.0,
+          1.0,
+          0.9875060068406761,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9990870671176583,
+          1.0
+        ],
+        "report_relative_path": "reports/local/a06/975ac0d6713bf63b8e9a07ad157b12e7b04126799d1b16c84583828643b81dc6/index.html"
+      }
+    }
+  ],
+  "human_relevance": "unmeasured; predetermined engineering intent, no verified selected layer",
+  "loulou": "missing/unverified; reference query unrun",
+  "record_hash": "f8b43136eaab14480937c6076f11d3ed6b5f80163711248bb2497065ad5f9b59"
+}

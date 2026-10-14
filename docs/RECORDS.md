@@ -198,8 +198,9 @@ map/offset evidence for each unique example. Equal selected PCM cannot silently 
 the unordered mean-distance query. `a06-result-1` binds the index/shard set and query,
 metric/direction/representation, explicit pitch preference and diagnostic inclusion.
 It retains per-example/aggregate timbre distances, optional pitch contribution,
-duration mismatch, recording/group/source URLs and scored native intervals. One best
-passage per group suppresses overlapping alternatives; it never assigns a score to a
+duration mismatch, recording/group/source URLs and scored native intervals. The mismatch
+is candidate duration minus each example's duration, in seconds. One best passage per
+group suppresses overlapping alternatives; it never assigns a score to a
 merged/unscored interval. Results are candidates without calibrated presence/probability.
 
 `a06-playback-1` binds original crops, frame/rate/channel counts, clip-zero source offsets,

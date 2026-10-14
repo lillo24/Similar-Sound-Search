@@ -23,6 +23,16 @@ new acquisition, another development comparison, paid compute or deployment.
 Installation, inference, validation, indexing and report costs are recorded separately.
 See [measured evidence](../reports/A06_SEARCH.md) for actual coverage and final results.
 
+The delivery ledger has now consumed this fixed worker-time allowance, including
+retained interruptions and a 4.555-second forced-termination overrun. Further A06
+compute commands refuse; do not reset the ledger or raise its ceiling. The complete
+index, both query/results and exported reports remain usable evidence. The independent
+`listen-search.ps1` / `search serve` listener verifies playback bundles without inference
+or charging a new compute job. The extra full-index repeat stopped after 57 refreshed
+recording receipts; both earlier complete catalogue ranks reused existing eligible
+shards and single-query preparation reused its features. [Resource evidence](../manifests/search/resources.json)
+retains the exact costs and unrun additional repeats.
+
 ## Commands, inputs and restoration
 
 Use the pinned [ordinary/optional setup](MATCHERS.md#setup-and-explicit-commands).
@@ -155,6 +165,11 @@ a partial index; `--allow-partial` consciously returns its measured union/record
 Do not delete a ledger, change jobs or raise caps. Corrupt completed inputs/shards/clips fail
 and remain available for inspection; quarantine only the named owned damaged artifact before
 resuming. Old indexes/results remain evidence when code/recipe identity changes.
+
+On Windows, another process holding an accounting/publication file open can make atomic
+replacement fail with an access-denied error. Preserve the explicit failed report and
+uncertain reservation, close the reader and repeat the unchanged command. Inspect ledger
+snapshots after an operation finishes; do not poll a live ledger with a file-locking reader.
 
 The final declaration supplies the strengthened A04 held-out guard. Original choice remains
 A05; an arbitrary `stage:A06` object fails. `final-run` only uses frozen EfficientAT, exact

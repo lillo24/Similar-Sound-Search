@@ -1,0 +1,41 @@
+{
+  "schema_version": "a06-index-summary-1",
+  "index_id": "d027f2cd5ca817bc320542df16a540346325403bcb967fd248216c8c466731e2",
+  "index_record_hash": "f12be0c64a196039260e40847f079fcb1f10937344f6f44b94e3ed8039c4d58f",
+  "configuration_hash": "01288ede91316421a98dcebe9f29e11484dcff76e91bfa2e70f570dd3e222b9c",
+  "representation_hash": "5a487b946d748d48ec2945dae97e51f07bd0e8b106fa6c49c98df9e84a4035e9",
+  "method": "efficientat",
+  "state": "complete",
+  "coverage": {
+    "expected_recordings": 72,
+    "expected_original_seconds": 11152.10133786848,
+    "recordings": 72,
+    "windows": 44025,
+    "original_seconds": 11152.101337868482,
+    "indexed_unique_seconds": 11152.101337868482,
+    "processed_window_seconds": 105660.0,
+    "feature_bytes": 67638144,
+    "extraction_seconds": 1450.2124130000066,
+    "load_seconds": 623.8340901999982,
+    "validation_seconds": 277.86831120000716,
+    "peak_working_bytes": 351547392
+  },
+  "shards": 123,
+  "source_scope": "All 72 locally validated A03 ready recordings, over full available-file durations; 70 provider full tracks and two unknown-offset excerpts",
+  "master_offsets": "unknown for every recording",
+  "initial_attempts_interrupted": 2,
+  "interruption_types": [
+    "native worker exit 3221225477 after 43 recordings",
+    "120-second worker deadline after 52 recordings"
+  ],
+  "recovery": "same index/model/code/configuration, validated committed shards, retained charges; held-out check not repeated",
+  "earlier_assets_preserved": {
+    "files": 7121,
+    "bytes": 935022634,
+    "sha256_size_mtime_unchanged": true
+  },
+  "model_quality": "real-catalogue perceptual relevance unmeasured",
+  "coverage_cost_record": "Cold complete index snapshot; later repeated validation costs are in resources.json",
+  "repeat_verification": "Extra whole-index repetition stopped at fixed worker-time cap; immutable features unchanged, and both complete catalogue queries reused their eligible shards",
+  "record_hash": "0eb2e6e429d381e85518b850a3da28a755c10980531e8f6ab1353a5c3117cb13"
+}

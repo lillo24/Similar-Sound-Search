@@ -28,5 +28,14 @@
   "independent_pcm_check": "each exported sample equals declared original crop conversion",
   "pre_freeze_fix": "full-file HTTP responses provided zero seekable span; bounded byte-range responses restored seeking",
   "human_relevance": "unmeasured; generated technical diagnostic only",
-  "record_hash": "33b16516654384c2171d108cb894fd53017f7e399b2037d57b6a116fffff1d7d"
+  "catalogue_report": {
+    "result_id": "94fd356a653622972226c45c116b23a008280ac3017b984dbfd1d3d77de03867",
+    "http_status": 200,
+    "chrome_title": "Similar Sound Search — local listening",
+    "original_stereo_clips_samples_verified": 11,
+    "initial_response": 410,
+    "unchanged_verification_recovered": true,
+    "control_gap": "Later page-control calls timed out and the connected Chrome extension explicitly required an update. Catalogue-clip play/pause/seek were not verified through that unavailable control capability. Earlier engineering clips exercised the identical playback/server code."
+  },
+  "record_hash": "d19730f08b1fa1e72db6d6978f5b3b757c1dae0e92d9741a4252270f46fcb96c"
 }
