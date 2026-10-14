@@ -136,19 +136,9 @@ def validate_header(prediction, protocol, split, choice=None):
             "Grey1977 human scoring unavailable: unresolved rights and original mapping"
         )
     if split == "held_out" and prediction["evidence_kind"] == "matcher":
-        if (
-            not choice
-            or any(
-                choice.get(k) != prediction.get(k)
-                for k in ("protocol_hash", "method_id", "config_hash")
-            )
-            or choice.get("selected_on") != "development"
-            or choice.get("stage") != "A06"
-        ):
-            raise InputError(
-                "held-out model scores reserved for A06; "
-                "matching frozen development choice required"
-            )
+        from ..search.final import validate_guard
+
+        validate_guard(choice, protocol, prediction)
 
 
 def score(prediction, protocol, suite, assets, split="development", choice=None):
@@ -330,7 +320,9 @@ def score_file(budget, prediction, split, choice=None):
     return score(prediction, protocol, suite, assets, split, choice)
 
 
-def known_answers(budget):
+def known_answers(budget, directory=None):
+    # A06 can use its own output/accounting owner without rewriting frozen A04 evidence.
+    directory = directory or budget.root / "data/runs/evaluation"
     protocol, suite = load_suite(budget)
     assets = {
         k: record(budget.root / "manifests/evaluation/assets" / (k + ".json"))
@@ -399,11 +391,11 @@ def known_answers(budget):
             },
             "human_predictions": [],
         }
-        path = budget.root / "data/runs/evaluation" / ("predictions-development-" + kind + ".json")
+        path = directory / ("predictions-development-" + kind + ".json")
         write_record(path, prediction, budget)
         result = score(prediction, protocol, suite, assets)
         write_record(
-            budget.root / "data/runs/evaluation" / ("scores-development-" + kind + ".json"),
+            directory / ("scores-development-" + kind + ".json"),
             result,
             budget,
         )

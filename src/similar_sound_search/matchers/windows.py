@@ -24,11 +24,13 @@ def intervals(frames, query_frames, rate, controlled=False):
     return [(s, s + query_frames) for s in starts]
 
 
-def routes(suite, assets):
+def routes(suite, assets, split="development"):
     """Return only routing identity, sample metadata and bounds; never construction labels."""
+    if split not in {"development", "held_out"}:
+        raise InputError("routing: explicit development/held_out split required")
     result, queries = {}, []
     for q in suite["queries"]:
-        if q["split"] != "development":
+        if q["split"] != split:
             continue
         query = assets[q["query_asset_id"]]
         meta = query["audio"]
@@ -36,11 +38,8 @@ def routes(suite, assets):
         pool = []
         for key in q["candidate_assets"]:
             a = assets[key]
-            if (
-                a["split"] != "development"
-                or a["audio"]["sample_rate_hz"] != meta["sample_rate_hz"]
-            ):
-                raise InputError("routing: development assets with equal source rate required")
+            if a["split"] != split or a["audio"]["sample_rate_hz"] != meta["sample_rate_hz"]:
+                raise InputError("routing: same-split assets with equal source rate required")
             # Whole-file mode follows candidate duration, not target truth or task labels.
             for start, end in intervals(
                 a["audio"]["sample_count"],

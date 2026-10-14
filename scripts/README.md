@@ -5,3 +5,9 @@
 Pass a working interpreter with `-PythonExecutable` when `python` is a Windows Store alias. [RUNTIME.md](../docs/RUNTIME.md#setup) gives the exact setup and Linux equivalent; numerical libraries are used by the source package, while Ruff is only a validation tool.
 
 `setup-models.ps1` owns the separate optional Windows AMD64/Python 3.12 CPU inference setup. It downloads only the hash-pinned wheel closure from `requirements-models.lock`, reuses root setuptools/numerical packages, checks finite wheel space/free headroom and dependency consistency, and refuses renderer identity changes. It never downloads a checkpoint. [MATCHERS.md](../docs/MATCHERS.md) gives explicit acquisition/inference commands and platform limits; ordinary setup/smoke remain independent of models.
+
+`listen-search.ps1` opens an already generated A06 bundle through its loopback-only
+allowlisted server, using the successful private report summary (default
+`reports/local/a06-demo-report.json`). It performs no indexing/inference and stops with
+Ctrl+C. Optional `-Report` stays within `reports/local`; `-Port` defaults to 8766. Stop
+console commands/server processes before reinstalling the Windows launcher.

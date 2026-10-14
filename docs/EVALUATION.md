@@ -82,7 +82,14 @@ Signed Spearman uses average **per-observation ranks** on valid unique non-diago
 
 The frozen A05 development rule first requires technical correctness, complete query outputs and resource compliance for at most three candidates. A05 prospectively corrected the saturated criterion: select by macro candidate query hit@1 over the three source-consistency mixture levels, then macro controlled performance/pitch hit@5; ties use measured model wall time and lexical method/config identity. Exact-instance diagnostics do not select a winner. If no eligible run exists, select none. Human evidence is reported separately; enabling it requires a reviewed protocol revision before comparisons. No universal accuracy threshold is invented.
 
-Scoring defaults to `development`. A held-out matcher run requires `--split held_out --final-choice FILE`, where FILE declares matching `protocol_hash`, `method_id`, `config_hash`, `selected_on: development`, and `stage: A06`. This makes the final check explicit after A05 choices are frozen; it does not prevent a person from inspecting files. Later tuning on held-out results must disclose contamination. A04 never runs acoustic matchers on either split.
+Scoring defaults to `development`. A06 strengthens the held-out matcher guard: a
+self-hashed `a06-final-1` declaration must bind the original stage-A05 choice/shortlist,
+authoritative protocol/suite, exact representation/checkpoint, grid, pitch zero, empty
+refinement and finite run identity. An arbitrary `stage:A06` object is refused. Use
+`search declare`, `search final-run`, `search final-score` through A06's own accounting,
+as documented in [SEARCH.md](SEARCH.md). A04 never runs acoustic inference; A05 still
+refuses held-out CLI work. Later tuning after inspected final outcomes must disclose
+contamination. Declaration integrity does not prevent a person from inspecting files.
 
 ### A04 accounting and recovery
 

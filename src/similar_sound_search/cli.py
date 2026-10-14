@@ -106,6 +106,35 @@ def parser():
     matchers.add_argument("input", type=Path, nargs="?")
     matchers.add_argument("--method", choices=("acoustic", "efficientat"))
     matchers.add_argument("--split", choices=("development", "held_out"), default="development")
+    search = subcommands.add_parser("search", help="A06 bounded exact search and original playback")
+    search.add_argument(
+        "search_action",
+        choices=(
+            "pilot",
+            "demo-inputs",
+            "diagnostic-inputs",
+            "index",
+            "prepare-query",
+            "rank",
+            "report",
+            "declare",
+            "final-run",
+            "final-score",
+            "known-answer",
+            "serve",
+        ),
+    )
+    search.add_argument("input", type=Path, nargs="?")
+    search.add_argument("--method", choices=("efficientat", "acoustic"))
+    search.add_argument("--engineering", type=Path, help="explicit generated diagnostic index JSON")
+    search.add_argument("--index", type=Path)
+    search.add_argument("--query", type=Path)
+    search.add_argument(
+        "--include-self", action="store_true", help="explicit self-match diagnostic"
+    )
+    search.add_argument("--allow-partial", action="store_true")
+    search.add_argument("--pitch-weight", type=float, default=0)
+    search.add_argument("--port", type=int, default=8766)
     return command
 
 
@@ -115,7 +144,8 @@ def _worker(request):
         root = Path(request["root"])
         budget_type = (
             CatalogueBudget
-            if request["command"] in {"catalogue_step", "evaluation_step", "matchers_step"}
+            if request["command"]
+            in {"catalogue_step", "evaluation_step", "matchers_step", "search_step"}
             else Budget
         )
         budget = budget_type(root, request["limits"])
@@ -152,6 +182,10 @@ def _worker(request):
             result = worker(request, budget)
         elif request["command"] == "matchers_step":
             from .matchers.job import worker
+
+            result = worker(request, budget)
+        elif request["command"] == "search_step":
+            from .search.job import worker
 
             result = worker(request, budget)
         else:
@@ -241,6 +275,13 @@ def main(argv=None):
             for key, value in vars(args).items()
         }
         request.update({"root": str(root), "limits": limits})
+        if args.command == "search" and args.search_action == "serve":
+            from .search.report import serve
+
+            if not args.input:
+                raise InputError("search serve requires the owned report HTML or bundle directory")
+            serve(root, args.input, args.port)
+            return 0
         with project_lock(root):
             # Refuse orphaned acquisition/evaluation children before starting an operation.
             with project_lock(root, ".a03-worker.lock"):
@@ -248,6 +289,8 @@ def main(argv=None):
             with project_lock(root, ".a04-worker.lock"):
                 pass
             with project_lock(root, ".a05-worker.lock"):
+                pass
+            with project_lock(root, ".a06-worker.lock"):
                 pass
             Budget(root, limits).reserve(65536)
             if args.command == "catalogue":
@@ -275,6 +318,10 @@ def main(argv=None):
 
                 if args.input is not None and args.matcher_action != "score":
                     raise InputError("matchers: input belongs to score only")
+                result = run(request, execute)
+            elif args.command == "search":
+                from .search.job import run
+
                 result = run(request, execute)
             else:
                 result = execute(request)

@@ -83,6 +83,11 @@ Unchanged resumes deliberately use pinned source snapshots; they make no claim a
 
 Public ready records describe successful validation on the delivery machine, not guaranteed availability elsewhere. Local readiness requires private registration and matching assets. `catalogue verify` consumes the acquisition allowance and cannot run on the exhausted delivered `starter` job. A04 instead calls the read-only `validate_local_ready` helper under its independent deadline/accounting: selected original bytes/full sequential PCM, private/public registration, derivative bundle and maps are checked without ledger or catalogue mutations. This validates the backgrounds actually used, not the unacquired selection. Per-record descriptors and the selection/group/summary layout stay within the 1 MiB reader limit.
 
+A06 uses the shared read-only `validate_local_original` boundary, which returns full
+sequentially decoded original samples/metadata and verifies the corresponding A02
+bundle. `validate_local_ready` still returns the centred derivative for A04. Full search
+never mistakes that derivative for the original or opens the exhausted A03 ledger.
+
 Once the real catalogue exceeds the 256 MiB smoke-tier managed-disk ceiling, run the same offline diagnostic under starter:
 
 ```powershell

@@ -12,3 +12,4 @@ Local overrides require the explicit CLI `--profile` or `--context` flag. Nothin
 
 - `matchers.json` supplies fixed separate A05 transfer/attempt/worker/run/window/storage/smoke allowances. Existing per-worker/memory/disk caps remain unchanged; no alternate job names replenish allowances.
 - `matcher_methods.json` freezes the two-method shortlist and pinned official EfficientAT checkpoint identity/checksum, with CIR/CLAP exclusions. [MATCHERS.md](../docs/MATCHERS.md) defines optional CPU setup, representations, inference, reuse and choice.
+- `search.json` owns A06's separate native-window/shard/query/display/pitch policy and finite lifetime time/read/window/storage/query/final/clip caps. [SEARCH.md](../docs/SEARCH.md) specifies exact commands, accounting, defaults, original playback and recovery. It never changes the A05 representation descriptor or prior allowances.

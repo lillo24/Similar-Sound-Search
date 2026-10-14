@@ -145,3 +145,11 @@ After acquiring a catalogue larger than the smoke tier's 256 MiB managed-disk ca
 ## Optional A05 CPU inference
 
 Ordinary setup and smoke retain the pinned decoder/numerical stack and require no models. [MATCHERS.md](MATCHERS.md) documents the separate Windows/Python 3.12 hash-pinned CPU wheel setup and explicit checkpoint acquisition. A05 shares the same single operation, hard worker deadline, memory/disk/headroom caps and sequential decoding, with independent finite lifetime accounting. Its network guard refuses implicit downloads outside `matchers acquire`. Optional packages and `.cache/` have separately measured disk cost; weights, dependency wheels and feature caches under `data/` count toward managed storage. No Linux optional-model installation or GPU inference is claimed by this Windows delivery.
+
+A06 [local search/playback](SEARCH.md) shares these limits without dependency upgrades.
+Its original-recording shards, query products, ledgers and playback bundles under
+`data/`/`reports/local/`, plus sanitized `manifests/search/`, count toward managed disk.
+New coordinator code identity normalizes CRLF/LF for checkout portability; A05's exact
+adapter byte hashes remain governed by `.gitattributes`. Stop active console processes
+before reinstalling their Windows launcher. The loopback report server uses the Python
+module entry point and exposes only its owned bundle; it performs no compute job.

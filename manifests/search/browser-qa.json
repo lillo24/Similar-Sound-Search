@@ -1,0 +1,32 @@
+{
+  "platform": "Windows; connected Chrome browser",
+  "fixture_report_id": "d225f1ed943be35f7ef4bcb79e52c3b9f3d86cee9729faa5aae3386da9ea7c01",
+  "clips": [
+    {
+      "role": "query",
+      "browser_duration_seconds": 2.2,
+      "seekable_seconds": [
+        0,
+        2.2
+      ]
+    },
+    {
+      "role": "candidate",
+      "browser_duration_seconds": 4.4,
+      "seekable_seconds": [
+        0,
+        4.4
+      ]
+    }
+  ],
+  "candidate_seek_seconds": 2.2,
+  "paused_after_play_seconds": 3.168249,
+  "play_pause_verified": true,
+  "missing_media_http_status": 410,
+  "missing_media_visible": "Media missing/stale; verify/regenerate bundle",
+  "owned_clip_restored": true,
+  "independent_pcm_check": "each exported sample equals declared original crop conversion",
+  "pre_freeze_fix": "full-file HTTP responses provided zero seekable span; bounded byte-range responses restored seeking",
+  "human_relevance": "unmeasured; generated technical diagnostic only",
+  "record_hash": "33b16516654384c2171d108cb894fd53017f7e399b2037d57b6a116fffff1d7d"
+}
