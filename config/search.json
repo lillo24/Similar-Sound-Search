@@ -1,0 +1,31 @@
+{
+  "schema_version": "a06-search-1",
+  "window_milliseconds": 2400,
+  "hop_milliseconds": 250,
+  "windows_per_shard": 512,
+  "rank_block_windows": 512,
+  "max_query_examples": 8,
+  "max_query_seconds": 30,
+  "results": 10,
+  "playback_context_milliseconds": 1000,
+  "pitch_weight_default": 0,
+  "pitch_weight_max": 0.05,
+  "pitch_tolerance_semitones": 12,
+  "policy": {
+    "max_job_seconds": 7200,
+    "max_http_attempts": 0,
+    "max_download_bytes": 0,
+    "max_workers": 512,
+    "max_indexed_windows": 60000,
+    "max_processed_window_seconds": 160000,
+    "max_read_audio_seconds": 180000,
+    "max_feature_bytes": 268435456,
+    "max_query_jobs": 24,
+    "max_query_preparation_bytes": 67108864,
+    "max_final_attempts": 1,
+    "max_final_windows": 2000,
+    "max_pilot_windows": 64,
+    "max_clips": 64,
+    "max_clip_bytes": 134217728
+  }
+}
