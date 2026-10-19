@@ -47,6 +47,7 @@ The delivered protocol requires its four locally validated A03 backgrounds; a fr
 - [Catalogue commands](docs/CATALOGUE.md), [measured A03 evidence](reports/A03_CATALOGUE.md), and [status/A05 handoff](docs/STATUS.md).
 - [Matcher setup/commands](docs/MATCHERS.md), [measured A05 evidence](reports/A05_MATCHERS.md), and [provisional choice](manifests/matchers/choice.json).
 - [Local search/playback commands](docs/SEARCH.md), [measured A06 evidence](reports/A06_SEARCH.md), and [search reproducibility records](manifests/search/README.md).
+- [Event selection/crop commands](docs/EVENTS.md), [measured B01 evidence](reports/B01_EVENTS.md), and [event declarations/results](manifests/events/README.md).
 - [Measured A04 evidence](reports/A04_BENCHMARKS.md) and [frozen protocol](manifests/evaluation/protocol.json).
 - [Initial reference manifest](manifests/references/loulou.json).
 - [Archived A01 prompt](history-implementations/Similar_Sound_Search_A01.md).
@@ -55,6 +56,7 @@ The delivered protocol requires its four locally validated A03 backgrounds; a fr
 - [Archived A04 prompt](history-implementations/Similar_Sound_Search_A04.md).
 - [Archived A05 prompt](history-implementations/Similar_Sound_Search_A05.md).
 - [Archived A06 prompt](history-implementations/Similar_Sound_Search_A06.md).
+- [Archived B01 prompt](history-implementations/Similar_Sound_Search_B01.md).
 
 ## A06 handoff
 
@@ -63,3 +65,14 @@ Follow [AGENTS.md](AGENTS.md) for implementation and GitHub delivery. Each imple
 A06 integrates the frozen A05 choice through A02 preparation, A03 original validation and A04 scoring. Exact ranking, saved-query reuse, bounded resumable shards and verified original playback are implemented. Controlled held-out results and pipeline operation do not establish perceptual quality. This batch ends at A06; later stages need their own prompts. D04 remains the first required user relevance review. Missing Loulou audio prevents its reference-specific experiment. Preserve benchmark exclusions, the A03 shortfall and all lifetime ledgers.
 
 The [source map](src/README.md) and [config map](config/README.md) describe ownership. Local audio, features, indexes, weights, run output, and secrets are excluded by [.gitignore](.gitignore). Keep sanitized manifests and shareable evidence reports versionable; see the brief before adding data.
+
+## B01 handoff
+
+B01 adds deterministic event proposals, explicit/manual native crops and an audited
+read-only handoff to the existing matcher/catalogue. Automatic selection remains
+experimental and explicit/coarse selection is default. The bounded comparison is
+partial after a documented insertion-timing audit; it does not establish human or
+Loulou relevance. Two actual catalogue searches and Chrome/HTTP playback checks passed.
+Open the saved event/search report with `.\scripts\listen-events.ps1` on port 8767.
+[B01 evidence and exact commands](reports/B01_EVENTS.md) own results, limitations,
+resource/preservation proof and the concrete B02 handoff. B02 was not implemented.

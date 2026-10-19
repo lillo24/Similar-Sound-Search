@@ -107,14 +107,15 @@ four clean alternate-performance cases (one per development procedural family),
 four accompanied-reference cases (harmonic -12/0/+12dB and noise 0dB), and two
 absent controls (exact silence and non-target accompaniment). Each uses the same
 original candidate pool for coarse, first proposal, up to three unordered proposals,
-and oracle-bound diagnostic modes. Accompanied references use a constructed
-exact-instance mixture's first complete phrase; retrieval candidates contain the
-alternate performance, with shared backgrounds explicitly correlated. The original
+and oracle-bound diagnostic modes. Accompanied references use the fixed first 2.4s
+of a constructed exact-instance mixture; retrieval candidates contain the alternate
+performance, with shared backgrounds explicitly correlated. The original
 A04 protocol/suite/truth are read-only; a self-hashed subset relabels B01 strata.
 No held-out predictions are run or used to select settings.
 
 Individual A04 note bounds include 1.1s releases and 0.65s inter-attack overlap.
-They are composed into the selected insertion for proposal evaluation. Retrieval
+They are composed through the actual reference insertion positions for proposal
+evaluation, retaining full releases beyond a selected edge with censoring explicit. Retrieval
 truth still refers to the complete 2.4s rendered phrase; K=1/5/10 and IoU>=0.5 use
 the unchanged A04 scorer. Note matches maximize one-to-one cardinality under
 80ms onset/120ms offset tolerances, then minimize total boundary error. Attack
@@ -137,6 +138,30 @@ one of the 16 query/rank jobs and additionally charges ceilings of one batch, te
 cases and forty mode queries. Each actual catalogue query preparation/rank charges
 its own job; inference windows, reads, workers, bytes and retries are also charged.
 
+### Delivery corrections and limits
+
+The initial evaluation incorrectly assumed those fixed regions started with a
+complete insertion. Actual A04 positions are 0, 0.75 or 3 seconds: the two 0.75s
+reference phrases are cut by the selected edge, and the +12dB reference contains
+no designated target within 0..2.4s. `boundary-audit-plan.json` declares the correction
+after initial score inspection. `events audit-boundaries` composes actual note truth
+and scores saved proposals without detector/model inference. Three incorrectly
+mapped oracle queries are invalid and counted as misses in the original denominators;
+their original predictions/summary remain intact. Forty comparison queries are spent;
+no replacement queries, tuning or new cases are run. The intended +12dB query and
+complete oracle comparison remain partial. Coarse/single/multiple retrieval outputs
+and all candidate truth/pools/K/IoU remain unchanged. Final evidence uses the audit,
+not the superseded zero-offset boundary/oracle interpretation.
+
+`accounting-audit-plan.json` records 343.247074829932 seconds of initially omitted
+A02 parent-original byte-hash validation. The existing B01 counter receives that
+conservative charge once, without refunds/reset; subsequent B01 preparation charges
+root reads explicitly. A selection-module accounting change correctly invalidated
+old selection metadata. Fresh records preserve exactly the same saved bounds and
+reuse the same native A02 audio/query features. The report copies both verified WAVs
+and conversion receipts, including recovery from a WAV-only partial. These repairs
+do not change detector settings, the representation, ranking or historical artifacts.
+
 ## Commands and safe resumption (Windows)
 
 Use the pinned local environment and `--tier starter`. Each successful command writes
@@ -153,6 +178,7 @@ $b01Proposal = (Get-Content reports/local/b01-controlled-propose.json -Raw | Con
 $b01Selection = (Get-Content reports/local/b01-controlled-select.json -Raw | ConvertFrom-Json).selection
 & $b01Python -m similar_sound_search --tier starter --report reports/local/b01-controlled-extract.json events extract $b01Selection
 & $b01Python -m similar_sound_search --tier starter --report reports/local/b01-comparison.json events compare
+& $b01Python -m similar_sound_search --tier starter --report reports/local/b01-boundary-audit.json events audit-boundaries
 & $b01Python -m similar_sound_search --tier starter --report reports/local/b01-compatibility.json events compatibility
 ```
 
@@ -180,3 +206,17 @@ or plan drift; no second batch is authorized by a restart. Unfinished charged
 units may be retried within the remaining ceilings. No B01 command exposes A06's
 final-run or model acquisition. The idle listener performs no compute and exposes
 only exact bundle HTML/media paths, with hashes and bounded byte ranges.
+
+The delivered raw comparison used its committed pre-correction code. Its complete
+progress correctly rejects a new `events compare` after the audit-code change.
+Use the saved boundary audit for that run; do not reset its one-batch/forty-query
+allowance. A fresh compatibility receipt was required for the final consumer code,
+with necessary source/shard validation and no feature recomputation or reranking.
+
+Loulou remains ready through
+`events propose config/event_source.example.json` after the actual excerpt is supplied
+at that explicit path. Its example context remains unverified and offset unknown;
+match the example's 0..22 available seconds to the actual file. For a verified full
+track, explicitly supply its context/evidence and use 218..240 available-file seconds.
+An excerpt never receives those full-track crop coordinates. Missing/version/offset
+uncertainty is retained until actual source evidence supports a stronger claim.

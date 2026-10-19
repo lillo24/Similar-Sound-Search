@@ -1,0 +1,571 @@
+{
+  "schema_version": "b01-exercised-commands-1",
+  "date": "2026-10-19",
+  "shell": "PowerShell",
+  "commands": [
+    {
+      "label": "inputs",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-inputs.json",
+        "events",
+        "inputs"
+      ],
+      "status": "ok",
+      "exit_code": 0,
+      "source": "direct CLI run before helper log"
+    },
+    {
+      "label": "controlled-propose",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-controlled-propose.json",
+        "events",
+        "propose",
+        "data/runs/events/inputs/controlled.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "controlled-auto",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-controlled-auto.json",
+        "events",
+        "select",
+        "data/runs/events/proposals/bd7d9a8edbe0eb858533f9dff3cfb4f2baf211c9f03982dc2aedc49c9daf954b.json",
+        "--auto"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "controlled-explicit",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-controlled-explicit.json",
+        "events",
+        "select",
+        "data/runs/events/proposals/bd7d9a8edbe0eb858533f9dff3cfb4f2baf211c9f03982dc2aedc49c9daf954b.json",
+        "--ids",
+        "d7d7d622ebec1145e003a9b0c2fe13b34fae8488e0737022c6d5438c986bab93",
+        "109ff85d51eb01a552ec1ab013ee5f8e3c33d7e07b7873e5f2b37798c8eb3190",
+        "ba4db31a988392bd0d90ca701bf4a7c47152477d5eb6e84b5bbb20483d297232"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "controlled-extract",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-controlled-extract.json",
+        "events",
+        "extract",
+        "data/runs/events/selections/adee36ae6b3e2f74c2dfc992c011e899cca3264f32da2386163d855783f90cf9.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "real-propose-1",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-real-propose-1.json",
+        "events",
+        "propose",
+        "data/runs/events/inputs/alternative-1.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "real-select",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-real-select.json",
+        "events",
+        "select",
+        "data/runs/events/proposals/460feff9cdd5db5d96e2a4035ee13050a5da004b27fe445c2a35dc6253206da2.json",
+        "--auto"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "real-extract",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-real-extract.json",
+        "events",
+        "extract",
+        "data/runs/events/selections/6b4cf5b7be0a8afec73e9be1fee477f0d1705b30b746c540c9f3188da29eaa89.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "compatibility",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-compatibility.json",
+        "events",
+        "compatibility"
+      ],
+      "status": "failed",
+      "exit_code": 1
+    },
+    {
+      "label": "comparison",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-comparison.json",
+        "events",
+        "compare"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "known-answer",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-known-answer.json",
+        "events",
+        "known-answer"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "compatibility",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-compatibility.json",
+        "events",
+        "compatibility"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "controlled-manual",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-controlled-manual.json",
+        "events",
+        "select",
+        "data/runs/events/proposals/bd7d9a8edbe0eb858533f9dff3cfb4f2baf211c9f03982dc2aedc49c9daf954b.json",
+        "--intervals",
+        "0:26400",
+        "15600:42000",
+        "31200:57600"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "controlled-manual-extract",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-controlled-manual-extract.json",
+        "events",
+        "extract",
+        "data/runs/events/selections/160c37edd183b8205b145e50ad02f97ffa872ff688ce0e01995e3c178417930c.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "single-query",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-single-query.json",
+        "events",
+        "prepare-query",
+        "data/runs/events/extractions/6b4cf5b7be0a8afec73e9be1fee477f0d1705b30b746c540c9f3188da29eaa89/single.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "multiple-query",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-multiple-query.json",
+        "events",
+        "prepare-query",
+        "data/runs/events/extractions/6b4cf5b7be0a8afec73e9be1fee477f0d1705b30b746c540c9f3188da29eaa89/multiple.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "single-rank",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-single-rank.json",
+        "events",
+        "rank",
+        "--index",
+        "data/indexes/a06/d027f2cd5ca817bc320542df16a540346325403bcb967fd248216c8c466731e2/index.json",
+        "--query",
+        "data/runs/events/queries/9db5979b03ac70bd0bba0832d2350cea6dc1b5e73728437352b65ecccb6bbd74/query.json",
+        "--receipt",
+        "data/runs/events/compatibility/ecdaf859d232db30c05d5945ef3491b77f06ef6cccd4e530dd26e75f1ea8a021.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "single-report",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-single-report.json",
+        "events",
+        "report",
+        "data/runs/events/results/278a11b63ddb8712e74fcd310dd453bf10e21c71a3607fd4c82b4c9083733c19.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "multiple-rank",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-multiple-rank.json",
+        "events",
+        "rank",
+        "--index",
+        "data/indexes/a06/d027f2cd5ca817bc320542df16a540346325403bcb967fd248216c8c466731e2/index.json",
+        "--query",
+        "data/runs/events/queries/b5a6bc099e4da910341e91124c655fdae6b4ef91392efc08087f19cf8581130e/query.json",
+        "--receipt",
+        "data/runs/events/compatibility/ecdaf859d232db30c05d5945ef3491b77f06ef6cccd4e530dd26e75f1ea8a021.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "multiple-report",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-multiple-report.json",
+        "events",
+        "report",
+        "data/runs/events/results/0988c29a0c6bf779940f326d8c3876af34d079ccef4ee823a0a24df1bb777705.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "event-report",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-event-report.json",
+        "events",
+        "event-report",
+        "data/runs/events/inputs/report.json"
+      ],
+      "status": "failed",
+      "exit_code": 1
+    },
+    {
+      "label": "boundary-audit",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-boundary-audit.json",
+        "events",
+        "audit-boundaries"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "event-report",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-event-report.json",
+        "events",
+        "event-report",
+        "data/runs/events/inputs/report.json"
+      ],
+      "status": "failed",
+      "exit_code": 1
+    },
+    {
+      "label": "real-select-current",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-real-select-current.json",
+        "events",
+        "select",
+        "data/runs/events/proposals/460feff9cdd5db5d96e2a4035ee13050a5da004b27fe445c2a35dc6253206da2.json",
+        "--auto"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "real-extract-current",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-real-extract-current.json",
+        "events",
+        "extract",
+        "data/runs/events/selections/5d053b2e864324ad4b0b59f7a9a11f03e29830032b082f9bdced2c71d92ff25e.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "controlled-manual-current",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-controlled-manual-current.json",
+        "events",
+        "select",
+        "data/runs/events/proposals/bd7d9a8edbe0eb858533f9dff3cfb4f2baf211c9f03982dc2aedc49c9daf954b.json",
+        "--intervals",
+        "0:26400",
+        "15600:42000",
+        "31200:57600"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "controlled-manual-extract-current",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-controlled-manual-extract-current.json",
+        "events",
+        "extract",
+        "data/runs/events/selections/8bb763aec9bd2b4af63a45372df88e2440cd2fa8e8af3867c535e35a12814937.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "event-report",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-event-report.json",
+        "events",
+        "event-report",
+        "data/runs/events/inputs/report-final.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "reuse-query",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-reuse-query.json",
+        "events",
+        "prepare-query",
+        "data/runs/events/inputs/repeated-query.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "compatibility-final",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-compatibility-final.json",
+        "events",
+        "compatibility"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "event-report",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-event-report.json",
+        "events",
+        "event-report",
+        "data/runs/events/inputs/report-final.json"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    },
+    {
+      "label": "compatibility-delivery",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b01-compatibility-delivery.json",
+        "events",
+        "compatibility"
+      ],
+      "status": "ok",
+      "exit_code": 0
+    }
+  ],
+  "note": "Initial comparison/search commands ran at e8cb2a7; correction/audit at f4e819a; final distance report and compatibility at 6567b6f. Raw comparison progress remains frozen and rejects code drift. Use current metadata/receipt for future commands; no ledger reset.",
+  "record_hash": "df5cbfe16dabd67b2bc0cd965fa6efe9d4452e41d8913efcdf49be4c81936530"
+}

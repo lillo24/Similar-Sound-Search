@@ -1,5 +1,10 @@
 # A06 local passage search
 
+B01 adds [event-selection commands](EVENTS.md) and an explicit audited read-only
+consumer of these historical features. A06's exhausted ledger and final-run guard
+remain closed; saved A06 playback through `listen-search.ps1` is still independent
+of compute. Use B01 commands for new event queries and receipts.
+
 A06 uses the unchanged A05 representation and separate `config/search.json` search policy.
 Original recordings are decoded serially; 2.4-second windows advance by 0.25 seconds
 with one unique end-aligned tail. Compact immutable shards hold at most 512 vectors.

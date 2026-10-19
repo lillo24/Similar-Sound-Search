@@ -16,5 +16,6 @@
 | `similar_sound_search/matchers/` | [Subsystem map](similar_sound_search/matchers/README.md): finite optional model acquisition, common representations, feature reuse and development comparison |
 | `similar_sound_search/evaluation/` | [Subsystem map](similar_sound_search/evaluation/README.md): benchmark quarantine, procedural recipes, family splits, independent mixture audits and prediction scorers |
 | `similar_sound_search/search/` | [Subsystem map](similar_sound_search/search/README.md): serial original indexing, unordered explicit queries, exact distinct-recording ranking, original playback and one guarded final check |
+| `similar_sound_search/events/` | [Subsystem map](similar_sound_search/events/README.md): B01 proposals, explicit/manual selection, native crops, fixed development comparison and audited read-only catalogue handoff |
 
 The CLI imports numerical/decoder libraries only in the bounded worker. Inputs feed candidate records; preparation retains those source records and composes maps back to the original available file. Storage and resource checks are shared across both paths. See [runtime commands and limitations](../docs/RUNTIME.md) and [record fields](../docs/RECORDS.md).

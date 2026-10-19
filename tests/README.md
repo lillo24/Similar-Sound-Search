@@ -23,3 +23,18 @@ pretrained inference or consumes the delivery final run. A small actual acoustic
 query/index/rank/playback path uses only disposable generated data.
 
 The A06 execution-repair tests additionally verify four-record rank workers, exact result/reuse identities, preserved original function syntax, and refusal of unaudited source drift.
+
+`test_events.py` checks independent attack/release/overlap/slow/noise/silence/cancellation
+and quiet-event samples, exact native/excerpt/composed maps, explicit selection and
+unsupported durations/stale originals. `test_events_boundary.py` checks explicit
+accounting isolation, retained interruption cost, unordered repeated-PCM invariance
+with all parents retained, independent distances, historical guard rejection,
+unrelated/relevant code drift, read-only legacy source/shard verification and linked
+HTML integrity. `test_events_comparison.py` runs a complete disposable development
+batch with a fake adapter, then resumes without a second inference or legacy writes.
+These do not use delivery ledgers, private catalogue audio or pretrained weights.
+
+`test_event_truth.py` independently checks nonzero/multiple insertion positions,
+full releases beyond a region edge, target absence within the selected region and
+target/geometry drift. The event-report test resumes a WAV-only interrupted copy
+with its immutable conversion receipt before playing/reusing the same crop.

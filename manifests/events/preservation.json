@@ -1,0 +1,16 @@
+{
+  "schema_version": "b01-preservation-1",
+  "date": "2026-10-19",
+  "status": "ok",
+  "protected_files": 7944,
+  "protected_bytes": 1038273179,
+  "missing": [],
+  "changed_hash_or_size": [],
+  "changed_mtime": [],
+  "baseline_sha256": "9c526cee076cd207115606180cffcfaeb74bb93aa8e0c78f8beaf086c73e5ef9",
+  "wall_seconds": 67.82800000003772,
+  "scope": "Pre-B01 data, local reports, original catalogue/evaluation/matcher/search/reference manifests, implementation prompts, prior evidence reports, frozen adapter bytes, .gitattributes and frozen root configurations.",
+  "historical_ledgers_reset": false,
+  "historical_results_edited": false,
+  "record_hash": "9436eab5e4cb77b84ec6cd2c9d72abaeda6b062d66562df1870fe887cf27f476"
+}
