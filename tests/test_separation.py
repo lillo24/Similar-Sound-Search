@@ -19,7 +19,7 @@ from similar_sound_search.search.contracts import recipe_code
 from similar_sound_search.separation import artifacts, dsp, metrics
 from similar_sound_search.separation.context import Context
 from similar_sound_search.separation.job import run
-from similar_sound_search.separation.report import page
+from similar_sound_search.separation.report import page, safe_clip
 from similar_sound_search.storage import InputError, ResourceError, sha256
 
 
@@ -348,3 +348,20 @@ class SeparationCase(AudioCase):
         self.assertIn("Candidate cards always play original mixtures", " ".join(rendered.split()))
         self.assertIn('id="seek-0"', rendered)
         self.assertIn("Media missing or stale", rendered)
+
+    def test_report_recovers_only_verified_interrupted_conversion_receipt(self):
+        path, x = self.signal()
+        _, meta = decode(path, self.sbudget())
+        directory = self.owner.reports / "fixture/media"
+        first = safe_clip(self.sbudget(), directory, {"source": meta}, x, 2400, 12000, self.owner)
+        receipt = directory / (first["path"].split("/")[-1].replace(".wav", ".json"))
+        receipt.unlink()
+        repeated = safe_clip(
+            self.sbudget(), directory, {"source": meta}, x, 2400, 12000, self.owner
+        )
+        self.assertEqual(first, repeated)
+        receipt.unlink()
+        wav = directory / first["path"].split("/")[-1]
+        write_wav(wav, 24000, np.zeros((9600, 2), np.int16))
+        with self.assertRaisesRegex(InputError, "interrupted playback WAV differs"):
+            safe_clip(self.sbudget(), directory, {"source": meta}, x, 2400, 12000, self.owner)

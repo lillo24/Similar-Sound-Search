@@ -4,12 +4,53 @@ import hashlib
 import html
 import os
 
+import numpy as np
+
 from ..evaluation.artifacts import record, write_record
+from ..inputs import decode
 from ..search import sources
-from ..search.report import clip, stamp, verify_bundle
-from ..storage import InputError, contained, digest
+from ..search.report import clip, pcm16, stamp, verify_bundle
+from ..storage import InputError, contained, digest, sha256
 from . import artifacts
 from .comparison import ARMS, read
+
+
+def safe_clip(budget, directory, source, samples, first, last, context):
+    """Recover an interrupted owned WAV only after verifying its exact conversion."""
+    meta = source["source"]
+    integers, gain = pcm16(samples[first:last])
+    identity = {
+        "source_sha256": meta["sha256"],
+        "source_pcm": meta["canonical_pcm"],
+        "first_frame": first,
+        "last_frame": last,
+        "rate": meta["sample_rate_hz"],
+        "channels": meta["channels"],
+        "encoding": "WAV/PCM16 little endian",
+        "conversion": "float32 to round-to-nearest int16; no dither or channel change",
+        "gain": gain,
+    }
+    key = digest(identity)
+    wav, receipt = directory / (key + ".wav"), directory / (key + ".json")
+    if wav.exists() and not receipt.exists():
+        contained(wav, context.reports)
+        context.charge(
+            budget,
+            clips=1,
+            clip_bytes=wav.stat().st_size + 4096,
+            read_audio_seconds=len(integers) / meta["sample_rate_hz"],
+        )
+        actual, audio = decode(wav, budget)
+        if audio["sample_rate_hz"] != meta["sample_rate_hz"] or not np.array_equal(
+            actual, integers.astype(np.float32) / 32768
+        ):
+            raise InputError("B02 interrupted playback WAV differs; preserve for inspection")
+        write_record(
+            receipt,
+            {"identity": identity, "sha256": sha256(wav, budget), "bytes": wav.stat().st_size},
+            budget,
+        )
+    return clip(budget, directory, source, samples, first, last, context=context)
 
 
 def page(value):
@@ -53,11 +94,15 @@ small{color:#46565c}.failed{color:#9a0000}table{width:100%;border-collapse:colla
 harmonic/percussive
 components are not isolated instruments. Cue extraction uses an explicit, possibly contaminated
 audio example.</p>
-<p>Named substitute: Donnie Ozone — Christmas Shopping at the Dollar Store. Loulou is missing.
-Intended layer, complete real note and human relevance are unverified. Original and processed
-queries use
-the same 10.000–12.400 available-file event and 10.000–22.000 context; cue 12.400–14.800.
-Master offset remains unknown. Processing never shifts or stretches these coordinates.</p>
+<p>"""
+        + escape(value.get("source_label", "Explicit B02 source"))
+        + """</p>
+<p>Intended layer, complete real note and human relevance are unverified.</p><p>"""
+        + escape(
+            value.get("geometry_label", "Native geometry is bound in transformation receipts.")
+        )
+        + """</p><p>Master offset remains unknown when not supplied.
+Processing never shifts or stretches these coordinates.</p>
 <h2>Fixed development decision</h2><p>12 positive cases, clean/contaminated cues reported
 separately;
 absent, censored, silent and exact-waveform controls are separate. Candidate-side diagnostic
@@ -134,21 +179,23 @@ def build(budget, spec, context):
     directory = context.reports / ("separation-" + digest(identity))
     items = []
 
-    def add(label, role, samples, audio, first, last, timeline, score=None):
+    def add(
+        label, role, samples, audio, first, last, timeline, score=None, source_path=None, origin=0
+    ):
+        local = source_path or audio.get("local_path")
+        if not local:
+            raise InputError("B02 playback: explicit media source path required")
         items.append(
             {
                 "label": label,
                 "signal_role": role,
                 "timeline": timeline,
                 "score": score,
-                "clip": clip(
-                    budget,
-                    directory / "media",
-                    {"source": audio},
-                    samples,
-                    first,
-                    last,
-                    context=context,
+                "source_audio": {**audio, "local_path": local},
+                "source_origin_seconds": origin,
+                "available_file_zero_seconds": origin + first / audio["sample_rate_hz"],
+                "clip": safe_clip(
+                    budget, directory / "media", {"source": audio}, samples, first, last, context
                 ),
             }
         )
@@ -163,11 +210,22 @@ def build(budget, spec, context):
             )
             role = "Original mixture" if mode == "original" else "Processed component · " + name
             rate = native["sample_rate_hz"]
+            origin = out["mapping"]["segments"][0]["source_start_seconds"]
             timeline = (
-                f"Available-file {stamp(first / rate)}–{stamp(last / rate)}; "
-                f"clip zero = source {first / rate:.6f}s; master offset unknown."
+                f"Available-file {stamp(origin)}–{stamp(origin + len(x) / rate)}; "
+                f"clip zero = source {origin:.6f}s; master offset unverified when absent."
             )
-            add(mode + " context · " + name, role, x, audio, 0, len(x), timeline)
+            add(
+                mode + " context · " + name,
+                role,
+                x,
+                audio,
+                0,
+                len(x),
+                timeline,
+                source_path=out["path"],
+                origin=origin,
+            )
             if name == ARMS[mode]:
                 add(
                     mode + " selected query",
@@ -177,7 +235,10 @@ def build(budget, spec, context):
                     event[0] - first,
                     event[1] - first,
                     f"Same native event [{event[0]}, {event[1]}) at {rate} Hz; "
-                    f"{event[0] / rate:.3f}–{event[1] / rate:.3f}s available-file.",
+                    f"{origin + (event[0] - first) / rate:.3f}–"
+                    f"{origin + (event[1] - first) / rate:.3f}s original available-file.",
+                    source_path=out["path"],
+                    origin=origin,
                 )
     cue, cm = read(budget, context, specs[0]["cue"])
     ca, cb = specs[0]["cue"]["bounds"]
@@ -190,6 +251,7 @@ def build(budget, spec, context):
         cb,
         f"Available-file {ca / cm['sample_rate_hz']:.3f}–{cb / cm['sample_rate_hz']:.3f}s; "
         "no target-layer identity claim.",
+        source_path=specs[0]["cue"]["path"],
     )
     for mode, value in results.items():
         for rank, hit in enumerate(value["candidates"], 1):
@@ -228,13 +290,26 @@ def build(budget, spec, context):
             b,
             "Constructed source event 1.500–3.900s; full phrase/release, "
             "exact target reserved to evaluator.",
+            source_path=out["path"],
+            origin=out["mapping"]["segments"][0]["source_start_seconds"],
         )
+    native_origin = values["original"]["outputs"]["original"]["mapping"]["segments"][0][
+        "source_start_seconds"
+    ]
+    native_rate = native["sample_rate_hz"]
     value = {
         "schema_version": "b02-playback-1",
         "identity": identity,
         "items": items,
         "decision": comparison["decisions"],
         "default": comparison["default"],
+        "source_label": specs[0].get("label", "Explicit B02 source"),
+        "geometry_label": (
+            f"Same selected event {native_origin + (event[0] - first) / native_rate:.3f}–"
+            f"{native_origin + (event[1] - first) / native_rate:.3f}s; context "
+            f"{native_origin:.3f}–{native_origin + (last - first) / native_rate:.3f}s. "
+            "Cue identity and bounds are shown below; available-file coordinates."
+        ),
         "encoding": "WAV/PCM16",
         "offline": True,
     }

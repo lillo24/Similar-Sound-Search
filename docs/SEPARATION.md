@@ -19,6 +19,13 @@ No intended instrument name, source identity, exact hidden stem or evaluation la
 is accepted by the extractor. A cue from a different recording is allowed, with its
 original/duplicate parents included in every arm's exclusions for equal support.
 
+The [Loulou excerpt template](../config/separation_source.example.json) retains
+unverified version/offset context. Its illustrative frames assume 44.1 kHz; run
+`inspect data/audio/originals/loulou-excerpt.wav --context config/input_context.example.json`
+first, then replace hashes and explicit bounds/cue with actual native metadata.
+Never apply second 218 to that short excerpt. The template deliberately fails until
+matching audio and identities are supplied; it does not establish the intended layer.
+
 Original mode copies the region's float32 native samples exactly, with no processing
 gain. Broad/guided modes require 8–96 kHz mono/stereo, at most 12 seconds of context
 and four seconds of cue. One chunk only, at most two components, a 128 MiB temporary
@@ -117,9 +124,9 @@ before each command below. The exercised paths are recorded in the delivery evid
 separation preflight
 separation pilot
 separation known-answer
-separation process data/runs/separation/inputs/real.json --mode original
-separation process data/runs/separation/inputs/real.json --mode broad
-separation process data/runs/separation/inputs/real.json --mode guided
+separation process data/runs/separation/inputs/real-with-context.json --mode original
+separation process data/runs/separation/inputs/real-with-context.json --mode broad
+separation process data/runs/separation/inputs/real-with-context.json --mode guided
 separation handoff TRANSFORM_RECORD --component original # harmonic / extracted
 separation prepare-query HANDOFF_JSON
 separation compare
@@ -127,12 +134,15 @@ separation compatibility --index A06_INDEX_JSON
 separation rank --index A06_INDEX_JSON --query B02_QUERY_JSON --receipt B02_RECEIPT
 separation report B02_REPORT_INPUT_JSON
 .\scripts\listen-separation.ps1
+python scripts/verify-separation.py reports/local/b02-report.json
 ```
 
 Commit the generated preflight/independent geometry and prospective protocol before
 processing/scoring. Repeat the same commands to resume retained completed units, not
-to mint a new job. Do not edit code/settings after comparison begins; its progress
-binds the entire consumer tree and rejects drift. Finish implementation tests before
+to mint a new job. Do not edit producing code/settings during the comparison; its
+progress binds the entire consumer tree and rejects drift. The declared later report
+repair preserves the completed comparison/producing snapshot and cannot authorize a
+replacement batch. Finish implementation tests before
 the single necessary delivery compatibility pass. It reuses B01's audited mechanism
 under B02-owned paths/counters and never re-embeds the immutable A06 index. Omitted
 shared context still means A06 and its historical global guard remains closed.

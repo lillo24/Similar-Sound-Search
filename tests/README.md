@@ -38,7 +38,8 @@ These do not use delivery ledgers, private catalogue audio or pretrained weights
 full releases beyond a region edge, target absence within the selected region and
 target/geometry drift. The event-report test resumes a WAV-only interrupted copy
 with its immutable conversion receipt before playing/reusing the same crop.
-# B02 coverage
+
+## B02 coverage
 
 `test_separation.py` uses independent signals and disposable roots for native identity,
 zero-delay/edge/seam reconstruction, stereo cancellation, actual cue dependence,
