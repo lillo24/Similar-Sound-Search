@@ -25,3 +25,10 @@ and one best interval per recording group, verifying at most four recordings per
 A scored window is never expanded into a
 scored union. Playback context is a separately declared original crop. See
 [commands and limits](../../../docs/SEARCH.md) and [records](../../../docs/RECORDS.md).
+
+B01 supplies an explicit `events.context.Context` to query, source, index-read,
+ranking and playback helpers. It owns new accounting/output and an audited historical
+feature receipt; omitted context retains A06 behavior. `charge_work` shares the
+counter mechanism with an explicit fixed owner. A06 `compatible_code`, final-run
+guards, feature writers and frozen metric functions retain their original checks.
+Named linked HTML pages are additionally hash allowlisted for the minimal event report.

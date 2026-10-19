@@ -1,0 +1,244 @@
+{
+  "schema_version": "b01-development-plan-1",
+  "historical_suite_hash": "d4c59416e5d4bb4aeddfbefa933a3a0f18691a25957e3623f1743d2951806441",
+  "configuration": {
+    "schema_version": "b01-events-1",
+    "detector_version": "envelope-flux-1",
+    "frame_milliseconds": 20,
+    "hop_milliseconds": 5,
+    "attack_lead_milliseconds": 50,
+    "release_hold_milliseconds": 40,
+    "minimum_gap_milliseconds": 100,
+    "minimum_event_milliseconds": 60,
+    "maximum_event_milliseconds": 8000,
+    "edge_energy_ratio": 0.03,
+    "novelty_peak_ratio": 0.2,
+    "absolute_rms_floor": 1e-05,
+    "max_region_seconds": 30,
+    "max_events_per_input": 32,
+    "max_selected_events": 3,
+    "comparison_tolerance": 1e-12,
+    "policy": {
+      "max_job_seconds": 3600,
+      "max_http_attempts": 0,
+      "max_download_bytes": 0,
+      "max_workers": 256,
+      "max_feature_windows": 4096,
+      "max_processed_window_seconds": 12000,
+      "max_read_audio_seconds": 90000,
+      "max_feature_bytes": 67108864,
+      "max_query_jobs": 16,
+      "max_query_preparation_bytes": 67108864,
+      "max_clips": 128,
+      "max_clip_bytes": 134217728,
+      "max_proposal_inputs": 32,
+      "max_proposed_events": 1024,
+      "max_preparation_bytes": 134217728,
+      "max_managed_output_bytes": 268435456,
+      "max_comparisons": 1,
+      "max_comparison_cases": 10,
+      "max_comparison_queries": 40
+    }
+  },
+  "settings_shortlist": [
+    "envelope-flux-1"
+  ],
+  "cases": [
+    {
+      "query_id": "850808ca42fa46eca49f8806b8a9060cbb1d7edd754610fa6458ae1e0ec7956d",
+      "stratum": "clean:harmonic",
+      "reference_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "region": [
+        0,
+        57600
+      ],
+      "truth_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "silence": false
+    },
+    {
+      "query_id": "a5b430020cec07e82b2194f2a505de0c58c4e7cea0c5d4cc24cf7014772d3e6a",
+      "stratum": "clean:pluck",
+      "reference_asset": "2580e4ec13ce78c30907a3e4310b2b976ce1ce377916a56a896734cbc895439e",
+      "region": [
+        0,
+        57600
+      ],
+      "truth_asset": "2580e4ec13ce78c30907a3e4310b2b976ce1ce377916a56a896734cbc895439e",
+      "silence": false
+    },
+    {
+      "query_id": "158e6564dc3bc513da09bef5d793e8382f0c8a7769d8adf40a1b851a3b8d9476",
+      "stratum": "clean:fm",
+      "reference_asset": "dbc040fcb8b3fb38bd9ad2aebd09d986879072ffeedfcbfbdc7b5cbeae73d236",
+      "region": [
+        0,
+        57600
+      ],
+      "truth_asset": "dbc040fcb8b3fb38bd9ad2aebd09d986879072ffeedfcbfbdc7b5cbeae73d236",
+      "silence": false
+    },
+    {
+      "query_id": "8834cfc5b1bd497086e65cf03a2a047a9df29b9cb4e5e6e5ffd537f5f9396351",
+      "stratum": "clean:noise",
+      "reference_asset": "93572065c03ed31b8f4e408e69b453cdc9403e1148000bf1a2ea8e5a284ba792",
+      "region": [
+        0,
+        57600
+      ],
+      "truth_asset": "93572065c03ed31b8f4e408e69b453cdc9403e1148000bf1a2ea8e5a284ba792",
+      "silence": false
+    },
+    {
+      "query_id": "fef2027cac260db73988f3068dc965346c97ddc850c21db160c00975c476c5bb",
+      "stratum": "accompanied:harmonic:-12",
+      "reference_asset": "74a5d0046082f2bf4dfbeb1b663770070d4e745ee5e42b1f0c76cfb293862b3d",
+      "region": [
+        0,
+        57600
+      ],
+      "truth_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "silence": false
+    },
+    {
+      "query_id": "1cdda655ec4092bb3d6e531b83b7737c97e40987cb89b427fdaead7319b90a44",
+      "stratum": "accompanied:harmonic:0",
+      "reference_asset": "51eea3e5be7e823e18c6c7c584a93ea02801321614a015f86b44758b691f7d95",
+      "region": [
+        0,
+        57600
+      ],
+      "truth_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "silence": false
+    },
+    {
+      "query_id": "08475653ae67b5c5260d86a6c99c68630dd6a75540bd516a2e372e7ba89f991a",
+      "stratum": "accompanied:harmonic:12",
+      "reference_asset": "d6ac55617e95dc410369d1ccdc970aec2424a8d20bb573503c182fa8fa3a74d1",
+      "region": [
+        0,
+        57600
+      ],
+      "truth_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "silence": false
+    },
+    {
+      "query_id": "c06d9d29714ea606e43b77e465ba92c933673dc4e52ba8b5223bf3990e952b28",
+      "stratum": "accompanied:noise:0",
+      "reference_asset": "6d1d4f445e297fe052955ebdc12bfdd2d99508b1acb55d7c7c9b66c9a91ac3d8",
+      "region": [
+        0,
+        57600
+      ],
+      "truth_asset": "93572065c03ed31b8f4e408e69b453cdc9403e1148000bf1a2ea8e5a284ba792",
+      "silence": false
+    },
+    {
+      "query_id": "98b552c492af3c6d589e696cc2c439a4f645947d94780776d3c7714e36a3efd6",
+      "stratum": "silent",
+      "reference_asset": "817554ec5eb116b2a53d07a2cadf01ec4c236e2d2ab484376a0142dd12fd824c",
+      "region": [
+        0,
+        57600
+      ],
+      "truth_asset": null,
+      "silence": true
+    },
+    {
+      "query_id": "64cf2e2b9fc82d04e06b581fbde91dfca034b71d982f91700ef9af376c907de5",
+      "stratum": "target_absent",
+      "reference_asset": "1918164b4eedc69beb6e483d40776c483fb6682482f2722adb7148a5d85e4b84",
+      "region": [
+        0,
+        57600
+      ],
+      "truth_asset": null,
+      "silence": false
+    }
+  ],
+  "fixture_cases": [
+    "isolated",
+    "overlap_release",
+    "slow_attack",
+    "short_transient",
+    "noise",
+    "vibrato",
+    "close_notes",
+    "stereo_cancellation",
+    "censored_sustain",
+    "silence"
+  ],
+  "modes": [
+    "coarse",
+    "single",
+    "multiple",
+    "oracle_diagnostic"
+  ],
+  "selection_rule": "first three distinct chronological proposals, minimum 60 ms, maximum 8 s; uncertainties retained; single is first; no score or truth access",
+  "metrics": {
+    "onset_tolerance_seconds": 0.08,
+    "offset_tolerance_seconds": 0.12,
+    "minimum_retained_attack_tail_fraction": 0.95,
+    "one_to_one_matching": "maximum cardinality, then smallest total onset+offset error; no overlap-only true positives",
+    "K": [
+      1,
+      5,
+      10
+    ],
+    "retrieval_iou": 0.5,
+    "score_direction": "lower_better",
+    "numerical_tolerance": 1e-12
+  },
+  "default_rule": "automatic only if note precision and recall >= .8 on known target cases and fixtures (including failures), attack/tail coverage >= .95 for matched events, and single/multiple query hit@1 and recovery@10 each no worse than coarse with at least one strict retrieval gain; otherwise explicit/coarse default; one run, no tuning",
+  "query_job_semantics": "one comparison batch (up to ten fixed cases x four modes) charges one query_jobs plus one comparisons and per-case/per-mode counters. Actual catalogue preparation and ranking each charge one job; reuse revalidates charged reads and worker time.",
+  "comparison_notes": [
+    "Fixed original candidate pools and fixed 2.4s/.25s grid for all modes. Candidate cache is read-only; missing compatible cache is charged B01 inference.",
+    "Accompanied reference uses first constructed phrase from existing exact-instance mixture; retrieval candidate has alternate performance, possibly shared background. This is a correlated diagnostic, not independent source-family generalisation.",
+    "Absent noise uses accompaniment without designated target; oracle abstains. Silent case replaces reference samples by exact zero, with no learned-model silence inference.",
+    "Note-level truth is A04 note bounds including release, composed through insertion. A04 retrieval truth remains full inserted render; no note/render denominator substitution."
+  ],
+  "demo_alternatives": [
+    {
+      "entry_id": "005af5e2aaad323d8bbcbe9aabde36778bbf0768623addcc254eee355de7b005",
+      "record_hash": "44ffbfc17e05b20b0c7d963d2a404d9fedf3b0889eecb448988bb466a676ed14",
+      "title": "Christmas Shopping at the Dollar Store",
+      "artist": "Donnie Ozone",
+      "region_seconds": [
+        10,
+        22
+      ]
+    },
+    {
+      "entry_id": "02e9c5776b23f68fc3ac3fdd3fbb36b0c497701c3a1a346e22f3ed76051b2064",
+      "record_hash": "2c90c930bfb85e093290ffd4a9810147f5fc7e55462ade4ce6dcff4b1458061c",
+      "title": "Burns (Featuring Cable)",
+      "artist": "Deadly Combo",
+      "region_seconds": [
+        10,
+        22
+      ]
+    },
+    {
+      "entry_id": "039823cc3b6d5cf3636d7e79c4e4249648c9ed007dd9654eeaaee1083ba17cc3",
+      "record_hash": "a353ba51809586412457ba029cad48c4df59258ff9dc60700c22cc07dffac50d",
+      "title": "Autopsy (While Doin' Dishes)",
+      "artist": "Jeannine Lyons",
+      "region_seconds": [
+        10,
+        22
+      ]
+    },
+    {
+      "entry_id": "0588cb971f205c13a31cd0ce6e3f38d36fc7d3e0c304117370263d67f9a4db48",
+      "record_hash": "daf4e39c3cc0e09f47e7292493dbec5da4b7fa158d57e92a9e0ba41a145c48f4",
+      "title": "Vintage featuring The Honorable Sleaze",
+      "artist": "C-Doc",
+      "region_seconds": [
+        10,
+        22
+      ]
+    }
+  ],
+  "demo_choice_rule": "first predeclared source with >=2 distinct non-silent in-range proposals; retain failures and flags; stop before any catalogue scores; no claims of isolated or identical instruments",
+  "stop_rule": "one fixed comparison, no settings search or optional whole-index repeat. Reserve time for compatibility, two catalogue searches and reports. Retain partial evidence at any ceiling; no historical ledger reset.",
+  "record_hash": "3d29e8c25d6f775766f37f4776c296eff635cbad512f2da0fe5e573952c708a0"
+}

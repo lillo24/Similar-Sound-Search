@@ -541,8 +541,15 @@ class SearchCase(AudioCase):
         for name in ("final-check.json", "execution-repair.json"):
             shutil.copyfile(REPOSITORY / "manifests/search" / name, destination / name)
         declared = record(destination / "final-check.json")
-        self.assertEqual(recipe_code(self.root), declared["binding"]["code"])
         repair = record(destination / "execution-repair.json")
+        # B01 adds consumer modules: the A06 guard must accept only its historical
+        # executing map. Its protected function proofs still use the actual code.
+        with patch(
+            "similar_sound_search.search.contracts.code_identity", return_value=repair["after"]
+        ):
+            self.assertEqual(recipe_code(self.root), declared["binding"]["code"])
+        with self.assertRaisesRegex(InputError, "unaudited"):
+            recipe_code(self.root)
         repair["after"]["search/ranking.py"] = "invalid executing source hash"
         write_record(destination / "execution-repair.json", repair, self.sbudget())
         with self.assertRaisesRegex(InputError, "unaudited"):

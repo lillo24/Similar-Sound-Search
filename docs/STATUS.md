@@ -43,7 +43,8 @@ No GitHub Actions workflow/required CI check exists in the inspected repository;
 | A04 published human evidence | Partial: 16 AIFF stimuli + 120 observations downloaded/validated; zero eligible scoring pairs due to unresolved rights/original mapping |
 | A05 matcher comparison | Complete controlled development comparison: two genuine methods, 80 queries each, provisional EfficientAT MN04; [evidence](../reports/A05_MATCHERS.md) |
 | A06 search, playable results and held-out model check | Implementation/index/demos/final check complete: 72/72 local recordings, 44,025 passages, original stereo clips; 21/24 source-consistency held-out query hits at K=1 and 32/32 events at K=10. Extra whole-index repeat partial at the fixed cap; later catalogue browser controls unavailable. [Evidence](../reports/A06_SEARCH.md) |
-| B–D event selection, separation, indexing/refinement, interface/package | Future; first required listening review D04 |
+| B01 event selection | Implemented with native/manual crops, experimental proposals, two catalogue searches and verified playback. Bounded development evaluation partial; explicit/coarse default. [Evidence](../reports/B01_EVENTS.md) |
+| B02–D separation, indexing/refinement, interface/package | Future; first required listening review D04 |
 | Perceptual quality and Loulou relevance | Unmeasured; real-catalogue candidates are not confirmed matches; controlled A05/A06 metrics remain separate |
 | Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 
@@ -67,3 +68,38 @@ retains all costs and gaps.
 The controlled suite retains 104 assets/80 queries per split, unchanged audio/truth/recipes, four procedural families and two real-background families per split. Backgrounds still use seconds 2..10 of the centred A03 derivatives with decoded-original intervals and unknown master offsets. A06 preservation audits cover 7,121 earlier files. Grey1977 remains quarantined, CIR lacks established terms, and standard CLAP exceeds the download cap.
 
 The actual marked-version daoud — Loulou & the loulous audio and provenance/offset evidence remain unavailable for a verified reference experiment. Never crop a short excerpt at second 218. D04 remains the first required listening review; no new labels are requested for independent A06 engineering.
+
+## B01 delivery and B02 handoff
+
+[B01 evidence](../reports/B01_EVENTS.md), [event commands/contracts](EVENTS.md) and
+[sanitized records](../manifests/events/README.md) own the current event-selection
+workflow. The audited B01 consumer validates the completed A06 index read-only, with
+new accounting and current-code identity separated from historical feature identity.
+Old ledgers, originals, manifests, predictions/reports and all feature arrays remain
+unchanged: 7,944 protected files passed byte/size/mtime preservation checks.
+
+Automatic selection did not meet its prospective gates. Corrected note precision is
+13.76%, recall 46.875%; coarse/single hit@1 is 5/8 and multiple 4/8, with 8/9 render
+targets recovered at ten in each mode. The fixed regions truncate two accompanied
+phrases and omit one target, so the +12dB present-reference and oracle comparison are
+partial. Three invalid oracle outputs count as misses; no new model queries replaced
+them after the forty-query cap. Explicit/manual native crops remain the default.
+
+The named substitute's three distinct real spans are heavily overlapping and
+duration-censored, with no isolated-layer or verified-note claim. Both catalogue
+searches score 43,690 eligible passages, exclude the reference/duplicate parent and
+return ten distinct candidates. Query order/duplicate reuse preserves identity and
+three unique examples. CPU work used 1,231.445/3,600 worker seconds, with all retries
+and an explicit missed-root-read correction retained. No catalogue feature was rebuilt.
+
+Run `.\scripts\listen-events.ps1`, then visit `http://127.0.0.1:8767/` for the event,
+context and single/multiple search pages. Chrome load/play/pause/seek and HTTP media,
+hash/range/containment checks passed. A fresh tab recovered one earlier inspection
+timeout; no browser extension/driver changed. A06's saved listener still works on 8766.
+Private artifacts remain in the delivery checkout; a new clone needs matching inputs.
+
+B02 should prospectively compare optional isolation with native/no-isolation crops,
+validate actual source/region geometry before inference, retain absent/censored cases,
+and use its own finite accounting. Preserve the inspected development/final evidence;
+do not turn it into a fresh holdout. Loulou/version/offset and human relevance remain
+unmeasured, with first required listening review D04. B02 was not started automatically.

@@ -33,6 +33,7 @@ MANAGED = (
     "manifests/evaluation",
     "manifests/matchers",
     "manifests/search",
+    "manifests/events",
 )
 
 

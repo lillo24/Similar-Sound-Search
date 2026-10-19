@@ -1,0 +1,9 @@
+{
+  "schema_version": "b01-source-1",
+  "path": "data/audio/originals/loulou-excerpt.wav",
+  "context": "config/input_context.example.json",
+  "region": {
+    "start_seconds": "0",
+    "end_seconds": "22"
+  }
+}

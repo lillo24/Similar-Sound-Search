@@ -229,7 +229,7 @@ def coverage(base, manifest):
     return result
 
 
-def open_index(budget, path, allow_partial=False):
+def open_index(budget, path, allow_partial=False, context=None):
     path = contained(path, budget.root / "data/indexes/a06")
     value = record(path)
     if value["index_id"] != digest(value["identity"]):
@@ -237,10 +237,15 @@ def open_index(budget, path, allow_partial=False):
     cfg = configuration(budget.root)
     method = value["identity"]["representation"]["method"]
     _, _, _, _, desc = frozen(budget, method)
+    code_valid = (
+        context.validate_index(budget, path, value, desc, cfg)
+        if context is not None
+        else compatible_code(budget.root, value["identity"]["code"])
+    )
     if (
         value["identity"]["configuration"] != cfg
         or value["identity"]["representation"] != desc
-        or not compatible_code(budget.root, value["identity"]["code"])
+        or not code_valid
     ):
         raise InputError(
             "index: stale search recipe/code/representation; preserve original evidence"

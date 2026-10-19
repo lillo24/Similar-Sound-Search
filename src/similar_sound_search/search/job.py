@@ -12,21 +12,30 @@ from ..storage import InputError, ResourceError, project_lock
 from .contracts import configuration
 
 
-def charge(budget, **amounts):
+def charge(budget, context=None, **amounts):
+    if context is not None:
+        return context.charge(budget, **amounts)
     settings = configuration(budget.root)["policy"]
+    return charge_work(
+        budget, budget.root / "data/runs/search", settings, "a06-work-1", "A06", **amounts
+    )
+
+
+def charge_work(budget, directory, settings, schema, label, **amounts):
+    """Explicit owner boundary; caller supplies a fixed namespace and finite policy."""
     keys = set(settings) - {"max_job_seconds", "max_http_attempts", "max_download_bytes"}
-    path = budget.root / "data/runs/search/work.json"
+    path = directory / "work.json"
     value = (
         record(path)
         if path.exists()
         else {
-            "schema_version": "a06-work-1",
+            "schema_version": schema,
             "counts": {k[4:]: 0 for k in keys},
             "ceilings": {k[4:]: settings[k] for k in keys},
         }
     )
-    if set(amounts) - set(value["counts"]):
-        raise InputError("A06 accounting: unknown counter")
+    if value["schema_version"] != schema or set(amounts) - set(value["counts"]):
+        raise InputError(label + " accounting: unknown counter/schema")
     for key in value["ceilings"]:
         value["ceilings"][key] = min(value["ceilings"][key], settings["max_" + key])
     # Persist a lower allowance even if the requested work is refused.
@@ -43,15 +52,15 @@ def charge(budget, **amounts):
             or old < 0
             or old + v > value["ceilings"][key]
         ):
-            raise ResourceError("A06 lifetime " + key + " exhausted; retain ledger/progress")
+            raise ResourceError(label + " lifetime " + key + " exhausted; retain ledger/progress")
     for key in value["counts"]:
         value["counts"][key] += amounts.get(key, 0)
     write_record(path, value, budget)
     return value
 
 
-def read_charge(budget, metadata, repetitions=1):
-    charge(budget, read_audio_seconds=repetitions * metadata["duration_seconds"])
+def read_charge(budget, metadata, repetitions=1, context=None):
+    charge(budget, context=context, read_audio_seconds=repetitions * metadata["duration_seconds"])
 
 
 def run(request, execute):

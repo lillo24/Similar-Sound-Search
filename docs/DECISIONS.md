@@ -98,3 +98,15 @@ Loulou remains missing/unverified. The predetermined development-side catalogue 
 and separate generated known-target fixture are labelled engineering demos. A06 ends
 this batch; automatic event/layer selection, separation and a listening judgment remain
 later-stage work, with the first required review at D04.
+
+## B01 event-selection decisions
+
+19 October 2026; [contracts](EVENTS.md) and [measured evidence](../reports/B01_EVENTS.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-042 | Explicit B01 accounting and audited read-only A06 compatibility, with separate consumer and historical feature identities. | Keep closed A06 final/ledger guards and frozen adapters/math; validate sources/groups/grid/checkpoint/shards. Necessary consumer receipts never re-embed catalogue features. |
+| DEC-043 | One deterministic channel-safe envelope/flux setting, independent explicit selection and native A02 crops; preserve overlap/censoring. | Onset-to-next-onset cuts cannot establish complete releases. Manual intervals remain reliable; fixed mean unique-PCM distances, all-parent exclusion and pitch off remain unchanged. |
+| DEC-044 | Keep automatic proposals experimental and explicit/coarse default after the fixed development batch. | Corrected precision 13.76% / recall 46.875%; single matched coarse 5/8 hit@1, multiple fell to 4/8. No settings tuning or replacement inference after the forty-query cap. |
+| DEC-045 | Correct saved note truth using actual reference insertions and count invalid oracle outputs as misses. | Two selected phrases are truncated and one target lies outside the region. Preserve original predictions/summary and all denominators; +12dB present-reference/oracle coverage remains partial. No new held-out check. |
+| DEC-046 | Preserve failed-operation charges and exact native selections during accounting/report repairs. | Add omitted parent hash-read cost once; stale selection metadata is refused and regenerated with identical bounds/audio/features. Copy WAV conversion receipts for resumable playback; final browser/HTTP checks pass. |

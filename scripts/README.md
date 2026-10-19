@@ -11,3 +11,8 @@ allowlisted server, using the successful private report summary (default
 `reports/local/a06-demo-report.json`). It performs no indexing/inference and stops with
 Ctrl+C. Optional `-Report` stays within `reports/local`; `-Port` defaults to 8766. Stop
 console commands/server processes before reinstalling the Windows launcher.
+
+`listen-events.ps1` similarly opens the verified B01 event bundle and its separate
+single/multiple search pages (default `reports/local/b01-event-report.json`, port
+8767). It does no inference or ledger reset; [EVENTS.md](../docs/EVENTS.md) owns the
+finite proposal/selection/extraction/comparison commands.

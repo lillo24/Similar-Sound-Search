@@ -1,0 +1,21 @@
+{
+  "schema_version": "b01-boundary-audit-plan-1",
+  "reason": "Technical correction after first development scores: accompanied reference insertion offsets were incorrectly assumed to be zero. No new model inference, cases, settings or retrieval queries. Preserve original predictions/summary.",
+  "original_plan_hash": "3d29e8c25d6f775766f37f4776c296eff635cbad512f2da0fe5e573952c708a0",
+  "composition": "Read each actual reference asset insertion interval and target asset note bounds, verify their identities/rates/lengths, add insertion start to each note bound; include notes overlapping the fixed selected region with their full release ends and explicit region-edge censoring. Never translate the entire phrase into a note. Clean asset note bounds stay native.",
+  "unchanged": [
+    "ten reference assets and fixed selected regions",
+    "all coarse/single/multiple predictions and A04 retrieval truth/pools/K/IoU",
+    "single detector configuration and selected events",
+    "all original raw records and finite lifetime charges"
+  ],
+  "affected_strata": [
+    "accompanied:harmonic:0",
+    "accompanied:harmonic:12",
+    "accompanied:noise:0"
+  ],
+  "oracle_policy": "Three incorrectly mapped oracle queries are invalid, not successes. Re-score with explicit empty outputs for those three, retaining every original retrieval denominator; keep their old predictions for traceability. No replacement inference is allowed. Show valid/invalid counts and do not call this a completed oracle comparison.",
+  "future_comparison_contract": "Compose note truth from actual reference insertions; oracle may encode only notes whose entire support lies inside the authorized selected region. A region without the designated target is explicitly target-absent, irrespective of the mixture full-file TBR label.",
+  "resource_policy": "Audit only in the existing B01 worker ledger with charged asset validation reads, worker time and bounded output. No additional comparison, case or query counters are minted or reset. After the code correction, issue a fresh compatibility receipt for the final consumer without re-embedding or reranking the catalogue.",
+  "record_hash": "ad6e99eaf9a166aad195aa54b57b16bf25aa22ad4db41c6046ecd0baf5269950"
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": "b01-resources-1",
+  "date": "2026-10-19",
+  "policy": {
+    "max_job_seconds": 3600,
+    "max_http_attempts": 0,
+    "max_download_bytes": 0,
+    "max_workers": 256,
+    "max_feature_windows": 4096,
+    "max_processed_window_seconds": 12000,
+    "max_read_audio_seconds": 90000,
+    "max_feature_bytes": 67108864,
+    "max_query_jobs": 16,
+    "max_query_preparation_bytes": 67108864,
+    "max_clips": 128,
+    "max_clip_bytes": 134217728,
+    "max_proposal_inputs": 32,
+    "max_proposed_events": 1024,
+    "max_preparation_bytes": 134217728,
+    "max_managed_output_bytes": 268435456,
+    "max_comparisons": 1,
+    "max_comparison_cases": 10,
+    "max_comparison_queries": 40
+  },
+  "ledger": {
+    "schema_version": "b01-ledger-1",
+    "created_at": "2026-10-19T07:53:46.878040+00:00",
+    "ceilings": {
+      "download_bytes": 0,
+      "attempts": 0,
+      "worker_seconds": 3600
+    },
+    "charged_bytes": 0,
+    "received_bytes": 0,
+    "http_attempts": 0,
+    "charged_worker_seconds": 1231.445000000298,
+    "pending_read_bytes": 0,
+    "pending_worker_seconds": 0
+  },
+  "work": {
+    "schema_version": "b01-work-1",
+    "counts": {
+      "query_jobs": 5,
+      "comparison_queries": 40,
+      "feature_windows": 48,
+      "comparisons": 1,
+      "workers": 126,
+      "proposed_events": 148,
+      "clips": 58,
+      "clip_bytes": 54287936,
+      "preparation_bytes": 20816320,
+      "proposal_inputs": 22,
+      "managed_output_bytes": 104847449,
+      "processed_window_seconds": 95.185,
+      "feature_bytes": 3088384,
+      "read_audio_seconds": 70153.46519274384,
+      "comparison_cases": 10,
+      "query_preparation_bytes": 23103488
+    },
+    "ceilings": {
+      "query_jobs": 16,
+      "comparison_queries": 40,
+      "feature_windows": 4096,
+      "comparisons": 1,
+      "workers": 256,
+      "proposed_events": 1024,
+      "clips": 128,
+      "clip_bytes": 134217728,
+      "preparation_bytes": 134217728,
+      "proposal_inputs": 32,
+      "managed_output_bytes": 268435456,
+      "processed_window_seconds": 12000,
+      "feature_bytes": 67108864,
+      "read_audio_seconds": 90000,
+      "comparison_cases": 10,
+      "query_preparation_bytes": 67108864
+    },
+    "record_hash": "ee701e9869d437aef863bd35e261746a4bd0632a50fd414fefa99778f6cac97c"
+  },
+  "timing": {
+    "worker_seconds_by_action": {
+      "inputs": 5.702999999979511,
+      "propose": 11.985000000044238,
+      "select": 41.96999999997206,
+      "extract": 47.4989999999525,
+      "compare": 174.09500000003027,
+      "known-answer": 4.35899999999674,
+      "compatibility": 356.3350000001956,
+      "prepare-query": 39.82799999997951,
+      "rank": 340.15700000018114,
+      "report": 72.92200000002049,
+      "event-report": 130.84199999994598,
+      "audit-boundaries": 5.75
+    },
+    "record_hash": "ce57aab2d27f65f081175f8d793b31b2e45e1a0cb203305bf7d9d1534e2c3964"
+  },
+  "model_and_rank_peak_working_bytes_observed": 299352064,
+  "configured_working_bytes": 1073741824,
+  "peak_note": "Native peak working-set measurement at feature/rank checkpoints; preparation/proposal stages also enforce allocation preflight estimates.",
+  "compatibility_receipts": [
+    {
+      "record_hash": "556da95ba71f1635b6808ad8864fc36048b55084635edc29103c94843b60c291",
+      "consumer_id": "ecdaf859d232db30c05d5945ef3491b77f06ef6cccd4e530dd26e75f1ea8a021",
+      "reason": "initial read-only consumer",
+      "validated_recordings": 72,
+      "shards": 123,
+      "feature_recomputed": false,
+      "current_consumer_code_hash": "e4bf5648a536c14b5187708bf072ffcbfb457fbdaf95938bbc8f8e9ae546e389"
+    },
+    {
+      "record_hash": "64c6323ad27f6b103021a735b3c34759c820e2ca80bf1aea6d6346f6a4c0b3d7",
+      "consumer_id": "b0fa66b6d5590f3ebe020c9fa6b63ee0509e0dca277ca7f0faae470b436478f5",
+      "reason": "accounting/evaluation/playback-receipt repair",
+      "validated_recordings": 72,
+      "shards": 123,
+      "feature_recomputed": false,
+      "current_consumer_code_hash": "aeeef93fb03fdad2a25f2c4e2a9f38be0aac8804235ffd4bdf0738711ae9a8dd"
+    },
+    {
+      "record_hash": "8c07eb2d2bc32f8ae722a06abff9cd1e42912316203e28cd060595e7c95225f6",
+      "consumer_id": "b6b3d7b3c1a08ed90b3f3c01060c58071dc0c94490781710e15d6ad5c272113c",
+      "reason": "final stored-distance display and source audit",
+      "validated_recordings": 72,
+      "shards": 123,
+      "feature_recomputed": false,
+      "current_consumer_code_hash": "3cbaeb970c6b610e8d6e69efb77ee9deb00b7eded4d7d2e30ad2d258131e55df"
+    }
+  ],
+  "legacy_index_id": "d027f2cd5ca817bc320542df16a540346325403bcb967fd248216c8c466731e2",
+  "legacy_array_count": 123,
+  "legacy_array_bytes": 67638144,
+  "new_legacy_feature_windows": 0,
+  "additional_root_validation_read_seconds": 343.247074829932,
+  "retained_failures": [
+    "Concurrent compatibility start refused by project lock before worker start.",
+    "Initial combined report copied WAV without conversion receipt; retained files and charges, repaired and resumed.",
+    "Selection metadata correctly refused after accounting-code identity changed; new records kept exact saved bounds and reused native audio/features."
+  ],
+  "validation": {
+    "platform": "Windows 11 AMD64",
+    "tools": {
+      "pipeline": "a02-preparation-3",
+      "package": "0.3.0",
+      "python": "3.12.14",
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "soundfile": "0.13.1",
+      "libsndfile": "1.2.2"
+    },
+    "torch": "2.6.0+cpu",
+    "offline_tests": 168,
+    "full_test_seconds": 85.923,
+    "ruff_check": "passed",
+    "ruff_format_check": "69 files already formatted",
+    "pip_check": "No broken requirements found",
+    "editable_build": "passed --no-index --no-deps --no-build-isolation -e .",
+    "starter_smoke": "passed in reports/local/b01-smoke-project; earlier artifacts preserved",
+    "known_answers": "passed in data/runs/events/known; not pretrained quality",
+    "http_check_seconds": 8.610000000044238,
+    "preservation_audit_seconds": 67.82800000003772,
+    "cost_accounting": "Installation, tests, HTTP/browser QA and preservation audit are separate from finite B01 compute-worker seconds.",
+    "transient_test_failures": "Two localhost timeout/retry tests failed during concurrent I/O; unchanged tests passed in the final quiet 168-test run."
+  },
+  "record_hash": "5ce5a2e3fdc73dfb6894152eb70662565bccd5414e4b393c1a57ae6de409c1b3"
+}
