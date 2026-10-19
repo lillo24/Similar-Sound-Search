@@ -1,0 +1,46 @@
+{
+  "schema_version": "b01-accounting-audit-plan-1",
+  "reason": "Initial shared B01 query preparation charged the current crop read but omitted A02 parent validation of the root original byte hash. Defaults for historical A06 stay unchanged. Retain all earlier charges and add this missed root validation once; future B01 preparation charges it explicitly.",
+  "successful_prepare_inputs_before_fix": [
+    {
+      "path": "data/runs/events/extractions/6b4cf5b7be0a8afec73e9be1fee477f0d1705b30b746c540c9f3188da29eaa89/single.json",
+      "spec_hash": "30821272ff39aa950643e43117a7795ff47cff0edcb2a773b0f5c81c67217f48",
+      "examples": [
+        {
+          "parent_record": "data/audio/prepared/42dedca20deee714faf2e681dab6a3d1d363a1664b659fa72d60be291f8861d4/record.json",
+          "parent_hash": "d77a33a1c00aaf0ea64d2fd05ae5dae60f8b84ac605d07ff03027674be6800f4",
+          "root_source_sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31",
+          "root_read_seconds": 85.811768707483
+        }
+      ]
+    },
+    {
+      "path": "data/runs/events/extractions/6b4cf5b7be0a8afec73e9be1fee477f0d1705b30b746c540c9f3188da29eaa89/multiple.json",
+      "spec_hash": "a59c0de47dcc33d4ce6d0ff97c212b1913150091653d3ca63ee09a57d793cc8c",
+      "examples": [
+        {
+          "parent_record": "data/audio/prepared/42dedca20deee714faf2e681dab6a3d1d363a1664b659fa72d60be291f8861d4/record.json",
+          "parent_hash": "d77a33a1c00aaf0ea64d2fd05ae5dae60f8b84ac605d07ff03027674be6800f4",
+          "root_source_sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31",
+          "root_read_seconds": 85.811768707483
+        },
+        {
+          "parent_record": "data/audio/prepared/5cb8bbb0fd42f45b06c61414d156be0540b2824da451476201db67e5e5eb4f68/record.json",
+          "parent_hash": "b4790c47af75c75139c8750981020309751a22e1a31c96e27aff78ed644133e0",
+          "root_source_sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31",
+          "root_read_seconds": 85.811768707483
+        },
+        {
+          "parent_record": "data/audio/prepared/43e6f19367d9aa8186204b29819adf2e811a80bcca55117f55227b77e9df63df/record.json",
+          "parent_hash": "d2ae1c37ac360150e1bdc130cccfef230254eec9aab367d89f8d2d2e1413817a",
+          "root_source_sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31",
+          "root_read_seconds": 85.811768707483
+        }
+      ]
+    }
+  ],
+  "missed_root_read_seconds": 343.247074829932,
+  "counter": "read_audio_seconds",
+  "no_refunds_or_resets": true,
+  "record_hash": "58422253f0ff139e93a7ad33f9fabe4211a984fb0216959da50ec3341fdfb733"
+}
