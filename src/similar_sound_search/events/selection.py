@@ -143,6 +143,8 @@ def extract(budget, path, context):
             preparation_bytes=(last - first) * channels * 4 + 65536,
         )
         parent = source["parent"] if source["parent"]["kind"] == "prepared" else None
+        if parent is not None:
+            context.charge(budget, read_audio_seconds=parent["source"]["duration_seconds"])
         ctx = (
             read_json(budget.root / source["spec"]["context"])
             if source["spec"].get("context")

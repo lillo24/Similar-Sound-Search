@@ -107,6 +107,26 @@ def build(budget, spec, context):
                 budget.refresh_disk()
             if sha256(target, budget) != c["sha256"]:
                 raise InputError("event report: copied media differs")
+            # Crop playback may reuse exactly this clip. Its immutable conversion
+            # receipt must accompany the WAV, including after a WAV-only partial.
+            original_receipt = contained(
+                original_path.parent / c["receipt"], original_path.parent / "media"
+            )
+            conversion = record(original_receipt)
+            if (
+                conversion["sha256"] != c["sha256"]
+                or conversion["bytes"] != original.stat().st_size
+                or digest(conversion["identity"]) != original.stem
+            ):
+                raise InputError("event report: source conversion receipt differs")
+            target_receipt = contained(directory / c["receipt"], directory / "media")
+            if not target_receipt.exists():
+                context.charge(budget, managed_output_bytes=original_receipt.stat().st_size + 4096)
+                budget.reserve(original_receipt.stat().st_size + 4096)
+                shutil.copyfile(original_receipt, target_receipt)
+                budget.refresh_disk()
+            if record(target_receipt) != conversion:
+                raise InputError("event report: copied conversion receipt differs")
             items.append({"clip": c})
         target = directory / (name + ".html")
         content = allowed["/index.html"].read_text(encoding="utf-8")

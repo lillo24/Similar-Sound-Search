@@ -145,6 +145,10 @@ def dispatch(request, budget, context):
         from .comparison import step
 
         return step(budget, context)
+    if action == "audit-boundaries":
+        from .audit import saved
+
+        return saved(budget, context)
     if action == "known-answer":
         return known_answers(budget, context.directory / "known")
     raise InputError("unsupported B01 operation " + action)

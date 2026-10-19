@@ -3,6 +3,55 @@
 import numpy as np
 from scipy.optimize import linear_sum_assignment
 
+from ..storage import InputError
+
+
+def reference_notes(reference, tone, first, last):
+    """Compose actual insertion offsets; keep full releases beyond a selected edge.
+
+    Only notes overlapping the authorized region are evaluation targets. A mixture
+    with a later insertion can contain no designated target in the selected region.
+    These bounds are evaluation-only and never passed to the proposer/selector.
+    """
+    meta = reference["audio"]
+    if not 0 <= first < last <= meta["sample_count"]:
+        raise InputError("event truth: selected region outside reference " + reference["asset_id"])
+    if tone is None:
+        return []
+    if tone["audio"]["sample_rate_hz"] != meta["sample_rate_hz"]:
+        raise InputError("event truth: native rates differ for " + reference["asset_id"])
+    length = tone["audio"]["sample_count"]
+    if reference["asset_id"] == tone["asset_id"]:
+        insertions = [[0, length]]
+    else:
+        if reference["identity"]["recipe"].get("target_asset") != tone["asset_id"]:
+            raise InputError(
+                "event truth: reference target identity differs: " + reference["asset_id"]
+            )
+        insertions = reference["insertions"]
+    result = []
+    for insertion, (a, b) in enumerate(insertions):
+        if b - a != length or not 0 <= a < b <= meta["sample_count"]:
+            raise InputError(
+                "event truth: insertion length/bounds differ: " + reference["asset_id"]
+            )
+        for i, note in enumerate(tone["events"]):
+            start, end = a + note["start_frame"], a + note["end_frame"]
+            if not a <= start < end <= b:
+                raise InputError("event truth: note outside complete inserted render")
+            if start < last and end > first:
+                result.append(
+                    {
+                        "start_frame": start,
+                        "end_frame": end,
+                        "insertion_index": insertion,
+                        "note_index": i,
+                        "selection_start_censored": start < first,
+                        "selection_end_censored": end > last,
+                    }
+                )
+    return result
+
 
 def boundaries(proposals, truth, rate, settings):
     pairs = []

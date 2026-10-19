@@ -20,7 +20,7 @@ from ..storage import InputError, digest, sha256
 from .artifacts import recipe
 from .detector import propose
 from .fixtures import boundary_cases
-from .metrics import aggregate, boundaries
+from .metrics import aggregate, boundaries, reference_notes
 from .selection import automatic
 
 
@@ -140,16 +140,16 @@ def compare_case(budget, context, case, original_query, desc, settings, director
         truth_record = record(
             budget.root / "manifests/evaluation/assets" / (case["truth_asset"] + ".json")
         )
-        # The frozen region is the first complete insertion; A04 note ends include release.
-        truth = [
-            {"start_frame": first + t["start_frame"], "end_frame": first + t["end_frame"]}
-            for t in truth_record["events"]
-        ]
+        truth = reference_notes(reference, truth_record, first, last)
     intervals = {
         "coarse": [(first, last)],
         "single": [(e["start_frame"], e["end_frame"]) for e in selected[:1]],
         "multiple": [(e["start_frame"], e["end_frame"]) for e in selected],
-        "oracle_diagnostic": [(e["start_frame"], e["end_frame"]) for e in truth],
+        "oracle_diagnostic": [
+            (e["start_frame"], e["end_frame"])
+            for e in truth
+            if first <= e["start_frame"] < e["end_frame"] <= last
+        ],
     }
     outputs, invariance = {}, {}
     for mode, bounds in intervals.items():
@@ -186,6 +186,8 @@ def compare_case(budget, context, case, original_query, desc, settings, director
         "case": case,
         "outputs": outputs,
         "note_boundaries": measured,
+        "reference_notes": truth,
+        "target_present_in_selected_region": bool(truth),
         "proposal_state": detection["state"],
         "selected": len(selected),
         "empty_modes": [k for k, v in outputs.items() if not v["candidate"]],

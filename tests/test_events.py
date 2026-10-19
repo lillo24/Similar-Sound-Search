@@ -8,16 +8,19 @@ import numpy as np
 from helpers import REPOSITORY, AudioCase
 from scipy.io.wavfile import write as write_wav
 
-from similar_sound_search.evaluation.artifacts import record
+from similar_sound_search.evaluation.artifacts import record, write_record
 from similar_sound_search.events import artifacts, selection
 from similar_sound_search.events.context import Context
 from similar_sound_search.events.detector import propose
 from similar_sound_search.events.fixtures import boundary_cases
 from similar_sound_search.events.metrics import boundaries
+from similar_sound_search.events.report import build as event_report
+from similar_sound_search.inputs import decode
 from similar_sound_search.preparation import crop_frames, prepare
 from similar_sound_search.records import map_time
 from similar_sound_search.resources import CatalogueBudget, load_limits
-from similar_sound_search.storage import InputError
+from similar_sound_search.search.report import clip, verify_bundle
+from similar_sound_search.storage import InputError, digest, sha256
 
 
 class EventCase(AudioCase):
@@ -157,6 +160,56 @@ class EventCase(AudioCase):
         path.write_bytes(b"corrupted")
         with self.assertRaisesRegex(InputError, "original bytes"):
             artifacts.validate(self.sbudget(), p, self.owner)
+
+    def test_event_report_resumes_wav_only_copy_with_conversion_receipt(self):
+        original, spec = self.source()
+        props = artifacts.generate(self.sbudget(), spec, self.owner)
+        selected = selection.select(
+            self.sbudget(), self.root / props["proposal"], self.owner, intervals=[[1600, 10400]]
+        )
+        extracted = selection.extract(self.sbudget(), self.root / selected["selection"], self.owner)
+        samples, metadata = decode(original, self.sbudget())
+        paths = {}
+        copied = None
+        for name in ("single", "multiple"):
+            directory = self.owner.reports / name
+            media = clip(
+                self.sbudget(),
+                directory / "media",
+                {"source": metadata},
+                samples,
+                1600,
+                10400,
+                self.owner,
+            )
+            (directory / "index.html").write_text("Separate search scores", encoding="utf-8")
+            write_record(
+                directory / "bundle.json",
+                {
+                    "html_sha256": sha256(directory / "index.html", self.sbudget()),
+                    "items": [{"clip": media}],
+                },
+                self.sbudget(),
+            )
+            paths[name + "_report"] = (directory / "index.html").relative_to(self.root).as_posix()
+            copied = directory / media["path"]
+        extraction = record(self.root / extracted["extraction"])
+        identity = {"extraction_hash": extraction["record_hash"], **paths}
+        target = self.owner.reports / ("events-" + digest(identity)) / "media" / copied.name
+        target.parent.mkdir(parents=True)
+        shutil.copyfile(copied, target)  # controlled interrupted WAV-only copy
+        result = event_report(
+            self.sbudget(),
+            {
+                "schema_version": "b01-report-input-1",
+                "extraction": extracted["extraction"],
+                **paths,
+            },
+            self.owner,
+        )
+        allowed = verify_bundle(self.root, self.root / result["report"], self.owner.reports)
+        self.assertIn("/media/" + copied.name, allowed)
+        self.assertTrue(target.with_suffix(".json").is_file())
 
     def test_one_to_one_sample_answers_do_not_match_one_span_twice(self):
         truth = [{"start_frame": 100, "end_frame": 1100}, {"start_frame": 600, "end_frame": 1600}]

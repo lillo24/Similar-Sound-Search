@@ -151,6 +151,7 @@ def parser():
             "report",
             "event-report",
             "compare",
+            "audit-boundaries",
             "known-answer",
             "serve",
         ),

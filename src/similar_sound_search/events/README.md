@@ -17,6 +17,7 @@ scoring, and A05 owns the unchanged representation. Nothing here separates a lay
 | `comparison.py` | Prospectively frozen development batch, read-only A05 cache and shared retrieval scoring |
 | `fixtures.py` | Small independent boundary signals and expected sample positions |
 | `metrics.py` | One-to-one note boundaries/attack/release measurements, separate from render retrieval |
+| `audit.py` | Insertion-offset correction of saved boundaries/oracle validity and explicit missed-read charge |
 | `report.py` | Original event/context media and contained links to both search reports |
 | `job.py` | One persistent offline B01 ledger and bounded serial workers |
 | `commands.py` | Explicit CLI routing and prospectively named demonstration source specifications |

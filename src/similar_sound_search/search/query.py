@@ -57,6 +57,10 @@ def prepare_query(budget, spec_path, method, context=None):
         parent = record(budget.root / item["parent_record"]) if item.get("parent_record") else None
         # Full sequential source/selected derivative reads remain cumulatively visible.
         read_charge(budget, {"duration_seconds": info.frames / info.samplerate}, context=context)
+        if context is not None and parent is not None:
+            # A02 validates the root original's byte hash as well as decoding the
+            # current crop. B01 explicitly accounts that additional source read.
+            read_charge(budget, parent["source"], context=context)
         charge(
             budget,
             context=context,
