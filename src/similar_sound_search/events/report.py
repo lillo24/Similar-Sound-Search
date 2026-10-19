@@ -13,6 +13,35 @@ from ..storage import InputError, contained, digest, sha256
 from .selection import load_selection
 
 
+def distance_details(items):
+    """Expose stored example distances/support mismatch without changing shared A06 HTML."""
+    rows = []
+    for item in items:
+        if item.get("role") != "candidate":
+            continue
+        per = ", ".join(f"{v:.8f}" for v in item["per_example_distances"])
+        mismatch = ", ".join(f"{v:+.4f}s" for v in item["duration_mismatch_seconds"])
+        rows.append(
+            f"<tr><td>{len(rows) + 1}</td><td>{html.escape(item['source']['title'])}</td>"
+            f"<td>{per}</td><td>{item['timbre_distance']:.8f}</td>"
+            f"<td>{item['pitch_contribution']:.8f}</td><td>{item['score']:.8f}</td>"
+            f"<td>{mismatch}</td></tr>"
+        )
+    return (
+        (
+            "<h2>Stored distance details</h2><p>Examples follow the query's stable unique-PCM "
+            "order. The timbre score is their unweighted mean; pitch is separate. "
+            "Duration mismatch is candidate support minus each actual event, excluding padding.</p>"
+            "<table><tr><th>Rank</th><th>Recording</th><th>Per-example distances</th>"
+            "<th>Timbre mean</th><th>Pitch</th><th>Total</th><th>Duration mismatch</th></tr>"
+            + "".join(rows)
+            + "</table>"
+        )
+        if rows
+        else ""
+    )
+
+
 def page(value):
     def escape(x):
         return html.escape(str(x), quote=True)
@@ -130,6 +159,9 @@ def build(budget, spec, context):
             items.append({"clip": c})
         target = directory / (name + ".html")
         content = allowed["/index.html"].read_text(encoding="utf-8")
+        if "</html>" not in content:
+            raise InputError("event report: complete shared search HTML required")
+        content = content.replace("</html>", distance_details(bundle["items"]) + "</html>")
         budget.reserve(len(content.encode()) + 65536)
         directory.mkdir(parents=True, exist_ok=True)
         target.write_text(content, encoding="utf-8", newline="\n")
