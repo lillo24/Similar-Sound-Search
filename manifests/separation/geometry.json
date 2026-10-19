@@ -544,5 +544,5 @@
   "positive_full_support": true,
   "input_to_region": "native integer translation; no source resampling or time shift",
   "cue_conversion": "native24k; real44.1k; any cue-rate change is explicit polyphase, output remains source-native",
-  "record_hash": "f06979e6eb444ae2f61ce644afa1093ea0297272d46b135daf3d2c1bd37593b5"
+  "record_hash": "77038f690e57ec5825d6891f107bbde5c027af3166bc1c5303681952ec068544"
 }
