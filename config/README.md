@@ -19,3 +19,9 @@ Local overrides require the explicit CLI `--profile` or `--context` flag. Nothin
   `event_source.example.json` is the explicit missing Loulou excerpt path (first 22
   available-file seconds), with unverified identity/offset retained. Match its bounds
   to an actually supplied excerpt; never use second 218 on a short file. See [EVENTS.md](../docs/EVENTS.md).
+# B02 optional processing
+
+`separation.json` fixes the offline DSP algorithms, native/context limits and one
+finite B02 accounting namespace. See [SEPARATION.md](../docs/SEPARATION.md) for exact
+equations, schemas, conservative default and commands. Changing configuration
+invalidates transformation/query identity and cannot replenish retained ceilings.

@@ -159,3 +159,9 @@ one fixed `data/runs/events` ledger, explicit accounting in shared search helper
 and a read-only audited A06 consumer. New `manifests/events` also counts toward
 combined managed storage. No old exhausted allowance or final-run guard is reset.
 The B01 listener uses port 8767; A06's saved port-8766 route remains available.
+## Optional B02 processing
+
+[B02 separation](SEPARATION.md) uses the pinned core numerical stack and existing
+matcher, with no new package/checkpoint, network or GPU requirement. Its fixed offline
+worker/ledger uses the same starter limits. Raw transformation gain remains one;
+playback-only PCM16 attenuation is explicit. B02 listener is independent on 8768.

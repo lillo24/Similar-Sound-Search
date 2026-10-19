@@ -232,3 +232,12 @@ identity from the current audited consumer, pins sources/groups/shards/checkpoin
 and requires their validation. It does not authorize an A06 rebuild or final check.
 `b01-playback-1` adds hash-allowlisted named HTML pages to the shared verified-media
 bundle. See [EVENTS.md](EVENTS.md) for caps, invalidation, metrics and commands.
+## B02 transformations
+
+`b02-transform-1` owns waveform changes separately from A02 crop/channel/resample
+records. It binds native source/parent/context/cue identities and bounds, method,
+configuration/code/tools, explicit zero padding/trim/delay/gain, float32 output hashes,
+source maps, low-output states and original/duplicate exclusions. A truthful A02 crop
+of the transformed file is linked through the narrow B02 query context. Original and
+cue ancestry is unioned before PCM dedup; no filename-based ancestry is accepted.
+See [SEPARATION.md](SEPARATION.md) for schemas, equations and failure/reuse policy.

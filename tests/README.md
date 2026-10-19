@@ -38,3 +38,11 @@ These do not use delivery ledgers, private catalogue audio or pretrained weights
 full releases beyond a region edge, target absence within the selected region and
 target/geometry drift. The event-report test resumes a WAV-only interrupted copy
 with its immutable conversion receipt before playing/reusing the same crop.
+# B02 coverage
+
+`test_separation.py` uses independent signals and disposable roots for native identity,
+zero-delay/edge/seam reconstruction, stereo cancellation, actual cue dependence,
+cue resampling, silence/invalid inputs, transformed/excerpt/composed maps, corruption,
+cue-dependent invalidation, interrupted output reuse, retained caps, parent union
+before PCM dedup and truthful playback labels. It downloads nothing and does not
+consume delivery ledgers. Shared original-index/guard/server regression tests remain.

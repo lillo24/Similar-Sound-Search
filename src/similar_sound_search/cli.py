@@ -166,6 +166,34 @@ def parser():
         "--intervals", nargs="+", help="explicit START:END native half-open frame pairs"
     )
     events.add_argument("--port", type=int, default=8767)
+    separation = subcommands.add_parser(
+        "separation", help="B02 optional DSP processing and comparison"
+    )
+    separation.add_argument(
+        "separation_action",
+        choices=(
+            "pilot",
+            "preflight",
+            "process",
+            "handoff",
+            "prepare-query",
+            "compatibility",
+            "rank",
+            "compare",
+            "report",
+            "known-answer",
+            "serve",
+        ),
+    )
+    separation.add_argument("input", type=Path, nargs="?")
+    separation.add_argument("--mode", choices=("original", "broad", "guided"), default="original")
+    separation.add_argument(
+        "--component", choices=("original", "harmonic", "percussive", "extracted", "residual")
+    )
+    separation.add_argument("--index", type=Path)
+    separation.add_argument("--query", type=Path)
+    separation.add_argument("--receipt", type=Path)
+    separation.add_argument("--port", type=int, default=8768)
     return command
 
 
@@ -176,7 +204,14 @@ def _worker(request):
         budget_type = (
             CatalogueBudget
             if request["command"]
-            in {"catalogue_step", "evaluation_step", "matchers_step", "search_step", "events_step"}
+            in {
+                "catalogue_step",
+                "evaluation_step",
+                "matchers_step",
+                "search_step",
+                "events_step",
+                "separation_step",
+            }
             else Budget
         )
         budget = budget_type(root, request["limits"])
@@ -221,6 +256,10 @@ def _worker(request):
             result = worker(request, budget)
         elif request["command"] == "events_step":
             from .events.job import worker
+
+            result = worker(request, budget)
+        elif request["command"] == "separation_step":
+            from .separation.job import worker
 
             result = worker(request, budget)
         else:
@@ -324,6 +363,13 @@ def main(argv=None):
                 raise InputError("events serve requires the owned B01 report bundle")
             serve(root, args.input, args.port, root / "reports/local/b01")
             return 0
+        if args.command == "separation" and args.separation_action == "serve":
+            from .search.report import serve
+
+            if not args.input:
+                raise InputError("separation serve requires the owned B02 report bundle")
+            serve(root, args.input, args.port, root / "reports/local/b02")
+            return 0
         with project_lock(root):
             # Refuse orphaned acquisition/evaluation children before starting an operation.
             with project_lock(root, ".a03-worker.lock"):
@@ -335,6 +381,8 @@ def main(argv=None):
             with project_lock(root, ".a06-worker.lock"):
                 pass
             with project_lock(root, ".b01-worker.lock"):
+                pass
+            with project_lock(root, ".b02-worker.lock"):
                 pass
             Budget(root, limits).reserve(65536)
             if args.command == "catalogue":
@@ -369,6 +417,10 @@ def main(argv=None):
                 result = run(request, execute)
             elif args.command == "events":
                 from .events.job import run
+
+                result = run(request, execute)
+            elif args.command == "separation":
+                from .separation.job import run
 
                 result = run(request, execute)
             else:

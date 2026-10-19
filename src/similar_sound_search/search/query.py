@@ -45,6 +45,11 @@ def prepare_query(budget, spec_path, method, context=None):
         raise InputError("query: requires 1..8 explicit examples in a06-query-input-1")
     examples, excluded = {}, set()
     for item in spec["examples"]:
+        if context is not None and hasattr(context, "resolve_example"):
+            # A derivative owner validates its transformation and original/cue
+            # ancestry before ordinary A02 crops and before identical-PCM dedup.
+            item, ancestry = context.resolve_example(budget, item)
+            excluded.update(ancestry)
         if set(item) - {"path", "start", "end", "context", "parent_record"}:
             raise InputError("query example: unsupported fields; event/layer inference is deferred")
         path = Path(item["path"])
@@ -180,6 +185,8 @@ def load_query(budget, path, desc, context=None):
         raise InputError("search query: stale representation/identity")
     if context is not None:
         context.validate_query(value)
+        if hasattr(context, "validate_query_audio"):
+            context.validate_query_audio(budget, value)
     for v in value["examples"]:
         prepared = v["prepared"]
         original = Path(prepared["source"]["local_path"])
