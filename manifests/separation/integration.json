@@ -2,6 +2,7 @@
   "schema_version": "b02-integration-declaration-1",
   "owner": "src/similar_sound_search/separation",
   "shared_changes": {
+    "storage.py": "admit the fixed .b02-worker.lock name into the existing process-lock allowlist",
     "cli.py": "explicit separation commands, fixed B02 ledger dispatch and loopback listener; old defaults retained",
     "search/query.py": "optional context hook resolves and validates B02 transformation receipts and unions original/cue parent groups before identical-PCM deduplication; original parents() proof unchanged"
   },
