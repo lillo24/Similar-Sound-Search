@@ -110,6 +110,7 @@ def project_lock(root, name=".a02.lock"):
         ".a04-worker.lock",
         ".a05-worker.lock",
         ".a06-worker.lock",
+        ".b01-worker.lock",
     }:
         raise InputError("project lock: unsupported internal lock name")
     path = contained(Path(root) / "data/runs" / name, root)

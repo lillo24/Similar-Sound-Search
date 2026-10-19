@@ -27,7 +27,7 @@ def pcm16(samples):
     return integers, gain
 
 
-def clip(budget, directory, source, samples, first, last):
+def clip(budget, directory, source, samples, first, last, context=None):
     meta = source["source"]
     if not 0 <= first < last <= len(samples):
         raise InputError("playback clip: native source bounds invalid")
@@ -54,7 +54,7 @@ def clip(budget, directory, source, samples, first, last):
             raise InputError("playback clip: corrupt/stale media or conversion receipt")
     else:
         size = integers.nbytes + 4096
-        charge(budget, clips=1, clip_bytes=size)
+        charge(budget, context=context, clips=1, clip_bytes=size)
         budget.reserve(size, samples.nbytes * 3 + selected.nbytes * 4 + 32 * 1024**2)
         directory.mkdir(parents=True, exist_ok=True)
         fd, name = tempfile.mkstemp(prefix=".a06-clip-", suffix=".wav", dir=directory)
@@ -67,7 +67,9 @@ def clip(budget, directory, source, samples, first, last):
             {"identity": identity, "sha256": sha256(path, budget), "bytes": path.stat().st_size},
             budget,
         )
-    read_charge(budget, {"duration_seconds": len(expected) / meta["sample_rate_hz"]})
+    read_charge(
+        budget, {"duration_seconds": len(expected) / meta["sample_rate_hz"]}, context=context
+    )
     actual, current = decode(path, budget)
     if not np.array_equal(actual, expected) or current["sample_count"] != last - first:
         raise InputError(
@@ -186,10 +188,17 @@ slider.addEventListener('change',seek);
     )
 
 
-def build(budget, result_path):
-    value = record(contained(result_path, budget.root / "data/runs/search/results"))
+def build(budget, result_path, context=None):
+    value = record(
+        contained(
+            result_path,
+            context.results if context is not None else budget.root / "data/runs/search/results",
+        )
+    )
     cfg = configuration(budget.root)
-    directory = budget.root / "reports/local/a06" / value["result_id"]
+    directory = (
+        context.reports if context is not None else budget.root / "reports/local/a06"
+    ) / value["result_id"]
     items = []
     for example in value["query"]["examples"]:
         p = example["prepared"]
@@ -203,7 +212,7 @@ def build(budget, result_path):
         }
         original = Path(p["source"]["local_path"])
         original = original if original.is_absolute() else budget.root / original
-        read_charge(budget, source["source"])
+        read_charge(budget, source["source"], context=context)
         samples, meta = decode(original, budget)
         if meta["sha256"] != source["source"]["sha256"]:
             raise InputError("query playback original changed")
@@ -217,23 +226,31 @@ def build(budget, result_path):
                 "source": source,
                 "start_frame": first,
                 "end_frame": last,
-                "clip": clip(budget, directory / "media", source, samples, first, last),
+                "clip": clip(
+                    budget, directory / "media", source, samples, first, last, context=context
+                ),
             }
         )
     for hit in value["candidates"]:
         source = hit["source"]
-        samples = sources.load(budget, source)
+        samples = (
+            sources.load(budget, source)
+            if context is None
+            else sources.load(budget, source, context=context)
+        )
         rate = source["source"]["sample_rate_hz"]
-        context = (cfg["playback_context_milliseconds"] * rate + 999) // 1000
+        context_frames = (cfg["playback_context_milliseconds"] * rate + 999) // 1000
         first, last = (
-            max(0, hit["start_frame"] - context),
-            min(len(samples), hit["end_frame"] + context),
+            max(0, hit["start_frame"] - context_frames),
+            min(len(samples), hit["end_frame"] + context_frames),
         )
         items.append(
             {
                 **hit,
                 "role": "candidate",
-                "clip": clip(budget, directory / "media", source, samples, first, last),
+                "clip": clip(
+                    budget, directory / "media", source, samples, first, last, context=context
+                ),
             }
         )
     evidence = {
@@ -263,13 +280,25 @@ def build(budget, result_path):
     }
 
 
-def verify_bundle(root, path):
-    path = contained(path, root / "reports/local/a06")
+def verify_bundle(root, path, report_root=None):
+    path = contained(path, report_root if report_root is not None else root / "reports/local/a06")
     directory = path if path.is_dir() else path.parent
     value = record(directory / "bundle.json")
     allowed = {"/index.html": directory / "index.html"}
     if hashlib.sha256(allowed["/index.html"].read_bytes()).hexdigest() != value["html_sha256"]:
         raise InputError("report HTML changed; regenerate verified bundle")
+    for name, expected in value.get("pages", {}).items():
+        if (
+            not name.endswith(".html")
+            or any(c not in "abcdefghijklmnopqrstuvwxyz0123456789_-." for c in name)
+            or "/" in name
+            or name.startswith(".")
+        ):
+            raise InputError("report page: bounded owned HTML filename required")
+        page_path = contained(directory / name, directory)
+        if is_link(page_path) or hashlib.sha256(page_path.read_bytes()).hexdigest() != expected:
+            raise InputError("report page missing/stale: " + name)
+        allowed["/" + name] = page_path
     for item in value["items"]:
         c = item["clip"]
         media = contained(directory / c["path"], directory / "media")
@@ -305,9 +334,9 @@ def byte_range(header, size):
     return start, end, True
 
 
-def serve(root, path, port):
+def serve(root, path, port, report_root=None):
     """User-started idle listener: loopback, exact bundle allowlist, no repository access."""
-    allowed = verify_bundle(root, path)
+    allowed = verify_bundle(root, path, report_root)
     if not 1024 <= port <= 65535:
         raise InputError("report server: port must be 1024..65535")
 
@@ -326,7 +355,7 @@ def serve(root, path, port):
             expected = hashlib.sha256(target.read_bytes()).hexdigest()
             # Recheck the frozen bundle before each request, including changes after startup.
             try:
-                verify_bundle(root, path)
+                verify_bundle(root, path, report_root)
             except (InputError, OSError):
                 self.send_error(410, "Media missing/stale; verify/regenerate bundle")
                 return

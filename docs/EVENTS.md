@@ -19,7 +19,19 @@ repair, frozen representation/checkpoint/preprocessing, grid, sources/groups and
 identities before read-only use. Current consumer audit identity stays separate from
 historical feature identity. The old whole-tree A06 final-run guard is not relaxed.
 An unrelated module may require a fresh consumer receipt, never feature recomputation.
-Implementation and tests must demonstrate this boundary before event comparisons run.
+`events/compatibility.py` pins the completed historical index, manifest, repair and
+declaration; checks unchanged preprocessing/model/scorer modules and original protected
+function AST proofs; verifies every source byte hash and immutable feature array; and
+writes a B01-only consumer receipt. Each search revalidates the receipt's metadata and
+current consumer code, then verifies the originals and arrays it reads. No index writer
+or adapter is called during compatibility. Changing consumer code requires a new receipt.
+
+`events.context.Context` supplies the fixed B01 output paths and explicit cumulative
+accounting to shared query/source/rank/report helpers. Their default remains A06. The
+boundary tests use temporary ledgers, independently calculated vector distances, stale
+receipts and relevant/unrelated code drift. The old execution-repair test now supplies
+its historical code map explicitly and asserts that the current larger tree is rejected;
+this is the required historical-guard behavior, not a relaxed A06 exception.
 
 Numeric limits in `config/events.json` are committed before audio processing, including
 the pilot. The one persistent B01 allowance is 3,600 worker seconds, 256 dispatches,

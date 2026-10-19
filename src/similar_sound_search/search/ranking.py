@@ -62,11 +62,12 @@ def excluded_source(source, query, include_self=False):
     return False
 
 
-def rank(request, budget):
+def rank(request, budget, context=None):
+    consumer = {} if context is None else {"context": context}
     base, manifest, desc, cfg = open_index(
-        budget, request["index"], request.get("allow_partial", False)
+        budget, request["index"], request.get("allow_partial", False), **consumer
     )
-    query, features = load_query(budget, request["query"], desc)
+    query, features = load_query(budget, request["query"], desc, **consumer)
     weight = request.get("pitch_weight") or 0
     if not np.isfinite(weight) or not 0 <= weight <= cfg["pitch_weight_max"]:
         raise InputError("pitch preference: weight outside 0..0.05")
@@ -86,15 +87,21 @@ def rank(request, budget):
         "pitch_weight": weight,
         "diagnostic_include_self": request.get("include_self", False),
     }
+    if context is not None:
+        identity["consumer"] = context.result_binding()
     key = digest(identity)
-    path = budget.root / "data/runs/search/results" / (key + ".json")
+    path = (
+        context.results if context is not None else budget.root / "data/runs/search/results"
+    ) / (key + ".json")
     # Initial ranks and repeats validate originals/shards under finite read/time caps.
     excluded = set() if request.get("include_self") else set(query["identity"]["excluded_groups"])
     cursor = request.get("cursor", 0)
-    progress_path = budget.root / "data/runs/search/rank-progress" / (key + ".json")
+    progress_path = (
+        context.progress if context is not None else budget.root / "data/runs/search/rank-progress"
+    ) / (key + ".json")
     if cursor == 0:
         if not progress_path.exists() and not path.exists():
-            charge(budget, query_jobs=1)
+            charge(budget, context=context, query_jobs=1)
         progress_state = {
             "identity": identity,
             "best": {},
@@ -113,7 +120,7 @@ def rank(request, budget):
     for entry in entries[cursor : cursor + 4]:
         progress = record(base / "entries" / (entry + ".json"))
         source = progress["source"]
-        samples = sources.load(budget, source)
+        samples = sources.load(budget, source, **consumer)
         if excluded_source(source, query, request.get("include_self", False)):
             del samples
             continue

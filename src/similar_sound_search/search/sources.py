@@ -46,9 +46,9 @@ def public_source(value, group):
     }
 
 
-def load(budget, source):
+def load(budget, source, context=None):
     """Each bounded unit decodes one original, including reuse/clip validation."""
-    read_charge(budget, source["source"])
+    read_charge(budget, source["source"], context=context)
     if source["kind"] == "catalogue":
         value = record(
             budget.root / "manifests/catalogue/starter/entries" / (source["recording_id"] + ".json")
