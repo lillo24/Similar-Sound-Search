@@ -182,6 +182,10 @@ def step(request, budget, context):
     state = (
         record(progress_path) if progress_path.exists() else {"identity": identity, "validated": []}
     )
+    if receipt_path.exists() and request.get("cursor", 0) == 0:
+        # An explicit completed repeat verifies blobs again; an interrupted pass
+        # resumes its already-validated units under the same cumulative ledger.
+        state = {"identity": identity, "validated": []}
     if state["identity"] != identity:
         raise InputError("B01 compatibility: progress identity changed")
     keys = sorted(value["entries"])

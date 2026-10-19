@@ -153,3 +153,9 @@ New coordinator code identity normalizes CRLF/LF for checkout portability; A05's
 adapter byte hashes remain governed by `.gitattributes`. Stop active console processes
 before reinstalling their Windows launcher. The loopback report server uses the Python
 module entry point and exposes only its owned bundle; it performs no compute job.
+
+B01 [event selection](EVENTS.md) uses the same pinned stack and starter ceilings,
+one fixed `data/runs/events` ledger, explicit accounting in shared search helpers,
+and a read-only audited A06 consumer. New `manifests/events` also counts toward
+combined managed storage. No old exhausted allowance or final-run guard is reset.
+The B01 listener uses port 8767; A06's saved port-8766 route remains available.

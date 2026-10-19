@@ -135,6 +135,36 @@ def parser():
     search.add_argument("--allow-partial", action="store_true")
     search.add_argument("--pitch-weight", type=float, default=0)
     search.add_argument("--port", type=int, default=8766)
+    events = subcommands.add_parser(
+        "events", help="B01 bounded event selection and read-only catalogue search"
+    )
+    events.add_argument(
+        "events_action",
+        choices=(
+            "inputs",
+            "compatibility",
+            "propose",
+            "select",
+            "extract",
+            "prepare-query",
+            "rank",
+            "report",
+            "event-report",
+            "compare",
+            "known-answer",
+            "serve",
+        ),
+    )
+    events.add_argument("input", type=Path, nargs="?")
+    events.add_argument("--index", type=Path)
+    events.add_argument("--query", type=Path)
+    events.add_argument("--receipt", type=Path)
+    events.add_argument("--auto", action="store_true")
+    events.add_argument("--ids", nargs="+")
+    events.add_argument(
+        "--intervals", nargs="+", help="explicit START:END native half-open frame pairs"
+    )
+    events.add_argument("--port", type=int, default=8767)
     return command
 
 
@@ -145,7 +175,7 @@ def _worker(request):
         budget_type = (
             CatalogueBudget
             if request["command"]
-            in {"catalogue_step", "evaluation_step", "matchers_step", "search_step"}
+            in {"catalogue_step", "evaluation_step", "matchers_step", "search_step", "events_step"}
             else Budget
         )
         budget = budget_type(root, request["limits"])
@@ -186,6 +216,10 @@ def _worker(request):
             result = worker(request, budget)
         elif request["command"] == "search_step":
             from .search.job import worker
+
+            result = worker(request, budget)
+        elif request["command"] == "events_step":
+            from .events.job import worker
 
             result = worker(request, budget)
         else:
@@ -282,6 +316,13 @@ def main(argv=None):
                 raise InputError("search serve requires the owned report HTML or bundle directory")
             serve(root, args.input, args.port)
             return 0
+        if args.command == "events" and args.events_action == "serve":
+            from .search.report import serve
+
+            if not args.input:
+                raise InputError("events serve requires the owned B01 report bundle")
+            serve(root, args.input, args.port, root / "reports/local/b01")
+            return 0
         with project_lock(root):
             # Refuse orphaned acquisition/evaluation children before starting an operation.
             with project_lock(root, ".a03-worker.lock"):
@@ -291,6 +332,8 @@ def main(argv=None):
             with project_lock(root, ".a05-worker.lock"):
                 pass
             with project_lock(root, ".a06-worker.lock"):
+                pass
+            with project_lock(root, ".b01-worker.lock"):
                 pass
             Budget(root, limits).reserve(65536)
             if args.command == "catalogue":
@@ -321,6 +364,10 @@ def main(argv=None):
                 result = run(request, execute)
             elif args.command == "search":
                 from .search.job import run
+
+                result = run(request, execute)
+            elif args.command == "events":
+                from .events.job import run
 
                 result = run(request, execute)
             else:

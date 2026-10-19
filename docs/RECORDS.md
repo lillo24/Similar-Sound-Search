@@ -215,3 +215,20 @@ one finite run identity. Original `choice.json` stays A05. A04's guard validates
 bindings, rejecting a free-form `stage:A06` object. Predictions retain A04's <=128 interval
 contract and all eighty query denominators, and are published before scoring. The
 catalogue's exact search has a separate sharded contract and no 128-window restriction.
+
+## B01 events
+
+`b01-proposals-1` binds the explicit source/parent/region, native byte/PCM metadata,
+detector configuration/code and stable event IDs. Every interval is half-open native
+frames with measured energy/novelty and explicit overlap/censoring warnings.
+`b01-selection-1` separately binds explicit IDs/manual bounds or the fixed automatic
+rule. `b01-extraction-1` retains verified native A02 crops and composed maps, actual
+support/padding and single/multiple query handoffs. Unknown master offsets stay null.
+
+Shared A06 query/result schemas add an explicit `consumer` binding only for B01.
+Query bindings retain unordered selection provenance; result bindings retain the
+`b01-a06-consumer-1` receipt. That receipt separates the frozen historical feature
+identity from the current audited consumer, pins sources/groups/shards/checkpoint
+and requires their validation. It does not authorize an A06 rebuild or final check.
+`b01-playback-1` adds hash-allowlisted named HTML pages to the shared verified-media
+bundle. See [EVENTS.md](EVENTS.md) for caps, invalidation, metrics and commands.
