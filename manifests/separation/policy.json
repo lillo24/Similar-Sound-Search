@@ -1,0 +1,13 @@
+{
+  "schema_version": "b02-prospective-policy-1",
+  "configuration": "config/separation.json",
+  "prospective_base": "7b1c146",
+  "network": "offline; no learned separator admitted, installed NumPy/SciPy only",
+  "pilot": "one 3-second constructed stereo mixture and audio cue; HPSS and fixed-cue constrained activation factorization; counts in the same B02 ledger",
+  "selection": "explicit bounds fixed before retrieval; harmonic is always the broad query route, percussive retained for inspection; no best-stem search",
+  "default": "original; promote only with complete paired retrieval gain and preservation/cost gates in the subsequently committed protocol",
+  "preservation": "all prior audio, features, ledgers, manifests, predictions and reports retained; no B01 repair or held-out repeat",
+  "budget": "fixed aggregate B02 namespace, caps in configuration; retries and pilot retained; no job-name parameter",
+  "reserved_delivery": "one whole-index integrity pass, three primary real catalogue ranks, three query preparations, one validated processing/query reuse, comparison and final playback",
+  "scope": "B02 only; no global stem index, refinement, model training, pitch tuning, human ratings or deployment"
+}
