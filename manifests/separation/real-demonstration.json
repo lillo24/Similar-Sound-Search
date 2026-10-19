@@ -1,0 +1,69 @@
+{
+  "schema_version": "b02-real-demonstration-plan-1",
+  "declared_before_real_processing_and_catalogue_scores": true,
+  "original_plan_input": "data/runs/separation/inputs/real.json",
+  "input": "data/runs/separation/inputs/real-with-context.json",
+  "specification": {
+    "schema_version": "b02-process-input-1",
+    "source": {
+      "path": "data/audio/catalogue/originals/8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31.mp3",
+      "sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31"
+    },
+    "region": [
+      396900,
+      926100
+    ],
+    "event": [
+      441000,
+      546840
+    ],
+    "cue": {
+      "path": "data/audio/catalogue/originals/8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31.mp3",
+      "sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31",
+      "bounds": [
+        546840,
+        652680
+      ]
+    },
+    "label": "Donnie Ozone \u2014 Christmas Shopping at the Dollar Store; mixed cue, intended layer unverified"
+  },
+  "reason": "retain one second of native attack context before the unchanged selected query; previous B01 spans remain unverified/censored",
+  "geometry": {
+    "native_rate": 44100,
+    "region_frames": [
+      396900,
+      926100
+    ],
+    "region_seconds": [
+      9,
+      21
+    ],
+    "event_frames": [
+      441000,
+      546840
+    ],
+    "event_seconds": [
+      10,
+      12.4
+    ],
+    "event_relative_to_region": [
+      44100,
+      149940
+    ],
+    "cue_frames": [
+      546840,
+      652680
+    ],
+    "cue_seconds": [
+      12.4,
+      14.8
+    ],
+    "master_offset": null,
+    "preflight": "same full-file source identity already decoded in B02 preflight; native identity-mode preparation must validate full original and exact crop before any processed arm or real feature inference"
+  },
+  "unchanged": "source, selected event, cue, method/configuration, fixed harmonic routing, pitch off, candidate support and discovery exclusions",
+  "cue_uncertainty": "contaminated mixed audio; intended layer and complete real note unverified",
+  "controlled_comparison": "existing fixed batch is untouched; original input, predictions, protocol and producing code remain preserved",
+  "report_only_repair": "after that batch completes, render actual source/geometry from receipts instead of hard-coded 10..22 context text; no DSP/matcher/ranking changes or replacement comparison",
+  "record_hash": "24c59dde09ec443d18f54bf88dd22b01179051201bf5ece60ee1543c3b5fefbf"
+}
