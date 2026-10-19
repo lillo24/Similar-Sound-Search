@@ -22,7 +22,8 @@ def distance_details(items):
         per = ", ".join(f"{v:.8f}" for v in item["per_example_distances"])
         mismatch = ", ".join(f"{v:+.4f}s" for v in item["duration_mismatch_seconds"])
         rows.append(
-            f"<tr><td>{len(rows) + 1}</td><td>{html.escape(item['source']['title'])}</td>"
+            f"<tr><td>{len(rows) + 1}</td>"
+            f"<td>{html.escape(item['source']['title'] or 'Untitled')}</td>"
             f"<td>{per}</td><td>{item['timbre_distance']:.8f}</td>"
             f"<td>{item['pitch_contribution']:.8f}</td><td>{item['score']:.8f}</td>"
             f"<td>{mismatch}</td></tr>"

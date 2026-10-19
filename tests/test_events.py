@@ -182,7 +182,9 @@ class EventCase(AudioCase):
                 10400,
                 self.owner,
             )
-            (directory / "index.html").write_text("Separate search scores", encoding="utf-8")
+            (directory / "index.html").write_text(
+                "<html>Separate search scores</html>", encoding="utf-8"
+            )
             write_record(
                 directory / "bundle.json",
                 {
