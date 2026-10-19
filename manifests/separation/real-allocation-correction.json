@@ -1,0 +1,63 @@
+{
+  "schema_version": "b02-real-allocation-correction-1",
+  "previous_plan": "24c59dde09ec443d18f54bf88dd22b01179051201bf5ece60ee1543c3b5fefbf",
+  "failed_report": "reports/local/b02-real-broad.json",
+  "failure": "12-second44.1k stereo context exceeds fixed128MiB temporary preflight; no real processed output or catalogue scores produced",
+  "policy_changed": false,
+  "processing_settings_changed": false,
+  "retained_failure_charges": true,
+  "input": "data/runs/separation/inputs/real-bounded-context.json",
+  "specification": {
+    "schema_version": "b02-process-input-1",
+    "source": {
+      "path": "data/audio/catalogue/originals/8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31.mp3",
+      "sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31"
+    },
+    "region": [
+      396900,
+      749700
+    ],
+    "event": [
+      441000,
+      546840
+    ],
+    "cue": {
+      "path": "data/audio/catalogue/originals/8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31.mp3",
+      "sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31",
+      "bounds": [
+        546840,
+        652680
+      ]
+    },
+    "label": "Donnie Ozone \u2014 Christmas Shopping at the Dollar Store; mixed cue, intended layer unverified"
+  },
+  "geometry": {
+    "rate": 44100,
+    "channels": 2,
+    "context_seconds": [
+      9,
+      17
+    ],
+    "event_seconds": [
+      10,
+      12.4
+    ],
+    "cue_seconds": [
+      12.4,
+      14.8
+    ],
+    "attack_lead_seconds": 1,
+    "post_query_context_seconds": 4.6,
+    "master_offset": null
+  },
+  "allocation": {
+    "previous_preflight_bytes": 169924608,
+    "new_preflight_bytes": 113392512,
+    "ceiling_bytes": 134217728,
+    "chunks": 1
+  },
+  "baseline": "prepare a new original arm under identical bounded context; keep previous original preparation/query as unused evidence; same selected native samples",
+  "unchanged": "source bytes, event, cue, algorithms, fixed harmonic choice, matcher, mean/ties, pitch off, candidate support/exclusions; no real ranks inspected",
+  "controlled_comparison": "complete frozen batch retained without rerun or replacement",
+  "record_hash": "6ee0fee099cac567fa87aaaf0987546bcb88bdbc6f2ca6e74be7e3b0272b40ec"
+}
