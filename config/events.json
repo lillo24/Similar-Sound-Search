@@ -10,11 +10,11 @@
   "maximum_event_milliseconds": 8000,
   "edge_energy_ratio": 0.03,
   "novelty_peak_ratio": 0.2,
-  "absolute_rms_floor": 0.00001,
+  "absolute_rms_floor": 1e-05,
   "max_region_seconds": 30,
   "max_events_per_input": 32,
   "max_selected_events": 3,
-  "comparison_tolerance": 0.000000000001,
+  "comparison_tolerance": 1e-12,
   "policy": {
     "max_job_seconds": 3600,
     "max_http_attempts": 0,
@@ -31,6 +31,9 @@
     "max_proposal_inputs": 32,
     "max_proposed_events": 1024,
     "max_preparation_bytes": 134217728,
-    "max_managed_output_bytes": 268435456
+    "max_managed_output_bytes": 268435456,
+    "max_comparisons": 1,
+    "max_comparison_cases": 10,
+    "max_comparison_queries": 40
   }
 }
