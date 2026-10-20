@@ -13,6 +13,14 @@ OWNED = (
     "manifests/indexing/",
     "reports/local/c01/",
 )
+NAVIGATION = """
+## C01 passage banks
+
+`indexing.json` fixes C01's separate offline ceilings, two candidate grids,
+bounded shards and original/pitch-off defaults. [INDEXING.md](../docs/INDEXING.md)
+owns bank identities, native maps, immutable snapshots, component limits,
+predeclared admission, exact per-bank verification and charged resume/reuse.
+"""
 
 
 def inventory(root):
@@ -64,12 +72,32 @@ def main():
         old = json.loads(baseline.read_text(encoding="utf-8"))
         changed = [k for k, v in old.items() if values.get(k) != v]
         added = sorted(set(values) - set(old))
+        documentation = []
+        name = "config/README.md"
+        if name in changed:
+            before = baseline.parent / "config-readme-before.md"
+            if hashlib.sha256(before.read_bytes()).hexdigest() != old[name]["sha256"]:
+                raise RuntimeError("C01 navigation-map baseline differs; preserve all evidence")
+            if (root / name).read_text(encoding="utf-8") == before.read_text(
+                encoding="utf-8"
+            ) + NAVIGATION:
+                changed.remove(name)
+                documentation.append(
+                    {
+                        "path": name,
+                        "before": old[name],
+                        "after": values[name],
+                        "change": "exact C01 navigation section only; "
+                        "runtime JSON configurations unchanged",
+                    }
+                )
         result = {
             "state": "verified" if not changed and not added else "failed",
             "files": len(old),
-            "unchanged": len(old) - len(changed),
+            "unchanged": len(old) - len(changed) - len(documentation),
             "changed_or_missing": changed,
             "unexpected_additions": added,
+            "documented_navigation_changes": documentation,
         }
         (baseline.parent / "preservation-after.json").write_text(
             json.dumps(result, indent=2), encoding="utf-8"

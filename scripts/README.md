@@ -45,3 +45,10 @@ bundle on loopback 8770. Earlier listeners retain 8766–8769. Native verificati
 `verify-index-preservation.py capture|verify` inventories historical artifacts,
 configs, frozen adapters, pitch module and the root reference MP3. It excludes only
 the declared C01 roots and C01 lock. Capture refuses to overwrite its baseline.
+Verification separately identifies the exact C01 navigation section appended to
+`config/README.md`; every runtime JSON configuration remains byte-identical.
+
+`verify-index-support.py` independently enumerates C01 full-2.4s containment from
+the already-inspected native truth. It retains the closed batch, separates the
+.3s short-file denominator and checks that admission is unchanged, with no new
+features/scores/queries. Its offline 120s worker uses the same C01 ledger.

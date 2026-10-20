@@ -92,7 +92,8 @@ def verify(request):
         chosen = max(eligible, key=order)["label"] if eligible else None
         if chosen != decision["admitted_label"]:
             raise InputError(
-                "C01 support verification changed admission; stop expansion for an explicit decision"
+                "C01 support verification changed admission; "
+                "stop expansion for an explicit decision"
             )
         value = {
             "schema_version": "c01-support-verification-1",
