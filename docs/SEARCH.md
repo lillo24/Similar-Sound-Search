@@ -211,3 +211,19 @@ The shared query hook unions original/cue ancestry before identical-PCM dedup. O
 context remains A06; `parents()`, feature identity, distances/ties, pitch-off default,
 historical final-run guard and original report page are unchanged. B02 renders derived
 queries separately and always plays catalogue candidates from original mixtures.
+
+## B03 reproducible queries and secondary pitch
+
+[QUERIES.md](QUERIES.md) owns immutable named revisions, explicit local asset bindings,
+materializations and executions. The B03 context reuses preparation, unique-PCM mean
+distances, parent exclusions and stable ties, with PCM-keyed feature collection and
+charged estimate provenance. Omitted hooks preserve historical behavior. The original
+pitch module and `compatible_code` are unchanged; B03 verifies its own read-only receipt.
+
+An explicit callback captures the **complete** eligible timbre winner set before top
+ten. B03's optional .03 / twelve-semitone preference only reorders these same native
+passages; it never reranks a prior top ten as if complete. Cached execution reuse also
+validates all original/feature dependencies in bounded workers. Pitch off and original
+audio remain defaults. Earlier missing-Loulou statements record the A06/B01/B02 state:
+main supplied an MP3 on 20 October 2026; B03 separately records its actual registration,
+available-file support and continuing marked-version/master/layer uncertainty.

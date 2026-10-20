@@ -31,3 +31,10 @@ invalidates transformation/query identity and cannot replenish retained ceilings
 excerpt. Its illustrative native bounds assume 44.1 kHz; inspect actual metadata and
 replace bounds, hashes and audio cue before use. Missing/placeholder identity fails;
 no crop at second 218 or recording-offset claim is inferred for a short excerpt.
+
+## B03 reusable queries
+
+`queries.json` fixes one B03 offline allowance, eight-case/sixteen-arm development
+batch and the sole optional .03 / twelve-semitone pitch policy. Off/original remain
+defaults. [QUERIES.md](../docs/QUERIES.md) owns strict recipe/binding/revision schemas,
+supported native geometry, materialization/reuse states, exports and commands.

@@ -10,6 +10,13 @@ First reference: **daoud — Loulou & the loulous**, approximately **3:38–4:00
 
 Tom's Diner's "Thhh" vocal sound is a possible later generalisation example from the design notes. Its audio is not supplied or verified here; it does not replace the Loulou reference or add an A01 prerequisite.
 
+Input update, 20 October 2026: main now supplies the root MP3 named
+`SpotiDownloader.com - loulou & the loulous - daoud.mp3`. B03 owns separate registration
+and availability evidence; the initial reference manifest and earlier reports remain
+historical. File availability does not verify its marked version, external master
+alignment, rights, intended layer or complete event boundaries. Use validated native
+available-file coordinates through [the reusable-query contract](QUERIES.md).
+
 ## Similarity priorities
 
 1. **Timbre first:** texture, harmonic/noisy character, attack, decay, and internal modulation of the selected sound.

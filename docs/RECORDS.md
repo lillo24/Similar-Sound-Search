@@ -241,3 +241,28 @@ source maps, low-output states and original/duplicate exclusions. A truthful A02
 of the transformed file is linked through the narrow B02 query context. Original and
 cue ancestry is unioned before PCM dedup; no filename-based ancestry is accepted.
 See [SEPARATION.md](SEPARATION.md) for schemas, equations and failure/reuse policy.
+
+## B03 recipes, bindings and executions
+
+`b03-revision-1` hashes a canonical `b03-query-recipe-1`, independently of labels/local
+bindings. Sources retain native byte/PCM/decoder/context and optional A02 parent hashes;
+examples retain full integer event/context bounds and selection uncertainty. Optional
+components bind unchanged B02 transformation/source/cue/output/map/configuration receipts.
+The cue is a conditioning dependency, not an implicit extra example. `b03-name-1` holds
+display label, selected immutable revision and history with optimistic update checks.
+
+`b03-binding-1` maps a dependency to an explicit validated project-relative file/receipt.
+`b03-query-export-1` transports the recipe and hash inventory without media/binding paths.
+Unresolved metadata is distinct from ready materialization. `b03-materialization-1`
+binds an exact revision and validated shared A06 query/feature matrix; that query retains
+all local binding snapshots even after a mutable name or binding changes. Underlying
+PCM/representation feature blobs remain independent of pitch, display and provenance.
+
+`b03-winners-1` preserves all eligible timbre-best original group passages before top-ten
+truncation. `b03-execution-1` binds revision, materialization, current read-only index
+receipt, complete winners and explicit versioned preference. Score is unchanged mean
+timbre distance plus a separately inspectable bounded pitch term. Reuse checks source,
+feature, mapping and complete candidate bindings; old predictions remain immutable.
+`b03-playback-1` distinguishes provided original context/examples, explicit derived/cue
+audio and original catalogue candidate clips, with native/player timestamps and gains.
+See [QUERIES.md](QUERIES.md) for contracts, availability states and exact CLI syntax.
