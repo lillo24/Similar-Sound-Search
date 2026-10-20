@@ -14,13 +14,14 @@
     "development.py:query_feature": "5e1fd01288a589072f465e2d7290da6ce3b302096f0a06d0860f0f8c612bf5d7",
     "development.py:save_audio": "98bbf65bd36e8a5fed57da9c8600eb0cd2880dc8377d7d99565614f8d2f40544",
     "development.py:public": "22dad3b73cb740a55dbb72e8ba02d9a95feb13edd7540f273c3bbf4653bcc5c6",
-    "build.py:feature_extraction_and_atomic_publication_try": "ec33c01e371844edba19d4f2a92d1881c00f4f5da46322bdb0e740d6e0ae7b86"
+    "build.py:feature_extraction_and_atomic_publication_try": "ec33c01e371844edba19d4f2a92d1881c00f4f5da46322bdb0e740d6e0ae7b86",
+    "ranking.py:complete_group_selection_loop": "8a68ffde16104626ddc4dcf580d064a1c54f3f0668b049fb33a90892ad011cd8"
   },
   "planned_consumer_file_hashes": {
     "indexing/build.py": "573aa5772fcc2cedd76ced190e7564d7299ced774c0cea1ac0d9adccd1d4e97d",
     "cli.py": "95abb36dc8f54d547cdd909594ef7e70087d4aeb2206ddb021c32c9de43739d3",
     "indexing/development.py": "4df7f100070d3ebef85098d85d56e9fe7b999eb9c6098c3fbb373cc90cf3634c",
-    "indexing/ranking.py": "c04897ee4275b2ef8c84efa4ca967de9e0dd060de582445e4a2049f422b8d130",
+    "indexing/ranking.py": "972fdbbfc61e6101bf1751ac3bbbe00f38b9cfeef6e8544179fccaf4bd698b37",
     "indexing/reader.py": "4236bc4ac1e99593803837df9418069aea55f4b4b4f400eb4571bf07ae75315d",
     "indexing/report.py": "db24578445533f2d352678dbbcdd835ee2f393a0150e4457c19c847e025ae1d4"
   },
@@ -36,8 +37,9 @@
     "bank/query descriptor equality and unchanged frozen-function consumer audit",
     "strict full-2.4s summary and narrow silence diagnostic handling; closed real batch retained",
     "completed build uses the one charged source/array verification pass",
-    "C01 summary outputs are contained in reports/local/c01"
+    "C01 summary outputs are contained in reports/local/c01",
+    "compact immutable group-winner references in rank progress, preserving the complete group-selection loop"
   ],
   "produced_features_are_not_reembedded": true,
-  "record_hash": "449e5b2d5237f839a7e0ad7e5dc95c4683bd3816f9f49f0811aa6425002cb07d"
+  "record_hash": "7f2a98f5ea3535dddc669e238f662d05a812cfcf8bb67129c68a27a62d6aaa5b"
 }
