@@ -343,16 +343,48 @@ def case(budget, owner, item, plan, desc):
     }
 
 
+def binding(plan, owner):
+    """Pin the prospective producer; allow only a declared execution-only repair."""
+    code = code_identity()
+    identity = {
+        "plan_hash": plan["record_hash"],
+        "code": code,
+        "configuration": owner.cfg,
+    }
+    public = owner.root / "manifests/queries"
+    if (public / "protocol.json").exists():
+        protocol = record(public / "protocol.json")
+        if protocol["plan_hash"] != plan["record_hash"]:
+            raise InputError("B03 comparison: prospective plan changed")
+        if protocol["code"] != code:
+            declaration = record(public / "execution-repair-plan.json")
+            repair = record(public / "execution-repair.json")
+            changed = {
+                k
+                for k in code.keys() | protocol["code"].keys()
+                if code.get(k) != protocol["code"].get(k)
+            }
+            if (
+                declaration["protocol_hash"] != protocol["record_hash"]
+                or declaration["before"] != protocol["code"]
+                or repair["declaration_hash"] != declaration["record_hash"]
+                or repair["before"] != protocol["code"]
+                or repair["after"] != code
+                or repair["plan_hash"] != plan["record_hash"]
+                or repair["configuration"] != owner.cfg
+                or not changed <= {"queries/features.py", "queries/development.py"}
+            ):
+                raise InputError("B03 comparison: undeclared producer drift; no replacement batch")
+            identity["execution_repair"] = repair["record_hash"]
+    return identity
+
+
 def step(budget, owner):
     plan = record(owner.root / "manifests/queries/development.json")
     private = record(owner.directory / "development.json")
     if plan != private:
         raise InputError("B03 compare: publish exact verified preflight before comparisons")
-    identity = {
-        "plan_hash": plan["record_hash"],
-        "code": code_identity(),
-        "configuration": owner.cfg,
-    }
+    identity = binding(plan, owner)
     path = owner.directory / "comparison/progress.json"
     if path.exists():
         progress = record(path)
@@ -363,36 +395,49 @@ def step(budget, owner):
     else:
         owner.charge(budget, comparisons=1, query_jobs=1)
         progress = {"identity": identity, "completed": []}
+        owner.publish(budget, path, progress)
     done = progress["completed"]
+    if done != [v["case_id"] for v in plan["cases"][: len(done)]]:
+        raise InputError("B03 comparison: completed cases are not the declared prefix")
     if len(done) < len(plan["cases"]):
         item = plan["cases"][len(done)]
-        owner.charge(budget, comparison_cases=1, comparison_queries=2)
-        _, _, _, _, desc = frozen(budget)
-        try:
-            answer = case(budget, owner, item, plan, desc)
-        except InputError as exc:
-            answer = {
-                "case_id": item["case_id"],
-                "stratum": item["stratum"],
-                "family_truth": item["family_truth"],
-                "state": "failed",
-                "error": str(exc),
-                "off_round_trip_exact": False,
-                "arms": {
-                    k: {
-                        "state": "failed",
-                        "error": str(exc),
-                        "source_family_hits": {str(n): False for n in (1, 5, 10)},
-                    }
-                    for k in plan["arms"]
-                },
-            }
-        owner.publish(
-            budget,
-            owner.directory / "comparison" / (item["case_id"] + ".json"),
-            answer,
-            immutable=True,
-        )
+        counts = record(owner.directory / "work.json")["counts"]
+        # Cases/arms count unique predeclared units, while all retried worker,
+        # read, feature and processing reservations remain cumulatively charged.
+        if counts["comparison_queries"] != 2 * counts["comparison_cases"]:
+            raise InputError("B03 comparison: case/arm counters disagree")
+        if counts["comparison_cases"] == len(done):
+            owner.charge(budget, comparison_cases=1, comparison_queries=2)
+        elif counts["comparison_cases"] != len(done) + 1:
+            raise InputError("B03 comparison: counters disagree with pending declared case")
+        case_path = owner.directory / "comparison" / (item["case_id"] + ".json")
+        if case_path.exists():
+            answer = record(case_path)
+            if answer["case_id"] != item["case_id"] or answer["batch_identity"] != digest(identity):
+                raise InputError("B03 comparison: saved prediction belongs to another batch")
+        else:
+            _, _, _, _, desc = frozen(budget)
+            try:
+                answer = case(budget, owner, item, plan, desc)
+            except InputError as exc:
+                answer = {
+                    "case_id": item["case_id"],
+                    "stratum": item["stratum"],
+                    "family_truth": item["family_truth"],
+                    "state": "failed",
+                    "error": str(exc),
+                    "off_round_trip_exact": False,
+                    "arms": {
+                        k: {
+                            "state": "failed",
+                            "error": str(exc),
+                            "source_family_hits": {str(n): False for n in (1, 5, 10)},
+                        }
+                        for k in plan["arms"]
+                    },
+                }
+            answer["batch_identity"] = digest(identity)
+            owner.publish(budget, case_path, answer, immutable=True)
         done.append(item["case_id"])
         owner.publish(budget, path, {"identity": identity, "completed": done})
         if len(done) < len(plan["cases"]):

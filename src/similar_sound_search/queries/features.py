@@ -39,7 +39,18 @@ class Features:
         )
         self.budget.reserve(65536 + self.desc["dimension"] * 4, 768 * 1024**2 + samples.nbytes * 3)
         if self.model is None:
-            self.model, self.load_seconds = adapter(self.budget, "efficientat", self.desc)
+            # The frozen adapter configures PyTorch's process-wide interop pool.
+            # A B03 worker owns one model, shared by candidate and query caches.
+            shared = getattr(self.owner, "feature_model", None)
+            if shared is None:
+                model, seconds = adapter(self.budget, "efficientat", self.desc)
+                shared = self.owner.feature_model = (self.desc, model)
+                self.load_seconds = seconds
+            if shared[0] != self.desc:
+                from ..storage import InputError
+
+                raise InputError("B03 worker: feature representation changed within one context")
+            self.model = shared[1]
         started = time.perf_counter()
         vector = checked(
             self.model.encode(samples, audio["sample_rate_hz"]), self.desc["dimension"]

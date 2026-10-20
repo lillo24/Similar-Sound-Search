@@ -195,6 +195,16 @@ retain that exact revision even if a mutable name later selects another revision
 Reopening a previous revision reproduces its choices. Unchanged commands resume
 bounded units with retained charges; producer drift refuses a replacement comparison.
 
+The B03 development producer uses one lazy instance of the unchanged EfficientAT
+adapter per worker context, including candidate and query feature consumers. PyTorch
+2.6 permits configuring its interop thread pool only once per process. Comparison
+progress is saved before processing; case/arm counters refer to unique declared
+units, while interrupted work retains every worker/read/feature reservation. An
+immutable case prediction is recovered before any new inference on resume.
+The initial no-prediction delivery failure and its narrowly declared execution repair
+are preserved in `manifests/queries/execution-repair*.json`; the original prospective
+protocol, signals, scoring and single-batch allowance remain fixed.
+
 The listener uses `127.0.0.1:8769`, validates media hashes/ranges/contained paths and runs
 no inference. Ctrl+C stops it. Ports 8766/8767/8768 and historical listeners remain.
 Candidate audio is always an original catalogue crop with native rate/channels, explicit

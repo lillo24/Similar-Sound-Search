@@ -874,6 +874,15 @@ class QueriesCase(AudioCase):
     def test_complete_disposable_batch_and_resume_retains_failures_without_new_inference(self):
         from similar_sound_search.queries import development
 
+        initializations = []
+
+        def once(*_):
+            if initializations:
+                raise RuntimeError("process-wide adapter may initialize only once")
+            initializations.append(True)
+            return self.model, 0
+
+        self.enterContext(patch.object(features, "adapter", side_effect=once))
         ready = development.preflight(self.sbudget(), self.owner)
         plan = record(self.root / ready["plan"])
         silent = next(v for v in plan["cases"] if v["case_id"] == "silence")
@@ -898,4 +907,58 @@ class QueriesCase(AudioCase):
         self.assertEqual(counts["comparisons"], 1)
         self.assertEqual(counts["comparison_cases"], 8)
         self.assertEqual(counts["comparison_queries"], 16)
+        self.assertEqual(len(initializations), 1)
         self.assertFalse((self.root / "data/runs/search/ledger.json").exists())
+
+    def test_interrupted_case_resumes_with_charged_units_and_saved_prediction(self):
+        from similar_sound_search.queries import development
+
+        plan = {
+            "cases": [
+                {"case_id": "first", "stratum": "primary", "family_truth": 0},
+                {"case_id": "second", "stratum": "primary", "family_truth": 1},
+            ],
+            "arms": {"off": library.OFF, "primary": self.owner.cfg["pitch"]},
+        }
+        for path in (
+            self.root / "manifests/queries/development.json",
+            self.owner.directory / "development.json",
+        ):
+            write_record(path, plan, self.sbudget())
+        with (
+            patch.object(development, "frozen", return_value=({}, {}, {}, {}, self.desc)),
+            patch.object(development, "case", side_effect=RuntimeError("interrupted")),
+        ):
+            with self.assertRaisesRegex(RuntimeError, "interrupted"):
+                development.step(self.sbudget(), self.owner)
+        progress_path = self.owner.directory / "comparison/progress.json"
+        self.assertEqual(record(progress_path)["completed"], [])
+        charged = record(self.owner.directory / "work.json")["counts"]
+        self.assertEqual(charged["comparisons"], 1)
+        self.assertEqual(charged["comparison_cases"], 1)
+        self.assertEqual(charged["comparison_queries"], 2)
+        publish = self.owner.publish
+
+        def interrupted_publish(budget, path, value, **kw):
+            if path == progress_path:
+                raise RuntimeError("after immutable prediction")
+            return publish(budget, path, value, **kw)
+
+        with (
+            patch.object(development, "frozen", return_value=({}, {}, {}, {}, self.desc)),
+            patch.object(development, "case", return_value={"case_id": "first"}) as infer,
+            patch.object(self.owner, "publish", side_effect=interrupted_publish),
+        ):
+            with self.assertRaisesRegex(RuntimeError, "after immutable prediction"):
+                development.step(self.sbudget(), self.owner)
+            self.assertEqual(infer.call_count, 1)
+        with patch.object(development, "case", side_effect=AssertionError("no repeated inference")):
+            answer = development.step(self.sbudget(), self.owner)
+        self.assertEqual(answer["cursor"], 1)
+        self.assertEqual(record(progress_path)["completed"], ["first"])
+        resumed = record(self.owner.directory / "work.json")["counts"]
+        self.assertGreater(resumed["metadata_bytes"], charged["metadata_bytes"])
+        self.assertEqual(
+            {k: v for k, v in resumed.items() if k != "metadata_bytes"},
+            {k: v for k, v in charged.items() if k != "metadata_bytes"},
+        )

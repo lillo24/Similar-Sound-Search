@@ -63,3 +63,6 @@ The complete disposable B03 batch uses the fake adapter, preserves the declared
 silence failure and resumes without new inference. Report tests compose nonzero A02
 crop/rate mappings through processing, independently reject a shifted player origin,
 and preserve an older execution's materialization after an explicit source rebind.
+The batch adapter fixture allows only one process-wide initialization. Interruption
+tests cover both before prediction and between immutable prediction/progress writes,
+retaining case/arm reservations and charging subsequent metadata writes.

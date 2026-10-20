@@ -10,6 +10,11 @@ cue reuse and the pitch settings. `loulou-availability.json` separately records 
 new supplied file's A02 technical availability while preserving the initial reference
 manifest and B02's historically correct missing-input statement.
 
+`execution-repair-plan.json` preserves the no-prediction first-run failure, charged
+pending case and existing features before the two-module execution-only repair.
+`execution-repair.json` binds its checked producer and exact recovery, keeping the
+original protocol and comparison allowance intact.
+
 Audio, bindings, revisions, arrays, ledgers and playback stay in the fixed ignored B03
 namespaces. Earlier evidence remains immutable. Public records do not supply media,
 model weights or local availability in another checkout.
