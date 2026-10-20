@@ -1,6 +1,6 @@
 # Project status
 
-Updated 20 October 2026. **B03 reusable query revisions and optional pitch preference are implemented; original audio and pitch off remain defaults.** [B03 evidence](../reports/B03_QUERIES.md) owns actual delivery checks, interrupted/resumed work, costs and the C01 handoff. The supplied Loulou MP3 is technically available; identity/alignment/rights/layer remain unverified. All 72 local recordings retain their original A06 index. Controlled findings do not establish human relevance; A03 remains partial. Follow [AGENTS.md](../AGENTS.md) for PR/merge/cleanup delivery.
+Updated 20 October 2026. **C01 passage banks are implemented; original audio and pitch off remain defaults.** [C01 evidence](../reports/C01_INDEX.md) owns measured construction, per-bank verification, costs, playback and the C02 handoff. The original 72-recording A06 bank is preserved; the experimental 4.8s/1s bank adds 10,914 windows across the same recordings. Short-duration and HPSS region banks remain explicitly partial. The supplied full Loulou query is technically available; identity/alignment/rights/layer remain unverified. Controlled findings do not establish human relevance; A03 remains partial. Follow [AGENTS.md](../AGENTS.md) for PR/merge/cleanup delivery.
 
 ## Foundation and current delivery
 

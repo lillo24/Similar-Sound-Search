@@ -3,10 +3,11 @@
 from pathlib import Path
 
 from ..evaluation.artifacts import record
+from ..events import compatibility
 from ..search import sources
 from ..search.contracts import code_identity
 from ..search.ranking import distances, excluded_source, timbre_key
-from ..storage import InputError, digest
+from ..storage import InputError, contained, digest
 from . import build, queries, reader
 
 
@@ -30,6 +31,54 @@ def hit(source, query, per, score, passage):
     }
 
 
+def save_progress(budget, owner, key, path, state):
+    """Publish final group winners once; progress carries compact hashed references."""
+    refs = {}
+    for group, winner in sorted(state["best"].items()):
+        value = {
+            "schema_version": "c01-group-winner-1",
+            "execution_identity_hash": key,
+            "winner": winner,
+            "passage": state["passages"][group],
+        }
+        target = owner.directory / "rank-winners" / key / (digest(value) + ".json")
+        saved = owner.publish(budget, target, value, immutable=True)
+        refs[group] = {
+            "path": target.relative_to(owner.root).as_posix(),
+            "record_hash": saved["record_hash"],
+        }
+    compact = {
+        k: v
+        for k, v in state.items()
+        if k not in {"record_hash", "best", "passages", "winner_references"}
+    }
+    compact["winner_references"] = refs
+    owner.publish(budget, path, compact)
+
+
+def load_progress(owner, key, path, identity):
+    state = record(path)
+    if state["identity"] != identity:
+        raise InputError("C01 rank progress: bank/query/consumer changed")
+    best, passages = {}, {}
+    for group, ref in state["winner_references"].items():
+        target = contained(owner.root / ref["path"], owner.directory / "rank-winners" / key)
+        value = record(target)
+        if (
+            value.get("schema_version") != "c01-group-winner-1"
+            or value["record_hash"] != ref["record_hash"]
+            or value["execution_identity_hash"] != key
+            or value["winner"]["group"] != group
+            or value["winner"]["source"]["group"] != group
+            or value["passage"]["bank_id"] != identity["bank_id"]
+        ):
+            raise InputError("C01 rank progress: immutable group-winner binding changed")
+        if target.stem != digest({k: v for k, v in value.items() if k != "record_hash"}):
+            raise InputError("C01 rank progress: group-winner identity differs")
+        best[group], passages[group] = value["winner"], value["passage"]
+    return {**state, "best": best, "passages": passages}
+
+
 def step(request, budget, owner):
     value = reader.read_bank(
         budget, owner, Path(request["input"]), request.get("allow_partial", False)
@@ -41,6 +90,9 @@ def step(request, budget, owner):
         request.get("materialization"),
         request.get("derived", False),
     )
+    if value["bank"]["identity"]["representation"] != query["identity"]["representation"]:
+        raise InputError("C01 search: bank and saved-query representations differ")
+    audit = compatibility.audit(owner.root)
     identity = {
         "version": "c01-execution-1",
         "bank_hash": value["record_hash"],
@@ -50,6 +102,7 @@ def step(request, budget, owner):
         "query_hash": query["record_hash"],
         "pitch_weight": 0,
         "consumer_code": code_identity(),
+        "consumer_audit": digest(audit),
     }
     key = digest(identity)
     path = owner.directory / "executions" / (key + ".json")
@@ -57,9 +110,7 @@ def step(request, budget, owner):
         raise InputError("C01 exact execution already complete; read its immutable winners")
     progress_path = owner.directory / "rank-progress" / (key + ".json")
     if progress_path.exists():
-        state = record(progress_path)
-        if state["identity"] != identity:
-            raise InputError("C01 rank progress: bank/query/consumer changed")
+        state = load_progress(owner, key, progress_path, identity)
     else:
         owner.charge(budget, query_jobs=1)
         state = {
@@ -70,7 +121,7 @@ def step(request, budget, owner):
             "excluded_groups": query["identity"]["excluded_groups"],
             "scored_windows": 0,
         }
-        owner.publish(budget, progress_path, state)
+        save_progress(budget, owner, key, progress_path, state)
     keys = sorted(value["signals"])
     for source_id in [k for k in keys if k not in state["validated"]][:4]:
         signal = value["signals"][source_id]
@@ -101,7 +152,7 @@ def step(request, budget, owner):
                     state["passages"][group] = passage
             state["scored_windows"] += len(array)
         state["validated"].append(source_id)
-    owner.publish(budget, progress_path, {k: v for k, v in state.items() if k != "record_hash"})
+    save_progress(budget, owner, key, progress_path, state)
     if len(state["validated"]) < len(keys):
         return {
             "status": "ok",
@@ -139,8 +190,6 @@ def step(request, budget, owner):
             / (owner.protocol["delivery"]["baseline_execution"] + ".json")
         )
         baseline = record(baseline_path)
-        from ..storage import contained
-
         direct = record(
             contained(owner.root / baseline["winners"], owner.root / "data/runs/queries/winners")
         )

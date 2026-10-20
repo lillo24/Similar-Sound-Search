@@ -84,18 +84,19 @@ def selected_units(owner, plan, scope):
 
 
 def step(budget, owner, plan_path, scope):
-    plan = banks.validate_plan(owner, plan_path, producing=True)
+    plan = banks.validate_plan(owner, plan_path)
     state = progress(owner, plan)
     target = selected_units(owner, plan, scope)
     todo = [u for u in target if u["unit_id"] not in state["committed"]]
     if not todo:
-        return {
-            "status": "ok",
-            "state": "complete",
-            "new_windows": 0,
-            "note": "membership committed; use verify for a charged source/array reuse pass",
-            "coverage": banks.coverage(plan, committed_units(owner, state), state["failures"]),
-        }
+        # A repeated build is the same finite reuse pass as explicit verify:
+        # validate sources/arrays and charge it, never return cached success.
+        result = verify(budget, owner, plan_path, scope)
+        result["reused_committed_bank"] = True
+        return result
+    # Completed rows may be consumed under a later coordinator. Producing new
+    # feature rows still requires the exact declared producing code.
+    banks.validate_plan(owner, plan_path, producing=True)
     unit = todo[0]
     signal = plan["signals"][unit["signal_id"]]
     started = time.perf_counter()
@@ -191,7 +192,12 @@ def bank_snapshot(budget, owner, plan_path):
         "plan": plan_path.relative_to(owner.root).as_posix(),
         "plan_hash": plan["record_hash"],
         "bank": plan["bank"],
-        "committed": sorted(committed, key=lambda u: (u["signal_id"], u["identity"]["bounds"][0])),
+        # Each compact membership hash pins native bounds and its array receipt,
+        # below the unchanged 1 MiB JSON boundary even at catalogue scale.
+        "committed": [
+            {"unit_id": u["unit_id"], **state["committed"][u["unit_id"]]}
+            for u in sorted(committed, key=lambda u: (u["signal_id"], u["identity"]["bounds"][0]))
+        ],
         "coverage": banks.coverage(plan, committed, state["failures"]),
         "failures": state["failures"],
     }

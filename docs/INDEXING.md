@@ -71,8 +71,9 @@ Build each explicit component plan from `data/runs/indexing/components.json` wit
 `admission.json` with `indexing build --bank LABEL --scope full`; repeat this exact
 command to resume. Valid committed arrays are retained, validated recoverable
 orphans need no re-embedding, and corrupt arrays are refused. Failed attempts and
-their reservations remain visible. Then run its one `indexing verify --bank LABEL
---scope full` pass. An already completed verify refuses an undeclared repeat.
+their reservations remain visible. Once complete, repeating the build performs
+the same single charged reuse pass as `indexing verify --bank LABEL --scope full`.
+Choose either command for that pass; a completed reuse refuses an undeclared repeat.
 
 ```powershell
 .venv/Scripts/python.exe -m similar_sound_search --tier starter indexing compatibility
@@ -99,3 +100,11 @@ Metadata writes are bounded by a 32 MiB counted subcap inside a pre-reserved 32 
 managed envelope. Arrays, preparations, transforms and clips reserve separate
 output before work. Actual final namespace bytes are also reported. Files left by
 failed attempts remain charged and are not treated as ready membership.
+
+Snapshots store compact immutable shard/membership hashes, resolved by the C01
+reader to exact native row bounds. This preserves the shared 1 MiB metadata-reader
+limit. Ranking progress similarly references immutable complete group winners;
+final executions still include all eligible winners, not only ten candidates.
+Bank/query representations must match exactly, and the unchanged frozen-function
+consumer audit runs before scoring. C01 summary paths are contained under
+`reports/local/c01`, including an explicit `--report` path.

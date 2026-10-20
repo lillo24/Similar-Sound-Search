@@ -9,7 +9,7 @@ from ..evaluation import rendering
 from ..evaluation.artifacts import record
 from ..inputs import decode
 from ..matchers.acoustic import checked
-from ..search.contracts import load_array, save_array
+from ..search.contracts import grid, load_array, save_array
 from ..search.ranking import distances
 from ..storage import InputError, digest
 from . import banks, build
@@ -230,8 +230,11 @@ def compare(budget, owner, fixtures, desc):
         started = time.perf_counter()
         try:
             q = query_feature(budget, owner, case, desc)
-        except InputError:
-            if case["stratum"] != "silence":
+        except InputError as exc:
+            if (
+                case["stratum"] != "silence"
+                or str(exc) != "C01 development query: silence, no valid vector"
+            ):
                 raise
             results.append(
                 {
@@ -330,13 +333,26 @@ def compare(budget, owner, fixtures, desc):
             for c in results
             if c["stratum"] == "alternate"
         ]
-        full = [
-            a
-            for c in results
-            if c["stratum"] == "alternate" and c["case_id"] != "pluck-attack"
-            for a in c["banks"]
-            if a["duration_ms"] == duration
-        ]
+        # Only complete 2.4s native truths enter this denominator. The short-file
+        # control stays in rankings/cases, but cannot supply a full 2.4s event.
+        support = []
+        for case in fixtures["queries"]:
+            if case["stratum"] != "alternate" or case["support"] != "full":
+                continue
+            for source in fixtures["sources"]:
+                audio = source["source"]["source"]
+                lo, hi = source["truth"]
+                if (
+                    source["family"] != case["family"]
+                    or (hi - lo) * 1000 != 2400 * audio["sample_rate_hz"]
+                ):
+                    continue
+                windows = grid(
+                    audio["sample_count"],
+                    audio["sample_rate_hz"],
+                    {"window_milliseconds": duration, "hop_milliseconds": 500},
+                )
+                support.append(any(a <= lo and hi <= b for a, b in windows))
         summary[str(duration)] = {
             "alternate_cases": len(cases),
             "hit1": sum(v["hit1"] for v in cases),
@@ -347,10 +363,7 @@ def compare(budget, owner, fixtures, desc):
             "paired_losses": sum(
                 b["hit1"] and not a["hit1"] for a, b in zip(cases, baseline, strict=True)
             ),
-            "full_event_support": [
-                sum(a["containment_opportunities"][0] for a in full),
-                sum(a["containment_opportunities"][1] for a in full),
-            ],
+            "full_event_support": [sum(support), len(support)],
         }
     value = {
         "schema_version": "c01-comparison-1",

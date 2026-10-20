@@ -29,9 +29,9 @@ def legacy(budget, owner, receipt_path):
                 {
                     "unit_id": key,
                     "signal_id": entry,
-                    "identity": meta["identity"],
                     "path": directory.relative_to(owner.root).as_posix(),
-                    "array": meta,
+                    "array_record_hash": meta["record_hash"],
+                    "rows": meta["shape"][0],
                 }
             )
     cov = legacy_coverage(path.parent, value)
@@ -68,7 +68,21 @@ def read_bank(budget, owner, path, allow_partial=False):
         expected = legacy(budget, owner, owner.root / value["receipt"])
         if {k: v for k, v in value.items() if k != "record_hash"} != expected:
             raise InputError("C01 legacy reference changed/stale")
-        return value
+        expanded = []
+        for ref in value["committed"]:
+            meta = record(owner.root / ref["path"] / "record.json")
+            if meta["record_hash"] != ref["array_record_hash"] or meta["shape"][0] != ref["rows"]:
+                raise InputError("C01 legacy reference: shard receipt/row count differs")
+            expanded.append(
+                {
+                    "unit_id": ref["unit_id"],
+                    "signal_id": ref["signal_id"],
+                    "path": ref["path"],
+                    "identity": meta["identity"],
+                    "array": meta,
+                }
+            )
+        return {**value, "committed": expanded}
     if value.get("schema_version") != "c01-bank-snapshot-1" or path.stem != digest(
         {k: v for k, v in value.items() if k != "record_hash"}
     ):
@@ -77,8 +91,18 @@ def read_bank(budget, owner, path, allow_partial=False):
     if value["plan_hash"] != plan["record_hash"] or value["bank"] != plan["bank"]:
         raise InputError("C01 reader: snapshot/plan bank differs")
     expected = {u["unit_id"]: u for u in banks.units(plan)}
-    seen = set()
-    for unit in value["committed"]:
+    seen, expanded = set(), []
+    for ref in value["committed"]:
+        target = owner.directory / "membership" / plan["record_hash"] / (ref["unit_id"] + ".json")
+        if (
+            set(ref) != {"unit_id", "path", "record_hash"}
+            or ref["path"] != target.relative_to(owner.root).as_posix()
+        ):
+            raise InputError("C01 reader: membership outside declared namespace")
+        saved = record(target)
+        if saved["record_hash"] != ref["record_hash"] or saved["unit_id"] != ref["unit_id"]:
+            raise InputError("C01 reader: immutable membership receipt changed")
+        unit = {k: v for k, v in saved.items() if k != "record_hash"}
         if unit["unit_id"] in seen or unit["unit_id"] not in expected:
             raise InputError("C01 reader: duplicate/unknown shard membership")
         seen.add(unit["unit_id"])
@@ -88,11 +112,18 @@ def read_bank(budget, owner, path, allow_partial=False):
             raise InputError("C01 reader: row order/grid identity differs")
         if unit["path"] != build.array_path(owner, unit).relative_to(owner.root).as_posix():
             raise InputError("C01 reader: array outside declared namespace")
-    if value["coverage"] != banks.coverage(plan, value["committed"], value["failures"]):
+        expanded.append(unit)
+    if value["coverage"] != banks.coverage(plan, expanded, value["failures"]):
         raise InputError("C01 reader: coverage/committed membership differs")
     if value["coverage"]["state"] != "complete" and not allow_partial:
         raise InputError("C01 reader: partial bank requires --allow-partial")
-    return {**value, "signals": plan["signals"], "scope": plan["scope"], "plan_value": plan}
+    return {
+        **value,
+        "committed": expanded,
+        "signals": plan["signals"],
+        "scope": plan["scope"],
+        "plan_value": plan,
+    }
 
 
 def rows(budget, owner, value, unit):
@@ -141,6 +172,7 @@ def snapshot(budget, owner, receipt_path, plans):
             "record_hash": record(legacy_path)["record_hash"],
             "coverage": original["coverage"],
             "kind": "legacy-original",
+            "grid": original["bank"]["identity"]["grid"],
         }
     ]
     engineering = []
@@ -159,6 +191,7 @@ def snapshot(budget, owner, receipt_path, plans):
             "record_hash": value["record_hash"],
             "coverage": value["coverage"],
             "kind": value["bank"]["identity"]["variant"],
+            "grid": value["bank"]["identity"]["grid"],
         }
         plan = banks.validate_plan(owner, path)
         (refs if plan["scope"] == "discovery" else engineering).append(ref)

@@ -1,9 +1,11 @@
 """Offline C01 bank, crash, provenance and scalar-oracle tests in disposable roots."""
 
 import copy
+import io
 import json
 import shutil
 from concurrent.futures import ThreadPoolExecutor
+from contextlib import redirect_stdout
 from unittest.mock import patch
 
 import numpy as np
@@ -11,6 +13,7 @@ from helpers import REPOSITORY, AudioCase
 from scipy.io.wavfile import write as write_wav
 
 from similar_sound_search.evaluation.artifacts import record, write_record
+from similar_sound_search.events import compatibility
 from similar_sound_search.indexing import banks, build, components, development, ranking, reader
 from similar_sound_search.indexing import queries as index_queries
 from similar_sound_search.indexing.context import (
@@ -25,6 +28,7 @@ from similar_sound_search.inputs import decode
 from similar_sound_search.queries import assets, features, library, materialization
 from similar_sound_search.resources import CatalogueBudget, load_limits
 from similar_sound_search.search import query, sources
+from similar_sound_search.search.contracts import load_array
 from similar_sound_search.storage import InputError, ResourceError, digest, project_lock, read_json
 
 
@@ -56,6 +60,9 @@ class IndexCase(AudioCase):
         }
         self.model = Model()
         self.owner.feature_model = (self.desc, self.model)
+        guard = patch.object(compatibility, "audit", return_value={"fixture_only": True})
+        guard.start()
+        self.addCleanup(guard.stop)
 
     def sbudget(self):
         return CatalogueBudget(
@@ -95,6 +102,171 @@ class IndexCase(AudioCase):
         answer = known_answer()
         self.assertTrue(answer["passed"])
         self.assertGreater(answer["independent_grid_rows"], 100)
+
+    def test_encoded_rows_use_independently_enumerated_native_samples(self):
+        signal = self.signal(rate=44100)
+        samples, _ = decode(self.root / signal["audio"]["local_path"], self.sbudget())
+        seen = []
+        base_encode = self.model.encode
+
+        def capture(x, rate):
+            seen.append(x.copy())
+            return base_encode(x, rate)
+
+        self.model.encode = capture
+        path, plan = self.plan({signal["signal_id"]: signal})
+        self.finish(path)
+        starts = [0, 22050, 44100, 66150, len(samples) - 52920]
+        self.assertEqual(len(seen), len(starts))
+        for actual, start in zip(seen, starts, strict=True):
+            np.testing.assert_array_equal(actual, samples[start : start + 52920])
+        unit = banks.units(plan)[0]
+        array, _ = load_array(build.array_path(self.owner, unit), unit["identity"], self.sbudget())
+        expected = np.asarray(
+            [[1 + np.mean(x), 2 + np.max(x), 3 + np.std(x)] for x in seen], np.float32
+        )
+        np.testing.assert_array_equal(array, expected)
+
+    def test_same_dimension_incompatible_representation_is_refused_before_scoring(self):
+        path, _ = self.plan()
+        self.finish(path)
+        snapshot_path, _ = build.bank_snapshot(self.sbudget(), self.owner, path)
+        q = {
+            "record_hash": "q",
+            "identity": {"representation": {**self.desc, "checkpoint": "other"}},
+        }
+        with (
+            patch.object(index_queries, "load", return_value=({}, {}, q, np.ones((1, 3)))),
+            patch.object(
+                ranking, "distances", side_effect=AssertionError("incompatible features scored")
+            ),
+        ):
+            with self.assertRaisesRegex(InputError, "representations differ"):
+                ranking.step({"input": str(snapshot_path)}, self.sbudget(), self.owner)
+
+    def test_compact_winner_progress_resumes_and_rejects_corruption(self):
+        signals = {
+            s["signal_id"]: s
+            for s in [self.signal("resume-" + str(i), seconds=2.1 + i * 0.1) for i in range(5)]
+        }
+        path, _ = self.plan(signals)
+        self.finish(path)
+        bank_path, _ = build.bank_snapshot(self.sbudget(), self.owner, path)
+        q = {
+            "record_hash": "fixture-query",
+            "identity": {"representation": self.desc, "excluded_groups": []},
+            "examples": [
+                {
+                    "audio": {"duration_seconds": 1},
+                    "prepared": {
+                        "source": {"sha256": "other"},
+                        "technical_metadata": {"canonical_pcm": {"sha256": "other"}},
+                    },
+                }
+            ],
+        }
+        value = (
+            {"revision_id": "fixture-revision"},
+            {"materialization_id": "fixture-materialization"},
+            q,
+            np.asarray([[1, 2, 3]], np.float32),
+        )
+        with patch.object(index_queries, "load", return_value=value):
+            first = ranking.step({"input": str(bank_path)}, self.sbudget(), self.owner)
+            self.assertEqual(first["state"], "in_progress")
+            progress_path = next((self.owner.directory / "rank-progress").glob("*.json"))
+            progress = record(progress_path)
+            self.assertEqual(len(progress["winner_references"]), 4)
+            self.assertNotIn("best", progress)
+            ref = next(iter(progress["winner_references"].values()))
+            target = self.root / ref["path"]
+            original = target.read_bytes()
+            target.write_bytes(b"corrupt")
+            with self.assertRaises(InputError):
+                ranking.step({"input": str(bank_path)}, self.sbudget(), self.owner)
+            target.write_bytes(original)
+            final = ranking.step({"input": str(bank_path)}, self.sbudget(), self.owner)
+        result = record(self.root / final["execution"])
+        self.assertEqual(result["eligible_groups"], 5)
+        self.assertEqual(len(result["winners"]), 5)
+        self.assertEqual(record(self.owner.directory / "work.json")["counts"]["query_jobs"], 1)
+
+    def test_legacy_snapshot_references_44025_rows_below_metadata_limit_without_copy(self):
+        # Synthetic metadata graph: no catalogue/model/audio is consumed. This
+        # isolates serialization/reference behavior from the separately tested
+        # frozen compatibility proof and actual delivery equivalence.
+        from similar_sound_search.search.contracts import grid
+
+        native = self.signal()["original"]
+        base = self.root / "data/indexes/a06" / compatibility.INDEX
+        entries, windows = {}, 0
+        budget = self.sbudget()
+        cfg = {"window_milliseconds": 2400, "hop_milliseconds": 250}
+        for i in range(72):
+            key = f"fixture-{i:02d}"
+            n = 675 if i == 0 else 657 if i < 51 else 500
+            source = copy.deepcopy(native)
+            source["recording_id"] = key
+            a = source["source"]
+            a["sample_count"] = (n - 1) * 2000 + 19200
+            a["duration_seconds"] = a["sample_count"] / 8000
+            bounds = [list(v) for v in grid(a["sample_count"], 8000, cfg)]
+            self.assertEqual(len(bounds), n)
+            keys = []
+            for first in range(0, n, 512):
+                identity = {
+                    "fixture_only": True,
+                    "source": key,
+                    "bounds": bounds[first : first + 512],
+                    "dimension": 3,
+                }
+                shard = digest(identity)
+                write_record(
+                    base / "shards" / shard / "record.json",
+                    {
+                        "identity": identity,
+                        "shape": [len(identity["bounds"]), 3],
+                        "dtype": "float32",
+                        "sha256": "fixture-unread-array",
+                        "bytes": 128 + len(identity["bounds"]) * 12,
+                    },
+                    budget,
+                )
+                keys.append(shard)
+            write_record(
+                base / "entries" / (key + ".json"), {"source": source, "shards": keys}, budget
+            )
+            entries[key] = "complete"
+            windows += n
+        index = {
+            "entries": entries,
+            "index_id": compatibility.INDEX,
+            "record_hash": "synthetic-metadata-fixture",
+            "state": "complete",
+        }
+        receipt = self.owner.directory / "compatibility/fixture.json"
+        write_record(receipt, {"fixture_only": True}, budget)
+        cov = {
+            "windows": windows,
+            "indexed_unique_seconds": 1,
+            "processed_window_seconds": windows * 2.4,
+        }
+        with (
+            patch.object(compatibility, "snapshot", return_value=(index, self.desc, cfg, {})),
+            patch.object(compatibility, "validate_receipt"),
+            patch.object(reader, "legacy_coverage", return_value=cov),
+        ):
+            value = reader.legacy(budget, self.owner, receipt)
+            path = self.owner.indexes / "legacy" / (digest(value) + ".json")
+            self.owner.publish(budget, path, value, immutable=True)
+            expanded = reader.read_bank(budget, self.owner, path)
+        self.assertEqual(sum(u["array"]["shape"][0] for u in expanded["committed"]), 44025)
+        self.assertEqual(len(value["committed"]), 123)
+        self.assertLess(path.stat().st_size, 1024**2)
+        self.assertEqual(value["copied_features"], 0)
+        self.assertTrue(
+            all("identity" not in ref and "array" not in ref for ref in value["committed"])
+        )
 
     def test_semantic_features_ignore_display_and_unrelated_producer_changes(self):
         signal = self.signal()
@@ -184,7 +356,8 @@ class IndexCase(AudioCase):
         self.finish(path)
         calls = self.model.calls
         before = record(self.owner.directory / "work.json")["counts"]["read_audio_seconds"]
-        result = build.verify(self.sbudget(), self.owner, path, "full")
+        with patch.object(banks, "code_identity", return_value={"consumer-only": "changed"}):
+            result = build.step(self.sbudget(), self.owner, path, "full")
         self.assertEqual(result["new_windows"], 0)
         self.assertGreater(
             record(self.owner.directory / "work.json")["counts"]["read_audio_seconds"], before
@@ -236,6 +409,28 @@ class IndexCase(AudioCase):
         self.assertFalse((self.root / "data/runs/queries/work.json").exists())
         with self.assertRaisesRegex(InputError, "outside owned"):
             self.owner.publish(self.sbudget(), self.root / "data/runs/queries/wrong.json", {})
+
+    def test_cli_cannot_publish_c01_summary_over_historical_report(self):
+        from similar_sound_search.cli import main
+
+        target = self.root / "reports/local/b03/protected.json"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(b"historical report")
+        with redirect_stdout(io.StringIO()):
+            status = main(
+                [
+                    "--root",
+                    str(self.root),
+                    "--tier",
+                    "starter",
+                    "--report",
+                    str(target),
+                    "indexing",
+                    "known-answer",
+                ]
+            )
+        self.assertEqual(status, 1)
+        self.assertEqual(target.read_bytes(), b"historical report")
 
     def test_guided_generic_component_rejected_from_actual_method(self):
         with self.assertRaisesRegex(InputError, "query-dependent/guided"):
@@ -343,6 +538,17 @@ class IndexCase(AudioCase):
         self.assertTrue(geometry(self.sbudget(), self.owner, fixtures)["passed"])
         for relative in fixtures["plans"]:
             self.finish(self.root / relative)
+        encode = development.query_feature
+
+        def corrupt_silence(budget, owner, case, desc):
+            if case["stratum"] == "silence":
+                raise InputError("query bytes changed; not a valid silence control")
+            return encode(budget, owner, case, desc)
+
+        with patch.object(development, "query_feature", side_effect=corrupt_silence):
+            with self.assertRaisesRegex(InputError, "bytes changed"):
+                development.compare(self.sbudget(), self.owner, fixtures, self.desc)
+        self.assertFalse((self.owner.directory / "development/comparison.json").exists())
         result = development.compare(self.sbudget(), self.owner, fixtures, self.desc)
         self.assertEqual(result["summary"]["2400"]["alternate_cases"], 6)
         comparison = record(self.root / result["comparison"])
@@ -355,6 +561,10 @@ class IndexCase(AudioCase):
         counts = record(self.owner.directory / "work.json")["counts"]
         self.assertLess(counts["pilot_windows"], 1024)
         self.assertEqual(counts["comparison_batches"], 1)
+        self.assertEqual(
+            [result["summary"][str(d)]["full_event_support"] for d in (1200, 2400, 4800)],
+            [[0, 10], [5, 10], [10, 10]],
+        )
 
     def saved_query(self):
         from similar_sound_search.queries.context import Context as B03Context
@@ -439,7 +649,12 @@ class IndexCase(AudioCase):
         self.assertEqual(passages[0]["signal_bounds"], [0, 9600])
         bad = copy.deepcopy(snap)
         bad.pop("record_hash")
-        bad["committed"][0]["identity"]["bounds"].reverse()
+        ref = bad["committed"][0]
+        membership = record(self.root / ref["path"])
+        membership.pop("record_hash")
+        membership["identity"]["bounds"].reverse()
+        write_record(self.root / ref["path"], membership, self.sbudget())
+        ref["record_hash"] = record(self.root / ref["path"])["record_hash"]
         bad_path = self.owner.indexes / "banks" / (digest(bad) + ".json")
         write_record(bad_path, bad, self.sbudget())
         with self.assertRaisesRegex(InputError, "row order"):
@@ -462,7 +677,7 @@ class IndexCase(AudioCase):
         value["schema_version"] = "c01-legacy-reference-1"
         q = {
             "record_hash": "q" * 64,
-            "identity": {"excluded_groups": ["c01-family-excluded"]},
+            "identity": {"excluded_groups": ["c01-family-excluded"], "representation": self.desc},
             "examples": [
                 {
                     "audio": {"duration_seconds": 2},
@@ -578,7 +793,13 @@ class IndexCase(AudioCase):
             path, _ = self.plan(signals, duration=duration)
             self.finish(path)
             bank_path, bank_snapshot = build.bank_snapshot(self.sbudget(), self.owner, path)
-            refs.append({"record_hash": bank_snapshot["record_hash"], "kind": "original"})
+            refs.append(
+                {
+                    "record_hash": bank_snapshot["record_hash"],
+                    "kind": "original",
+                    "grid": {"window_milliseconds": duration, "hop_milliseconds": 500},
+                }
+            )
             with patch.object(
                 index_queries, "load", return_value=(revision, saved, q, features_array)
             ):
@@ -595,6 +816,19 @@ class IndexCase(AudioCase):
         )
         write_record(
             self.owner.directory / "development/comparison.json", {"summary": {}}, self.sbudget()
+        )
+        write_record(
+            self.owner.directory / "support-verification.json",
+            {
+                "passed": True,
+                "admission_unchanged": True,
+                "strict_full_2400ms": {},
+                "comparison_hash": record(self.owner.directory / "development/comparison.json")[
+                    "record_hash"
+                ],
+                "decision_hash": record(self.owner.directory / "admission.json")["record_hash"],
+            },
+            self.sbudget(),
         )
         with patch.object(index_queries, "load", return_value=(revision, saved, q, features_array)):
             result = report.build(self.sbudget(), self.owner)

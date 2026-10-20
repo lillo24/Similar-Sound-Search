@@ -79,10 +79,21 @@ def build(budget, owner):
         for v in executions
     ):
         raise InputError("C01 report: exact revision/materialization/source binding changed")
+    comparison = record(owner.directory / "development/comparison.json")
+    admission = record(owner.directory / "admission.json")
+    support = record(owner.directory / "support-verification.json")
+    if (
+        not support["passed"]
+        or not support["admission_unchanged"]
+        or support["comparison_hash"] != comparison["record_hash"]
+        or support["decision_hash"] != admission["record_hash"]
+    ):
+        raise InputError("C01 report: full-event support verification/decision changed")
     identity = {
         "version": "c01-playback-1",
         "snapshot_hash": snapshot["record_hash"],
         "executions": [v["record_hash"] for v in executions],
+        "support_verification_hash": support["record_hash"],
     }
     directory = owner.reports / ("index-" + digest(identity))
     items, clips = [], {}
@@ -139,11 +150,9 @@ def build(budget, owner):
     del samples
     for execution in executions:
         b = next(v for v in snapshot["banks"] if v["record_hash"] == execution["bank_hash"])
-        label = (
-            "Original legacy 2.4s / .25s"
-            if b["kind"] == "legacy-original"
-            else "Experimental additional-duration original"
-        )
+        cfg = b["grid"]
+        label = "Original legacy" if b["kind"] == "legacy-original" else "Experimental original"
+        label += f" {cfg['window_milliseconds'] / 1000:g}s / {cfg['hop_milliseconds'] / 1000:g}s"
         for rank, candidate in enumerate(execution["candidates"], 1):
             source = candidate["source"]
             samples = sources.load(budget, source, context=owner)
@@ -194,8 +203,16 @@ def build(budget, owner):
                 del component, original
     summary = {
         "snapshot": snapshot,
-        "admission": record(owner.directory / "admission.json"),
-        "development": record(owner.directory / "development/comparison.json")["summary"],
+        "admission": admission,
+        "development": {
+            k: {
+                **v,
+                "raw_available_source_support_including_short_file": v["full_event_support"],
+                "full_event_support": support["strict_full_2400ms"][k]["full_2400ms_support"],
+            }
+            for k, v in comparison["summary"].items()
+        },
+        "support_verification": support,
         "original_equivalence": [
             v["baseline_equivalence"] for v in executions if v.get("baseline_equivalence")
         ],

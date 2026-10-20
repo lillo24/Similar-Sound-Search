@@ -427,6 +427,8 @@ def main(argv=None):
         if not report_candidate.is_absolute():
             report_candidate = root / report_candidate
         report_candidate = contained(report_candidate, contained(root / "reports/local", root))
+        if args.command == "indexing":
+            report_candidate = contained(report_candidate, root / "reports/local/c01")
         if report_candidate.suffix.lower() != ".json":
             raise InputError("report: expected owned .json path under reports/local")
         report = report_candidate

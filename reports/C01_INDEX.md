@@ -1,8 +1,9 @@
 # C01 passage and component index
 
-Delivery checks are in progress. Original audio and pitch off remain defaults.
-The fixed development batch is closed; the admitted 4.8s/1s experimental original
-bank is being constructed. No C02 retrieval aggregation has been implemented.
+Feature construction is complete; delivery checks are in progress. Original audio
+and pitch off remain defaults. The admitted 4.8s/1s experimental original bank
+contains 10,914 windows / 123 shards across all 72 recordings. No C02 retrieval
+aggregation has been implemented.
 
 ## Declaration and producing versions
 
@@ -122,6 +123,23 @@ Final verification and delivery totals will be recorded below. A03's 72/120
 shortfall and unknown master offsets are preserved. A06 remains 44,025 rows /
 123 original shards, covering 11,152.101338 unique available-file seconds;
 105,660 overlapping encoded seconds are not unique catalogue duration.
+
+Feature production finished with zero failed units at 2,100.494 aggregate worker
+seconds / 168 workers. C01 totals at that boundary were 11,668 encoded windows,
+53,713.5 feature-audio seconds, 23,723.383719 source-read seconds and 28,866,560
+reserved feature bytes. The producing package matches `fb3f194` exactly.
+
+Before the delivery audit, the declared six-file consumer update was published:
+compact immutable references preserve the unchanged 1 MiB JSON limit; bank/query
+descriptors and frozen functions are checked; complete group-winner progress uses
+hashed records within the fixed metadata allowance; complete-build repeats perform
+the one charged validation pass. The strict geometry summary and silence-error
+boundary were corrected without rerunning the closed real batch. No feature
+identity, encoder, sample grid, native row mapper, distance or group-selection loop
+changed, as recorded by [integration](../manifests/indexing/consumer-integration.json)
+and [publication](../manifests/indexing/consumer-publication.json) proofs. The
+support verifier's exact producing bytes are retained locally and in Git's
+`b099e55` snapshot; later formatting does not replace its receipt.
 
 ## Validation, playback and C02 handoff
 

@@ -1,0 +1,27 @@
+{
+  "schema_version": "c01-consumer-publication-1",
+  "declaration_hash": "7f2a98f5ea3535dddc669e238f662d05a812cfcf8bb67129c68a27a62d6aaa5b",
+  "producer_commit": "fb3f194",
+  "changed_files": [
+    "cli.py",
+    "indexing/build.py",
+    "indexing/development.py",
+    "indexing/ranking.py",
+    "indexing/reader.py",
+    "indexing/report.py"
+  ],
+  "current_consumer_file_hashes": {
+    "cli.py": "95abb36dc8f54d547cdd909594ef7e70087d4aeb2206ddb021c32c9de43739d3",
+    "indexing/build.py": "573aa5772fcc2cedd76ced190e7564d7299ced774c0cea1ac0d9adccd1d4e97d",
+    "indexing/development.py": "4df7f100070d3ebef85098d85d56e9fe7b999eb9c6098c3fbb373cc90cf3634c",
+    "indexing/ranking.py": "972fdbbfc61e6101bf1751ac3bbbe00f38b9cfeef6e8544179fccaf4bd698b37",
+    "indexing/reader.py": "4236bc4ac1e99593803837df9418069aea55f4b4b4f400eb4571bf07ae75315d",
+    "indexing/report.py": "db24578445533f2d352678dbbcdd835ee2f393a0150e4457c19c847e025ae1d4"
+  },
+  "all_other_producer_files_unchanged": true,
+  "feature_windows_before_consumers": 11668,
+  "feature_audio_seconds_before_consumers": 53713.50000000003,
+  "no_failed_feature_units": true,
+  "fresh_legacy_delivery_audit_run": false,
+  "record_hash": "7ed8c7fd3a94cbca916224b8b072a6eca01ff4d87b6861c17399e85fd86efda2"
+}
