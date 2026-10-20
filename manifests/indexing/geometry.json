@@ -1,0 +1,1515 @@
+{
+  "schema_version": "c01-inspected-geometry-1",
+  "protocol_hash": "5ac75c9e12be3bd068d1f18c6030b37010d41f699988e25b764f12b106a6cb29",
+  "source_commit": "fb3f194",
+  "preflight_hash": "e6b118ba6cd8cf14122ad4b8283b091ad79877a4febcfee27175dde2c6d635f1",
+  "geometry_hash": "0abf099d8ff1d7a062532420f7aaeb524361697f7933319c01e0990eeb595d03",
+  "fixtures_hash": "285ba4c2e757100006005d4fe5feabf39972934e913787a3a1d374c36bc336a4",
+  "plans": {
+    "short": "data/indexes/c01/plans/7992b0d1cc665e3e6016d6c2f961e661a9fdd3a213856604e264fd7c8f321b48.json",
+    "long": "data/indexes/c01/plans/0ffe4616c8e8683b543d2e600b8f34d42affc9e6a494567fdf6e8871adbe386c.json"
+  },
+  "geometry": {
+    "short": {
+      "recordings": 72,
+      "windows": 22237,
+      "shards": 213,
+      "vector_bytes": 34156032,
+      "encoded_seconds": 26684.399999999998,
+      "full_decode_read_seconds": 35890.780090702945
+    },
+    "long": {
+      "recordings": 72,
+      "windows": 10914,
+      "shards": 123,
+      "vector_bytes": 16763904,
+      "encoded_seconds": 52387.2,
+      "full_decode_read_seconds": 20421.992335600906
+    },
+    "legacy": {
+      "windows": 44025,
+      "new_windows": 0,
+      "read_only": true
+    }
+  },
+  "memory": {
+    "available_commit_bytes": 1645096960,
+    "available_physical_bytes": 5736837120,
+    "total_commit_bytes": 68658520064,
+    "measurement": "Windows GlobalMemoryStatusEx; available commit is not installed RAM"
+  },
+  "largest_worker_allocation_estimate": 811486528,
+  "source_population": [
+    {
+      "recording_id": "005af5e2aaad323d8bbcbe9aabde36778bbf0768623addcc254eee355de7b005",
+      "source_record_hash": "44ffbfc17e05b20b0c7d963d2a404d9fedf3b0889eecb448988bb466a676ed14",
+      "group": "family-005af5e2aaad323d8bbcbe9aabde36778bbf0768623addcc254eee355de7b005",
+      "sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 3784299,
+        "sha256": "c253eabc86ea8fba4345bb688dd6f6f38c4b5c2d512951674cc5f344e14427a0"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 3784299,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "02e9c5776b23f68fc3ac3fdd3fbb36b0c497701c3a1a346e22f3ed76051b2064",
+      "source_record_hash": "2c90c930bfb85e093290ffd4a9810147f5fc7e55462ade4ce6dcff4b1458061c",
+      "group": "family-02e9c5776b23f68fc3ac3fdd3fbb36b0c497701c3a1a346e22f3ed76051b2064",
+      "sha256": "ce538669497b5f19e3fd3d66ce5d99c1147d4a2ef044bf73e39b2afd154450d4",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 6962400,
+        "sha256": "920aa41224ba2aac9aae13d1d14193845d3bd817cda60ec9604005493d3484a9"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 6962400,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "039823cc3b6d5cf3636d7e79c4e4249648c9ed007dd9654eeaaee1083ba17cc3",
+      "source_record_hash": "a353ba51809586412457ba029cad48c4df59258ff9dc60700c22cc07dffac50d",
+      "group": "family-039823cc3b6d5cf3636d7e79c4e4249648c9ed007dd9654eeaaee1083ba17cc3",
+      "sha256": "2f6e5907d8599cbe5ba7e8546531ebe3b15c308a35e88d7fc9d53107a4727199",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 4538013,
+        "sha256": "7b386fbda5127e153946eeb07c0362bd4bf43db87f26a52fd92b920a300ee60c"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 4538013,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "0588cb971f205c13a31cd0ce6e3f38d36fc7d3e0c304117370263d67f9a4db48",
+      "source_record_hash": "daf4e39c3cc0e09f47e7292493dbec5da4b7fa158d57e92a9e0ba41a145c48f4",
+      "group": "family-0588cb971f205c13a31cd0ce6e3f38d36fc7d3e0c304117370263d67f9a4db48",
+      "sha256": "e5b6c4fbe4096b5fa429c1b62b69f870d0cf9bd275677daab6090c848869ea7c",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7914480,
+        "sha256": "27dbf304d61abd173933aa0c9221031d6753d62d454ea76ebc9e8db24f24f8b4"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7914480,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "0c79da2bdbd98009c9269ff786259e2eb22d3264810c036bac7b63dc02a9db21",
+      "source_record_hash": "2d6d78c979343f036ac839686f38c5bd39ace1894632d14bd618c07523235e61",
+      "group": "family-0c79da2bdbd98009c9269ff786259e2eb22d3264810c036bac7b63dc02a9db21",
+      "sha256": "e580b05aa5bc17e061ca2c5e95e2b21c770fbc58eda31af6011c667604cc7492",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8625236,
+        "sha256": "37dc8c6ed67b608645ad0ff93313ec101171a6906b3b490da50c58ad07fa0359"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8625236,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "0dbaa617d1bfd02ab6c9439011638d47434432c899fbc8967d49635c58535fac",
+      "source_record_hash": "0fc44248260dc5e1b1eab29e882baae1380b0f069e303cd4c240fde423aabd52",
+      "group": "family-0dbaa617d1bfd02ab6c9439011638d47434432c899fbc8967d49635c58535fac",
+      "sha256": "77d69eca04b11a4dd38f4039860aff9e88a8952c43c450e4cb2bd1b3614ba47f",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7769079,
+        "sha256": "bb082f74f2f0b0fc6e6ec9a347d7485337c1eac01819c17d7fa210f844ec47fd"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7769079,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "121c534449b967209ad4db152d7a790e5fa8a44d7d090d04d9746be8aff741f5",
+      "source_record_hash": "a1ae1e794d0b0c00c97ba96190680de9645bdce9f30f286383b53708f9285c75",
+      "group": "family-121c534449b967209ad4db152d7a790e5fa8a44d7d090d04d9746be8aff741f5",
+      "sha256": "f81650e9b1e2ac6ec90b72c2c6b16baf2dfe4b95f445962b9ec4cf8b4ea8441b",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7362348,
+        "sha256": "b04865e65854323138e9d76c3e0bef1e3b54cf4bdd4d9690b4412f4a4a1dbaaf"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7362348,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "1a8d29e3ddcbc57b84a38c0649737a865ab1defe35ca7cf8f3cce586f6f660c6",
+      "source_record_hash": "9dfb66acf55a718fb20483db2d15a00f4441885fce5662fb224c85cb7b62113b",
+      "group": "family-1a8d29e3ddcbc57b84a38c0649737a865ab1defe35ca7cf8f3cce586f6f660c6",
+      "sha256": "b54e366700cbc43e9d010896b3a2632aebab8e22964db40e7bea495edd33657c",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8891183,
+        "sha256": "a87bc1ca994b2b4790ab33d4c2a8d5fd871dae576122761655607b06c32bea65"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8891183,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "1b3d6a5b7c0667388b800e7952e6f0b95c49ba7750346f9051f89dad6611b676",
+      "source_record_hash": "8120e3160820d116e30ab607edfc0482757e08dae9359f8e78b0e7d860e30c5f",
+      "group": "family-1b3d6a5b7c0667388b800e7952e6f0b95c49ba7750346f9051f89dad6611b676",
+      "sha256": "66595618b639b8c606dddf1eb823aa581b407079f89f8c2f4572a46d181ebf3e",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 4942140,
+        "sha256": "d4902eef9b2754d8c9af00b457100e95a671868604b4c74979f5a4e010447009"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 4942140,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "1cc1c34f9ee27490c4485a7ad72ccb0701b97d685418bb2dd1c4ae5a79bc0c48",
+      "source_record_hash": "e4df35e171ea605b225a70dbf3556efa7bab4202fa88c417399f91d54404e8c0",
+      "group": "family-1cc1c34f9ee27490c4485a7ad72ccb0701b97d685418bb2dd1c4ae5a79bc0c48",
+      "sha256": "7954cbe11b9b165f995127cea63659cc1d02b70d283ab6327ea1899bc61f1bd5",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 9677224,
+        "sha256": "a135061512eb5bcac3c9b801366160863b56d77e7a2e353a6d41b65caee1ccee"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 9677224,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "1f08c8edd806a2e087cf9028c6722688efa4bde031048b9c5162490ce4169049",
+      "source_record_hash": "5771102cfa3162e2013f9f12dddddb024a1a144060f3dde1f41f113a059232bd",
+      "group": "family-1f08c8edd806a2e087cf9028c6722688efa4bde031048b9c5162490ce4169049",
+      "sha256": "899417e32227a167566018d8543ff22dcdeaac48f7d0dbb2a97ce38a8a310934",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 5033115,
+        "sha256": "0e0686e82d6b3567bc90cbf3b942b774315f669e11ac4a68995f8bc9b27d0e1d"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 5033115,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+      "source_record_hash": "cba2f9a83b2a4c0f7489b84cff33a785879d6c0fe70c978e67868029774f315f",
+      "group": "family-241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+      "sha256": "cdab55ab31dd7ce6eae370b6ff1aee11e71994d2fd17ff2d41e9d1e5e82bb94b",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8556544,
+        "sha256": "a77c045dc5d632b9d738ba53274638e235f0927eafe35ea76c223bc14ee5dff9"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8556544,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "27d2dc70a3fbc3d5c4921d2ea0d6d2ca0f9812d540ee079e8554b7cb41a7ef90",
+      "source_record_hash": "a3fff9ef539393c7d16c532264782301c382b2e78593d29d477b0e9f5db31909",
+      "group": "family-27d2dc70a3fbc3d5c4921d2ea0d6d2ca0f9812d540ee079e8554b7cb41a7ef90",
+      "sha256": "8e4f370fb9cc39c62c58c3f1c771df90a804bc92f9b659a152f8debf28a4d1a3",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 6326069,
+        "sha256": "44ace69c49f82ba57d753f0d918e66e1529ccedd476cc2800d831a8a20b04a61"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 6326069,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "28ecc68d4b83b585ef781b12136a2ebf6809f00b820f311dc2ed44ce770144ab",
+      "source_record_hash": "f7ff8e905edeaef825a1b9f121707c81f59d4758273bde2db665e58f473012a8",
+      "group": "family-28ecc68d4b83b585ef781b12136a2ebf6809f00b820f311dc2ed44ce770144ab",
+      "sha256": "988a12676a8f73141f328459ba8e8d899a616db599f462e1c0e72430a9104e33",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 9446220,
+        "sha256": "69dec90b98eea9ea245ffb2e1b4c48be454a126c90ec1164c7cbb7b5183f2e8d"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 9446220,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+      "source_record_hash": "246c5b91a75605ef5e1b4e04aa89ab6c58656662d03eb36496375636da4940c9",
+      "group": "family-2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+      "sha256": "ae0c5d4dd2f6b2b2813041a37fbddf326e93315813e6452ab193ef5edbfc7311",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8539393,
+        "sha256": "8fa1935fee4b63262c4f25cc5e3ecdfcd40bf62f96959fcc97ecce5943124188"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8539393,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "2e8b8fc444042d0ee77627f2626da1111b150f262e3484b98204217a6390341e",
+      "source_record_hash": "3e2935074977cac46a4dcf71a7d451c9354a9f4549cb227c38ef532cff232129",
+      "group": "family-2e8b8fc444042d0ee77627f2626da1111b150f262e3484b98204217a6390341e",
+      "sha256": "c2517d0ba61df29c59ad44fa6deeb39254c74bb1fced9273997fff9b5f93d227",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 9502848,
+        "sha256": "6716a498ba399c6424887b9e75f1020b8ac5ea7109c37a5495dbf784de1a3aa3"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 9502848,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "2fe3a76023a434c5494e5b4addfc2ea539792baeddd8e868fd106f4f66641bc5",
+      "source_record_hash": "54260559408a23afb80ecf4bc95433ce6da15eed094bde8007a7276cecc1680e",
+      "group": "family-2fe3a76023a434c5494e5b4addfc2ea539792baeddd8e868fd106f4f66641bc5",
+      "sha256": "72a617e0e041e24feb4ad0d0f4e3e8b1a4faf7255b64caadf873ac28efdc2a3f",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 2806482,
+        "sha256": "08a3e7a1dce88de9483aa08d2e2705dd0e064d729f5e2fe27d1b1fbebf5cda94"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 2806482,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "3355fd70f984f0da0d9b1312f2bf93ffd9617b9225ef8bd187cc295b6c25ad37",
+      "source_record_hash": "b95ed59c0b3373157c940235aeee61027d353220d52380f2168cdd7875ac3db7",
+      "group": "family-3355fd70f984f0da0d9b1312f2bf93ffd9617b9225ef8bd187cc295b6c25ad37",
+      "sha256": "2538274c3053c6a433e52663fe0d8b2447ab64a2d40a8775a11067118090e40e",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 5190276,
+        "sha256": "e8101671d7d9390f6e95ec8ace042e721172fd117185ca4f24b18eecd57c0b9d"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 5190276,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "3388ebf4bded08922035a67f8323400e7ed9d4573488940591e53d37fbf6662d",
+      "source_record_hash": "b7f441d4045a82199a41f6dc0e4861c6c08e50f19b91368849bfe0e440cbcfee",
+      "group": "family-3388ebf4bded08922035a67f8323400e7ed9d4573488940591e53d37fbf6662d",
+      "sha256": "486ccc3fd3d073cf64d92d0864768c08887e9eba55acd4417cd61180d45000a3",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 6326069,
+        "sha256": "fc1b3b6b2d026a1b72624501c669dcfa303705669a2f0e39ffb92c485e861ba0"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 6326069,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "33df701d5b69d49d6af1d09d3bef4c108924b5049c4ce9354fb83de0d87873a1",
+      "source_record_hash": "518c27b0642dd48ad83d4311ebce50e47b2fe0e043e47b0183211e52f486443c",
+      "group": "family-33df701d5b69d49d6af1d09d3bef4c108924b5049c4ce9354fb83de0d87873a1",
+      "sha256": "df91759ad34701fee731081f162f538d69a2a721fd8971101f6075fd3d8e15b9",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 4097031,
+        "sha256": "3a1107db1e960e35939440fc86f1a7da2bf5b43bc2f248d0036c064b9434f679"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 4097031,
+      "basis": "excerpt",
+      "master_offset": null
+    },
+    {
+      "recording_id": "3494a3859d35a5c0b01498a517a59b7dbfc8625724248e6e5d573683410edfb9",
+      "source_record_hash": "af47d2e0b1436de657b7352c6c96cfbf9d17d20ff92f9c29815d4a82592d86c6",
+      "group": "family-3494a3859d35a5c0b01498a517a59b7dbfc8625724248e6e5d573683410edfb9",
+      "sha256": "d5d13421aa60d29b66c7c40327c40e56609c3d49ba2ddc214623dfc358f49ef5",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 3262221,
+        "sha256": "f1d1204d86428b13a366f728f62d9c40552b0497cb8718dab109c7141b780681"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 3262221,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "393ad07ff3146a5470ec1886348f40c2dbf25072599c2cadb432078656bf13af",
+      "source_record_hash": "c5269172b4e1f0643dabb870bc73bc9a9161dbb2cb8c09e86df68411acfb2cd0",
+      "group": "family-393ad07ff3146a5470ec1886348f40c2dbf25072599c2cadb432078656bf13af",
+      "sha256": "dd8135be8bdf78cacbabc1af745265cbdb58ca9827dfd39c200e27b6dcf92495",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8498797,
+        "sha256": "ad8bb81c765013fa1614f1018d69afc2b41a270aa0099e5973370188d8bce82d"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8498797,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "3a78813a1e19b86de37355abf98330c55bdd30b7a97d81be942aa38f6f71083b",
+      "source_record_hash": "2bdc8babdc47ee4c080ab29cfed8939f9f4fa7c333395e4090111c745311d686",
+      "group": "family-3a78813a1e19b86de37355abf98330c55bdd30b7a97d81be942aa38f6f71083b",
+      "sha256": "4db83a177362764ae807b870dc94063ee45db2bc910f5758320176e3bda2754a",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7027188,
+        "sha256": "26d5c7f9cca6e15b57e69f6f6feaef076e298134bd3c0af195bb7ee399da04de"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7027188,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772",
+      "source_record_hash": "146eb27f8160fb8d10481feeacb3799ba91fac6b42f75b22bbc8c9234d6720ac",
+      "group": "family-3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772",
+      "sha256": "242c11397299d2c5c2e92a768155247a6a9c875cbd5fdb10e3751ead9374970e",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 9199090,
+        "sha256": "5e62c2cd9caa7aef710b18a3dc435c723e0d4a2950d5445f27139362b84d5275"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 9199090,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+      "source_record_hash": "4c9fa11e64824f7881885186ee65fbbe081373e1e765f4c8b14a398798ff13bc",
+      "group": "family-3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+      "sha256": "af70901c3314f7b2ba988721a76d8259fcb9edd9435d5a19ca57111f8c66ad43",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7697455,
+        "sha256": "80261a585e48a04654d86693f3dc224956c74d89dc18ec7295cb5b496a86304d"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7697455,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "3e36fb2358a9901a1b16fcee24b5e67f2b32d81300506d2cd93b8485e7a6f2c3",
+      "source_record_hash": "408473975abdd2c672f0839578f732398a173edab5dc9716c4ac4551c18963d2",
+      "group": "family-3e36fb2358a9901a1b16fcee24b5e67f2b32d81300506d2cd93b8485e7a6f2c3",
+      "sha256": "e3187b729f1de4983e73a3eae046000061e233705af79a9c78159452da9d8d71",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 5230080,
+        "sha256": "7edbaf4b6e3f60cfb1d91ae220ed93cfecd67fcc6298bded2a0cf36743904aa7"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 5230080,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+      "source_record_hash": "bba50585dfe569c4f49eb7cbc429710d710ea6700ae936facda70e83b377a292",
+      "group": "family-41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+      "sha256": "590dc522fdbc297b6ddb14876adcf74519ff05891ed6ff5b58e6cc0ac1426e13",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7169797,
+        "sha256": "b5475b8cc4c948a8d7bb0bcb1b7ec57bc14e36daaa7b5033598c287254b3dca5"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7169797,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "44f01f4340cb6eb0741c54e2ffb2118591fae4c7d70031ce8d3de2c532e14eb2",
+      "source_record_hash": "910b589cd0dd86f269325238b2eac903ff0223e780cdc2aae0531888b59092ad",
+      "group": "family-44f01f4340cb6eb0741c54e2ffb2118591fae4c7d70031ce8d3de2c532e14eb2",
+      "sha256": "17f43b656a405e4e9da5bbd564d603d415cd1434cffeaba29fcf531399011b44",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 6769350,
+        "sha256": "0625714a47ae01dfc661f3e5b6cf93eb891cfac737b2795d746fdb71baaa74cc"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 6769350,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "4b7f20b58f7362871022d59fa36a197e8d1e234cac6f99eaefe05de2d11b9735",
+      "source_record_hash": "72793e83117a23d1eabdd7e8b7795ca58bd180c871a2d4f79e2e4562964db9c5",
+      "group": "family-4b7f20b58f7362871022d59fa36a197e8d1e234cac6f99eaefe05de2d11b9735",
+      "sha256": "099dc879031e60d212519486761cac015f601570403b1999f69e9b406c3b885a",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8864687,
+        "sha256": "411bc93ab46ee2df76c46823fe00236b5f28d90c45379d4a57e666cf37ea82ee"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8864687,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "5b31c43ecd7091e858e9bce40617028d3321212c3f5a47fb476cc48283390c3c",
+      "source_record_hash": "f7950e3ef03e3ffd7bc8f2c05f6f725321060e4e59988b6e0db937e249aa44ec",
+      "group": "family-5b31c43ecd7091e858e9bce40617028d3321212c3f5a47fb476cc48283390c3c",
+      "sha256": "6c2ec2b2bb37c870d59370bf4a6c61f59e5425d8e728f29265310e87cd2237ae",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 5641344,
+        "sha256": "38a5a2c4ff0b2c8c36399642c57ea0ff99e65614b613994849a65dae32a66e54"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 5641344,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "5cc7ab03e4937da3b6bf0a80cf8108bea24195cc1df8407ded6b2ef162876add",
+      "source_record_hash": "0b2273ca03449a158d4460d84356f488a07e24f6f98b88d9d273393555a67224",
+      "group": "family-5cc7ab03e4937da3b6bf0a80cf8108bea24195cc1df8407ded6b2ef162876add",
+      "sha256": "eab86d48f62188528e2faedc2ff549d6e312fb4781750de1c1d8f4aa292f1d94",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 5995008,
+        "sha256": "ddf33b275dcf46c8da49c798d94a3a05f1bf525d3666858528ed1edde3b7a9c8"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 5995008,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "60a24b53695795b6fff6a74de81502a3de9f6191f08c650cc9a05ea3de47b11d",
+      "source_record_hash": "d03244c64bc8a18db1de7ec37e9cd0307d23b60993e62c5fad5bc4e9e4673ab6",
+      "group": "family-60a24b53695795b6fff6a74de81502a3de9f6191f08c650cc9a05ea3de47b11d",
+      "sha256": "317e3ad618ff32c9636c2edbfea06fdff2b409c19998f6a528bb42fffdcdcdc0",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8216081,
+        "sha256": "bedfd21d55bb6c25329768e4ae9696e4dcc32d052acf08473827aa23c50446ca"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8216081,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "64ccee3db2be1f934173f550652c7c8c00b4a89bfa2ca2c3aa9b0366b0a0762b",
+      "source_record_hash": "ee345eba74545e17fe7a5da0afdcd140fc9c10463a609adf09bc933107415ec3",
+      "group": "family-64ccee3db2be1f934173f550652c7c8c00b4a89bfa2ca2c3aa9b0366b0a0762b",
+      "sha256": "9f8f9010349e6c72d613ecf7e2601d6e5c6e496c8baad74fd964bcd5e2fa47bd",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8211594,
+        "sha256": "faa63c4766ab9cf3014e456b5ca4b1e72cb4c22270b317691a250be6b6335a7d"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8211594,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "683c05c202edd603cff6d2fb0acd98bc1d138c1a5e8144d5786864e1d5460d8c",
+      "source_record_hash": "d5c98cc23d9b6c132026bf727a510e9f08aa71d441beb4980e4a8a32c6ccfdb0",
+      "group": "family-683c05c202edd603cff6d2fb0acd98bc1d138c1a5e8144d5786864e1d5460d8c",
+      "sha256": "c314ea0bb6016cffe85e00c380df2c1bff8c7075939637a4a0e081a06926c966",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8316000,
+        "sha256": "eb072e0e302deab9b517eaab36dbb3c03bf0adefb74582577ec24e21736c7d45"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8316000,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "7091eb9639103834665ab5b9610d0ba27c37f746266ca7c4864eb9d1b8ef7881",
+      "source_record_hash": "b78e16b1df62e130d12d43900a0659d2f0409cc46a98aee96a04fa49de666aa9",
+      "group": "family-7091eb9639103834665ab5b9610d0ba27c37f746266ca7c4864eb9d1b8ef7881",
+      "sha256": "c7f5ae75902150b4e220e4dafd6f7923a3b07a43e09fa69d1f1163a6b6f57db8",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 9996000,
+        "sha256": "f644e9f6c2a781f61da5a455f59b43906fa19cf5e7f8aa08ba6574dea4d609a7"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 9996000,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+      "source_record_hash": "cf954e7fdb1caf6b49b1d65a449c3d81c88e9376c70e230ae44295ea7c22f47c",
+      "group": "family-7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+      "sha256": "d184ac95c425e32e71e39a402488c87edb268f51237fdd89148701f5452802c7",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 6316304,
+        "sha256": "0596f04435aa9d30f6fc1b419a4d52b912f5b0effb0e37992e9f23c7ad330265"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 6316304,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "72c4bd15df2838cb283a619991aa5f00b3b6a859626aea942b7336935c6ba4ec",
+      "source_record_hash": "68190250968b844b46ef3507d466a1066ff6e525435e882169e8dd856f5daa7b",
+      "group": "family-72c4bd15df2838cb283a619991aa5f00b3b6a859626aea942b7336935c6ba4ec",
+      "sha256": "58c3b58539155ad8ef4c852d0e8535c6a879afff37e2551a6108386542de9cfb",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 6868968,
+        "sha256": "1858f148f361b5acdff5faf33bedf3d4b81d81c4b096269733fc3f043321f93d"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 6868968,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "7c6a1a08ed5671c3afb22bad523771b5008f8356712b7b013b93585199a912f5",
+      "source_record_hash": "0e1b9827b2195d352b562d1467459d8954c32f6b8cc1debd00e70cb5f028c104",
+      "group": "family-7c6a1a08ed5671c3afb22bad523771b5008f8356712b7b013b93585199a912f5",
+      "sha256": "9ed9d30ddc34adf0973ba372cfd31e7d1dd8b2aa9f26eda9bf1b51b3becded13",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 4580705,
+        "sha256": "716e102b9aafef4c92c384fbf0be9c9b19cc9bc83d60cbf9778a3d3926f00f69"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 4580705,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "8d7a34191d0f2e1350fbca3fa45519e3fb89b2fe008fbdf2a81618f4fc57a83a",
+      "source_record_hash": "885140fdf2efe1e0a385f6cf842b5b3f08939e503c432238a3bb5a3c55d43173",
+      "group": "family-8d7a34191d0f2e1350fbca3fa45519e3fb89b2fe008fbdf2a81618f4fc57a83a",
+      "sha256": "a92ae7dcb4aa229b7931804c2be692cf614fd8a97a277d27f28efffe70690900",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 9332593,
+        "sha256": "5752e27b75570a92924f44c98e34e70316220ae8f3389acedfc96db7800c15ab"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 9332593,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "8e68a5244bc162768dba7954d1071dc90d99201e5ef4101b293a97a13be9cbb1",
+      "source_record_hash": "00c01fb83b7087e7bc497ae40819aaec45db50b5a70dd63a159e7af1ba00716a",
+      "group": "family-8e68a5244bc162768dba7954d1071dc90d99201e5ef4101b293a97a13be9cbb1",
+      "sha256": "522b786c6667f81042c44abf8f01ccf688b86cfbb44d6b623cefe3cc501c2da9",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 2814894,
+        "sha256": "309d532ae54956166ff9059448afd20bfa0d4aec06aa6281d7b8e681fcb32045"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 2814894,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "8fa52d26be8ec05dfe0c4f37808b35014c0f7e651c1712549dccf3a2a6ea9291",
+      "source_record_hash": "44ba0fccbdbdd8e4470a7e4e5480834d1e7485e2a7dea12d5fc4e407ab1357b3",
+      "group": "family-8fa52d26be8ec05dfe0c4f37808b35014c0f7e651c1712549dccf3a2a6ea9291",
+      "sha256": "d083aee198bdd70ee1c1fc6c6cfa28f87e1ceaf6427b2941313fbcc01eb733ce",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7037235,
+        "sha256": "5de04b26d8b617a24a16752a1d1a3865c6bce5ff4cd1b5414adc37a8d7c7e2bb"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7037235,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "920237237b9dde0f1c2671fe823646ac8236a9ac76e45231b0e1c4ff59e11a43",
+      "source_record_hash": "450d172711416dcc941412ec91ff09b46c0e7a40d472ec9ba883e482f0123668",
+      "group": "family-920237237b9dde0f1c2671fe823646ac8236a9ac76e45231b0e1c4ff59e11a43",
+      "sha256": "06e212095eb2a007f10f1789de0c1f362f59d0a7f47f90a3c5f47fae7e49bf86",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7938000,
+        "sha256": "9cd80a990e9c49b8212eb1f8a9128734196a14f1a5ad03b56c820ff7c6658a76"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7938000,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+      "source_record_hash": "a1a0d7b862fec785bb0da3786bfeb968020e69e664153d5c24fc8ec806325dba",
+      "group": "family-9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+      "sha256": "e668d6f45c56471e9e60f3035902bc662b4b2485e34edc9a7e52c0fbbc2fee0e",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7532780,
+        "sha256": "3c106dc67d5d63d7c514ee55c904ae577ab6814b76e163f9a9b8f168e0d02394"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7532780,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "9f741ebceb59cda55898246265c06586a08c948bc8331cbd6beb26005209b2d3",
+      "source_record_hash": "492aa35d9e6f19a6502a9853a9b4c23937bb08f275dbaf38a5ce5b3a367e9e52",
+      "group": "family-9f741ebceb59cda55898246265c06586a08c948bc8331cbd6beb26005209b2d3",
+      "sha256": "204f055db50f3b7aaef66ba88b2839e2918931dbe42c15b9e6f0fc254214d716",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8192660,
+        "sha256": "612f0885bb2f7dc8b04025ae30f071adb8402bbf5170d75cc3d3f8f31c12b18b"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8192660,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "a6d93ab7d0430a712651354694cb03c54775f46e80cdb7f4d445147fbfa5c6f7",
+      "source_record_hash": "9d25eeeae4fd5268c2fbde737fd34fa0c0c0a0b5a5e4e17ee9d1521fd9450145",
+      "group": "family-a6d93ab7d0430a712651354694cb03c54775f46e80cdb7f4d445147fbfa5c6f7",
+      "sha256": "b6728167f5f0c764fb646ed9c64cf97c46967506e37e94b43c5d72f4d3c65ff8",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 6167216,
+        "sha256": "52c1c356dc1b06ffbbc56ef18880077f7619519c78939e420ba6bd95ea9db7da"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 6167216,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "aba0e552a3154b83e48ceb66c970cf49b785e8694990aa5ce5ab5f80096f7fef",
+      "source_record_hash": "768e341716d595cd85b1b150f6d2d71871c389a1fa324a7f561af3feaabf4174",
+      "group": "family-aba0e552a3154b83e48ceb66c970cf49b785e8694990aa5ce5ab5f80096f7fef",
+      "sha256": "f02c2b7b9eaa1023469f4aafd826c4962c9dc90c50e1870d1ac3fd00b8d2eea6",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 3351600,
+        "sha256": "96f12cd1c8b878d0d4d9684e150335e47be691961309cb31f06dc8b7545bed8f"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 3351600,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "ae6f7c6adc0da97ef75a99209803a27d8ba8ff5cf56b8d5f53cbf0ac4313710d",
+      "source_record_hash": "fc1b8f22c17fa0c4bfd861a3023aac60c339c4fde712c7cdc33748351fcca354",
+      "group": "family-ae6f7c6adc0da97ef75a99209803a27d8ba8ff5cf56b8d5f53cbf0ac4313710d",
+      "sha256": "00fd92c9b2f82883f4bc8de8d09859c083ec143298add4aa62912c08e3c8f480",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 5935195,
+        "sha256": "6629d0e99677b7d5d76abaf21a49acb946fb52f18b24c62af7cc05875e6a5506"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 5935195,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "b29770ad6531afee86fe13e34ddb8f2ffbf39ac2a0d250f41493b2c4133cb5df",
+      "source_record_hash": "107be9e6387f839a9754941ddcaf6e815bf41c39dd991ad21727d3cdfa3189df",
+      "group": "family-b29770ad6531afee86fe13e34ddb8f2ffbf39ac2a0d250f41493b2c4133cb5df",
+      "sha256": "8613dfaefb6d8684ed5f633d6fdf31d9ca51e3fb1c87e57df2c230f2b59ea368",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8665929,
+        "sha256": "d78336869f0ae2dd1a062634549ae6b9aa88d9cbe82e31fd4adbbbab93649168"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8665929,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "b44be5083a24286fc4fbb8bcabebc523b90065a8ce031a8cf2012dc94c7d47f9",
+      "source_record_hash": "05524fc834ce46c6f0b140a17b4590bdef65adad580ae27ce7d1544e7985520b",
+      "group": "family-b44be5083a24286fc4fbb8bcabebc523b90065a8ce031a8cf2012dc94c7d47f9",
+      "sha256": "d46ccb913402bcb072b5564a70506032e933b0bee103e51064f2c35bddd3e3c2",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7403904,
+        "sha256": "c8d52755dcb250b93381b2fd281a773a937892f67cf5cdaa9d6583e3901d1267"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7403904,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "b5bab87d4842195af281f745ed1572f2febf1772bc218af52dc9fc6735eb5b26",
+      "source_record_hash": "f4eb38bb3b2c5ffa67c10316f967a07471f7f76101839adc3db65eba9a65b877",
+      "group": "family-b5bab87d4842195af281f745ed1572f2febf1772bc218af52dc9fc6735eb5b26",
+      "sha256": "a680c2e403d3be42a1d4301b4a15985fbbc02b261fe62ce26037182fae31ead7",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 6240150,
+        "sha256": "2b238070e9b71c003e25296e103e10c0b45bdc1af560fa6b2637697933563df5"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 6240150,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "b9db0ac63e20c9ba46f7667424d962366024edc06ad6abd58f0b96bac0c4359d",
+      "source_record_hash": "d3d2624a181e5d949f7b26865b71fd64145c0a9a974074dde8e0f13795eebbcf",
+      "group": "family-b9db0ac63e20c9ba46f7667424d962366024edc06ad6abd58f0b96bac0c4359d",
+      "sha256": "3257ff636d8707dac7edf7b801ff68e6cbb226b2c1ad41ec5e2e28334b9b8d29",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 1858441,
+        "sha256": "02821b2e14f8ee42e349f1e02e4455204aa2d0d41669aa45205636ef134f3891"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 1858441,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "c06854cf82ae3a189aee93b0980ff54666218a98478e935e610f3ba31fd6092b",
+      "source_record_hash": "4ee0218e677eb742da302a4adfbe9f6b2137c249cada833697f2343d953fcdf5",
+      "group": "family-c06854cf82ae3a189aee93b0980ff54666218a98478e935e610f3ba31fd6092b",
+      "sha256": "fb6a3e4e66d01465258e0e005f896c5444a94ca2943d70b48489ba9ffa8398e5",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 2992752,
+        "sha256": "fb4d2124b442b5575bf76e7411d70f047c5c91190f87eb3f2c428d2086606408"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 2992752,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "c173af3aeeeb03c98dad92598314424661e79c3971fe8769bc592bc7f8d5ab80",
+      "source_record_hash": "899299bde140f3e2376706b6d99ded8f9fdacbb11386bab73dd3f1deb56f5cf5",
+      "group": "family-c173af3aeeeb03c98dad92598314424661e79c3971fe8769bc592bc7f8d5ab80",
+      "sha256": "c9ccee9a2a019ab4bf94b90e225dde149165d38891680cc204c084c9286c6598",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7308001,
+        "sha256": "81f3e825a14876c4685939339712f674416ebcfc61d91c8e24edc10d5a8f507f"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7308001,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "c22be1356a4d0bbed5a1b728f53947f558899d2d45bbd0d343d10f4bdc1ff417",
+      "source_record_hash": "d59d7f6b77f1d5a8e30c029d06d6ae2beb33e3dc95464ac53f22eb90b47c3d61",
+      "group": "family-c22be1356a4d0bbed5a1b728f53947f558899d2d45bbd0d343d10f4bdc1ff417",
+      "sha256": "6b161b51b585af728a9fae60ea941828e9bf1f7f7911faff96c71088629d4144",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 3945572,
+        "sha256": "5006e82ba652a99aefe03aa51bb011307cd8b48d926bd774f95d5784d2bca565"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 3945572,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+      "source_record_hash": "d8fa0f8d54fa22bd899c7884f8771e52b2b9c4d39b82ae387eebdc8f77cbb0cf",
+      "group": "family-c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+      "sha256": "d2966565777d51560f28bca90b98b788d295644470ce3493b5dee4d80ad23916",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8252975,
+        "sha256": "ecd7f09eb1ff3605a11760f97676fe22e342b9162e66d50cf97eea0a9eaf0091"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8252975,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "c5ae126f76a53b74eee0b5d64fbcc247b1869c028435e8bca74a4731066f9d30",
+      "source_record_hash": "c32a2b979c1a99b066761212ca224aaf8c968700dc270e72eefe36b46102a315",
+      "group": "family-c5ae126f76a53b74eee0b5d64fbcc247b1869c028435e8bca74a4731066f9d30",
+      "sha256": "f25e91e3fa27db595cb9e1620db4146f40d1ccab8e2af6c0978f18ebd4ae6b30",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8056736,
+        "sha256": "1dbbe52e0b8dd7eeff1a50b73c3c26dfc69542be5ea098fb6b1903db6d422d02"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8056736,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "c66a0df3555eb5bcb7a269348068c186b97d3c40c2cd13b4fe6d4ffcc2774418",
+      "source_record_hash": "a9265be535562fbb3873510affa7a055b67cda8ee1d6e6a38fefdd924b4a0677",
+      "group": "family-c66a0df3555eb5bcb7a269348068c186b97d3c40c2cd13b4fe6d4ffcc2774418",
+      "sha256": "e73521dbd35f3eead58541d72157666a1cd7b51786e72315808077dd2581a30b",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8824367,
+        "sha256": "70835ce26b3d850bcc90618fe07046ec2334487b0342a6243f449d7f04299fde"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8824367,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "c8126c0df2ff0aedd94619f5490f312a1bf289d87e954ecfa54c284123b55493",
+      "source_record_hash": "f77d1038197d1775ce26b410ab4d5575e46f71ee7d21d2e71e72a88ea4ed9700",
+      "group": "family-c8126c0df2ff0aedd94619f5490f312a1bf289d87e954ecfa54c284123b55493",
+      "sha256": "afdebd73cbc4bd1248b8ddf6335ee2c5e33375e0b925dd7a0b8de661a658f239",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 1752677,
+        "sha256": "e7b95711833c1d814739532fcda64b3d3b05a8bf46f30eb582db69126fe128f9"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 1752677,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "c9c3f4e73cda63f4f71d17961ec0cd079fe3e4ade12d74197ec3454a9ddf370e",
+      "source_record_hash": "262c1b07846f553b9872af07fe76ad3972aab7354292e7a9b34b8945272e9d9a",
+      "group": "family-c9c3f4e73cda63f4f71d17961ec0cd079fe3e4ade12d74197ec3454a9ddf370e",
+      "sha256": "bb3513304d0a787de62dca8d5933663008c9bd5509f2b483af81016b3d871259",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 7274363,
+        "sha256": "2e9e1965eff9edb4fc11f88e0fb5fd3ed8990ae052c184d5a225dba549da47eb"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 7274363,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "d09cb9d597a4ae2361864ddc901d47e5fe095c7deb510d32a4eed923c77ff715",
+      "source_record_hash": "2ae5e85c350e5541037d08dfb0aee7e7851ef573fca5123f6c23cb7eb229dd65",
+      "group": "family-d09cb9d597a4ae2361864ddc901d47e5fe095c7deb510d32a4eed923c77ff715",
+      "sha256": "553b1d643b5719d86308d188c5cd03212527c96d117e720002295971bff2c60f",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 4753474,
+        "sha256": "989a7b89b4b5761b3f3b02426cd4d714c879454c8413e871c4caad530d1d7923"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 4753474,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "d17a47c2d03801a25b86f26ba6e326f9652bdf41d52c33fbf4806d0b33009711",
+      "source_record_hash": "f0f24ea5b8915448ad331360e79dab373778dd20a0c7696dabd8b125e06d02c1",
+      "group": "family-d17a47c2d03801a25b86f26ba6e326f9652bdf41d52c33fbf4806d0b33009711",
+      "sha256": "4a47bc3da42b3e28afb2e43d453d2a20fc43aaa5bf1f267de1f4f1c61bf644a5",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 4063100,
+        "sha256": "9f783ffa621a222dbb20b559bb492cd47a837f34283c68032db1156b0df1f8a6"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 4063100,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "d428b733ac5d06db4b6fa926ea2b096773292d0f78df710374eaec8aa3b93cde",
+      "source_record_hash": "0491015cbced5aba5fcf854792bf40b660731e1bdaef66b621d75152c1cf7af7",
+      "group": "family-d428b733ac5d06db4b6fa926ea2b096773292d0f78df710374eaec8aa3b93cde",
+      "sha256": "63622876303879187a818e21aaaf8bb88e08f6f5c220a428976c384c2823437d",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 10044216,
+        "sha256": "65651d34caa8e8e73f284f7654dfb65921f40132584f2d1e9a82465769e1ee14"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 10044216,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "d86405e259164cde9b3b70a62359cb398a3e1105e70f3f38910081f9fd43840e",
+      "source_record_hash": "43e015a867979044fb4912913d1fe171cdba74bc33a7bcdac1b10d611d08a27e",
+      "group": "family-d86405e259164cde9b3b70a62359cb398a3e1105e70f3f38910081f9fd43840e",
+      "sha256": "86c36d981b0ffc53b1595b882a183a278c80311dc12a459d14b95487b57fc918",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8566531,
+        "sha256": "b9067edb54ba56d589bc2a5dea26caa232bb9d2c440df2e380b86463d384b03d"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8566531,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "def2cbda8a412cd1e4e491190ce33fab60211ec3cfc83b5b38a0bbe3fda7f17a",
+      "source_record_hash": "45e8e0d346c638253a553a61ac0183672395ad1344688f933ce85c73034b05b5",
+      "group": "family-def2cbda8a412cd1e4e491190ce33fab60211ec3cfc83b5b38a0bbe3fda7f17a",
+      "sha256": "b3d1cfbb0d0acb50cfeac9b055183993e4188f01f1d96585be90ef07aa58b4d0",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8537760,
+        "sha256": "10e131c0735a931f7bdb76bd1d807dc0d16fd8cc8b0a4f22f7ad796946456ce0"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8537760,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+      "source_record_hash": "33ad21f11b04ede4f2347df6421b0269fef31e94204c7bb180d75c465f1d931e",
+      "group": "family-e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+      "sha256": "40c12cc9ceb9861c296b4eb5961fe77581af6eb2b9370be21a66c596be2bb70f",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 9124810,
+        "sha256": "e408f41728faaf82bed45d84f184799458947db86e5e1ed2e05eaed90341c1c0"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 9124810,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "e7f5d1f3739eecb3000c2d18f31eaa4acc9cf8450004c4ae2871af711e495b81",
+      "source_record_hash": "76f12b1bdccd841d64f61ad5c97788e2090387afad61ab2f1eb05d96628eb818",
+      "group": "family-e7f5d1f3739eecb3000c2d18f31eaa4acc9cf8450004c4ae2871af711e495b81",
+      "sha256": "14e8711a421c60837bbf9ed2628e5c61cba5a13fbeb831f8296cecbbbeb5ce6f",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 6616423,
+        "sha256": "1b88f6389188403221dd787204ecb2f28611e6550acfe7ae18bf03e2b9e4e315"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 6616423,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "ebf46fa8340b6982260aa8c13ac60b84dd1967fa0c9463b8fa1a215f94b856d3",
+      "source_record_hash": "cc09a7812de9d984c2767aed06dcada6cd76407f02ddeca3d727d2b6e77afebd",
+      "group": "family-ebf46fa8340b6982260aa8c13ac60b84dd1967fa0c9463b8fa1a215f94b856d3",
+      "sha256": "43e39fd12641f87cc36b7ffd5f8c8d567cd752781936d2b674abffeb0a70257b",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 9496220,
+        "sha256": "67def0bd2d3fe6e150d38114311c2315b1f6ca1f7286c886ce102c776d42340b"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 9496220,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "f25bc34d7b820ccc0e28556d564b8ef2cf2b2bd0f11547456c91ea760abf5a6a",
+      "source_record_hash": "edc7c3eb6120e6d5dbabad263e17d9fa246b416d2a87d4f66fd7f2646c835a70",
+      "group": "family-f25bc34d7b820ccc0e28556d564b8ef2cf2b2bd0f11547456c91ea760abf5a6a",
+      "sha256": "a58bf3a17a80f0b71423a47c59d0ebb2d74087083c2b20dea5b812469efb3f7a",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 9313420,
+        "sha256": "2f4fb87e50e34b4726f41668feca112c5b1dd32a6895a7546997389109a6fac5"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 9313420,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "f3fe3abd9acb98819c7b84991cc2868d3487ec48592d28c7563dec9cb565566e",
+      "source_record_hash": "61f781005cf75c9a558ef10cbbc0c8a9cd6ce937849ed9d7dcec090640aadb79",
+      "group": "family-f3fe3abd9acb98819c7b84991cc2868d3487ec48592d28c7563dec9cb565566e",
+      "sha256": "dce282180cee21d932e56638cfb3a49952c3b925fbfa0d541e872e017c1bd776",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 4356480,
+        "sha256": "d2ea846963a963788f9b30c0ca81bab265904803e57cd654763fe713bbebd233"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 4356480,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+      "source_record_hash": "f083c13b7991140770e87b43c1aa884c3436515189f9b9296b9795763082c500",
+      "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+      "sha256": "580a091c119c0fd6b60fd8cd58422393d97bb87d1b7402282114aeea5d73a47a",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 8578612,
+        "sha256": "dd40ac93b259024053ecc0b53e410031845e720632ada0146a8f7bc81c7cd3fe"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 8578612,
+      "basis": "file",
+      "master_offset": null
+    },
+    {
+      "recording_id": "fa68fdeeaa53f12e8c91ca3ca2784236babbedee0aec4f6639926da64fd3bb0a",
+      "source_record_hash": "3546baacc5ace38b57b539750705eef4ede35f3b2f82f13a1f7dece32045d30b",
+      "group": "family-fa68fdeeaa53f12e8c91ca3ca2784236babbedee0aec4f6639926da64fd3bb0a",
+      "sha256": "ceb0c0e5512ca643b10f9e90e2e3d43d0902b760862141cedbb2b785fa2786d5",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 4010780,
+        "sha256": "6b6889b26b0b1b77948a60d63102ec2e97b708abbd9262d6e832006ef38ea41b"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 4010780,
+      "basis": "excerpt",
+      "master_offset": null
+    },
+    {
+      "recording_id": "fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+      "source_record_hash": "0d092783364b23989b3731fcee3c5a10082b43219a1688bfffda11dc322ca4b6",
+      "group": "family-fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+      "sha256": "59bd2aa25dd2997c5e5e11c55bed738df9b57497a9f1e627f919d768507787e5",
+      "canonical_pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 9316685,
+        "sha256": "80721608d51632e2b39906e840cad97bdd78181b451cbc77b2236fcfd4ba617f"
+      },
+      "rate": 44100,
+      "channels": 2,
+      "frames": 9316685,
+      "basis": "file",
+      "master_offset": null
+    }
+  ],
+  "development_native_checks": [
+    {
+      "recording_id": "harmonic-0",
+      "declared_bounds": [
+        0,
+        57600
+      ],
+      "independent_fft_lag": 0,
+      "saved_sample_reconstruction": true,
+      "actual_frames": 192000,
+      "rate": 24000
+    },
+    {
+      "recording_id": "harmonic-1",
+      "declared_bounds": [
+        51000,
+        108600
+      ],
+      "independent_fft_lag": 51000,
+      "saved_sample_reconstruction": true,
+      "actual_frames": 192000,
+      "rate": 24000
+    },
+    {
+      "recording_id": "pluck-0",
+      "declared_bounds": [
+        9000,
+        66600
+      ],
+      "independent_fft_lag": 9000,
+      "saved_sample_reconstruction": true,
+      "actual_frames": 192000,
+      "rate": 24000
+    },
+    {
+      "recording_id": "pluck-1",
+      "declared_bounds": [
+        134400,
+        192000
+      ],
+      "independent_fft_lag": 134400,
+      "saved_sample_reconstruction": true,
+      "actual_frames": 192000,
+      "rate": 24000
+    },
+    {
+      "recording_id": "fm-0",
+      "declared_bounds": [
+        134400,
+        192000
+      ],
+      "independent_fft_lag": 134400,
+      "saved_sample_reconstruction": true,
+      "actual_frames": 192000,
+      "rate": 24000
+    },
+    {
+      "recording_id": "fm-1",
+      "declared_bounds": [
+        57000,
+        114600
+      ],
+      "independent_fft_lag": 57000,
+      "saved_sample_reconstruction": true,
+      "actual_frames": 192000,
+      "rate": 24000
+    },
+    {
+      "recording_id": "noise-0",
+      "declared_bounds": [
+        75000,
+        132600
+      ],
+      "independent_fft_lag": 75000,
+      "saved_sample_reconstruction": true,
+      "actual_frames": 192000,
+      "rate": 24000
+    },
+    {
+      "recording_id": "noise-1",
+      "declared_bounds": [
+        0,
+        57600
+      ],
+      "independent_fft_lag": 0,
+      "saved_sample_reconstruction": true,
+      "actual_frames": 192000,
+      "rate": 24000
+    },
+    {
+      "recording_id": "pluck-short-file",
+      "declared_bounds": [
+        0,
+        7200
+      ],
+      "independent_fft_lag": 0,
+      "saved_sample_reconstruction": true,
+      "actual_frames": 7200,
+      "rate": 24000
+    }
+  ],
+  "development_queries": [
+    {
+      "case_id": "harmonic-first",
+      "sha256": "6e1a5e94d85632992acf87f8830a642281ffdfc21b73391bde1c374252664495",
+      "frames": 57600,
+      "rate": 24000,
+      "stratum": "alternate"
+    },
+    {
+      "case_id": "harmonic-between",
+      "sha256": "fc8da5af725294663f289e9786afde335a0a80aec60a82c25fd1a76d7d70c19c",
+      "frames": 57600,
+      "rate": 24000,
+      "stratum": "alternate"
+    },
+    {
+      "case_id": "pluck-attack",
+      "sha256": "f3e7bfab93dcdcacf859a3455175fe35a32732478727119d7c90d7ef4298ac3b",
+      "frames": 7200,
+      "rate": 24000,
+      "stratum": "alternate"
+    },
+    {
+      "case_id": "pluck-last",
+      "sha256": "f0ca5a468fb3bc2ea7eb4c5bbd33dfa1912c81c362083eb62ac8d9d95a8b68d7",
+      "frames": 57600,
+      "rate": 24000,
+      "stratum": "alternate"
+    },
+    {
+      "case_id": "fm-decay-last",
+      "sha256": "390c1db3e3ca800ca686484b9f4fbccedc90e9c108a629d8cbca33ba58de8289",
+      "frames": 57600,
+      "rate": 24000,
+      "stratum": "alternate"
+    },
+    {
+      "case_id": "noise-accompaniment",
+      "sha256": "221ae6723738365c963b1802b65244e75859ad8a00d5229f340aae7fad8e067a",
+      "frames": 57600,
+      "rate": 24000,
+      "stratum": "alternate"
+    },
+    {
+      "case_id": "exact-fm",
+      "sha256": "ff9babc979e9e331c5b70c045cea9c3ed4b2928acadcc59612fb31f5249c15fd",
+      "frames": 57600,
+      "rate": 24000,
+      "stratum": "exact-waveform"
+    },
+    {
+      "case_id": "exact-short-file",
+      "sha256": "5c253fcc4d1efc652c0c439b6d1d51ed43ee83c186a27669a5055cae68498d6a",
+      "frames": 7200,
+      "rate": 24000,
+      "stratum": "exact-waveform"
+    },
+    {
+      "case_id": "silence",
+      "sha256": "429dad2c2f29a6f284ef582d668e4ca7595086e2b271d6e69cc11de73e020ae6",
+      "frames": 57600,
+      "rate": 24000,
+      "stratum": "silence"
+    },
+    {
+      "case_id": "absent",
+      "sha256": "9849449dcc0ea3f2121e12b30691d6a8cac9d0fc43b8801da8ba4517c346a185",
+      "frames": 57600,
+      "rate": 24000,
+      "stratum": "absent"
+    }
+  ],
+  "matcher_comparison_run": false,
+  "new_feature_windows": 0
+}
