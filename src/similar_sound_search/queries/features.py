@@ -26,7 +26,9 @@ class Features:
             "representation": self.desc,
             "dimension": self.desc["dimension"],
         }
-        root = self.owner.root / "data/features/queries"
+        # Explicit downstream owners may materialize the same validated recipe
+        # into their own feature namespace. B03's default and identity stay fixed.
+        root = getattr(self.owner, "feature_root", self.owner.root / "data/features/queries")
         path = root / digest(identity)
         if path.exists():
             self.reused += 1

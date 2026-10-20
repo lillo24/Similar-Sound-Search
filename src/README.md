@@ -19,5 +19,6 @@
 | `similar_sound_search/events/` | [Subsystem map](similar_sound_search/events/README.md): B01 proposals, explicit/manual selection, native crops, fixed development comparison and audited read-only catalogue handoff |
 | `similar_sound_search/separation/` | [Subsystem map](similar_sound_search/separation/README.md): B02 optional DSP transformations, audio-cue lineage, fixed paired comparison and truthful original/processed playback |
 | `similar_sound_search/queries/` | [Subsystem map](similar_sound_search/queries/README.md): B03 immutable query revisions, explicit bindings/materializations, complete-winner pitch preference and playback |
+| `similar_sound_search/indexing/` | [Subsystem map](similar_sound_search/indexing/README.md): C01 versioned passage banks, audited legacy reuse, optional region components, exact per-bank winners and bounded publication |
 
 The CLI imports numerical/decoder libraries only in the bounded worker. Inputs feed candidate records; preparation retains those source records and composes maps back to the original available file. Storage and resource checks are shared across both paths. See [runtime commands and limitations](../docs/RUNTIME.md) and [record fields](../docs/RECORDS.md).

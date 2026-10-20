@@ -32,3 +32,70 @@ separately labelled option.
 Commands, measured outcomes and the C02 handoff will be recorded in
 `reports/C01_INDEX.md`. No new model, dependency, acquisition or held-out run is
 part of this stage.
+
+Run from the checkout in PowerShell with `.venv/Scripts/python.exe`. Numerical
+threads are forced to one in each CLI child. Every indexing action except the
+idle listener uses the same C01 ledger; changing names/restarting does not grant
+more work. `--tier starter` retains 120s, 1 GiB working, 256 MiB decoded/output,
+4 GiB combined managed storage and 4 GiB free-space headroom. New roots are in the
+shared inventory. A configured allocation bound is distinct from Windows commit
+availability; preflight records both, and the pilot measures actual worker peaks.
+
+```powershell
+$env:OMP_NUM_THREADS='1'
+$env:OPENBLAS_NUM_THREADS='1'
+$env:MKL_NUM_THREADS='1'
+.venv/Scripts/python.exe scripts/verify-index-preservation.py capture
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing preflight
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing known-answer
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing generate
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing geometry
+```
+
+Read `data/runs/indexing/preflight.json` for the two immutable real plan paths and
+`data/runs/indexing/development/fixtures.json` for the three development plan
+paths. Build each development plan with `indexing build PLAN --scope full`, then:
+
+```powershell
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing build --bank short --scope pilot
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing verify --bank short --scope pilot
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing build --bank long --scope pilot
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing verify --bank long --scope pilot
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing compare
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing admit
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing components
+```
+
+Build each explicit component plan from `data/runs/indexing/components.json` with
+`indexing build PLAN --scope full`. Build only the admitted original policy from
+`admission.json` with `indexing build --bank LABEL --scope full`; repeat this exact
+command to resume. Valid committed arrays are retained, validated recoverable
+orphans need no re-embedding, and corrupt arrays are refused. Failed attempts and
+their reservations remain visible. Then run its one `indexing verify --bank LABEL
+--scope full` pass. An already completed verify refuses an undeclared repeat.
+
+```powershell
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing compatibility
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing snapshot --receipt RECEIPT
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing search LEGACY_BANK
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing search ADMITTED_BANK
+.venv/Scripts/python.exe -m similar_sound_search --tier starter --report reports/local/c01/report-command.json indexing report
+.venv/Scripts/python.exe -m similar_sound_search --tier starter indexing verify-native
+.venv/Scripts/python.exe scripts/verify-index-preservation.py verify
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/listen-index.ps1
+```
+
+Use the exact receipt returned by compatibility and bank paths returned by
+snapshot. The default revision/materialization is the committed original Loulou
+revision, never a mutable library head. `--revision HASH --materialization HASH`
+selects another explicit saved materialization. `--allow-partial` makes partial
+coverage intentional and visible. `indexing derive-query --revision HASH` is the
+explicit missing-materialization path; `indexing search BANK --revision HASH
+--derived` reads that derivative. It imports the validated recipe and bindings,
+uses C01-owned cache/output paths, and charges its unchanged pitch metadata
+estimator within C01's processing-audio allowance; verification scoring stays off.
+
+Metadata writes are bounded by a 32 MiB counted subcap inside a pre-reserved 32 MiB
+managed envelope. Arrays, preparations, transforms and clips reserve separate
+output before work. Actual final namespace bytes are also reported. Files left by
+failed attempts remain charged and are not treated as ready membership.

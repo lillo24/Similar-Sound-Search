@@ -38,3 +38,10 @@ before matcher/comparison inference. It uses SoundFile/FFT/projections rather th
 operational estimator, under the fixed B03 ledger, offline lock and 120s worker bound.
 Its source hash identifies the producing LF snapshot; Git may use native checkout
 line endings later. Both retained audit passes remain charged in the same ledger.
+
+`listen-index.ps1` validates the C01 report summary and serves the verified new
+bundle on loopback 8770. Earlier listeners retain 8766–8769. Native verification is
+`indexing verify-native`; media/HTML serving uses the existing exact allowlist.
+`verify-index-preservation.py capture|verify` inventories historical artifacts,
+configs, frozen adapters, pitch module and the root reference MP3. It excludes only
+the declared C01 roots and C01 lock. Capture refuses to overwrite its baseline.

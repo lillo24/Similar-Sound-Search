@@ -5,6 +5,7 @@
   "development": {
     "version": "c01-development-1",
     "seed": 76103,
+    "family_selection_seed": 42104,
     "rate": 24000,
     "families": ["harmonic", "pluck", "fm", "noise"],
     "family_reuse": "A04 development procedural mechanisms only; new fixed performance/layout, no held-out assets or human labels",
@@ -38,6 +39,7 @@
     "reuse": "one bounded repeat of these committed units, validation charged, no re-embedding"
   },
   "components": {
+    "guided_refusal": {"record": "data/runs/separation/processed/4dda57f36c48eb6d1f3bca4b7a8ecda45a81a614e2dae1560d2d33ba42896739/record.json", "record_hash": "304429ae1f1bf88f4c21a72730be3197cdb83e2948da8716c42e1ad90c552faa", "purpose": "metadata-only refusal of the existing cue-dependent output, no reprocessing"},
     "controlled": "the generated 8s harmonic variant-0 mixture, HPSS broad, harmonic and percussive",
     "real_regions": [{"record": "data/runs/separation/processed/48d9ae91ebf76eefd80c5b365016dc7eb9e797602dbd298131d98bb7a1f4dbd1/record.json", "source_sha256": "8fbebed1ab3c070f2b92759f50f4d0b5d406fbe99731920bb7a794a76d7bcf31", "region": [396900, 749700], "rate": 44100, "components": ["harmonic", "percussive"]}],
     "dependency": "B02 broad HPSS ignores its recorded cue argument; retain that cue and all ancestry as provenance/exclusions. Guided mode actually consumes a cue and is rejected as a generic bank.",
