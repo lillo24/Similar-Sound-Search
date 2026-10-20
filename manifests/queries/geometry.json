@@ -1,0 +1,384 @@
+{
+  "status": "ok",
+  "schema_version": "b03-independent-geometry-1",
+  "plan_hash": "e2edd9e6afeecbd83013c50fb1cb54e4cb1b0e3427a5041b03d34b0eec229f34",
+  "script_sha256": "b5b33856dcf22c364b1206bd143c3f88b01be34b9a9913bfd01cf9d3d96c9218",
+  "signals": [
+    {
+      "path": "data/audio/queries/development/152bc0a6929df80485604c37ff2e57b5915a39d425d1a224b90c963d1c4368bb.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 110.0
+    },
+    {
+      "path": "data/audio/queries/development/2f73441fd28f9fc2babfd2b612e999db10b0fe5a2b7b261047bf6b72d26535d6.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 440.0
+    },
+    {
+      "path": "data/audio/queries/development/362926d2b49b9e7efd4598132c169abf46d1f322bd778eb7f12f5f8875c27d3e.wav",
+      "event": [
+        9600,
+        67200
+      ],
+      "context": [
+        4800,
+        72000
+      ],
+      "frames": 76800,
+      "rate": 24000,
+      "source_present": false,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": null
+    },
+    {
+      "path": "data/audio/queries/development/39d75ebcec1dd8ffa4cedce68c6493e8a5bd6f5ba21479ee565d2337e3c75522.wav",
+      "event": [
+        9600,
+        67200
+      ],
+      "context": [
+        4800,
+        72000
+      ],
+      "frames": 76800,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 440.0
+    },
+    {
+      "path": "data/audio/queries/development/3eff5945c5c0471efca5bf2e5ad4dc0ced03a93d104b080fd82e6a9ca186734a.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 440.0
+    },
+    {
+      "path": "data/audio/queries/development/4df886bc0284112fac0663e8293bcb2d55335e9a55f0e8d935730f71df91bdab.wav",
+      "event": [
+        9600,
+        67200
+      ],
+      "context": [
+        4800,
+        72000
+      ],
+      "frames": 76800,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 220.0
+    },
+    {
+      "path": "data/audio/queries/development/576b1dd056071eabcfc17e19bb26cf3d8568b8871db97bb45143ed2bec85fb6e.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 220.0
+    },
+    {
+      "path": "data/audio/queries/development/583e4a90ddb54150c88eb3f25bbde06096d277a72f79f10a9ae2855572147c1e.wav",
+      "event": [
+        9600,
+        67200
+      ],
+      "context": [
+        4800,
+        72000
+      ],
+      "frames": 76800,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 220.0
+    },
+    {
+      "path": "data/audio/queries/development/75819a625b6949aee9b19cfbaad3fc0a6f6313176aa5a7f2d4a90db873ca70a4.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 440.0
+    },
+    {
+      "path": "data/audio/queries/development/7e28af3ff830339256effe6d080c5d834a85c8c86665d9450ad43281800eb37b.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 261.6666666666667
+    },
+    {
+      "path": "data/audio/queries/development/89183eac4673a7b53d22b1d551d34a14faa1f1ca0171105923d317e88b9aae6a.wav",
+      "event": [
+        9600,
+        67200
+      ],
+      "context": [
+        4800,
+        72000
+      ],
+      "frames": 76800,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 220.0
+    },
+    {
+      "path": "data/audio/queries/development/aa85ebd1acc097c833ad237873c4e803d0629c671aa98afd2fea83ae75ad8f24.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 261.6666666666667
+    },
+    {
+      "path": "data/audio/queries/development/aceb436712a4d28a23dbe44475240316b8f17c806179730c1fabd9cb2c6de34e.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 110.0
+    },
+    {
+      "path": "data/audio/queries/development/b1fb2dae9a377978a8b23c46304c2951d9fb5e8310ccb008526532b2ea2dcd90.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 261.6666666666667
+    },
+    {
+      "path": "data/audio/queries/development/b55da9bd91b47cd5d29cdb38a3f374bc9b3009f0df42c987f7c5193c8b98b6e8.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 261.6666666666667
+    },
+    {
+      "path": "data/audio/queries/development/b77a2ae41ea47ae28d161b21330427ec08ce543955a0d6a3f7c29ab22eb0b5ca.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 220.0
+    },
+    {
+      "path": "data/audio/queries/development/cb94f402c835e9fc406db7059d07074f6e35ac18a302cda2a23f01cfd09c8a59.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 110.0
+    },
+    {
+      "path": "data/audio/queries/development/d0c5fcd0079451231d828616eafcff173f6b5c3337ef878e24bd8e44a1f76d44.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 220.0
+    },
+    {
+      "path": "data/audio/queries/development/d6aa8ded5a3f1f550c53382a91be97c28273a572b8a5cfaad9c95f441c66d8d1.wav",
+      "event": [
+        9600,
+        67200
+      ],
+      "context": [
+        4800,
+        72000
+      ],
+      "frames": 76800,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 130.83333333333334
+    },
+    {
+      "path": "data/audio/queries/development/e829777f620307fd38879dc46e875fd75ab144d9b2cd7b9a2ab1d1515478b529.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 110.0
+    },
+    {
+      "path": "data/audio/queries/development/ea781c84ad0c3530a2a440c988158ae336b1a1e738a0d4d65545883d885873ba.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 220.0
+    },
+    {
+      "path": "data/audio/queries/development/fe9ce65f500c290ab01ff65a816296218511aa1cc9cb2bde890cdbd0a367d1d4.wav",
+      "event": [
+        7200,
+        64800
+      ],
+      "context": [
+        2400,
+        69600
+      ],
+      "frames": 74400,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 440.0
+    },
+    {
+      "path": "data/audio/queries/development/fec1d5dc1d9ae132e9185aaf54b70794077ff5f86e42fc1d7371079744e3ccf6.wav",
+      "event": [
+        9600,
+        67200
+      ],
+      "context": [
+        4800,
+        72000
+      ],
+      "frames": 76800,
+      "rate": 24000,
+      "source_present": true,
+      "outside_insertion_exact_zero": true,
+      "peak_frequency_hz": 261.6666666666667
+    }
+  ],
+  "cases": 8,
+  "primary_full_support": 6,
+  "candidate_groups": 16,
+  "wall_seconds": 2.531000000075437,
+  "peak_working_bytes": 101224448,
+  "method": "independent SoundFile read/hash and record-derived insertion/zero-support checks; FFT/projection generator-truth audit; no operational pitch estimator or matcher",
+  "audit": "data/runs/queries/independent-geometry-b5b33856dcf22c364b1206bd143c3f88b01be34b9a9913bfd01cf9d3d96c9218.json",
+  "record_hash": "f3676533d9216e7627a45e10e94f50a5546d077c2d0fe439a8cf6d2241dafd88"
+}
