@@ -5,7 +5,7 @@
     "sha256": "REPLACE_WITH_ACTUAL_SHA256_AFTER_INSPECT",
     "context": "config/input_context.example.json"
   },
-  "region": [0, 529200],
+  "region": [0, 352800],
   "event": [44100, 149940],
   "cue": {
     "path": "data/audio/originals/loulou-excerpt.wav",
@@ -13,5 +13,5 @@
     "bounds": [149940, 255780],
     "context": "config/input_context.example.json"
   },
-  "label": "44100 Hz excerpt template only: inspect and replace hash/bounds/cue; version, master offset and intended layer unverified"
+  "label": "44100 Hz / 8s-context excerpt template only: inspect and replace hash/bounds/cue; version, master offset and intended layer unverified"
 }

@@ -20,7 +20,8 @@ is accepted by the extractor. A cue from a different recording is allowed, with 
 original/duplicate parents included in every arm's exclusions for equal support.
 
 The [Loulou excerpt template](../config/separation_source.example.json) retains
-unverified version/offset context. Its illustrative frames assume 44.1 kHz; run
+unverified version/offset context. Its illustrative eight-second context fits the
+fixed temporary allocation guard for 44.1 kHz stereo. Frames assume 44.1 kHz; run
 `inspect data/audio/originals/loulou-excerpt.wav --context config/input_context.example.json`
 first, then replace hashes and explicit bounds/cue with actual native metadata.
 Never apply second 218 to that short excerpt. The template deliberately fails until
@@ -124,9 +125,9 @@ before each command below. The exercised paths are recorded in the delivery evid
 separation preflight
 separation pilot
 separation known-answer
-separation process data/runs/separation/inputs/real-with-context.json --mode original
-separation process data/runs/separation/inputs/real-with-context.json --mode broad
-separation process data/runs/separation/inputs/real-with-context.json --mode guided
+separation process data/runs/separation/inputs/real-bounded-context.json --mode original
+separation process data/runs/separation/inputs/real-bounded-context.json --mode broad
+separation process data/runs/separation/inputs/real-bounded-context.json --mode guided
 separation handoff TRANSFORM_RECORD --component original # harmonic / extracted
 separation prepare-query HANDOFF_JSON
 separation compare
