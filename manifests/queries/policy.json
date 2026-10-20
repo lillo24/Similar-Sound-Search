@@ -1,0 +1,14 @@
+{
+  "schema_version": "b03-policy-declaration-1",
+  "declared_on": "2026-10-20",
+  "base_commit": "0406066",
+  "configuration": "config/queries.json",
+  "scope": "B03 only: immutable query revisions, explicit asset bindings, finite materialization and complete-winner secondary pitch",
+  "defaults": {"processing": "original", "pitch_weight": 0},
+  "comparison": {"batches": 1, "cases": 8, "arms": ["off", "primary"], "primary_weight": 0.03, "scale_semitones": 12, "sensitivity_settings": 0},
+  "network": "offline, no audio/model acquisition",
+  "accounting": "one fixed B03 ledger; all source/parent/cue reads, processing, estimation, feature/rank/report work and retries charged; installation/tests/non-inference preservation audits separately reported",
+  "preservation": "historical audio/features/ledgers/manifests/predictions/reports/prompts and frozen adapters/pitch/attributes remain unchanged; config/README.md may receive a separately audited navigation addition",
+  "real_reference": "validate supplied root MP3 2fc1256b1ac35134cfaef177aaf032277a0e375c676e50d391a1e3b22046ae30; use full available 218..240s original region if valid, never truncate to B02 limits; retain identity/offset/rights/layer unknowns",
+  "stop_rule": "one frozen development batch and necessary real/reuse/playback verification; no parameter sweep or historical held-out repeat"
+}

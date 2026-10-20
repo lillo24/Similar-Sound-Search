@@ -1,0 +1,27 @@
+{
+  "schema_version": "b03-queries-1",
+  "pitch": {"version": "b03-pitch-1", "weight": 0.03, "scale_semitones": 12},
+  "policy": {
+    "max_job_seconds": 3600,
+    "max_workers": 256,
+    "max_http_attempts": 0,
+    "max_download_bytes": 0,
+    "max_read_audio_seconds": 90000,
+    "max_feature_windows": 1024,
+    "max_processed_window_seconds": 6000,
+    "max_query_jobs": 16,
+    "max_clips": 64,
+    "max_clip_bytes": 67108864,
+    "max_managed_output_bytes": 268435456,
+    "max_processing_inputs": 32,
+    "max_separator_input_seconds": 240,
+    "max_pitch_audio_seconds": 3600,
+    "max_query_preparation_bytes": 67108864,
+    "max_feature_bytes": 33554432,
+    "max_preparation_bytes": 100663296,
+    "max_metadata_bytes": 16777216,
+    "max_comparisons": 1,
+    "max_comparison_cases": 8,
+    "max_comparison_queries": 16
+  }
+}
