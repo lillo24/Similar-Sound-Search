@@ -121,3 +121,17 @@ later-stage work, with the first required review at D04.
 | DEC-048 | Independently verify actual saved insertions/support/cues/TBR, then freeze a distinct B02 development protocol. | Twelve complete positives and four separate controls; inspected families are not a fresh holdout, and no B01 oracle repair is performed. |
 | DEC-049 | Original audio remains default after the fixed comparison. | Guided top-1 improves 2/12 to 5/12 but loses one baseline success and fails attack/tail preservation. Broad processing also misses retrieval/preservation gates. |
 | DEC-050 | Preserve refusals/charges and declare bounded context/report corrections. | A 12s real stereo context fails the fixed 128 MiB allocation guard; 8s keeps the same event/cue with lead/tail context. Report-only repairs preserve producing code/predictions and require a fresh B02-owned read-only index receipt. |
+
+## B03 query/revision decisions
+
+20 October 2026; [contracts and migration](QUERIES.md), [prospective records](../manifests/queries/README.md)
+and [delivery evidence](../reports/B03_QUERIES.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-051 | Separate display heads, immutable portable recipes, validated materializations and exact search executions. | Labels and pitch-only revisions reuse unchanged PCM/features; every contributing parent/cue exclusion survives deduplication. Explicit bindings support relocation without rewriting historical receipts. |
+| DEC-052 | Retain the unchanged conservative pitch estimator; use an explicit .03 / twelve-semitone absolute-register mean penalty with all-query reliability gate. | Timbre selects one passage per group; pitch only reranks the complete eligible winner set. Missing/ambiguous pitch contributes zero with reasons. Original audio/pitch off remain defaults irrespective of controlled outcomes. |
+| DEC-053 | Give B03 fixed offline accounting and read-only B02/A06 adapters; declare shared hooks before processing. | No historical ledger is reopened, no catalogue feature is rebuilt, and frozen model/pitch/math/guard contracts remain enforced. |
+| DEC-054 | Register the newly supplied MP3 separately from historical missing-reference evidence, preserving its full 218..240s original mixture. | Technical support does not verify identity, marked-version alignment, rights, master offset or intended layer. Use the existing Donnie guided event/cue to demonstrate processing reuse without a new separation experiment. |
+| DEC-055 | Freeze independent insertion/support checks and one eight-case/sixteen-arm development batch before comparison. | Familiar deterministic families are inspected development, not a fresh holdout or human timbre truth. Keep all failures and denominators; no sweep or replacement reference after rankings. |
+| DEC-056 | Declare a two-module execution-only repair before any predictions; share one unchanged adapter per worker and checkpoint pending units. | PyTorch's interop setting is process-wide. Preserve the original failed attempt, cached features, pending case/arm reservation and every retry charge; recover an immutable prediction before repeating inference. Windows memory failures likewise retain progress and charges. |

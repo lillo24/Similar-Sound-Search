@@ -1,0 +1,2373 @@
+{
+  "schema_version": "b03-public-comparison-1",
+  "producer_record_hash": "cb508c25ea490bf7f9c4108c9ca5e5cf51b006a384d73126cd9d0bf259e83774",
+  "protocol_hash": "baa66acb9140374698e797720c3709be73cb9f700056ea11bde9905248102f44",
+  "identity": {
+    "plan_hash": "e2edd9e6afeecbd83013c50fb1cb54e4cb1b0e3427a5041b03d34b0eec229f34",
+    "code": {
+      "__init__.py": "64c5ccaaa4d011635e582ab1ed3890c2c7c6e81463518bf2a7ad66dc50f407eb",
+      "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "catalogue/__init__.py": "cb2f9dd3009b8ddda5243414de0433f48862b542b0f1ef65268b3a4b905b2b08",
+      "catalogue/ingestion.py": "cde055f915935507cbdb187b0409609d0066956b4bdc7cd446519935ca11af94",
+      "catalogue/job.py": "6957f866693d976055970ffbe85b5d827cd14534e1d39c635bfceb354e0e6b3b",
+      "catalogue/source.py": "9c7d60b669fcb5e82b8228dba0dc80afe60d6bfb8629042cde342801c9a94758",
+      "catalogue/transfer.py": "42ba07924642afbb0467043e801071cc284372f454ccb7275066b0b319be6a21",
+      "cli.py": "521e3cbd7059944f358597f532ce3c9f3ce8854f1d064e7c8fa3910ff6daf7b9",
+      "diagnostics.py": "19577dbeaf4f66ebcdb3da603a12e79a5b865e8932de6d5bbcb5a226df668887",
+      "evaluation/__init__.py": "754c065ca98f2121f9228d4985f42df2f39b3c2ef4d8214a64e5fcc6867fbe2c",
+      "evaluation/artifacts.py": "10d1e480df9401e0fd91aa3ab47a3f28b01030f5b86782d8150440d7b009b8f4",
+      "evaluation/job.py": "4a56f4b61a32af1a7c25af0c61dd60947c5d3a0e5446de9c34bf78608d04bf4b",
+      "evaluation/protocol.py": "50fdcc21f20372b85559d7db2388afd56adf4640dad3d4cfccdcbb97bf525f9a",
+      "evaluation/published.py": "85ead81b2162fbe96543f86215234b1404c8ebd01c1e381dbd221a1af19aa2db",
+      "evaluation/rendering.py": "41aa414d82eb325108288d5afcd890dd7bdf7b466a0ebbbbb7aba41b94c8d1f4",
+      "evaluation/scoring.py": "1f1e857d11d6460bf234db2e713158ade9cf6be2e91f612884ac01815cb2cb4d",
+      "evaluation/suite.py": "2f1576d8f335231279a5ad9f6b7f8463d281dde8cccc9e0b009968c3a4ac5af9",
+      "events/__init__.py": "f81da48e6479f029393bb3cb98a9ea9d20b7a65c2d3a79d78636414bb8012d17",
+      "events/artifacts.py": "547ae562a826c708a486d6ce99ceff6f0fc758b75b22a0af87a65c10d58cd90a",
+      "events/audit.py": "88d109524dbe9eb88bc47cb4744ce8e78f48b952c780eb28f11f9735d0d8b93d",
+      "events/commands.py": "13f92ef63d6d84a8904d0ea3ea22bda08b3fb8805adadda781acea989fb61676",
+      "events/comparison.py": "e60c7432c6b8f3e9de9a2986b441fc1d3e45958dcdba6322742b20d89f004707",
+      "events/compatibility.py": "47f32c3daff8dd0cf6837ddbbe283b5c81487ab521ab12676f760e530a12a758",
+      "events/context.py": "e8d2c1ff6a277864eb240ccdfa4d217c2b6bf40f342a4f912dc5392639bca4cf",
+      "events/detector.py": "89b6049e3d4201f2a6a95c70539479a2b2f35d9e94d8df950b83afa4f2984df1",
+      "events/fixtures.py": "51f6a4769780063d8e05c5e5504ac42f3db3fd0fc09f458a04a5f5d8658df3e6",
+      "events/job.py": "a83148d2521da5dade92fd92c80409472a130d47846c6d0b12b495ee37b854d1",
+      "events/metrics.py": "00fde573d976f35d3d3f2fd21b593833f315498e220ec52e1fed1a9b3cc61a99",
+      "events/report.py": "6980a58732ca4cc540ecab6c3b3776ac5f4e731550b5aca468420469186793c8",
+      "events/selection.py": "04425dc049b7605e47d0c9db1f15ccdf6336e418f978e9ebe4c0c739b2d39eec",
+      "inputs.py": "fd66a4ce0b2ffd553a04dbffaf10100a1a2f0c855dae1fb317dc57c5b75a21e5",
+      "matchers/__init__.py": "25e2bdd52f6be7117deee1ff46720022040572c1642631e8b67648c4ec671dc8",
+      "matchers/acoustic.py": "9b6dcc469691c72c8de62e33da3c86621265fc08b33270c261e6a4d20b474127",
+      "matchers/cache.py": "410e6d1b2996f2ba1ccdad24d0f00ef1cdd444619aad27eb42477c163f8bb0a6",
+      "matchers/correction.py": "12e3572a28caffbfcded563198b3e731fb0cff36f6e3739ee907169c72ec9084",
+      "matchers/efficientat.py": "877cfe3cac1390dd252689f1f61199fdaaf5997899e66fdac3ab6ab589350475",
+      "matchers/efficientat_model.py": "4f1d5019a54ce0c087eea227cac795848b581803dcb515da98583ce85a281a3d",
+      "matchers/job.py": "65fa00469b53f70b0228650cc76d3f1b9b4b53df49b175e93d827b76a01dcfaf",
+      "matchers/models.py": "04e0e1b8317e874caaeac87e3d1c1bf5ab13de3276bf6a4a344c84de3d523aa1",
+      "matchers/runner.py": "3441c283771422577280dc1be80313c7b597740271cab011eb3ce2af8958293d",
+      "matchers/selection.py": "6c023f0e479dc6737f48d86e6644c8aa057c098c5ffb58d324c4f6a36d25974a",
+      "matchers/windows.py": "689e3035f61d368cdf3d0cc8dfc3ee60a5c03a8d3861f570ea7544a1c558fca9",
+      "preparation.py": "d14ac0709b3cc0c2b91bc38d436969786d2c75c3dcf19a489f5cb5aea217228a",
+      "queries/__init__.py": "0200b8a2c118240ecb34aaf5e8fea44ac25d7b0cf025a844e7705efb727aa7f8",
+      "queries/assets.py": "cee567f3da0caa903759f56948297ba1acd3f2f48c0a3adb12bce9acf67366b9",
+      "queries/commands.py": "607a1fe52c7f5973d473504538ecd41aca2a7170b5b150f72b45083ce936ea23",
+      "queries/context.py": "1ca7b51928d569ff37b4270109a7a40643699d3c168533597054b859cec3895e",
+      "queries/contracts.py": "459aeaa32540b97600a81e539d0234d6ac2f53e6af18365b9989fb5135a8f14b",
+      "queries/development.py": "86ca63221f44c4ce05d6b3b612ee4b859040d15a5b56ab6978fb373fac3ae58d",
+      "queries/execution.py": "1a001d2e14259ef20516de8a16eb55b27999e09d19b0536aaa781477b860741f",
+      "queries/features.py": "7376fcb086e0957ed63f5f0b20ef58505cab5cd2bc040f6c63cab7212cfa5aeb",
+      "queries/job.py": "9a3589a9c412d5af27e4bd9f9ac5f6bc37441f54f0ccbc6187b15e6e3696becd",
+      "queries/library.py": "be13907c123e1cf9450f61e056c0e2a1596e9f7a72975f54bb4c27a6ad28dda8",
+      "queries/materialization.py": "216f29ea914a89ca1729a92b9d33c9e3a1c6dd034f30103ecfb20bc59fba4f4d",
+      "queries/pitch.py": "7addbfa828dc114e020fd11b416852d791d9321879081d2bf3bfc4e6bf061c1b",
+      "queries/report.py": "8d0d9c6f1989f0b95f602a32a7234a3c73c224360965f3d838d41e8993bd80a2",
+      "queries/validation.py": "ce9ad24ed5028c7b91ee66969a99d7703bed9809a9ebaa4bad2ba44966675390",
+      "records.py": "fa3996c41d09104e546d8fc3881977032142ba9d6a5800db1d8f7965f372395c",
+      "resources.py": "dbfd0ae72bec3b9770ee5834b1822c5c91206ba1138f1b4f057ab0b2ab488d13",
+      "search/__init__.py": "d82102fbd6007b4678ebca808b5916d03114b54861f8c3145cfa955f4a9ac1c7",
+      "search/commands.py": "ecfaeb0a40b688bd134984919225de9ff8d718f10275376bb5f99e88a35ee588",
+      "search/contracts.py": "feb2e918ba0439491d6ad3ab9e38cbe07ffe1b295d45f8dfc4d9f47acbe62a33",
+      "search/final.py": "62910628a20738941ef3959c7e2f7966b2071f30d840d8ec41c4cce37c4caae2",
+      "search/index.py": "f8412a5ec14e0e7204c99d27da864d22d7f3a6f239096086549bd479215e06c2",
+      "search/job.py": "b8683631b0f3ef14f9c1e4107ed09f12dd36f203465cdd0ed06bff0b404cbd47",
+      "search/pitch.py": "c0e049eab1181ab305c1a9bde1bdd6b04ccb337572975017ae33862796b8b57b",
+      "search/query.py": "e451445ac9020afd5a2abd5cf244362a584a836136cb7e8f187e6d60b33c5a5d",
+      "search/ranking.py": "9f39ae9d9f097876799046f9b75400a1949bf639dec5b93eca3871cd2e15f1b9",
+      "search/report.py": "2d0dee450429610d4d491c7c53ab774b643e5f0a601f99b6d397cc28affbd4b3",
+      "search/sources.py": "5bea709c37a74b688e2c6c6d0b412f8742f6da85b3e9768f40a42bbfcd0e3526",
+      "separation/__init__.py": "69f812b909342f801f22daf3192168865da34491953704e2471dcbe6026cb0c5",
+      "separation/artifacts.py": "091bc036ef0ae1d7a822e887ed85fa68700c86b28660c507320996fcde1c12ca",
+      "separation/commands.py": "e5281d72c118abef5fa15c576cd18e23c483488f6a1e43376aa450345bd42315",
+      "separation/comparison.py": "5c4f3cb3da740b02f602db7b63a09f15710e31418372203e1bfa944670de2e17",
+      "separation/context.py": "bb1482a214e65f5f5d468e67bd80536dd1ba602c9876f36e4d5e8afc652f7add",
+      "separation/dsp.py": "70a468b89015460d38567be02238435643783799a5e450266b4d488e5502bbc3",
+      "separation/features.py": "74e6f40c3ee88c8567f67804d6218b1d5fe0c33d76a35785004e6e80a442789c",
+      "separation/geometry.py": "8aeb20051c1fb4bcde2a18235c478c4af9372a66dcd58a6f29d933989ce2e49c",
+      "separation/job.py": "6c7ad8a4fea267035ca197af8871cb1b084ba954e4179bc509cc7141d4719953",
+      "separation/metrics.py": "5ed42bf25d5b089612fd0c26f4d542d6833cf5c8701031b1f84b5c4487595372",
+      "separation/protocol.py": "39007786e14be842ebe3ebb115d1e99d338c092e191b5e0fc198d0c62fdbf295",
+      "separation/report.py": "5cd7dfcec6f90ac73e783e825eb605ebba79ac25c2781c1d4b9f94332dfd9bd4",
+      "separation/validation.py": "b5710ab78caeaffd955759aba09ca894fd3efe66f8a999db2a6c8b99e647b8ea",
+      "storage.py": "8dcd0e08febbf8902591ffec331e267b544ef1dd4e58b0b59485f246fb544fe7"
+    },
+    "configuration": {
+      "schema_version": "b03-queries-1",
+      "pitch": {
+        "version": "b03-pitch-1",
+        "weight": 0.03,
+        "scale_semitones": 12
+      },
+      "policy": {
+        "max_job_seconds": 3600,
+        "max_workers": 256,
+        "max_http_attempts": 0,
+        "max_download_bytes": 0,
+        "max_read_audio_seconds": 90000,
+        "max_feature_windows": 1024,
+        "max_processed_window_seconds": 6000,
+        "max_query_jobs": 16,
+        "max_clips": 64,
+        "max_clip_bytes": 67108864,
+        "max_managed_output_bytes": 268435456,
+        "max_processing_inputs": 32,
+        "max_separator_input_seconds": 240,
+        "max_pitch_audio_seconds": 3600,
+        "max_query_preparation_bytes": 67108864,
+        "max_feature_bytes": 33554432,
+        "max_preparation_bytes": 100663296,
+        "max_metadata_bytes": 16777216,
+        "max_comparisons": 1,
+        "max_comparison_cases": 8,
+        "max_comparison_queries": 16
+      }
+    },
+    "execution_repair": "8e690de9e42094060e107730ef26b98b960f6446ce19af44916f0eaae99784e3"
+  },
+  "primary_denominator": 6,
+  "diagnostic_denominator": 2,
+  "source_family_hits": {
+    "off": {
+      "1": 4,
+      "5": 5,
+      "10": 6
+    },
+    "primary": {
+      "1": 4,
+      "5": 5,
+      "10": 6
+    }
+  },
+  "paired_top1_gains": 0,
+  "paired_top1_losses": 0,
+  "rank_changes": 5,
+  "round_trip_exact_cases": 7,
+  "failures": [
+    "silence"
+  ],
+  "default": "original audio; pitch off",
+  "human_relevance": "unmeasured",
+  "cases": [
+    {
+      "case_id": "single-220",
+      "stratum": "primary",
+      "family_truth": 0,
+      "off_round_trip_exact": true,
+      "state": "complete",
+      "query_pitch": [
+        {
+          "hz": 222.2222222222222,
+          "reason": "stable narrow monophonic fundamental",
+          "reliable_blocks": 17,
+          "provenance": {
+            "version": "b03-pitch-estimate-1",
+            "pcm": {
+              "schema_version": "sss-pcm-f32le-1",
+              "sample_rate_hz": 24000,
+              "channels": 1,
+              "sample_count": 57600,
+              "sha256": "0d05aedc59d8080275b4fd5182c72b8ca06e0b3be076636acf661e8d5d9909a7"
+            },
+            "estimator_code": "c0e049eab1181ab305c1a9bde1bdd6b04ccb337572975017ae33862796b8b57b",
+            "preprocessing": "unchanged waveform: arithmetic channel mean, resample_poly to 8000 Hz; whole selected support",
+            "support_frames": 57600,
+            "native_rate": 24000
+          }
+        }
+      ],
+      "arms": {
+        "off": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": true,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.00018888598529309686,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.00018888598529309686
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.019963872847709396,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.019963872847709396
+            },
+            {
+              "recording_id": "0b2c91b2ef2db39f48783dc129d8fa2323fae16eaa28bb82449bde9afc50bf11",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.028216311213933087,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.028216311213933087
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04018851420494385,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.04018851420494385
+            },
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04249096980678402,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.04249096980678402
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04481137385432665,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.04481137385432665
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.0533368760797126,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.0533368760797126
+            },
+            {
+              "recording_id": "0dc3295f665c3b448305f4610fd58c8e9e27e0ba9a8bbada3f0fd99635893748",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.05873326914446808,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.05873326914446808
+            },
+            {
+              "recording_id": "8c574b89976711c46b73cbceed290df452d3394de349074a615f63e3045af803",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.06762990720845974,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.06762990720845974
+            },
+            {
+              "recording_id": "3c9986e26045c995b3261abc4f50988b2f110113701e16009c3fa4ee7eb31e96",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07450288831689367,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.07450288831689367
+            }
+          ]
+        },
+        "primary": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": true,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.00018888598529309686,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.00018888598529309686
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.019963872847709396,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.019963872847709396
+            },
+            {
+              "recording_id": "0b2c91b2ef2db39f48783dc129d8fa2323fae16eaa28bb82449bde9afc50bf11",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.028216311213933087,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.006471860731663128,
+              "score": 0.034688171945596216
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04018851420494385,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.04018851420494385
+            },
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04249096980678402,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.04249096980678402
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04481137385432665,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.04481137385432665
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.0533368760797126,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.006471860731663128,
+              "score": 0.05980873681137573
+            },
+            {
+              "recording_id": "3c9986e26045c995b3261abc4f50988b2f110113701e16009c3fa4ee7eb31e96",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07450288831689367,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.07450288831689367
+            },
+            {
+              "recording_id": "0dc3295f665c3b448305f4610fd58c8e9e27e0ba9a8bbada3f0fd99635893748",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.05873326914446808,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.03,
+              "score": 0.08873326914446808
+            },
+            {
+              "recording_id": "8c574b89976711c46b73cbceed290df452d3394de349074a615f63e3045af803",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.06762990720845974,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.03,
+              "score": 0.09762990720845974
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "octave-440",
+      "stratum": "primary",
+      "family_truth": 0,
+      "off_round_trip_exact": true,
+      "state": "complete",
+      "query_pitch": [
+        {
+          "hz": 444.4444444444444,
+          "reason": "stable narrow monophonic fundamental",
+          "reliable_blocks": 17,
+          "provenance": {
+            "version": "b03-pitch-estimate-1",
+            "pcm": {
+              "schema_version": "sss-pcm-f32le-1",
+              "sample_rate_hz": 24000,
+              "channels": 1,
+              "sample_count": 57600,
+              "sha256": "784cf4fd4a0523688e6cae389a360cc102e6f0904498bec09ae2647815a43074"
+            },
+            "estimator_code": "c0e049eab1181ab305c1a9bde1bdd6b04ccb337572975017ae33862796b8b57b",
+            "preprocessing": "unchanged waveform: arithmetic channel mean, resample_poly to 8000 Hz; whole selected support",
+            "support_frames": 57600,
+            "native_rate": 24000
+          }
+        }
+      ],
+      "arms": {
+        "off": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": true,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "456fe114f478ebddb8a6f21e776e56c78d9649f659292fd29c98956d98c179c3",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 6.56015231952356e-05,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 6.56015231952356e-05
+            },
+            {
+              "recording_id": "9d4818569a3bec0fe87919264efcc453d9f5e86bae46f4e80d72c053311a4387",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.039387144261446405,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.039387144261446405
+            },
+            {
+              "recording_id": "d48fee2da40b21a6c55c08cdfd3e246641523563c82b17eef33a3f8f00d4059a",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04951483378404675,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.04951483378404675
+            },
+            {
+              "recording_id": "0b2c91b2ef2db39f48783dc129d8fa2323fae16eaa28bb82449bde9afc50bf11",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07385838624560359,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07385838624560359
+            },
+            {
+              "recording_id": "b5be1001bb7dc49d6ec376b97f3c4fa7db28bfdc69fb11ddbc6ec9b91b4c013c",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07415241577506737,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07415241577506737
+            },
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07483401772861242,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.07483401772861242
+            },
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.08538429539000036,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.08538429539000036
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.08671179184034283,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.08671179184034283
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.09762737020293977,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.09762737020293977
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.10448286622467184,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.10448286622467184
+            }
+          ]
+        },
+        "primary": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": true,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "456fe114f478ebddb8a6f21e776e56c78d9649f659292fd29c98956d98c179c3",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 6.56015231952356e-05,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 6.56015231952356e-05
+            },
+            {
+              "recording_id": "9d4818569a3bec0fe87919264efcc453d9f5e86bae46f4e80d72c053311a4387",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.039387144261446405,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.039387144261446405
+            },
+            {
+              "recording_id": "d48fee2da40b21a6c55c08cdfd3e246641523563c82b17eef33a3f8f00d4059a",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04951483378404675,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.04951483378404675
+            },
+            {
+              "recording_id": "b5be1001bb7dc49d6ec376b97f3c4fa7db28bfdc69fb11ddbc6ec9b91b4c013c",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07415241577506737,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07415241577506737
+            },
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07483401772861242,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.07483401772861242
+            },
+            {
+              "recording_id": "0b2c91b2ef2db39f48783dc129d8fa2323fae16eaa28bb82449bde9afc50bf11",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07385838624560359,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.02352813926833687,
+              "score": 0.09738652551394046
+            },
+            {
+              "recording_id": "3c9986e26045c995b3261abc4f50988b2f110113701e16009c3fa4ee7eb31e96",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.11273446052468805,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.11273446052468805
+            },
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.08538429539000036,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.03,
+              "score": 0.11538429539000036
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.08671179184034283,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.03,
+              "score": 0.11671179184034283
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.09762737020293977,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.02352813926833687,
+              "score": 0.12115550947127664
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "single-261",
+      "stratum": "primary",
+      "family_truth": 1,
+      "off_round_trip_exact": true,
+      "state": "complete",
+      "query_pitch": [
+        {
+          "hz": null,
+          "reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+          "reliable_blocks": 0,
+          "provenance": {
+            "version": "b03-pitch-estimate-1",
+            "pcm": {
+              "schema_version": "sss-pcm-f32le-1",
+              "sample_rate_hz": 24000,
+              "channels": 1,
+              "sample_count": 57600,
+              "sha256": "416198bc2799d35d71d53249035c0f2a3ae16372744d670141c22eacd6107bf9"
+            },
+            "estimator_code": "c0e049eab1181ab305c1a9bde1bdd6b04ccb337572975017ae33862796b8b57b",
+            "preprocessing": "unchanged waveform: arithmetic channel mean, resample_poly to 8000 Hz; whole selected support",
+            "support_frames": 57600,
+            "native_rate": 24000
+          }
+        }
+      ],
+      "arms": {
+        "off": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": true,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 2.7138340113808113e-05,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 2.7138340113808113e-05
+            },
+            {
+              "recording_id": "3c9986e26045c995b3261abc4f50988b2f110113701e16009c3fa4ee7eb31e96",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.02043298961982276,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.02043298961982276
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.030490801710857385,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.030490801710857385
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.031405155215582514,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.031405155215582514
+            },
+            {
+              "recording_id": "0b2c91b2ef2db39f48783dc129d8fa2323fae16eaa28bb82449bde9afc50bf11",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.034995177385284126,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.034995177385284126
+            },
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.042958395734501886,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.042958395734501886
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.059440715253920584,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.059440715253920584
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07121027705308303,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07121027705308303
+            },
+            {
+              "recording_id": "456fe114f478ebddb8a6f21e776e56c78d9649f659292fd29c98956d98c179c3",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07385206193989657,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07385206193989657
+            },
+            {
+              "recording_id": "d48fee2da40b21a6c55c08cdfd3e246641523563c82b17eef33a3f8f00d4059a",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07618618543520483,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07618618543520483
+            }
+          ]
+        },
+        "primary": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": true,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 2.7138340113808113e-05,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 2.7138340113808113e-05
+            },
+            {
+              "recording_id": "3c9986e26045c995b3261abc4f50988b2f110113701e16009c3fa4ee7eb31e96",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.02043298961982276,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.02043298961982276
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.030490801710857385,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.030490801710857385
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.031405155215582514,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.031405155215582514
+            },
+            {
+              "recording_id": "0b2c91b2ef2db39f48783dc129d8fa2323fae16eaa28bb82449bde9afc50bf11",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.034995177385284126,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.034995177385284126
+            },
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.042958395734501886,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.042958395734501886
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.059440715253920584,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.059440715253920584
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07121027705308303,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07121027705308303
+            },
+            {
+              "recording_id": "456fe114f478ebddb8a6f21e776e56c78d9649f659292fd29c98956d98c179c3",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07385206193989657,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07385206193989657
+            },
+            {
+              "recording_id": "d48fee2da40b21a6c55c08cdfd3e246641523563c82b17eef33a3f8f00d4059a",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07618618543520483,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07618618543520483
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "low-130",
+      "stratum": "primary",
+      "family_truth": 1,
+      "off_round_trip_exact": true,
+      "state": "complete",
+      "query_pitch": [
+        {
+          "hz": 131.14754098360655,
+          "reason": "stable narrow monophonic fundamental",
+          "reliable_blocks": 17,
+          "provenance": {
+            "version": "b03-pitch-estimate-1",
+            "pcm": {
+              "schema_version": "sss-pcm-f32le-1",
+              "sample_rate_hz": 24000,
+              "channels": 1,
+              "sample_count": 57600,
+              "sha256": "3a6d696fb757df4222e3eeb8f328c01456266d28fe70ba4fc51fa043d011c8b7"
+            },
+            "estimator_code": "c0e049eab1181ab305c1a9bde1bdd6b04ccb337572975017ae33862796b8b57b",
+            "preprocessing": "unchanged waveform: arithmetic channel mean, resample_poly to 8000 Hz; whole selected support",
+            "support_frames": 57600,
+            "native_rate": 24000
+          }
+        }
+      ],
+      "arms": {
+        "off": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": false,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "5b8d99462d197e923d3037d742cf2edf0db0bb4376814772c804161611482acc",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.015224761159011835,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.015224761159011835
+            },
+            {
+              "recording_id": "de385d0c8af42dd518ad77731d1a2f321fc7e5e885eab6c8a7fd8830d8e8067d",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.021807022105769125,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.021807022105769125
+            },
+            {
+              "recording_id": "0dc3295f665c3b448305f4610fd58c8e9e27e0ba9a8bbada3f0fd99635893748",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07719975786571465,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07719975786571465
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.08567901336325401,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.08567901336325401
+            },
+            {
+              "recording_id": "8c574b89976711c46b73cbceed290df452d3394de349074a615f63e3045af803",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.09322148383357698,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.09322148383357698
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.09466379117589996,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.09466379117589996
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.09589427826610519,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.09589427826610519
+            },
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.10341077756771067,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.10341077756771067
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.10555497537626446,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.10555497537626446
+            },
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.12308216514143522,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.12308216514143522
+            }
+          ]
+        },
+        "primary": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": false,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "5b8d99462d197e923d3037d742cf2edf0db0bb4376814772c804161611482acc",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.015224761159011835,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.007772616639513935,
+              "score": 0.02299737779852577
+            },
+            {
+              "recording_id": "de385d0c8af42dd518ad77731d1a2f321fc7e5e885eab6c8a7fd8830d8e8067d",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.021807022105769125,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.007772616639513935,
+              "score": 0.02957963874528306
+            },
+            {
+              "recording_id": "0dc3295f665c3b448305f4610fd58c8e9e27e0ba9a8bbada3f0fd99635893748",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07719975786571465,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.007772616639513935,
+              "score": 0.08497237450522858
+            },
+            {
+              "recording_id": "8c574b89976711c46b73cbceed290df452d3394de349074a615f63e3045af803",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.09322148383357698,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.007772616639513935,
+              "score": 0.10099410047309092
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.08567901336325401,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.022824370083617217,
+              "score": 0.10850338344687123
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.09466379117589996,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.022824370083617217,
+              "score": 0.11748816125951718
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.09589427826610519,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.022824370083617217,
+              "score": 0.11871864834972241
+            },
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.12308216514143522,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.12308216514143522
+            },
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.10341077756771067,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.022824370083617217,
+              "score": 0.12623514765132787
+            },
+            {
+              "recording_id": "3c9986e26045c995b3261abc4f50988b2f110113701e16009c3fa4ee7eb31e96",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.13041665409707237,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.13041665409707237
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "multiple-registers",
+      "stratum": "primary",
+      "family_truth": 0,
+      "off_round_trip_exact": true,
+      "state": "complete",
+      "query_pitch": [
+        {
+          "hz": 222.2222222222222,
+          "reason": "stable narrow monophonic fundamental",
+          "reliable_blocks": 17,
+          "provenance": {
+            "version": "b03-pitch-estimate-1",
+            "pcm": {
+              "schema_version": "sss-pcm-f32le-1",
+              "sample_rate_hz": 24000,
+              "channels": 1,
+              "sample_count": 57600,
+              "sha256": "0d05aedc59d8080275b4fd5182c72b8ca06e0b3be076636acf661e8d5d9909a7"
+            },
+            "estimator_code": "c0e049eab1181ab305c1a9bde1bdd6b04ccb337572975017ae33862796b8b57b",
+            "preprocessing": "unchanged waveform: arithmetic channel mean, resample_poly to 8000 Hz; whole selected support",
+            "support_frames": 57600,
+            "native_rate": 24000
+          }
+        },
+        {
+          "hz": 444.4444444444444,
+          "reason": "stable narrow monophonic fundamental",
+          "reliable_blocks": 17,
+          "provenance": {
+            "version": "b03-pitch-estimate-1",
+            "pcm": {
+              "schema_version": "sss-pcm-f32le-1",
+              "sample_rate_hz": 24000,
+              "channels": 1,
+              "sample_count": 57600,
+              "sha256": "784cf4fd4a0523688e6cae389a360cc102e6f0904498bec09ae2647815a43074"
+            },
+            "estimator_code": "c0e049eab1181ab305c1a9bde1bdd6b04ccb337572975017ae33862796b8b57b",
+            "preprocessing": "unchanged waveform: arithmetic channel mean, resample_poly to 8000 Hz; whole selected support",
+            "support_frames": 57600,
+            "native_rate": 24000
+          }
+        }
+      ],
+      "arms": {
+        "off": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": true,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "456fe114f478ebddb8a6f21e776e56c78d9649f659292fd29c98956d98c179c3",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04204589067864806,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.04204589067864806
+            },
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04278659068764673,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.04278659068764673
+            },
+            {
+              "recording_id": "0b2c91b2ef2db39f48783dc129d8fa2323fae16eaa28bb82449bde9afc50bf11",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.05103734872976823,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.05103734872976823
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.053337832344026115,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.053337832344026115
+            },
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.05866249376769822,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.05866249376769822
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07464712003949892,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07464712003949892
+            },
+            {
+              "recording_id": "9d4818569a3bec0fe87919264efcc453d9f5e86bae46f4e80d72c053311a4387",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07480977029948177,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07480977029948177
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07548212314132613,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07548212314132613
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07704071536124263,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07704071536124263
+            },
+            {
+              "recording_id": "d48fee2da40b21a6c55c08cdfd3e246641523563c82b17eef33a3f8f00d4059a",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07727327925593602,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.07727327925593602
+            }
+          ]
+        },
+        "primary": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": true,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "456fe114f478ebddb8a6f21e776e56c78d9649f659292fd29c98956d98c179c3",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04204589067864806,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.015,
+              "score": 0.057045890678648056
+            },
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.04278659068764673,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.015,
+              "score": 0.05778659068764673
+            },
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.05866249376769822,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.05866249376769822
+            },
+            {
+              "recording_id": "0b2c91b2ef2db39f48783dc129d8fa2323fae16eaa28bb82449bde9afc50bf11",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.05103734872976823,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.014999999999999998,
+              "score": 0.06603734872976823
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.053337832344026115,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.015,
+              "score": 0.06833783234402611
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07464712003949892,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.015,
+              "score": 0.08964712003949891
+            },
+            {
+              "recording_id": "9d4818569a3bec0fe87919264efcc453d9f5e86bae46f4e80d72c053311a4387",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07480977029948177,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.015,
+              "score": 0.08980977029948177
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07548212314132613,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.014999999999999998,
+              "score": 0.09048212314132613
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07704071536124263,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.015,
+              "score": 0.09204071536124263
+            },
+            {
+              "recording_id": "d48fee2da40b21a6c55c08cdfd3e246641523563c82b17eef33a3f8f00d4059a",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.07727327925593602,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.015,
+              "score": 0.09227327925593602
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "processed-mixture",
+      "stratum": "primary",
+      "family_truth": 2,
+      "off_round_trip_exact": true,
+      "state": "complete",
+      "query_pitch": [
+        {
+          "hz": 222.2222222222222,
+          "reason": "stable narrow monophonic fundamental",
+          "reliable_blocks": 17,
+          "provenance": {
+            "version": "b03-pitch-estimate-1",
+            "pcm": {
+              "schema_version": "sss-pcm-f32le-1",
+              "sample_rate_hz": 24000,
+              "channels": 1,
+              "sample_count": 57600,
+              "sha256": "b0b6870c3273755cacf023f7e7ab0282cc22e3ce73639f4ccf19b9eb900b3bc8"
+            },
+            "estimator_code": "c0e049eab1181ab305c1a9bde1bdd6b04ccb337572975017ae33862796b8b57b",
+            "preprocessing": "unchanged waveform: arithmetic channel mean, resample_poly to 8000 Hz; whole selected support",
+            "support_frames": 57600,
+            "native_rate": 24000
+          }
+        }
+      ],
+      "arms": {
+        "off": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": false,
+            "5": false,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "456fe114f478ebddb8a6f21e776e56c78d9649f659292fd29c98956d98c179c3",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.1405810325730057,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.1405810325730057
+            },
+            {
+              "recording_id": "0b2c91b2ef2db39f48783dc129d8fa2323fae16eaa28bb82449bde9afc50bf11",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.16125103781318284,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.16125103781318284
+            },
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.16662440369761777,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.16662440369761777
+            },
+            {
+              "recording_id": "9d4818569a3bec0fe87919264efcc453d9f5e86bae46f4e80d72c053311a4387",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.17736774638763764,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.17736774638763764
+            },
+            {
+              "recording_id": "0dc3295f665c3b448305f4610fd58c8e9e27e0ba9a8bbada3f0fd99635893748",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.17834208646053507,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.17834208646053507
+            },
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.1787981826936893,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.1787981826936893
+            },
+            {
+              "recording_id": "b5be1001bb7dc49d6ec376b97f3c4fa7db28bfdc69fb11ddbc6ec9b91b4c013c",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.17999244456069508,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.17999244456069508
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.19120875518533753,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.19120875518533753
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.19148905979582076,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.19148905979582076
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.20006593631855263,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.20006593631855263
+            }
+          ]
+        },
+        "primary": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": false,
+            "5": false,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.16662440369761777,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.16662440369761777
+            },
+            {
+              "recording_id": "0b2c91b2ef2db39f48783dc129d8fa2323fae16eaa28bb82449bde9afc50bf11",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.16125103781318284,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.006471860731663128,
+              "score": 0.16772289854484596
+            },
+            {
+              "recording_id": "456fe114f478ebddb8a6f21e776e56c78d9649f659292fd29c98956d98c179c3",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.1405810325730057,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.03,
+              "score": 0.1705810325730057
+            },
+            {
+              "recording_id": "b9e7278fe4fddeb2b6a380fb3220a06b4b65b23884a4ab0de811911635c4f9d9",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.1787981826936893,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.1787981826936893
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.19120875518533753,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.19120875518533753
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.19148905979582076,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.006471860731663128,
+              "score": 0.19796092052748387
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.20006593631855263,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.20006593631855263
+            },
+            {
+              "recording_id": "9d4818569a3bec0fe87919264efcc453d9f5e86bae46f4e80d72c053311a4387",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.17736774638763764,
+              "pitch_hz": 444.4444444444444,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.03,
+              "score": 0.20736774638763764
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.20780973064446695,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.20780973064446695
+            },
+            {
+              "recording_id": "0dc3295f665c3b448305f4610fd58c8e9e27e0ba9a8bbada3f0fd99635893748",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.17834208646053507,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.03,
+              "score": 0.20834208646053506
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "noisy-chord",
+      "stratum": "ambiguous_diagnostic",
+      "family_truth": 3,
+      "off_round_trip_exact": true,
+      "state": "complete",
+      "query_pitch": [
+        {
+          "hz": null,
+          "reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+          "reliable_blocks": 0,
+          "provenance": {
+            "version": "b03-pitch-estimate-1",
+            "pcm": {
+              "schema_version": "sss-pcm-f32le-1",
+              "sample_rate_hz": 24000,
+              "channels": 1,
+              "sample_count": 57600,
+              "sha256": "11ad3536f912db7a81c98ae5c0ecfb4c771469af0b956dd72601736131d773db"
+            },
+            "estimator_code": "c0e049eab1181ab305c1a9bde1bdd6b04ccb337572975017ae33862796b8b57b",
+            "preprocessing": "unchanged waveform: arithmetic channel mean, resample_poly to 8000 Hz; whole selected support",
+            "support_frames": 57600,
+            "native_rate": 24000
+          }
+        }
+      ],
+      "arms": {
+        "off": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": true,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "5b8d99462d197e923d3037d742cf2edf0db0bb4376814772c804161611482acc",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.25843958121135724,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.25843958121135724
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.2787225194073847,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.2787225194073847
+            },
+            {
+              "recording_id": "de385d0c8af42dd518ad77731d1a2f321fc7e5e885eab6c8a7fd8830d8e8067d",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.28488170189270257,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.28488170189270257
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.2941973869425505,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.2941973869425505
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.30530115293448135,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.30530115293448135
+            },
+            {
+              "recording_id": "8c574b89976711c46b73cbceed290df452d3394de349074a615f63e3045af803",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.30956497038187203,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.30956497038187203
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.3100949818137183,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.3100949818137183
+            },
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.33348403912305913,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.33348403912305913
+            },
+            {
+              "recording_id": "3c9986e26045c995b3261abc4f50988b2f110113701e16009c3fa4ee7eb31e96",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.3387993517552714,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.3387993517552714
+            },
+            {
+              "recording_id": "0dc3295f665c3b448305f4610fd58c8e9e27e0ba9a8bbada3f0fd99635893748",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.34084055482283315,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.34084055482283315
+            }
+          ]
+        },
+        "primary": {
+          "state": "complete",
+          "source_family_hits": {
+            "1": true,
+            "5": true,
+            "10": true
+          },
+          "top_ten": [
+            {
+              "recording_id": "5b8d99462d197e923d3037d742cf2edf0db0bb4376814772c804161611482acc",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.25843958121135724,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.25843958121135724
+            },
+            {
+              "recording_id": "7b478c8d9aa0c91333dd55ada96fd84d8b55ac2b6cebb248892f331d01eb37b6",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.2787225194073847,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.2787225194073847
+            },
+            {
+              "recording_id": "de385d0c8af42dd518ad77731d1a2f321fc7e5e885eab6c8a7fd8830d8e8067d",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.28488170189270257,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.28488170189270257
+            },
+            {
+              "recording_id": "61989844c380a289584bf9a9f455f27925108fded86a13b463dfc820fda5827b",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.2941973869425505,
+              "pitch_hz": 258.0645161290323,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.2941973869425505
+            },
+            {
+              "recording_id": "dee0bc462aec54b949647836f90cd77724e1c59de3333582c6431000ab6daf99",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.30530115293448135,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.30530115293448135
+            },
+            {
+              "recording_id": "8c574b89976711c46b73cbceed290df452d3394de349074a615f63e3045af803",
+              "family": 2,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.30956497038187203,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.30956497038187203
+            },
+            {
+              "recording_id": "d938730c26f0ea1052767afd5ece8dcbf769eefed6ff72b135c7288a27da81c4",
+              "family": 1,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.3100949818137183,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.3100949818137183
+            },
+            {
+              "recording_id": "9869d9e350b9793a3302809b949ab025bde54638089c8ab5e502a580f16e2457",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.33348403912305913,
+              "pitch_hz": 222.2222222222222,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.33348403912305913
+            },
+            {
+              "recording_id": "3c9986e26045c995b3261abc4f50988b2f110113701e16009c3fa4ee7eb31e96",
+              "family": 3,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.3387993517552714,
+              "pitch_hz": null,
+              "pitch_reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+              "pitch_contribution": 0.0,
+              "score": 0.3387993517552714
+            },
+            {
+              "recording_id": "0dc3295f665c3b448305f4610fd58c8e9e27e0ba9a8bbada3f0fd99635893748",
+              "family": 0,
+              "native_frames": [
+                7200,
+                64800
+              ],
+              "timbre_distance": 0.34084055482283315,
+              "pitch_hz": 109.58904109589038,
+              "pitch_reason": "stable narrow monophonic fundamental",
+              "pitch_contribution": 0.0,
+              "score": 0.34084055482283315
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "silence",
+      "stratum": "absent_diagnostic",
+      "family_truth": null,
+      "off_round_trip_exact": false,
+      "state": "failed",
+      "query_pitch": null,
+      "arms": {
+        "off": {
+          "state": "failed",
+          "source_family_hits": {
+            "1": false,
+            "5": false,
+            "10": false
+          },
+          "error": "prepare: selected interval/channel policy is silent; no usable derivative"
+        },
+        "primary": {
+          "state": "failed",
+          "source_family_hits": {
+            "1": false,
+            "5": false,
+            "10": false
+          },
+          "error": "prepare: selected interval/channel policy is silent; no usable derivative"
+        }
+      }
+    }
+  ],
+  "independent_formula_and_bound": "passed for every off/primary candidate; same timbre-selected intervals",
+  "failures_before_predictions": "frozen adapter second initialization; all charges/features retained under declared repair",
+  "interrupted_resume": "Windows MemoryError after five completed cases; same pending sixth case resumed, no replacement batch",
+  "exposure": "inspected deterministic development; no fresh holdout, human labels or catalogue tuning",
+  "record_hash": "e1aa04e0b148d33da25a9fe029e9ba0d66e624d4bbf7808b38321db3b067c733"
+}

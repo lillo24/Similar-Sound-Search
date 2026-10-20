@@ -100,7 +100,9 @@ this is an engineering intent, without a verified instrumental layer or perceptu
 The generated positive uses `--engineering config/local/a06-engineering.json` on `index`
 and `--include-self` on `rank`; it never enters real discoveries.
 
-Loulou is missing/unverified. A ready-to-run **unrun** full-file selection command is:
+At A06 delivery Loulou audio was missing. B03 separately registers the supplied MP3;
+marked-version identity/alignment remain unverified. The historical **unrun** example
+below requires its own exact input; current delivered queries use [B03 commands](QUERIES.md):
 
 ```powershell
 # Only after full marked-version audio and context/offset evidence are supplied.

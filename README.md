@@ -2,17 +2,17 @@
 
 Select a particular sound inside a song and find passages in other recordings with a similar sound character, with playable results and trustworthy timestamps. Timbre comes first, approximate pitch second; matching phrase rhythm or note order is deferred.
 
-**Current state: A06 local search and original-passage playback delivered.** The unchanged EfficientAT MN04 choice indexes all 72 available recordings over their full available durations: 44,025 passages across 3.098 hours. Single and unordered multiple-example queries return ten distinct recording candidates with parent duplicates excluded. [A06 evidence](reports/A06_SEARCH.md) records operation, costs and the single held-out check: 21/24 source-consistency query hits at rank one and 32/32 target events recovered within ten results. Human agreement remains unavailable; the broader A03 catalogue remains partial at 72 recordings/35 artists.
+**Current state: B03 reusable query revisions and optional pitch preference.** Named queries retain exact original/processed examples, cue provenance, native bounds and immutable executions; labels and pitch changes reuse validated features. Original audio and pitch off remain defaults. The unchanged EfficientAT MN04 index contains 72 recordings / 44,025 passages across 3.098 hours. [B03 evidence and C01 handoff](reports/B03_QUERIES.md) distinguish reproducibility checks, controlled retrieval and unmeasured human relevance; A03 remains partial at 72 recordings/35 artists.
 
-The first reference is **daoud — Loulou & the loulous**, approximately **3:38–4:00** in Leonardo's marked recording. The actual audio is still missing; recording version, excerpt offset, and exact event remain unverified. Engineering fixtures do not substitute for that reference. No new labels or manually discovered similar songs are required; the first required listening review is D04.
+The supplied **daoud — Loulou & the loulous** MP3 is now available and technically registered. B03 uses the complete **218..240s** available-file mixture; recording identity, marked-version alignment, master offset, rights and intended layer remain unverified. [Availability](manifests/queries/loulou-availability.json) preserves these distinctions and the historical missing-input record. The first required listening review remains D04.
 
-Open the delivered alternative engineering demo from this checkout with:
+Open the B03 query/revision demonstration from this delivery checkout with:
 
 ```powershell
-.\scripts\listen-search.ps1
+.\scripts\listen-queries.ps1
 ```
 
-Visit `http://127.0.0.1:8766/`; Ctrl+C stops the listener. It verifies and serves only the owned report and original stereo clips. [Search setup, explicit queries and recovery](docs/SEARCH.md) cover missing local assets and finite cumulative allowances. Audio, weights and the completed index remain private on this delivery machine; Git does not restore them in a fresh checkout.
+Visit `http://127.0.0.1:8769/`; Ctrl+C stops the listener. [Query contracts, migration and commands](docs/QUERIES.md) cover saved revisions, explicit bindings, missing assets and finite allowances. Historical listeners remain on 8766/8767/8768. Local audio, weights, features and playback are not restored by Git in a fresh checkout; the previously supplied root MP3 retains its existing repository status.
 
 The fixed A06 compute allowance is consumed; opening the completed listening reports needs no new compute. An extra full-index repeat stopped at that cap. Later catalogue-page control required a Chrome extension update; earlier engineering browser playback checks passed. These limits are recorded in the evidence report.
 
@@ -48,6 +48,7 @@ The delivered protocol requires its four locally validated A03 backgrounds; a fr
 - [Matcher setup/commands](docs/MATCHERS.md), [measured A05 evidence](reports/A05_MATCHERS.md), and [provisional choice](manifests/matchers/choice.json).
 - [Local search/playback commands](docs/SEARCH.md), [measured A06 evidence](reports/A06_SEARCH.md), and [search reproducibility records](manifests/search/README.md).
 - [Event selection/crop commands](docs/EVENTS.md), [measured B01 evidence](reports/B01_EVENTS.md), and [event declarations/results](manifests/events/README.md).
+- [Query/revision commands](docs/QUERIES.md), [B03 evidence](reports/B03_QUERIES.md), and [query declarations/results](manifests/queries/README.md).
 - [Measured A04 evidence](reports/A04_BENCHMARKS.md) and [frozen protocol](manifests/evaluation/protocol.json).
 - [Initial reference manifest](manifests/references/loulou.json).
 - [Archived A01 prompt](history-implementations/Similar_Sound_Search_A01.md).
@@ -57,12 +58,14 @@ The delivered protocol requires its four locally validated A03 backgrounds; a fr
 - [Archived A05 prompt](history-implementations/Similar_Sound_Search_A05.md).
 - [Archived A06 prompt](history-implementations/Similar_Sound_Search_A06.md).
 - [Archived B01 prompt](history-implementations/Similar_Sound_Search_B01.md).
+- [Archived B02 prompt](history-implementations/Similar_Sound_Search_B02.md).
+- [Archived B03 prompt](history-implementations/Similar_Sound_Search_B03.md).
 
 ## A06 handoff
 
 Follow [AGENTS.md](AGENTS.md) for implementation and GitHub delivery. Each implementation plan uses an isolated branch and a PR into `main`; checks, merge, and branch cleanup are part of completion. Reinspect current code and run the [complete local validation](docs/RUNTIME.md#validation) before extending the pipeline.
 
-A06 integrates the frozen A05 choice through A02 preparation, A03 original validation and A04 scoring. Exact ranking, saved-query reuse, bounded resumable shards and verified original playback are implemented. Controlled held-out results and pipeline operation do not establish perceptual quality. This batch ends at A06; later stages need their own prompts. D04 remains the first required user relevance review. Missing Loulou audio prevents its reference-specific experiment. Preserve benchmark exclusions, the A03 shortfall and all lifetime ledgers.
+A06 integrated the frozen A05 choice through A02 preparation, A03 original validation and A04 scoring. Its [historical evidence](reports/A06_SEARCH.md) retains the single held-out check and original missing-reference state; B03 separately updates availability and queries. Controlled results and pipeline operation do not establish perceptual quality. Preserve benchmark exclusions, the A03 shortfall and all lifetime ledgers.
 
 The [source map](src/README.md) and [config map](config/README.md) describe ownership. Local audio, features, indexes, weights, run output, and secrets are excluded by [.gitignore](.gitignore). Keep sanitized manifests and shareable evidence reports versionable; see the brief before adding data.
 
@@ -86,5 +89,14 @@ separator ran; controlled gains do not establish intended-layer or human relevan
 [B02 evidence and B03 handoff](reports/B02_SEPARATION.md) and
 [commands/contracts](docs/SEPARATION.md) own the current scope and limits.
 Open the saved comparison with `.\scripts\listen-separation.ps1` on loopback port 8768.
-Loulou remains missing; explicit inputs must retain version/offset uncertainty.
-B03 is not started automatically.
+The B02 report preserves its historically missing Loulou input. B03 separately
+registers the supplied file and retains version/offset uncertainty.
+
+## B03 reusable queries
+
+Use [the query CLI](docs/QUERIES.md) for save/show/revise/select/load/export/import and
+exact search executions. The local report includes the original Loulou mixture,
+unordered examples and the existing Donnie guided event with its contaminated cue.
+Pitch .03 is an explicit experimental preference; timbre still selects every passage.
+[B03 evidence](reports/B03_QUERIES.md) owns validation, outcomes, costs and recovery.
+C01 catalogue-wide component indexing is the next handoff and is not started here.

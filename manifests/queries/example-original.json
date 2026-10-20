@@ -1,0 +1,181 @@
+{
+  "schema_version": "b03-query-export-1",
+  "revision_id": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3",
+  "recipe": {
+    "schema_version": "b03-query-recipe-1",
+    "assets": {
+      "553baedae2d53e72edc69fc5564fbd16dbea7a703c2998c1f8b646ee4a50b2f2": {
+        "audio": {
+          "sha256": "2fc1256b1ac35134cfaef177aaf032277a0e375c676e50d391a1e3b22046ae30",
+          "file_bytes": 9797656,
+          "format": "MP3",
+          "subtype": "MPEG_LAYER_III",
+          "sample_count": 10742172,
+          "sample_rate_hz": 44100,
+          "channels": 2,
+          "duration_seconds": 243.58666666666667,
+          "measurement": {
+            "peak_per_channel": [
+              1.019467830657959,
+              1.021714210510254
+            ],
+            "rms_per_channel": [
+              0.21133568943875825,
+              0.20181871428251702
+            ],
+            "silent": false,
+            "silence_peak_threshold": 1e-12
+          },
+          "canonical_pcm": {
+            "schema_version": "sss-pcm-f32le-1",
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "sample_count": 10742172,
+            "sha256": "496260bb974c3d2b33cc9f39ceff74863ce659d588cacccac0c9440caf52fd45"
+          },
+          "decoder": {
+            "library": "SoundFile",
+            "soundfile": "0.13.1",
+            "libsndfile": "1.2.2",
+            "route": "full_sequential_float32",
+            "time_coordinate": "decoded_available_file",
+            "compressed_seek_verified": false,
+            "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+          }
+        },
+        "context": {
+          "schema_version": "a02-input-1",
+          "kind": "unknown",
+          "recording": {
+            "artist": "daoud",
+            "identity_evidence": null,
+            "external_ids": null,
+            "version": null,
+            "title": "Loulou & the loulous",
+            "recording_id": "recording-loulou-unverified",
+            "identity_status": "unverified"
+          },
+          "provenance": {
+            "permitted_use": null,
+            "notes": "File supplied on Git main before B03. The filename is an unverified association; technical registration does not establish recording version, rights or marked-version alignment. User requested local B03 analysis; no new acquisition or sharing.",
+            "origin_url": null,
+            "acquired_at": null
+          },
+          "reference_record_id": "reference-loulou-001",
+          "requested_interval": {
+            "basis": "claimed_recording",
+            "start_seconds": 218,
+            "end_seconds": 240,
+            "status": "approximate"
+          },
+          "original_recording_offset_seconds": null,
+          "offset_evidence": null
+        },
+        "parent_hash": null
+      }
+    },
+    "examples": [
+      {
+        "kind": "asset",
+        "asset_id": "553baedae2d53e72edc69fc5564fbd16dbea7a703c2998c1f8b646ee4a50b2f2",
+        "event": [
+          9613800,
+          10584000
+        ],
+        "context": [
+          9569700,
+          10628100
+        ],
+        "selection": {
+          "origin": "explicit user-reference coarse available-file interval",
+          "version": "b03-real-manual-1",
+          "complete": false,
+          "uncertainty": [
+            "available-file coordinates; mixed reference, marked version/master alignment/rights/intended layer/complete notes unverified"
+          ]
+        }
+      }
+    ],
+    "pitch": {
+      "version": "b03-pitch-1",
+      "weight": 0,
+      "scale_semitones": 12
+    }
+  },
+  "dependencies": {
+    "553baedae2d53e72edc69fc5564fbd16dbea7a703c2998c1f8b646ee4a50b2f2": {
+      "kind": "asset",
+      "identity": {
+        "audio": {
+          "sha256": "2fc1256b1ac35134cfaef177aaf032277a0e375c676e50d391a1e3b22046ae30",
+          "file_bytes": 9797656,
+          "format": "MP3",
+          "subtype": "MPEG_LAYER_III",
+          "sample_count": 10742172,
+          "sample_rate_hz": 44100,
+          "channels": 2,
+          "duration_seconds": 243.58666666666667,
+          "measurement": {
+            "peak_per_channel": [
+              1.019467830657959,
+              1.021714210510254
+            ],
+            "rms_per_channel": [
+              0.21133568943875825,
+              0.20181871428251702
+            ],
+            "silent": false,
+            "silence_peak_threshold": 1e-12
+          },
+          "canonical_pcm": {
+            "schema_version": "sss-pcm-f32le-1",
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "sample_count": 10742172,
+            "sha256": "496260bb974c3d2b33cc9f39ceff74863ce659d588cacccac0c9440caf52fd45"
+          },
+          "decoder": {
+            "library": "SoundFile",
+            "soundfile": "0.13.1",
+            "libsndfile": "1.2.2",
+            "route": "full_sequential_float32",
+            "time_coordinate": "decoded_available_file",
+            "compressed_seek_verified": false,
+            "timing_note": "MP3 decoded timeline honors delay/padding metadata as interpreted by libsndfile; untagged/other encoders may retain unknown priming/padding. Use sequentially decoded analysis/playback; no sample-exact encoded-stream seek claim."
+          }
+        },
+        "context": {
+          "schema_version": "a02-input-1",
+          "kind": "unknown",
+          "recording": {
+            "artist": "daoud",
+            "identity_evidence": null,
+            "external_ids": null,
+            "version": null,
+            "title": "Loulou & the loulous",
+            "recording_id": "recording-loulou-unverified",
+            "identity_status": "unverified"
+          },
+          "provenance": {
+            "permitted_use": null,
+            "notes": "File supplied on Git main before B03. The filename is an unverified association; technical registration does not establish recording version, rights or marked-version alignment. User requested local B03 analysis; no new acquisition or sharing.",
+            "origin_url": null,
+            "acquired_at": null
+          },
+          "reference_record_id": "reference-loulou-001",
+          "requested_interval": {
+            "basis": "claimed_recording",
+            "start_seconds": 218,
+            "end_seconds": 240,
+            "status": "approximate"
+          },
+          "original_recording_offset_seconds": null,
+          "offset_evidence": null
+        },
+        "parent_hash": null
+      }
+    }
+  },
+  "availability": "metadata only; explicit local bindings and exact media/weights/features required",
+  "record_hash": "f7d79446c4e41e50e7fde6fdf28845ddcff7a0887363c47007eaee586690d794"
+}

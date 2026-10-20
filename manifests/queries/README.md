@@ -15,6 +15,18 @@ pending case and existing features before the two-module execution-only repair.
 `execution-repair.json` binds its checked producer and exact recovery, keeping the
 original protocol and comparison allowance intact.
 
+`comparison.json` and `known-answer.json` report the fixed development and pitch
+engineering outcomes. `delivery.json` binds real revisions/materializations/executions,
+reuse counters, the complete catalogue winners and native/HTTP/Chrome verification.
+`commands.json` retains actual exercised arguments/timings, including failures;
+`resources.json` retains cumulative charges, ceilings, peaks and separate checks.
+`example-original.json` is the real portable metadata-only recipe/dependency export.
+`preservation-policy.json` permits only the configuration README navigation update
+within the earlier-file preservation inventory. Records with `record_hash` use the
+repository's canonical self-digest; producer hashes refer to unchanged private receipts.
+`retention.json` binds verified ignored delivery paths/bytes and QA cleanup; those
+local artifacts remain outside Git and must survive branch/worktree cleanup.
+
 Audio, bindings, revisions, arrays, ledgers and playback stay in the fixed ignored B03
 namespaces. Earlier evidence remains immutable. Public records do not supply media,
 model weights or local availability in another checkout.

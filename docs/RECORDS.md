@@ -55,7 +55,7 @@ A segment records `asset_start_seconds`, `asset_end_seconds`, `source_start_seco
 | Existing excerpt starting at original second 218, offset verified | Asset 0–22 maps to source 0–22; original offset 218 | Recording 218–240 |
 | Existing excerpt with unknown original offset | Asset 0–22 maps to source 0–22; original offset null | Excerpt 0–22; no claimed recording time |
 
-The 22-second duration above is hypothetical; the real Loulou file duration is unknown. Do not crop an existing excerpt at second 218 just because the requested recording interval starts there, or add the requested start again after mapping a full-track crop.
+The table is an A01 arithmetic illustration, predating supplied audio. B03 separately registers a 243.586667s MP3 and a 22s available-file selection, while marked-version identity/master offset remain unverified. Do not crop an existing excerpt at second 218 just because the requested recording interval starts there, or add the requested start again after mapping a full-track crop.
 
 Resampling changes sample coordinates, not elapsed seconds: map using the respective sample rates, normally with time scale 1. Trimming, time stretching, concatenation, and tool latency require explicit maps. Compose successive operations back to the original available source. Split a hit across noncontiguous segments into separate playback intervals; do not fabricate a continuous original passage. Unknown timing changes prevent a verified mapping claim.
 

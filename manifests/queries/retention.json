@@ -1,0 +1,27 @@
+{
+  "schema_version": "b03-retention-1",
+  "prior_protected_files": 9060,
+  "unchanged_prior_files": 9059,
+  "declared_prior_change": "config/README.md navigation only",
+  "prior_baseline_sha256": "51894bd2c50c22b4266afb6d1a46539d2568a663a29325a4a567f61885f092f4",
+  "ignored_delivery_files": 436,
+  "ignored_delivery_bytes": 43563460,
+  "owned_baseline_sha256": "7264321565fbf04680357ac1352a2a8b4bf18ad191c6a7b947cadb6f7189411a",
+  "owned_roots": [
+    "data/runs/queries",
+    "data/features/queries",
+    "data/audio/queries",
+    "reports/local/b03",
+    "config/local/b03-*.json"
+  ],
+  "shared_native_bundles": "exact data/audio/prepared bundles referenced by materialized B03 query records",
+  "availability": "verified owned paths retained in this delivery checkout; matching earlier private source/index/checkpoint closure remains required",
+  "git_transfer": "code and sanitized metadata only; no new media/weights/arrays staged",
+  "qa_cleanup": {
+    "owned_browser_tab_closed": true,
+    "temporary_viewport_override_cleared": true,
+    "owned_listener_stopped": true,
+    "old_listener_scripts_and_ports_preserved": true
+  },
+  "record_hash": "406f240295e3c335623d771ed9803acc47f9645cc7a866cfdb8ec8e4f3c15ab7"
+}

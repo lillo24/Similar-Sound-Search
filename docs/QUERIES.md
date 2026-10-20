@@ -236,3 +236,9 @@ source duration once. A separate original hash or parent validation counts separ
 every repeated decode is charged again. Successful workers retain measured peak working
 bytes per action; interrupted/failed worker time and uncertain reservations remain
 charged even where a peak measurement is unavailable.
+
+Native query crops use A02's existing immutable `data/audio/prepared` bundles;
+their bytes are reserved under B03's query-preparation and total managed-output
+ceilings, including reuse attempts. B03 recipe/binding/materialization/execution
+records, new feature blobs, pitch records and processing outputs use B03-owned roots.
+Do not delete shared A02 bundles when cleaning up a B03 branch or worktree.

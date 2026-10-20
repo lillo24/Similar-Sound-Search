@@ -1,0 +1,77 @@
+{
+  "schema_version": "b03-known-answer-1",
+  "eligible": [
+    {
+      "truth_hz": 110,
+      "estimate": {
+        "hz": 109.58904109589038,
+        "reason": "stable narrow monophonic fundamental",
+        "reliable_blocks": 14
+      },
+      "absolute_cents": 6.479985291108161
+    },
+    {
+      "truth_hz": 220,
+      "estimate": {
+        "hz": 222.2222222222222,
+        "reason": "stable narrow monophonic fundamental",
+        "reliable_blocks": 14
+      },
+      "absolute_cents": 17.399483634137823
+    },
+    {
+      "truth_hz": 440,
+      "estimate": {
+        "hz": 444.4444444444444,
+        "reason": "stable narrow monophonic fundamental",
+        "reliable_blocks": 14
+      },
+      "absolute_cents": 17.399483634137823
+    }
+  ],
+  "eligible_coverage": "3/3",
+  "abstentions": {
+    "silence": {
+      "hz": null,
+      "reason": "silent",
+      "reliable_blocks": 0
+    },
+    "outside_880": {
+      "hz": null,
+      "reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+      "reliable_blocks": 0
+    },
+    "chord": {
+      "hz": null,
+      "reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+      "reliable_blocks": 0
+    },
+    "noise": {
+      "hz": null,
+      "reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+      "reliable_blocks": 0
+    }
+  },
+  "multiple_notes": {
+    "policy": {
+      "version": "b03-pitch-1",
+      "weight": 0.03,
+      "scale_semitones": 12
+    },
+    "value": 0.015,
+    "reason": "mean clipped absolute semitone/register mismatch over unique PCM examples; octaves not folded",
+    "per_example_absolute_semitones": [
+      0.0,
+      12.0
+    ],
+    "all_query_estimates_reliable": true,
+    "different_query_notes": true
+  },
+  "default": {
+    "version": "b03-pitch-1",
+    "weight": 0,
+    "scale_semitones": 12
+  },
+  "limits": "50..500Hz conservative channel-mean monophonic estimator; diagnostics do not establish polyphonic accuracy",
+  "record_hash": "2d3af52b6950144e31188137f80fb9af07846c0de6c694ee6388fc42a47761c4"
+}
