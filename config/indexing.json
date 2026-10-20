@@ -1,0 +1,35 @@
+{
+  "schema_version": "c01-indexing-1",
+  "rows_per_shard": 128,
+  "results": 10,
+  "default": "legacy-original",
+  "candidates": {
+    "short": {"window_milliseconds": 1200, "hop_milliseconds": 500},
+    "long": {"window_milliseconds": 4800, "hop_milliseconds": 1000}
+  },
+  "component_grid": {"window_milliseconds": 2400, "hop_milliseconds": 500},
+  "policy": {
+    "max_job_seconds": 7200,
+    "max_workers": 512,
+    "max_http_attempts": 0,
+    "max_download_bytes": 0,
+    "max_read_audio_seconds": 180000,
+    "max_feature_windows": 26000,
+    "max_processed_window_seconds": 65000,
+    "max_feature_bytes": 134217728,
+    "max_query_jobs": 16,
+    "max_clips": 64,
+    "max_clip_bytes": 134217728,
+    "max_metadata_bytes": 33554432,
+    "max_query_preparation_bytes": 33554432,
+    "max_preparation_bytes": 33554432,
+    "max_managed_output_bytes": 536870912,
+    "max_pilot_windows": 2048,
+    "max_comparison_batches": 1,
+    "max_case_bank_queries": 48,
+    "max_real_regions": 4,
+    "max_processing_inputs": 32,
+    "max_separator_input_seconds": 240,
+    "max_component_windows": 512
+  }
+}
