@@ -1,0 +1,15 @@
+{
+  "schema_version": "b02-report-repair-checked-1",
+  "declaration_hash": "3436de00daa904904952004f2ee6c2fcf78a73f53884c5cabd0ff0d40da10704",
+  "changed_modules": [
+    "separation/report.py"
+  ],
+  "before_report": "dd3b20b9cb72db206ba46a86742761ec57038c61e6dc8e2d5b81e327ad69977e",
+  "after_report": "5cd7dfcec6f90ac73e783e825eb605ebba79ac25c2781c1d4b9f94332dfd9bd4",
+  "all_other_package_code_unchanged": true,
+  "legacy_audit_passed": true,
+  "focused_tests": 21,
+  "new_test": "interrupted owned conversion receipt is recovered only after exact sample verification",
+  "comparison_not_rerun": true,
+  "record_hash": "45c3d3c808f8105919bdbe8bc4d0d9ee50e9957e1b7ee31683fdf90017e8fbab"
+}

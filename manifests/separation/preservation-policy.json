@@ -1,0 +1,15 @@
+{
+  "schema_version": "b02-preservation-policy-1",
+  "baseline": "reports/local/b02-preservation-before.json",
+  "baseline_sha256": "9a476b30f0424289befce7e643bd4f87877e946269824f89ed0fadc1d5784222",
+  "protected_files": 8357,
+  "protected_bytes": 1118068772,
+  "expected_changes": {
+    "config/README.md": {
+      "reason": "add B02 configuration/input-template navigation; previous configuration values unchanged",
+      "canonical_lf_sha256": "2993dfefa810d1216f31d9619d2cc5fb6728948f4242f6cb06e94f3ae48b30b5"
+    }
+  },
+  "checks": "all other baseline files require identical SHA256, logical size and mtime_ns; no missing file allowed; new B02 files are outside the historical baseline; final metadata-only verification after Git cleanup",
+  "record_hash": "b97ba145bf9fc74c654c3e4073eeeb707d9f4724adc236e4ba10d9e299f8a06e"
+}

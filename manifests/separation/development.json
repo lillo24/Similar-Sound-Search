@@ -1,0 +1,1323 @@
+{
+  "schema_version": "b02-development-plan-1",
+  "preflight_hash": "c45007d13a201325742122933a0eea2fad7a0cf1f520b5567c9b5ab3676ce277",
+  "geometry_hash": "77038f690e57ec5825d6891f107bbde5c027af3166bc1c5303681952ec068544",
+  "configuration_hash": "a15a5910d1f001db3564a89e61c2452034ab6a2c7d9267b3a98e9ea0e6b6d7cd",
+  "prospective": true,
+  "cases": [
+    {
+      "case_id": "0-positive-clean-cue",
+      "stratum": "positive-clean-cue",
+      "input": "data/runs/separation/inputs/0-positive-clean-cue.json",
+      "source_sha256": "fa7ff113a26e8a782cf05c2307f91c844e25b02fe97e27229b40ee0c638ae852",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-0-different-performance.wav",
+        "sha256": "935898a6977653c24d39a6ecf232add07e125865a70341c52a13f5f4f258b43e"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/0-positive-clean-cue-evaluator-target.wav",
+        "sha256": "7f82decfdb68701ae76cad9a023f23b68a445ec4626a7968a585b0b1bbea501a"
+      },
+      "target_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "target_source": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": -4.473631321104544e-09,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "0-positive-contaminated-cue",
+      "stratum": "positive-contaminated-cue",
+      "input": "data/runs/separation/inputs/0-positive-contaminated-cue.json",
+      "source_sha256": "fa7ff113a26e8a782cf05c2307f91c844e25b02fe97e27229b40ee0c638ae852",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-0-contaminated.wav",
+        "sha256": "6a7b559e07a1d64bc62266148ee63438773407f5ed3f125727c51f9a9e0486f6"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/0-positive-contaminated-cue-evaluator-target.wav",
+        "sha256": "7f82decfdb68701ae76cad9a023f23b68a445ec4626a7968a585b0b1bbea501a"
+      },
+      "target_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "target_source": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": -4.473631321104544e-09,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "0-positive-quiet-target",
+      "stratum": "positive-quiet-target",
+      "input": "data/runs/separation/inputs/0-positive-quiet-target.json",
+      "source_sha256": "9548204b4461a7784429fb1f78f09dbbfcba5bfa77bf53463a5bc2783ec8ab41",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-0-different-performance.wav",
+        "sha256": "935898a6977653c24d39a6ecf232add07e125865a70341c52a13f5f4f258b43e"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/0-positive-quiet-target-evaluator-target.wav",
+        "sha256": "8c64c6a342acaa859f127bb7ab319ec8ca4013d4e241a001235805162fbdea77"
+      },
+      "target_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "target_source": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "target_gain": 0.5011872336272722,
+      "common_gain": 1.0,
+      "region_tbr_db": -6.000000492153558,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "0-absent",
+      "stratum": "absent",
+      "input": "data/runs/separation/inputs/0-absent.json",
+      "source_sha256": "05af7a1fdef298b41f1e63d57f5f029f31d6c07cc1a34eff8b8a3598a06c69d3",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": null,
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": false,
+      "target_present": false,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-0-different-performance.wav",
+        "sha256": "935898a6977653c24d39a6ecf232add07e125865a70341c52a13f5f4f258b43e"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/0-absent-evaluator-target.wav",
+        "sha256": "2e20525593335451aa7cb72ca27076c5c0ac5a550e4d1b2dc00270f4aaa088fa"
+      },
+      "target_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "target_source": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": null,
+      "tbr_state": "target-absent",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "0-censored",
+      "stratum": "censored",
+      "input": "data/runs/separation/inputs/0-censored.json",
+      "source_sha256": "fa7ff113a26e8a782cf05c2307f91c844e25b02fe97e27229b40ee0c638ae852",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        84000
+      ],
+      "event": [
+        36000,
+        84000
+      ],
+      "complete_target_support": false,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-0-different-performance.wav",
+        "sha256": "935898a6977653c24d39a6ecf232add07e125865a70341c52a13f5f4f258b43e"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/0-censored-evaluator-target.wav",
+        "sha256": "7f82decfdb68701ae76cad9a023f23b68a445ec4626a7968a585b0b1bbea501a"
+      },
+      "target_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "target_source": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": 1.0739316729342898,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 84000,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          60000
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "0-silence",
+      "stratum": "silence",
+      "input": "data/runs/separation/inputs/0-silence.json",
+      "source_sha256": "2e20525593335451aa7cb72ca27076c5c0ac5a550e4d1b2dc00270f4aaa088fa",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": null,
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": false,
+      "target_present": false,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-0-different-performance.wav",
+        "sha256": "935898a6977653c24d39a6ecf232add07e125865a70341c52a13f5f4f258b43e"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/0-silence-evaluator-target.wav",
+        "sha256": "2e20525593335451aa7cb72ca27076c5c0ac5a550e4d1b2dc00270f4aaa088fa"
+      },
+      "target_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "target_source": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": null,
+      "tbr_state": "target-absent",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "0-exact-waveform-control",
+      "stratum": "exact-waveform-control",
+      "input": "data/runs/separation/inputs/0-exact-waveform-control.json",
+      "source_sha256": "7f82decfdb68701ae76cad9a023f23b68a445ec4626a7968a585b0b1bbea501a",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-0-different-performance.wav",
+        "sha256": "935898a6977653c24d39a6ecf232add07e125865a70341c52a13f5f4f258b43e"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/0-exact-waveform-control-evaluator-target.wav",
+        "sha256": "7f82decfdb68701ae76cad9a023f23b68a445ec4626a7968a585b0b1bbea501a"
+      },
+      "target_asset": "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+      "target_source": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": null,
+      "tbr_state": "no-background",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "ba257c69fc75184a09f4412b10b633610e56361b5d346b77afa9502b7204b246"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "1-positive-clean-cue",
+      "stratum": "positive-clean-cue",
+      "input": "data/runs/separation/inputs/1-positive-clean-cue.json",
+      "source_sha256": "fa808e67baf77c55da5ca5f0ac88d425621d42d930d867402c149f034b108b73",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-1-different-performance.wav",
+        "sha256": "caf0de8e5b08b54a9aff64ba3ae3e033154cbf2708da864b777a2e61b30c59be"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/1-positive-clean-cue-evaluator-target.wav",
+        "sha256": "80c0aacb4c34f91aece37ed9fd257667a547a155b8da43f5d06b41e093c5b6fa"
+      },
+      "target_asset": "2580e4ec13ce78c30907a3e4310b2b976ce1ce377916a56a896734cbc895439e",
+      "target_source": "bd4bd884ab8fb7e6d36310b64429904db3c33d63360c0ff10e56718de8169fcf",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": 3.556441623847269e-09,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "1-positive-contaminated-cue",
+      "stratum": "positive-contaminated-cue",
+      "input": "data/runs/separation/inputs/1-positive-contaminated-cue.json",
+      "source_sha256": "fa808e67baf77c55da5ca5f0ac88d425621d42d930d867402c149f034b108b73",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-1-contaminated.wav",
+        "sha256": "b3234dd3c1971b8a0188380c3b99130e2f69338d0bfe843a9e00b8812b4caeea"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/1-positive-contaminated-cue-evaluator-target.wav",
+        "sha256": "80c0aacb4c34f91aece37ed9fd257667a547a155b8da43f5d06b41e093c5b6fa"
+      },
+      "target_asset": "2580e4ec13ce78c30907a3e4310b2b976ce1ce377916a56a896734cbc895439e",
+      "target_source": "bd4bd884ab8fb7e6d36310b64429904db3c33d63360c0ff10e56718de8169fcf",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": 3.556441623847269e-09,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "1-positive-quiet-target",
+      "stratum": "positive-quiet-target",
+      "input": "data/runs/separation/inputs/1-positive-quiet-target.json",
+      "source_sha256": "4ebd6bafc102660ae9637e10ed53ba63983546a376ee134d221d1cff1b53b5c9",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-1-different-performance.wav",
+        "sha256": "caf0de8e5b08b54a9aff64ba3ae3e033154cbf2708da864b777a2e61b30c59be"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/1-positive-quiet-target-evaluator-target.wav",
+        "sha256": "79b21aea5b888ec4579473ec8d0bad716a91046eb533cdf589b23ec0b2eb32ac"
+      },
+      "target_asset": "2580e4ec13ce78c30907a3e4310b2b976ce1ce377916a56a896734cbc895439e",
+      "target_source": "bd4bd884ab8fb7e6d36310b64429904db3c33d63360c0ff10e56718de8169fcf",
+      "target_gain": 0.5011872336272722,
+      "common_gain": 1.0,
+      "region_tbr_db": -6.000000488496015,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "2-positive-clean-cue",
+      "stratum": "positive-clean-cue",
+      "input": "data/runs/separation/inputs/2-positive-clean-cue.json",
+      "source_sha256": "f56feba9bc0ac5b9b6648c0c7522d6e893c6df086f6c9fd45e3838840911e8fb",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-2-different-performance.wav",
+        "sha256": "fc5b5e5f8dd73ab1cd955ec6407072684392ddb73a94f4dcf481e9be4e5a539d"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/2-positive-clean-cue-evaluator-target.wav",
+        "sha256": "0b17eb964e3b4dc49ebc903b863498a0eaf186fd081f86b740edd07d96bb26b0"
+      },
+      "target_asset": "dbc040fcb8b3fb38bd9ad2aebd09d986879072ffeedfcbfbdc7b5cbeae73d236",
+      "target_source": "3ae9f932c1f30b0760a628ed3e4c71ad1b683ee939074c2d843c867386813f61",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": 7.920095728795252e-09,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "2-positive-contaminated-cue",
+      "stratum": "positive-contaminated-cue",
+      "input": "data/runs/separation/inputs/2-positive-contaminated-cue.json",
+      "source_sha256": "f56feba9bc0ac5b9b6648c0c7522d6e893c6df086f6c9fd45e3838840911e8fb",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-2-contaminated.wav",
+        "sha256": "40d1390e7327b98a22fa19b6a1056b747239d91b8bb2dc081d398bab5aee9370"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/2-positive-contaminated-cue-evaluator-target.wav",
+        "sha256": "0b17eb964e3b4dc49ebc903b863498a0eaf186fd081f86b740edd07d96bb26b0"
+      },
+      "target_asset": "dbc040fcb8b3fb38bd9ad2aebd09d986879072ffeedfcbfbdc7b5cbeae73d236",
+      "target_source": "3ae9f932c1f30b0760a628ed3e4c71ad1b683ee939074c2d843c867386813f61",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": 7.920095728795252e-09,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "2-positive-quiet-target",
+      "stratum": "positive-quiet-target",
+      "input": "data/runs/separation/inputs/2-positive-quiet-target.json",
+      "source_sha256": "904197e993b3ad87f5d126892f6eb8c36acfa805f3abea563b3512e711da73e4",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-2-different-performance.wav",
+        "sha256": "fc5b5e5f8dd73ab1cd955ec6407072684392ddb73a94f4dcf481e9be4e5a539d"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/2-positive-quiet-target-evaluator-target.wav",
+        "sha256": "9bcd3da3dd359b98926f152d103ebb57819bbc024397fb279a92855498877174"
+      },
+      "target_asset": "dbc040fcb8b3fb38bd9ad2aebd09d986879072ffeedfcbfbdc7b5cbeae73d236",
+      "target_source": "3ae9f932c1f30b0760a628ed3e4c71ad1b683ee939074c2d843c867386813f61",
+      "target_gain": 0.5011872336272722,
+      "common_gain": 1.0,
+      "region_tbr_db": -6.000000483206758,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "3-positive-clean-cue",
+      "stratum": "positive-clean-cue",
+      "input": "data/runs/separation/inputs/3-positive-clean-cue.json",
+      "source_sha256": "06f83c6ee840e03b517ba21fad0f2d75d1d77e5951ced920d8a83d809ccf5ed2",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-3-different-performance.wav",
+        "sha256": "f010f9e863efbf16d9c5940e8f01ff05811083a5dda28ce579b242ed69af2faf"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/3-positive-clean-cue-evaluator-target.wav",
+        "sha256": "85eb21f587a636bd78d2ab2b0f63f74057ef03628dff63f0da804f02e8f1b719"
+      },
+      "target_asset": "93572065c03ed31b8f4e408e69b453cdc9403e1148000bf1a2ea8e5a284ba792",
+      "target_source": "20fb5bc53cef31ad5266bb3e627d41a7e4bf1fa2e10756c24680eefdf50e5c04",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": -7.002906530329861e-09,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "3-positive-contaminated-cue",
+      "stratum": "positive-contaminated-cue",
+      "input": "data/runs/separation/inputs/3-positive-contaminated-cue.json",
+      "source_sha256": "06f83c6ee840e03b517ba21fad0f2d75d1d77e5951ced920d8a83d809ccf5ed2",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-3-contaminated.wav",
+        "sha256": "fc28c6f56fd21dba6be1bde247bcfa0a234e04b9f951df4a8f7f638939874875"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/3-positive-contaminated-cue-evaluator-target.wav",
+        "sha256": "85eb21f587a636bd78d2ab2b0f63f74057ef03628dff63f0da804f02e8f1b719"
+      },
+      "target_asset": "93572065c03ed31b8f4e408e69b453cdc9403e1148000bf1a2ea8e5a284ba792",
+      "target_source": "20fb5bc53cef31ad5266bb3e627d41a7e4bf1fa2e10756c24680eefdf50e5c04",
+      "target_gain": 1.0,
+      "common_gain": 1.0,
+      "region_tbr_db": -7.002906530329861e-09,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    },
+    {
+      "case_id": "3-positive-quiet-target",
+      "stratum": "positive-quiet-target",
+      "input": "data/runs/separation/inputs/3-positive-quiet-target.json",
+      "source_sha256": "b4024c4801c2f19613eea12a2474246e1cf624c840d1ace7d3cc524b6bbef43c",
+      "source_frames": 192000,
+      "rate": 24000,
+      "insertion": [
+        36000,
+        93600
+      ],
+      "region": [
+        24000,
+        108000
+      ],
+      "event": [
+        36000,
+        93600
+      ],
+      "complete_target_support": true,
+      "target_present": true,
+      "cue": {
+        "path": "data/runs/separation/development-audio/cue-3-different-performance.wav",
+        "sha256": "f010f9e863efbf16d9c5940e8f01ff05811083a5dda28ce579b242ed69af2faf"
+      },
+      "cue_performance": 2,
+      "evaluator_target": {
+        "path": "data/runs/separation/development-audio/3-positive-quiet-target-evaluator-target.wav",
+        "sha256": "ecea2df0c72c092768919b35858438de0b4d4f1c9e884da591b70aeed6274bce"
+      },
+      "target_asset": "93572065c03ed31b8f4e408e69b453cdc9403e1148000bf1a2ea8e5a284ba792",
+      "target_source": "20fb5bc53cef31ad5266bb3e627d41a7e4bf1fa2e10756c24680eefdf50e5c04",
+      "target_gain": 0.5011872336272722,
+      "common_gain": 1.0,
+      "region_tbr_db": -6.000000492726176,
+      "tbr_state": "finite",
+      "candidate_assets": [
+        "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+        "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+        "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+        "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+        "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+        "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+        "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+        "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+        "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+        "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+        "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+        "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+        "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4"
+      ],
+      "truth_assets": [
+        "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+        "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4"
+      ],
+      "native_mapping": {
+        "selected_first": 36000,
+        "selected_last": 93600,
+        "region_first": 24000,
+        "selected_in_region": [
+          12000,
+          69600
+        ],
+        "master_offset": null
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "asset_id": "08272d3c2a2edacd2e732f145e388df98986d241af7bb3e5b62a98e6c56634d2",
+      "record_hash": "32e3e06a0cb8d550d5d5154c6cd6bb3f37ab583089ca420ad8ddbbe23f051166",
+      "source_id": "6076101941caee214d6993aea13610c16a33c93dea71eabe2efce19d542d4244",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 0
+    },
+    {
+      "asset_id": "4020e87ffbf9caf549124df49e9c6dc2963df8e239712977894c3b170ab2a6b6",
+      "record_hash": "2408996993b0879bae80b5682fac4dddd37838f220325566da9efeb9d8139e66",
+      "source_id": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 2
+    },
+    {
+      "asset_id": "441082b370e84a3038aec152696205bb69cbda2e148d3a9b5686e3d4eaa7e1b0",
+      "record_hash": "727de625882836901929a76c22bc5bb4259447fc2ff25b89737ef11d78cf815b",
+      "source_id": "6076101941caee214d6993aea13610c16a33c93dea71eabe2efce19d542d4244",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 2
+    },
+    {
+      "asset_id": "45f8995b72be320dbf05f33a029e02399a426bf6524b14d06646102d9607b335",
+      "record_hash": "ce233acf5a72d2c97c86bab54ef003711f37a1e584d56656c9592e20b92e055d",
+      "source_id": "20fb5bc53cef31ad5266bb3e627d41a7e4bf1fa2e10756c24680eefdf50e5c04",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 2
+    },
+    {
+      "asset_id": "47eebf5ea5ea411a1872b4973f9443512d1e9ce449da9d82a84923d360f9565b",
+      "record_hash": "01d39375b743f0880aa124b7a472ba74037144dc1e6ee7ce5107189646d00520",
+      "source_id": "d26c634f4fd5d239d42d3cf79a200da845530c0e14bb1ac83a85a5572b966f34",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 0
+    },
+    {
+      "asset_id": "4aef8891d3858c6e1899a85c41431fe60490af523860d740bdeb18e34fe2294d",
+      "record_hash": "d3a18388f1df284b13f89aad2d105716f270fa8cc7a9fb70265ca7579deb9388",
+      "source_id": "3ae9f932c1f30b0760a628ed3e4c71ad1b683ee939074c2d843c867386813f61",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 2
+    },
+    {
+      "asset_id": "526c1a0ec4c016e5e9e8ac7a745a3342f6e05d9d707d540c17c01fa3a27f0089",
+      "record_hash": "ee9a4347c129915c091875547e1924912f006cb75e37b121418a54e3bde350f7",
+      "source_id": "bd4bd884ab8fb7e6d36310b64429904db3c33d63360c0ff10e56718de8169fcf",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 0
+    },
+    {
+      "asset_id": "6588e148cb8280ce96b9ccf397e237be141de252e2f7bf6944bd6bfa1b3b6417",
+      "record_hash": "9b2a0a03d7785b2b553e5a053098b84f6e752d79eb3dd4ac1499e467687c23d7",
+      "source_id": "704e3be42884d3c693e213787b4f7fc2bfde9cf35726300835bfa74932fa4295",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 0
+    },
+    {
+      "asset_id": "6d61ad4dedf638c6b7e4e9d33809fd93503d32047921247c21f41495acfc9a4b",
+      "record_hash": "449fbeea35def3bf0b4b1fc704a0172d12b56b4db2efa7f6ff840874c34e4d12",
+      "source_id": "bd4bd884ab8fb7e6d36310b64429904db3c33d63360c0ff10e56718de8169fcf",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 2
+    },
+    {
+      "asset_id": "7292cdf4cd820f50b1111d297a02c1bdc104dab02dd6f9f0d9a14f756af6863c",
+      "record_hash": "627d4593744068752735f871d6c22632f8cd30b7694ea7c51cd94d152915b7b3",
+      "source_id": "50e8e5cc72c76701aff02d3ed39a41dcc7a719402444d692a666b2625ef008e9",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 0
+    },
+    {
+      "asset_id": "73091c2bf3f096e3d813c7cd3eda0aba64ba4df487c4ef8e1a4e27a54f6c0885",
+      "record_hash": "92813635da94af3efcb886b34ca2b570b056825f701bac12a81461620b4f33a5",
+      "source_id": "a6f5edde5258a94bde66968ea23cc978b8b33e98f726ab91752ef7c1e0ff5b4b",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 0
+    },
+    {
+      "asset_id": "9722c6ae2ff2743cb504c732128c3d0ac6062e6a6d6351bafe75159423767c01",
+      "record_hash": "f9874b09224eca23721e9c966eb997a44c7779c8046374ce73d668dac793d477",
+      "source_id": "d26c634f4fd5d239d42d3cf79a200da845530c0e14bb1ac83a85a5572b966f34",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 2
+    },
+    {
+      "asset_id": "ac25862a7f69d8af920d9e4033b5b3ad8ee97680b7b35bb5b1b9e55947b0a48f",
+      "record_hash": "30379ebc8fe5bbebb378882c31c6bbf7b1af800feed716107459cac10dacb231",
+      "source_id": "a6f5edde5258a94bde66968ea23cc978b8b33e98f726ab91752ef7c1e0ff5b4b",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 2
+    },
+    {
+      "asset_id": "acd67301fe99edcf16ebd5f57256e195d5a434931970ac120d5df0f3dde2468a",
+      "record_hash": "f0f0e427793d9f10e18e920d389f0ab712deba0122227ce2cd7e4293402e2fd0",
+      "source_id": "704e3be42884d3c693e213787b4f7fc2bfde9cf35726300835bfa74932fa4295",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 2
+    },
+    {
+      "asset_id": "cfae626535edecf5a149e636bc94f30584acaaa9789154ee5b0cb667b73657f4",
+      "record_hash": "735895cebba778e1ef525e5726531fed65f375d06185427ebc42bfc0f59055d1",
+      "source_id": "20fb5bc53cef31ad5266bb3e627d41a7e4bf1fa2e10756c24680eefdf50e5c04",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 0
+    },
+    {
+      "asset_id": "f262a64d0dc6af94ac8d67f788916cadd615b3ade639c0e360b1a8e7765adff4",
+      "record_hash": "2e7f2009b9708498af10643d1ed9ad101f64cf8ef6102e5c06423e9adca73b84",
+      "source_id": "3ae9f932c1f30b0760a628ed3e4c71ad1b683ee939074c2d843c867386813f61",
+      "frames": [
+        0,
+        57600
+      ],
+      "rate": 24000,
+      "pitch": 0
+    }
+  ],
+  "real_input": "data/runs/separation/inputs/real.json",
+  "real_record_hash": "44ffbfc17e05b20b0c7d963d2a404d9fedf3b0889eecb448988bb466a676ed14",
+  "arms": [
+    "original",
+    "broad:fixed-harmonic",
+    "guided:fixed-audio-cue",
+    "oracle:evaluator-only"
+  ],
+  "methods": {
+    "broad": "1024-point periodic Hann, 256 hop, centred explicit zeros, 17-bin/time median HPSS squared soft masks, shared stereo magnitude",
+    "guided": "four chronological cue means, eight chronological mixture means multiplied by squared complement of normalized cue mean spectrum; fixed L1 W; all-one H; 25 Euclidean multiplicative updates; squared Wiener mask; no seed, labels, truth or fitted shift"
+  },
+  "component_routing": "fixed harmonic for broad; extracted for guided; no extra stem ranking or best-stem choice",
+  "candidate_diagnostic": "first case only, all sixteen original candidate passages; original-query/processed-candidate and paired processed-query/processed-candidate, same 0..57600 support; every cue/candidate pair charged",
+  "primary_denominator": 12,
+  "primary_strata": {
+    "positive-clean-cue": 4,
+    "positive-contaminated-cue": 4,
+    "positive-quiet-target": 4
+  },
+  "controls": {
+    "absent": 1,
+    "censored": 1,
+    "silence": 1,
+    "exact-waveform-control": 1
+  },
+  "comparison_batches": 1,
+  "max_cases": 16,
+  "max_case_arm_queries": 128,
+  "stop_rule": "one batch; retain failures/abstentions and all costs; no replacement cases/settings after scores",
+  "candidate_rule": "unchanged EfficientAT MN04, original complete A04 passages, 384-float cosine; mean per unique example; stable score/asset/start/end ties; pitch off; K=1/5/10",
+  "metrics": {
+    "retrieval": "source hit@K and exact asset event recovery@K on native full-render intervals, paired gains/losses, abstentions; controls separate",
+    "preservation": "aligned exact inserted float32 component, gain-inclusive SDR/improvement, SI-SDR, target/background projections, first25ms attack/final200ms tail projections, clipping, zero native delay; no correction applied"
+  },
+  "promotion": {
+    "retrieval": "at least two additional primary top1 cases, zero paired top1 losses and no hit10 decrease; complete primary batch",
+    "preservation": "each primary attack and tail projection in [0.8,1.25], no overload, median gain-inclusive SDR improvement at least 1dB",
+    "cost": "each 3.5s primary processing unit <=10 CPU wall seconds; fixed per-unit allocation under128MiB, no downloads; real evidence also complete",
+    "otherwise": "original stays default; experimental modes remain opt-in; oracle never eligible"
+  },
+  "geometry_note": "native float32 target multiplication precedes common float64 gain; independently checked to <=2e-8 absolute plus1e-7 relative, saved exact inserted component is waveform truth",
+  "evidence_scope": "inspected A04/B01 development families reused in separately generated mixtures; no untouched holdout or human agreement",
+  "record_hash": "9690ea23bb1ac323e90088cf73ae27d3e783a9c51535d376b0d24f5244dedc24"
+}

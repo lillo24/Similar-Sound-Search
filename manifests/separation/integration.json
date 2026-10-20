@@ -1,0 +1,12 @@
+{
+  "schema_version": "b02-integration-declaration-1",
+  "owner": "src/similar_sound_search/separation",
+  "shared_changes": {
+    "storage.py": "admit the fixed .b02-worker.lock name into the existing process-lock allowlist",
+    "cli.py": "explicit separation commands, fixed B02 ledger dispatch and loopback listener; old defaults retained",
+    "search/query.py": "optional context hook resolves and validates B02 transformation receipts and unions original/cue parent groups before identical-PCM deduplication; original parents() proof unchanged"
+  },
+  "compatibility": "reuse events.compatibility audit/snapshot/step/validate_receipt under B02-owned paths, counters and a fresh current-consumer receipt; historical receipts and A06 global guard unchanged",
+  "signal_contract": "B02 transformation receipt binds source, context, native region/event, cue, method/settings, output and exact time map; subsequent truthful A02 preparation owns crops of that transformed signal, never pretends it is the original",
+  "playback": "B02 renderer labels original context, processed query and original candidate separately; shared original page remains unchanged; shared allowlist server with B02 report root"
+}

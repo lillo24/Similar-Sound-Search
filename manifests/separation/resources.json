@@ -1,0 +1,86 @@
+{
+  "schema_version": "b02-resources-1",
+  "ledger": {
+    "schema_version": "b02-ledger-1",
+    "created_at": "2026-10-19T10:21:05.839486+00:00",
+    "ceilings": {
+      "download_bytes": 0,
+      "attempts": 0,
+      "worker_seconds": 3600
+    },
+    "charged_bytes": 0,
+    "received_bytes": 0,
+    "http_attempts": 0,
+    "charged_worker_seconds": 1843.6129999998957,
+    "pending_read_bytes": 0,
+    "pending_worker_seconds": 0
+  },
+  "work": {
+    "schema_version": "b02-work-1",
+    "counts": {
+      "query_jobs": 8,
+      "comparison_cases": 16,
+      "processed_window_seconds": 231.20000000000036,
+      "preparation_bytes": 105682560,
+      "clip_bytes": 30991360,
+      "query_preparation_bytes": 4561280,
+      "managed_output_bytes": 148364474,
+      "read_audio_seconds": 74499.48102040803,
+      "clips": 40,
+      "separator_input_seconds": 310.0000000000002,
+      "feature_windows": 97,
+      "comparison_queries": 68,
+      "workers": 119,
+      "feature_bytes": 6505984,
+      "comparisons": 1,
+      "processing_inputs": 89
+    },
+    "ceilings": {
+      "query_jobs": 16,
+      "comparison_cases": 16,
+      "processed_window_seconds": 12000,
+      "preparation_bytes": 268435456,
+      "clip_bytes": 134217728,
+      "query_preparation_bytes": 67108864,
+      "managed_output_bytes": 536870912,
+      "read_audio_seconds": 90000,
+      "clips": 128,
+      "separator_input_seconds": 1200,
+      "feature_windows": 4096,
+      "comparison_queries": 128,
+      "workers": 256,
+      "feature_bytes": 67108864,
+      "comparisons": 1,
+      "processing_inputs": 192
+    },
+    "record_hash": "a03aeb9ef6200c4d5bb4ac0b4088d3d6b5d96eaae3201ce2fe42fdadd3c5866b"
+  },
+  "timing": {
+    "worker_seconds_by_action": {
+      "preflight": 183.43799999996554,
+      "pilot": 5.202999999979511,
+      "compare": 644.466999999946,
+      "process": 50.03200000000652,
+      "handoff": 36.38999999995576,
+      "prepare-query": 60.030999999900814,
+      "known-answer": 5.14000000001397,
+      "compatibility": 103.7170000000624,
+      "rank": 635.8200000000652,
+      "report": 106.48399999999674,
+      "verify-native": 12.89100000000326
+    },
+    "record_hash": "ff85d7db092b004a6afbe9ffe4065dc3003ad54709cabb61b365d201557b1d1e"
+  },
+  "owned_directory_bytes": {
+    "data/runs/separation": 89913178,
+    "data/features/separation": 420453,
+    "reports/local/b02": 31004696
+  },
+  "all_added_managed_files": 679,
+  "all_added_managed_bytes": 127824749,
+  "limits": "starter CPU/thread1;120s workers;1GiB working;256MiB input/decoded/output;4GiB managed/free headroom",
+  "actual_processing": "offline DSP only; no model acquisition, no GPU, no catalogue feature recomputation",
+  "cost_note": "all pilot/retries/refusals, independent geometry, compatibility/parent/source reads, processing/features/ranks/report and native QA charged; setup/tests/browser/HTTP QA and historical preservation audits separately measured",
+  "unused_original": "12s-context original/query retained; final8s baseline prepared anew; original query samples identical; no previous real rank reused",
+  "record_hash": "fda18d9caacaabbfc9e7047d4ec8e87eb7421c10d37c82b2ae9eba40bd0d3863"
+}

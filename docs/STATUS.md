@@ -1,6 +1,6 @@
 # Project status
 
-Updated 14 October 2026. **A06 local exact passage search and original playback delivered.** All 72 local A03 recordings are indexed over full available durations, with single/multiple-example demos and one unchanged EfficientAT held-out check. Human agreement and Loulou relevance remain unavailable; A03 remains partial against its acquisition target. Follow [AGENTS.md](../AGENTS.md) for branch/PR/merge/cleanup delivery.
+Updated 20 October 2026. **B02 optional numerical separation/extraction is implemented; original audio remains default.** All 72 local A03 recordings retain their original A06 index. Controlled processing findings do not establish intended-layer, human or Loulou relevance; A03 remains partial against its acquisition target. Follow [AGENTS.md](../AGENTS.md) for branch/PR/merge/cleanup delivery.
 
 ## Foundation and current delivery
 
@@ -44,7 +44,8 @@ No GitHub Actions workflow/required CI check exists in the inspected repository;
 | A05 matcher comparison | Complete controlled development comparison: two genuine methods, 80 queries each, provisional EfficientAT MN04; [evidence](../reports/A05_MATCHERS.md) |
 | A06 search, playable results and held-out model check | Implementation/index/demos/final check complete: 72/72 local recordings, 44,025 passages, original stereo clips; 21/24 source-consistency held-out query hits at K=1 and 32/32 events at K=10. Extra whole-index repeat partial at the fixed cap; later catalogue browser controls unavailable. [Evidence](../reports/A06_SEARCH.md) |
 | B01 event selection | Implemented with native/manual crops, experimental proposals, two catalogue searches and verified playback. Bounded development evaluation partial; explicit/coarse default. [Evidence](../reports/B01_EVENTS.md) |
-| B02–D separation, indexing/refinement, interface/package | Future; first required listening review D04 |
+| B02 optional separation/extraction | Numerical original/HPSS/audio-cue paths, explicit lineage, fixed 16-case comparison; original default after failed promotion gates. [Evidence](../reports/B02_SEPARATION.md) |
+| B03–D reusable queries, indexing/refinement, interface/package | Future; first required listening review D04 |
 | Perceptual quality and Loulou relevance | Unmeasured; real-catalogue candidates are not confirmed matches; controlled A05/A06 metrics remain separate |
 | Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 
@@ -103,3 +104,18 @@ validate actual source/region geometry before inference, retain absent/censored 
 and use its own finite accounting. Preserve the inspected development/final evidence;
 do not turn it into a fresh holdout. Loulou/version/offset and human relevance remain
 unmeasured, with first required listening review D04. B02 was not started automatically.
+
+## B02 delivery and B03 handoff
+
+[B02](SEPARATION.md) owns optional waveform transformations and new finite accounting,
+with frozen original features reused through B01's audited read-only mechanism.
+Twelve complete positive development cases yield original/harmonic/guided top-1
+hits 2/12, 3/12, 5/12, with four controls kept separate. Guided has one paired baseline
+loss and fails attack/tail preservation; broad also fails. Both remain opt-in DSP
+experiments. No pretrained separator, new human labels or held-out repeat ran.
+
+The real substitute retains the same 10..12.4s query and 12.4..14.8s contaminated cue.
+A fixed-memory refusal is retained, and the final 9..17s common context preserves
+attack lead/post-query support without raising caps. Loulou/version/offset remain
+unverified. B03 should manage reusable queries/cue availability under its own plan;
+pitch work, global component indexing and later refinement were not implemented here.

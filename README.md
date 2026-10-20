@@ -75,4 +75,16 @@ partial after a documented insertion-timing audit; it does not establish human o
 Loulou relevance. Two actual catalogue searches and Chrome/HTTP playback checks passed.
 Open the saved event/search report with `.\scripts\listen-events.ps1` on port 8767.
 [B01 evidence and exact commands](reports/B01_EVENTS.md) own results, limitations,
-resource/preservation proof and the concrete B02 handoff. B02 was not implemented.
+resource/preservation proof and the concrete B02 handoff. That batch ended before B02.
+
+## B02 optional processing
+
+B02 adds original/HPSS/audio-cue processing with explicit transformation lineage,
+finite accounting and paired development evaluation. Original audio stays default:
+both processed roles miss the prospective retrieval/preservation gates. No learned
+separator ran; controlled gains do not establish intended-layer or human relevance.
+[B02 evidence and B03 handoff](reports/B02_SEPARATION.md) and
+[commands/contracts](docs/SEPARATION.md) own the current scope and limits.
+Open the saved comparison with `.\scripts\listen-separation.ps1` on loopback port 8768.
+Loulou remains missing; explicit inputs must retain version/offset uncertainty.
+B03 is not started automatically.

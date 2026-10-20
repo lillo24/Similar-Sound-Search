@@ -110,3 +110,14 @@ later-stage work, with the first required review at D04.
 | DEC-044 | Keep automatic proposals experimental and explicit/coarse default after the fixed development batch. | Corrected precision 13.76% / recall 46.875%; single matched coarse 5/8 hit@1, multiple fell to 4/8. No settings tuning or replacement inference after the forty-query cap. |
 | DEC-045 | Correct saved note truth using actual reference insertions and count invalid oracle outputs as misses. | Two selected phrases are truncated and one target lies outside the region. Preserve original predictions/summary and all denominators; +12dB present-reference/oracle coverage remains partial. No new held-out check. |
 | DEC-046 | Preserve failed-operation charges and exact native selections during accounting/report repairs. | Add omitted parent hash-read cost once; stale selection metadata is refused and regenerated with identical bounds/audio/features. Copy WAV conversion receipts for resumable playback; final browser/HTTP checks pass. |
+
+## B02 optional-processing decisions
+
+19 October 2026; [contracts](SEPARATION.md) and [evidence](../reports/B02_SEPARATION.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-047 | Offline HPSS plus genuinely audio-conditioned fixed-template activation masks; no learned separator admitted. | Preserve the pinned matcher environment, bounded CPU/temporary memory and zero acquisition; DSP components are not instrument identities. |
+| DEC-048 | Independently verify actual saved insertions/support/cues/TBR, then freeze a distinct B02 development protocol. | Twelve complete positives and four separate controls; inspected families are not a fresh holdout, and no B01 oracle repair is performed. |
+| DEC-049 | Original audio remains default after the fixed comparison. | Guided top-1 improves 2/12 to 5/12 but loses one baseline success and fails attack/tail preservation. Broad processing also misses retrieval/preservation gates. |
+| DEC-050 | Preserve refusals/charges and declare bounded context/report corrections. | A 12s real stereo context fails the fixed 128 MiB allocation guard; 8s keeps the same event/cue with lead/tail context. Report-only repairs preserve producing code/predictions and require a fresh B02-owned read-only index receipt. |

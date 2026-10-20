@@ -1,0 +1,16 @@
+{
+  "status": "ok",
+  "schema_version": "b02-preservation-1",
+  "mode": "after",
+  "files": 8357,
+  "unchanged_historical_files": 8356,
+  "bytes": 1118068772,
+  "unexpected_changes": [],
+  "intentional_navigation_updates": [
+    "config/README.md"
+  ],
+  "seconds": 111.75,
+  "baseline_sha256": "9a476b30f0424289befce7e643bd4f87877e946269824f89ed0fadc1d5784222",
+  "interpretation": "full historical byte/size/mtime test, except one explicitly declared navigation document; new B02 outputs retained in primary checkout",
+  "record_hash": "82884edd8863dba25723467b8636bd1b67e7b71c559d230b61f44bcc61af6e5e"
+}

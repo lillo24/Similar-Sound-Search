@@ -16,3 +16,14 @@ console commands/server processes before reinstalling the Windows launcher.
 single/multiple search pages (default `reports/local/b01-event-report.json`, port
 8767). It does no inference or ledger reset; [EVENTS.md](../docs/EVENTS.md) owns the
 finite proposal/selection/extraction/comparison commands.
+
+## B02 comparison listener
+
+`listen-separation.ps1` validates the successful owned B02 summary, then starts the
+hash-verified loopback listener on 8768. Ctrl+C stops it. Existing B01/A06 listeners
+retain 8767/8766. The private media remain in the delivery checkout.
+
+`verify-separation.py` independently checks B02 native-to-PCM16 samples, conversion
+receipts, gain and numeric player/source timestamps. It uses the same fixed B02 ledger,
+locks and 120s deadline, with source reads charged. It does not load a model or access
+the network. Its default input is `reports/local/b02-report.json`.

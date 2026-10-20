@@ -220,3 +220,9 @@ match the example's 0..22 available seconds to the actual file. For a verified f
 track, explicitly supply its context/evidence and use 218..240 available-file seconds.
 An excerpt never receives those full-track crop coordinates. Missing/version/offset
 uncertainty is retained until actual source evidence supports a stronger claim.
+## B02 extension boundary
+
+[Optional separation/extraction](SEPARATION.md) owns new waveform transformations and
+its own protocol/ledger/receipts. It does not retune the detector, replace B01 predictions,
+complete the invalid oracle run or spend B01 allowance. Native/manual selection and
+the saved B01 playback bundle remain usable with their recorded uncertainty.

@@ -1,0 +1,1471 @@
+{
+  "schema_version": "b02-validation-1",
+  "full_regression": {
+    "tests": 189,
+    "seconds": 87.981,
+    "status": "passed",
+    "numerical_threads": 1,
+    "log": "reports/local/b02-regression-single-thread.txt",
+    "log_sha256": "33004d59b25a19abc79c0cf540356e06401c14acd4571b5f4b7cd7e0ac073f43",
+    "prior_runs": "initial new HTML whitespace assertion corrected; unconstrained old deadline/HTTP fixtures failed transiently; no old assertions/timeouts changed"
+  },
+  "focused_b02_tests": 21,
+  "ruff": "src/tests/scripts check and format passed",
+  "setup": "offline editable wheel install and pip check passed",
+  "hosted_ci": "no workflow configured; no hosted pass claimed",
+  "known_answers": {
+    "status": "ok",
+    "schema_version": "b02-known-answer-1",
+    "seconds": 0.1635895000072196,
+    "learned_separator_ran": false,
+    "processing_gain": 1,
+    "native_frames": 72000,
+    "channels": 2,
+    "impulse_max_error": 2.9802322387695312e-08,
+    "broad": {
+      "delay_frames": 0,
+      "processing_gain": 1.0,
+      "reconstruction_max_error": 2.9802322387695312e-08,
+      "temporary_preflight_bytes": 23387904,
+      "chunks": 1,
+      "channel_policy": "shared mean-magnitude mask; preserve native phase/channels",
+      "padding": "centred FFT/2 zeros each edge, right hop-grid zeros; exact native-length trim",
+      "iterations": 0
+    },
+    "guided": {
+      "delay_frames": 0,
+      "processing_gain": 1.0,
+      "reconstruction_max_error": 2.9802322387695312e-08,
+      "temporary_preflight_bytes": 23387904,
+      "chunks": 1,
+      "channel_policy": "shared mean-magnitude mask; preserve native phase/channels",
+      "padding": "centred FFT/2 zeros each edge, right hop-grid zeros; exact native-length trim",
+      "iterations": 25
+    },
+    "guided_energy_ratio": 0.8917351147660493,
+    "interpretation": "feasibility/correctness only; no target-quality promotion from reconstruction",
+    "ledger": {
+      "schema_version": "b02-ledger-1",
+      "created_at": "2026-10-19T10:21:05.839486+00:00",
+      "ceilings": {
+        "download_bytes": 0,
+        "attempts": 0,
+        "worker_seconds": 3600
+      },
+      "charged_bytes": 0,
+      "received_bytes": 0,
+      "http_attempts": 0,
+      "charged_worker_seconds": 971.7489999997779,
+      "pending_read_bytes": 0,
+      "pending_worker_seconds": 0
+    },
+    "work": {
+      "schema_version": "b02-work-1",
+      "counts": {
+        "query_jobs": 5,
+        "comparison_cases": 16,
+        "processed_window_seconds": 231.20000000000036,
+        "preparation_bytes": 105682560,
+        "clip_bytes": 0,
+        "query_preparation_bytes": 3649024,
+        "managed_output_bytes": 116361856,
+        "read_audio_seconds": 7039.4119047619415,
+        "clips": 0,
+        "separator_input_seconds": 310.0000000000002,
+        "feature_windows": 97,
+        "comparison_queries": 68,
+        "workers": 43,
+        "feature_bytes": 6505984,
+        "comparisons": 1,
+        "processing_inputs": 89
+      },
+      "ceilings": {
+        "query_jobs": 16,
+        "comparison_cases": 16,
+        "processed_window_seconds": 12000,
+        "preparation_bytes": 268435456,
+        "clip_bytes": 134217728,
+        "query_preparation_bytes": 67108864,
+        "managed_output_bytes": 536870912,
+        "read_audio_seconds": 90000,
+        "clips": 128,
+        "separator_input_seconds": 1200,
+        "feature_windows": 4096,
+        "comparison_queries": 128,
+        "workers": 256,
+        "feature_bytes": 67108864,
+        "comparisons": 1,
+        "processing_inputs": 192
+      },
+      "record_hash": "4eeaff72e8efdf44ca2dddc6e6ba538875c8105a5c2ff2cb88b53563e4a0bc3c"
+    },
+    "command": "separation",
+    "tier": "starter",
+    "wall_seconds": 9.530999999959022,
+    "report_written": true
+  },
+  "native_qa": {
+    "status": "ok",
+    "native_clips": 42,
+    "unique_source_files": 25,
+    "bundle_hash": "948969988a07d99bc8812fb2f37e1970749b4a4c6b5108fd058971beacd2ca03",
+    "answers": [
+      {
+        "label": "original context · original",
+        "media": "media/57e4910a5bf0458efc8efdf99728c73d23056f76c893443fe4c30e27d085ab3f.wav",
+        "native_frames": [
+          0,
+          352800
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 9.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "original selected query",
+        "media": "media/d1c331bd3cd1dd303326d3e8c7140d5bc53a369f03b17b62c24876f276ffeb15.wav",
+        "native_frames": [
+          44100,
+          149940
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 10.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "broad context · harmonic",
+        "media": "media/126156e03aa074e9a81f9b8f5e86ef473349a351e6465154321f59380e9d9672.wav",
+        "native_frames": [
+          0,
+          352800
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 9.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "broad selected query",
+        "media": "media/d217a4e2eb6f5e17ddcc7d2e9e225f4f7cdfb6409fb24d539cb39066b7d420c5.wav",
+        "native_frames": [
+          44100,
+          149940
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 10.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "broad context · percussive",
+        "media": "media/08c1737eb620494577ee0a77862908837fcf234e3ab3bb6944690e3709f92b5b.wav",
+        "native_frames": [
+          0,
+          352800
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 9.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "guided context · extracted",
+        "media": "media/2921e5a7cc4f54f4b604eac71298010d0be702fb8549345d620aad0ecc519d63.wav",
+        "native_frames": [
+          0,
+          352800
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 9.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "guided selected query",
+        "media": "media/a89f8bb6e2e98d9d7ee7ec596aaac81d32a3ddd9ad7b1f8cff79137224940117.wav",
+        "native_frames": [
+          44100,
+          149940
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 10.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "guided context · residual",
+        "media": "media/817408462ba5b1911f50d31c38933df2aa2fd14961e3c946077d4388c2df26d2.wav",
+        "native_frames": [
+          0,
+          352800
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 9.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "Conditioning audio cue · contaminated mixture",
+        "media": "media/4ebcdbd4ffc8a9a00e8aacd0414f27ab2036d52d62a71caba655527fcb458729.wav",
+        "native_frames": [
+          546840,
+          652680
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 12.4,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "original query · candidate 1: Lyrikal Tranzportashun (12\" Mixx)",
+        "media": "media/8f020266c7bd19278cbe9beaed99119a1ac27cb1cc0e864d04c8443e91e92344.wav",
+        "native_frames": [
+          2822400,
+          3016440
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 64.0,
+        "samples_equal": true,
+        "gain": 0.974574298064085
+      },
+      {
+        "label": "broad query · candidate 4: Lyrikal Tranzportashun (12\" Mixx)",
+        "media": "media/f52a7460c3fc4edba06a806c35be42079012e61a6a9fb14f256526ff5aeeb1cc.wav",
+        "native_frames": [
+          4410000,
+          4604040
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 100.0,
+        "samples_equal": true,
+        "gain": 0.9497509103095958
+      },
+      {
+        "label": "guided query · candidate 3: Lyrikal Tranzportashun (12\" Mixx)",
+        "media": "media/79ee9178a9d2e3fa5f20096cd115fb8f063f8519c2879e84b0b8087dab411d90.wav",
+        "native_frames": [
+          2083725,
+          2277765
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 47.25,
+        "samples_equal": true,
+        "gain": 0.977507776733914
+      },
+      {
+        "label": "original query · candidate 2: Absurdius Rex",
+        "media": "media/1dcf8290fbefb42796949b5c9fb8cad0fa3ca755d1ff42d3ae0d1eec336b7a2c.wav",
+        "native_frames": [
+          1345050,
+          1539090
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 30.5,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "broad query · candidate 10: Absurdius Rex",
+        "media": "media/a0c02476b497ea190fe29712f66100345f79e667c2f051c1b526f82ec837dd6a.wav",
+        "native_frames": [
+          1334025,
+          1528065
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 30.25,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "guided query · candidate 1: Absurdius Rex",
+        "media": "media/048e5347278d137cfd386688ce53e4c7793918b20ed9d3fc8235d393837138fb.wav",
+        "native_frames": [
+          1069425,
+          1263465
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 24.25,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "original query · candidate 3: The Raps Well (Album Version)",
+        "media": "media/0452b6c4f4010af073e73f6bba43f9c92ae193fb3f9727ba3d18c063957430f2.wav",
+        "native_frames": [
+          5402250,
+          5596290
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 122.5,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "broad query · candidate 6: The Raps Well (Album Version)",
+        "media": "media/df16cf3cdccef8fff67acbf302d95f219523cd88403ae94b8ab468de5f42c744.wav",
+        "native_frames": [
+          5413275,
+          5607315
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 122.75,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "guided query · candidate 6: The Raps Well (Album Version)",
+        "media": "media/de3cea782faea95a65fafefac36150e01d75a4673bc17e6f0d6d0827e090feae.wav",
+        "native_frames": [
+          4652550,
+          4846590
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 105.5,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "original query · candidate 4: Nuthin'",
+        "media": "media/bafe5398bbdf50fb64b17358ce72b49e8448ac239454d03964d087e2dba718d7.wav",
+        "native_frames": [
+          6449625,
+          6643665
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 146.25,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "broad query · candidate 8: Nuthin'",
+        "media": "media/fdc5522c0909d6951bfbb90c2851e1ce8c8172607ec079b0bc1b0ea19d9cac3e.wav",
+        "native_frames": [
+          3660300,
+          3854340
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 83.0,
+        "samples_equal": true,
+        "gain": 0.9955693799541236
+      },
+      {
+        "label": "original query · candidate 5: Up In Your Discussion",
+        "media": "media/5b01aacabf86e3ce99af7d3b97e7d86ac137ae69b4ee9d87aa67af90c8cb9104.wav",
+        "native_frames": [
+          2811375,
+          3005415
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 63.75,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "broad query · candidate 1: Up In Your Discussion",
+        "media": "media/f89948c28f15f2b2859c8f5e46e4fb54d90943cb49e1fb7dad437b174a1c8f8a.wav",
+        "native_frames": [
+          2767275,
+          2961315
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 62.75,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "guided query · candidate 9: Up In Your Discussion",
+        "media": "media/61d713efd07c1c070f888c923566666c08ad8d74926fcc0c0177259bdb486ac3.wav",
+        "native_frames": [
+          716625,
+          910665
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 16.25,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "original query · candidate 6: Bad Cop (7inch Mixx)",
+        "media": "media/0257c732bde61d44962991f4dcb199f2a1538cc110cebd54a5aefa39a15452ff.wav",
+        "native_frames": [
+          44100,
+          238140
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 1.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "broad query · candidate 3: Bad Cop (7inch Mixx)",
+        "media": "media/cdc153f7ee3cde7e3a003f73cc232d354f546d2adf34d6cbb5743d9ebc6ccfbc.wav",
+        "native_frames": [
+          319725,
+          513765
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 7.25,
+        "samples_equal": true,
+        "gain": 0.957506332597579
+      },
+      {
+        "label": "guided query · candidate 7: Bad Cop (7inch Mixx)",
+        "media": "media/e469b24fcbd5c95fa1488d3d8600106b0b7cefbd7b46144766cf1d43e4fd7e24.wav",
+        "native_frames": [
+          341775,
+          535815
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 7.75,
+        "samples_equal": true,
+        "gain": 0.957506332597579
+      },
+      {
+        "label": "original query · candidate 7: To My Recollection",
+        "media": "media/d79f629dc1001843227ddc199cfecdae6e3b3235557385bc05e5c10ca5feac8f.wav",
+        "native_frames": [
+          650475,
+          844515
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 14.75,
+        "samples_equal": true,
+        "gain": 0.9988743487137413
+      },
+      {
+        "label": "broad query · candidate 5: To My Recollection",
+        "media": "media/d79f629dc1001843227ddc199cfecdae6e3b3235557385bc05e5c10ca5feac8f.wav",
+        "native_frames": [
+          650475,
+          844515
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 14.75,
+        "samples_equal": true,
+        "gain": 0.9988743487137413
+      },
+      {
+        "label": "original query · candidate 8: Til It Hurts",
+        "media": "media/d2464be5b7c5b3e234e7548587f7b6666b9211a51a40c1f7e8c4418a812844fe.wav",
+        "native_frames": [
+          970200,
+          1164240
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 22.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "guided query · candidate 4: Til It Hurts",
+        "media": "media/fbb64d6a4ed58ab52f4c6fc6ac2db0dc33a1186bdcb3fe4f8ded0b67515ac0f6.wav",
+        "native_frames": [
+          6747300,
+          6941340
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 153.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "original query · candidate 9: Vintage featuring The Honorable Sleaze",
+        "media": "media/899024042f1b4e9229d45aa6f76f0cc9135bf9d9916f4f50a0dfbcb56579bf15.wav",
+        "native_frames": [
+          3913875,
+          4107915
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 88.75,
+        "samples_equal": true,
+        "gain": 0.9264292730530174
+      },
+      {
+        "label": "broad query · candidate 9: Vintage featuring The Honorable Sleaze",
+        "media": "media/899024042f1b4e9229d45aa6f76f0cc9135bf9d9916f4f50a0dfbcb56579bf15.wav",
+        "native_frames": [
+          3913875,
+          4107915
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 88.75,
+        "samples_equal": true,
+        "gain": 0.9264292730530174
+      },
+      {
+        "label": "original query · candidate 10: Confusion",
+        "media": "media/eeec61cdb8661f0c8c7d4b8288a5895d0476e8750ab349b15ff9a1aee94522fa.wav",
+        "native_frames": [
+          4597425,
+          4791465
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 104.25,
+        "samples_equal": true,
+        "gain": 0.9722788144027998
+      },
+      {
+        "label": "broad query · candidate 2: Expired Inspiration",
+        "media": "media/608537b49189e4f88b9ee06f41c70f5daeef94b957d0bf1f63edf7158c5c2553.wav",
+        "native_frames": [
+          363825,
+          557865
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 8.25,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "broad query · candidate 7: Bad",
+        "media": "media/528851b335a48d2eff63f3fc92ab2312aac7412e739ac4985b156f118b83bb8d.wav",
+        "native_frames": [
+          6306300,
+          6500340
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 143.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "guided query · candidate 2: Eleven Years",
+        "media": "media/92d6d20aba5ac5875a6fd308eb0abc8b8c9c54c9d3865054975dcca05e004a22.wav",
+        "native_frames": [
+          1477350,
+          1671390
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 33.5,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "guided query · candidate 5: Dinner Plans",
+        "media": "media/835ea4d03c6eba2849abcb7fa04c2831ada7c9d05dfdf72f3aa3a42c656435bf.wav",
+        "native_frames": [
+          1400175,
+          1594215
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 31.75,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "guided query · candidate 8: Pledge of Allegiance",
+        "media": "media/a7d0dc5d8f932d777f91f30bc2b81d2f5caef278ab6a94ffef9f41da93b92be7.wav",
+        "native_frames": [
+          2756250,
+          2950290
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 62.5,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "guided query · candidate 10: Oh No Not Again, This Time",
+        "media": "media/55b9ee3d8ed4e8119888ba84bb22bcc273e942ef17e24e2ad1b0e09f660bc634.wav",
+        "native_frames": [
+          1896300,
+          2090340
+        ],
+        "rate": 44100,
+        "available_file_zero_seconds": 43.0,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "Controlled development · original",
+        "media": "media/99fdd04c7a2f5125ff154ec991bff028d3b7c3cc036049a542247b3e4c6c6d9c.wav",
+        "native_frames": [
+          12000,
+          69600
+        ],
+        "rate": 24000,
+        "available_file_zero_seconds": 1.5,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "Controlled development · broad",
+        "media": "media/817a4ee51b5654c5a46ac7fe6e11818b251c204911a1c65f9ec29666a7446170.wav",
+        "native_frames": [
+          12000,
+          69600
+        ],
+        "rate": 24000,
+        "available_file_zero_seconds": 1.5,
+        "samples_equal": true,
+        "gain": 1.0
+      },
+      {
+        "label": "Controlled development · guided",
+        "media": "media/d3038f85f18e6df467319bc0c48bc0fd5645537d8425b38e64436d7b635b4bc2.wav",
+        "native_frames": [
+          12000,
+          69600
+        ],
+        "rate": 24000,
+        "available_file_zero_seconds": 1.5,
+        "samples_equal": true,
+        "gain": 1.0
+      }
+    ],
+    "method": "independent SoundFile int16 read and explicit rounding; no shared clip/pcm16 implementation",
+    "ledger": {
+      "schema_version": "b02-ledger-1",
+      "created_at": "2026-10-19T10:21:05.839486+00:00",
+      "ceilings": {
+        "download_bytes": 0,
+        "attempts": 0,
+        "worker_seconds": 3600
+      },
+      "charged_bytes": 0,
+      "received_bytes": 0,
+      "http_attempts": 0,
+      "charged_worker_seconds": 1843.6129999998957,
+      "pending_read_bytes": 0,
+      "pending_worker_seconds": 0
+    },
+    "work": {
+      "schema_version": "b02-work-1",
+      "counts": {
+        "query_jobs": 8,
+        "comparison_cases": 16,
+        "processed_window_seconds": 231.20000000000036,
+        "preparation_bytes": 105682560,
+        "clip_bytes": 30991360,
+        "query_preparation_bytes": 4561280,
+        "managed_output_bytes": 148364474,
+        "read_audio_seconds": 74499.48102040803,
+        "clips": 40,
+        "separator_input_seconds": 310.0000000000002,
+        "feature_windows": 97,
+        "comparison_queries": 68,
+        "workers": 119,
+        "feature_bytes": 6505984,
+        "comparisons": 1,
+        "processing_inputs": 89
+      },
+      "ceilings": {
+        "query_jobs": 16,
+        "comparison_cases": 16,
+        "processed_window_seconds": 12000,
+        "preparation_bytes": 268435456,
+        "clip_bytes": 134217728,
+        "query_preparation_bytes": 67108864,
+        "managed_output_bytes": 536870912,
+        "read_audio_seconds": 90000,
+        "clips": 128,
+        "separator_input_seconds": 1200,
+        "feature_windows": 4096,
+        "comparison_queries": 128,
+        "workers": 256,
+        "feature_bytes": 67108864,
+        "comparisons": 1,
+        "processing_inputs": 192
+      },
+      "record_hash": "a03aeb9ef6200c4d5bb4ac0b4088d3d6b5d96eaae3201ce2fe42fdadd3c5866b"
+    }
+  },
+  "http_qa": {
+    "status": "ok",
+    "schema_version": "b02-http-qa-1",
+    "seconds": 9.796999999962281,
+    "bundle_hash": "948969988a07d99bc8812fb2f37e1970749b4a4c6b5108fd058971beacd2ca03",
+    "html": 200,
+    "unique_wavs": 40,
+    "media": [
+      {
+        "path": "media/57e4910a5bf0458efc8efdf99728c73d23056f76c893443fe4c30e27d085ab3f.wav",
+        "sha256": "70b6e487139b026cf3ff40b35d1acac94547987543b90786bfc7b34466cb2459",
+        "bytes": 1411244,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/d1c331bd3cd1dd303326d3e8c7140d5bc53a369f03b17b62c24876f276ffeb15.wav",
+        "sha256": "a8a03fd4d5b59ca63995dd2ac4dcd263ef303119168aa1a13c92a96d0b693319",
+        "bytes": 423404,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/126156e03aa074e9a81f9b8f5e86ef473349a351e6465154321f59380e9d9672.wav",
+        "sha256": "329c5b379fa022264cc8967124f3e2d459448e866963619e8615a966da83e224",
+        "bytes": 1411244,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/d217a4e2eb6f5e17ddcc7d2e9e225f4f7cdfb6409fb24d539cb39066b7d420c5.wav",
+        "sha256": "7b1f0f58ff32bfd6f1d49742ab50c687b21c3cd4cb19bafa416509c196126b41",
+        "bytes": 423404,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/08c1737eb620494577ee0a77862908837fcf234e3ab3bb6944690e3709f92b5b.wav",
+        "sha256": "2172dfaca42202abdd2e672ee1dcd07fb00669aea6b6e892845c29cfcb84dac9",
+        "bytes": 1411244,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/2921e5a7cc4f54f4b604eac71298010d0be702fb8549345d620aad0ecc519d63.wav",
+        "sha256": "cc4f479f358d64ebf18714011c1fe78903622ddea8ea8eedff1837cde95ee23e",
+        "bytes": 1411244,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/a89f8bb6e2e98d9d7ee7ec596aaac81d32a3ddd9ad7b1f8cff79137224940117.wav",
+        "sha256": "a504db7172b36e9f40af15a4a9ae37b126e7648053ca31ecc75e906260821942",
+        "bytes": 423404,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/817408462ba5b1911f50d31c38933df2aa2fd14961e3c946077d4388c2df26d2.wav",
+        "sha256": "9be0b0627a1a539f55a38af4c6f3ad0c3bba793a9f2826a2065add965c365bb3",
+        "bytes": 1411244,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/4ebcdbd4ffc8a9a00e8aacd0414f27ab2036d52d62a71caba655527fcb458729.wav",
+        "sha256": "d0efafda742eb29c8f351f5b53924406d62b2c2c5bbbe605cfc574d3c498a89f",
+        "bytes": 423404,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/8f020266c7bd19278cbe9beaed99119a1ac27cb1cc0e864d04c8443e91e92344.wav",
+        "sha256": "b2f4c60bcaedaceafa103ac42abf8aef5da53e190754ab845780b2a0b422b7e8",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/1dcf8290fbefb42796949b5c9fb8cad0fa3ca755d1ff42d3ae0d1eec336b7a2c.wav",
+        "sha256": "ba23d0e30e56a356b9a2295cf291fea873d80c9ea2dc471faf6f53342b1d5dba",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/0452b6c4f4010af073e73f6bba43f9c92ae193fb3f9727ba3d18c063957430f2.wav",
+        "sha256": "5a659a78ffb55a510c0500d429fb5b99fe9f65c13cc03f1889b61869cff2d523",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/bafe5398bbdf50fb64b17358ce72b49e8448ac239454d03964d087e2dba718d7.wav",
+        "sha256": "cf922bde93c0b0eeeeff006f5496f76cedb584edf6cc4944411832451891260b",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/5b01aacabf86e3ce99af7d3b97e7d86ac137ae69b4ee9d87aa67af90c8cb9104.wav",
+        "sha256": "e0de9405aa0a48e9c16da78ba62496e3e8a75c9bf5cf2a0cbce64a9a89b0f79a",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/0257c732bde61d44962991f4dcb199f2a1538cc110cebd54a5aefa39a15452ff.wav",
+        "sha256": "629a9349d7e0a6d66ae04864a7b555f30ac56e67d2a6954a960babee49531451",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/d79f629dc1001843227ddc199cfecdae6e3b3235557385bc05e5c10ca5feac8f.wav",
+        "sha256": "7e61e90a0b5756ead997a9ddeb478bcbd7175cd1d9ec6b590e30b169d518fb86",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/d2464be5b7c5b3e234e7548587f7b6666b9211a51a40c1f7e8c4418a812844fe.wav",
+        "sha256": "2f3e36ffc4446500715e46588bbac6a0a7d78194380861f5d974c12d1e791f70",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/899024042f1b4e9229d45aa6f76f0cc9135bf9d9916f4f50a0dfbcb56579bf15.wav",
+        "sha256": "077feac238407feaad0e8eb5887abfedf63c5e4c3363e85076c34a3193edaf0b",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/eeec61cdb8661f0c8c7d4b8288a5895d0476e8750ab349b15ff9a1aee94522fa.wav",
+        "sha256": "56f40e55f0b21467fb1c45f7314bf0df03c53895c4c31f50e892257ef071672f",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/f89948c28f15f2b2859c8f5e46e4fb54d90943cb49e1fb7dad437b174a1c8f8a.wav",
+        "sha256": "a0b899e151cd302ac55391c09ead047d952c4824ad62e3766e8770b15a6cb42f",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/608537b49189e4f88b9ee06f41c70f5daeef94b957d0bf1f63edf7158c5c2553.wav",
+        "sha256": "762d734fa090989548fe30bfb6cb0a7940c9103b835a23fa43e6439e0b115611",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/cdc153f7ee3cde7e3a003f73cc232d354f546d2adf34d6cbb5743d9ebc6ccfbc.wav",
+        "sha256": "ba82f3a915e09bcc61a85b8cd59943dcaecc4b67b32881c4c0c20924acd62d77",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/f52a7460c3fc4edba06a806c35be42079012e61a6a9fb14f256526ff5aeeb1cc.wav",
+        "sha256": "0f63f748712340c9766084ec2a4406adf4e9b5fa3638eae3c798d53c065d8ba3",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/df16cf3cdccef8fff67acbf302d95f219523cd88403ae94b8ab468de5f42c744.wav",
+        "sha256": "b85c738e81addd4a5384b5273b4621aaf4367d240f18a54213ea89044521fae0",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/528851b335a48d2eff63f3fc92ab2312aac7412e739ac4985b156f118b83bb8d.wav",
+        "sha256": "ae03323a7802203e156174a95e99fb6dd19f78169ee8bae9426f153ad89bfe5c",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/fdc5522c0909d6951bfbb90c2851e1ce8c8172607ec079b0bc1b0ea19d9cac3e.wav",
+        "sha256": "5f8e2d60c541c665328f39851e4c396613212414585b6f233d3711b56dd1151b",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/a0c02476b497ea190fe29712f66100345f79e667c2f051c1b526f82ec837dd6a.wav",
+        "sha256": "3e1318546f0d126cd356f7847babac8f2b3af42860a1ecbcdea7c56df8df5efb",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/048e5347278d137cfd386688ce53e4c7793918b20ed9d3fc8235d393837138fb.wav",
+        "sha256": "9ffe28dd08da01500e4c1a48a986e9b8139c2828820eda9eb6cd251822d3f20c",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/92d6d20aba5ac5875a6fd308eb0abc8b8c9c54c9d3865054975dcca05e004a22.wav",
+        "sha256": "c576c724a9c2b341de62d9a345b23168d90c650509d747a489f6f1312e0fa4cb",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/79ee9178a9d2e3fa5f20096cd115fb8f063f8519c2879e84b0b8087dab411d90.wav",
+        "sha256": "9aebea0c3fc56ea769a3749bc81a530e215b10510dfb220fae22875035f8cbba",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/fbb64d6a4ed58ab52f4c6fc6ac2db0dc33a1186bdcb3fe4f8ded0b67515ac0f6.wav",
+        "sha256": "725f84164c529898223ad9447a90322a1b95d92d13f19a06c1560f072630415c",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/835ea4d03c6eba2849abcb7fa04c2831ada7c9d05dfdf72f3aa3a42c656435bf.wav",
+        "sha256": "25e53e8e21755a00df1eff79fb84979be317cc1053ae6821753194f48e39a77a",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/de3cea782faea95a65fafefac36150e01d75a4673bc17e6f0d6d0827e090feae.wav",
+        "sha256": "6bedbbdad30196252631c3909ab76817f81938482771df0f70c128d411a3687e",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/e469b24fcbd5c95fa1488d3d8600106b0b7cefbd7b46144766cf1d43e4fd7e24.wav",
+        "sha256": "bf9c8a5daa9cb34dca99b98625f125af3798f4ea7b440a354008dac0fda6f4bd",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/a7d0dc5d8f932d777f91f30bc2b81d2f5caef278ab6a94ffef9f41da93b92be7.wav",
+        "sha256": "8f3e0c079c019e16828120917e8dfb47beb695be67ea3961285ba46544276aa6",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/61d713efd07c1c070f888c923566666c08ad8d74926fcc0c0177259bdb486ac3.wav",
+        "sha256": "55d62f4a048bfa01e2e93ac44e280ada58bc2166fc8af6ab3f2ec149e9a89d46",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/55b9ee3d8ed4e8119888ba84bb22bcc273e942ef17e24e2ad1b0e09f660bc634.wav",
+        "sha256": "ea557a7804a0e8aab3429df64601fbba50e9dc13ca700fb959c89a52cd402c47",
+        "bytes": 776204,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/99fdd04c7a2f5125ff154ec991bff028d3b7c3cc036049a542247b3e4c6c6d9c.wav",
+        "sha256": "93381483c6f8c16b768392157c3749ec34505b6ed9ab3d073470a9df3a4bc30c",
+        "bytes": 115244,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/817a4ee51b5654c5a46ac7fe6e11818b251c204911a1c65f9ec29666a7446170.wav",
+        "sha256": "6f44ca2df3f444374ee241e36449be5ccee19f863f0edf80c4fc3da517f56095",
+        "bytes": 115244,
+        "full": 200,
+        "sample_payload_range": 206
+      },
+      {
+        "path": "media/d3038f85f18e6df467319bc0c48bc0fd5645537d8425b38e64436d7b635b4bc2.wav",
+        "sha256": "1a873c3baa06c244715f05f0cd6c7d787f825d86a2550fa4eda2411ac5af01c5",
+        "bytes": 115244,
+        "full": 200,
+        "sample_payload_range": 206
+      }
+    ],
+    "outside_and_encoded_traversal": 404,
+    "invalid_and_multipart_range": 416,
+    "cache_control": "no-store",
+    "interpretation": "local delivery HTTP test, distinct from browser controls and native waveform comparison"
+  },
+  "browser_qa": {
+    "schema_version": "b02-browser-qa-1",
+    "status": "ok",
+    "browser": "Chrome on Windows through the existing browser extension",
+    "url": "http://127.0.0.1:8768/",
+    "bundle_hash": "948969988a07d99bc8812fb2f37e1970749b4a4c6b5108fd058971beacd2ca03",
+    "media_readiness": {
+      "players": 42,
+      "ready": 42,
+      "errors": 0,
+      "playing_after_checks": 0
+    },
+    "controls": [
+      {
+        "role": "original context",
+        "audio": 0,
+        "playing_time": 0.38295,
+        "playing_paused": false,
+        "paused_time": 0.792137,
+        "paused": true,
+        "seek_time": 4,
+        "duration": 8,
+        "ready_state": 4,
+        "error": null
+      },
+      {
+        "role": "harmonic component",
+        "audio": 2,
+        "playing_time": 0.546062,
+        "playing_paused": false,
+        "paused_time": 0.870916,
+        "paused": true,
+        "seek_time": 4,
+        "duration": 8,
+        "ready_state": 4,
+        "error": null
+      },
+      {
+        "role": "cue-guided component",
+        "audio": 5,
+        "playing_time": 0.308556,
+        "playing_paused": false,
+        "paused_time": 0.736434,
+        "paused": true,
+        "seek_time": 4,
+        "duration": 8,
+        "ready_state": 4,
+        "error": null
+      },
+      {
+        "role": "original catalogue candidate",
+        "audio": 9,
+        "playing_time": 0.21601,
+        "playing_paused": false,
+        "paused_time": 0.619543,
+        "paused": true,
+        "seek_time": 2.2,
+        "duration": 4.4,
+        "ready_state": 4,
+        "error": null
+      }
+    ],
+    "method": "Native browser play/pause buttons and rendered range inputs; read-only DOM media state after each action; screenshot of actual header/decision/timestamps inspected",
+    "recovery": "The first selector read saw a diff snapshot; a fresh full accessibility snapshot resolved it before any playback action. No browser setup or extension changed.",
+    "interpretation": "Objective playback/control correctness only; no human similarity or intended-layer judgment"
+  },
+  "starter_smoke": {
+    "status": "ok",
+    "evidence_category": "deterministic_engineering_diagnostic",
+    "environment": {
+      "system": "Windows",
+      "release": "11",
+      "architecture": "AMD64",
+      "logical_cpus": 4,
+      "memory": {
+        "total_bytes": 17118912512,
+        "available_bytes": 7320485888
+      },
+      "disk_free_bytes": 225599475712,
+      "tools": {
+        "pipeline": "a02-preparation-3",
+        "package": "0.3.0",
+        "python": "3.12.14",
+        "numpy": "2.2.6",
+        "scipy": "1.15.3",
+        "soundfile": "0.13.1",
+        "libsndfile": "1.2.2"
+      },
+      "ffmpeg_on_path": false,
+      "ffprobe_on_path": false,
+      "gpu": {
+        "status": "detected",
+        "query": "NVIDIA GeForce GTX 1660 SUPER, 6144 MiB, 610.88",
+        "exit_code": 0
+      },
+      "processing_device": "cpu",
+      "advertised_libsndfile_formats": {
+        "AIFF": "AIFF (Apple/SGI)",
+        "AU": "AU (Sun/NeXT)",
+        "AVR": "AVR (Audio Visual Research)",
+        "CAF": "CAF (Apple Core Audio File)",
+        "FLAC": "FLAC (Free Lossless Audio Codec)",
+        "HTK": "HTK (HMM Tool Kit)",
+        "SVX": "IFF (Amiga IFF/SVX8/SV16)",
+        "MAT4": "MAT4 (GNU Octave 2.0 / Matlab 4.2)",
+        "MAT5": "MAT5 (GNU Octave 2.1 / Matlab 5.0)",
+        "MPC2K": "MPC (Akai MPC 2k)",
+        "MP3": "MPEG-1/2 Audio",
+        "OGG": "OGG (OGG Container format)",
+        "PAF": "PAF (Ensoniq PARIS)",
+        "PVF": "PVF (Portable Voice Format)",
+        "RAW": "RAW (header-less)",
+        "RF64": "RF64 (RIFF 64)",
+        "SD2": "SD2 (Sound Designer II)",
+        "SDS": "SDS (Midi Sample Dump Standard)",
+        "IRCAM": "SF (Berkeley/IRCAM/CARL)",
+        "VOC": "VOC (Creative Labs)",
+        "W64": "W64 (SoundFoundry WAVE 64)",
+        "WAV": "WAV (Microsoft)",
+        "NIST": "WAV (NIST Sphere)",
+        "WAVEX": "WAVEX (Microsoft)",
+        "WVE": "WVE (Psion Series 3)",
+        "XI": "XI (FastTracker 2)"
+      },
+      "accepted_inputs": [
+        "PCM/IEEE-float WAV",
+        "FLAC",
+        "MP3/MPEG_LAYER_III",
+        "PCM/float AIFF"
+      ],
+      "exercised_decoders": [
+        "WAV/PCM_16",
+        "WAV/FLOAT",
+        "FLAC/PCM_16"
+      ],
+      "compressed_seek": "unverified; MP3 uses full sequential decoding; no random-seek guarantee"
+    },
+    "fixture_record": {
+      "schema_version": "0.2",
+      "record_id": "input-9e8e6552801552ef1edd2713775561c0732d5e4bc21d402e122c76c415c3103e",
+      "kind": "input",
+      "validation_status": "unverified",
+      "technical_metadata_status": "verified",
+      "technical_metadata": {
+        "sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+        "file_bytes": 384044,
+        "format": "WAV",
+        "subtype": "PCM_16",
+        "sample_count": 96000,
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 2.0,
+        "measurement": {
+          "peak_per_channel": [
+            0.5,
+            0.75
+          ],
+          "rms_per_channel": [
+            0.17677707308126595,
+            0.0024206145913796356
+          ],
+          "silent": false,
+          "silence_peak_threshold": 1e-12
+        },
+        "canonical_pcm": {
+          "schema_version": "sss-pcm-f32le-1",
+          "sample_rate_hz": 48000,
+          "channels": 2,
+          "sample_count": 96000,
+          "sha256": "886771758b1e95d4c31c220c2db0fb61adb15ed65cfdaa16f13846f06e190f51"
+        },
+        "decoder": {
+          "library": "SoundFile",
+          "soundfile": "0.13.1",
+          "libsndfile": "1.2.2",
+          "route": "full_sequential_float32",
+          "time_coordinate": "decoded_available_file",
+          "compressed_seek_verified": false,
+          "timing_note": "Lossless sample timeline; float32 conversion defines canonical identity."
+        }
+      },
+      "recording": {
+        "identity_status": "unverified",
+        "version": null,
+        "identity_evidence": null,
+        "external_ids": null,
+        "title": null,
+        "artist": null,
+        "recording_id": null
+      },
+      "source": {
+        "asset_id": "sha256:55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+        "availability": "available",
+        "local_path": "data/audio/engineering/a02-stereo.wav",
+        "sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+        "kind": "unknown",
+        "duration_seconds": 2.0,
+        "sample_count": 96000,
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "provenance": {
+          "origin_url": null,
+          "acquired_at": null,
+          "notes": "Generated by diagnostics.pcm_fixture; not Loulou or discovery/evaluation audio",
+          "permitted_use": "Project-generated deterministic engineering diagnostic"
+        }
+      },
+      "reference_record_id": null,
+      "requested_interval": null,
+      "verified_interval": null,
+      "selected_events": [],
+      "processing_history": [],
+      "timestamp_mapping": {
+        "asset_id": "sha256:55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+        "status": "verified_file_mapping",
+        "basis": "file",
+        "original_recording_offset_seconds": null,
+        "offset_evidence": null,
+        "segments": [
+          {
+            "asset_start_seconds": 0,
+            "asset_end_seconds": 2.0,
+            "source_start_seconds": 0,
+            "source_seconds_per_asset_second": 1
+          }
+        ],
+        "unmapped_tail_seconds": 0
+      },
+      "unknowns": [
+        "Target event selection and reference association have not been verified in A02.",
+        "Recording identity/version unverified; technical decoding is separate evidence.",
+        "Original-recording offset unknown; no recording-time claim is made.",
+        "Full-track/excerpt kind unknown; filenames and duration are not evidence."
+      ]
+    },
+    "preparation": {
+      "status": "ok",
+      "reused": false,
+      "bundle": "data/audio/prepared/a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a",
+      "record": {
+        "schema_version": "0.2",
+        "record_id": "prepared-a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a",
+        "kind": "prepared",
+        "validation_status": "unverified",
+        "technical_metadata_status": "verified",
+        "technical_metadata": {
+          "sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+          "file_bytes": 384044,
+          "format": "WAV",
+          "subtype": "PCM_16",
+          "sample_count": 96000,
+          "sample_rate_hz": 48000,
+          "channels": 2,
+          "duration_seconds": 2.0,
+          "measurement": {
+            "peak_per_channel": [
+              0.5,
+              0.75
+            ],
+            "rms_per_channel": [
+              0.17677707308126595,
+              0.0024206145913796356
+            ],
+            "silent": false,
+            "silence_peak_threshold": 1e-12
+          },
+          "canonical_pcm": {
+            "schema_version": "sss-pcm-f32le-1",
+            "sample_rate_hz": 48000,
+            "channels": 2,
+            "sample_count": 96000,
+            "sha256": "886771758b1e95d4c31c220c2db0fb61adb15ed65cfdaa16f13846f06e190f51"
+          },
+          "decoder": {
+            "library": "SoundFile",
+            "soundfile": "0.13.1",
+            "libsndfile": "1.2.2",
+            "route": "full_sequential_float32",
+            "time_coordinate": "decoded_available_file",
+            "compressed_seek_verified": false,
+            "timing_note": "Lossless sample timeline; float32 conversion defines canonical identity."
+          }
+        },
+        "recording": {
+          "identity_status": "unverified",
+          "version": null,
+          "identity_evidence": null,
+          "external_ids": null,
+          "title": null,
+          "artist": null,
+          "recording_id": null
+        },
+        "source": {
+          "asset_id": "sha256:55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+          "availability": "available",
+          "local_path": "data/audio/engineering/a02-stereo.wav",
+          "sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+          "kind": "unknown",
+          "duration_seconds": 2.0,
+          "sample_count": 96000,
+          "sample_rate_hz": 48000,
+          "channels": 2,
+          "provenance": {
+            "origin_url": null,
+            "acquired_at": null,
+            "notes": "Generated by diagnostics.pcm_fixture; not Loulou or discovery/evaluation audio",
+            "permitted_use": "Project-generated deterministic engineering diagnostic"
+          }
+        },
+        "reference_record_id": null,
+        "requested_interval": null,
+        "verified_interval": {
+          "basis": "file",
+          "asset_id": "sha256:55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+          "start_seconds": 0.5,
+          "end_seconds": 1.5,
+          "status": "verified_bounds",
+          "note": "Technical source bounds only; target/reference association unverified"
+        },
+        "selected_events": [],
+        "processing_history": [
+          {
+            "operation_id": "a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a",
+            "type": "crop_channel_resample",
+            "input_asset_id": "sha256:55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+            "input_path": "data/audio/engineering/a02-stereo.wav",
+            "input_sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+            "output_asset_id": "sha256:45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+            "output_sha256": "45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+            "output_path": "data/audio/prepared/a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a/audio.wav",
+            "tools": {
+              "pipeline": "a02-preparation-3",
+              "package": "0.3.0",
+              "python": "3.12.14",
+              "numpy": "2.2.6",
+              "scipy": "1.15.3",
+              "soundfile": "0.13.1",
+              "libsndfile": "1.2.2"
+            },
+            "parameters": {
+              "channel_policy": "channel:1",
+              "crop_start_frame": 24000,
+              "crop_end_frame": 72000,
+              "requested_start_seconds": "0.5",
+              "requested_end_seconds": "1.5",
+              "crop_rounding": "floor_start_ceil_end",
+              "input_sample_rate_hz": 48000,
+              "output_sample_rate_hz": 16000,
+              "resample_up": 1,
+              "resample_down": 3,
+              "resample_window": [
+                "kaiser",
+                5.0
+              ],
+              "resample_padtype": "constant_zero",
+              "output_format": "WAV/FLOAT",
+              "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+            },
+            "config_hash": "0ed312d3968f8c21e23ffb808005918a999f4235ddb33425d8cd512efeac2106",
+            "time_map": {
+              "asset_id": "sha256:45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+              "status": "verified_file_mapping",
+              "basis": "file",
+              "original_recording_offset_seconds": null,
+              "offset_evidence": null,
+              "segments": [
+                {
+                  "asset_start_seconds": 0,
+                  "asset_end_seconds": 1.0,
+                  "source_start_seconds": 0.5,
+                  "source_seconds_per_asset_second": 1
+                }
+              ],
+              "unmapped_tail_seconds": 0
+            }
+          }
+        ],
+        "timestamp_mapping": {
+          "asset_id": "sha256:45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+          "status": "verified_file_mapping",
+          "basis": "file",
+          "original_recording_offset_seconds": null,
+          "offset_evidence": null,
+          "segments": [
+            {
+              "asset_start_seconds": 0,
+              "asset_end_seconds": 1.0,
+              "source_start_seconds": 0.5,
+              "source_seconds_per_asset_second": 1
+            }
+          ],
+          "unmapped_tail_seconds": 0
+        },
+        "unknowns": [
+          "Target event selection and reference association have not been verified in A02.",
+          "Recording identity/version unverified; technical decoding is separate evidence.",
+          "Original-recording offset unknown; no recording-time claim is made.",
+          "Full-track/excerpt kind unknown; filenames and duration are not evidence."
+        ],
+        "preparation_key": "a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a",
+        "preparation_identity": {
+          "input_sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+          "parent_record_id": "input-9e8e6552801552ef1edd2713775561c0732d5e4bc21d402e122c76c415c3103e",
+          "parent_contract_hash": "004c4fb3640bf2077737dd6e5cda0380705593900540d2d4d4f9929872c2f4f7",
+          "parameters": {
+            "channel_policy": "channel:1",
+            "crop_start_frame": 24000,
+            "crop_end_frame": 72000,
+            "requested_start_seconds": "0.5",
+            "requested_end_seconds": "1.5",
+            "crop_rounding": "floor_start_ceil_end",
+            "input_sample_rate_hz": 48000,
+            "output_sample_rate_hz": 16000,
+            "resample_up": 1,
+            "resample_down": 3,
+            "resample_window": [
+              "kaiser",
+              5.0
+            ],
+            "resample_padtype": "constant_zero",
+            "output_format": "WAV/FLOAT",
+            "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+          },
+          "tools": {
+            "pipeline": "a02-preparation-3",
+            "package": "0.3.0",
+            "python": "3.12.14",
+            "numpy": "2.2.6",
+            "scipy": "1.15.3",
+            "soundfile": "0.13.1",
+            "libsndfile": "1.2.2"
+          }
+        },
+        "artifact": {
+          "asset_id": "sha256:45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+          "local_path": "data/audio/prepared/a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a/audio.wav",
+          "sha256": "45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+          "file_bytes": 64058,
+          "sample_count": 16000,
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "duration_seconds": 1.0,
+          "format": "WAV",
+          "subtype": "FLOAT",
+          "measurement": {
+            "peak_per_channel": [
+              0.25015154480934143
+            ],
+            "rms_per_channel": [
+              0.001977621604517974
+            ],
+            "silent": false,
+            "silence_peak_threshold": 1e-12
+          }
+        },
+        "record_hash": "9539906f14aba66cef6f1ede3e57255c4d07c259b7f9cd5a7af929cff6828675"
+      }
+    },
+    "checks": {
+      "pcm_known_samples_and_rms": "passed",
+      "flac_lossless_roundtrip": "passed",
+      "channel_select_and_resample": "passed",
+      "expected_output_frames": 16000,
+      "expected_event_sample": 8000,
+      "observed_event_sample": 8000,
+      "event_tolerance_seconds": 6.25e-05
+    },
+    "reference": {
+      "record_id": "reference-loulou-001",
+      "validation_status": "unverified",
+      "experiment_status": "not_run",
+      "reason": "actual Loulou audio missing; deterministic fixtures are engineering evidence only"
+    },
+    "measured": {
+      "operation_seconds": 0.28100000001722947,
+      "managed_bytes": 470037,
+      "prepared_audio_bytes": 64058
+    },
+    "limits": {
+      "max_input_bytes": 268435456,
+      "max_duration_seconds": 900,
+      "max_channels": 8,
+      "max_sample_rate_hz": 192000,
+      "max_decoded_bytes": 268435456,
+      "max_working_bytes": 1073741824,
+      "max_output_bytes": 268435456,
+      "max_managed_bytes": 4294967296,
+      "min_free_bytes": 4294967296,
+      "max_seconds": 120,
+      "max_inventory_files": 64,
+      "max_resample_factor": 1024,
+      "concurrency": 1,
+      "max_download_bytes": 536870912,
+      "max_model_candidates": 3
+    },
+    "retrieval_quality": "not_measured",
+    "command": "smoke",
+    "tier": "starter",
+    "wall_seconds": 1.8440000000409782,
+    "report_written": true
+  },
+  "record_hash": "be9f8a30670c6dd61ce969a3f2f9af6774735591bea3d8dcb6e6f29115228ffb"
+}

@@ -1,0 +1,552 @@
+{
+  "schema_version": "b02-commands-1",
+  "manual_initial": [
+    {
+      "report": "reports/local/b02-preflight-command.json",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-preflight-command.json",
+        "separation",
+        "preflight"
+      ],
+      "status": "failed",
+      "error": "separation_step: worker exceeded max_seconds=120 and was terminated",
+      "wall_seconds": 149.28099999995902
+    },
+    {
+      "report": "reports/local/b02-preflight-resume.json",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-preflight-resume.json",
+        "separation",
+        "preflight"
+      ],
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 25.42200000002049
+    },
+    {
+      "report": "reports/local/b02-geometry-command.json",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-geometry-command.json",
+        "separation",
+        "preflight"
+      ],
+      "status": "failed",
+      "error": "separation_step None: B02 geometry: inserted exact component/gains differ: 0-positive-quiet-target",
+      "wall_seconds": 40.40600000001723
+    },
+    {
+      "report": "reports/local/b02-geometry-verified.json",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-geometry-verified.json",
+        "separation",
+        "preflight"
+      ],
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 30.875
+    },
+    {
+      "report": "reports/local/b02-pilot-command.json",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-pilot-command.json",
+        "separation",
+        "pilot"
+      ],
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 18.5
+    }
+  ],
+  "delivery": [
+    {
+      "label": "comparison-command",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-comparison-command.json",
+        "separation",
+        "compare"
+      ],
+      "report": "reports/local/b02-comparison-command.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 697.1720000000205,
+      "error": null
+    },
+    {
+      "label": "real-original",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-real-original.json",
+        "separation",
+        "process",
+        "data/runs/separation/inputs/real-with-context.json",
+        "--mode",
+        "original"
+      ],
+      "report": "reports/local/b02-real-original.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 14.922000000020489,
+      "error": null
+    },
+    {
+      "label": "handoff-original",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-handoff-original.json",
+        "separation",
+        "handoff",
+        "data/runs/separation/processed/d81142cea334b8364b8c736865c9a5ba3b578bb00c00964341c261a1488e045e/record.json",
+        "--component",
+        "original"
+      ],
+      "report": "reports/local/b02-handoff-original.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 13.686999999976251,
+      "error": null
+    },
+    {
+      "label": "query-original",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-query-original.json",
+        "separation",
+        "prepare-query",
+        "data/runs/separation/inputs/e701d9b9f274f8e0d84b41032b3d4af87bc9f1a87c2fcb1aeb2873ab080eb14c.json"
+      ],
+      "report": "reports/local/b02-query-original.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 19.75,
+      "error": null
+    },
+    {
+      "label": "real-broad",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-real-broad.json",
+        "separation",
+        "process",
+        "data/runs/separation/inputs/real-with-context.json",
+        "--mode",
+        "broad"
+      ],
+      "report": "reports/local/b02-real-broad.json",
+      "status": "failed",
+      "exit_code": 1,
+      "seconds": 18.51600000000326,
+      "error": "separation_step ${PROJECT}\\data\\runs\\separation\\inputs\\real-with-context.json: separation: temporary STFT allocation exceeds fixed ceiling"
+    },
+    {
+      "label": "real-bounded-original",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-real-bounded-original.json",
+        "separation",
+        "process",
+        "data/runs/separation/inputs/real-bounded-context.json",
+        "--mode",
+        "original"
+      ],
+      "report": "reports/local/b02-real-bounded-original.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 22.79699999996228,
+      "error": null
+    },
+    {
+      "label": "handoff-bounded-original",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-handoff-bounded-original.json",
+        "separation",
+        "handoff",
+        "data/runs/separation/processed/e64374a52d15c2b4b619ca6093311672f3651ac6831471f2b22171b8af1afbe1/record.json",
+        "--component",
+        "original"
+      ],
+      "report": "reports/local/b02-handoff-bounded-original.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 28.98399999999674,
+      "error": null
+    },
+    {
+      "label": "query-bounded-original",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-query-bounded-original.json",
+        "separation",
+        "prepare-query",
+        "data/runs/separation/inputs/7452b39f8ab363e08c6c0b875b163d2ff5156c38cf3447cc64e521a9f5f451eb.json"
+      ],
+      "report": "reports/local/b02-query-bounded-original.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 22.51600000000326,
+      "error": null
+    },
+    {
+      "label": "real-bounded-broad",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-real-bounded-broad.json",
+        "separation",
+        "process",
+        "data/runs/separation/inputs/real-bounded-context.json",
+        "--mode",
+        "broad"
+      ],
+      "report": "reports/local/b02-real-bounded-broad.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 16.17200000002049,
+      "error": null
+    },
+    {
+      "label": "handoff-bounded-broad",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-handoff-bounded-broad.json",
+        "separation",
+        "handoff",
+        "data/runs/separation/processed/48d9ae91ebf76eefd80c5b365016dc7eb9e797602dbd298131d98bb7a1f4dbd1/record.json",
+        "--component",
+        "harmonic"
+      ],
+      "report": "reports/local/b02-handoff-bounded-broad.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 21.54599999997299,
+      "error": null
+    },
+    {
+      "label": "query-bounded-broad",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-query-bounded-broad.json",
+        "separation",
+        "prepare-query",
+        "data/runs/separation/inputs/27d60d4e6b1cb3ecc3b76d8e01f4d34e12347debeeb59668b23a2c0f725174d3.json"
+      ],
+      "report": "reports/local/b02-query-bounded-broad.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 19.28200000000652,
+      "error": null
+    },
+    {
+      "label": "real-bounded-guided",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-real-bounded-guided.json",
+        "separation",
+        "process",
+        "data/runs/separation/inputs/real-bounded-context.json",
+        "--mode",
+        "guided"
+      ],
+      "report": "reports/local/b02-real-bounded-guided.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 14.26500000001397,
+      "error": null
+    },
+    {
+      "label": "handoff-bounded-guided",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-handoff-bounded-guided.json",
+        "separation",
+        "handoff",
+        "data/runs/separation/processed/4dda57f36c48eb6d1f3bca4b7a8ecda45a81a614e2dae1560d2d33ba42896739/record.json",
+        "--component",
+        "extracted"
+      ],
+      "report": "reports/local/b02-handoff-bounded-guided.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 13.688000000023749,
+      "error": null
+    },
+    {
+      "label": "query-bounded-guided",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-query-bounded-guided.json",
+        "separation",
+        "prepare-query",
+        "data/runs/separation/inputs/cd0b15923452df9ed36645958d796b0bf883d6b0e934176c88f1287a4eb8124d.json"
+      ],
+      "report": "reports/local/b02-query-bounded-guided.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 18.25,
+      "error": null
+    },
+    {
+      "label": "known-answer-command",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-known-answer-command.json",
+        "separation",
+        "known-answer"
+      ],
+      "report": "reports/local/b02-known-answer-command.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 11.530999999959022,
+      "error": null
+    },
+    {
+      "label": "compatibility-command",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-compatibility-command.json",
+        "separation",
+        "compatibility",
+        "--index",
+        "data/indexes/a06/d027f2cd5ca817bc320542df16a540346325403bcb967fd248216c8c466731e2/index.json"
+      ],
+      "report": "reports/local/b02-compatibility-command.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 140.51600000000326,
+      "error": null
+    },
+    {
+      "label": "rank-original",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-rank-original.json",
+        "separation",
+        "rank",
+        "--index",
+        "data/indexes/a06/d027f2cd5ca817bc320542df16a540346325403bcb967fd248216c8c466731e2/index.json",
+        "--query",
+        "data/runs/separation/queries/c42e99d8ed65c1727892aed393a06117ddbac8a91f5b3845cb2878b560f5920c/query.json",
+        "--receipt",
+        "data/runs/separation/compatibility/68aa4107c8423c3cbe598b5e1beaf63c42e92fec82e24c8ad990329283851847.json"
+      ],
+      "report": "reports/local/b02-rank-original.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 220.15600000001723,
+      "error": null
+    },
+    {
+      "label": "rank-broad",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-rank-broad.json",
+        "separation",
+        "rank",
+        "--index",
+        "data/indexes/a06/d027f2cd5ca817bc320542df16a540346325403bcb967fd248216c8c466731e2/index.json",
+        "--query",
+        "data/runs/separation/queries/53202ef1d42ae2553cf183d3e25403cc9661e57ac99bebd48e75e9de68ca3a15/query.json",
+        "--receipt",
+        "data/runs/separation/compatibility/68aa4107c8423c3cbe598b5e1beaf63c42e92fec82e24c8ad990329283851847.json"
+      ],
+      "report": "reports/local/b02-rank-broad.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 331.06199999997625,
+      "error": null
+    },
+    {
+      "label": "rank-guided",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-rank-guided.json",
+        "separation",
+        "rank",
+        "--index",
+        "data/indexes/a06/d027f2cd5ca817bc320542df16a540346325403bcb967fd248216c8c466731e2/index.json",
+        "--query",
+        "data/runs/separation/queries/b607121148726fad0aae8b654e090f1fa145a9177ac2fb04e7adb36366d1e4cf/query.json",
+        "--receipt",
+        "data/runs/separation/compatibility/68aa4107c8423c3cbe598b5e1beaf63c42e92fec82e24c8ad990329283851847.json"
+      ],
+      "report": "reports/local/b02-rank-guided.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 211.204000000027,
+      "error": null
+    },
+    {
+      "label": "reuse-guided",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-reuse-guided.json",
+        "separation",
+        "process",
+        "data/runs/separation/inputs/real-bounded-context.json",
+        "--mode",
+        "guided"
+      ],
+      "report": "reports/local/b02-reuse-guided.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 11.875,
+      "error": null
+    },
+    {
+      "label": "reuse-query-guided",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-reuse-query-guided.json",
+        "separation",
+        "prepare-query",
+        "data/runs/separation/inputs/cd0b15923452df9ed36645958d796b0bf883d6b0e934176c88f1287a4eb8124d.json"
+      ],
+      "report": "reports/local/b02-reuse-query-guided.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 14.0,
+      "error": null
+    },
+    {
+      "label": "report",
+      "argv": [
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "reports/local/b02-report.json",
+        "separation",
+        "report",
+        "data/runs/separation/report-input.json"
+      ],
+      "report": "reports/local/b02-report.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 113.0,
+      "error": null
+    }
+  ],
+  "native_qa": [
+    ".venv/Scripts/python.exe",
+    "scripts/verify-separation.py",
+    "reports/local/b02-report.json"
+  ],
+  "listener": [
+    "powershell",
+    "-File",
+    "scripts/listen-separation.ps1"
+  ],
+  "http_qa": "reports/local/b02-http-qa.py",
+  "smoke": "sound-search --root reports/local/b02-smoke-project --tier starter smoke",
+  "record_hash": "7fd04c4888754a04c9cbeb091bc0882a3158cc5a1cc6c6fca3713845c6e181ff"
+}

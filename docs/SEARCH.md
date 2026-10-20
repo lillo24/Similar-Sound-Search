@@ -203,3 +203,11 @@ differ; additional drift fails. The original pre-inference declaration and saved
 predictions/results stay unchanged. This is a technical execution repair, not another
 held-out experiment or model/algorithm choice. Physical workers still have 120 seconds,
 concurrency one, and the original A06 lifetime caps.
+## Optional B02 query processing
+
+[B02](SEPARATION.md) supplies its own explicit context, validated transformation
+handoff, fixed ledger/output roots and newly audited read-only A06 consumer receipt.
+The shared query hook unions original/cue ancestry before identical-PCM dedup. Omitted
+context remains A06; `parents()`, feature identity, distances/ties, pitch-off default,
+historical final-run guard and original report page are unchanged. B02 renders derived
+queries separately and always plays catalogue candidates from original mixtures.
