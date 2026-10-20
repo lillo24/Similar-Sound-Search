@@ -1,5 +1,12 @@
 # Runtime and catalogue correctness tests
 
+`test_indexing.py` uses disposable roots, generated native PCM and fake embeddings
+for C01 grids/tails/short files, coverage unions, row/feature identity, corruption,
+interrupted recovery, single-writer conflicts, lifetime accounting, read-only B03
+and owned derivatives, guided rejection, component maps/ancestry, complete winners,
+exact original equivalence and native listener exports. Its fixed-batch rehearsal
+does not touch delivery audio, checkpoints or historical ledgers.
+
 These offline tests own runtime/catalogue and A04 harness correctness. They do not measure an acoustic matcher or perceptual quality. Run `python -m unittest discover -s tests -v` in the installed project environment.
 
 - `helpers.py` builds independent PCM fixtures and temporary project roots, copied resource limits, and the unchanged missing-reference manifest.

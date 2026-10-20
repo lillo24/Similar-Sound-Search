@@ -38,3 +38,10 @@ no crop at second 218 or recording-offset claim is inferred for a short excerpt.
 batch and the sole optional .03 / twelve-semitone pitch policy. Off/original remain
 defaults. [QUERIES.md](../docs/QUERIES.md) owns strict recipe/binding/revision schemas,
 supported native geometry, materialization/reuse states, exports and commands.
+
+## C01 passage banks
+
+`indexing.json` fixes C01's separate offline ceilings, two candidate grids,
+bounded shards and original/pitch-off defaults. [INDEXING.md](../docs/INDEXING.md)
+owns bank identities, native maps, immutable snapshots, component limits,
+predeclared admission, exact per-bank verification and charged resume/reuse.

@@ -135,3 +135,16 @@ and [delivery evidence](../reports/B03_QUERIES.md).
 | DEC-054 | Register the newly supplied MP3 separately from historical missing-reference evidence, preserving its full 218..240s original mixture. | Technical support does not verify identity, marked-version alignment, rights, master offset or intended layer. Use the existing Donnie guided event/cue to demonstrate processing reuse without a new separation experiment. |
 | DEC-055 | Freeze independent insertion/support checks and one eight-case/sixteen-arm development batch before comparison. | Familiar deterministic families are inspected development, not a fresh holdout or human timbre truth. Keep all failures and denominators; no sweep or replacement reference after rankings. |
 | DEC-056 | Declare a two-module execution-only repair before any predictions; share one unchanged adapter per worker and checkpoint pending units. | PyTorch's interop setting is process-wide. Preserve the original failed attempt, cached features, pending case/arm reservation and every retry charge; recover an immutable prediction before repeating inference. Windows memory failures likewise retain progress and charges. |
+
+## C01 bank decisions
+
+20 October 2026; [contracts](INDEXING.md), [prospective protocol](../manifests/indexing/protocol.json)
+and [evidence](../reports/C01_INDEX.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-057 | Separate versioned bank policies, immutable plans/snapshots, mutable progress and exact per-bank executions. | Reference original A06 shards through a fresh C01-owned audited consumer; keep all banks separately addressable and original/pitch-off defaults unchanged. C02 owns combination/calibration/aggregation. |
+| DEC-058 | Compare 1.2/2.4/4.8s with a common development hop, then admit at most one production policy by predeclared support/quality/cost. | Both new durations lose one of six baseline source-consistency successes. The experimental 4.8s/1s policy provides full-event support and fits measured budgets; containment is not a localization or relevance win. |
+| DEC-059 | Keep the closed batch and independently verify its strict full-2.4s support denominator. | The raw tally included the .3s short-file control. Geometry-only verification gives 0/10, 5/10 and 10/10, retains every case/ranking/failure and proves the same admission. No replacement inference or result-dependent case deletion is allowed. |
+| DEC-060 | Restrict component indexing to validated query-independent HPSS regions; reject actual guided outputs as generic stems. | Exercise two components on one controlled mixture and one real 8s region, preserving all cue/parent ancestry, native maps and output checks. No catalogue-wide separation or instrument claim is justified. |
+| DEC-061 | Preserve producing feature versions separately from later consumer/metadata verification. | Feature identities, samples, model/math and native grids stay fixed. Compact hashed references keep snapshots below the existing 1 MiB JSON limit; saved-query representation and frozen-function audits remain explicit. A completed-bank rerun validates sources/arrays under the same finite ledger; new encoding still requires its declared producer. |

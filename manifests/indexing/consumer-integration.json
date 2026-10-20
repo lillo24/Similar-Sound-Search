@@ -1,0 +1,45 @@
+{
+  "schema_version": "c01-consumer-boundary-proof-1",
+  "producer_commit": "fb3f194",
+  "producer_matches_live": true,
+  "unchanged_feature_functions": {
+    "build.py:load_signal": "cd03acc7b3ec6cfe1c5a496a33598f3f8c7231baba915eb0e40338971333144c",
+    "build.py:array_path": "8a35f2e7b311a9abeadc6537fe2cb20ceb834090cc0ca540fe6821993933d3a0",
+    "build.py:progress": "22d04a8086e77d81ecf38e2f8088e93b0a8b30d182cfdbfce8ec21aef95434f3",
+    "build.py:committed_units": "4111497097cd0fb05b9c1c2525d7cd3c4b9c6645d7a7cc78c8aec857caf1026a",
+    "build.py:verify": "e18096651c6a275ae207c000774929a5c7b9449fe1af66eacfd0a6a027e6abf1",
+    "reader.py:rows": "daa5e06c0cc5c1b132f54d8f6651c0ff4e30c22d4eec8192f2cde60cfbf70a92",
+    "ranking.py:hit": "2670e128be518ab7314a3833c7b261ad569f2865ee8df69cb67a40125feabaa7",
+    "development.py:generate": "e5cb34e0189f609250e8f3d2fd600bbf24fb9fb669d5f87a993c49be669cfc9a",
+    "development.py:query_feature": "5e1fd01288a589072f465e2d7290da6ce3b302096f0a06d0860f0f8c612bf5d7",
+    "development.py:save_audio": "98bbf65bd36e8a5fed57da9c8600eb0cd2880dc8377d7d99565614f8d2f40544",
+    "development.py:public": "22dad3b73cb740a55dbb72e8ba02d9a95feb13edd7540f273c3bbf4653bcc5c6",
+    "build.py:feature_extraction_and_atomic_publication_try": "ec33c01e371844edba19d4f2a92d1881c00f4f5da46322bdb0e740d6e0ae7b86",
+    "ranking.py:complete_group_selection_loop": "8a68ffde16104626ddc4dcf580d064a1c54f3f0668b049fb33a90892ad011cd8"
+  },
+  "planned_consumer_file_hashes": {
+    "indexing/build.py": "573aa5772fcc2cedd76ced190e7564d7299ced774c0cea1ac0d9adccd1d4e97d",
+    "cli.py": "95abb36dc8f54d547cdd909594ef7e70087d4aeb2206ddb021c32c9de43739d3",
+    "indexing/development.py": "4df7f100070d3ebef85098d85d56e9fe7b999eb9c6098c3fbb373cc90cf3634c",
+    "indexing/ranking.py": "972fdbbfc61e6101bf1751ac3bbbe00f38b9cfeef6e8544179fccaf4bd698b37",
+    "indexing/reader.py": "4236bc4ac1e99593803837df9418069aea55f4b4b4f400eb4571bf07ae75315d",
+    "indexing/report.py": "db24578445533f2d352678dbbcdd835ee2f393a0150e4457c19c847e025ae1d4"
+  },
+  "no_feature_identity_model_grid_distance_or_source_change": true,
+  "phase": "declared before applying consumers and before fresh legacy delivery audit",
+  "metadata_limit_bytes": 1048576,
+  "legacy_metadata_sizing": {
+    "compact_reference_estimate": 439636,
+    "inline_rows_estimate": 6824798
+  },
+  "changes": [
+    "hashed immutable membership references rather than inline window duplication",
+    "bank/query descriptor equality and unchanged frozen-function consumer audit",
+    "strict full-2.4s summary and narrow silence diagnostic handling; closed real batch retained",
+    "completed build uses the one charged source/array verification pass",
+    "C01 summary outputs are contained in reports/local/c01",
+    "compact immutable group-winner references in rank progress, preserving the complete group-selection loop"
+  ],
+  "produced_features_are_not_reembedded": true,
+  "record_hash": "7f2a98f5ea3535dddc669e238f662d05a812cfcf8bb67129c68a27a62d6aaa5b"
+}

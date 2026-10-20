@@ -1,0 +1,336 @@
+{
+  "schema_version": "c01-support-verification-1",
+  "status": "ok",
+  "passed": true,
+  "geometry_hash": "0abf099d8ff1d7a062532420f7aaeb524361697f7933319c01e0990eeb595d03",
+  "comparison_hash": "6316dec7eb812396431f0b0ebc80ecb777bd8e4a8a77276e970617f8c500a869",
+  "decision_hash": "bfe7c630bfa8aa2d61eca6a42be2865eb020071f1c16e62b3e7c7d4f196c6a90",
+  "script_sha256": "2b4b8a7e8c85139915b0967cd005850567bb38c34576be57762acf40c37dc495",
+  "raw_support_counts": {
+    "1200": [
+      1,
+      11
+    ],
+    "2400": [
+      6,
+      11
+    ],
+    "4800": [
+      11,
+      11
+    ]
+  },
+  "strict_full_2400ms": {
+    "1200": {
+      "full_2400ms_support": [
+        0,
+        10
+      ],
+      "opportunities": [
+        {
+          "case_id": "harmonic-first",
+          "recording_id": "harmonic-0",
+          "truth": [
+            0,
+            57600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "harmonic-first",
+          "recording_id": "harmonic-1",
+          "truth": [
+            51000,
+            108600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "harmonic-between",
+          "recording_id": "harmonic-0",
+          "truth": [
+            0,
+            57600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "harmonic-between",
+          "recording_id": "harmonic-1",
+          "truth": [
+            51000,
+            108600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "pluck-last",
+          "recording_id": "pluck-0",
+          "truth": [
+            9000,
+            66600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "pluck-last",
+          "recording_id": "pluck-1",
+          "truth": [
+            134400,
+            192000
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "fm-decay-last",
+          "recording_id": "fm-0",
+          "truth": [
+            134400,
+            192000
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "fm-decay-last",
+          "recording_id": "fm-1",
+          "truth": [
+            57000,
+            114600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "noise-accompaniment",
+          "recording_id": "noise-0",
+          "truth": [
+            75000,
+            132600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "noise-accompaniment",
+          "recording_id": "noise-1",
+          "truth": [
+            0,
+            57600
+          ],
+          "contains": false
+        }
+      ]
+    },
+    "2400": {
+      "full_2400ms_support": [
+        5,
+        10
+      ],
+      "opportunities": [
+        {
+          "case_id": "harmonic-first",
+          "recording_id": "harmonic-0",
+          "truth": [
+            0,
+            57600
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "harmonic-first",
+          "recording_id": "harmonic-1",
+          "truth": [
+            51000,
+            108600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "harmonic-between",
+          "recording_id": "harmonic-0",
+          "truth": [
+            0,
+            57600
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "harmonic-between",
+          "recording_id": "harmonic-1",
+          "truth": [
+            51000,
+            108600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "pluck-last",
+          "recording_id": "pluck-0",
+          "truth": [
+            9000,
+            66600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "pluck-last",
+          "recording_id": "pluck-1",
+          "truth": [
+            134400,
+            192000
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "fm-decay-last",
+          "recording_id": "fm-0",
+          "truth": [
+            134400,
+            192000
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "fm-decay-last",
+          "recording_id": "fm-1",
+          "truth": [
+            57000,
+            114600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "noise-accompaniment",
+          "recording_id": "noise-0",
+          "truth": [
+            75000,
+            132600
+          ],
+          "contains": false
+        },
+        {
+          "case_id": "noise-accompaniment",
+          "recording_id": "noise-1",
+          "truth": [
+            0,
+            57600
+          ],
+          "contains": true
+        }
+      ]
+    },
+    "4800": {
+      "full_2400ms_support": [
+        10,
+        10
+      ],
+      "opportunities": [
+        {
+          "case_id": "harmonic-first",
+          "recording_id": "harmonic-0",
+          "truth": [
+            0,
+            57600
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "harmonic-first",
+          "recording_id": "harmonic-1",
+          "truth": [
+            51000,
+            108600
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "harmonic-between",
+          "recording_id": "harmonic-0",
+          "truth": [
+            0,
+            57600
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "harmonic-between",
+          "recording_id": "harmonic-1",
+          "truth": [
+            51000,
+            108600
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "pluck-last",
+          "recording_id": "pluck-0",
+          "truth": [
+            9000,
+            66600
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "pluck-last",
+          "recording_id": "pluck-1",
+          "truth": [
+            134400,
+            192000
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "fm-decay-last",
+          "recording_id": "fm-0",
+          "truth": [
+            134400,
+            192000
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "fm-decay-last",
+          "recording_id": "fm-1",
+          "truth": [
+            57000,
+            114600
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "noise-accompaniment",
+          "recording_id": "noise-0",
+          "truth": [
+            75000,
+            132600
+          ],
+          "contains": true
+        },
+        {
+          "case_id": "noise-accompaniment",
+          "recording_id": "noise-1",
+          "truth": [
+            0,
+            57600
+          ],
+          "contains": true
+        }
+      ]
+    }
+  },
+  "admission_unchanged": true,
+  "admitted_label": "long",
+  "retained_cases": [
+    "harmonic-first",
+    "harmonic-between",
+    "pluck-attack",
+    "pluck-last",
+    "fm-decay-last",
+    "noise-accompaniment",
+    "exact-fm",
+    "exact-short-file",
+    "silence",
+    "absent"
+  ],
+  "interpretation": "Raw tally included the .3s short-file source in full-query cases. Strict full-2.4s geometry excludes it only from this denominator; every case, ranking, failure, localization result and cost remains in the closed batch. No features, scores, queries, thresholds, source choices or admission changed.",
+  "peak_working_bytes": 95956992,
+  "record_hash": "e117638e4254d90cea0634cffd28acbb9e97ce66adee64a32799368da8e96053"
+}

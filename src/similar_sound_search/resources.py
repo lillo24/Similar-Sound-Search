@@ -36,6 +36,7 @@ MANAGED = (
     "manifests/events",
     "manifests/separation",
     "manifests/queries",
+    "manifests/indexing",
 )
 
 

@@ -236,6 +236,37 @@ def parser():
     queries.add_argument("--receipt", type=Path)
     queries.add_argument("--mode", choices=("original", "broad", "guided"), default="original")
     queries.add_argument("--port", type=int, default=8769)
+    indexing = subcommands.add_parser("indexing", help="C01 versioned passage/component banks")
+    indexing.add_argument(
+        "indexing_action",
+        choices=(
+            "preflight",
+            "generate",
+            "geometry",
+            "known-answer",
+            "build",
+            "verify",
+            "compare",
+            "admit",
+            "components",
+            "compatibility",
+            "snapshot",
+            "derive-query",
+            "search",
+            "report",
+            "verify-native",
+            "serve",
+        ),
+    )
+    indexing.add_argument("input", type=Path, nargs="?")
+    indexing.add_argument("--bank", choices=("short", "long"))
+    indexing.add_argument("--scope", choices=("pilot", "full"), default="full")
+    indexing.add_argument("--receipt", type=Path)
+    indexing.add_argument("--revision")
+    indexing.add_argument("--materialization")
+    indexing.add_argument("--derived", action="store_true")
+    indexing.add_argument("--allow-partial", action="store_true")
+    indexing.add_argument("--port", type=int, default=8770)
     return command
 
 
@@ -254,6 +285,7 @@ def _worker(request):
                 "events_step",
                 "separation_step",
                 "queries_step",
+                "indexing_step",
             }
             else Budget
         )
@@ -307,6 +339,10 @@ def _worker(request):
             result = worker(request, budget)
         elif request["command"] == "queries_step":
             from .queries.job import worker
+
+            result = worker(request, budget)
+        elif request["command"] == "indexing_step":
+            from .indexing.job import worker
 
             result = worker(request, budget)
         else:
@@ -382,10 +418,17 @@ def main(argv=None):
             raise InputError(
                 f"root {root}: expected project config/resource_limits.json; use --root"
             )
-        report_candidate = args.report or root / "reports/local" / (args.command + ".json")
+        default_report = (
+            root / "reports/local/c01/last-command.json"
+            if args.command == "indexing"
+            else root / "reports/local" / (args.command + ".json")
+        )
+        report_candidate = args.report or default_report
         if not report_candidate.is_absolute():
             report_candidate = root / report_candidate
         report_candidate = contained(report_candidate, contained(root / "reports/local", root))
+        if args.command == "indexing":
+            report_candidate = contained(report_candidate, root / "reports/local/c01")
         if report_candidate.suffix.lower() != ".json":
             raise InputError("report: expected owned .json path under reports/local")
         report = report_candidate
@@ -424,6 +467,13 @@ def main(argv=None):
                 raise InputError("queries serve requires the owned B03 report bundle")
             serve(root, args.input, args.port, root / "reports/local/b03")
             return 0
+        if args.command == "indexing" and args.indexing_action == "serve":
+            from .search.report import serve
+
+            if not args.input:
+                raise InputError("indexing serve requires the owned C01 report bundle")
+            serve(root, args.input, args.port, root / "reports/local/c01")
+            return 0
         with project_lock(root):
             # Refuse orphaned acquisition/evaluation children before starting an operation.
             with project_lock(root, ".a03-worker.lock"):
@@ -439,6 +489,8 @@ def main(argv=None):
             with project_lock(root, ".b02-worker.lock"):
                 pass
             with project_lock(root, ".b03-worker.lock"):
+                pass
+            with project_lock(root, ".c01-worker.lock"):
                 pass
             Budget(root, limits).reserve(65536)
             if args.command == "catalogue":
@@ -481,6 +533,10 @@ def main(argv=None):
                 result = run(request, execute)
             elif args.command == "queries":
                 from .queries.job import run
+
+                result = run(request, execute)
+            elif args.command == "indexing":
+                from .indexing.job import run
 
                 result = run(request, execute)
             else:
