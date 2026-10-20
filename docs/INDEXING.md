@@ -29,7 +29,7 @@ exclusions are retained. Guided outputs consume a cue and cannot be generic
 components. Component hits play the original mixture; component audition is a
 separately labelled option.
 
-Commands, measured outcomes and the C02 handoff will be recorded in
+Commands, measured outcomes and the C02 handoff are recorded in
 `reports/C01_INDEX.md`. No new model, dependency, acquisition or held-out run is
 part of this stage.
 

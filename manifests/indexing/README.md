@@ -14,3 +14,6 @@ the strict full-2.4s denominator without reopening predictions; admission is
 unchanged. `consumer-integration.json` declares compact references, representation
 checks and the final consumer boundary before the fresh delivery audit. Its
 unchanged feature-function proofs distinguish producing and consuming versions.
+`consumer-publication.json` pins the published consumer hashes and completed
+feature counts at that pre-audit boundary; the final audit and delivery results
+are recorded in `reports/C01_INDEX_EVIDENCE.json`.
