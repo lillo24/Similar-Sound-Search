@@ -8,6 +8,8 @@ aggregation has been implemented.
 [`C01_INDEX_EVIDENCE.json`](C01_INDEX_EVIDENCE.json) contains the sanitized bank,
 snapshot, query, development, execution, accounting and verification records.
 Private arrays, audio and local playback files remain in the delivery checkout.
+Delivery uses [PR #20](https://github.com/lillo24/Similar-Sound-Search/pull/20)
+into `main`; that PR is the durable head/check/merge record.
 
 ## Declaration and producing versions
 
