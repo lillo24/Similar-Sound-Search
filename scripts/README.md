@@ -27,3 +27,14 @@ retain 8767/8766. The private media remain in the delivery checkout.
 receipts, gain and numeric player/source timestamps. It uses the same fixed B02 ledger,
 locks and 120s deadline, with source reads charged. It does not load a model or access
 the network. Its default input is `reports/local/b02-report.json`.
+
+`listen-queries.ps1` validates the B03 summary and serves its hash-verified revision/
+pitch comparison on loopback 8769; Ctrl+C stops it. Native verification is the charged
+`queries verify-native` CLI operation. Earlier listeners retain their separate ports.
+
+`verify-query-geometry.py` independently audits B03's saved source hashes, nonzero
+insertions, native support, silence/control flags and generator frequency/family truth
+before matcher/comparison inference. It uses SoundFile/FFT/projections rather than the
+operational estimator, under the fixed B03 ledger, offline lock and 120s worker bound.
+Its source hash identifies the producing LF snapshot; Git may use native checkout
+line endings later. Both retained audit passes remain charged in the same ledger.

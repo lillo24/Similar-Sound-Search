@@ -1,0 +1,12 @@
+{
+  "schema_version": "b03-integration-declaration-1",
+  "declared_on": "2026-10-20",
+  "base_commit": "0406066",
+  "owner": "queries/; data/runs/queries, data/features/queries, reports/local/b03, manifests/queries",
+  "query_boundary": "optional explicit context hooks for charged pitch estimation and PCM-keyed feature collection; default A06/B01/B02 behavior unchanged; existing resolver unions ancestry before PCM dedup",
+  "ranking_boundary": "optional explicit context callback persists the complete eligible timbre winner set before top-ten truncation; frozen distance/mean/tie/exclusion functions unchanged",
+  "historical_transforms": "read-only B02 artifact validation with its original fixed configuration/root, delegated B03 charges; no B02 worker/ledger mutation or rewritten receipts",
+  "pitch_boundary": "new queries/pitch.py wraps the unchanged search/pitch.py estimator; explicit B03 version/scale/bounded contribution and complete-winner execution identity; no frozen pitch/config/compatible_code edits",
+  "runtime_boundary": "add CLI dispatch and fixed B03 lock; include separation/queries public manifests in combined managed-disk inventory; retain all existing tier limits",
+  "compatibility": "reuse events.compatibility unchanged, with a fresh B03-owned current-consumer receipt after code stabilization; never rebuild A06 features or reopen historical guards"
+}

@@ -194,6 +194,48 @@ def parser():
     separation.add_argument("--query", type=Path)
     separation.add_argument("--receipt", type=Path)
     separation.add_argument("--port", type=int, default=8768)
+    queries = subcommands.add_parser(
+        "queries", help="B03 saved revisions and secondary pitch preference"
+    )
+    queries.add_argument(
+        "queries_action",
+        choices=(
+            "register",
+            "save",
+            "revise",
+            "list",
+            "show",
+            "rename",
+            "select",
+            "validate",
+            "materialize",
+            "load",
+            "export",
+            "import",
+            "process",
+            "compatibility",
+            "search",
+            "preflight",
+            "compare",
+            "known-answer",
+            "report",
+            "verify-native",
+            "serve",
+        ),
+    )
+    queries.add_argument("input", type=Path, nargs="?")
+    queries.add_argument("--query-id")
+    queries.add_argument("--revision")
+    queries.add_argument("--expected")
+    queries.add_argument("--name")
+    queries.add_argument("--sha256")
+    queries.add_argument("--context", type=Path)
+    queries.add_argument("--parent-record", type=Path)
+    queries.add_argument("--bindings", type=Path)
+    queries.add_argument("--index", type=Path)
+    queries.add_argument("--receipt", type=Path)
+    queries.add_argument("--mode", choices=("original", "broad", "guided"), default="original")
+    queries.add_argument("--port", type=int, default=8769)
     return command
 
 
@@ -211,6 +253,7 @@ def _worker(request):
                 "search_step",
                 "events_step",
                 "separation_step",
+                "queries_step",
             }
             else Budget
         )
@@ -260,6 +303,10 @@ def _worker(request):
             result = worker(request, budget)
         elif request["command"] == "separation_step":
             from .separation.job import worker
+
+            result = worker(request, budget)
+        elif request["command"] == "queries_step":
+            from .queries.job import worker
 
             result = worker(request, budget)
         else:
@@ -370,6 +417,13 @@ def main(argv=None):
                 raise InputError("separation serve requires the owned B02 report bundle")
             serve(root, args.input, args.port, root / "reports/local/b02")
             return 0
+        if args.command == "queries" and args.queries_action == "serve":
+            from .search.report import serve
+
+            if not args.input:
+                raise InputError("queries serve requires the owned B03 report bundle")
+            serve(root, args.input, args.port, root / "reports/local/b03")
+            return 0
         with project_lock(root):
             # Refuse orphaned acquisition/evaluation children before starting an operation.
             with project_lock(root, ".a03-worker.lock"):
@@ -383,6 +437,8 @@ def main(argv=None):
             with project_lock(root, ".b01-worker.lock"):
                 pass
             with project_lock(root, ".b02-worker.lock"):
+                pass
+            with project_lock(root, ".b03-worker.lock"):
                 pass
             Budget(root, limits).reserve(65536)
             if args.command == "catalogue":
@@ -421,6 +477,10 @@ def main(argv=None):
                 result = run(request, execute)
             elif args.command == "separation":
                 from .separation.job import run
+
+                result = run(request, execute)
+            elif args.command == "queries":
+                from .queries.job import run
 
                 result = run(request, execute)
             else:

@@ -184,6 +184,10 @@ def rank(request, budget, context=None):
             "recordings_validated": cursor,
             "expected_recordings": len(entries),
         }
+    if context is not None and hasattr(context, "save_winners"):
+        # Explicit consumers may retain all timbre winners for a later preference;
+        # passage selection and the default top-ten behavior remain unchanged.
+        context.save_winners(budget, identity, query, best, scored)
     hits = sorted(best.values(), key=sort_key)[: cfg["results"]]
     value = {
         "schema_version": "a06-result-1",

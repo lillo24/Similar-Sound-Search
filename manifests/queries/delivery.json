@@ -1,0 +1,1681 @@
+{
+  "schema_version": "b03-delivery-1",
+  "named_queries": {
+    "original": {
+      "status": "ok",
+      "query_id": "5daaebfa5e4537832e87a4300bad04ef3f401856bc8fb2730a513525afbf7058",
+      "revision_id": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3",
+      "label": "Loulou supplied mixture 218..240s",
+      "state": "valid_recipe; materialization availability not yet validated",
+      "peak_working_bytes": 97902592,
+      "ledger": {
+        "schema_version": "b03-ledger-1",
+        "created_at": "2026-10-20T14:10:53.351575+00:00",
+        "ceilings": {
+          "download_bytes": 0,
+          "attempts": 0,
+          "worker_seconds": 3600
+        },
+        "charged_bytes": 0,
+        "received_bytes": 0,
+        "http_attempts": 0,
+        "charged_worker_seconds": 295.7650000003632,
+        "pending_read_bytes": 0,
+        "pending_worker_seconds": 0
+      },
+      "work": {
+        "schema_version": "b03-work-1",
+        "counts": {
+          "metadata_bytes": 2906404,
+          "clips": 0,
+          "comparisons": 1,
+          "workers": 15,
+          "processing_inputs": 1,
+          "managed_output_bytes": 31321600,
+          "query_preparation_bytes": 5326848,
+          "feature_bytes": 1542656,
+          "read_audio_seconds": 1539.1866666666651,
+          "comparison_cases": 8,
+          "processed_window_seconds": 55.19999999999998,
+          "preparation_bytes": 7674880,
+          "pitch_audio_seconds": 158.4000000000002,
+          "feature_windows": 23,
+          "separator_input_seconds": 2.8,
+          "comparison_queries": 16,
+          "query_jobs": 9,
+          "clip_bytes": 0
+        },
+        "ceilings": {
+          "metadata_bytes": 16777216,
+          "clips": 64,
+          "comparisons": 1,
+          "workers": 256,
+          "processing_inputs": 32,
+          "managed_output_bytes": 268435456,
+          "query_preparation_bytes": 67108864,
+          "feature_bytes": 33554432,
+          "read_audio_seconds": 90000,
+          "comparison_cases": 8,
+          "processed_window_seconds": 6000,
+          "preparation_bytes": 100663296,
+          "pitch_audio_seconds": 3600,
+          "feature_windows": 1024,
+          "separator_input_seconds": 240,
+          "comparison_queries": 16,
+          "query_jobs": 16,
+          "clip_bytes": 67108864
+        },
+        "record_hash": "88d7534e99be28254eb869846254a19a27b4a0f4955b9807ad493ed1961f9f93"
+      },
+      "command": "queries",
+      "tier": "starter",
+      "wall_seconds": 14.295999999972992,
+      "report_written": true
+    },
+    "pitch": {
+      "status": "ok",
+      "query_id": "5daaebfa5e4537832e87a4300bad04ef3f401856bc8fb2730a513525afbf7058",
+      "revision_id": "ee2515234ccbeb3726c882d44e7a21fea9d8a4563ecc63a5a115bc4d76b9b7b2",
+      "label": "Loulou mixed reference - experimental pitch .03",
+      "state": "valid_recipe; materialization availability not yet validated",
+      "peak_working_bytes": 98013184,
+      "ledger": {
+        "schema_version": "b03-ledger-1",
+        "created_at": "2026-10-20T14:10:53.351575+00:00",
+        "ceilings": {
+          "download_bytes": 0,
+          "attempts": 0,
+          "worker_seconds": 3600
+        },
+        "charged_bytes": 0,
+        "received_bytes": 0,
+        "http_attempts": 0,
+        "charged_worker_seconds": 500.2330000003567,
+        "pending_read_bytes": 0,
+        "pending_worker_seconds": 0
+      },
+      "work": {
+        "schema_version": "b03-work-1",
+        "counts": {
+          "metadata_bytes": 3332200,
+          "clips": 0,
+          "comparisons": 1,
+          "workers": 31,
+          "processing_inputs": 1,
+          "managed_output_bytes": 44957632,
+          "query_preparation_bytes": 18627520,
+          "feature_bytes": 1878016,
+          "read_audio_seconds": 6137.843945578226,
+          "comparison_cases": 8,
+          "processed_window_seconds": 86.80000000000001,
+          "preparation_bytes": 7674880,
+          "pitch_audio_seconds": 187.60000000000022,
+          "feature_windows": 28,
+          "separator_input_seconds": 2.8,
+          "comparison_queries": 16,
+          "query_jobs": 13,
+          "clip_bytes": 0
+        },
+        "ceilings": {
+          "metadata_bytes": 16777216,
+          "clips": 64,
+          "comparisons": 1,
+          "workers": 256,
+          "processing_inputs": 32,
+          "managed_output_bytes": 268435456,
+          "query_preparation_bytes": 67108864,
+          "feature_bytes": 33554432,
+          "read_audio_seconds": 90000,
+          "comparison_cases": 8,
+          "processed_window_seconds": 6000,
+          "preparation_bytes": 100663296,
+          "pitch_audio_seconds": 3600,
+          "feature_windows": 1024,
+          "separator_input_seconds": 240,
+          "comparison_queries": 16,
+          "query_jobs": 16,
+          "clip_bytes": 67108864
+        },
+        "record_hash": "90b57e44e561cd2a458c26a8b8205a35ff384c15cd1017b74a8050f9d8fbaf27"
+      },
+      "command": "queries",
+      "tier": "starter",
+      "wall_seconds": 10.687000000034459,
+      "report_written": true
+    },
+    "multiple": {
+      "status": "ok",
+      "query_id": "f976e95ff71d4cffd977905524dc59c2ff5044bac4c0ac7159fd586811bc88bd",
+      "revision_id": "e42ee0e09abb80ac0fb0fe7f2a154313c2df61d2583e62890cb2b430a7bf899c",
+      "label": "Loulou unordered two mixed examples",
+      "state": "valid_recipe; materialization availability not yet validated",
+      "peak_working_bytes": 97812480,
+      "ledger": {
+        "schema_version": "b03-ledger-1",
+        "created_at": "2026-10-20T14:10:53.351575+00:00",
+        "ceilings": {
+          "download_bytes": 0,
+          "attempts": 0,
+          "worker_seconds": 3600
+        },
+        "charged_bytes": 0,
+        "received_bytes": 0,
+        "http_attempts": 0,
+        "charged_worker_seconds": 384.1090000002878,
+        "pending_read_bytes": 0,
+        "pending_worker_seconds": 0
+      },
+      "work": {
+        "schema_version": "b03-work-1",
+        "counts": {
+          "metadata_bytes": 3099136,
+          "clips": 0,
+          "comparisons": 1,
+          "workers": 23,
+          "processing_inputs": 1,
+          "managed_output_bytes": 39215808,
+          "query_preparation_bytes": 13153984,
+          "feature_bytes": 1609728,
+          "read_audio_seconds": 3575.879999999998,
+          "comparison_cases": 8,
+          "processed_window_seconds": 77.19999999999999,
+          "preparation_bytes": 7674880,
+          "pitch_audio_seconds": 180.4000000000002,
+          "feature_windows": 24,
+          "separator_input_seconds": 2.8,
+          "comparison_queries": 16,
+          "query_jobs": 10,
+          "clip_bytes": 0
+        },
+        "ceilings": {
+          "metadata_bytes": 16777216,
+          "clips": 64,
+          "comparisons": 1,
+          "workers": 256,
+          "processing_inputs": 32,
+          "managed_output_bytes": 268435456,
+          "query_preparation_bytes": 67108864,
+          "feature_bytes": 33554432,
+          "read_audio_seconds": 90000,
+          "comparison_cases": 8,
+          "processed_window_seconds": 6000,
+          "preparation_bytes": 100663296,
+          "pitch_audio_seconds": 3600,
+          "feature_windows": 1024,
+          "separator_input_seconds": 240,
+          "comparison_queries": 16,
+          "query_jobs": 16,
+          "clip_bytes": 67108864
+        },
+        "record_hash": "724bd64b95b8842e96e08fd02b57103f4ce5a34c2f50d3c07edb245614074cd3"
+      },
+      "command": "queries",
+      "tier": "starter",
+      "wall_seconds": 10.922000000020489,
+      "report_written": true
+    },
+    "guided": {
+      "status": "ok",
+      "query_id": "2f527e362146ac444e56a5e75c6e76211217390f0d79426735d44a55ed0a275c",
+      "revision_id": "9634093de562f30acca87e1a0947c33da77ae77e288bcc6c3e97468399cae9bf",
+      "label": "Donnie B02 guided event and actual contaminated cue",
+      "state": "valid_recipe; materialization availability not yet validated",
+      "peak_working_bytes": 98131968,
+      "ledger": {
+        "schema_version": "b03-ledger-1",
+        "created_at": "2026-10-20T14:10:53.351575+00:00",
+        "ceilings": {
+          "download_bytes": 0,
+          "attempts": 0,
+          "worker_seconds": 3600
+        },
+        "charged_bytes": 0,
+        "received_bytes": 0,
+        "http_attempts": 0,
+        "charged_worker_seconds": 446.28100000030827,
+        "pending_read_bytes": 0,
+        "pending_worker_seconds": 0
+      },
+      "work": {
+        "schema_version": "b03-work-1",
+        "counts": {
+          "metadata_bytes": 3228666,
+          "clips": 0,
+          "comparisons": 1,
+          "workers": 27,
+          "processing_inputs": 1,
+          "managed_output_bytes": 42998976,
+          "query_preparation_bytes": 16803008,
+          "feature_bytes": 1743872,
+          "read_audio_seconds": 5538.9733333333315,
+          "comparison_cases": 8,
+          "processed_window_seconds": 82.0,
+          "preparation_bytes": 7674880,
+          "pitch_audio_seconds": 185.20000000000022,
+          "feature_windows": 26,
+          "separator_input_seconds": 2.8,
+          "comparison_queries": 16,
+          "query_jobs": 11,
+          "clip_bytes": 0
+        },
+        "ceilings": {
+          "metadata_bytes": 16777216,
+          "clips": 64,
+          "comparisons": 1,
+          "workers": 256,
+          "processing_inputs": 32,
+          "managed_output_bytes": 268435456,
+          "query_preparation_bytes": 67108864,
+          "feature_bytes": 33554432,
+          "read_audio_seconds": 90000,
+          "comparison_cases": 8,
+          "processed_window_seconds": 6000,
+          "preparation_bytes": 100663296,
+          "pitch_audio_seconds": 3600,
+          "feature_windows": 1024,
+          "separator_input_seconds": 240,
+          "comparison_queries": 16,
+          "query_jobs": 16,
+          "clip_bytes": 67108864
+        },
+        "record_hash": "45d0d93ef7bc8ce569a6e063a2b77d459678ac311cd00973a2c3823f00dbfd01"
+      },
+      "command": "queries",
+      "tier": "starter",
+      "wall_seconds": 9.906000000075437,
+      "report_written": true
+    },
+    "reordered": {
+      "status": "ok",
+      "query_id": "2d1d7d9818758f18389d1295818c5a70760eeae7c36dde2db300cb7e145a8715",
+      "revision_id": "e42ee0e09abb80ac0fb0fe7f2a154313c2df61d2583e62890cb2b430a7bf899c",
+      "label": "Same unordered examples - reordered and duplicate",
+      "state": "valid_recipe; materialization availability not yet validated",
+      "peak_working_bytes": 96788480,
+      "ledger": {
+        "schema_version": "b03-ledger-1",
+        "created_at": "2026-10-20T14:10:53.351575+00:00",
+        "ceilings": {
+          "download_bytes": 0,
+          "attempts": 0,
+          "worker_seconds": 3600
+        },
+        "charged_bytes": 0,
+        "received_bytes": 0,
+        "http_attempts": 0,
+        "charged_worker_seconds": 424.9380000003148,
+        "pending_read_bytes": 0,
+        "pending_worker_seconds": 0
+      },
+      "work": {
+        "schema_version": "b03-work-1",
+        "counts": {
+          "metadata_bytes": 3194134,
+          "clips": 0,
+          "comparisons": 1,
+          "workers": 25,
+          "processing_inputs": 1,
+          "managed_output_bytes": 41174464,
+          "query_preparation_bytes": 14978496,
+          "feature_bytes": 1743872,
+          "read_audio_seconds": 4559.826666666664,
+          "comparison_cases": 8,
+          "processed_window_seconds": 82.0,
+          "preparation_bytes": 7674880,
+          "pitch_audio_seconds": 185.20000000000022,
+          "feature_windows": 26,
+          "separator_input_seconds": 2.8,
+          "comparison_queries": 16,
+          "query_jobs": 11,
+          "clip_bytes": 0
+        },
+        "ceilings": {
+          "metadata_bytes": 16777216,
+          "clips": 64,
+          "comparisons": 1,
+          "workers": 256,
+          "processing_inputs": 32,
+          "managed_output_bytes": 268435456,
+          "query_preparation_bytes": 67108864,
+          "feature_bytes": 33554432,
+          "read_audio_seconds": 90000,
+          "comparison_cases": 8,
+          "processed_window_seconds": 6000,
+          "preparation_bytes": 100663296,
+          "pitch_audio_seconds": 3600,
+          "feature_windows": 1024,
+          "separator_input_seconds": 240,
+          "comparison_queries": 16,
+          "query_jobs": 16,
+          "clip_bytes": 67108864
+        },
+        "record_hash": "0ff1008bdf367fc59a1fe8744a70fed93bfd7748416b6515f2ba3f99e58209f4"
+      },
+      "command": "queries",
+      "tier": "starter",
+      "wall_seconds": 11.530999999959022,
+      "report_written": true
+    },
+    "same_underlying_query": "40d72bd6548685be3da3be7c481ae369f8580291ef3e1d4955ec1f736389a6bb",
+    "checks": {
+      "rename_restart_load": true,
+      "export_import_exact_revision": true,
+      "reorder_duplicate_exact_revision": true,
+      "reorder_cache_hit": true,
+      "pitch_revision_reuses_query_features": true
+    }
+  },
+  "original_materialization": "data/runs/queries/materializations/0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036.json",
+  "underlying_query_id": "40d72bd6548685be3da3be7c481ae369f8580291ef3e1d4955ec1f736389a6bb",
+  "query_pitch": {
+    "hz": null,
+    "reason": "ambiguous/polyphonic/unstable or outside 50..500Hz",
+    "reliable_blocks": 0,
+    "provenance": {
+      "version": "b03-pitch-estimate-1",
+      "pcm": {
+        "schema_version": "sss-pcm-f32le-1",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "sample_count": 970200,
+        "sha256": "d523b46e10f80da5a7ae674889dc28a9574f07c721b3374b779dc2c841029cd6"
+      },
+      "estimator_code": "c0e049eab1181ab305c1a9bde1bdd6b04ccb337572975017ae33862796b8b57b",
+      "preprocessing": "unchanged waveform: arithmetic channel mean, resample_poly to 8000 Hz; whole selected support",
+      "support_frames": 970200,
+      "native_rate": 44100
+    }
+  },
+  "complete_winner_identity": "c2c637201e78f8f74dc7292b74f9a5c2051820cb95b57c12f99a0b1aa09fae95",
+  "same_complete_timbre_winners_and_native_intervals": true,
+  "same_underlying_query_features": true,
+  "feature_reuse_counters": {
+    "rename_restart_load": {
+      "feature_attempts_before": 24,
+      "feature_attempts_after": 24,
+      "new_features": 0
+    },
+    "reorder_duplicate": {
+      "feature_attempts_before": 26,
+      "feature_attempts_after": 26,
+      "new_features": 0
+    },
+    "pitch_only": {
+      "feature_attempts_before": 28,
+      "feature_attempts_after": 28,
+      "new_features": 0
+    }
+  },
+  "executions": {
+    "off": {
+      "execution_id": "6e4e0344ea5b4e4311f433bde3edfed24817095a1ab2c72320a90080bda49f4a",
+      "record_hash": "4198da6d7b546c271b5d81f160097c1a717d1fa1a1ed88991bc721831e41f104",
+      "revision_id": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3",
+      "materialization_id": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036",
+      "winners_hash": "c2c637201e78f8f74dc7292b74f9a5c2051820cb95b57c12f99a0b1aa09fae95",
+      "eligible_groups": 72,
+      "scored_windows": 44025,
+      "returned_candidates": 10,
+      "pitch_candidate_coverage": 0,
+      "nonzero_contributions": 0,
+      "candidate_order": [
+        "f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+        "9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+        "3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+        "c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+        "fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+        "7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+        "e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+        "241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+        "41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+        "3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772"
+      ]
+    },
+    "pitch": {
+      "execution_id": "7c206949a2c342c09cef9baf03ec4fc73714ddf04c6de6a6eece0de84ec05902",
+      "record_hash": "e6b14a963c96640ae2ed8e3786f0e2b0d6fb99a1a8dea8622190465608b1b64b",
+      "revision_id": "ee2515234ccbeb3726c882d44e7a21fea9d8a4563ecc63a5a115bc4d76b9b7b2",
+      "materialization_id": "5fc337ce1b748f45336f55c1cc9d1d606407d311b2c00df8b89cce57080fb8c0",
+      "winners_hash": "c2c637201e78f8f74dc7292b74f9a5c2051820cb95b57c12f99a0b1aa09fae95",
+      "eligible_groups": 72,
+      "scored_windows": 44025,
+      "returned_candidates": 10,
+      "pitch_candidate_coverage": 3,
+      "nonzero_contributions": 0,
+      "candidate_order": [
+        "f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+        "9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+        "3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+        "c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+        "fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+        "7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+        "e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+        "241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+        "41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+        "3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772"
+      ]
+    }
+  },
+  "same_top_ten_order": true,
+  "compatibility": {
+    "receipt": "data/runs/queries/compatibility/82e618c33a5e48ea1002a65282eabc4a1a40329f6cc246829ca7fae3360d42d4.json",
+    "recordings": 72,
+    "shards": 123,
+    "new_features": 0
+  },
+  "compatibility_receipt_hash": "1743fa8e004b530330a6c6720a0488d1b06fbefde27584a3375df51865e6d9b6",
+  "compatibility_identity_hash": "82e618c33a5e48ea1002a65282eabc4a1a40329f6cc246829ca7fae3360d42d4",
+  "report": "reports/local/b03/queries-dcdb7ebe505377628398901658859920c9dc8717409e9d33fc972ddcb0db72dd/index.html",
+  "native_verification": {
+    "status": "ok",
+    "native_items": 32,
+    "unique_source_files": 13,
+    "bundle_hash": "0ca0c58541fa8bb12cfdeca4f02a7e1e2506b9f67cea55d6f30ce479ee1d529c",
+    "answers": [
+      {
+        "label": "Loulou 218..240s - original; pitch off · original context 1",
+        "media": "media/3b3a2d948f9ab85f666c7775a9268c7f37645bc9657b2851d6ba6ce44a7e6ef3.wav",
+        "native_frames": [
+          9569700,
+          10628100
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 217.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Loulou 218..240s - original; pitch off · selected example 1",
+        "media": "media/b91a8bffd1e5170651feaa874190096201a2df647833d41a621a5e09ef07bf79.wav",
+        "native_frames": [
+          9613800,
+          10584000
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 218.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Loulou 218..240s - experimental pitch .03 · original context 1",
+        "media": "media/3b3a2d948f9ab85f666c7775a9268c7f37645bc9657b2851d6ba6ce44a7e6ef3.wav",
+        "native_frames": [
+          9569700,
+          10628100
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 217.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Loulou 218..240s - experimental pitch .03 · selected example 1",
+        "media": "media/b91a8bffd1e5170651feaa874190096201a2df647833d41a621a5e09ef07bf79.wav",
+        "native_frames": [
+          9613800,
+          10584000
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 218.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Loulou two unordered 2.4s mixed examples · original context 1",
+        "media": "media/3b3a2d948f9ab85f666c7775a9268c7f37645bc9657b2851d6ba6ce44a7e6ef3.wav",
+        "native_frames": [
+          9569700,
+          10628100
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 217.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Loulou two unordered 2.4s mixed examples · selected example 1",
+        "media": "media/2bf156764df6e32e1db5a24d02a0f6d0bf902568061d2b7747b03f23ec862f1e.wav",
+        "native_frames": [
+          9613800,
+          9719640
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 218.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Loulou two unordered 2.4s mixed examples · original context 2",
+        "media": "media/3b3a2d948f9ab85f666c7775a9268c7f37645bc9657b2851d6ba6ce44a7e6ef3.wav",
+        "native_frames": [
+          9569700,
+          10628100
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 217.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Loulou two unordered 2.4s mixed examples · selected example 2",
+        "media": "media/f6d393ec3dc27066b40117c9a66ebeae94a9c2ed9e400a24e4c8e0f36586706f.wav",
+        "native_frames": [
+          9719640,
+          9825480
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 220.4,
+        "samples_equal": true
+      },
+      {
+        "label": "Donnie B02 guided event; actual contaminated cue · original context",
+        "media": "media/6cda07d8ef16b3f50764c285fdb1863e3e6f4f278a2d5bdddb5c80ac0c906f97.wav",
+        "native_frames": [
+          396900,
+          749700
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 9.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Donnie B02 guided event; actual contaminated cue · conditioning cue",
+        "media": "media/4ebcdbd4ffc8a9a00e8aacd0414f27ab2036d52d62a71caba655527fcb458729.wav",
+        "native_frames": [
+          546840,
+          652680
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 12.4,
+        "samples_equal": true
+      },
+      {
+        "label": "Donnie B02 guided event; actual contaminated cue · derived context",
+        "media": "media/2921e5a7cc4f54f4b604eac71298010d0be702fb8549345d620aad0ecc519d63.wav",
+        "native_frames": [
+          0,
+          352800
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 9.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Donnie B02 guided event; actual contaminated cue · selected derived example",
+        "media": "media/a89f8bb6e2e98d9d7ee7ec596aaac81d32a3ddd9ad7b1f8cff79137224940117.wav",
+        "native_frames": [
+          44100,
+          149940
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 10.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch off · 1. Cutside — Shivering Shadows (Featuring Viktor Van River)",
+        "media": "media/b8597dcd0c423bb30f61c581ba150f84e1e8aea92486510520f8fee5f68d2e9f.wav",
+        "native_frames": [
+          8379000,
+          8573040
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 190.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch experimental .03 · 1. Cutside — Shivering Shadows (Featuring Viktor Van River)",
+        "media": "media/b8597dcd0c423bb30f61c581ba150f84e1e8aea92486510520f8fee5f68d2e9f.wav",
+        "native_frames": [
+          8379000,
+          8573040
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 190.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch off · 2. Viktor Van River — Body, soul",
+        "media": "media/8cc3f521860b241f0e88661d2467cec6769354f03d337811b359c558a4ddb7e5.wav",
+        "native_frames": [
+          5247900,
+          5441940
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 119.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch experimental .03 · 2. Viktor Van River — Body, soul",
+        "media": "media/8cc3f521860b241f0e88661d2467cec6769354f03d337811b359c558a4ddb7e5.wav",
+        "native_frames": [
+          5247900,
+          5441940
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 119.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch off · 3. Cutside — Amaterasu",
+        "media": "media/2bb346160e5bddf8321e7aa25603ab525252726cdae0a17116de67b0c8d341e5.wav",
+        "native_frames": [
+          4233600,
+          4427640
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 96.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch experimental .03 · 3. Cutside — Amaterasu",
+        "media": "media/2bb346160e5bddf8321e7aa25603ab525252726cdae0a17116de67b0c8d341e5.wav",
+        "native_frames": [
+          4233600,
+          4427640
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 96.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch off · 4. mGee — Essence 118",
+        "media": "media/77e9d0736119aee6303994155a0ec4faf7f0a7ac31e2bdb9ccbdfb06db8f159a.wav",
+        "native_frames": [
+          7177275,
+          7371315
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 162.75,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch experimental .03 · 4. mGee — Essence 118",
+        "media": "media/77e9d0736119aee6303994155a0ec4faf7f0a7ac31e2bdb9ccbdfb06db8f159a.wav",
+        "native_frames": [
+          7177275,
+          7371315
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 162.75,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch off · 5. Pete Lund — Subway Cameo",
+        "media": "media/2364b00901e637f15cf50400188b04050996351213ff586ec10577cd738552ef.wav",
+        "native_frames": [
+          8533350,
+          8727390
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 193.5,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch experimental .03 · 5. Pete Lund — Subway Cameo",
+        "media": "media/2364b00901e637f15cf50400188b04050996351213ff586ec10577cd738552ef.wav",
+        "native_frames": [
+          8533350,
+          8727390
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 193.5,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch off · 6. Gary Wood — When I Lay Down",
+        "media": "media/9aad2a908306b09ba289f73fac6be56c9dc867455d702d1ce7a1983026796ade.wav",
+        "native_frames": [
+          6041700,
+          6235740
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 137.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch experimental .03 · 6. Gary Wood — When I Lay Down",
+        "media": "media/9aad2a908306b09ba289f73fac6be56c9dc867455d702d1ce7a1983026796ade.wav",
+        "native_frames": [
+          6041700,
+          6235740
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 137.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch off · 7. Jovian Year — Absurdius Rex",
+        "media": "media/474077ac86e2a3068869c7ab825b0a5da0977bfc4f6df6369fe2c54cafc9ba21.wav",
+        "native_frames": [
+          297675,
+          491715
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 6.75,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch experimental .03 · 7. Jovian Year — Absurdius Rex",
+        "media": "media/474077ac86e2a3068869c7ab825b0a5da0977bfc4f6df6369fe2c54cafc9ba21.wav",
+        "native_frames": [
+          297675,
+          491715
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 6.75,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch off · 8. Donnie Ozone — Something To See (De Vries Instrumental)",
+        "media": "media/305a124fb32e413e67406eb17850154177bcd87fd2ea609e1e2dd571ff1259f0.wav",
+        "native_frames": [
+          8268750,
+          8462790
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 187.5,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch experimental .03 · 8. Donnie Ozone — Something To See (De Vries Instrumental)",
+        "media": "media/305a124fb32e413e67406eb17850154177bcd87fd2ea609e1e2dd571ff1259f0.wav",
+        "native_frames": [
+          8268750,
+          8462790
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 187.5,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch off · 9. Mos Emvy — Confusion",
+        "media": "media/013d319b8524b9de94d838705f887d23f70395d68f45cd1dbf83ca4f8e5e951c.wav",
+        "native_frames": [
+          396900,
+          590940
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 9.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch experimental .03 · 9. Mos Emvy — Confusion",
+        "media": "media/013d319b8524b9de94d838705f887d23f70395d68f45cd1dbf83ca4f8e5e951c.wav",
+        "native_frames": [
+          396900,
+          590940
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 9.0,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch off · 10. GLD8TRZ — Gladiator Season",
+        "media": "media/bfb0ba4adde4b32a3c29cd266dcc4d8179cfbe1912938019a74d886fb3f741e8.wav",
+        "native_frames": [
+          8919225,
+          9113265
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 202.25,
+        "samples_equal": true
+      },
+      {
+        "label": "Pitch experimental .03 · 10. GLD8TRZ — Gladiator Season",
+        "media": "media/bfb0ba4adde4b32a3c29cd266dcc4d8179cfbe1912938019a74d886fb3f741e8.wav",
+        "native_frames": [
+          8919225,
+          9113265
+        ],
+        "rate": 44100,
+        "gain": 1.0,
+        "available_file_zero_seconds": 202.25,
+        "samples_equal": true
+      }
+    ],
+    "method": "independent SoundFile int16 read and explicit rounding; no shared clip/pcm16 conversion",
+    "peak_working_bytes": 245293056,
+    "ledger": {
+      "schema_version": "b03-ledger-1",
+      "created_at": "2026-10-20T14:10:53.351575+00:00",
+      "ceilings": {
+        "download_bytes": 0,
+        "attempts": 0,
+        "worker_seconds": 3600
+      },
+      "charged_bytes": 0,
+      "received_bytes": 0,
+      "http_attempts": 0,
+      "charged_worker_seconds": 1128.0160000001779,
+      "pending_read_bytes": 0,
+      "pending_worker_seconds": 0
+    },
+    "work": {
+      "schema_version": "b03-work-1",
+      "counts": {
+        "metadata_bytes": 10814350,
+        "clips": 18,
+        "comparisons": 1,
+        "workers": 94,
+        "processing_inputs": 1,
+        "managed_output_bytes": 73250336,
+        "query_preparation_bytes": 26454656,
+        "feature_bytes": 1878016,
+        "read_audio_seconds": 68829.15666666668,
+        "comparison_cases": 8,
+        "processed_window_seconds": 86.80000000000001,
+        "preparation_bytes": 7674880,
+        "pitch_audio_seconds": 374.39999999999924,
+        "feature_windows": 28,
+        "separator_input_seconds": 2.8,
+        "comparison_queries": 16,
+        "query_jobs": 15,
+        "clip_bytes": 20465568
+      },
+      "ceilings": {
+        "metadata_bytes": 16777216,
+        "clips": 64,
+        "comparisons": 1,
+        "workers": 256,
+        "processing_inputs": 32,
+        "managed_output_bytes": 268435456,
+        "query_preparation_bytes": 67108864,
+        "feature_bytes": 33554432,
+        "read_audio_seconds": 90000,
+        "comparison_cases": 8,
+        "processed_window_seconds": 6000,
+        "preparation_bytes": 100663296,
+        "pitch_audio_seconds": 3600,
+        "feature_windows": 1024,
+        "separator_input_seconds": 240,
+        "comparison_queries": 16,
+        "query_jobs": 16,
+        "clip_bytes": 67108864
+      },
+      "record_hash": "0e2fc714cbd90d2c43bfc43633b3193c728dbc0e6d045c52828c0c67779dab14"
+    },
+    "command": "queries",
+    "tier": "starter",
+    "wall_seconds": 14.155999999959022,
+    "report_written": true
+  },
+  "browser": {
+    "status": "ok",
+    "schema_version": "b03-browser-1",
+    "browser": "Chrome existing supported extension",
+    "url": "http://127.0.0.1:8769/",
+    "items": 32,
+    "loaded": 32,
+    "played_paused_sought": 32,
+    "clock_advanced": 32,
+    "minimum_clock_progress_seconds": 0.05022300000000002,
+    "method": "trusted native audio Space key actions, native range Home/PageUp actions, read-only DOM media state and advancing clock checks; no injected play/seek methods",
+    "viewport": {
+      "initial": {
+        "width": 0,
+        "height": 0
+      },
+      "temporary": {
+        "width": 1200,
+        "height": 900
+      },
+      "reason": "zero layout prevented interaction and screenshot; temporary testing override",
+      "reset_required": true,
+      "reset_done": true,
+      "restored": {
+        "height": 900,
+        "width": 1200
+      }
+    },
+    "initial_attempts": [
+      {
+        "action": "audio keyboard press",
+        "result": "selector deadline with zero viewport; no media change"
+      },
+      {
+        "action": "screenshot",
+        "result": "zero width; recovered with temporary supported viewport"
+      }
+    ],
+    "results": [
+      {
+        "id": "audio-0",
+        "label": "Loulou 218..240s - original; pitch off · original context 1",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0.016639,
+        "paused_time": 18.914099,
+        "seek_value": 2.4,
+        "seek_time": 2.4
+      },
+      {
+        "id": "audio-1",
+        "label": "Loulou 218..240s - original; pitch off · selected example 1",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0.021496,
+        "paused_time": 0.022071,
+        "seek_value": 2.2,
+        "seek_time": 2.2,
+        "status": "ok"
+      },
+      {
+        "id": "audio-2",
+        "label": "Loulou 218..240s - experimental pitch .03 · original context 1",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 2.4,
+        "seek_time": 2.4,
+        "status": "ok"
+      },
+      {
+        "id": "audio-3",
+        "label": "Loulou 218..240s - experimental pitch .03 · selected example 1",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0.011516,
+        "seek_value": 2.2,
+        "seek_time": 2.2,
+        "status": "ok"
+      },
+      {
+        "id": "audio-4",
+        "label": "Loulou two unordered 2.4s mixed examples · original context 1",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 2.4,
+        "seek_time": 2.4,
+        "status": "ok"
+      },
+      {
+        "id": "audio-5",
+        "label": "Loulou two unordered 2.4s mixed examples · selected example 1",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.24,
+        "seek_time": 0.24,
+        "status": "ok"
+      },
+      {
+        "id": "audio-6",
+        "label": "Loulou two unordered 2.4s mixed examples · original context 2",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 2.4,
+        "seek_time": 2.4,
+        "status": "ok"
+      },
+      {
+        "id": "audio-7",
+        "label": "Loulou two unordered 2.4s mixed examples · selected example 2",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.24,
+        "seek_time": 0.24,
+        "status": "ok"
+      },
+      {
+        "id": "audio-8",
+        "label": "Donnie B02 guided event; actual contaminated cue · original context",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.8,
+        "seek_time": 0.8,
+        "status": "ok"
+      },
+      {
+        "id": "audio-9",
+        "label": "Donnie B02 guided event; actual contaminated cue · derived context",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.8,
+        "seek_time": 0.8,
+        "status": "ok"
+      },
+      {
+        "id": "audio-10",
+        "label": "Donnie B02 guided event; actual contaminated cue · selected derived example",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.24,
+        "seek_time": 0.24,
+        "status": "ok"
+      },
+      {
+        "id": "audio-11",
+        "label": "Donnie B02 guided event; actual contaminated cue · conditioning cue",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.24,
+        "seek_time": 0.24,
+        "status": "ok"
+      },
+      {
+        "id": "audio-12",
+        "label": "Pitch off · 1. Cutside — Shivering Shadows (Featuring Viktor Van River)",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-13",
+        "label": "Pitch off · 2. Viktor Van River — Body, soul",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-14",
+        "label": "Pitch off · 3. Cutside — Amaterasu",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0.005147,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-15",
+        "label": "Pitch off · 4. mGee — Essence 118",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-16",
+        "label": "Pitch off · 5. Pete Lund — Subway Cameo",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-17",
+        "label": "Pitch off · 6. Gary Wood — When I Lay Down",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-18",
+        "label": "Pitch off · 7. Jovian Year — Absurdius Rex",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-19",
+        "label": "Pitch off · 8. Donnie Ozone — Something To See (De Vries Instrumental)",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-20",
+        "label": "Pitch off · 9. Mos Emvy — Confusion",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-21",
+        "label": "Pitch off · 10. GLD8TRZ — Gladiator Season",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-22",
+        "label": "Pitch experimental .03 · 1. Cutside — Shivering Shadows (Featuring Viktor Van River)",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0.009399,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-23",
+        "label": "Pitch experimental .03 · 2. Viktor Van River — Body, soul",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-24",
+        "label": "Pitch experimental .03 · 3. Cutside — Amaterasu",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0.009351,
+        "paused_time": 0.015379,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-25",
+        "label": "Pitch experimental .03 · 4. mGee — Essence 118",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0.029558,
+        "paused_time": 0.029967,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-26",
+        "label": "Pitch experimental .03 · 5. Pete Lund — Subway Cameo",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-27",
+        "label": "Pitch experimental .03 · 6. Gary Wood — When I Lay Down",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-28",
+        "label": "Pitch experimental .03 · 7. Jovian Year — Absurdius Rex",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-29",
+        "label": "Pitch experimental .03 · 8. Donnie Ozone — Something To See (De Vries Instrumental)",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-30",
+        "label": "Pitch experimental .03 · 9. Mos Emvy — Confusion",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      },
+      {
+        "id": "audio-31",
+        "label": "Pitch experimental .03 · 10. GLD8TRZ — Gladiator Season",
+        "loaded": true,
+        "played": true,
+        "paused": true,
+        "play_time": 0,
+        "paused_time": 0,
+        "seek_value": 0.44,
+        "seek_time": 0.44,
+        "status": "ok"
+      }
+    ],
+    "clock_checks": [
+      {
+        "id": "audio-0",
+        "start": 2.4,
+        "playing_time": 2.508305,
+        "paused_time": 2.538234,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-1",
+        "start": 2.2,
+        "playing_time": 2.25614,
+        "paused_time": 2.268692,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-2",
+        "start": 2.4,
+        "playing_time": 2.473087,
+        "paused_time": 2.493947,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-3",
+        "start": 2.2,
+        "playing_time": 2.299893,
+        "paused_time": 2.360143,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-4",
+        "start": 2.4,
+        "playing_time": 2.496058,
+        "paused_time": 2.512744,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-5",
+        "start": 0.24,
+        "playing_time": 0.298443,
+        "paused_time": 0.333059,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-6",
+        "start": 2.4,
+        "playing_time": 2.487105,
+        "paused_time": 2.499142,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-7",
+        "start": 0.24,
+        "playing_time": 0.290223,
+        "paused_time": 0.317892,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-8",
+        "start": 0.8,
+        "playing_time": 0.883132,
+        "paused_time": 0.911645,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-9",
+        "start": 0.8,
+        "playing_time": 0.85484,
+        "paused_time": 0.882643,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-10",
+        "start": 0.24,
+        "playing_time": 0.610176,
+        "paused_time": 0.628843,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-11",
+        "start": 0.24,
+        "playing_time": 0.308004,
+        "paused_time": 0.376111,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-12",
+        "start": 0.44,
+        "playing_time": 0.517509,
+        "paused_time": 0.546072,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-13",
+        "start": 0.44,
+        "playing_time": 0.501404,
+        "paused_time": 0.517379,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-14",
+        "start": 0.44,
+        "playing_time": 0.496386,
+        "paused_time": 0.533694,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-15",
+        "start": 0.44,
+        "playing_time": 0.517365,
+        "paused_time": 0.550349,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-16",
+        "start": 0.44,
+        "playing_time": 0.491702,
+        "paused_time": 0.545107,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-17",
+        "start": 0.44,
+        "playing_time": 0.532105,
+        "paused_time": 0.549927,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-18",
+        "start": 0.44,
+        "playing_time": 0.525961,
+        "paused_time": 0.537921,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-19",
+        "start": 0.44,
+        "playing_time": 0.515538,
+        "paused_time": 0.535831,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-20",
+        "start": 0.44,
+        "playing_time": 0.549044,
+        "paused_time": 0.571225,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-21",
+        "start": 0.44,
+        "playing_time": 0.517527,
+        "paused_time": 0.545289,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-22",
+        "start": 0.44,
+        "playing_time": 0.515614,
+        "paused_time": 0.539647,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-23",
+        "start": 0.44,
+        "playing_time": 0.521935,
+        "paused_time": 0.549091,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-24",
+        "start": 0.44,
+        "playing_time": 0.523381,
+        "paused_time": 0.535312,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-25",
+        "start": 0.44,
+        "playing_time": 0.49352,
+        "paused_time": 0.533377,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-26",
+        "start": 0.44,
+        "playing_time": 0.510066,
+        "paused_time": 0.54302,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-27",
+        "start": 0.44,
+        "playing_time": 0.49689,
+        "paused_time": 0.522877,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-28",
+        "start": 0.44,
+        "playing_time": 0.512519,
+        "paused_time": 0.538496,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-29",
+        "start": 0.44,
+        "playing_time": 0.508145,
+        "paused_time": 0.534956,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-30",
+        "start": 0.44,
+        "playing_time": 0.519452,
+        "paused_time": 0.539137,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      },
+      {
+        "id": "audio-31",
+        "start": 0.44,
+        "playing_time": 0.514344,
+        "paused_time": 0.532196,
+        "paused": true,
+        "progressed": true,
+        "status": "ok"
+      }
+    ],
+    "screenshot": "reports/local/b03-browser.jpg",
+    "human_relevance": "unmeasured; browser media operation only",
+    "speakers_audibility": "not independently measured",
+    "owned_tab_closed": true
+  },
+  "http": {
+    "status": "ok",
+    "schema_version": "b03-http-1",
+    "base": "http://127.0.0.1:8769",
+    "items": 32,
+    "unique_media": 18,
+    "checks": [
+      {
+        "check": "index byte equality",
+        "status": "ok"
+      },
+      {
+        "check": "all unique media byte equality and audio MIME",
+        "status": "ok",
+        "count": 18
+      },
+      {
+        "check": "partial native media range",
+        "status": "ok"
+      },
+      {
+        "check": "unsatisfiable range refused",
+        "status": "ok"
+      },
+      {
+        "check": "outside bundle and traversal requests refused",
+        "status": "ok",
+        "count": 4
+      }
+    ],
+    "wall_seconds": 3.10999999998603,
+    "scope": "read-only requests to verified owned loopback bundle; no altered delivery media or inference",
+    "html_sha256": "2843da33c58fee1e22fef4b2ce3a349ac1f78751eea4e3367cde07200b938307"
+  },
+  "human_loulou_relevance": "unmeasured; technical pipeline evidence only",
+  "default": "original audio; pitch off",
+  "record_hash": "7d26c6605516f65ff486bdf8e637008df4ea5ff30e2c9f71210ad0872d0ffb79"
+}

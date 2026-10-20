@@ -1,0 +1,633 @@
+{
+  "schema_version": "b03-resources-1",
+  "ledger": {
+    "schema_version": "b03-ledger-1",
+    "created_at": "2026-10-20T14:10:53.351575+00:00",
+    "ceilings": {
+      "download_bytes": 0,
+      "attempts": 0,
+      "worker_seconds": 3600
+    },
+    "charged_bytes": 0,
+    "received_bytes": 0,
+    "http_attempts": 0,
+    "charged_worker_seconds": 1128.0160000001779,
+    "pending_read_bytes": 0,
+    "pending_worker_seconds": 0
+  },
+  "work": {
+    "schema_version": "b03-work-1",
+    "counts": {
+      "metadata_bytes": 10814350,
+      "clips": 18,
+      "comparisons": 1,
+      "workers": 94,
+      "processing_inputs": 1,
+      "managed_output_bytes": 73250336,
+      "query_preparation_bytes": 26454656,
+      "feature_bytes": 1878016,
+      "read_audio_seconds": 68829.15666666668,
+      "comparison_cases": 8,
+      "processed_window_seconds": 86.80000000000001,
+      "preparation_bytes": 7674880,
+      "pitch_audio_seconds": 374.39999999999924,
+      "feature_windows": 28,
+      "separator_input_seconds": 2.8,
+      "comparison_queries": 16,
+      "query_jobs": 15,
+      "clip_bytes": 20465568
+    },
+    "ceilings": {
+      "metadata_bytes": 16777216,
+      "clips": 64,
+      "comparisons": 1,
+      "workers": 256,
+      "processing_inputs": 32,
+      "managed_output_bytes": 268435456,
+      "query_preparation_bytes": 67108864,
+      "feature_bytes": 33554432,
+      "read_audio_seconds": 90000,
+      "comparison_cases": 8,
+      "processed_window_seconds": 6000,
+      "preparation_bytes": 100663296,
+      "pitch_audio_seconds": 3600,
+      "feature_windows": 1024,
+      "separator_input_seconds": 240,
+      "comparison_queries": 16,
+      "query_jobs": 16,
+      "clip_bytes": 67108864
+    },
+    "record_hash": "0e2fc714cbd90d2c43bfc43633b3193c728dbc0e6d045c52828c0c67779dab14"
+  },
+  "timing": {
+    "worker_seconds_by_action": {
+      "preflight": 7.562000000034459,
+      "geometry-audit": 10.96799999999348,
+      "register": 5.797000000020489,
+      "compare": 264.07900000025984,
+      "save": 24.202000000164844,
+      "materialize": 128.20100000000093,
+      "show": 13.422000000020489,
+      "rename": 10.608999999938533,
+      "load": 18.17299999995157,
+      "export": 7.875,
+      "import": 8.890999999945052,
+      "validate": 11.98499999998603,
+      "revise": 5.984000000054948,
+      "list": 3.234000000054948,
+      "known-answer": 5.172000000020489,
+      "compatibility": 103.54800000006799,
+      "select": 9.704000000027008,
+      "search": 415.4379999996163,
+      "report": 63.78099999995902,
+      "verify-native": 9.391000000061467
+    },
+    "peak_working_bytes_by_action": {
+      "preflight": 101580800,
+      "geometry-audit": 101224448,
+      "register": 269320192,
+      "compare": 274132992,
+      "save": 98131968,
+      "materialize": 311701504,
+      "show": 95244288,
+      "rename": 97882112,
+      "load": 270614528,
+      "export": 96681984,
+      "import": 269123584,
+      "validate": 270987264,
+      "revise": 98013184,
+      "list": 95129600,
+      "known-answer": 101117952,
+      "compatibility": 103460864,
+      "select": 97865728,
+      "search": 274243584,
+      "report": 274907136,
+      "verify-native": 245293056
+    },
+    "record_hash": "89b336340842b1a6fc1d2f82a6a99dfb73a994f63ad973b50cd0dad833ddd153"
+  },
+  "feature_blobs": 26,
+  "failed_attempts": [
+    {
+      "label": "comparison-command",
+      "argv": [
+        "./.venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "./reports/local/b03-comparison-command.json",
+        "queries",
+        "compare"
+      ],
+      "exit_code": 1,
+      "status": "failed",
+      "wall_seconds": 45.75,
+      "report": "reports/local/b03-comparison-command.json",
+      "error": "queries_step None: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called",
+      "error_type": "RuntimeError"
+    },
+    {
+      "label": "comparison-resume",
+      "argv": [
+        "./.venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "./reports/local/b03-comparison-resume.json",
+        "queries",
+        "compare"
+      ],
+      "exit_code": 1,
+      "status": "failed",
+      "wall_seconds": 175.09299999999348,
+      "report": "reports/local/b03-comparison-resume.json",
+      "error": "queries_step None: ",
+      "error_type": "MemoryError"
+    },
+    {
+      "label": "materialize-guided",
+      "argv": [
+        "./.venv/Scripts/python.exe",
+        "-m",
+        "similar_sound_search",
+        "--tier",
+        "starter",
+        "--report",
+        "./reports/local/b03-materialize-guided.json",
+        "queries",
+        "materialize",
+        "--revision",
+        "9634093de562f30acca87e1a0947c33da77ae77e288bcc6c3e97468399cae9bf"
+      ],
+      "exit_code": 1,
+      "status": "failed",
+      "wall_seconds": 38.20299999997951,
+      "report": "reports/local/b03-materialize-guided.json",
+      "error": "queries_step None: could not create a primitive",
+      "error_type": "RuntimeError"
+    }
+  ],
+  "setup_tests_audits": {
+    "offline_tests": 218,
+    "offline_test_wall_seconds": 127.40599999995902,
+    "ruff_lint": "passed",
+    "ruff_format": "99 files passed",
+    "offline_editable_install": "passed; no dependencies changed",
+    "pip_check": "passed",
+    "starter_smoke": {
+      "status": "ok",
+      "evidence_category": "deterministic_engineering_diagnostic",
+      "environment": {
+        "system": "Windows",
+        "release": "11",
+        "architecture": "AMD64",
+        "logical_cpus": 4,
+        "memory": {
+          "total_bytes": 17118912512,
+          "available_bytes": 7254749184
+        },
+        "disk_free_bytes": 223867641856,
+        "tools": {
+          "pipeline": "a02-preparation-3",
+          "package": "0.3.0",
+          "python": "3.12.14",
+          "numpy": "2.2.6",
+          "scipy": "1.15.3",
+          "soundfile": "0.13.1",
+          "libsndfile": "1.2.2"
+        },
+        "ffmpeg_on_path": false,
+        "ffprobe_on_path": false,
+        "gpu": {
+          "status": "detected",
+          "query": "NVIDIA GeForce GTX 1660 SUPER, 6144 MiB, 610.88",
+          "exit_code": 0
+        },
+        "processing_device": "cpu",
+        "advertised_libsndfile_formats": {
+          "AIFF": "AIFF (Apple/SGI)",
+          "AU": "AU (Sun/NeXT)",
+          "AVR": "AVR (Audio Visual Research)",
+          "CAF": "CAF (Apple Core Audio File)",
+          "FLAC": "FLAC (Free Lossless Audio Codec)",
+          "HTK": "HTK (HMM Tool Kit)",
+          "SVX": "IFF (Amiga IFF/SVX8/SV16)",
+          "MAT4": "MAT4 (GNU Octave 2.0 / Matlab 4.2)",
+          "MAT5": "MAT5 (GNU Octave 2.1 / Matlab 5.0)",
+          "MPC2K": "MPC (Akai MPC 2k)",
+          "MP3": "MPEG-1/2 Audio",
+          "OGG": "OGG (OGG Container format)",
+          "PAF": "PAF (Ensoniq PARIS)",
+          "PVF": "PVF (Portable Voice Format)",
+          "RAW": "RAW (header-less)",
+          "RF64": "RF64 (RIFF 64)",
+          "SD2": "SD2 (Sound Designer II)",
+          "SDS": "SDS (Midi Sample Dump Standard)",
+          "IRCAM": "SF (Berkeley/IRCAM/CARL)",
+          "VOC": "VOC (Creative Labs)",
+          "W64": "W64 (SoundFoundry WAVE 64)",
+          "WAV": "WAV (Microsoft)",
+          "NIST": "WAV (NIST Sphere)",
+          "WAVEX": "WAVEX (Microsoft)",
+          "WVE": "WVE (Psion Series 3)",
+          "XI": "XI (FastTracker 2)"
+        },
+        "accepted_inputs": [
+          "PCM/IEEE-float WAV",
+          "FLAC",
+          "MP3/MPEG_LAYER_III",
+          "PCM/float AIFF"
+        ],
+        "exercised_decoders": [
+          "WAV/PCM_16",
+          "WAV/FLOAT",
+          "FLAC/PCM_16"
+        ],
+        "compressed_seek": "unverified; MP3 uses full sequential decoding; no random-seek guarantee"
+      },
+      "fixture_record": {
+        "schema_version": "0.2",
+        "record_id": "input-9e8e6552801552ef1edd2713775561c0732d5e4bc21d402e122c76c415c3103e",
+        "kind": "input",
+        "validation_status": "unverified",
+        "technical_metadata_status": "verified",
+        "technical_metadata": {
+          "sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+          "file_bytes": 384044,
+          "format": "WAV",
+          "subtype": "PCM_16",
+          "sample_count": 96000,
+          "sample_rate_hz": 48000,
+          "channels": 2,
+          "duration_seconds": 2.0,
+          "measurement": {
+            "peak_per_channel": [
+              0.5,
+              0.75
+            ],
+            "rms_per_channel": [
+              0.17677707308126595,
+              0.0024206145913796356
+            ],
+            "silent": false,
+            "silence_peak_threshold": 1e-12
+          },
+          "canonical_pcm": {
+            "schema_version": "sss-pcm-f32le-1",
+            "sample_rate_hz": 48000,
+            "channels": 2,
+            "sample_count": 96000,
+            "sha256": "886771758b1e95d4c31c220c2db0fb61adb15ed65cfdaa16f13846f06e190f51"
+          },
+          "decoder": {
+            "library": "SoundFile",
+            "soundfile": "0.13.1",
+            "libsndfile": "1.2.2",
+            "route": "full_sequential_float32",
+            "time_coordinate": "decoded_available_file",
+            "compressed_seek_verified": false,
+            "timing_note": "Lossless sample timeline; float32 conversion defines canonical identity."
+          }
+        },
+        "recording": {
+          "title": null,
+          "external_ids": null,
+          "artist": null,
+          "identity_status": "unverified",
+          "recording_id": null,
+          "version": null,
+          "identity_evidence": null
+        },
+        "source": {
+          "asset_id": "sha256:55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+          "availability": "available",
+          "local_path": "data/audio/engineering/a02-stereo.wav",
+          "sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+          "kind": "unknown",
+          "duration_seconds": 2.0,
+          "sample_count": 96000,
+          "sample_rate_hz": 48000,
+          "channels": 2,
+          "provenance": {
+            "acquired_at": null,
+            "origin_url": null,
+            "permitted_use": "Project-generated deterministic engineering diagnostic",
+            "notes": "Generated by diagnostics.pcm_fixture; not Loulou or discovery/evaluation audio"
+          }
+        },
+        "reference_record_id": null,
+        "requested_interval": null,
+        "verified_interval": null,
+        "selected_events": [],
+        "processing_history": [],
+        "timestamp_mapping": {
+          "asset_id": "sha256:55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+          "status": "verified_file_mapping",
+          "basis": "file",
+          "original_recording_offset_seconds": null,
+          "offset_evidence": null,
+          "segments": [
+            {
+              "asset_start_seconds": 0,
+              "asset_end_seconds": 2.0,
+              "source_start_seconds": 0,
+              "source_seconds_per_asset_second": 1
+            }
+          ],
+          "unmapped_tail_seconds": 0
+        },
+        "unknowns": [
+          "Target event selection and reference association have not been verified in A02.",
+          "Recording identity/version unverified; technical decoding is separate evidence.",
+          "Original-recording offset unknown; no recording-time claim is made.",
+          "Full-track/excerpt kind unknown; filenames and duration are not evidence."
+        ]
+      },
+      "preparation": {
+        "status": "ok",
+        "reused": false,
+        "bundle": "data/audio/prepared/a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a",
+        "record": {
+          "schema_version": "0.2",
+          "record_id": "prepared-a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a",
+          "kind": "prepared",
+          "validation_status": "unverified",
+          "technical_metadata_status": "verified",
+          "technical_metadata": {
+            "sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+            "file_bytes": 384044,
+            "format": "WAV",
+            "subtype": "PCM_16",
+            "sample_count": 96000,
+            "sample_rate_hz": 48000,
+            "channels": 2,
+            "duration_seconds": 2.0,
+            "measurement": {
+              "peak_per_channel": [
+                0.5,
+                0.75
+              ],
+              "rms_per_channel": [
+                0.17677707308126595,
+                0.0024206145913796356
+              ],
+              "silent": false,
+              "silence_peak_threshold": 1e-12
+            },
+            "canonical_pcm": {
+              "schema_version": "sss-pcm-f32le-1",
+              "sample_rate_hz": 48000,
+              "channels": 2,
+              "sample_count": 96000,
+              "sha256": "886771758b1e95d4c31c220c2db0fb61adb15ed65cfdaa16f13846f06e190f51"
+            },
+            "decoder": {
+              "library": "SoundFile",
+              "soundfile": "0.13.1",
+              "libsndfile": "1.2.2",
+              "route": "full_sequential_float32",
+              "time_coordinate": "decoded_available_file",
+              "compressed_seek_verified": false,
+              "timing_note": "Lossless sample timeline; float32 conversion defines canonical identity."
+            }
+          },
+          "recording": {
+            "title": null,
+            "external_ids": null,
+            "artist": null,
+            "identity_status": "unverified",
+            "recording_id": null,
+            "version": null,
+            "identity_evidence": null
+          },
+          "source": {
+            "asset_id": "sha256:55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+            "availability": "available",
+            "local_path": "data/audio/engineering/a02-stereo.wav",
+            "sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+            "kind": "unknown",
+            "duration_seconds": 2.0,
+            "sample_count": 96000,
+            "sample_rate_hz": 48000,
+            "channels": 2,
+            "provenance": {
+              "acquired_at": null,
+              "origin_url": null,
+              "permitted_use": "Project-generated deterministic engineering diagnostic",
+              "notes": "Generated by diagnostics.pcm_fixture; not Loulou or discovery/evaluation audio"
+            }
+          },
+          "reference_record_id": null,
+          "requested_interval": null,
+          "verified_interval": {
+            "basis": "file",
+            "asset_id": "sha256:55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+            "start_seconds": 0.5,
+            "end_seconds": 1.5,
+            "status": "verified_bounds",
+            "note": "Technical source bounds only; target/reference association unverified"
+          },
+          "selected_events": [],
+          "processing_history": [
+            {
+              "operation_id": "a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a",
+              "type": "crop_channel_resample",
+              "input_asset_id": "sha256:55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+              "input_path": "data/audio/engineering/a02-stereo.wav",
+              "input_sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+              "output_asset_id": "sha256:45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+              "output_sha256": "45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+              "output_path": "data/audio/prepared/a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a/audio.wav",
+              "tools": {
+                "pipeline": "a02-preparation-3",
+                "package": "0.3.0",
+                "python": "3.12.14",
+                "numpy": "2.2.6",
+                "scipy": "1.15.3",
+                "soundfile": "0.13.1",
+                "libsndfile": "1.2.2"
+              },
+              "parameters": {
+                "channel_policy": "channel:1",
+                "crop_start_frame": 24000,
+                "crop_end_frame": 72000,
+                "requested_start_seconds": "0.5",
+                "requested_end_seconds": "1.5",
+                "crop_rounding": "floor_start_ceil_end",
+                "input_sample_rate_hz": 48000,
+                "output_sample_rate_hz": 16000,
+                "resample_up": 1,
+                "resample_down": 3,
+                "resample_window": [
+                  "kaiser",
+                  5.0
+                ],
+                "resample_padtype": "constant_zero",
+                "output_format": "WAV/FLOAT",
+                "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+              },
+              "config_hash": "0ed312d3968f8c21e23ffb808005918a999f4235ddb33425d8cd512efeac2106",
+              "time_map": {
+                "asset_id": "sha256:45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+                "status": "verified_file_mapping",
+                "basis": "file",
+                "original_recording_offset_seconds": null,
+                "offset_evidence": null,
+                "segments": [
+                  {
+                    "asset_start_seconds": 0,
+                    "asset_end_seconds": 1.0,
+                    "source_start_seconds": 0.5,
+                    "source_seconds_per_asset_second": 1
+                  }
+                ],
+                "unmapped_tail_seconds": 0
+              }
+            }
+          ],
+          "timestamp_mapping": {
+            "asset_id": "sha256:45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+            "status": "verified_file_mapping",
+            "basis": "file",
+            "original_recording_offset_seconds": null,
+            "offset_evidence": null,
+            "segments": [
+              {
+                "asset_start_seconds": 0,
+                "asset_end_seconds": 1.0,
+                "source_start_seconds": 0.5,
+                "source_seconds_per_asset_second": 1
+              }
+            ],
+            "unmapped_tail_seconds": 0
+          },
+          "unknowns": [
+            "Target event selection and reference association have not been verified in A02.",
+            "Recording identity/version unverified; technical decoding is separate evidence.",
+            "Original-recording offset unknown; no recording-time claim is made.",
+            "Full-track/excerpt kind unknown; filenames and duration are not evidence."
+          ],
+          "preparation_key": "a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a",
+          "preparation_identity": {
+            "input_sha256": "55bb9dc9637c4bb56af04d0314a47b8c28c561d9b8c52893c71ab00b9e65896d",
+            "parent_record_id": "input-9e8e6552801552ef1edd2713775561c0732d5e4bc21d402e122c76c415c3103e",
+            "parent_contract_hash": "004c4fb3640bf2077737dd6e5cda0380705593900540d2d4d4f9929872c2f4f7",
+            "parameters": {
+              "channel_policy": "channel:1",
+              "crop_start_frame": 24000,
+              "crop_end_frame": 72000,
+              "requested_start_seconds": "0.5",
+              "requested_end_seconds": "1.5",
+              "crop_rounding": "floor_start_ceil_end",
+              "input_sample_rate_hz": 48000,
+              "output_sample_rate_hz": 16000,
+              "resample_up": 1,
+              "resample_down": 3,
+              "resample_window": [
+                "kaiser",
+                5.0
+              ],
+              "resample_padtype": "constant_zero",
+              "output_format": "WAV/FLOAT",
+              "output_writer": "scipy.io.wavfile.write (no clock-dependent PEAK chunk)"
+            },
+            "tools": {
+              "pipeline": "a02-preparation-3",
+              "package": "0.3.0",
+              "python": "3.12.14",
+              "numpy": "2.2.6",
+              "scipy": "1.15.3",
+              "soundfile": "0.13.1",
+              "libsndfile": "1.2.2"
+            }
+          },
+          "artifact": {
+            "asset_id": "sha256:45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+            "local_path": "data/audio/prepared/a7895e97c4ad4de55a4e939bb13f169bb576638b7665dd00e4169f4ae1e72a8a/audio.wav",
+            "sha256": "45bced6b0a275e0c1170af22ef22cbce14cae93b99a679dc9560f6183d0bbbb6",
+            "file_bytes": 64058,
+            "sample_count": 16000,
+            "sample_rate_hz": 16000,
+            "channels": 1,
+            "duration_seconds": 1.0,
+            "format": "WAV",
+            "subtype": "FLOAT",
+            "measurement": {
+              "peak_per_channel": [
+                0.25015154480934143
+              ],
+              "rms_per_channel": [
+                0.001977621604517974
+              ],
+              "silent": false,
+              "silence_peak_threshold": 1e-12
+            }
+          },
+          "record_hash": "9539906f14aba66cef6f1ede3e57255c4d07c259b7f9cd5a7af929cff6828675"
+        }
+      },
+      "checks": {
+        "pcm_known_samples_and_rms": "passed",
+        "flac_lossless_roundtrip": "passed",
+        "channel_select_and_resample": "passed",
+        "expected_output_frames": 16000,
+        "expected_event_sample": 8000,
+        "observed_event_sample": 8000,
+        "event_tolerance_seconds": 6.25e-05
+      },
+      "reference": {
+        "record_id": "reference-loulou-001",
+        "validation_status": "unverified",
+        "experiment_status": "not_run",
+        "reason": "actual Loulou audio missing; deterministic fixtures are engineering evidence only"
+      },
+      "measured": {
+        "operation_seconds": 0.26599999994505197,
+        "managed_bytes": 470038,
+        "prepared_audio_bytes": 64058
+      },
+      "limits": {
+        "max_input_bytes": 268435456,
+        "max_duration_seconds": 900,
+        "max_channels": 8,
+        "max_sample_rate_hz": 192000,
+        "max_decoded_bytes": 268435456,
+        "max_working_bytes": 1073741824,
+        "max_output_bytes": 268435456,
+        "max_managed_bytes": 4294967296,
+        "min_free_bytes": 4294967296,
+        "max_seconds": 120,
+        "max_inventory_files": 64,
+        "max_resample_factor": 1024,
+        "concurrency": 1,
+        "max_download_bytes": 536870912,
+        "max_model_candidates": 3
+      },
+      "retrieval_quality": "not_measured",
+      "command": "smoke",
+      "tier": "starter",
+      "wall_seconds": 1.6400000000139698,
+      "report_written": true
+    },
+    "preservation": {
+      "status": "ok",
+      "mode": "after",
+      "files": 9060,
+      "unchanged": 9059,
+      "unexpected_changes": [],
+      "intentional": [
+        "config/README.md"
+      ],
+      "seconds": 137.60999999998603,
+      "baseline_sha256": "51894bd2c50c22b4266afb6d1a46539d2568a663a29325a4a567f61885f092f4"
+    }
+  },
+  "scope": "all processing, independent geometry and failed/interrupted worker charges under fixed B03 allowance; tests/setup, non-inference preservation, HTTP/browser checks separately recorded",
+  "network_runtime": "zero attempts/downloads; no new model, audio, global package or driver",
+  "memory_environment": "initial offline tests hit Windows commit exhaustion; later full regression passed. One comparison resume and a separate Torch documentation import also hit MemoryError; memory recovered without changing OS settings or killing applications.",
+  "record_hash": "94aaccf8fb47323349d97af1690e64e4a14218b6a8e343d4086ed7c996a79106"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "b03-preservation-policy-1",
+  "baseline": "reports/local/b03-preservation-before.json",
+  "baseline_sha256": "51894bd2c50c22b4266afb6d1a46539d2568a663a29325a4a567f61885f092f4",
+  "expected_changes": {
+    "config/README.md": "5f4687a3c5853b8f2006f9aa536be706edfdf8f7a358bc74f3c74a10dadc919f"
+  },
+  "reason": "add query configuration to the existing navigation map; no historical configuration or receipt changes",
+  "record_hash": "e5abf41dc04464b1784312ba3f4537a7ffbd6b6defc6c54de3aa6a989cec7467"
+}

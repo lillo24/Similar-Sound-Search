@@ -6,9 +6,16 @@ Adopted on 11 October 2026 for A01. This is a design brief, not evidence that th
 
 Find passages in other songs that contain a sound like one selected element of a reference recording, even among overlapping instruments. Return the source recording, the matching interval, and playback of the original passage. Whole-song genre, mood, or recording recognition does not establish success.
 
-First reference: **daoud — Loulou & the loulous**, approximately **3:38–4:00 (218–240 seconds)** in Leonardo's marked version. "Electronic-sounding" describes his impression; instrument identity is unverified. The actual file, version, full-track/excerpt status, original offset, and exact event are unknown. The [reference manifest](../manifests/references/loulou.json) records those unknowns rather than inventing a source. Its requested interval is approximate and is not a verified crop instruction.
+First reference: **daoud — Loulou & the loulous**, approximately **3:38–4:00 (218–240 seconds)** in Leonardo's marked version. "Electronic-sounding" describes his impression; instrument identity is unverified. B03 technically registers the supplied 243.586667s MP3 and preserves its full available-file 218..240s mixture. Recording identity, marked-version alignment, master offset, rights and intended layer remain unverified. The [initial reference manifest](../manifests/references/loulou.json) retains its historical unknowns; [separate current availability](../manifests/queries/loulou-availability.json) records the supplied file without inventing marked-version evidence.
 
 Tom's Diner's "Thhh" vocal sound is a possible later generalisation example from the design notes. Its audio is not supplied or verified here; it does not replace the Loulou reference or add an A01 prerequisite.
+
+Input update, 20 October 2026: main now supplies the root MP3 named
+`SpotiDownloader.com - loulou & the loulous - daoud.mp3`. B03 owns separate registration
+and availability evidence; the initial reference manifest and earlier reports remain
+historical. File availability does not verify its marked version, external master
+alignment, rights, intended layer or complete event boundaries. Use validated native
+available-file coordinates through [the reusable-query contract](QUERIES.md).
 
 ## Similarity priorities
 

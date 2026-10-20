@@ -34,6 +34,8 @@ MANAGED = (
     "manifests/matchers",
     "manifests/search",
     "manifests/events",
+    "manifests/separation",
+    "manifests/queries",
 )
 
 

@@ -1,13 +1,13 @@
 # Project status
 
-Updated 20 October 2026. **B02 optional numerical separation/extraction is implemented; original audio remains default.** All 72 local A03 recordings retain their original A06 index. Controlled processing findings do not establish intended-layer, human or Loulou relevance; A03 remains partial against its acquisition target. Follow [AGENTS.md](../AGENTS.md) for branch/PR/merge/cleanup delivery.
+Updated 20 October 2026. **B03 reusable query revisions and optional pitch preference are implemented; original audio and pitch off remain defaults.** [B03 evidence](../reports/B03_QUERIES.md) owns actual delivery checks, interrupted/resumed work, costs and the C01 handoff. The supplied Loulou MP3 is technically available; identity/alignment/rights/layer remain unverified. All 72 local recordings retain their original A06 index. Controlled findings do not establish human relevance; A03 remains partial. Follow [AGENTS.md](../AGENTS.md) for PR/merge/cleanup delivery.
 
 ## Foundation and current delivery
 
 - A01 merged through [PR #1](https://github.com/lillo24/Similar-Sound-Search/pull/1), merge `c6e0068692460f3ff64fba8711e2fc9e9589a1cb`: adopted brief/evaluation/records, unverified Loulou reference and private-artifact exclusions.
 - A02 merged through [PR #3](https://github.com/lillo24/Similar-Sound-Search/pull/3), merge `2a14cb0c0065d53149269296b84f0c39acdaf1de`: pinned Python CPU runtime, WAV/FLAC inspection/preparation, resource tiers and 32 tests. Its [historical report](../reports/A02_RUNTIME.md) remains unchanged.
 - A03 pulled current main `3c1f469` and uses isolated branch `codex/a03-starter-catalogue`; the resulting GitHub PR/merge is the durable delivery record. No extra worktree was created.
-- Explicit project input locations contained no supplied local music or Loulou audio. Generated fixtures remain engineering material; the unchanged reference is still missing/unverified.
+- At A03 delivery, explicit project input locations contained no supplied local music or Loulou audio. B03 separately registers the subsequently supplied MP3; generated fixtures remain engineering material and recording alignment remains unverified.
 
 ## Delivered in A03
 
@@ -38,14 +38,15 @@ No GitHub Actions workflow/required CI check exists in the inspected repository;
 | A01 durable foundation | Complete; PR #1 |
 | A02 Python/input/resource runtime | Complete; bounded CPU WAV/FLAC foundation |
 | A03 acquisition/ingestion | Implemented and exercised; real local discovery subset, explicitly partial against 120 requested |
-| Actual Loulou input | Missing; manifest unverified; reference experiment not run |
+| Actual Loulou input | Supplied MP3 technically registered for B03; full 218..240s available-file mixture; identity, marked-version alignment, master offset, rights and intended layer unverified |
 | A04 controlled construction and evaluation harness | Complete engineering delivery: 208 assets, 160 queries; 88 tests; [evidence](../reports/A04_BENCHMARKS.md) |
 | A04 published human evidence | Partial: 16 AIFF stimuli + 120 observations downloaded/validated; zero eligible scoring pairs due to unresolved rights/original mapping |
 | A05 matcher comparison | Complete controlled development comparison: two genuine methods, 80 queries each, provisional EfficientAT MN04; [evidence](../reports/A05_MATCHERS.md) |
 | A06 search, playable results and held-out model check | Implementation/index/demos/final check complete: 72/72 local recordings, 44,025 passages, original stereo clips; 21/24 source-consistency held-out query hits at K=1 and 32/32 events at K=10. Extra whole-index repeat partial at the fixed cap; later catalogue browser controls unavailable. [Evidence](../reports/A06_SEARCH.md) |
 | B01 event selection | Implemented with native/manual crops, experimental proposals, two catalogue searches and verified playback. Bounded development evaluation partial; explicit/coarse default. [Evidence](../reports/B01_EVENTS.md) |
 | B02 optional separation/extraction | Numerical original/HPSS/audio-cue paths, explicit lineage, fixed 16-case comparison; original default after failed promotion gates. [Evidence](../reports/B02_SEPARATION.md) |
-| B03–D reusable queries, indexing/refinement, interface/package | Future; first required listening review D04 |
+| B03 reusable queries and secondary pitch | Implemented; immutable revisions/materializations/executions, explicit bindings, original/off defaults; [evidence](../reports/B03_QUERIES.md) |
+| C01–D indexing/refinement, interface/package | Future; concrete C01 handoff in B03 report; first required listening review D04 |
 | Perceptual quality and Loulou relevance | Unmeasured; real-catalogue candidates are not confirmed matches; controlled A05/A06 metrics remain separate |
 | Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 
@@ -68,7 +69,7 @@ retains all costs and gaps.
 
 The controlled suite retains 104 assets/80 queries per split, unchanged audio/truth/recipes, four procedural families and two real-background families per split. Backgrounds still use seconds 2..10 of the centred A03 derivatives with decoded-original intervals and unknown master offsets. A06 preservation audits cover 7,121 earlier files. Grey1977 remains quarantined, CIR lacks established terms, and standard CLAP exceeds the download cap.
 
-The actual marked-version daoud — Loulou & the loulous audio and provenance/offset evidence remain unavailable for a verified reference experiment. Never crop a short excerpt at second 218. D04 remains the first required listening review; no new labels are requested for independent A06 engineering.
+At A06 delivery, the daoud reference audio was unavailable. B03 separately registers the supplied MP3; marked-version identity/alignment and provenance/offset evidence remain unverified. Never crop a short excerpt at second 218. D04 remains the first required listening review.
 
 ## B01 delivery and B02 handoff
 
@@ -119,3 +120,34 @@ A fixed-memory refusal is retained, and the final 9..17s common context preserve
 attack lead/post-query support without raising caps. Loulou/version/offset remain
 unverified. B03 should manage reusable queries/cue availability under its own plan;
 pitch work, global component indexing and later refinement were not implemented here.
+
+## B03 delivery and C01 handoff
+
+[Query contracts](QUERIES.md), [B03 evidence](../reports/B03_QUERIES.md) and
+[sanitized declarations/results](../manifests/queries/README.md) own immutable named
+revisions, explicit local bindings, validated materializations and exact executions.
+Rename/restart, export/import, reordered/duplicated examples and pitch-only revisions
+preserve the required content/feature identities. Existing B02 guided/cue artifacts
+are consumed read-only with B03 charges; no historical experiment is reopened.
+
+The fixed eight-case/sixteen-arm development batch gives off/primary source-family
+hit@1 4/6, hit@5 5/6 and hit@10 6/6. Top-1 paired gains/losses are 0/0; five usable
+rankings change, including wrong-family same-pitch attraction in the processed case.
+Seven usable direct/saved/reopened paths match exactly. The silence diagnostic fails
+explicitly and remains counted. These are inspected procedural development fixtures,
+not a fresh holdout or human similarity evidence. Original audio/pitch off stay default.
+
+The supplied original reference retains all 218..240s; its conservative pitch estimate
+abstains. The separate existing Donnie guided event retains its real contaminated cue.
+The B03 report records actual catalogue, native/HTTP/Chrome verification and costs,
+including the declared no-prediction adapter repair and unchanged retries after
+Windows memory/backend failures. All failures, partial state and charges are retained.
+The full offline suite passes 218 tests; frozen adapters/pitch/math and earlier ledgers
+remain unchanged. New ignored artifacts remain in this delivery checkout, including
+shared immutable A02 prepared bundles, and require exact inputs on another machine.
+
+Run `.\scripts\listen-queries.ps1` on loopback 8769 for the saved revision/query report;
+historical listeners on 8766/8767/8768 remain. C01 must inspect the concrete handoff in
+the B03 report, verify local source/cue/index compatibility and predeclare its own
+bounded component-index work. No C01 processing starts here. D04 remains the first
+required listening review; human/Loulou relevance is unmeasured.

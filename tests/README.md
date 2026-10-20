@@ -47,3 +47,22 @@ cue resampling, silence/invalid inputs, transformed/excerpt/composed maps, corru
 cue-dependent invalidation, interrupted output reuse, retained caps, parent union
 before PCM dedup and truthful playback labels. It downloads nothing and does not
 consume delivery ledgers. Shared original-index/guard/server regression tests remain.
+
+## B03 coverage
+
+`test_queries.py` uses disposable roots and a labelled fake feature adapter for revision
+round trips, order/dedup weighting, all-parent exclusions, label/pitch feature reuse,
+explicit relocation/unresolved import, missing/corrupt media/cues/parents, incompatible
+schemas, atomic interrupted state and concurrent optimistic conflicts. Independent
+pitch answers cover register mismatch, multiple notes and abstention. An eleven-group
+rank test verifies complete-winner reranking can bring the eleventh group into the top
+ten while keeping every timbre-selected native passage. Historical guard/audit tests
+remain enforced. No delivery audio, checkpoint, ledger or network is used.
+
+The complete disposable B03 batch uses the fake adapter, preserves the declared
+silence failure and resumes without new inference. Report tests compose nonzero A02
+crop/rate mappings through processing, independently reject a shifted player origin,
+and preserve an older execution's materialization after an explicit source rebind.
+The batch adapter fixture allows only one process-wide initialization. Interruption
+tests cover both before prediction and between immutable prediction/progress writes,
+retaining case/arm reservations and charging subsequent metadata writes.

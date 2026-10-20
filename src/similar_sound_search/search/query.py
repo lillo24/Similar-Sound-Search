@@ -93,7 +93,9 @@ def prepare_query(budget, spec_path, method, context=None):
             "example_id": identity,
             "prepared": prepared,
             "audio": metadata,
-            "pitch": estimate(x, info.samplerate),
+            "pitch": context.estimate_pitch(budget, x, info.samplerate)
+            if context is not None and hasattr(context, "estimate_pitch")
+            else estimate(x, info.samplerate),
         }
         if identity in examples:
             continue
@@ -129,26 +131,31 @@ def prepare_query(budget, spec_path, method, context=None):
             "examples": len(ordered),
             "reused": True,
         }
-    charge(
-        budget,
-        context=context,
-        query_jobs=1,
-        feature_bytes=len(ordered) * desc["dimension"] * 4 + 65536,
-        processed_window_seconds=sum(v["audio"]["duration_seconds"] for v in ordered),
-    )
-    if context is not None:
-        context.charge(budget, feature_windows=len(ordered))
-    largest = max(v["audio"]["sample_count"] * v["audio"]["channels"] * 4 for v in ordered)
-    budget.reserve(len(ordered) * desc["dimension"] * 4 + 65536, 768 * 1024**2 + largest * 3)
-    obj, seconds = adapter(budget, method, desc)
-    features = []
-    extraction_seconds = 0
-    for v in ordered:
-        read_charge(budget, v["audio"], context=context)
-        x, _ = decode(budget.root / v["prepared"]["artifact"]["local_path"], budget)
-        started = time.perf_counter()
-        features.append(checked(obj.encode(x, v["audio"]["sample_rate_hz"]), desc["dimension"]))
-        extraction_seconds += time.perf_counter() - started
+    if context is not None and hasattr(context, "encode_examples"):
+        charge(budget, context=context, query_jobs=1)
+        features, costs = context.encode_examples(budget, ordered, desc)
+        seconds, extraction_seconds = costs["load_seconds"], costs["encode_seconds"]
+    else:
+        charge(
+            budget,
+            context=context,
+            query_jobs=1,
+            feature_bytes=len(ordered) * desc["dimension"] * 4 + 65536,
+            processed_window_seconds=sum(v["audio"]["duration_seconds"] for v in ordered),
+        )
+        if context is not None:
+            context.charge(budget, feature_windows=len(ordered))
+        largest = max(v["audio"]["sample_count"] * v["audio"]["channels"] * 4 for v in ordered)
+        budget.reserve(len(ordered) * desc["dimension"] * 4 + 65536, 768 * 1024**2 + largest * 3)
+        obj, seconds = adapter(budget, method, desc)
+        features = []
+        extraction_seconds = 0
+        for v in ordered:
+            read_charge(budget, v["audio"], context=context)
+            x, _ = decode(budget.root / v["prepared"]["artifact"]["local_path"], budget)
+            started = time.perf_counter()
+            features.append(checked(obj.encode(x, v["audio"]["sample_rate_hz"]), desc["dimension"]))
+            extraction_seconds += time.perf_counter() - started
     feat_identity = {**identity, "dimension": desc["dimension"]}
     saved = save_array(directory / "features", feat_identity, np.stack(features), budget)
     value = {

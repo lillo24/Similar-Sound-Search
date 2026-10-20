@@ -178,3 +178,16 @@ $env:MKL_NUM_THREADS = '1'
 
 This preserves the existing deadline/HTTP assertions; unconstrained numerical threads
 made those fixtures timing-sensitive on the delivery machine. No timeout is relaxed.
+
+## B03 saved queries
+
+[QUERIES.md](QUERIES.md) documents the fixed offline B03 context, separate query/
+materialization/execution identities and optional pitch policy. It reuses installed
+core/matcher dependencies and unchanged starter ceilings. Combined managed inventory
+now also includes `manifests/separation` and `manifests/queries`. Query records,
+features, pitch, processing and playback use declared B03 roots; native query crops
+share immutable A02 `data/audio/prepared` bundles and remain charged to B03.
+Its sixteen-MiB metadata envelope includes shared
+coordinators/partials within the total output budget. Earlier ledgers are never spent.
+Metadata-only naming/show/export operations load no matcher. Listener port 8769 is
+separate from prior listeners and remains independent of inference accounting.
