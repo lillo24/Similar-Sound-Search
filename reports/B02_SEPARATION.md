@@ -250,7 +250,8 @@ predictions, reports and archived prompts are preserved. [preservation.json](../
 binds the baseline and [declared exception](../manifests/separation/preservation-policy.json).
 
 No extra worktree is created; verified B02 artifacts already live in the primary
-delivery checkout. The GitHub PR is the durable review/merge record for this branch.
+delivery checkout. [PR #16](https://github.com/lillo24/Similar-Sound-Search/pull/16)
+is the durable review/merge record for this branch and records the exact merge SHA.
 Post-merge branch cleanup is followed by a protected-file metadata/owned-path check;
 no private audio, features, checkpoint or raw worker artifacts are committed.
 
