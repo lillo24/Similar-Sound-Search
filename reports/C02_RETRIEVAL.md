@@ -51,7 +51,7 @@ The fixed batch contains 37 recordings / 33 distinct eligible groups, including
 28 declared distractor groups. Four familiar A04 procedural development families
 have alternate performances; a generated hybrid contains pluck and FM events at
 disjoint native positions. This is inspected development, not a fresh holdout or
-human timbre truth. The twenty-group cut is smaller than the 30Ã¢â‚¬â€œ33 eligible groups.
+human timbre truth. The twenty-group cut is smaller than the 30â€“33 eligible groups.
 
 All saved WAVs passed independent reconstruction and FFT insertion-lag checks
 before inference, committed in [geometry](../manifests/retrieval/geometry.json).
