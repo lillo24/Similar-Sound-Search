@@ -267,6 +267,34 @@ def parser():
     indexing.add_argument("--derived", action="store_true")
     indexing.add_argument("--allow-partial", action="store_true")
     indexing.add_argument("--port", type=int, default=8770)
+    retrieval = subcommands.add_parser(
+        "retrieval", help="C02 candidate retrieval and C03 shortlist"
+    )
+    retrieval.add_argument(
+        "retrieval_action",
+        choices=(
+            "preflight",
+            "known-answer",
+            "generate",
+            "geometry",
+            "build-development",
+            "compare",
+            "diagnostics",
+            "compatibility",
+            "derive-query",
+            "search",
+            "verify",
+            "report",
+            "verify-native",
+            "serve",
+        ),
+    )
+    retrieval.add_argument("input", type=Path, nargs="?")
+    retrieval.add_argument("--receipt", type=Path)
+    retrieval.add_argument("--revision")
+    retrieval.add_argument("--materialization")
+    retrieval.add_argument("--derived", action="store_true")
+    retrieval.add_argument("--port", type=int, default=8771)
     return command
 
 
@@ -286,6 +314,7 @@ def _worker(request):
                 "separation_step",
                 "queries_step",
                 "indexing_step",
+                "retrieval_step",
             }
             else Budget
         )
@@ -343,6 +372,10 @@ def _worker(request):
             result = worker(request, budget)
         elif request["command"] == "indexing_step":
             from .indexing.job import worker
+
+            result = worker(request, budget)
+        elif request["command"] == "retrieval_step":
+            from .retrieval.job import worker
 
             result = worker(request, budget)
         else:
@@ -418,6 +451,8 @@ def main(argv=None):
             raise InputError(
                 f"root {root}: expected project config/resource_limits.json; use --root"
             )
+        if args.command == "retrieval" and args.report is None:
+            args.report = root / "reports/local/c02/last-command.json"
         default_report = (
             root / "reports/local/c01/last-command.json"
             if args.command == "indexing"
@@ -429,6 +464,8 @@ def main(argv=None):
         report_candidate = contained(report_candidate, contained(root / "reports/local", root))
         if args.command == "indexing":
             report_candidate = contained(report_candidate, root / "reports/local/c01")
+        if args.command == "retrieval":
+            report_candidate = contained(report_candidate, root / "reports/local/c02")
         if report_candidate.suffix.lower() != ".json":
             raise InputError("report: expected owned .json path under reports/local")
         report = report_candidate
@@ -474,6 +511,13 @@ def main(argv=None):
                 raise InputError("indexing serve requires the owned C01 report bundle")
             serve(root, args.input, args.port, root / "reports/local/c01")
             return 0
+        if args.command == "retrieval" and args.retrieval_action == "serve":
+            from .search.report import serve
+
+            if not args.input:
+                raise InputError("retrieval serve requires the owned C02 bundle")
+            serve(root, args.input, args.port, root / "reports/local/c02")
+            return 0
         with project_lock(root):
             # Refuse orphaned acquisition/evaluation children before starting an operation.
             with project_lock(root, ".a03-worker.lock"):
@@ -491,6 +535,8 @@ def main(argv=None):
             with project_lock(root, ".b03-worker.lock"):
                 pass
             with project_lock(root, ".c01-worker.lock"):
+                pass
+            with project_lock(root, ".c02-worker.lock"):
                 pass
             Budget(root, limits).reserve(65536)
             if args.command == "catalogue":
@@ -537,6 +583,10 @@ def main(argv=None):
                 result = run(request, execute)
             elif args.command == "indexing":
                 from .indexing.job import run
+
+                result = run(request, execute)
+            elif args.command == "retrieval":
+                from .retrieval.job import run
 
                 result = run(request, execute)
             else:

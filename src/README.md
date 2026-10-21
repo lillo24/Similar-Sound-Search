@@ -22,3 +22,5 @@
 | `similar_sound_search/indexing/` | [Subsystem map](similar_sound_search/indexing/README.md): C01 versioned passage banks, audited legacy reuse, optional region components, exact per-bank winners and bounded publication |
 
 The CLI imports numerical/decoder libraries only in the bounded worker. Inputs feed candidate records; preparation retains those source records and composes maps back to the original available file. Storage and resource checks are shared across both paths. See [runtime commands and limitations](../docs/RUNTIME.md) and [record fields](../docs/RECORDS.md).
+
+C02 `similar_sound_search/retrieval/` owns exact event supports, capped rank fusion, native overlap consolidation and the C03 shortlist; see its source map.
