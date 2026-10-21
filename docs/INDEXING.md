@@ -108,3 +108,8 @@ final executions still include all eligible winners, not only ten candidates.
 Bank/query representations must match exactly, and the unchanged frozen-function
 consumer audit runs before scoring. C01 summary paths are contained under
 `reports/local/c01`, including an explicit `--report` path.
+
+C02 now consumes these exact historical banks through an explicit read-only
+membership/configuration view and a fresh C02-owned legacy receipt. It preserves
+this snapshot and exports bounded support/shortlist evidence; see
+[RETRIEVAL.md](RETRIEVAL.md). C01 workers and its closed allowance are not reopened.

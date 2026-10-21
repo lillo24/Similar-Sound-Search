@@ -1,0 +1,30 @@
+{
+  "schema_version": "c02-retrieval-1",
+  "shortlist": 20,
+  "display": 10,
+  "raw_support_cap": 16,
+  "passages_per_track": 3,
+  "rrf_constant": 60,
+  "overlap_fraction": 0.5,
+  "max_span_seconds": 8,
+  "default": "legacy-mean",
+  "policy": {
+    "max_job_seconds": 3600,
+    "max_workers": 256,
+    "max_http_attempts": 0,
+    "max_download_bytes": 0,
+    "max_read_audio_seconds": 120000,
+    "max_feature_windows": 2048,
+    "max_processed_window_seconds": 12000,
+    "max_feature_bytes": 8388608,
+    "max_query_jobs": 64,
+    "max_clips": 64,
+    "max_clip_bytes": 100663296,
+    "max_metadata_bytes": 67108864,
+    "max_query_preparation_bytes": 67108864,
+    "max_preparation_bytes": 67108864,
+    "max_managed_output_bytes": 402653184,
+    "max_comparison_batches": 1,
+    "max_case_policy_evaluations": 48
+  }
+}

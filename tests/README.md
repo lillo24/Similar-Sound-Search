@@ -73,3 +73,5 @@ and preserve an older execution's materialization after an explicit source rebin
 The batch adapter fixture allows only one process-wide initialization. Interruption
 tests cover both before prediction and between immutable prediction/progress writes,
 retaining case/arm reservations and charging subsequent metadata writes.
+
+`test_retrieval.py` verifies C02 scalar/event recovery, source ownership, complete-winner compatibility, support/context grouping, partial/missing banks, compact records, interruption/reuse and cumulative accounting with isolated fixtures.

@@ -261,19 +261,19 @@ $c01Python = '.venv/Scripts/python.exe'
 $env:OMP_NUM_THREADS='1'
 $env:OPENBLAS_NUM_THREADS='1'
 $env:MKL_NUM_THREADS='1'
-& $c01Python --tier starter --report reports/local/c01/preflight-command.json indexing preflight
-& $c01Python --tier starter --report reports/local/c01/short-pilot-build.json indexing build --bank short --scope pilot
-& $c01Python --tier starter --report reports/local/c01/short-pilot-verify.json indexing verify --bank short --scope pilot
-& $c01Python --tier starter --report reports/local/c01/long-pilot-build.json indexing build --bank long --scope pilot
-& $c01Python --tier starter --report reports/local/c01/long-pilot-verify.json indexing verify --bank long --scope pilot
-& $c01Python --tier starter --report reports/local/c01/catalogue-long-command.json indexing build --bank long --scope full
-& $c01Python --tier starter --report reports/local/c01/reuse-command.json indexing build --bank long --scope full
+& $c01Python -m similar_sound_search --tier starter --report reports/local/c01/preflight-command.json indexing preflight
+& $c01Python -m similar_sound_search --tier starter --report reports/local/c01/short-pilot-build.json indexing build --bank short --scope pilot
+& $c01Python -m similar_sound_search --tier starter --report reports/local/c01/short-pilot-verify.json indexing verify --bank short --scope pilot
+& $c01Python -m similar_sound_search --tier starter --report reports/local/c01/long-pilot-build.json indexing build --bank long --scope pilot
+& $c01Python -m similar_sound_search --tier starter --report reports/local/c01/long-pilot-verify.json indexing verify --bank long --scope pilot
+& $c01Python -m similar_sound_search --tier starter --report reports/local/c01/catalogue-long-command.json indexing build --bank long --scope full
+& $c01Python -m similar_sound_search --tier starter --report reports/local/c01/reuse-command.json indexing build --bank long --scope full
 $c01LegacyBank = 'data/indexes/c01/legacy/69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229.json'
 $c01LongBank = 'data/indexes/c01/banks/e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0.json'
-& $c01Python --tier starter --report reports/local/c01/original-query-command.json indexing search $c01LegacyBank
-& $c01Python --tier starter --report reports/local/c01/long-query-command.json indexing search $c01LongBank
-& $c01Python --tier starter --report reports/local/c01/report-command.json indexing report
-& $c01Python --tier starter --report reports/local/c01/native-command.json indexing verify-native
+& $c01Python -m similar_sound_search --tier starter --report reports/local/c01/original-query-command.json indexing search $c01LegacyBank
+& $c01Python -m similar_sound_search --tier starter --report reports/local/c01/long-query-command.json indexing search $c01LongBank
+& $c01Python -m similar_sound_search --tier starter --report reports/local/c01/report-command.json indexing report
+& $c01Python -m similar_sound_search --tier starter --report reports/local/c01/native-command.json indexing verify-native
 & $c01Python scripts/verify-index-preservation.py verify
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/listen-index.ps1
 ```

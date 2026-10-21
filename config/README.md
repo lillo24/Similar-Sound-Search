@@ -45,3 +45,10 @@ supported native geometry, materialization/reuse states, exports and commands.
 bounded shards and original/pitch-off defaults. [INDEXING.md](../docs/INDEXING.md)
 owns bank identities, native maps, immutable snapshots, component limits,
 predeclared admission, exact per-bank verification and charged resume/reuse.
+
+## C02 candidate retrieval
+
+`retrieval.json` fixes the independent C02 allowance, baseline default, experimental
+event/rank fusion, raw support cap, overlap rule and shortlist/display limits.
+[RETRIEVAL.md](../docs/RETRIEVAL.md) owns historical adapters, exact evidence,
+event/variant semantics, native scored/context support and the C03 export.

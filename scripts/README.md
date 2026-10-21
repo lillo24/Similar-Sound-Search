@@ -52,3 +52,5 @@ Verification separately identifies the exact C01 navigation section appended to
 the already-inspected native truth. It retains the closed batch, separates the
 .3s short-file denominator and checks that admission is unchanged, with no new
 features/scores/queries. Its offline 120s worker uses the same C01 ledger.
+
+`listen-retrieval.ps1` serves the verified C02 bundle on owned loopback 8771; `verify-retrieval-preservation.py` verifies all prior delivery bytes, including C01 staging, allowing only the exact C02 configuration navigation addition.
