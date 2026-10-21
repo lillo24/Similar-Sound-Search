@@ -291,15 +291,86 @@ def encode(budget, owner, identity, samples, rate):
     return save_array(path.parent, identity, array, budget)
 
 
-def build(budget, owner):
-    from ..search.contracts import code_identity
+def producing_code(owner):
+    """Prove the single metadata-only correction without relabelling feature recipes."""
+    import ast
+    import hashlib
+    from pathlib import Path
 
+    from ..search.contracts import code_identity, source_function_identity
+
+    current = code_identity()
+    declaration = owner.root / "manifests/retrieval/metadata-integration.json"
+    if not declaration.exists():
+        return current
+    proof = record(declaration)
+    before = proof["before_code"]
+    changed = {k for k in before if before[k] != current.get(k)}
+    if (
+        set(before) != set(current)
+        or changed - set(proof["allowed_changed_files"])
+        or current != proof["consumer_code"]
+    ):
+        raise InputError("C02 metadata repair consumer boundary changed")
+    original = proof["original_development_source"]
+    if hashlib.sha256(original.encode()).hexdigest() != before["retrieval/development.py"]:
+        raise InputError("C02 metadata repair original source proof differs")
+    now = Path(__file__).read_text(encoding="utf-8")
+    names = ("audio", "reconstruct", "generate", "geometry", "encode")
+    if source_function_identity(original, names) != source_function_identity(now, names):
+        raise InputError("C02 metadata correction changed sample/encoder functions")
+
+    def statements(source):
+        function = next(
+            n
+            for n in ast.parse(source).body
+            if isinstance(n, ast.FunctionDef) and n.name == "build"
+        )
+        return [
+            ast.dump(n, include_attributes=False)
+            for n in ast.walk(function)
+            if isinstance(n, ast.Assign)
+            and any(
+                isinstance(t, ast.Name) and t.id in {"bounds", "bank_hash", "identity"}
+                for t in n.targets
+            )
+        ]
+
+    if statements(original) != statements(now):
+        raise InputError("C02 metadata correction changed native-grid/feature identity statements")
+    return before
+
+
+def compact_ref(budget, owner, ref):
+    if "metadata_ref" in ref:
+        return ref
+    return {
+        "path": ref["path"],
+        "metadata_ref": owner.put(
+            budget,
+            "development/feature-references",
+            {"path": ref["path"], "metadata": ref["metadata"]},
+        ),
+        **({"example_id": ref["example_id"]} if "example_id" in ref else {}),
+    }
+
+
+def encoding_record(owner, ref):
+    if "metadata_ref" not in ref:
+        return ref
+    saved = owner.get(ref["metadata_ref"], "development/feature-references")
+    if saved["path"] != ref["path"]:
+        raise InputError("C02 compact feature reference path differs")
+    return {**ref, "metadata": saved["metadata"]}
+
+
+def build(budget, owner):
     fixtures = record(owner.directory / "development/fixtures.json")
     geom = record(owner.directory / "development/geometry.json")
     if not geom["passed"] or geom["fixtures_hash"] != fixtures["record_hash"]:
         raise InputError("C02 independent native geometry required before features")
     desc = frozen(budget)[-1]
-    producer = code_identity()
+    producer = producing_code(owner)
     path = owner.directory / "development/encoded.json"
     state = (
         record(path)
@@ -316,6 +387,15 @@ def build(budget, owner):
         raise InputError("C02 development producer/fixtures changed; retain old work")
     if state["state"] == "complete":
         raise InputError("C02 development features already complete")
+    state["sources"] = {
+        k: [compact_ref(budget, owner, r) for r in refs] for k, refs in state["sources"].items()
+    }
+    state["queries"] = {k: compact_ref(budget, owner, r) for k, r in state["queries"].items()}
+    state["metadata_format"] = "compact-audited-1"
+    declaration = owner.root / "manifests/retrieval/metadata-integration.json"
+    if declaration.exists():
+        state["consumer_integration_hash"] = record(declaration)["record_hash"]
+    owner.publish(budget, path, state)
     for item in [
         v for v in fixtures["sources"] if v["source"]["recording_id"] not in state["sources"]
     ][:2]:
@@ -349,12 +429,16 @@ def build(budget, owner):
             }
             meta = encode(budget, owner, identity, x, a["sample_rate_hz"])
             refs.append(
-                {
-                    "path": (owner.features / "development" / digest(identity))
-                    .relative_to(owner.root)
-                    .as_posix(),
-                    "metadata": meta,
-                }
+                compact_ref(
+                    budget,
+                    owner,
+                    {
+                        "path": (owner.features / "development" / digest(identity))
+                        .relative_to(owner.root)
+                        .as_posix(),
+                        "metadata": meta,
+                    },
+                )
             )
         state["sources"][source["recording_id"]] = refs
         owner.publish(budget, path, state)
@@ -376,13 +460,17 @@ def build(budget, owner):
             "producer": producer,
         }
         meta = encode(budget, owner, identity, x, a["sample_rate_hz"])
-        state["queries"][name] = {
-            "path": (owner.features / "development" / digest(identity))
-            .relative_to(owner.root)
-            .as_posix(),
-            "metadata": meta,
-            "example_id": a["canonical_pcm"]["sha256"],
-        }
+        state["queries"][name] = compact_ref(
+            budget,
+            owner,
+            {
+                "path": (owner.features / "development" / digest(identity))
+                .relative_to(owner.root)
+                .as_posix(),
+                "metadata": meta,
+                "example_id": a["canonical_pcm"]["sha256"],
+            },
+        )
         owner.publish(budget, path, state)
     state["state"] = "complete"
     owner.publish(budget, path, state)
@@ -395,6 +483,7 @@ def build(budget, owner):
 
 
 def feature(budget, owner, ref):
+    ref = encoding_record(owner, ref)
     array, meta = load_array(owner.root / ref["path"], ref["metadata"]["identity"], budget)
     if meta != ref["metadata"]:
         raise InputError("C02 development feature record changed")
@@ -453,12 +542,37 @@ def coverage(ranking, case, k, cfg):
     }
 
 
-def compare(budget, owner):
-    from ..search.contracts import code_identity
+def compact_group(value, fixtures_hash, encoded_hash):
+    """Keep distances/row IDs once; native grids and source metadata are pinned shared refs."""
 
+    def row(r):
+        return {
+            k: r[k] for k in ("row_id", "recording_id", "row", "distance", "per_example_distances")
+        }
+
+    return {
+        "schema_version": "c02-development-group-support-1",
+        "fixtures_hash": fixtures_hash,
+        "encoded_hash": encoded_hash,
+        "sources": value["sources"],
+        "opportunities": value["opportunities"],
+        "baseline": {k: v for k, v in value["baseline"].items() if k != "source"},
+        "baseline_row": row(value["baseline_row"]),
+        "objectives": {
+            key: {"count": obj["count"], "rows": [row(r) for r in obj["rows"]]}
+            for key, obj in value["objectives"].items()
+        },
+        "row_resolution": (
+            "encoded.sources[recording_id] -> unique array identity with objective bank hash "
+            "-> identity.bounds[row]; source metadata in fixtures; stable row_id retained"
+        ),
+    }
+
+
+def compare(budget, owner):
     fixtures = record(owner.directory / "development/fixtures.json")
     encoded = record(owner.directory / "development/encoded.json")
-    if encoded["state"] != "complete" or encoded["producer"] != code_identity():
+    if encoded["state"] != "complete" or encoded["producer"] != producing_code(owner):
         raise InputError("C02 comparison requires complete unchanged development features")
     path = owner.directory / "development/comparison.json"
     if path.exists():
@@ -517,6 +631,7 @@ def compare(budget, owner):
                     values.append(value)
                     continue
                 for b, ref in enumerate(encoded["sources"][rid]):
+                    ref = encoding_record(owner, ref)
                     arr = feature(budget, owner, ref)
                     identity = ref["metadata"]["identity"]
                     bh = identity["bank_hash"]
@@ -558,7 +673,12 @@ def compare(budget, owner):
                 values.append(value)
             groups = engine.group_sources(values, owner.cfg)
             supports = {
-                g: owner.put(budget, "development/group-supports", v) for g, v in groups.items()
+                g: owner.put(
+                    budget,
+                    "development/group-supports",
+                    compact_group(v, fixtures["record_hash"], encoded["record_hash"]),
+                )
+                for g, v in groups.items()
             }
             arms = {}
             for arm in owner.protocol["fusion"]["arms"]:

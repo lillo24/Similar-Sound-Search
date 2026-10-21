@@ -553,3 +553,32 @@ class RetrievalCase(AudioCase):
         ref = self.owner.put(self.sbudget(), "executions", value)
         with self.assertRaises(FileNotFoundError):
             engine.read_shortlist(self.owner, ref)
+
+    def test_compact_feature_reference_recovers_exact_metadata_and_refuses_path_changes(self):
+        ref = {
+            "path": "data/features/retrieval/fixture",
+            "metadata": {"identity": {"fixture": True}},
+            "example_id": "pcm",
+        }
+        compact = development.compact_ref(self.sbudget(), self.owner, ref)
+        self.assertNotIn("metadata", compact)
+        self.assertEqual(
+            development.encoding_record(self.owner, compact)["metadata"], ref["metadata"]
+        )
+        self.assertEqual(compact["example_id"], "pcm")
+        with self.assertRaisesRegex(InputError, "path differs"):
+            development.encoding_record(self.owner, {**compact, "path": "different"})
+
+    def test_audited_metadata_repair_keeps_original_feature_producer(self):
+        shutil.copyfile(
+            REPOSITORY / "manifests/retrieval/metadata-integration.json",
+            self.root / "manifests/retrieval/metadata-integration.json",
+        )
+        proof = record(self.root / "manifests/retrieval/metadata-integration.json")
+        self.assertEqual(development.producing_code(self.owner), proof["before_code"])
+        changed = {**proof, "consumer_code": {}}
+        write_record(
+            self.root / "manifests/retrieval/metadata-integration.json", changed, self.sbudget()
+        )
+        with self.assertRaisesRegex(InputError, "consumer boundary"):
+            development.producing_code(self.owner)

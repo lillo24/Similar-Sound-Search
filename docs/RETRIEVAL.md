@@ -50,3 +50,11 @@ inspected development, not human sound truth or a fresh holdout.
 The C01 report's Python-variable command block is corrected only by adding
 `-m similar_sound_search` before CLI flags. Its standalone verification-script
 invocation, historical results and closed allowance are preserved.
+
+Development feature progress uses immutable array-metadata references below the
+shared 1 MiB record limit. The first inline progress attempt failed visibly after
+572 windows; its arrays, pending receipts and charges remain. The pre-comparison
+metadata integration proof pins the consuming code and unchanged audio/encoder/
+grid/identity statements, so resume validates existing arrays without relabelling
+or re-embedding them. Development support records reference the same immutable
+encoded membership for row/native maps instead of repeating source descriptors.
