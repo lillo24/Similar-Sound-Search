@@ -1,0 +1,46 @@
+{
+  "schema_version": "c02-protocol-1",
+  "snapshot": "d6c54710786acdb584e92d2cba25491eb643c996fa622e3194d1b9381f659f87",
+  "primary_banks": ["69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229", "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0"],
+  "delivery": {
+    "revision": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3",
+    "materialization": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036",
+    "baseline_execution": "a249b6159ddf3317b2c00b411d565ec66a80077e5e8d14992b41339774de090c"
+  },
+  "fusion": {
+    "arms": ["legacy-mean", "event-legacy", "event-multi"],
+    "score": "higher better: half maximum plus half mean event credit; event credit is mean across complete original banks of max alternative-variant normalized reciprocal rank 61/(60+rank)",
+    "rank_population": "all eligible duplicate groups per variant and bank, deterministic distance/recording/native-bound ties",
+    "variants": "explicit same-event parent/native-support association only; max credit, never extra votes; identical PCM and copied bank references deduplicate",
+    "events": "unordered distinct examples unless explicitly validated as alternative representations; favors any strong match and agreement, no temporal-sequence meaning",
+    "missing": "primary fusion requires identical complete original populations; partial banks diagnostic only; missing components are unscored, not negative",
+    "support": "top sixteen raw rows per variant/bank/group before overlap consolidation; at most three non-overlapping representative passages per track, truncation explicit",
+    "grouping": "greedy representative-anchored intersection/min-length >=0.5; positive intersection; same recording; envelope <=8s; no transitive chains; adjacent intervals separate; final secondary representatives must not overlap",
+    "ties": "distance then recording/start/end/row ID; fusion descending credit then group ID; input, shard, bank and event order do not matter",
+    "default_unchanged": true,
+    "pitch_weight": 0,
+    "presence_threshold": null
+  },
+  "development": {
+    "seed": 86221,
+    "family_selection_seed": 42104,
+    "rate": 24000,
+    "families": ["harmonic", "pluck", "fm", "noise"],
+    "insertions_seconds": [[0, 3.83], [0.13, 4], [1.17, 0], [4, 0.27]],
+    "duration_seconds": 6.4,
+    "distractor_groups": 28,
+    "distractor_duration_seconds": [4.8, 5.6, 6.4],
+    "grids": [[2400, 250], [4800, 1000]],
+    "candidate_groups": 33,
+    "candidate_recordings": 37,
+    "cases": ["one-harmonic", "one-pluck", "one-fm", "one-noise", "exact-tail", "agreement", "conflict", "repeated-variant", "parent-excluded", "absent", "silence", "boundary"],
+    "primary": ["one-harmonic", "one-pluck", "one-fm", "one-noise", "agreement", "conflict", "boundary"],
+    "diagnostics": ["single-region-components", "copied-component-reference"],
+    "evaluations": 38,
+    "truth": "familiar procedural development families, alternate performances; exact-tail separate; hybrid contains pluck and fm at disjoint native intervals; excluded/absent positives excluded from recall denominators; silence three explicit failures",
+    "metrics": "hit@1/5/10/20 at least one eligible known group; recall all eligible positives at20; passage overlap >= half true-event frames in retained actual scored row; full containment, IoU and boundary error reported separately; losses decomposed before cap, after cap/grouping and shortlist",
+    "stop": "one fixed batch, no sweep/replacement/deleted losses; preserve baseline regardless of findings"
+  },
+  "accounting": "each case-policy evaluation and each delivery arm counts one query job; diagnostics two jobs; invocation overhead, audits, every source/cue decode, retries and one reuse validation charged; fixed 64 MiB metadata envelope; no discovery feature construction or separator processing",
+  "scope": "C02 only; no human relevance claim, finer timing, query-dependent extraction or general cache management"
+}
