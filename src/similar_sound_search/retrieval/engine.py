@@ -14,6 +14,39 @@ from . import fusion, history
 from .context import load_query
 
 
+def read_shortlist(owner, execution_ref, arm=None):
+    """Reopen immutable C03 metadata; audio/arrays need the new consumer's own audit."""
+    value = owner.get(execution_ref, "executions")
+    arm = arm or owner.cfg["default"]
+    if (
+        value.get("schema_version") != "c02-c03-shortlist-1"
+        or value.get("state") != "complete"
+        or arm not in value["arms"]
+    ):
+        raise InputError("C03 import requires a complete explicit C02 arm")
+    selected = value["arms"][arm]["shortlist"]
+    if len(selected) > owner.cfg["shortlist"]:
+        raise InputError("C03 shortlist exceeds its declared cap")
+    output = []
+    seen = set()
+    for rank, ref in enumerate(selected, 1):
+        group = owner.get(ref, "c03-groups")
+        if (
+            group["arm"] != arm
+            or group["rank"] != rank
+            or group["group"] in seen
+            or group["execution_identity_hash"] != digest(value["identity"])
+            or group["policy_hash"] != digest(value["identity"]["policy"])
+        ):
+            raise InputError("C03 shortlist rank/group/policy/execution binding differs")
+        owner.get(group["group_support"], "group-supports")
+        for source_ref in group["sources"].values():
+            owner.get(source_ref, "sources")
+        seen.add(group["group"])
+        output.append(group)
+    return value, output
+
+
 def evidence(source, bank_hash, passage, per, score):
     return {
         **passage,

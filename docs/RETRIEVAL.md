@@ -27,3 +27,26 @@ Every cluster retains scored row references; its envelope/context is not scored.
 Implementation, validation, measured costs, Windows commands, preserved playback
 and the C03 contract will be recorded in `reports/C02_RETRIEVAL.md`. No new
 discovery-bank features, model, dependency, acquisition, separation or deployment.
+
+C03 imports metadata with `retrieval.engine.read_shortlist(owner, execution_ref,
+arm="event-multi")`; omitting the arm selects the unchanged `legacy-mean` default.
+It verifies immutable group/support/source references, rank order and policy binding.
+The `c02-c03-shortlist-1` execution contains complete groups, the twenty-group
+shortlist and ten displayed groups separately. Each `c02-c03-group-1` points to
+source descriptors and complete bounded per-event/bank support. Representatives
+retain bank/row/shard identities, actual scored native bounds, per-example distances,
+original context, event/variant credits and unscored envelopes. Reopening metadata
+is not a fresh audio/array audit: C03 must declare its own allowance and validated
+consumer, then use those immutable references without reopening C01/C02 workers.
+
+Passage coverage means at least one actual retained representative covers at least
+half a known event's native frames. Full containment, IoU and boundary errors are
+separate. Group hit@K and recall of all eligible positive groups are separate.
+Excluded/absent positives have no success denominator; silence fails explicitly.
+Loss decomposition preserves native-grid availability, mean/top16 support selection,
+anchored grouping and the final twenty-group cut. Familiar procedural families are
+inspected development, not human sound truth or a fresh holdout.
+
+The C01 report's Python-variable command block is corrected only by adding
+`-m similar_sound_search` before CLI flags. Its standalone verification-script
+invocation, historical results and closed allowance are preserved.

@@ -1,0 +1,646 @@
+{
+  "schema_version": "c02-geometry-1",
+  "fixtures_hash": "d47d88e98cbd6aa84940c2175fa8f2cc7ca4dd9e9c6bd1b915ba08153f091868",
+  "passed": true,
+  "native_checks": [
+    {
+      "recording_id": "harmonic-0",
+      "audio_sha256": "8f0f94a68963fa9a71e7a9da16d5d624d94a0df0c7e7cbdf98d627b4f8d02163",
+      "native_frames": 153600,
+      "fft_lags": [
+        0
+      ],
+      "truth": [
+        {
+          "family": "harmonic",
+          "bounds": [
+            0,
+            57600
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "harmonic-1",
+      "audio_sha256": "53aec0dcc04f6bfc52685000204403ff4e57df9d1435b92cc9d1b74e3cf4bf9c",
+      "native_frames": 153600,
+      "fft_lags": [
+        91920
+      ],
+      "truth": [
+        {
+          "family": "harmonic",
+          "bounds": [
+            91920,
+            149520
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "pluck-0",
+      "audio_sha256": "a08f7c66d2f3dd7a045db12693a29d73979b7d2880ef723a3ff4211a20771049",
+      "native_frames": 153600,
+      "fft_lags": [
+        3120
+      ],
+      "truth": [
+        {
+          "family": "pluck",
+          "bounds": [
+            3120,
+            60720
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "pluck-1",
+      "audio_sha256": "b7a2aab55ece6b8819579d3f80cbe4e21f8cc16cda3aca23dac0cc37e5510eb1",
+      "native_frames": 153600,
+      "fft_lags": [
+        96000
+      ],
+      "truth": [
+        {
+          "family": "pluck",
+          "bounds": [
+            96000,
+            153600
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "fm-0",
+      "audio_sha256": "fc631477424e98e787f9eb8a8a3bff4efd927f27f79f4b445d51c2ef38f99008",
+      "native_frames": 153600,
+      "fft_lags": [
+        28080
+      ],
+      "truth": [
+        {
+          "family": "fm",
+          "bounds": [
+            28080,
+            85680
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "fm-1",
+      "audio_sha256": "64100872cbcf1c90ef0fb1ba3cb1e1e4775b10784d16703c8f796936ec64f447",
+      "native_frames": 153600,
+      "fft_lags": [
+        0
+      ],
+      "truth": [
+        {
+          "family": "fm",
+          "bounds": [
+            0,
+            57600
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "noise-0",
+      "audio_sha256": "b2880116801ec893af083ab43fda08a3311a2b1d12a17143ef780af1798a0bc3",
+      "native_frames": 153600,
+      "fft_lags": [
+        96000
+      ],
+      "truth": [
+        {
+          "family": "noise",
+          "bounds": [
+            96000,
+            153600
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "noise-1",
+      "audio_sha256": "d9a35661a4ca19e06b8ed5b0832ccc86a026466120e75d136c8d83f58b7dc260",
+      "native_frames": 153600,
+      "fft_lags": [
+        6480
+      ],
+      "truth": [
+        {
+          "family": "noise",
+          "bounds": [
+            6480,
+            64080
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-00",
+      "audio_sha256": "d3c3733428c1db1dc8a65baecf9fd98482ab9ad7e09a66e0990f492316b94a86",
+      "native_frames": 115200,
+      "fft_lags": [
+        1680
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            1680,
+            59280
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-01",
+      "audio_sha256": "8af9352a681af4b7d62d33073671e81aac6f6f30dd5e568af79023d9008d422f",
+      "native_frames": 134400,
+      "fft_lags": [
+        9120
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            9120,
+            66720
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-02",
+      "audio_sha256": "680e8ea4c18a64f8e999e0c912cab21d0ae4dbcbccd957af2352355525cd1246",
+      "native_frames": 153600,
+      "fft_lags": [
+        16560
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            16560,
+            74160
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-03",
+      "audio_sha256": "bfce418ce40834adb83c34b67074bae4cfd25382f0bf361254365fbd28fcbcb4",
+      "native_frames": 115200,
+      "fft_lags": [
+        1680
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            1680,
+            59280
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-04",
+      "audio_sha256": "868c17cddbc11bf9a6c097921cb47157c7713f9e64264d04ac871132b227aa41",
+      "native_frames": 134400,
+      "fft_lags": [
+        9120
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            9120,
+            66720
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-05",
+      "audio_sha256": "cf0da865be64d9cc736c1502b21179f5c95e20f40529305034a25a82974174b7",
+      "native_frames": 153600,
+      "fft_lags": [
+        16560
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            16560,
+            74160
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-06",
+      "audio_sha256": "435e4a3af475f47bedf7c313366751671d0a5a2da37f7607b786b4ff184017cb",
+      "native_frames": 115200,
+      "fft_lags": [
+        1680
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            1680,
+            59280
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-07",
+      "audio_sha256": "da877fa3216f677d70a31872e3ceb7e4488b128baa37d879e33e7a4c69a019bf",
+      "native_frames": 134400,
+      "fft_lags": [
+        9120
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            9120,
+            66720
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-08",
+      "audio_sha256": "d905696f7ca211884d42ca6390fd40a84e630d097319c927d3cf5f28fb3d07dc",
+      "native_frames": 153600,
+      "fft_lags": [
+        16560
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            16560,
+            74160
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-09",
+      "audio_sha256": "84e516d4f457b6a441b6cb7988e2884cde5329489404a718cf383b6db86bca6b",
+      "native_frames": 115200,
+      "fft_lags": [
+        1680
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            1680,
+            59280
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-10",
+      "audio_sha256": "0aa3c780ec94d0b372e1f0bb00261daec1889f8b31cd3efd0dfdf0dc9afcd54b",
+      "native_frames": 134400,
+      "fft_lags": [
+        9120
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            9120,
+            66720
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-11",
+      "audio_sha256": "de8506d6b958c4baa4c8794220478e45e1192a3899e5495a499da2a4179308ad",
+      "native_frames": 153600,
+      "fft_lags": [
+        16560
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            16560,
+            74160
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-12",
+      "audio_sha256": "9b3df2222106f9616de810f5b50c1c6e7cac2f542c6f7e9a93aebaec394338a9",
+      "native_frames": 115200,
+      "fft_lags": [
+        1680
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            1680,
+            59280
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-13",
+      "audio_sha256": "c4484a767ae2cacc2ff72f34bea2a55103a9a72a365e2d2afe452b51726f6d7f",
+      "native_frames": 134400,
+      "fft_lags": [
+        9120
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            9120,
+            66720
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-14",
+      "audio_sha256": "7668e1cf7bb9777b656f3b7f483898cd71ecac846e8992b69424e4849a36f03a",
+      "native_frames": 153600,
+      "fft_lags": [
+        16560
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            16560,
+            74160
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-15",
+      "audio_sha256": "a6c884482143e09268425050cbd359185220a972fdb04a3bdea07b576a4acc5e",
+      "native_frames": 115200,
+      "fft_lags": [
+        1680
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            1680,
+            59280
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-16",
+      "audio_sha256": "fc64d207e8a099804ce5ed6d83f1eb9f31bf0801f5fc39da6c468edffea0f6bb",
+      "native_frames": 134400,
+      "fft_lags": [
+        9120
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            9120,
+            66720
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-17",
+      "audio_sha256": "bf4905f08c3103a4c18b1fb888ade907278d28e7edc14cf058f867f884fe6325",
+      "native_frames": 153600,
+      "fft_lags": [
+        16560
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            16560,
+            74160
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-18",
+      "audio_sha256": "26576997cc333c73e3dcfa1c5fea45dbdb75308c2d82c9c7b54bd7d326dc1e29",
+      "native_frames": 115200,
+      "fft_lags": [
+        1680
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            1680,
+            59280
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-19",
+      "audio_sha256": "5a3ef7b52e6d43bdf667f9fc748b41b9e16ffa6ac748eec3f43b9aeda8f16c4e",
+      "native_frames": 134400,
+      "fft_lags": [
+        9120
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            9120,
+            66720
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-20",
+      "audio_sha256": "bc22c822dd677609e70a4c32d55885033544a191560977174ebb801c820f8510",
+      "native_frames": 153600,
+      "fft_lags": [
+        16560
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            16560,
+            74160
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-21",
+      "audio_sha256": "4c5fe568922f170d570ac733e18e7aa67cae5c8d2e56ed665c8b267cb9acaa78",
+      "native_frames": 115200,
+      "fft_lags": [
+        1680
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            1680,
+            59280
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-22",
+      "audio_sha256": "a0bf49008c650742195eb61497f7f67e404d16ffe7e0d28e161608dd36649414",
+      "native_frames": 134400,
+      "fft_lags": [
+        9120
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            9120,
+            66720
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-23",
+      "audio_sha256": "44594360b3b0ec37fb5d8a4cca0912a0c7479769037b9a5b07381c94e914f413",
+      "native_frames": 153600,
+      "fft_lags": [
+        16560
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            16560,
+            74160
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-24",
+      "audio_sha256": "c0fc69fed3712fd8d18605fdf9eb1921075457ce26f86d66d96b29d5f18fb6bf",
+      "native_frames": 115200,
+      "fft_lags": [
+        1680
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            1680,
+            59280
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-25",
+      "audio_sha256": "e16433ed3b539fb30abe09c4090ca84205686f868f2c62782ecf19a5f153eb5c",
+      "native_frames": 134400,
+      "fft_lags": [
+        9120
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            9120,
+            66720
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-26",
+      "audio_sha256": "73e6a891097fbee4e1678ad90fcd7756972b3b2d4b39b3d2fee9a7ea2e82c3ce",
+      "native_frames": 153600,
+      "fft_lags": [
+        16560
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            16560,
+            74160
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "distractor-27",
+      "audio_sha256": "c6462b3af7def9edcf8293d7424a96c1e4b0a261906b1b05fc454d9f1a4f1661",
+      "native_frames": 115200,
+      "fft_lags": [
+        1680
+      ],
+      "truth": [
+        {
+          "family": null,
+          "bounds": [
+            1680,
+            59280
+          ]
+        }
+      ]
+    },
+    {
+      "recording_id": "hybrid",
+      "audio_sha256": "2e751604ec7ac98c9531f9875ccb59536f9bd7ff4e79ebe4007641e207c01946",
+      "native_frames": 153600,
+      "fft_lags": [
+        2640,
+        90480
+      ],
+      "truth": [
+        {
+          "family": "pluck",
+          "bounds": [
+            2640,
+            60240
+          ]
+        },
+        {
+          "family": "fm",
+          "bounds": [
+            90480,
+            148080
+          ]
+        }
+      ]
+    }
+  ],
+  "no_features_or_scores": true,
+  "record_hash": "7f9417d74ac2ce44222ca06ca4dbb18210fef26c4aef4adee65523589c0438e7"
+}

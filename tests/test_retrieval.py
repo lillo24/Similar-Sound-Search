@@ -526,3 +526,30 @@ class RetrievalCase(AudioCase):
                 [{"binding": {"historical_bank_hash": "legacy"}}],
                 event_map,
             )
+
+    def test_shortlist_api_rejects_interrupted_execution_and_corrupt_group_reference(self):
+        ref = self.owner.put(
+            self.sbudget(),
+            "executions",
+            {"schema_version": "c02-c03-shortlist-1", "state": "pending", "arms": {}},
+        )
+        with self.assertRaisesRegex(InputError, "complete"):
+            engine.read_shortlist(self.owner, ref)
+        value = {
+            "schema_version": "c02-c03-shortlist-1",
+            "state": "complete",
+            "identity": {"policy": self.cfg},
+            "arms": {
+                "legacy-mean": {
+                    "shortlist": [
+                        {
+                            "path": "data/runs/retrieval/c03-groups/missing.json",
+                            "record_hash": "missing",
+                        }
+                    ]
+                }
+            },
+        }
+        ref = self.owner.put(self.sbudget(), "executions", value)
+        with self.assertRaises(FileNotFoundError):
+            engine.read_shortlist(self.owner, ref)
