@@ -10,3 +10,7 @@ Private execution progress, fresh compatibility receipts and C03 exports live in
 lags before inference. `metadata-integration.json` preserves the failed inline
 progress attempt and proves unchanged audio/encoder functions and native-grid/
 feature-identity statements for the compact-reference consumer correction.
+
+`consumer-publication.json` freezes the tested final consuming package and closed
+development result hashes before the fresh C02-owned legacy audit. Its pre-audit
+phase is historical; the final receipt and delivery outcomes are in the C02 report.

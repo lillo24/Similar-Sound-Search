@@ -148,3 +148,17 @@ and [evidence](../reports/C01_INDEX.md).
 | DEC-059 | Keep the closed batch and independently verify its strict full-2.4s support denominator. | The raw tally included the .3s short-file control. Geometry-only verification gives 0/10, 5/10 and 10/10, retains every case/ranking/failure and proves the same admission. No replacement inference or result-dependent case deletion is allowed. |
 | DEC-060 | Restrict component indexing to validated query-independent HPSS regions; reject actual guided outputs as generic stems. | Exercise two components on one controlled mixture and one real 8s region, preserving all cue/parent ancestry, native maps and output checks. No catalogue-wide separation or instrument claim is justified. |
 | DEC-061 | Preserve producing feature versions separately from later consumer/metadata verification. | Feature identities, samples, model/math and native grids stay fixed. Compact hashed references keep snapshots below the existing 1 MiB JSON limit; saved-query representation and frozen-function audits remain explicit. A completed-bank rerun validates sources/arrays under the same finite ledger; new encoding still requires its declared producer. |
+
+## C02 retrieval decisions
+
+21 October 2026; [contracts](RETRIEVAL.md), [frozen protocol](../manifests/retrieval/protocol.json)
+and [measured evidence](../reports/C02_RETRIEVAL.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-062 | Own exact retrieval in a separate C02 ledger and fresh read-only legacy consumer. | Preserve historical banks, arrays, query recipes and closed budgets; source/array validation is charged to C02. |
+| DEC-063 | Keep legacy mean as default; compare one fixed event rank fusion across two complete original banks. | Max variant credit avoids duplicate variant votes; partial HPSS banks remain scoped diagnostics. Opportunity bias remains, and measured rankings do not justify promotion. |
+| DEC-064 | Consolidate anchored overlap with bounded envelopes and actual scored representatives. | Prevent transitive chains; retain distinct passages, immutable row supports and explicitly unscored context. |
+| DEC-065 | Separate all eligible groups, twenty shortlisted groups and ten displayed groups. | C03 receives validated source/native/event references without confusing display limits with retrieval recall. |
+| DEC-066 | Compact metadata references before comparisons, proving producer functions and native grids unchanged. | Preserve 572 existing windows, original failed progress and every retry charge; keep the 1 MiB reader limit and all historical consumer guards. |
+| DEC-067 | Close C02 after one fixed development batch, full legacy equivalence, warm reuse and native/browser QA. | Event support recovery is distinct from ranking improvement; C03 must declare its own audited consumer and budget for refinement. |

@@ -242,3 +242,9 @@ their bytes are reserved under B03's query-preparation and total managed-output
 ceilings, including reuse attempts. B03 recipe/binding/materialization/execution
 records, new feature blobs, pitch records and processing outputs use B03-owned roots.
 Do not delete shared A02 bundles when cleaning up a B03 branch or worktree.
+
+C02 reads exact immutable revisions/materializations through a read-only view
+charging its own allowance. Its explicit missing-materialization derivative uses
+the same validated recipes and C02-owned feature/output roots. Event/variant
+associations belong to C02 execution metadata, preserving the strict B03 schema
+and unordered mean-example baseline; see [RETRIEVAL.md](RETRIEVAL.md).
