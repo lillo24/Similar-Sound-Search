@@ -113,3 +113,5 @@ C02 now consumes these exact historical banks through an explicit read-only
 membership/configuration view and a fresh C02-owned legacy receipt. It preserves
 this snapshot and exports bounded support/shortlist evidence; see
 [RETRIEVAL.md](RETRIEVAL.md). C01 workers and its closed allowance are not reopened.
+
+C03 also retains these original banks unchanged, using a separately bound current consumer receipt and exact row/native validation before local original-mixture crops; see [REFINEMENT.md](REFINEMENT.md). New rows belong to C03 and are never inserted into these banks.

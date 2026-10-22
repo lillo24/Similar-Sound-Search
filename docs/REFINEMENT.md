@@ -62,3 +62,5 @@ and atomic commit boundaries. Its dependency graph names changes requiring new w
 No automatic invalidation, source refresh, garbage collection or C04 implementation
 is included. Detailed paired outcomes, costs and Windows commands belong to
 `reports/C03_REFINEMENT.md`.
+
+Historical float64 distances are checked with zero relative tolerance and absolute tolerance 2e-15, accounting for final-bit BLAS rounding when reopening one row instead of a whole shard. Native intervals and reused feature bytes remain exact; recomputed values and untouched imported scores are both retained. This is a numerical validation tolerance, not a sound-presence threshold.
