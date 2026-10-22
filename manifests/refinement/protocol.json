@@ -1,0 +1,20 @@
+{
+  "schema_version": "c03-protocol-1",
+  "execution": {"path": "data/runs/retrieval/executions/a1390a76b77c76aa53c3c97d6adfd5dc5ed38b5f0e9ad9ad2bf890f7a0554d67.json", "record_hash": "a1390a76b77c76aa53c3c97d6adfd5dc5ed38b5f0e9ad9ad2bf890f7a0554d67"},
+  "arm": "event-multi",
+  "snapshot": "d6c54710786acdb584e92d2cba25491eb643c996fa622e3194d1b9381f659f87",
+  "primary_banks": ["69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229", "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0"],
+  "delivery": {
+    "revision": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3",
+    "materialization": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036"
+  },
+  "anchors": "first two immutable C02 representatives, in their saved contribution order; all three and full input evidence retained",
+  "objective": "anchor variant cosine distance fixed before scoring; mean only for legacy mean anchors; all example distances retained; no cross-duration or cross-anchor competition",
+  "ties": "minimum objective; original native interval wins exact ties; then absolute displacement, earlier start; identical start positions deduplicate",
+  "guard": "retain original control as a labelled alternate whenever placement changes; no supported input passage is erased; no ranking promotion",
+  "geometry": "fixed native width; offsets rounded half away from zero to integer frames; clamp start into [0,frames-width]; deduplicate; no real-support padding",
+  "extraction": {"admitted": false, "reason": "B02 failed promotion gates; Loulou is a full 22s mixture without verified clean cue; original timing suffices; no separator inputs"},
+  "development": {"source": "pinned completed C02 fixtures, geometry, encoded arrays and comparison outcomes; separate explicit compact-development adapter", "cases": ["one-harmonic", "one-pluck", "one-fm", "one-noise", "exact-tail", "agreement", "conflict", "repeated-variant", "parent-excluded", "absent", "silence", "boundary"], "arms": ["unrefined", "original-local"], "anchors": "first two saved representatives within same twenty groups; no truth selection", "positive_overlap": 0.5, "truth": "independent saved waveform reconstruction and insertion lag verification before any C03 predictions; familiar procedural development only", "failures": "silence explicit unsupported; corrupt/missing supports covered by isolated failure oracles; any required real group failure leaves run failed/partial, never verified fallback", "stop": "one batch, 24 case-policy evaluations, no sweep or additional duration; unchanged group ranks; supported positives retained via explicit original alternates"},
+  "accounting": "one C03 ledger; bounded compact feature bundles; full source reads on every worker including reuse/report/QA; all failures charged; 96 MiB metadata envelope reserved in total output; setup/tests/preservation/HTTP/browser reported separately",
+  "handoff": "c03-c04-refinement-1; exact dependency and semantic feature keys; immutable atomic group commits; explicit unchanged reuse; no C04 scheduler/invalidation/cleanup"
+}
