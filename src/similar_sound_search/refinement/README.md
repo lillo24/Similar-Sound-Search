@@ -10,3 +10,7 @@ the separate saved C02 development schema and evaluates one fixed batch.
 `commands.py` routes the CLI and preflight; `job.py` enforces offline bounded
 workers and lifetime accounting. `report.py` publishes original scored/context
 playback and native verification. No historical worker or allowance is reopened.
+
+`report.py` also owns the explicitly declared renderer-only repair: preserve the
+first bundle/proofs, charge byte-identical media copies and verify a new report
+under its separately audited consumer. Numerical execution and reuse stay closed.

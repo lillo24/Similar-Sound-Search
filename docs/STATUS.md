@@ -1,6 +1,6 @@
 # Project status
 
-Updated 21 October 2026. **C02 retrieval and aggregation are implemented and verified; C03 is next and has not started.** [C02 evidence](../reports/C02_RETRIEVAL.md) and [contracts](RETRIEVAL.md) describe exact event supports, bounded native-timeline consolidation and twenty distinct-group C03 shortlists separate from ten displayed songs. Original audio, legacy mean retrieval and pitch off remain defaults; full legacy output equivalence passed. Experimental fusion showed no paired top-1 gain and lost one top-5/top-10 development success, so no ranking promotion is justified. All 285 offline tests and native/HTTP/32-player Chrome QA passed. Historical artifacts are preserved; partial C01 banks and A03 catalogue completeness remain partial. Human/Loulou relevance, alignment, rights and intended layer remain unverified. Follow [AGENTS.md](../AGENTS.md) for PR/merge/cleanup delivery.
+Updated 22 October 2026. **C03 candidate refinement is implemented and verified; C04 is next and has not started.** [C03 evidence](../reports/C03_REFINEMENT.md) and [contracts](REFINEMENT.md) cover the pinned C02 event-multi twenty-group shortlist, fixed native timing and retained original controls. All twenty groups completed; fifteen have changed placements, with song order unchanged. Matched-anchor event recall has no gain/loss; IoU improves in four pairs and worsens in three, so refinement stays opt-in. Original audio, legacy retrieval and pitch off remain defaults. The final 315-test suite, native/HTTP checks and all 32 Chrome controls passed. A declared renderer repair preserves the failed bundle, numerical results and old consumer while separately auditing the final report. Historical assets and denied C01 staging remain intact. A03 and optional C01 banks remain partial; human/Loulou relevance, alignment, rights and intended layer remain unverified. Follow [AGENTS.md](../AGENTS.md) for PR/merge/cleanup delivery.
 
 ## Foundation and current delivery
 
@@ -46,7 +46,10 @@ No GitHub Actions workflow/required CI check exists in the inspected repository;
 | B01 event selection | Implemented with native/manual crops, experimental proposals, two catalogue searches and verified playback. Bounded development evaluation partial; explicit/coarse default. [Evidence](../reports/B01_EVENTS.md) |
 | B02 optional separation/extraction | Numerical original/HPSS/audio-cue paths, explicit lineage, fixed 16-case comparison; original default after failed promotion gates. [Evidence](../reports/B02_SEPARATION.md) |
 | B03 reusable queries and secondary pitch | Implemented; immutable revisions/materializations/executions, explicit bindings, original/off defaults; [evidence](../reports/B03_QUERIES.md) |
-| C01â€“D indexing/refinement, interface/package | Future; concrete C01 handoff in B03 report; first required listening review D04 |
+| C01 passage banks | Delivered; complete legacy/long originals, partial short/HPSS diagnostics; [evidence](../reports/C01_INDEX.md) |
+| C02 retrieval and aggregation | Delivered; exact legacy default, event support and twenty-group shortlists; [evidence](../reports/C02_RETRIEVAL.md) |
+| C03 candidate refinement | Delivered; bounded original timing, retained controls, separately verified playback and C04 handoff; [evidence](../reports/C03_REFINEMENT.md) |
+| C04 incremental processing and D01-D04 interface/package | Future; first required user listening review remains D04 |
 | Perceptual quality and Loulou relevance | Unmeasured; real-catalogue candidates are not confirmed matches; controlled A05/A06 metrics remain separate |
 | Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 

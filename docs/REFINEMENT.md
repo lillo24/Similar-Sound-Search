@@ -64,3 +64,17 @@ is included. Detailed paired outcomes, costs and Windows commands belong to
 `reports/C03_REFINEMENT.md`.
 
 Historical float64 distances are checked with zero relative tolerance and absolute tolerance 2e-15, accounting for final-bit BLAS rounding when reopening one row instead of a whole shard. Native intervals and reused feature bytes remain exact; recomputed values and untouched imported scores are both retained. This is a numerical validation tolerance, not a sound-presence threshold.
+
+The declared renderer repair adds `repair-report --receipt FRESH_C03_RECEIPT` and
+`verify-repaired-native`. Chrome caught invalid seek-handler JavaScript after the
+first report had passed native/HTTP checks. The explicit consumer declaration in
+`manifests/refinement/report-repair.json` permits only renderer/CLI routing changes;
+numerical modules and original build/native-verifier ASTs are unchanged. A second
+fresh C03 audit authorizes the report consumer, while the completed numerical
+execution, its receipt, reuse and producing versions remain historical and intact.
+The repair copies verified media byte-for-byte into a new immutable directory,
+charges copies/retries to the same allowance, updates the mutable report locator
+and writes `report-repair-native-qa.json`. The original bundle/native receipt and
+failed browser evidence remain. This report-only transaction does not re-embed,
+rescore, reopen the numerical run or relax its consumer guard. General invalidation
+still belongs to C04.
