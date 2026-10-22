@@ -52,3 +52,10 @@ predeclared admission, exact per-bank verification and charged resume/reuse.
 event/rank fusion, raw support cap, overlap rule and shortlist/display limits.
 [RETRIEVAL.md](../docs/RETRIEVAL.md) owns historical adapters, exact evidence,
 event/variant semantics, native scored/context support and the C03 export.
+
+## C03 candidate refinement
+
+`refinement.json` fixes the independent C03 allowance, two anchors per group,
+nine native starts, original-control ties and unchanged C02 group order.
+[REFINEMENT.md](../docs/REFINEMENT.md) owns audited import, semantic native keys,
+original-mixture verification, preserved alternates and the C04 handoff.

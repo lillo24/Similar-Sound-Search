@@ -75,3 +75,5 @@ tests cover both before prediction and between immutable prediction/progress wri
 retaining case/arm reservations and charging subsequent metadata writes.
 
 `test_retrieval.py` verifies C02 scalar/event recovery, source ownership, complete-winner compatibility, support/context grouping, partial/missing banks, compact records, interruption/reuse and cumulative accounting with isolated fixtures.
+
+`test_refinement.py` owns isolated C03 native geometry, scalar scoring, lineage, semantic keys, exact controls, atomic feature recovery, corruption, finite budgets and publication/lock boundaries.

@@ -295,6 +295,31 @@ def parser():
     retrieval.add_argument("--materialization")
     retrieval.add_argument("--derived", action="store_true")
     retrieval.add_argument("--port", type=int, default=8771)
+    refinement = subcommands.add_parser("refinement", help="C03 bounded original timing refinement")
+    refinement.add_argument(
+        "refinement_action",
+        choices=(
+            "preflight",
+            "known-answer",
+            "geometry",
+            "compare",
+            "compatibility",
+            "derive-query",
+            "refine",
+            "verify",
+            "report",
+            "verify-native",
+            "serve",
+        ),
+    )
+    refinement.add_argument("input", type=Path, nargs="?")
+    refinement.add_argument("--execution", type=Path)
+    refinement.add_argument("--arm", choices=("event-multi",))
+    refinement.add_argument("--receipt", type=Path)
+    refinement.add_argument(
+        "--pilot", action="store_true", help="one bounded worker; retain progress"
+    )
+    refinement.add_argument("--port", type=int, default=8772)
     return command
 
 
@@ -315,6 +340,7 @@ def _worker(request):
                 "queries_step",
                 "indexing_step",
                 "retrieval_step",
+                "refinement_step",
             }
             else Budget
         )
@@ -372,6 +398,10 @@ def _worker(request):
             result = worker(request, budget)
         elif request["command"] == "indexing_step":
             from .indexing.job import worker
+
+            result = worker(request, budget)
+        elif request["command"] == "refinement_step":
+            from .refinement.job import worker
 
             result = worker(request, budget)
         elif request["command"] == "retrieval_step":
@@ -451,6 +481,8 @@ def main(argv=None):
             raise InputError(
                 f"root {root}: expected project config/resource_limits.json; use --root"
             )
+        if args.command == "refinement" and args.report is None:
+            args.report = root / "reports/local/c03/last-command.json"
         if args.command == "retrieval" and args.report is None:
             args.report = root / "reports/local/c02/last-command.json"
         default_report = (
@@ -466,6 +498,8 @@ def main(argv=None):
             report_candidate = contained(report_candidate, root / "reports/local/c01")
         if args.command == "retrieval":
             report_candidate = contained(report_candidate, root / "reports/local/c02")
+        if args.command == "refinement":
+            report_candidate = contained(report_candidate, root / "reports/local/c03")
         if report_candidate.suffix.lower() != ".json":
             raise InputError("report: expected owned .json path under reports/local")
         report = report_candidate
@@ -518,6 +552,13 @@ def main(argv=None):
                 raise InputError("retrieval serve requires the owned C02 bundle")
             serve(root, args.input, args.port, root / "reports/local/c02")
             return 0
+        if args.command == "refinement" and args.refinement_action == "serve":
+            from .search.report import serve
+
+            if not args.input:
+                raise InputError("refinement serve requires the owned C03 bundle")
+            serve(root, args.input, args.port, root / "reports/local/c03")
+            return 0
         with project_lock(root):
             # Refuse orphaned acquisition/evaluation children before starting an operation.
             with project_lock(root, ".a03-worker.lock"):
@@ -537,6 +578,8 @@ def main(argv=None):
             with project_lock(root, ".c01-worker.lock"):
                 pass
             with project_lock(root, ".c02-worker.lock"):
+                pass
+            with project_lock(root, ".c03-worker.lock"):
                 pass
             Budget(root, limits).reserve(65536)
             if args.command == "catalogue":
@@ -583,6 +626,10 @@ def main(argv=None):
                 result = run(request, execute)
             elif args.command == "indexing":
                 from .indexing.job import run
+
+                result = run(request, execute)
+            elif args.command == "refinement":
+                from .refinement.job import run
 
                 result = run(request, execute)
             elif args.command == "retrieval":
