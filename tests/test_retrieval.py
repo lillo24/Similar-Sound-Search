@@ -575,7 +575,13 @@ class RetrievalCase(AudioCase):
             self.root / "manifests/retrieval/metadata-integration.json",
         )
         proof = record(self.root / "manifests/retrieval/metadata-integration.json")
-        self.assertEqual(development.producing_code(self.owner), proof["before_code"])
+        # This historical repair binds its exact C02 consumer, not whichever later
+        # stage happens to run the suite. Keep the production stale-code guard intact.
+        with patch(
+            "similar_sound_search.search.contracts.code_identity",
+            return_value=proof["consumer_code"],
+        ):
+            self.assertEqual(development.producing_code(self.owner), proof["before_code"])
         changed = {**proof, "consumer_code": {}}
         write_record(
             self.root / "manifests/retrieval/metadata-integration.json", changed, self.sbudget()

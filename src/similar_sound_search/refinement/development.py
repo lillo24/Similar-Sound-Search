@@ -1,5 +1,7 @@
 """Explicit compact C02 development import, independent geometry and one paired batch."""
 
+import time
+
 import numpy as np
 
 from ..evaluation.artifacts import record
@@ -220,7 +222,7 @@ def compare(budget, owner):
             state["active"] = {"id": cid, "groups": {}}
         if state["active"]["id"] != cid:
             raise InputError("C03 development pending case changed")
-        for g in [g for g in ranking if g["group"] not in state["active"]["groups"]][:2]:
+        for g in [g for g in ranking if g["group"] not in state["active"]["groups"]][:4]:
             results = []
             decoded = {}
             for psg in g["passages"][:2]:
@@ -246,6 +248,51 @@ def compare(budget, owner):
                         desc,
                         lookup,
                     )
+                )
+            pilot_path = owner.directory / "pilot-reuse.json"
+            if not pilot_path.exists():
+                # One measured cold/reuse unit before expansion. Reopen the full source
+                # and persistent feature bundle; no cache-backed success hides a decode.
+                counts = record(owner.directory / "work.json")["counts"]
+                owner.charge(
+                    budget, query_jobs=1, read_audio_seconds=source["source"]["duration_seconds"]
+                )
+                started = time.monotonic()
+                again_samples, again_meta = decode(
+                    owner.root / source["source"]["local_path"], budget
+                )
+                if again_meta != {k: v for k, v in source["source"].items() if k != "local_path"}:
+                    raise InputError("C03 pilot reuse original changed")
+                base_lookup = {k: v for k, v in lookup.items() if "bundle" not in v["reference"]}
+                again = engine.local(
+                    budget,
+                    owner,
+                    source,
+                    again_samples,
+                    a,
+                    features,
+                    variants,
+                    events,
+                    desc,
+                    base_lookup,
+                )
+                after = record(owner.directory / "work.json")["counts"]
+                if again != results[-1] or after["feature_windows"] != counts["feature_windows"]:
+                    raise InputError("C03 cold/reuse unit differs or re-embedded")
+                owner.publish(
+                    budget,
+                    pilot_path,
+                    {
+                        "schema_version": "c03-pilot-reuse-1",
+                        "case": cid,
+                        "group": g["group"],
+                        "cold_anchor": results[-1],
+                        "reuse_seconds": time.monotonic() - started,
+                        "new_reuse_features": 0,
+                        "full_source_read": True,
+                        "passed": True,
+                    },
+                    immutable=True,
                 )
             # Full input evidence and every original representative remain retained.
             value = {

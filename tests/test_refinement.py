@@ -284,6 +284,34 @@ class RefinementCase(AudioCase):
             with self.assertRaises(InputError):
                 importing.shortlist(self.owner, self.owner.protocol["execution"], arm)
 
+    def test_semantic_row_rejects_self_consistent_wrong_native_interval(self):
+        row = {
+            "recording_id": "r",
+            "group": "g",
+            "rate": 10,
+            "bank_hash": "b",
+            "row": 0,
+            "row_id": "id",
+            "original_bounds": [1, 3],
+            "original_context": [0, 10],
+            "per_example_distances": [0.0],
+            "distance": 0.0,
+        }
+        source = {
+            "recording_id": "r",
+            "group": "g",
+            "source": {"sample_rate_hz": 10, "sample_count": 10},
+        }
+        passage = {"row_id": "id", "original_bounds": [2, 4]}
+        with self.assertRaisesRegex(InputError, "native membership"):
+            importing.check_row(
+                row, source, "b", [passage], np.ones((1, 2)), np.ones((1, 2)), ["q"]
+            )
+
+    def test_missing_pinned_shortlist_is_explicit_failure(self):
+        with self.assertRaises(FileNotFoundError):
+            importing.shortlist(self.owner, self.owner.protocol["execution"], "event-multi")
+
     def test_anchored_presentation_dedup_preserves_disjoint_and_all_evidence(self):
         a = [
             {"selected": {"recording_id": "r", "original_bounds": b}}

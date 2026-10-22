@@ -9,7 +9,7 @@ from ..events import compatibility
 from ..matchers.acoustic import checked
 from ..search import sources
 from ..search.contracts import code_identity, load_array, save_array
-from ..storage import InputError, digest
+from ..storage import InputError, canonical, digest
 from . import geometry, importing
 
 
@@ -21,6 +21,7 @@ def local(budget, owner, source, samples, anchor, features, variants, events, de
     obj = geometry.objective(anchor, variants, events)
     missing = [b for b in bounds if (source["recording_id"], tuple(b)) not in lookup]
     bundle_ref = None
+    producer_ref = None
     if missing:
         identity = {
             "semantic": geometry.semantic(source, missing, desc),
@@ -28,13 +29,32 @@ def local(budget, owner, source, samples, anchor, features, variants, events, de
             "version": "c03-native-bundle-1",
         }
         target = owner.features / digest(identity)
+        producer_path = owner.directory / "feature-producers" / (digest(identity) + ".json")
         if not target.exists():
+            if not producer_path.exists():
+                producer = owner.put(
+                    budget,
+                    "producers",
+                    {
+                        "schema_version": "c03-producing-code-1",
+                        "code": code_identity(),
+                        "representation": desc,
+                    },
+                )
+                owner.publish(
+                    budget,
+                    producer_path,
+                    {"identity_hash": digest(identity), "producer": producer},
+                    immutable=True,
+                )
             owner.charge(
                 budget,
                 feature_windows=len(missing),
                 processed_window_seconds=sum(b - a for a, b in missing)
                 / source["source"]["sample_rate_hz"],
-                feature_bytes=len(missing) * desc["dimension"] * 4 + 65536,
+                feature_bytes=(
+                    len(missing) * desc["dimension"] * 4 + len(canonical(identity)) * 2 + 8192
+                ),
             )
             budget.reserve(
                 len(missing) * desc["dimension"] * 4 + 65536, 768 * 1024**2 + samples.nbytes * 3
@@ -50,6 +70,11 @@ def local(budget, owner, source, samples, anchor, features, variants, events, de
                 ]
             )
             save_array(owner.features, identity, arr, budget)
+        produced = record(producer_path)
+        if produced["identity_hash"] != digest(identity):
+            raise InputError("C03 semantic feature producer binding differs")
+        owner.get(produced["producer"], "producers")
+        producer_ref = produced["producer"]
         arr, meta = load_array(target, identity, budget)
         bundle_ref = {
             "path": target.relative_to(owner.root).as_posix(),
@@ -103,6 +128,7 @@ def local(budget, owner, source, samples, anchor, features, variants, events, de
         "state": "refined" if bounds[choice] != original else "unchanged",
         "original_retained_alternate": anchor,
         "feature_bundle": bundle_ref,
+        "producer_ref": producer_ref,
         "presence": "forced original-mixture comparison; no calibrated presence claim",
     }
 
@@ -138,7 +164,7 @@ def step(request, budget, owner):
         owner.charge(budget, query_jobs=1)
         state = {"identity": ident, "state": "pending", "groups": {}, "failed_attempts": []}
         owner.publish(budget, progress, state)
-    for g in [g for g in groups if g["group"] not in state["groups"]][:1]:
+    for g in [g for g in groups if g["group"] not in state["groups"]][:2]:
         try:
             target_sources, _, lookup = importing.group_rows(
                 budget, owner, old, g, view, banks, query, features

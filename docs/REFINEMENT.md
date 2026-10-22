@@ -9,6 +9,13 @@ steps, including the exact original crop. Native rounding is half away from zero
 start positions clamp to available support and deduplicate. No synthetic support,
 duration sweep or claim of true sound boundaries follows.
 
+After measuring two two-group pilot workers, development units process at most
+four groups; delivery units process at most two, preserving the same per-anchor
+opportunities. Native features reserve their vector bytes plus twice the compact
+identity size and 8 KiB bundle overhead, rather than B03's per-vector 64 KiB cache
+overhead. Earlier pilot reservations remain charged. Producer receipts are written
+before encoding and kept separately from semantic sample keys and later consumers.
+
 Every imported row is reopened against exact bank/shard/row/native membership and
 its actual feature distances. The separate fresh C03 consumer receipt validates
 legacy arrays under current code; historical C01/C02 receipts remain unchanged.

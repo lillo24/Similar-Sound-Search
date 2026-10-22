@@ -96,17 +96,30 @@ def group_rows(budget, owner, old, group, view, banks, query, features):
             raise InputError("C03 source absent/different in selected complete bank")
         source_map[rid] = source
     cache = {}
+    opportunities = {}
     for bank in banks:
         bh = bank["binding"]["historical_bank_hash"]
         for unit in bank["value"]["committed"]:
             if unit["signal_id"] in source_map:
                 array, passages = reader.rows(budget, view, bank["value"], unit)
                 cache[bh, unit["unit_id"]] = array, passages
+                opportunities[bh] = opportunities.get(bh, 0) + len(array)
+    if support["opportunities"] != opportunities or group["opportunities"] != opportunities:
+        raise InputError("C03 group opportunity counts differ from exact bank membership")
+    expected_keys = {b + ":" + v for b in owner.protocol["primary_banks"] for v in variants}
+    if set(support["objectives"]) != expected_keys:
+        raise InputError("C03 incomplete bank/variant objective population")
     rows = []
     for key, obj in support["objectives"].items():
         bh, variant = key.split(":")
         if bh not in owner.protocol["primary_banks"] or variant not in variants:
             raise InputError("C03 unsupported bank/variant objective")
+        if (
+            obj["count"] != opportunities[bh]
+            or not obj["rows"]
+            or len(obj["rows"]) > old.cfg["raw_support_cap"]
+        ):
+            raise InputError("C03 support count/cap differs from bank objective")
         rows.extend({**r, "variant_id": variant} for r in obj["rows"])
     rows.append(support["baseline_row"])
     for p in group["passages"]:
