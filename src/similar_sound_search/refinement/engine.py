@@ -120,6 +120,7 @@ def local(budget, owner, source, samples, anchor, features, variants, events, de
         "schema_version": "c03-anchor-1",
         "input": anchor,
         "objective": obj,
+        "score_direction": "lower_better",
         "grid": bounds,
         "rows": rows,
         "selected": rows[choice],
@@ -231,6 +232,8 @@ def step(request, budget, owner):
         "dependency_graph": {
             "c02_execution": owner.protocol["execution"],
             "query": execution["query_ref"],
+            "query_revision": execution["identity"]["revision_id"],
+            "query_materialization": execution["identity"]["materialization_id"],
             "snapshot": owner.protocol["snapshot"],
             "banks": owner.protocol["primary_banks"],
             "fresh_legacy_receipt": str(
@@ -251,6 +254,15 @@ def step(request, budget, owner):
             ),
             "resume": "same refinement refine --execution PATH --arm event-multi --receipt RECEIPT",
             "C04": "not implemented; no automatic invalidation or cleanup",
+            "accounting_owner": {
+                "ledger": "data/runs/refinement/ledger.json",
+                "reservations": "data/runs/refinement/work.json",
+                "timing": "data/runs/refinement/timing.json",
+                "progress": "data/runs/refinement/progress.json",
+                "reuse": "data/runs/refinement/reuse.json",
+                "closed_owners": ["C01", "C02"],
+                "rule": "no restart/name/branch replenishes funds; C04 needs its own allowance",
+            },
         },
     }
     ref = owner.put(budget, "executions", result)

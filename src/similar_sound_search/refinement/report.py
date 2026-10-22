@@ -4,12 +4,13 @@ import hashlib
 import html
 import json
 
+import numpy as np
+
 from ..evaluation.artifacts import record
 from ..inputs import decode
 from ..retrieval.context import load_query
-from ..retrieval.report import verify_native as native_check
 from ..search import sources
-from ..search.report import stamp
+from ..search.report import pcm16, stamp, verify_bundle
 from ..separation.report import safe_clip
 from ..storage import InputError, contained, digest
 from .context import Historical
@@ -227,5 +228,55 @@ def build(budget, owner):
 
 
 def verify_native(budget, owner):
-    # Same independent exact PCM16/sample/gain/map verifier, all reads charged C03.
-    return native_check(budget, owner)
+    path = contained(owner.root / record(owner.directory / "report.json")["bundle"], owner.reports)
+    value = record(path)
+    verify_bundle(owner.root, path.parent, owner.reports)
+    cached = {}
+    answers = []
+    for item in value["items"]:
+        a = item["source_audio"]
+        if a["sha256"] not in cached:
+            owner.charge(budget, read_audio_seconds=a["duration_seconds"])
+            x, actual = decode(contained(owner.root / a["local_path"], owner.root), budget)
+            for k in (
+                "sha256",
+                "canonical_pcm",
+                "sample_count",
+                "sample_rate_hz",
+                "channels",
+                "decoder",
+            ):
+                if actual[k] != a[k]:
+                    raise InputError("C03 native QA: original " + k + " differs")
+            cached = {a["sha256"]: x}
+        c = item["clip"]
+        lo, hi = c["source_start_frame"], c["source_end_frame"]
+        expected, gain = pcm16(cached[a["sha256"]][lo:hi])
+        owner.charge(budget, read_audio_seconds=c["duration_seconds"])
+        actual, meta = decode(path.parent / c["path"], budget)
+        if (
+            gain != c["gain"]
+            or not np.array_equal(actual, expected.astype(np.float32) / 32768)
+            or meta["sample_count"] != hi - lo
+            or meta["sample_rate_hz"] != a["sample_rate_hz"]
+            or meta["channels"] != a["channels"]
+        ):
+            raise InputError("C03 native QA: PCM16 gain/map/rate/channels/frames differ")
+        answers.append(
+            {
+                "label": item["label"],
+                "native_bounds": [lo, hi],
+                "frames": len(actual),
+                "rate": meta["sample_rate_hz"],
+                "channels": meta["channels"],
+                "exact_samples": True,
+            }
+        )
+    result = {
+        "schema_version": "c03-native-qa-1",
+        "bundle_hash": value["record_hash"],
+        "passed": True,
+        "items": answers,
+    }
+    owner.publish(budget, owner.directory / "native-qa.json", result, immutable=True)
+    return {"status": "ok", "passed": True, "items": len(answers)}
