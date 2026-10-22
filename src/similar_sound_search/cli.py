@@ -309,6 +309,8 @@ def parser():
             "verify",
             "report",
             "verify-native",
+            "repair-report",
+            "verify-repaired-native",
             "serve",
         ),
     )

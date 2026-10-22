@@ -3,6 +3,8 @@
 import hashlib
 import html
 import json
+import tempfile
+from pathlib import Path
 
 import numpy as np
 
@@ -10,6 +12,7 @@ from ..evaluation.artifacts import record
 from ..inputs import decode
 from ..retrieval.context import load_query
 from ..search import sources
+from ..search.contracts import code_identity
 from ..search.report import pcm16, stamp, verify_bundle
 from ..separation.report import safe_clip
 from ..storage import InputError, contained, digest
@@ -71,8 +74,7 @@ master offset, rights, intended layer and complete event boundaries remain unver
         + """<script>
 document.querySelectorAll('audio').forEach((a,i)=>{const s=document.getElementById('state-'+i);
 a.addEventListener('loadedmetadata',()=>s.textContent='Ready · '+a.duration.toFixed(3)+' s');
-a.addEventListener('error',()=>{s.textContent='Media missing or stale;
- verify bundle.';
+a.addEventListener('error',()=>{s.textContent='Media missing or stale. Verify bundle.';
 s.className='failed';
 });
 });
@@ -280,3 +282,125 @@ def verify_native(budget, owner):
     }
     owner.publish(budget, owner.directory / "native-qa.json", result, immutable=True)
     return {"status": "ok", "passed": True, "items": len(answers)}
+
+
+class RepairNativeView:
+    """Same exact verifier, publishing a second immutable receipt for the repaired bundle."""
+
+    def __init__(self, owner):
+        self.owner = owner
+
+    def __getattr__(self, name):
+        return getattr(self.owner, name)
+
+    def publish(self, budget, path, value, immutable=False):
+        if path != self.owner.directory / "native-qa.json":
+            raise InputError("C03 repaired native verifier: unexpected publication")
+        return self.owner.publish(
+            budget, self.owner.directory / "report-repair-native-qa.json", value, immutable
+        )
+
+
+def repair(request, budget, owner):
+    """Explicit renderer-only repair; retain the original bundle, native proof and scores."""
+    from ..retrieval import history
+
+    declaration = record(owner.root / "manifests/refinement/report-repair.json")
+    before = declaration["before_code"]
+    current = code_identity()
+    if (
+        current != declaration["consumer_code"]
+        or set(current) != set(before)
+        or {k for k in before if before[k] != current[k]}
+        != set(declaration["allowed_changed_files"])
+    ):
+        raise InputError("C03 report repair consumer differs from declared renderer-only boundary")
+    history.open_snapshot(budget, owner, Path(request["receipt"]))
+    source_path = contained(owner.root / declaration["original_bundle"], owner.reports)
+    original = record(source_path)
+    native = record(owner.directory / "native-qa.json")
+    if (
+        original["record_hash"] != declaration["original_bundle_hash"]
+        or native["bundle_hash"] != original["record_hash"]
+        or not native["passed"]
+    ):
+        raise InputError("C03 report repair requires the exact native-verified original bundle")
+    verify_bundle(owner.root, source_path.parent, owner.reports)
+    execution = owner.get(original["summary"]["execution"], "executions")
+    if execution["identity"]["consumer_code"] != before:
+        raise InputError("C03 report repair cannot relabel a different numerical execution")
+    identity = {
+        "version": "c03-renderer-repair-1",
+        "original_bundle": original["record_hash"],
+        "declaration": declaration["record_hash"],
+        "fresh_receipt": record(Path(request["receipt"]))["record_hash"],
+        "numerical_execution": original["summary"]["execution"],
+    }
+    directory = owner.reports / ("refinement-" + digest(identity))
+    progress = owner.directory / "report-repair-progress.json"
+    if progress.exists():
+        state = record(progress)
+        if state["identity"] != identity or state["state"] == "complete":
+            raise InputError("C03 renderer repair already complete or changed")
+    else:
+        owner.charge(budget, query_jobs=1)
+        state = {"identity": identity, "state": "pending", "copied": []}
+        owner.publish(budget, progress, state)
+    clips = {i["clip"]["path"]: i["clip"] for i in original["items"]}
+    for name, c in clips.items():
+        source = contained(source_path.parent / name, source_path.parent / "media")
+        target = contained(directory / name, directory / "media")
+        if name not in state["copied"]:
+            if not target.exists():
+                owner.charge(budget, clips=1, clip_bytes=source.stat().st_size + 4096)
+                budget.reserve(source.stat().st_size + 65536)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                data = source.read_bytes()
+                if hashlib.sha256(data).hexdigest() != c["sha256"]:
+                    raise InputError("C03 renderer repair original media changed")
+                with tempfile.NamedTemporaryFile(
+                    dir=target.parent, prefix=".c03-repair-", delete=False
+                ) as f:
+                    f.write(data)
+                    temporary = Path(f.name)
+                temporary.rename(target)
+            if hashlib.sha256(target.read_bytes()).hexdigest() != c["sha256"]:
+                raise InputError("C03 renderer repair copied media differs")
+            state["copied"].append(name)
+            owner.publish(budget, progress, state)
+    summary = {
+        **original["summary"],
+        "renderer_repair": identity,
+        "numerical_results_and_media": "unchanged; original producer/execution retained",
+    }
+    value = {
+        **{k: v for k, v in original.items() if k not in ("record_hash", "html_sha256")},
+        "schema_version": "c03-playback-repair-1",
+        "identity": identity,
+        "summary": summary,
+    }
+    content = page(value)
+    owner.charge(budget, metadata_bytes=len(content.encode()) + 4096)
+    budget.reserve(len(content.encode()) + 65536)
+    temporary = directory / ".partial-index.html"
+    temporary.write_text(content, encoding="utf-8", newline="\n")
+    temporary.replace(directory / "index.html")
+    value["html_sha256"] = hashlib.sha256((directory / "index.html").read_bytes()).hexdigest()
+    saved = owner.publish(budget, directory / "bundle.json", value, immutable=True)
+    owner.publish(
+        budget,
+        owner.directory / "report.json",
+        {"bundle": (directory / "bundle.json").relative_to(owner.root).as_posix()},
+    )
+    state["state"] = "complete"
+    owner.publish(budget, progress, state)
+    return {
+        "status": "ok",
+        "state": "complete",
+        "report": (directory / "index.html").relative_to(owner.root).as_posix(),
+        "items": len(value["items"]),
+        "unique_wavs": len(clips),
+        "bundle_hash": saved["record_hash"],
+        "numerical_execution_unchanged": True,
+        "media_byte_identical": True,
+    }

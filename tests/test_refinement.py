@@ -1,6 +1,8 @@
 """Isolated C03 native/support/objective/reuse/ownership/accounting checks."""
 
 import copy
+import hashlib
+import re
 import shutil
 from unittest.mock import patch
 
@@ -8,11 +10,12 @@ import numpy as np
 from helpers import REPOSITORY, AudioCase
 
 from similar_sound_search.cli import parser
-from similar_sound_search.evaluation.artifacts import record
+from similar_sound_search.evaluation.artifacts import record, write_record
 from similar_sound_search.refinement import development, engine, geometry, importing, report
 from similar_sound_search.refinement.context import Context, Historical
 from similar_sound_search.refinement.validation import known_answer
 from similar_sound_search.resources import CatalogueBudget
+from similar_sound_search.search.contracts import code_identity
 from similar_sound_search.search.ranking import distances
 from similar_sound_search.storage import InputError, ResourceError, digest, project_lock
 
@@ -363,3 +366,91 @@ class RefinementCase(AudioCase):
             ]
         )
         self.assertEqual(args.arm, "event-multi")
+
+    def test_report_script_literals_never_contain_raw_newlines(self):
+        content = report.page({"items": [], "summary": {}})
+        script = content.split("<script>", 1)[1].split("</script>", 1)[0]
+        strings = re.findall(r"'(?:\\.|[^'\\])*'", script)
+        self.assertGreater(len(strings), 5)
+        self.assertTrue(all("\n" not in s and "\r" not in s for s in strings))
+
+    def test_renderer_repair_copies_verified_media_and_preserves_original_proofs(self):
+        current = code_identity()
+        before = {**current, "refinement/report.py": "original-renderer"}
+        execution = self.owner.put(
+            self.cbudget(), "executions", {"identity": {"consumer_code": before}}
+        )
+        directory = self.owner.reports / ("refinement-" + "a" * 64)
+        media = directory / "media/test.wav"
+        media.parent.mkdir(parents=True)
+        media.write_bytes(b"isolated verified media")
+        (directory / "index.html").write_bytes(b"original failed renderer")
+        c = {
+            "path": "media/test.wav",
+            "sha256": hashlib.sha256(media.read_bytes()).hexdigest(),
+            "duration_seconds": 1,
+            "rate": 10,
+            "channels": 1,
+            "gain": 1,
+        }
+        value = {
+            "schema_version": "c03-playback-1",
+            "identity": {},
+            "html_sha256": hashlib.sha256((directory / "index.html").read_bytes()).hexdigest(),
+            "items": [{"clip": c, "label": "fixture", "role": "before", "timeline": "native"}],
+            "summary": {"execution": execution},
+        }
+        original = self.owner.publish(
+            self.cbudget(), directory / "bundle.json", value, immutable=True
+        )
+        native = self.owner.publish(
+            self.cbudget(),
+            self.owner.directory / "native-qa.json",
+            {"passed": True, "bundle_hash": original["record_hash"]},
+            immutable=True,
+        )
+        declaration = {
+            "before_code": before,
+            "consumer_code": current,
+            "allowed_changed_files": ["refinement/report.py"],
+            "original_bundle": (directory / "bundle.json").relative_to(self.root).as_posix(),
+            "original_bundle_hash": original["record_hash"],
+        }
+        write_record(
+            self.root / "manifests/refinement/report-repair.json", declaration, self.cbudget()
+        )
+        fresh = self.owner.directory / "compatibility/fresh.json"
+        write_record(fresh, {"fresh": True}, self.cbudget())
+        with patch("similar_sound_search.retrieval.history.open_snapshot"):
+            result = report.repair({"receipt": str(fresh)}, self.cbudget(), self.owner)
+        self.assertTrue(result["media_byte_identical"])
+        target = self.root / result["report"]
+        self.assertEqual((target.parent / "media/test.wav").read_bytes(), media.read_bytes())
+        self.assertEqual((directory / "index.html").read_bytes(), b"original failed renderer")
+        self.assertEqual(record(self.owner.directory / "native-qa.json"), native)
+        self.assertEqual(record(directory / "bundle.json"), original)
+        view = report.RepairNativeView(self.owner)
+        view.publish(
+            self.cbudget(),
+            self.owner.directory / "native-qa.json",
+            {"passed": True, "bundle_hash": result["bundle_hash"]},
+            immutable=True,
+        )
+        self.assertEqual(record(self.owner.directory / "native-qa.json"), native)
+        self.assertEqual(
+            record(self.owner.directory / "report-repair-native-qa.json")["bundle_hash"],
+            result["bundle_hash"],
+        )
+
+    def test_renderer_repair_rejects_numerical_consumer_changes(self):
+        current = code_identity()
+        declaration = {
+            "before_code": {**current, "refinement/engine.py": "different"},
+            "consumer_code": current,
+            "allowed_changed_files": ["refinement/report.py"],
+        }
+        write_record(
+            self.root / "manifests/refinement/report-repair.json", declaration, self.cbudget()
+        )
+        with self.assertRaisesRegex(InputError, "renderer-only boundary"):
+            report.repair({}, self.cbudget(), self.owner)

@@ -101,4 +101,12 @@ def dispatch(request, budget, owner):
         from . import report
 
         return (report.build if action == "report" else report.verify_native)(budget, owner)
+    if action in {"repair-report", "verify-repaired-native"}:
+        from . import report
+
+        if action == "verify-repaired-native":
+            return report.verify_native(budget, report.RepairNativeView(owner))
+        if not request.get("receipt"):
+            raise InputError("C03 renderer repair requires its fresh current --receipt")
+        return report.repair(request, budget, owner)
     raise InputError("Unknown C03 action: " + action)
