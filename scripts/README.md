@@ -54,3 +54,5 @@ the already-inspected native truth. It retains the closed batch, separates the
 features/scores/queries. Its offline 120s worker uses the same C01 ledger.
 
 `listen-retrieval.ps1` serves the verified C02 bundle on owned loopback 8771; `verify-retrieval-preservation.py` verifies all prior delivery bytes, including C01 staging, allowing only the exact C02 configuration navigation addition.
+
+`listen-refinement.ps1` starts verified C03 playback on loopback 8772. `verify-refinement-preservation.py` checks historical delivery bytes with only the exact C03 config navigation addition allowed.

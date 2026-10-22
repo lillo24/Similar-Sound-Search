@@ -24,3 +24,5 @@
 The CLI imports numerical/decoder libraries only in the bounded worker. Inputs feed candidate records; preparation retains those source records and composes maps back to the original available file. Storage and resource checks are shared across both paths. See [runtime commands and limitations](../docs/RUNTIME.md) and [record fields](../docs/RECORDS.md).
 
 C02 `similar_sound_search/retrieval/` owns exact event supports, capped rank fusion, native overlap consolidation and the C03 shortlist; see its source map.
+
+`similar_sound_search/refinement/` owns C03 audited shortlist import, bounded native timing, atomic evidence, independent accounting and C04 export; see its source map.

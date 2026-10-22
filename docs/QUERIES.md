@@ -248,3 +248,5 @@ charging its own allowance. Its explicit missing-materialization derivative uses
 the same validated recipes and C02-owned feature/output roots. Event/variant
 associations belong to C02 execution metadata, preserving the strict B03 schema
 and unordered mean-example baseline; see [RETRIEVAL.md](RETRIEVAL.md).
+
+C03 reads the exact C02 query revision/materialization under its own accounting and keeps the full 22s Loulou mixture. Explicit missing-derivative materialization uses the same validated B03 boundary with C03-owned roots; it does not create an invented clean cue. See [REFINEMENT.md](REFINEMENT.md).

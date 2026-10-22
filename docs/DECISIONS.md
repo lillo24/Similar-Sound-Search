@@ -162,3 +162,18 @@ and [measured evidence](../reports/C02_RETRIEVAL.md).
 | DEC-065 | Separate all eligible groups, twenty shortlisted groups and ten displayed groups. | C03 receives validated source/native/event references without confusing display limits with retrieval recall. |
 | DEC-066 | Compact metadata references before comparisons, proving producer functions and native grids unchanged. | Preserve 572 existing windows, original failed progress and every retry charge; keep the 1 MiB reader limit and all historical consumer guards. |
 | DEC-067 | Close C02 after one fixed development batch, full legacy equivalence, warm reuse and native/browser QA. | Event support recovery is distinct from ranking improvement; C03 must declare its own audited consumer and budget for refinement. |
+
+## C03 refinement decisions
+
+22 October 2026; [contracts](REFINEMENT.md), [fixed protocol](../manifests/refinement/protocol.json)
+and [delivery evidence](../reports/C03_REFINEMENT.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-068 | Import only the pinned immutable C02 event-multi twenty-group list through a read-only historical view and new C03 audit. | Preserve all original evidence, exclusions and bank membership; never borrow or relabel a closed consumer receipt. |
+| DEC-069 | Refine the first two saved anchors with nine starts within half a second, fixed native width and fixed selecting objective. | Finer placement stays separate from true event boundaries; exact original controls, deterministic rounding/ties and edge opportunities remain visible. |
+| DEC-070 | Preserve song order and every original passage; make refined placements experimental. | Additional opportunities lower minima without demonstrating relevance; unsupported or failed proposals cannot become verified fallback successes. |
+| DEC-071 | Reuse completed C02 development predictions through a separate compact-schema adapter; omit extraction prospectively. | Independent waveform/lag checks precede the one paired batch. B02 failed promotion gates, and the full Loulou mixture has no verified short cue. |
+| DEC-072 | Store bounded native feature bundles with semantic keys and separate producing-code receipts under one finite C03 ledger. | Measure cold/reuse units before expansion, retain earlier reservations and failures, count repeated full source reads, and keep records below 1 MiB. |
+| DEC-073 | Export explicit C04 dependencies, ranks/states, atomic boundaries and accounting ownership. | Unchanged reuse is validated without re-embedding; general invalidation, scheduling, source refresh and garbage collection require C04. |
+| DEC-074 | Repair browser-detected report syntax under a separate declared consumer and fresh C03 receipt, preserving numerical execution and the failed bundle. | Charge byte-identical media copies and new native verification to the same ledger; original build/native-verifier ASTs and numerical modules stay unchanged. Normal Chrome requests in a fresh profile pass all controls; intrusive QA interception attempts remain recorded. |

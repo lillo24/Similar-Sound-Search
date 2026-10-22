@@ -58,3 +58,5 @@ metadata integration proof pins the consuming code and unchanged audio/encoder/
 grid/identity statements, so resume validates existing arrays without relabelling
 or re-embedding them. Development support records reference the same immutable
 encoded membership for row/native maps instead of repeating source descriptors.
+
+C03 now consumes the explicitly pinned `event-multi` shortlist under its own finite allowance and fresh audio/array audit. It preserves original group order/support while refining bounded native placement; see [REFINEMENT.md](REFINEMENT.md). Historical C02 workers/receipts remain closed.
