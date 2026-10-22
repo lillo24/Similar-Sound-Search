@@ -132,9 +132,15 @@ def plan(root, limits, request, previous=None):
 
 def load_plan(owner, ref):
     value = owner.get(ref, "plans")
+    active = contracts.consumer(owner)
+    transition = (
+        None
+        if value["consumer"] == active
+        else contracts.compatible_consumer(owner, value["consumer"], active)
+    )
     if (
         value.get("schema_version") != "c04-plan-1"
-        or value["consumer"] != contracts.consumer(owner)
+        or (value["consumer"] != active and transition is None)
         or value["protocol_hash"] != digest(owner.protocol)
         or value["units"] != graph(value["input"])
     ):
@@ -142,7 +148,12 @@ def load_plan(owner, ref):
     contracts.validate_input(owner, value["input"])
     if owner.get(value["input_ref"], "inputs")["value"] != value["input"]:
         raise InputError("C04 plan/input revision mismatch")
-    return value
+    return {
+        **value,
+        "declared_consumer": value["consumer"],
+        "consumer": active,
+        "consumer_transition": transition,
+    }
 
 
 def create_job(owner, budget, plan_ref, name):
@@ -224,6 +235,15 @@ def result(root, result_ref):
         raise InputError("C04 result is not a complete immutable publication")
     owner.get(value["snapshot"], "snapshots")
     return value
+
+
+def membership(root, ref):
+    """Read either immutable legacy or compact membership without exposing packing."""
+    from .records import expand
+
+    owner = Context(root)
+    value = owner.get(ref, "unit-results")
+    return expand(value["output"])
 
 
 def inventory(root, limit=256):

@@ -3,7 +3,7 @@
   "python_module": "similar_sound_search.processing.api",
   "dispatcher": "similar_sound_search.cli.execute",
   "reference": {"path": "contained immutable record path", "record_hash": "canonical SHA256; keep opaque"},
-  "operations": ["import_sources", "plan", "run", "status", "resume", "cancel", "result", "playback", "events", "inventory"],
+  "operations": ["import_sources", "plan", "run", "status", "resume", "cancel", "result", "membership", "playback", "events", "inventory"],
   "schemas": {
     "c04-input-1": ["label", "sources", "banks", "query", "policy", "packing", "refinement", "historical"],
     "c04-plan-1": ["input_ref", "input", "representation", "consumer", "protocol_hash", "units", "previous", "tombstones", "changed_dependencies", "estimates", "blockers"],
@@ -16,7 +16,7 @@
   },
   "states": ["pending", "running", "in_progress", "complete", "failed", "blocked", "cancelled"],
   "error": ["step", "target", "unit_id", "error_type", "message", "recovery"],
-  "readers": {"membership": "snapshot.memberships -> unit-results.output.rows", "rows": "key/native_bounds/row/vector_sha256/bundle/source_key; cache.vectors validates bytes", "playback": "api.playback(job): immutable path/bundle and exact native C03 items", "events": "bounded cursor; poll status for transitions of current attempt"},
+  "readers": {"membership": "api.membership(root, snapshot.memberships[source]) expands full or c04-compact-rows-1 references", "rows": "key/native_bounds/row/vector_sha256/bundle/source_key; cache.vectors validates bytes", "playback": "api.playback(job): immutable path/bundle and exact native C03 items", "events": "bounded cursor; poll status for transitions of current attempt"},
   "semantics": {"run": "explicit plan/stable name; one shared pool", "resume": "same plan, audit committed outputs, remaining work", "cancel": "stop admission; bounded active unit finishes; charges retained", "last_complete": "separate from current incomplete/failed request", "removal": "snapshot tombstones; no deletion", "gc": "unsupported"},
   "defaults": {"audio": "original", "retrieval": "legacy-mean", "pitch": "off"},
   "experimental": ["event-legacy", "event-multi", "historical C03 timing refinement"],

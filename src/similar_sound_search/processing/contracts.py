@@ -1,8 +1,12 @@
 """Exact semantic rows, classified consumers and strict explicit input revisions."""
 
+import ast
+import hashlib
+from pathlib import Path
+
 from ..evaluation.artifacts import record
 from ..indexing.banks import original_signal, sample_identity
-from ..search.contracts import code_identity, grid
+from ..search.contracts import code_identity, grid, source_function_identity
 from ..storage import InputError, digest
 
 INHERITED_NUMERICAL = (
@@ -34,6 +38,98 @@ INHERITED_NUMERICAL = (
 def source_key(source):
     # File bytes remain part of identity even for equal PCM; ancestry/labels do not.
     return digest(sample_identity(original_signal(source)))
+
+
+def consumer_reference(proof):
+    return dict(
+        declaration_hash=proof["declaration_hash"],
+        numerical_hash=proof["numerical_hash"],
+        code_hash=digest(proof["code"]),
+        version=proof.get("version", "c04-consumer-1"),
+    )
+
+
+def compatible_consumer(owner, previous, current):
+    """Only the exact declared metadata codec/coordinator transition is accepted."""
+    path = owner.root / "manifests/processing/metadata-compatibility.json"
+    if not path.exists():
+        return None
+    proof = record(path)
+    if (
+        proof.get("schema_version") != "c04-metadata-compatibility-1"
+        or proof["before_consumer"] != previous
+        or proof["after_code"] != current["code"]
+        or proof["after_numerical_hash"] != current["numerical_hash"]
+    ):
+        return None
+    allowed = {
+        "processing/api.py",
+        "processing/job.py",
+        "processing/contracts.py",
+        "processing/engine.py",
+    }
+    declaration = record(owner.root / "manifests/processing/consumer.json")
+    if declaration.get("metadata_compatibility") != proof["record_hash"]:
+        raise InputError("C04 metadata compatibility: declaration binding changed")
+    if (
+        {k for k in previous["code"] if previous["code"][k] != current["code"].get(k)} != allowed
+        or set(current["code"]) - set(previous["code"]) != {"processing/records.py"}
+        or proof["changed_files"] != sorted(allowed)
+        or proof["numerical_calls_unchanged"] is not True
+    ):
+        raise InputError("C04 metadata compatibility: unclassified drift")
+    base = Path(__file__).resolve().parents[1]
+    for relative, expected in proof["unchanged_functions"].items():
+        original = proof["original_sources"][relative]
+        if (
+            hashlib.sha256(original.replace("\r\n", "\n").encode()).hexdigest()
+            != previous["code"][relative]
+        ):
+            raise InputError("C04 metadata compatibility: original source differs")
+        if (
+            source_function_identity(original, expected) != expected
+            or source_function_identity((base / relative).read_text(), expected) != expected
+        ):
+            raise InputError("C04 metadata compatibility: numerical/reservation function changed")
+
+    def calls(source):
+        return sorted(
+            ast.dump(n, include_attributes=False)
+            for n in ast.walk(ast.parse(source))
+            if isinstance(n, ast.Call)
+            and isinstance(n.func, ast.Attribute)
+            and isinstance(n.func.value, ast.Name)
+            and n.func.value.id == "engine"
+        )
+
+    if calls(proof["original_sources"]["processing/job.py"]) != calls(
+        (base / "processing/job.py").read_text()
+    ):
+        raise InputError("C04 metadata compatibility: numerical arguments changed")
+
+    def scoring_body(source):
+        node = next(
+            n
+            for n in ast.parse(source).body
+            if isinstance(n, ast.FunctionDef) and n.name == "score"
+        )
+        node.body = [
+            n
+            for n in node.body
+            if not (
+                isinstance(n, ast.Assign)
+                and any(isinstance(t, ast.Name) and t.id == "identity" for t in n.targets)
+            )
+        ]
+        return hashlib.sha256(ast.dump(node, include_attributes=False).encode()).hexdigest()
+
+    for text in (
+        proof["original_sources"]["processing/engine.py"],
+        (base / "processing/engine.py").read_text(),
+    ):
+        if scoring_body(text) != proof["unchanged_score_body"]:
+            raise InputError("C04 metadata compatibility: scoring computation changed")
+    return proof["record_hash"]
 
 
 def row_identity(source, bounds, desc):

@@ -7,7 +7,7 @@ from ..matchers.job import offline_network
 from ..matchers.runner import memory_check
 from ..resources import CatalogueBudget
 from ..storage import InputError, ResourceError, canonical, project_lock
-from . import api, engine
+from . import api, contracts, engine, records
 from .context import Context
 
 
@@ -23,7 +23,7 @@ def output(owner, state, unit):
     value = owner.get(state["completed"][unit["unit_id"]], "unit-results")
     if value["unit"] != unit:
         raise InputError("C04 committed unit/dependency membership differs")
-    return value["output"]
+    return records.expand(value["output"])
 
 
 def collect(owner, state, plan, kind):
@@ -93,7 +93,7 @@ def step(request, budget, owner, fault=lambda _: None):
         sequence=max([state["attempts"], *prior]) + 1,
         state="running",
         reservation=request["reservation"],
-        consumer=plan["consumer"],
+        consumer=contracts.consumer_reference(plan["consumer"]),
         started_monotonic=time.monotonic(),
     )
     attempt_path = (
@@ -111,7 +111,7 @@ def step(request, budget, owner, fault=lambda _: None):
             job=job_ref,
             unit_id=unit["unit_id"],
             attempt=attempt["sequence"],
-            consumer=plan["consumer"],
+            consumer=contracts.consumer_reference(plan["consumer"]),
         ),
     )
     commit = unit_path(owner, job_ref, unit)
@@ -121,7 +121,7 @@ def step(request, budget, owner, fault=lambda _: None):
             saved = owner.get(value["result"], "unit-results")
             if saved["unit"] != unit:
                 raise InputError("C04 orphan membership unit differs")
-            answer = saved["output"]
+            answer = records.expand(saved["output"])
             # Arrays must reopen before adopting membership after an interrupted advance.
             if unit["kind"] in {"features", "query"}:
                 from . import cache
@@ -175,6 +175,7 @@ def step(request, budget, owner, fault=lambda _: None):
                 historical = collect(owner, state, plan, "refinement").get("historical")
                 value = dict(
                     schema_version="c04-result-1",
+                    consumer_transition=plan.get("consumer_transition"),
                     state="complete",
                     plan=job["plan"],
                     input_ref=plan["input_ref"],
@@ -190,7 +191,9 @@ def step(request, budget, owner, fault=lambda _: None):
                 fault("final")
             else:
                 raise InputError("C04 unsupported executable unit kind")
-            result_ref = owner.put(budget, "unit-results", dict(unit=unit, output=answer))
+            result_ref = owner.put(
+                budget, "unit-results", dict(unit=unit, output=records.compact(answer))
+            )
             owner.publish(
                 budget,
                 commit,

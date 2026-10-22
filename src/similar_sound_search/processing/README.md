@@ -16,3 +16,6 @@ DSP and ranking contracts retain their earlier owners; D01 is not implemented.
 
 `runner.py` owns a single actual Windows worker process with preserved virtualenv
 paths/prefix and a hard deadline, avoiding the extra venv launcher PID.
+
+`records.py` losslessly interns repeated native-row reference fields. The public
+membership reader supports both earlier full records and the compact format.

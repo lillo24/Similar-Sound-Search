@@ -498,6 +498,48 @@ class ProcessingTests(unittest.TestCase):
         self.assertEqual(len(value["files"]), 2)
         self.assertFalse(value["deletion_authorized"])
 
+    def test_lossless_compact_rows_and_legacy_read(self):
+        from similar_sound_search.processing import records
+
+        ready = self.run_plan()
+        manifest = self.owner.get(ready["job"], "jobs")
+        plan = api.load_plan(self.owner, manifest["plan"])
+        _, state = job.progress(self.owner, ready["job"])
+        unit = next(u for u in plan["units"] if u["kind"] == "features")
+        raw = self.owner.get(state["completed"][unit["unit_id"]], "unit-results")["output"]
+        self.assertIn("row_references", raw)
+        full = records.expand(raw)
+        self.assertEqual(records.expand(records.compact(full)), full)
+        self.assertEqual(records.expand(full), full)
+        self.assertEqual(api.membership(self.root, state["completed"][unit["unit_id"]]), full)
+        producer = next((self.owner.directory / "producers").glob("*.json"))
+        self.assertNotIn("code", record(producer)["consumer"])
+        scores = job.collect(self.owner, state, plan, "score")
+        features = job.collect(self.owner, state, plan, "features")
+        for source, value in scores.items():
+            rows = features[source]["rows"]
+            self.assertEqual(value["identity"]["candidate_rows"], len(rows))
+            self.assertEqual(
+                value["identity"]["candidate_digest"],
+                digest([[r["key"], r["vector_sha256"]] for r in rows]),
+            )
+
+    def test_compact_schema_and_conflicting_index_fail(self):
+        from similar_sound_search.processing import records
+
+        with self.assertRaisesRegex(InputError, "schema"):
+            records.expand(dict(row_references=dict(schema_version="future")))
+        with self.assertRaisesRegex(InputError, "index"):
+            records.expand(
+                dict(
+                    row_references=dict(
+                        schema_version="c04-compact-rows-1",
+                        bundles=[],
+                        rows=[["a", [0, 1], 0, "b", 0]],
+                    )
+                )
+            )
+
     def test_clean_independent_rebuild(self):
         ready = self.run_plan()
         result = validation.clean_check(self.budget, self.owner, self.root / ready["job"]["path"])

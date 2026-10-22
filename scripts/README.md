@@ -68,3 +68,7 @@ preserved C03 playback on foreground loopback 8773.
 
 `declare-processing-repair.py` is the one explicit correctness-repair proof,
 preserving the initial consumer and all spent work; it refuses an existing repair.
+
+`declare-processing-metadata-compatibility.py` pins the exact metadata-only upgrade
+and unchanged numerical/reservation proofs. It permits the same paused plan to
+resume under the declared new consumer, without replacing old records or charges.

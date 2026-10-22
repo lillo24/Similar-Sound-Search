@@ -124,3 +124,13 @@ Windows workers bypass the venv launcher using the same resolved virtualenv path
 and prefix, so the deadline targets the actual worker PID. No dependency changes.
 Old plans keep their exact consumer binding; new work uses an explicit new plan.
 Earlier successful evidence and the first clean timeout remain retained/charged.
+
+The later `metadata-compatibility.json` declaration authorizes only an exact
+coordinator/metadata upgrade: future attempts reference the immutable consumer,
+native row references intern bundle/source keys, and scores bind the digest/count
+of the complete ordered candidate key/byte transcript. Arrays, feature identities,
+scoring computation, numerical calls and allowance functions are unchanged, with
+source/AST proofs checked at consumption. Old records and charges remain intact.
+The same paused plan resumes after revalidating committed outputs; unknown drift
+still blocks. `api.membership(root, ref)` reads both full and compact memberships,
+so D01 does not need private packing details.

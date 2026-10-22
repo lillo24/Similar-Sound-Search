@@ -18,7 +18,7 @@ from similar_sound_search.processing.commands import admin
 from similar_sound_search.processing.context import Context
 from similar_sound_search.processing.contracts import row_key
 from similar_sound_search.resources import CatalogueBudget, load_limits
-from similar_sound_search.storage import project_lock
+from similar_sound_search.storage import InputError, project_lock
 
 root = Path.cwd()
 owner = Context(root)
@@ -41,7 +41,18 @@ def run_case(name, spec, previous=None, clean=False, pilot=False):
             if checked.exists():
                 save(name + "-clean-first-consumer.json", record(checked))
     before = owner.pool()
-    plan = api.plan(root, limits, spec, previous)
+    plan = None
+    if summary.exists():
+        old = record(summary)
+        try:
+            if api.load_plan(owner, old["plan"])["input"] == spec:
+                plan = old["plan"]
+                save(name + "-before-resume.json", old)
+        except InputError:
+            # Only a declared compatible old plan may resume; other changes create
+            # a new explicit revision/job under the same pool.
+            pass
+    plan = plan or api.plan(root, limits, spec, previous)
     if summary.exists():
         old = record(summary)
         old_plan = owner.get(old["plan"], "plans")

@@ -102,8 +102,9 @@ def score(budget, owner, plan, source, feature_result, query_result):
     q = query_result["query"]
     query_hash = query_result["feature_hash"]
     identity = dict(
-        version="c04-source-distances-1",
-        candidate=[[r["key"], r["vector_sha256"]] for r in refs],
+        version="c04-source-distances-2",
+        candidate_rows=len(refs),
+        candidate_digest=digest([[r["key"], r["vector_sha256"]] for r in refs]),
         query_features=query_hash,
         numerical_contract=plan["consumer"]["numerical_hash"],
         banks=[b["grid"] for b in plan["input"]["banks"]],

@@ -9,3 +9,7 @@ C04 roots; public reports summarize actual evidence.
 
 `consumer-repair.json` and `consumers/` retain the initial C04 consumer and the
 explicit Windows-process/ancestry/error repair, with unchanged encoding/score proof.
+
+`metadata-compatibility.json` pins the lossless reference/proof/scoring-identity
+compaction. Runtime checks its exact before/after source maps and numerical AST
+proofs before an old plan may resume. All earlier declarations remain in `consumers/`.
