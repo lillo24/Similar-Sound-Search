@@ -1,0 +1,19 @@
+{
+  "schema_version": "c04-processing-1",
+  "max_sources": 80,
+  "rows_per_bundle": 128,
+  "policy": {
+    "max_job_seconds": 3600,
+    "max_workers": 256,
+    "max_read_audio_seconds": 90000,
+    "max_feature_windows": 4096,
+    "max_processed_window_seconds": 20000,
+    "max_feature_bytes": 33554432,
+    "max_query_jobs": 64,
+    "max_clips": 64,
+    "max_clip_bytes": 134217728,
+    "max_metadata_bytes": 134217728,
+    "max_preparation_bytes": 67108864,
+    "max_managed_output_bytes": 536870912
+  }
+}
