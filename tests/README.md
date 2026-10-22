@@ -77,3 +77,9 @@ retaining case/arm reservations and charging subsequent metadata writes.
 `test_retrieval.py` verifies C02 scalar/event recovery, source ownership, complete-winner compatibility, support/context grouping, partial/missing banks, compact records, interruption/reuse and cumulative accounting with isolated fixtures.
 
 `test_refinement.py` owns isolated C03 native geometry, scalar scoring, lineage, semantic keys, exact controls, atomic feature recovery, corruption, finite budgets and publication/lock boundaries.
+
+`test_processing.py` uses disposable WAVs, fake encoders and pools for graphs/deltas,
+row reuse across packing, scalar clean rebuilds, exclusions, schemas/lineage/consumer
+drift, transaction faults, actual process-lock contention/termination, retained
+reservations, settlement replay, cancellation, storage limits and last-complete
+isolation. Frozen-model delivery scenarios run separately.

@@ -322,6 +322,34 @@ def parser():
         "--pilot", action="store_true", help="one bounded worker; retain progress"
     )
     refinement.add_argument("--port", type=int, default=8772)
+    processing = subcommands.add_parser("processing", help="C04 incremental jobs and D01 API")
+    processing.add_argument(
+        "processing_action",
+        choices=(
+            "plan",
+            "run",
+            "resume",
+            "status",
+            "cancel",
+            "result",
+            "inventory",
+            "known-answer",
+            "preflight",
+            "import",
+            "fixtures",
+            "clean-check",
+            "derive-query",
+            "serve",
+        ),
+    )
+    processing.add_argument("input", type=Path, nargs="?")
+    processing.add_argument("--job", help="stable new job name; all names share the C04 pool")
+    processing.add_argument("--revision", help="exact B03 revision for an owned derivative")
+    processing.add_argument("--previous", type=Path, help="explicit immutable previous plan")
+    processing.add_argument(
+        "--pilot", action="store_true", help="one bounded worker then retain progress"
+    )
+    processing.add_argument("--port", type=int, default=8773)
     return command
 
 
@@ -343,6 +371,8 @@ def _worker(request):
                 "indexing_step",
                 "retrieval_step",
                 "refinement_step",
+                "processing_step",
+                "processing_admin",
             }
             else Budget
         )
@@ -408,6 +438,10 @@ def _worker(request):
             result = worker(request, budget)
         elif request["command"] == "retrieval_step":
             from .retrieval.job import worker
+
+            result = worker(request, budget)
+        elif request["command"] in {"processing_step", "processing_admin"}:
+            from .processing.commands import worker
 
             result = worker(request, budget)
         else:
@@ -485,6 +519,8 @@ def main(argv=None):
             )
         if args.command == "refinement" and args.report is None:
             args.report = root / "reports/local/c03/last-command.json"
+        if args.command == "processing" and args.report is None:
+            args.report = root / "reports/local/c04/last-command.json"
         if args.command == "retrieval" and args.report is None:
             args.report = root / "reports/local/c02/last-command.json"
         default_report = (
@@ -502,6 +538,8 @@ def main(argv=None):
             report_candidate = contained(report_candidate, root / "reports/local/c02")
         if args.command == "refinement":
             report_candidate = contained(report_candidate, root / "reports/local/c03")
+        if args.command == "processing":
+            report_candidate = contained(report_candidate, root / "reports/local/c04")
         if report_candidate.suffix.lower() != ".json":
             raise InputError("report: expected owned .json path under reports/local")
         report = report_candidate
@@ -512,6 +550,12 @@ def main(argv=None):
             for key, value in vars(args).items()
         }
         request.update({"root": str(root), "limits": limits})
+        if args.command == "processing":
+            from .processing.commands import main as processing_main
+
+            # C04 cancellation/status have their own locks and must remain available
+            # while the parent waits for a bounded worker under the coordinator lock.
+            return processing_main(args, request, execute)
         if args.command == "search" and args.search_action == "serve":
             from .search.report import serve
 
@@ -582,6 +626,8 @@ def main(argv=None):
             with project_lock(root, ".c02-worker.lock"):
                 pass
             with project_lock(root, ".c03-worker.lock"):
+                pass
+            with project_lock(root, ".c04-worker.lock"):
                 pass
             Budget(root, limits).reserve(65536)
             if args.command == "catalogue":

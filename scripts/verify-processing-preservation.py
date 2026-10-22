@@ -6,28 +6,54 @@ import sys
 from pathlib import Path
 
 OWNED = (
-    "data/runs/processing/", "data/features/processing/", "data/indexes/processing/",
-    "data/audio/processing/", "reports/local/c04/", "manifests/processing/",
+    "data/runs/processing/",
+    "data/features/processing/",
+    "data/indexes/processing/",
+    "data/audio/processing/",
+    "reports/local/c04/",
+    "manifests/processing/",
 )
-NAVIGATION = "\n## C04 processing\n\n`processing.json` fixes one cumulative pool for every explicit revision, job and retry.\n[PROCESSING.md](../docs/PROCESSING.md) owns the dependency table, transactional API,\nread-only adoption and D01 handoff. No automatic garbage collection is provided.\n"
+NAVIGATION = """
+## C04 processing
+
+`processing.json` fixes one cumulative pool for every explicit revision, job and retry.
+[PROCESSING.md](../docs/PROCESSING.md) owns the dependency table, transactional API,
+read-only adoption and D01 handoff. No automatic garbage collection is provided.
+"""
 
 
 def inventory(root):
-    paths = [p for name in ("data", "manifests", "reports/local", "config")
-             for p in (root / name).rglob("*")]
+    paths = [
+        p
+        for name in ("data", "manifests", "reports/local", "config")
+        for p in (root / name).rglob("*")
+    ]
     paths += list(root.glob("*.mp3"))
-    paths += [root / p for p in ("AGENTS.md", ".gitattributes",
-              "src/similar_sound_search/search/pitch.py",
-              "src/similar_sound_search/matchers/acoustic.py",
-              "src/similar_sound_search/matchers/efficientat.py",
-              "src/similar_sound_search/matchers/efficientat_model.py")]
+    paths += [
+        root / p
+        for p in (
+            "AGENTS.md",
+            ".gitattributes",
+            "src/similar_sound_search/search/pitch.py",
+            "src/similar_sound_search/matchers/acoustic.py",
+            "src/similar_sound_search/matchers/efficientat.py",
+            "src/similar_sound_search/matchers/efficientat_model.py",
+        )
+    ]
     result = {}
     for path in sorted(set(paths)):
         name = path.relative_to(root).as_posix()
-        if not path.is_file() or name.startswith(OWNED) or name in {
-            "config/processing.json", "data/runs/.c04-worker.lock",
-            "data/runs/.c04-control.lock", "data/runs/.c04-coordinator.lock",
-        }:
+        if (
+            not path.is_file()
+            or name.startswith(OWNED)
+            or name
+            in {
+                "config/processing.json",
+                "data/runs/.c04-worker.lock",
+                "data/runs/.c04-control.lock",
+                "data/runs/.c04-coordinator.lock",
+            }
+        ):
             continue
         h = hashlib.sha256()
         with path.open("rb") as stream:
@@ -47,7 +73,9 @@ def main():
             raise RuntimeError("C04 preservation baseline already exists")
         value = inventory(root)
         before.write_text(json.dumps(value, indent=2), encoding="utf-8")
-        (directory / "config-readme-before.md").write_bytes((root / "config/README.md").read_bytes())
+        (directory / "config-readme-before.md").write_bytes(
+            (root / "config/README.md").read_bytes()
+        )
         print(json.dumps({"captured": len(value)}))
         return
     old = json.loads(before.read_text(encoding="utf-8"))
@@ -64,11 +92,18 @@ def main():
             changed.remove("config/README.md")
             allowed.append("exact C04 configuration navigation addition")
     added = sorted(set(now) - set(old))
-    value = {"state": "verified" if not changed and not added else "failed",
-             "files": len(old), "unchanged": len(old) - len(changed) - len(allowed),
-             "changed_or_missing": changed, "unexpected_additions": added,
-             "allowed": allowed, "c01_denied_staging": "inventoried and retained"}
-    (directory / "preservation-after.json").write_text(json.dumps(value, indent=2), encoding="utf-8")
+    value = {
+        "state": "verified" if not changed and not added else "failed",
+        "files": len(old),
+        "unchanged": len(old) - len(changed) - len(allowed),
+        "changed_or_missing": changed,
+        "unexpected_additions": added,
+        "allowed": allowed,
+        "c01_denied_staging": "inventoried and retained",
+    }
+    (directory / "preservation-after.json").write_text(
+        json.dumps(value, indent=2), encoding="utf-8"
+    )
     print(json.dumps(value, indent=2))
     if changed or added:
         raise SystemExit(1)
