@@ -1,0 +1,113 @@
+# C04 — Incremental and resumable processing
+
+Implement **C04 only** in https://github.com/lillo24/Similar-Sound-Search. Make indexing and its dependent search work incremental, versioned and safely resumable. Reuse verified outputs, compute only missing or invalidated work, and publish complete immutable results without restarting whole pipelines. Deliver working commands, measured cold/warm/delta/recovery evidence and a concrete D01 interface handoff through the repository's PR/merge workflow. This is an implementation task, not another planning exercise.
+
+The [roadmap](https://docs.google.com/document/d/14YC-w8eGEEj8eKTKCx7Fn8L3bOMNx1bjRdPjW1TRR-s), read during C01 prompt preparation on 20 October 2026, assigns incremental/resumable processing to C04. Full product UI, packaging and the first required user listening review remain D01–D04. Proceed autonomously within this scope; no new labels, listening gate, quality sweep or routine technical approval is required.
+
+## Starting point and preserved contracts
+
+C03 merged in [PR #24](https://github.com/lillo24/Similar-Sound-Search/pull/24), `9140a76cc46efd75c4daebd0525923f3e8128d5c`. Reinspect current `main`, applicable `AGENTS.md`, project brief, decisions/status, source maps, `reports/C03_REFINEMENT.md`, its JSON evidence, `docs/REFINEMENT.md`, and the C01/C02/B03 handoffs before editing.
+
+There are **72 recordings / 72 groups**, with **44,025 legacy original passages** and **10,914 experimental long original passages**. A03 remains partial against 120 requested recordings. Short-window and region-only HPSS banks remain partial diagnostics. Original audio, legacy mean retrieval and pitch off remain defaults; event retrieval, separation and refinement remain opt-in. Preserve frozen representation/checkpoint/preprocessing, native sample mappings, source/cue exclusions, duplicate groups, deterministic ties and legacy results.
+
+C03 refined all twenty shortlisted groups without changing song order. Nineteen of forty anchors moved. Its controlled comparison had four improved, three regressed and fourteen unchanged interval pairs, with no matched-anchor coverage gain. This supports an experimental timing option, not a quality promotion. Human sound similarity, Loulou relevance and master/version alignment remain unverified.
+
+The prompt-authoring review independently passed **315 offline tests in 37.566s**, Ruff lint/format, pinned core setup/dependency checks, smoke and `refinement known-answer` on Linux/Python 3.12.14 with regression numerical threads one. Private inference and Windows/native/HTTP/Chrome playback were not repeated. C03 records those delivery checks separately; no hosted CI was configured at review.
+
+## 1. Add a focused processing owner over existing boundaries
+
+Inspect `indexing/{banks,build,reader,context}.py`, `retrieval/{engine,history,fusion,context}.py`, `refinement/{context,importing,geometry,engine,job,report}.py`, B03 materialization/features, `events/compatibility.py`, search contracts/sources/ranking, `storage.py`, resource budgets and `catalogue/transfer.Ledger`. Add a focused processing package and source map. Keep DSP, representation, ranking and historical readers with their existing owners; use narrow adapters rather than copying whole stage implementations.
+
+The current stages already recover interrupted units, but their delivery jobs bind one fixed execution/protocol and reject changed inputs. C04 must support **successive explicit input revisions and multiple jobs within one allowance**, not merely wrap the old resume commands. Implement an end-to-end path from an explicit local-source population and bank policy to index snapshot, saved-query search and optional existing refinement. Support adoption of historical artifacts as well as producing new original-audio rows. No new model, dependency, database, distributed scheduler, daemon or service is needed.
+
+Expose documented Python and CLI operations for **plan, run, status, resume and cooperative cancellation**, with equivalent naming if the repository has a better convention. Accept explicit immutable input references; resolve convenience locators once and persist their hashes. A plan reports validated reuse candidates, missing work, invalidation reasons, dependencies, estimated costs and blockers. Distinguish metadata-only estimates from source/array verification still required. Planning/status must not start inference or silently mutate historical data.
+
+Use a deterministic dependency graph with bounded executable units. Separate semantic outputs from execution IDs, attempts, accounting and consumer proofs. Stable ordering must not depend on directory enumeration, timestamps or process scheduling. Make progress and failures machine-readable for D01, including requested versus completed work and remaining allowance. Unsupported transforms or schemas are explicit outcomes, not substituted originals or successful empty results.
+
+## 2. Define precise cache dependencies and invalidation
+
+Document a versioned dependency table before implementation. At minimum, cover source validation, preparation, native feature rows, bank membership/snapshots, query materialization/features, per-source scores, population-dependent aggregation/shortlists, optional refinement, and playback/report artifacts.
+
+| Change | Required behavior |
+| --- | --- |
+| Source bytes, canonical PCM, decoder/preprocessing, native interval or representation | Validate the changed dependency; invalidate affected feature descendants. Reuse other sources' verified rows. |
+| Added or removed source/group, duplicate membership or query/cue exclusion | Publish a new population snapshot; recompute eligibility and complete-population aggregation. Preserve reusable unaffected features. |
+| Window policy or shard/batch packing | Reuse exact compatible native rows; encode missing intervals. Packing alone must not force re-embedding. |
+| Query audio, selected intervals, pitch/transform/cue recipe | Recompute affected query artifacts and score descendants; do not re-embed unchanged candidate banks. |
+| Event association, objective, aggregation or refinement policy | Recompute affected scoring/selection descendants; preserve compatible raw features and original evidence. |
+| Display label, report layout or playback context | Rebuild affected metadata/rendering/clips and their proofs; do not redo numerical inference. |
+
+Include source hash/canonical PCM, rate/channels/frame count, decoder/preparation semantics, exact native support, representation/checkpoint/dimension, and relevant transform/cue/map dependencies in feature identity. Keep provenance, identity/version evidence, exclusions and rights metadata bound separately where they do not change samples. Renaming a label must not create new features; changing ancestry must still affect exclusion. File path, size and modification time alone are never sufficient freshness evidence. Do not introduce unproven cross-file or cross-decoder equivalence to increase hit rates.
+
+Create compact semantic-row references to validated array bundles. C01 shard IDs include ordered bounds; C03 bundle identity includes the ordered set of missing bounds. A cache keyed only by these whole bundles would re-embed the same interval when batching changes. C04 must resolve an exact compatible row independently of packing, while retaining original bundle hash, row index, native membership and producing proof. Do not invent historical row IDs, relabel old producers, rewrite arrays, or create thousands of high-overhead single-vector blobs. Conflicting bytes for one semantic identity fail visibly.
+
+Preserve historical full-package `code_identity()` checks and protected compatibility guards. They are not semantic feature keys, and removing them is not a cache fix. Declare a C04 consumer with scoped, versioned compatibility evidence for reused primitives and artifacts. A renderer/coordinator edit can reuse numerical bytes only after proving the relevant numerical contracts unchanged. Unknown or unclassified implementation drift must block reuse or require explicitly declared new work; no wildcard acceptance, mtime shortcut or automatic replacement of old hashes.
+
+C02 event credits rank over **all eligible groups in each complete bank**. Population changes can alter every group's rank even when its local distances are unchanged. Reuse validated per-source numerical support where valid, but recompute population-dependent ranks, fusion, overlap/caps and shortlist membership. Do not rerank only the old twenty, reuse a stale top ten, or equate a bank policy ID with an immutable population snapshot. Preserve legacy mean scoring and all exclusion/tie rules.
+
+## 3. Adopt historical results without reopening closed work
+
+Use read-only historical views with exact schema, containment, hash, membership and native-row validation, and a fresh C04-owned consumer audit. Metadata hash consistency alone does not establish correct array/audio semantics. Charge actual validation reads in C04. Keep original producer, numerical consumer and later report consumer distinguishable.
+
+Pin the real chain explicitly:
+
+- C01 snapshot: `d6c54710786acdb584e92d2cba25491eb643c996fa622e3194d1b9381f659f87`.
+- C02 execution: `a1390a76b77c76aa53c3c97d6adfd5dc5ed38b5f0e9ad9ad2bf890f7a0554d67`; experimental arm `event-multi`, with legacy output preserved separately.
+- C03 numerical execution: `339fa84d523c457ab10c099be4feeb13b220d29fec995c31eed12fae4a23d98d`; schema `c03-c04-refinement-1`, referencing twenty `c03-c04-group-1` results separately from ten displayed songs.
+- C03 repaired playback bundle: `b7c1bae8c55f488883a599d4486b85d382b6d66eecabc6bbf028871e4ae48aee`, located through `data/runs/refinement/report.json`; its declaration is `manifests/refinement/report-repair.json`, with a separate later receipt/native proof.
+
+Read current committed declarations for full bank/query/representation identities. Preserve all original C02 representatives, C03 selected anchors/local alternatives, objectives, native scored/context intervals, states and ranks. Exact row/byte/interval identity remains exact; C03's documented single-row versus whole-shard BLAS audit uses `rtol=0, atol=2e-15`. Do not loosen tolerances or replace ranking/tie semantics to make reuse pass.
+
+Historical arrays, ledgers, audits, configurations, reports and closed commands remain unchanged. C04's own producer may invoke reusable numerical functions under new ownership, but must not call closed C01/C02/C03 workers, replenish their allowances, or rewrite their execution/progress records. Reuse original arrays by reference rather than duplicating the catalogue into a new namespace. If a necessary saved query derivative is absent, use B03's validated recipe boundary with C04-owned materialization and charges.
+
+## 4. Make recovery and publication transactional
+
+Persist immutable plans and dependency references, then durably reserve work before execution. Implement explicit pending/running/committed/failed/cancelled or equivalent states and stable unit IDs. Keep attempts and actionable errors without overwriting prior evidence. An unchanged resume validates committed outputs and runs only remaining eligible units; changed inputs create a new plan with an explained reuse/invalidation relationship.
+
+Publish each verified array before its immutable membership/result, then advance progress and finally publish the complete snapshot/execution. Readers must never see a partial array or mixed old/new membership as a complete result. Use atomic publication on supported Windows and Linux filesystems, with validation on reopen. Keep the last complete snapshot usable, but report a failed or incomplete newer request explicitly rather than returning the old snapshot as that request's success.
+
+Recover crashes at reservation, temporary write, array-before-membership, membership-before-progress and final-publication boundaries. A valid orphaned completed bundle may be adopted after verification and accounting reconciliation; a partial/corrupt bundle is not a cache hit. Preserve diagnostics and history. Do not blindly rerun every unit or erase a whole cache to repair one failure. Never overwrite a corrupted historical artifact in place.
+
+Hold ownership/locking across claim, reservation and publication transitions so two processes cannot execute or settle the same attempt. Preserve numerical concurrency one. Existing OS locks release on crash; a remaining lock file is not by itself a stale live lock. Test actual contention and interrupted owners on supported platforms. Do not steal an active lock, kill unrelated processes or remove another job's files. Windows sharing/replace failures must retain a recoverable state.
+
+Cancellation stops admission of new units and preserves committed work and charges; document bounded handling of an active worker. Resume retains the same plan and cumulative allowance. Budget exhaustion is a resumable or explicitly blocked state, not an automatic retry loop. Guarantee single publication of verified outputs, not an unsupported claim that computation can never repeat after an unobservable crash. Conservatively retain uncertain reservations and show them separately from measured usage; settle each attempt at most once.
+
+Source removal means new snapshot membership/tombstones, not deletion of source files or old snapshots. Provide a bounded read-only cache inventory showing owners, references, retained/obsolete outputs and bytes. **Automatic garbage collection and destructive cleanup are outside this delivery.** Existing history remains reproducible; no cache clearing, force/reset option or job rename may replenish funds.
+
+## 5. Prove cold, warm, delta and interrupted behavior
+
+Predeclare one finite engineering scenario sequence and expected affected units before running it. This is a correctness/cost comparison, not a new acoustic-quality experiment. Use small project-generated original WAV fixtures in a separate namespace for additions/replacements/removals; never mutate or enlarge the frozen 72-recording discovery population. Exercise the real indexing/feature/search path with the frozen representation for a bounded fixture set. Fake encoders are useful for isolated fault tests but cannot be the only end-to-end evidence.
+
+Demonstrate a cold build, unchanged warm run, one added source, one replaced source, one removed source, a changed query, changed event/objective metadata, changed window/shard packing, and label/report-only changes. Include model/preprocessing or incompatible-code invalidation tests without downloading another model. Show exact reused/created/invalidated units and why. Warm execution must perform required validation while making **zero new feature encodes**; report validation cost instead of calling the run free.
+
+For each changed population/query, compare incremental results with a small independently rebuilt clean result using the same declared policy and inputs. Compare semantic row membership/bytes, native maps, exclusions, complete group summaries, order, shortlist and optional refinement outputs. Keep execution IDs, attempt timing and provenance differences separate from semantic equality. Use independent scalar/native oracles for critical scoring and mapping, not solely two calls through the same planner.
+
+Inject interruptions and faults at the publication boundaries, then resume and compare with uninterrupted results. Cover double resume, competing writers, cancellation, exhausted ceilings, insufficient disk/memory, missing/corrupt arrays, altered source bytes at the same path, mismatched query/cue lineage and unsupported schemas. Verify retained accounting and unchanged historical files. Isolated tests may simulate failures; at least one bounded real worker termination/restart must prove durable recovery without re-embedding already committed rows.
+
+When delivery dependencies are present, adopt both full original banks across all **72 recordings**, import the exact saved query and C03 chain, and demonstrate one validated warm result with zero new catalogue embeddings. Record counts and hashes against the historical baseline. If exercising optional refinement, preserve its twenty-group order and originals. Do not rerun C03's quality comparison or historical reuse command. Private catalogue audio, checkpoint and ignored artifacts are not supplied by a fresh public clone: continue implementation/offline checks if absent, but mark this real adoption proof blocked with exact prerequisites rather than claiming fixture-only completion.
+
+## 6. Use one finite C04 allowance
+
+Precommit fixed C04 roots, policy and a stage-level pool shared by every job, attempt, retry, delta and delivery validation. Hard outer ceilings: **3,600 aggregate worker seconds, 256 workers, 90,000 source-read seconds, 4,096 new feature windows, 20,000 feature-audio seconds, 32 MiB feature output, 64 processing/query jobs, 64 clips / 128 MiB clips, 128 MiB counted metadata, 64 MiB preparation audio and 512 MiB total new managed output**. These are aggregate limits, not renewed per command, job name, branch or restart. Per-job limits may be lower. No acquisition/download, new separation experiment, paid service, GPU work, dependency/driver change or deployment.
+
+Preserve starter limits: 120-second workers, 1 GiB working memory, 256 MiB input/decoded/output, 4 GiB combined managed storage, 4 GiB free-space headroom and numerical concurrency one. Measure a small cold/warm unit, model/process startup, full-source decoding, publication/write amplification and Windows commit availability before expansion. Physical RAM availability and commit availability are distinct. Share one lazy frozen model per worker and verified source samples within that worker where safe.
+
+Full MP3 reads remain sequential; charge every actual source audit/decode, not only analyzed crop seconds. Account for temporary files, retained failed attempts, metadata rewrites, new consumer proofs, reports and recovery. Include all new roots in shared inventory and keep every JSON record below the existing 1 MiB reader limit. Reserve delivery/recovery headroom prospectively. Old unused time is not C04 authorization; C03 ended at 1,789.733 worker seconds, 123 workers and 704 new features, and stays closed.
+
+Report setup/isolated regression tests and non-inference preservation/HTTP/browser QA separately from delivery processing. Finish code before expensive final audits and stop optional repeats once the required evidence exists. If caps block remaining work, retain completed outputs and state the exact partial scope; do not reset, enlarge or move the ledger to continue.
+
+## 7. Preserve a usable result and hand off to D01
+
+Use the saved original Loulou revision `c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3` and materialization `0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036`, not a mutable pitch-enabled head. The MP3 is available. Preserve the full **218..240s** mixture, native frames **9,613,800..10,584,000** at 44.1 kHz, with 217..241s context. Intended layer, master/version offset, rights and perceptual relevance remain unverified. Do not call it missing or add it as a discovery recording.
+
+Keep the C03 playable bundle intact and provide an exercised route from a completed C04 job to its immutable result and playable report. Reusing verified media and the existing renderer is sufficient; a new product UI is D01. If C04 creates a new bundle, use an owned loopback port such as **8773** and a clear startup script, retaining prior reports. Independently verify any new native clips/maps, HTTP bytes/MIME/ranges/path handling and all new browser load/play/pause/seek controls. Test rendered JavaScript syntax before browser QA. Imported historical playback evidence is historical, not a fresh C04 browser pass.
+
+Use separately tracked foreground listeners and browser QA, and stop owned sessions afterward. C03's combined hidden-listener/QA launch was denied and executed nothing; its separate foreground listener and separate QA later succeeded. Do not retry a denied action through another tool or disguise it as cleanup. C01's three staging folders likewise remain because deletion was denied with “blocked by policy”; inventory and preserve them.
+
+Add focused offline tests for the graph, dependency boundaries, row reuse across packing, historical adapters, delta equivalence, transaction/fault recovery, contention, accounting, cancellation, snapshots and explicit errors. Use isolated fixture roots/ledgers, never an earlier delivery's smoke root. Run the inexpensive full regression suite, applicable Ruff/setup/dependency checks, smoke, a C04 known-answer command and the declared end-to-end scenarios. Preserve production stale-code guards; historical fixtures must pin their historical consumers rather than assume current code is the producer. Report unavailable checks honestly and do not claim unrun CI or human relevance.
+
+Write **`reports/C04_PROCESSING.md`**, sanitized machine-readable evidence and nearest processing/API documentation. Record exact input/producer/consumer identities, dependency/invalidation rules, cold/warm/delta/recovery results, encode and reuse counts, complete versus partial coverage, timing/memory/read/output costs, reservations, preservation and exercised Windows commands. Update source maps, decisions and current status without rewriting historical evidence.
+
+Export a versioned **D01 handoff**: plan/job/result schemas and reader APIs; immutable source/query/bank/execution references; progress/events and actionable errors; run/resume/cancel semantics; current versus last-complete state; exact native scored/context playback maps; original/experimental/refined distinctions; exclusions/provenance; and resource ownership. D01 should be able to drive import, query selection, search and playback through this boundary without invoking closed experimental commands or understanding private file layouts. Identify limitations and missing delivery prerequisites explicitly. Do not implement D01 now.
+
+Preserve required ignored outputs/shared dependencies in the delivery checkout before removing an owned task checkout. Follow `AGENTS.md`: inspect the diff, commit/push intended files, open a PR into current `main`, verify checks/reviews/clean mergeability, merge when eligible and remove owned task checkout/branches after QA where permitted. Report any denied cleanup action/reason and leave its artifacts. Finish with completed/partial/blocked scope, merge evidence, tested commands, preserved playable result and the D01 handoff.
