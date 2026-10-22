@@ -323,3 +323,6 @@ The C04 handoff additionally distinguishes the original numerical consumer from
 are preserved rather than relabelled. C04 has not started.
 
 ![Verified C03 playback](local/c03/browser-qa.png)
+
+
+Delivery PR: [#24](https://github.com/lillo24/Similar-Sound-Search/pull/24).
