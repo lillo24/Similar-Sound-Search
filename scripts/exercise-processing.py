@@ -35,12 +35,21 @@ def run_case(name, spec, previous=None, clean=False, pilot=False):
     if summary.exists():
         old = record(summary)
         if old.get("status") == "ok" and old.get("state") == "complete":
-            return old
+            checked = owner.reports / (name + "-clean.json")
+            if not clean or (checked.exists() and record(checked).get("status") == "ok"):
+                return old
+            if checked.exists():
+                save(name + "-clean-first-consumer.json", record(checked))
     before = owner.pool()
     plan = api.plan(root, limits, spec, previous)
     if summary.exists():
         old = record(summary)
-        result = api.resume(root, limits, old["job"], execute)
+        old_plan = owner.get(old["plan"], "plans")
+        if old_plan["consumer"] != owner.get(plan, "plans")["consumer"]:
+            save(name + "-first-consumer.json", old)
+            result = api.run(root, limits, plan, name + "-consumer-2", execute)
+        else:
+            result = api.resume(root, limits, old["job"], execute)
     else:
         result = api.run(root, limits, plan, name, execute, pilot=pilot)
         if pilot and result["status"] == "ok" and result["state"] != "complete":

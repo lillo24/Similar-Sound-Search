@@ -368,14 +368,15 @@ def run(request, execute):
             encoded += result.get("new_encodes", 0)
             if result.get("status") == "failed":
                 path, state = progress(owner, job_ref)
-                state.update(
-                    state="failed",
-                    error=dict(
+                if state["error"] is None:
+                    state["error"] = dict(
                         step="worker",
                         target=job_ref["record_hash"],
                         message=result.get("error", "worker failed"),
                         error_type=result.get("error_type"),
-                    ),
+                    )
+                state["state"] = (
+                    "blocked" if result.get("error_type") == "ResourceError" else "failed"
                 )
                 owner.publish(CatalogueBudget(root, limits), path, state)
                 return {**result, "job": job_ref, "new_encodes": encoded}

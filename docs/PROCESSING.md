@@ -115,3 +115,12 @@ loopback 8773, Ctrl+C to stop. Its default locator is
 `reports/local/c04/historical-warm.json`; an explicit job path is accepted. Earlier
 reports/listeners and denied C01 staging folders remain intact. D01 UI and D04
 listening review are outside this delivery.
+
+The declared C04 correctness repair retains the first consumer in `consumers/`
+and its source proof in `consumer-repair.json`. Encoding, semantic row keys,
+source decoding and distance functions are unchanged; native parent exclusions
+and event witnesses are stricter. Dispatcher errors retain their domain unit.
+Windows workers bypass the venv launcher using the same resolved virtualenv paths
+and prefix, so the deadline targets the actual worker PID. No dependency changes.
+Old plans keep their exact consumer binding; new work uses an explicit new plan.
+Earlier successful evidence and the first clean timeout remain retained/charged.

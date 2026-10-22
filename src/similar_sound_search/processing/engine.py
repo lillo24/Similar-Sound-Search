@@ -72,7 +72,10 @@ def query(budget, owner, plan, producer, fault):
     q = dict(
         schema_version="c04-native-query-1",
         examples=examples,
-        identity=dict(excluded_groups=sorted(set(value["excluded_groups"])), representation=desc),
+        identity=dict(
+            excluded_groups=sorted(set(value["excluded_groups"]) | {source["group"]}),
+            representation=desc,
+        ),
         native_source=source,
         native_bounds=[list(b) for b in bounds],
         lineage=value["lineage"],
@@ -174,6 +177,25 @@ def aggregate(budget, owner, plan, features_by_source, queries, scored, membersh
     cfg = retrieval_configuration(owner.root)
     q = queries["query"]
     variants = [v["example_id"] for v in q["examples"]]
+    association = plan["input"]["policy"]["association"]
+    if association is not None:
+        if "native_source" not in q:
+            raise InputError(
+                "C04 saved-query custom association requires an unsupported native witness adapter"
+            )
+        source = q["native_source"]
+        expected = {
+            v: dict(
+                source_pcm=source["source"]["canonical_pcm"]["sha256"],
+                native_bounds=b,
+                rate=source["source"]["sample_rate_hz"],
+            )
+            for v, b in zip(variants, q["native_bounds"], strict=True)
+        }
+        if association != expected:
+            raise InputError(
+                "C04 event association differs from actual query native parent witness"
+            )
     event_map = fusion.events(variants, plan["input"]["policy"]["association"])
     bank_keys = [
         digest(

@@ -13,3 +13,6 @@ the exact B03/C02/C03/playback chain without calling closed workers or writing t
 `commands.py` routes CLI/foreground playback and bounded admin workers.
 `validation.py` supplies independent scalar/native answers and generated fixtures.
 DSP and ranking contracts retain their earlier owners; D01 is not implemented.
+
+`runner.py` owns a single actual Windows worker process with preserved virtualenv
+paths/prefix and a hard deadline, avoiding the extra venv launcher PID.

@@ -16,6 +16,7 @@ from similar_sound_search.cli import execute
 from similar_sound_search.evaluation.artifacts import record
 from similar_sound_search.processing import api, job
 from similar_sound_search.processing.context import Context
+from similar_sound_search.processing.runner import python_command
 from similar_sound_search.resources import CatalogueBudget, load_limits
 from similar_sound_search.storage import atomic_json, project_lock
 
@@ -53,7 +54,7 @@ before = owner.pool()
 
 def interrupt(request):
     child = subprocess.Popen(
-        [sys.executable, __file__, "child"],
+        python_command(__file__, ["child"]),
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,

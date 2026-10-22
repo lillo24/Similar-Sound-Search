@@ -1,6 +1,7 @@
 """CLI routing and bounded metadata/setup units; numerical ownership stays separate."""
 
 import json
+import os
 import time
 from pathlib import Path
 
@@ -83,7 +84,12 @@ def worker(request, budget):
             answer = validation.register_sources(budget, owner, read_json(request["input"]))
         else:
             raise InputError("C04 unsupported admin unit")
-        return {**answer, "peak_working_bytes": memory_check(budget), "kind": action}
+        return {
+            **answer,
+            "peak_working_bytes": memory_check(budget),
+            "kind": action,
+            "worker_pid": os.getpid(),
+        }
 
 
 def main(args, request, execute):

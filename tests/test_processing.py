@@ -4,7 +4,6 @@ import copy
 import json
 import shutil
 import subprocess
-import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -378,8 +377,12 @@ class ProcessingTests(unittest.TestCase):
             + str(self.root)
             + "'), '.c04-worker.lock'):\n print('locked', flush=True)\n time.sleep(30)\n"
         )
+        from similar_sound_search.processing.runner import python_command
+
+        child_script = self.root / "locked-child.py"
+        child_script.write_text(script)
         child = subprocess.Popen(
-            [sys.executable, "-c", script],
+            python_command(child_script),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
@@ -415,7 +418,7 @@ class ProcessingTests(unittest.TestCase):
         output = api.result(self.root, ready["result"])
         self.assertEqual(ready["new_encodes"], 0)
         self.assertEqual(output["complete_groups"], 0)
-        self.assertEqual(output["excluded_groups"], ["a", "b"])
+        self.assertEqual(output["excluded_groups"], ["a", "b", "q"])
         self.assertIsNotNone(output["arms"]["legacy-mean"]["shortfall_reason"])
 
     def test_consumer_drift_is_explicit(self):
@@ -449,6 +452,44 @@ class ProcessingTests(unittest.TestCase):
         ready = self.run_plan()
         self.assertGreater(ready["new_encodes"], 0)
         self.assertTrue((partial / "features.npy").exists())
+
+    def test_actual_worker_pid_and_environment(self):
+        from similar_sound_search.processing.runner import python_command
+
+        request = dict(
+            root=str(self.root),
+            command="processing_admin",
+            processing_action="known-answer",
+            limits=self.limits,
+        )
+        child = subprocess.Popen(
+            python_command(),
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+        )
+        stdout, stderr = child.communicate(json.dumps(request), timeout=30)
+        value = json.loads(stdout)
+        self.assertEqual(child.returncode, 0, stderr)
+        self.assertEqual(child.pid, value["worker_pid"])
+
+    def test_native_parent_group_cannot_escape_exclusion(self):
+        value = copy.deepcopy(self.request())
+        value["sources"][0]["group"] = value["query"]["source"]["group"]
+        result = self.run_plan(self.plan(value))
+        output = api.result(self.root, result["result"])
+        self.assertEqual(output["complete_groups"], 1)
+        self.assertIn("q", output["excluded_groups"])
+
+    def test_invented_event_witness_is_rejected(self):
+        value = self.request()
+        variant = contracts.row_key(value["query"]["source"], [0, 9600], DESC)
+        value["policy"]["association"] = {
+            variant: dict(source_pcm="invented", native_bounds=[0, 9600], rate=8000)
+        }
+        with self.assertRaisesRegex(InputError, "actual query native parent"):
+            self.run_plan(self.plan(value))
 
     def test_bounded_inventory_no_gc(self):
         self.run_plan()

@@ -459,6 +459,10 @@ def _worker(request):
 
 def execute(request):
     """No NumPy/SciPy import before the bounded child; timeout includes library startup."""
+    if request["command"] in {"processing_step", "processing_admin"}:
+        from .processing.runner import execute as processing_execute
+
+        return processing_execute(request)
     environment = os.environ.copy()
     environment.update(
         {

@@ -65,3 +65,6 @@ durable commit, resumes and clean-checks it. `verify-processing-preservation.py
 capture|verify` checks earlier bytes including denied staging; only exact C04 config
 navigation is allowed. `listen-processing.ps1` resolves a completed C04 job to
 preserved C03 playback on foreground loopback 8773.
+
+`declare-processing-repair.py` is the one explicit correctness-repair proof,
+preserving the initial consumer and all spent work; it refuses an existing repair.
