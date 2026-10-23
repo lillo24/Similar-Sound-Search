@@ -51,7 +51,7 @@ def native(budget, owner, spec):
     return dict(passed=True, job_id=spec["job_id"], checks=checks)
 
 
-def finalization(budget, owner, key):
+def finalization(budget, owner, key, committed_only=False):
     """Resume metadata/media finalization after scores/aggregation already committed.
 
     Source bytes are freshly hashed and charged at full-source duration. Exact bytes,
@@ -62,9 +62,18 @@ def finalization(budget, owner, key):
     from ..processing import cache
     from ..processing import job as historical_job
     from ..storage import contained, sha256
-    from . import history, job
+    from . import history, job, queries
 
     old, plan, state = history.inputs(owner)
+    request = job.api.job(owner, key)["identity"]["request"]["input"]
+    saved_query = owner.get(job.committed(owner, key, "query")["query"], "queries")
+    q, matrix = queries.load(
+        budget, owner, {**request["query"], "materialization": saved_query["materialization"]}
+    )
+    scoring_plan = {
+        **plan,
+        "consumer": {"numerical_hash": history.consumer(owner)["numerical_hash"]},
+    }
     proofs = []
     for source in plan["input"]["sources"]:
         rid = source["recording_id"]
@@ -72,21 +81,31 @@ def finalization(budget, owner, key):
         adoption = owner.get(previous["proof"], "adoptions")
         if adoption["source"] != source or not adoption["source_pcm_verified"]:
             raise InputError("D01 recovery lacks prior full source/PCM audit")
-        owner.charge(budget, read_audio_seconds=source["source"]["duration_seconds"])
-        path = contained(owner.root / source["source"]["local_path"], owner.root)
-        if sha256(path, budget) != source["source"]["sha256"]:
-            raise InputError(
-                "D01 finalization source bytes changed; existing scores cannot be published"
-            )
+        if not committed_only:
+            owner.charge(budget, read_audio_seconds=source["source"]["duration_seconds"])
+            path = contained(owner.root / source["source"]["local_path"], owner.root)
+            if sha256(path, budget) != source["source"]["sha256"]:
+                raise InputError(
+                    "D01 finalization source bytes changed; existing scores cannot be published"
+                )
+        # A committed numerical unit remains evidence for its immutable source version.
+        # Metadata-only finalization reopens its output/arrays; new media still validates
+        # actual original PCM. It does not claim a new catalogue-original scan.
+        score = job.committed(owner, key, "source:" + rid)["scores"]
+        from ..processing.engine import load_scores
+        from .history import NumericalView
+
+        raw = load_scores(NumericalView(owner), score)
         unit = next(u for u in plan["units"] if u["kind"] == "features" and u["subject"] == rid)
         features = historical_job.output(old, state, unit)
-        cache.vectors(budget, old, features["rows"])
+        vectors = cache.vectors(budget, old, features["rows"])
+        history.validate_scores(raw, features["rows"], vectors, matrix, q, scoring_plan)
         proofs.append(
             dict(
                 source=rid,
                 prior=previous["proof"],
                 rows=len(features["rows"]),
-                source_bytes_verified=True,
+                source_bytes_verified=not committed_only,
             )
         )
     return owner.put(
@@ -96,7 +115,10 @@ def finalization(budget, owner, key):
             job_id=key,
             consumer=history.consumer(owner),
             sources=proofs,
-            source_pcm="prior full sequential audit, unchanged exact bytes/decoder",
+            source_pcm="committed source-version PCM audit"
+            if committed_only
+            else "prior full sequential audit, unchanged exact bytes/decoder",
+            committed_outputs_only=committed_only,
             arrays_reopened=True,
             new_encodes=0,
             scope="committed aggregation to final media/publication only",

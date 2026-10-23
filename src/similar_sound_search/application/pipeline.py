@@ -209,7 +209,10 @@ def geometry_estimate(owner, examples=1):
         ],
     )
     _, largest = payload(encode("group-results", group))
-    estimate = 144 * (largest + 16384) + 72 * (160 * 1024) + 32 * (96 * 1024)
+    # Include newly produced per-source score payloads (up to eight per-example
+    # distances on every support), all pool writes and final media/query bookkeeping.
+    # Old scores reused by reference can cost less; that is not an admission assumption.
+    estimate = 144 * (largest * 2 + 16384) + 72 * (512 * 1024) + 32 * (256 * 1024)
     return dict(
         schema_version="d01-geometry-1",
         groups=72,

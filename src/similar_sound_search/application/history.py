@@ -267,7 +267,7 @@ def compatible(owner, previous):
     if declaration.get("compatibility") != proof["record_hash"]:
         raise InputError("D01 compatibility declaration binding changed")
     if (
-        proof["before"] != previous
+        previous not in [proof["before"], *proof.get("additional_before", [])]
         or proof["after_code"] != code_identity()
         or current["numerical_hash"] != previous["numerical_hash"]
     ):

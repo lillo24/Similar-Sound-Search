@@ -222,7 +222,7 @@ class ApplicationTests(unittest.TestCase):
         value = pipeline.geometry_estimate(self.owner)
         self.assertTrue(value["fits"])
         self.assertEqual(value["groups"], 72)
-        self.assertLess(value["complete_path_counted_bytes"], 20 * 1024**2)
+        self.assertLess(value["complete_path_counted_bytes"], 96 * 1024**2)
 
     def test_real_os_lock_contention_and_release(self):
         with lock(self.root, "worker"):
@@ -319,8 +319,10 @@ class ApplicationTests(unittest.TestCase):
     def test_unavailable_setting_is_not_accepted(self):
         spec = self.spec()
         spec["input"]["arm"] = "pitch"
+        before = self.owner.pool()
         with self.assertRaisesRegex(InputError, "unavailable"):
             api.submit(self.root, self.limits, spec, acceptance=True)
+        self.assertEqual(before, self.owner.pool())
 
     def test_server_security_and_ranges_no_hidden_work(self):
         server = make_server(self.root, self.limits, 18774)

@@ -173,7 +173,10 @@ def worker(request):
         if request.get("finalization_audit"):
             from .validation import finalization
 
-            receipt = finalization(budget, owner, key)
+            admission = record(owner.directory / "recovery-admissions" / (key + ".json"))
+            receipt = finalization(
+                budget, owner, key, committed_only=admission.get("mode") == "committed-outputs"
+            )
             return dict(
                 status="ok",
                 state="validated-finalization",
@@ -316,7 +319,9 @@ def _run(root, limits, key):
             and all(u.startswith("media:") or u == "publish" for u in remaining)
         ):
             admission = record(admission_path)
-            if admission["job_id"] != key or admission["remaining"] != remaining:
+            if admission["job_id"] != key or any(
+                u not in admission["remaining"] for u in remaining
+            ):
                 raise InputError("D01 finalization recovery graph changed")
             validate = []
             final_audit = True

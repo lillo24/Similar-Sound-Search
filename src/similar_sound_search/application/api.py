@@ -29,18 +29,26 @@ def state_path(owner, key):
 
 def submit(root, limits, request, acceptance=False):
     """Explicit POST semantics; same immutable request yields the same durable job."""
-    if set(request) != {"kind", "input", "request_id"} or request["kind"] not in {
-        "search",
-        "register",
-        "save",
-        "rename",
-        "preview",
-        "validate",
-        "copy-reference",
-        "metadata-preflight",
-        "native-qa",
-    }:
+    if (
+        not isinstance(request, dict)
+        or set(request) != {"kind", "input", "request_id"}
+        or not isinstance(request["kind"], str)
+        or request["kind"]
+        not in {
+            "search",
+            "register",
+            "save",
+            "rename",
+            "preview",
+            "validate",
+            "copy-reference",
+            "metadata-preflight",
+            "native-qa",
+        }
+    ):
         raise InputError("D01 unsupported operation/settings")
+    if not isinstance(request["input"], dict):
+        raise InputError("D01 operation input must be an object")
     token = request["request_id"]
     if not isinstance(token, str) or not re.fullmatch("[a-zA-Z0-9_-]{1,80}", token):
         raise InputError("D01 stable request ID required")
@@ -55,6 +63,25 @@ def submit(root, limits, request, acceptance=False):
                 raise InputError("D01 request conflict: idempotency key has different input")
             return dict(job_id=old["job_id"], reused=True)
         consumer = history.consumer(owner)
+        if request["kind"] in {"search", "validate"}:
+            selection = request["input"]
+            if (
+                set(selection) != {"query", "arm"}
+                or not isinstance(selection["arm"], str)
+                or selection["arm"]
+                not in {
+                    "legacy-mean",
+                    "event-multi",
+                    "historical-refinement",
+                }
+            ):
+                raise InputError("D01 unavailable retrieval option; original/pitch-off routes only")
+            if not isinstance(selection["query"], dict):
+                raise InputError("D01 immutable query selection must be an object")
+            if selection["arm"] == "historical-refinement" and not selection["query"].get(
+                "historical"
+            ):
+                raise InputError("D01 refinement unavailable for a new query")
         size = 20 * 1024**2 if request["kind"] in {"search", "validate"} else 2 * 1024**2
         if request["kind"] in {"search", "validate"}:
             from ..queries.library import revision
@@ -79,18 +106,6 @@ def submit(root, limits, request, acceptance=False):
         owner.admit(key, size, acceptance=acceptance, jobs=1)
         owner.allocation = key
         budget = CatalogueBudget(root, limits)
-        if request["kind"] in {"search", "validate"}:
-            selection = request["input"]
-            if set(selection) != {"query", "arm"} or selection["arm"] not in {
-                "legacy-mean",
-                "event-multi",
-                "historical-refinement",
-            }:
-                raise InputError("D01 unavailable retrieval option; original/pitch-off routes only")
-            if selection["arm"] == "historical-refinement" and not selection["query"].get(
-                "historical"
-            ):
-                raise InputError("D01 refinement unavailable for a new query")
         value = dict(
             schema_version="d01-job-1",
             job_id=key,

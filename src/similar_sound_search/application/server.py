@@ -215,7 +215,7 @@ def make_server(root, limits, port=8774):
                         "audio/wav" if key.endswith(".wav") else "text/html; charset=utf-8",
                     )
                 raise FileNotFoundError("Outside application/media allowlist")
-            except (BrokenPipeError, ConnectionResetError):
+            except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
                 return
             except (InputError, OSError, ValueError, KeyError) as exc:
                 self.send_json(
@@ -253,6 +253,8 @@ def make_server(root, limits, port=8774):
                 if self.headers.get_content_type() != "application/json" or not 0 < length <= 65536:
                     raise InputError("D01 JSON request must be 1..65536 bytes")
                 request = json.loads(self.rfile.read(length))
+                if not isinstance(request, dict):
+                    raise InputError("D01 JSON request must be an object")
                 if path == "/api/submit":
                     result = api.submit(root, limits, request)
                     try:
