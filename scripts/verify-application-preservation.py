@@ -6,14 +6,20 @@ import sys
 from pathlib import Path
 
 OWNED = (
-    "data/runs/application/", "data/features/application/", "data/audio/application/",
-    "reports/local/d01/", "manifests/application/",
+    "data/runs/application/",
+    "data/features/application/",
+    "data/audio/application/",
+    "reports/local/d01/",
+    "manifests/application/",
 )
 
 
 def inventory(root):
-    paths = [p for name in ("data", "manifests", "reports/local", "config")
-             for p in (root / name).rglob("*")]
+    paths = [
+        p
+        for name in ("data", "manifests", "reports/local", "config")
+        for p in (root / name).rglob("*")
+    ]
     paths += list(root.glob("*.mp3")) + [root / "AGENTS.md", root / ".gitattributes"]
     result = {}
     for path in sorted(set(paths)):
@@ -45,11 +51,17 @@ def main():
     added = sorted(set(now) - set(old))
     allowed = [p for p in added if p.startswith("data/audio/prepared/")]
     unexpected = sorted(set(added) - set(allowed))
-    value = dict(state="verified" if not changed and not unexpected else "failed",
-                 historical_files=len(old), changed_or_missing=changed,
-                 unexpected_additions=unexpected, new_shared_immutable_preparation=allowed,
-                 c01_denied_staging="inventoried and retained; no deletion attempted")
-    (directory / "preservation-after.json").write_text(json.dumps(value, indent=2), encoding="utf-8")
+    value = dict(
+        state="verified" if not changed and not unexpected else "failed",
+        historical_files=len(old),
+        changed_or_missing=changed,
+        unexpected_additions=unexpected,
+        new_shared_immutable_preparation=allowed,
+        c01_denied_staging="inventoried and retained; no deletion attempted",
+    )
+    (directory / "preservation-after.json").write_text(
+        json.dumps(value, indent=2), encoding="utf-8"
+    )
     print(json.dumps({**value, "new_shared_immutable_preparation": len(allowed)}, indent=2))
     if changed or unexpected:
         raise SystemExit(1)
