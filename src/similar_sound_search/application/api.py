@@ -199,11 +199,20 @@ def resume_control(root, key, request_id):
     if active(owner.root, "worker") or active(owner.root, "coordinator"):
         raise ResourceError("D01 worker still active; cancellation remains pending until it stops")
     identifier(request_id)
+    state = record(state_path(owner, key))
+    if state["state"] == "complete":
+        return dict(job_id=key, state="complete")
     path = owner.directory / "cancels" / (key + ".json")
     if path.exists():
         slot = "resume-" + request_id
         owner.reserve_attempt(slot, seconds=0)
         owner.terminal(slot, path, dict(job_id=key, resumed=True, request_id=request_id), elapsed=0)
+    # Acknowledge a durable queued state before HTTP returns 202. A fast poll must
+    # not mistake the prior cancelled/blocked record for the new attempt's outcome.
+    pending = {**state, "state": "pending", "error": None, "resume_request_id": request_id}
+    slot = "resume-state-" + request_id
+    owner.reserve_attempt(slot, seconds=0)
+    owner.terminal(slot, state_path(owner, key), pending, elapsed=0)
     return dict(job_id=key, state="resume_requested")
 
 

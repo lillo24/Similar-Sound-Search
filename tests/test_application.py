@@ -316,6 +316,20 @@ class ApplicationTests(unittest.TestCase):
         with self.assertRaises(InputError):
             api.result(self.root, key)
 
+    def test_resume_acknowledges_pending_before_dispatch_and_is_idempotent(self):
+        key = api.submit(self.root, self.limits, self.spec(), acceptance=True)["job_id"]
+        state = record(api.state_path(self.owner, key))
+        state["state"] = "cancelled"
+        self.owner.publish(self.budget, api.state_path(self.owner, key), state)
+        api.cancel(self.root, key, "a" * 64)
+        answer = api.resume_control(self.root, key, "b" * 64)
+        self.assertEqual(answer["state"], "resume_requested")
+        self.assertEqual(api.status(self.root, key)["state"], "pending")
+        before = self.owner.pool()
+        api.resume_control(self.root, key, "b" * 64)
+        self.assertEqual(before, self.owner.pool())
+        self.assertEqual(before["counts"]["workers"], 0)
+
     def test_unavailable_setting_is_not_accepted(self):
         spec = self.spec()
         spec["input"]["arm"] = "pitch"
