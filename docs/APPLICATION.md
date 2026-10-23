@@ -61,6 +61,14 @@ journal, settlement and recovery. Terminal publication calls no ordinary writer.
 Failed writes retain charges/temporaries. Logical unspent allocations can be released;
 actual writes and unobservable worker reservations cannot be refunded.
 
+The original delivery estimates undercounted new score/progress serialization. Both
+blocked requests retained truthful protected terminal state and all prior charges;
+each received one prospectively declared 8 MiB remaining-path allocation from this
+same pool. The corrected estimator now budgets 512 KiB per source plus bounded
+group/control geometry before a fresh search. It can refuse another full search
+when the remaining ordinary allowance is too small; existing completed results stay
+readable. No ceiling, failed-attempt charge or C04 reservation was changed.
+
 The initial 40 MiB acceptance hold protects required finalization/warm/UI work from
 exploratory requests. Each worker has a 120s actual-PID deadline, one numerical thread,
 1 GiB numerical working limit, 256 MiB input/decoded/output, and the starter 4 GiB
@@ -75,6 +83,13 @@ audited before remaining work. A journal replays settlement idempotently. If ela
 time cannot be observed, the complete worker reservation remains charged. An all-write
 filesystem refusal raises **PersistenceError**; observed stopped state does not claim
 that an impossible durable error write succeeded.
+
+Finalization recovery is explicit: the original recovery freshly hashed all source
+bytes and reopened every array. The later new-query recovery reopened candidate
+arrays, freshly validated query materialization and independently checked all
+committed score supports against those arrays, retaining earlier full PCM proofs.
+That latter mode does not claim another full original-source scan. It admits only
+remaining media/publication units; a normal warm search still reads all originals.
 
 C04 stays historical **partial 145/148**, including its pool, pending 120 seconds,
 orphan groups and fixture last-complete. D01 publishes its own complete result only
@@ -122,6 +137,9 @@ Assets/media are allowlisted; traversal, symlink escapes, raw paths, directory l
 cross-origin mutations and unsupported settings fail. Tokens never appear in public
 evidence. A server restart rotates the token; refresh the page and explicitly resume
 the saved job. Do not kill unrelated Python processes or remove old lock files.
+Browser refresh/seek can close an idle HTTP connection on Windows. The request
+boundary handles only peer abort/reset/broken-pipe exceptions as disconnected
+clients; other I/O/domain failures remain explicit. This performs no job operation.
 
 Deterministic isolated tests in `tests/test_application.py` expose ordinary exhaustion,
 filesystem/publication failures, scalar/native ranking and media bindings, recipe

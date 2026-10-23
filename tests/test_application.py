@@ -338,6 +338,26 @@ class ApplicationTests(unittest.TestCase):
             api.submit(self.root, self.limits, spec, acceptance=True)
         self.assertEqual(before, self.owner.pool())
 
+    def test_idle_peer_disconnect_is_narrow_and_never_spends_work(self):
+        server = make_server(self.root, self.limits, 18774)
+        self.addCleanup(server.server_close)
+        handler = server.RequestHandlerClass.__new__(server.RequestHandlerClass)
+        before = self.owner.pool()
+        for error in (ConnectionAbortedError(), ConnectionResetError(), BrokenPipeError()):
+            with patch(
+                "similar_sound_search.application.server.BaseHTTPRequestHandler.handle",
+                side_effect=error,
+            ):
+                handler.handle()
+                self.assertTrue(handler.close_connection)
+        with patch(
+            "similar_sound_search.application.server.BaseHTTPRequestHandler.handle",
+            side_effect=PermissionError("real I/O failure"),
+        ):
+            with self.assertRaises(PermissionError):
+                handler.handle()
+        self.assertEqual(before, self.owner.pool())
+
     def test_server_security_and_ranges_no_hidden_work(self):
         server = make_server(self.root, self.limits, 18774)
         thread = threading.Thread(target=server.serve_forever, daemon=True)

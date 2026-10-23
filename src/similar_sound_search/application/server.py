@@ -75,6 +75,14 @@ def make_server(root, limits, port=8774):
     class Handler(BaseHTTPRequestHandler):
         protocol_version = "HTTP/1.1"
 
+        def handle(self):
+            try:
+                super().handle()
+            except (ConnectionAbortedError, ConnectionResetError, BrokenPipeError):
+                # Refresh/seek may close a keep-alive socket before its next request line.
+                # Only peer disconnects are expected here; filesystem/domain errors propagate.
+                self.close_connection = True
+
         def host_ok(self):
             if self.headers.get("Host") != "127.0.0.1:" + str(port):
                 raise InputError("D01 untrusted Host; use " + origin)
