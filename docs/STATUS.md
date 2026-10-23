@@ -1,6 +1,16 @@
 # Project status
 
-Updated 22 October 2026. **C03 candidate refinement is implemented and verified; C04 is next and has not started.** [C03 evidence](../reports/C03_REFINEMENT.md) and [contracts](REFINEMENT.md) cover the pinned C02 event-multi twenty-group shortlist, fixed native timing and retained original controls. All twenty groups completed; fifteen have changed placements, with song order unchanged. Matched-anchor event recall has no gain/loss; IoU improves in four pairs and worsens in three, so refinement stays opt-in. Original audio, legacy retrieval and pitch off remain defaults. The final 315-test suite, native/HTTP checks and all 32 Chrome controls passed. A declared renderer repair preserves the failed bundle, numerical results and old consumer while separately auditing the final report. Historical assets and denied C01 staging remain intact. A03 and optional C01 banks remain partial; human/Loulou relevance, alignment, rights and intended layer remain unverified. Follow [AGENTS.md](../AGENTS.md) for PR/merge/cleanup delivery.
+Updated 23 October 2026. **D01 local interface acceptance is complete.**
+[D01 evidence](../reports/D01_INTERFACE.md) covers real import/native selection,
+saved queries, full-catalogue original/warm/new-query searches and exact playback.
+The final suite passes 382 tests; all 40 result clips passed independent native/HTTP
+checks and 72 result/C03 players passed Chrome playback. Completed searches reopen
+without inference, including from a fresh browser. Another full search cannot fit
+the fixed remaining D01 allowance. C04 remains historically partial 145/148 with its
+unsettled reservation unchanged. Original mixture/legacy mean/pitch off remain
+defaults. Human relevance and reference/master/rights/layer uncertainty remain.
+D02 automation, D03 packaging and D04 listening review are future work.
+Follow [AGENTS.md](../AGENTS.md) for PR/merge/cleanup delivery.
 
 ## Foundation and current delivery
 
@@ -170,4 +180,29 @@ The pool retains 134,197,338/134,217,728 counted metadata bytes and an unsettled
 120s reservation. Error journaling also refused; persisted in-progress state is
 not evidence of a live owner or success. All C04 locks are released. The [report](../reports/C04_PROCESSING.md)
 separates committed artifacts, intermediates and blocked work. Funds remain fixed;
-D01 needs an explicit new owner and admission repair. No D01 processing ran.
+D01 needed an explicit new owner and admission repair; no D01 processing had run
+at that historical C04 delivery.
+
+## D01 delivery and D02 handoff
+
+The separate [application owner](APPLICATION.md) protects 32 MiB terminal bookkeeping
+inside its fixed 128 MiB metadata pool, publishes compact bounded units, handles
+idempotent request/recovery/settlement and distinguishes observed ownership from
+durable state. Retained metadata-estimate failures were repaired under explicit
+same-pool remaining-path admissions; no cap/reset/refund or historical writer ran.
+
+Real adoption and unchanged warm jobs completed 99/99; the generated two-example
+query completed 98/98 after browser cancellation/restart/resume. All use unchanged
+72-source candidate arrays; only two new query rows were encoded. Complete original
+legacy/event outputs match C02 exactly. C03 remains a separately labelled view.
+Current last-complete is new-query job `589ac27a`; original results remain selectable.
+The final pool used 2,452.230 worker seconds, 85,949.160 source-read seconds and
+73,613,272 counted metadata bytes. No further full search fits its remaining allowance.
+
+Run `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-sound-search.ps1`
+and open loopback 8774. Choose Open a completed search to read real saved results
+without spending another worker. Private artifacts remain in this delivery checkout;
+owned foreground/browser sessions are stopped. All 15,490 earlier files, including
+denied C01 staging and C04 partial state, are preserved byte-for-byte. The
+[D02 interface](../manifests/application/d02-interface.json) exposes operations,
+schemas, exact baselines, deterministic fixtures and failure/resource states.

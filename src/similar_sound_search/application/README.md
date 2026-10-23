@@ -23,4 +23,8 @@ to D01. `media.py` owns reduced native waveform previews and exact PCM16 crops,
 using the unchanged conversion and channel/gain rules. Media GET never decodes a
 song, encodes a vector or charges a processing worker.
 
+`validation.py` independently verifies native samples/channel/gain/endpoints and
+audits already committed query/array/score outputs before bounded finalization.
+Completed-search navigation in `api.py` is a metadata read, independent of admission.
+
 See [APPLICATION.md](../../../docs/APPLICATION.md) for contracts and recovery.

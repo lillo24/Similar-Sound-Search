@@ -109,12 +109,38 @@ and metadata-preflight. Upload is explicit bounded POST `/api/upload` with conte
 length, an opaque upload ID and display filename. Inputs never accept shell commands,
 remote URLs or arbitrary filesystem reads.
 
+Inputs to `/api/submit` use these stable operation shapes (all IDs are opaque SHA256
+except the client request ID). Each operation returns a persisted job, then an
+operation result with `output` after completion:
+
+| Kind | `input` |
+| --- | --- |
+| `register` | `{upload_id,label}` after explicit upload; produces asset and waveform references |
+| `copy-reference` | `{revision}` for an available original/pitch-off historical B03 revision |
+| `save` | `{label,examples}`; editing adds `{query_id,expected}` with the prior selected revision |
+| `rename` | `{query_id,expected,label}` with the current name record hash |
+| `preview` | `{asset_id,bounds:[first,last]}` in source-native half-open frames |
+| `search` / `validate` | `{query:{historical,revision,materialization},arm}` |
+| `native-qa` | `{job_id,start}` for two displayed cards of a completed acceptance result |
+| `metadata-preflight` | `{}`; metadata-only generated population rehearsal |
+
+Each `examples` item uses B03's validated `{asset_id,event,context,selection}` original
+recipe input; provenance/uncertainty and all-parent exclusion rules are in
+[QUERIES.md](QUERIES.md). `GET /api/revision/<id>` returns the exact `revision`,
+resolved `materialization` when ready (otherwise null), and immutable `version`.
+Creating a new materialization is an explicit charged job, never a side effect of
+that GET. Save/rename conflicts are errors, not last-writer-wins edits.
+
 GET `/api/bootstrap`, `/api/job/<id>`, `/api/result/<id>`, `/api/revision/<id>` and
 `/api/waveform/<id>` are read-only. POST `/api/cancel` and `/api/resume` take job ID
 and stable control request ID. States include pending/running/in_progress, cancelled,
 interrupted, blocked, failed and complete; cancellation stays pending while owned
 work continues. Closing/reloading a tab keeps the immutable request and accounting.
 Reopening a completed result is separate from submitting a fresh validation search.
+During an owned operation, import/query/selection/policy controls are disabled and
+waveform drags are ignored. Cancel/status remain available; this preserves the
+active job binding and prevents a second preview/import from replacing it. Controls
+reopen when the bounded operation reaches a terminal state.
 The completed-search selector also works in a fresh browser: bootstrap lists at most
 64 complete search/validation jobs with their resolved revision, materialization and
 policy. Selecting one validates and reads that publication without a worker or pool

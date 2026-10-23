@@ -83,3 +83,12 @@ row reuse across packing, scalar clean rebuilds, exclusions, schemas/lineage/con
 drift, transaction faults, actual process-lock contention/termination, retained
 reservations, settlement replay, cancellation, storage limits and last-complete
 isolation. Frozen-model delivery scenarios run separately.
+
+`test_application.py` owns D01's isolated protected reserve, counted writes,
+idempotent settlement/replay, failure while recording failure, actual-PID timeout and
+OS lock contention, cancellation/resume acknowledgement, orphan-unit recovery,
+read-only polling/completed navigation, source/media corruption and HTTP boundaries.
+Generated original audio and independent scalar answers verify exclusions and exact
+result-to-native-player binding. Query adapters retain dedup/all-parent semantics
+and optimistic revision checks. No private catalogue, historical ledger or model
+download is used by these tests; real acceptance is separately reported in D01.

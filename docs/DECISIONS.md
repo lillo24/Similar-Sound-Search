@@ -181,3 +181,18 @@ and [delivery evidence](../reports/C03_REFINEMENT.md).
 | DEC-076 | Preserve historical package guards and declare exact C04 consumer transitions. | Windows process, ancestry and metadata repairs retain old producers/attempts/charges; scoped source/AST proofs precede reuse and unknown drift blocks. |
 | DEC-077 | Stop C04 delivery at metadata refusal with its unfinished job preserved. | 145/148 units committed, no finalized real result/warm playback claim, pending time retained, no cap/reset/GC workaround. C03 playback remains. |
 | DEC-078 | Give D01 a versioned API and explicit remaining prerequisites. | Admission failed to protect final bookkeeping; a newly authorized owner must repair it and finalize/audit the chain before live integration. Defaults and unverified relevance remain unchanged. |
+
+## D01 application decisions
+
+23 October 2026; [contracts](APPLICATION.md), [fixed protocol](../manifests/application/protocol.json)
+and [acceptance evidence](../reports/D01_INTERFACE.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-079 | Own D01 integration in a separate application package/pool while retaining every inherited Python source and historical ledger. | C04 stays partial 145/148 with its pending 120 seconds. Fresh source/array/score adoption enables complete D01 results without catalogue encoding or weakened historical guards. |
+| DEC-080 | Enforce a 96 MiB ordinary partition, protected 32 MiB bookkeeping and bounded prepaid attempts. | Count destination/temp/overhead and repeated writes; terminal errors use an independent writer. Delta settlement applies once, preserves later controls and distinguishes impossible persistence from observed process state. |
+| DEC-081 | Commit compact eight-group units and reserve the entire publication path. | Preserve exact numerical values/ties/supports under the 1 MiB reader limit. Retain underestimated attempts; declared remaining-path allocations use the same pool, and corrected future geometry refuses work before unsafe admission. |
+| DEC-082 | Separate query-independent C01 bank reading from strict exact-query historical import. | Newly saved B03 original/pitch-off queries rerank every eligible group using reused candidate arrays; incompatible C03 refinement is unavailable. |
+| DEC-083 | Bind playback to a complete query/arm/population/result and semantic native crops. | Default legacy players cannot substitute C03 intervals or a foreign cached clip. Additional passages remain separate native references; waveform/browser clocks do not define scored bounds. |
+| DEC-084 | Keep HTTP controls independent from serial workers and persist pending resume acknowledgement before dispatch. | Browser refresh/restart/retry retains one immutable request. Status/completed navigation are read-only; local mutations require exact Host/Origin/token and only peer disconnects are handled quietly. |
+| DEC-085 | Finish the finite real acceptance and retain completed navigation when another full search cannot fit. | Original/warm/new-query work, 40 native clips and 72 browser players passed without cap changes. Human similarity, automatic evaluation, packaging and listening review retain their later owners. |
