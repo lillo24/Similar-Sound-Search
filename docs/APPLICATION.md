@@ -105,7 +105,10 @@ Reopening a completed result is separate from submitting a fresh validation sear
 Groups use a bounded lossless `d01-packed-group-1` storage codec behind `Context.get`;
 decoded numerical values/order are identical to the existing C04 algorithm. Media
 uses `d01-media-1`, semantic source PCM/bytes/native crop keys, exact PCM16 verification
-and opaque `/media/<id>` routes with range/MIME checks. The preserved verified C03
+and opaque `/media/<id>` preview routes. Result players use
+`/result-media/<result-id>/<media-id>` and reject a clip outside that complete
+query/arm/population/result, even if the clip exists in the semantic cache.
+Both routes preserve range/MIME checks. The preserved verified C03
 bundle is separately exposed at `/historical/`; it never substitutes for legacy cards.
 
 Strict Host and Origin checks plus a local-session token protect every mutation.

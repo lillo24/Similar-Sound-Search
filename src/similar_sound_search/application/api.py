@@ -234,6 +234,32 @@ def result(root, key):
     return value
 
 
+def result_media(root, result_id, media_id):
+    """Resolve media only through its immutable complete query/arm/population result."""
+    owner = Context(root)
+    ref = dict(
+        path="data/runs/application/results/" + identifier(result_id) + ".json",
+        record_hash=result_id,
+    )
+    declared = owner.get(ref, "results")
+    value = result(root, declared["job_id"])
+    if value["record_hash"] != result_id or value["schema_version"] != "d01-result-1":
+        raise InputError("D01 media result is not the job's complete publication")
+    identifier(media_id)
+    members = {
+        p[k]["record_hash"]
+        for c in value["cards"]
+        for p in c["passages"]
+        if not p["additional"]
+        for k in ("scored", "context")
+    }
+    if media_id not in members:
+        raise InputError("D01 media does not belong to this query/arm/population/result")
+    from .media import validate
+
+    return validate(owner, media_id)
+
+
 def library(root):
     return queries.inventory(Context(root))
 

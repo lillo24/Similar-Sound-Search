@@ -15,7 +15,7 @@
     "POST /api/resume": {"job_id": "same persisted SHA256", "request_id": "stable SHA256 control ID"}
   },
   "security": "Exact loopback Host/Origin plus X-D01-Token from GET bootstrap; tokens rotate on server restart. No arbitrary paths/URLs/shell or remote origins.",
-  "reads": ["GET /api/bootstrap", "GET /api/job/<job_id>", "GET /api/result/<job_id>", "GET /api/revision/<revision_id>", "GET /api/waveform/<record_id>", "GET /media/<record_id> (ranges)", "GET /historical/ (separate preserved C03 bundle)"],
+  "reads": ["GET /api/bootstrap", "GET /api/job/<job_id>", "GET /api/result/<job_id>", "GET /api/revision/<revision_id>", "GET /api/waveform/<record_id>", "GET /media/<record_id> (reference preview)", "GET /result-media/<result_id>/<media_id> (complete result membership plus ranges)", "GET /historical/ (separate preserved C03 bundle)"],
   "states": ["pending", "running", "in_progress", "complete", "failed", "blocked", "cancelled", "interrupted"],
   "status_fields": ["state", "durable_state", "observed_process", "completed", "requested", "result", "error", "cancellation_pending", "cancellation_requested", "last_complete", "allowance", "historical_c04"],
   "result_schema": "d01-result-1: job_id/query/selection/policy/consumer/snapshot/arms/cards/chain/selected_arm/excluded_groups/population/resource_owner",

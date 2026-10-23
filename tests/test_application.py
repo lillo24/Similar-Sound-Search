@@ -558,6 +558,32 @@ class ApplicationTests(unittest.TestCase):
             self.assertEqual(saved["bounds"], p["scored_bounds"])
             self.assertEqual(saved["original"]["group"], c["group"])
             self.assertEqual(c["query_hash"], q["record_hash"])
+        query_ref = self.owner.put(self.budget, "queries", dict(query=q))
+        result_key = "d" * 64
+        published = self.owner.put(
+            self.budget,
+            "results",
+            dict(
+                **result,
+                schema_version="d01-result-1",
+                state="complete",
+                job_id=result_key,
+                query=query_ref,
+                cards=cards,
+            ),
+        )
+        self.owner.publish(
+            self.budget,
+            api.state_path(self.owner, result_key),
+            dict(state="complete", result=published),
+        )
+        target, _ = api.result_media(
+            self.root, published["record_hash"], cards[0]["passages"][0]["scored"]["record_hash"]
+        )
+        self.assertTrue(target.is_file())
+        foreign = media.cached_clip(self.budget, self.owner, population[1], [800, 8800])
+        with self.assertRaisesRegex(InputError, "does not belong"):
+            api.result_media(self.root, published["record_hash"], foreign["record_hash"])
 
     def test_committed_unit_survives_coordinator_failure_without_duplicate_work(self):
         request = dict(kind="save", input={}, request_id="crash-after-commit")

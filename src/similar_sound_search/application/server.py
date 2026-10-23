@@ -88,7 +88,8 @@ def make_server(root, limits, port=8774):
             self.send_header("Content-Length", str(len(raw)))
             self.headers_common()
             self.end_headers()
-            self.wfile.write(raw)
+            if self.command != "HEAD":
+                self.wfile.write(raw)
 
         def headers_common(self):
             self.send_header("Cache-Control", "no-store")
@@ -182,7 +183,15 @@ def make_server(root, limits, port=8774):
                     )
                     return self.send_json(value)
                 if path.startswith("/media/"):
-                    target, _ = media.validate(owner, api.identifier(path[7:]))
+                    target, value = media.validate(owner, api.identifier(path[7:]))
+                    if value["original"]["kind"] != "reference":
+                        raise InputError("D01 candidate media requires its complete result scope")
+                    return self.send_file(target, "audio/wav")
+                if path.startswith("/result-media/"):
+                    parts = path[14:].split("/")
+                    if len(parts) != 2:
+                        raise InputError("D01 media requires opaque result and media IDs")
+                    target, _ = api.result_media(root, *parts)
                     return self.send_file(target, "audio/wav")
                 if path.startswith("/historical/"):
                     from ..refinement.context import Context as HistoricalContext
