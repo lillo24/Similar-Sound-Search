@@ -5,7 +5,7 @@
     "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
     "application/__init__.py": "93ea3aae51e316c01fc70dfe12659bb0c2b101d6decc8273018772972f2e598e",
     "application/__main__.py": "cb525000a21ad32f647251d1ef92c6878c0bc4aa657d4446bb96e89de8e6364f",
-    "application/api.py": "3c2cc97536554bc63990f3e9fa04bb46ee8ffd81fb535f86b329bff35d7b3501",
+    "application/api.py": "3a1f2fd7cb3a74669da7ca112e6bbfcdcc00d287eb57f3f38838cabdf0642252",
     "application/codec.py": "654cac5497daa31f15121067f72d265a501d4d187a8e3e44696f9d3f5d63ca9e",
     "application/context.py": "8e24c57224f10935d800475ab640ca8749bf1fa5a24aa6b363c51149f7d7f7f3",
     "application/files.py": "f62b964dc05d7eea9c5b4676e4ffc107d6d8eb3fefb3448f9e29a34de4b6005f",
@@ -15,7 +15,7 @@
     "application/media.py": "efee9cdf00df58f1a251efe29350eb26989c496e0dc51f73a84bf1925a84ef6f",
     "application/pipeline.py": "9665cecb4d34cc4e0308268fcfbf107a442d91844f452b6662523603073bb585",
     "application/queries.py": "59b62f5516652207f292728b888d44a18df466a0857e6ad77b644a9c13516981",
-    "application/server.py": "2f75baf1d8b078fa880e021e744d85dafe2a27c2ba50e53ccc7e2e1c1565f1c2",
+    "application/server.py": "7e244bf1dc12c7fcd2f3c1ea4862ef4e2ca24fa8e4ead49b96285b57ff8e9744",
     "application/validation.py": "0c33e36aad5487a6a85b420fa147dd9820510182c1802437b1952eccffe65405",
     "catalogue/__init__.py": "cb2f9dd3009b8ddda5243414de0433f48862b542b0f1ef65268b3a4b905b2b08",
     "catalogue/ingestion.py": "cde055f915935507cbdb187b0409609d0066956b4bdc7cd446519935ca11af94",
@@ -163,8 +163,8 @@
   ],
   "inherited_consumer": "d1399bb23a9a2edeb716025a04855cb91c3d11c5ebe3ab29b2c2ebd79ca34d4c",
   "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
-  "source_commit": "82bd106ffd449ab6129d0aaa0e7a3cbd29d09329",
+  "source_commit": "ecb633df3bda26505a2e1d81120fcbd2b631e8c9",
   "policy": "Exact inherited files; new application adapters call unchanged primitives. Unknown Python drift blocks; renderer assets have separate identity.",
-  "compatibility": "f276cb835ec4c5d2531238901ab5204bd74fb2a6b5927059196abe1624bddd53",
-  "record_hash": "2aa105179be086ef84f5e4436eca7fbfc552616a29e7f49928e11afeea6f4e3e"
+  "compatibility": "e330323ee3f3e42f163a38975d60251fa28d71352cbaf93a5eaae7a8881826ef",
+  "record_hash": "05ac2f64bbe559db786aa2e3b95427d47b4afe977a34a356522494d0de064a45"
 }
