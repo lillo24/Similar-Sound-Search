@@ -1,7 +1,7 @@
 {
   "schema_version": "c04-processing-evidence-1",
   "state": "partial-metadata-ceiling",
-  "source_commit": "ec6214ac82170997a991549e1e02d143b34b4ec2",
+  "source_commit": "f242ed9769328e6c0da09cd985ee08c7b96195c9",
   "consumer": "d1399bb23a9a2edeb716025a04855cb91c3d11c5ebe3ab29b2c2ebd79ca34d4c",
   "declarations": {
     "protocol": "4a82fb08b56350a45a6911262ac7765e9a5991f80b2161261cb2491e4a3c7366",
@@ -4066,7 +4066,7 @@
       ],
       "c01_denied_staging": "inventoried and retained"
     },
-    "hosted_ci": "PR 26: no configured statuses/check runs/workflows; main unprotected, no rulesets"
+    "hosted_ci": "PR 26: no statuses/checks/workflows; unprotected main, no rulesets"
   },
   "playback": {
     "bundle": "b7c1bae8c55f488883a599d4486b85d382b6d66eecabc6bbf028871e4ae48aee",
@@ -4089,5 +4089,5 @@
   ],
   "after_cap": "No further processing dispatched; counters and reservation preserved. No cap increase/reset, GC, deployment or dependency change.",
   "delivery_pr": "https://github.com/lillo24/Similar-Sound-Search/pull/26",
-  "record_hash": "5672504d1fccd062e33de63c271772624e7b8525d9e7a4825fe07b1a31f36278"
+  "record_hash": "ae6b5bc0d04bb91070e533acfb50f686e8c698946d048fb34df7ed5359d72c41"
 }

@@ -132,7 +132,7 @@ assert all(v["new_encodes"] == 0 for v in sources.values())
 evidence = dict(
     schema_version="c04-processing-evidence-1",
     state="partial-metadata-ceiling",
-    source_commit=subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+    source_commit=subprocess.check_output(["git", "rev-parse", "f242ed9"], text=True).strip(),
     consumer=record(root / "manifests/processing/consumer.json")["record_hash"],
     declarations=dict(
         protocol=digest(owner.protocol),
@@ -216,7 +216,7 @@ evidence = dict(
         preservation=json.loads(
             (owner.reports / "preservation-after.json").read_text(encoding="utf-8")
         ),
-        hosted_ci="PR 26: no configured statuses/check runs/workflows; main unprotected, no rulesets",
+        hosted_ci="PR 26: no statuses/checks/workflows; unprotected main, no rulesets",
     ),
     playback=dict(
         bundle=owner.protocol["playback_bundle"],
