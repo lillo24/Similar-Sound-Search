@@ -293,6 +293,9 @@ def _run(root, limits, key):
             u for u in graph if u.startswith("source:") and committed(owner, key, u) is not None
         ]
         for _ in range(256):
+            # The 120s deadline bounds each child and each coordinator transaction,
+            # not the complete multi-worker request. Aggregate time stays in the pool.
+            budget = CatalogueBudget(root, limits)
             state = record(api.state_path(owner, key))
             if state["state"] == "complete":
                 return state
@@ -329,6 +332,7 @@ def _run(root, limits, key):
                         "D01 insufficient available commit for worker plus server overlap"
                     )
                 answer = execute(owner, key, {**limits, "max_seconds": 120}, validate[:4])
+                budget = CatalogueBudget(root, limits)
                 answer["server_peak_working_bytes"] = server_memory
                 answer["overlap_peak_bound"] = server_memory + answer.get("peak_working_bytes", 0)
                 if answer.get("state") == "validated":
