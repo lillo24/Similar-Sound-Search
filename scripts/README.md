@@ -72,3 +72,8 @@ preserving the initial consumer and all spent work; it refuses an existing repai
 `declare-processing-metadata-compatibility.py` pins the exact metadata-only upgrade
 and unchanged numerical/reservation proofs. It permits the same paused plan to
 resume under the declared new consumer, without replacing old records or charges.
+
+`export-processing-evidence.py` reads retained records for static public reporting;
+it dispatches no work and cannot settle/replenish the exhausted pool. Real C04
+finalization is partial; `listen-processing.ps1` has no completed warm real job.
+Use preserved C03 playback until a newly authorized owner repairs/finalizes the chain.

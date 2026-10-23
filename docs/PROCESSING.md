@@ -146,3 +146,16 @@ successful source/array validation; it never survives a worker or masks a failed
 load. Up to eight read-only resume validations share a worker; executable units
 remain capped at four. Cancellation during validation stops further admission,
 and status shows in-progress while resume validation runs.
+
+## Current delivery limitation
+
+Real C04 processing stopped at metadata refusal after 145/148 units. All 72 sources,
+the saved query and 72 scores remain; aggregation, C03 import and publication are
+incomplete. Error/settlement journaling also refused: persisted
+`in_progress/error=null` is not live/success evidence. Current result is null, the
+next mandatory write cannot fit, and the 120s unsettled reservation stays charged.
+All C04 locks are released. The prospective 32 MiB recovery reserve was not a
+protected admission floor. Do not reset or rename this pool.
+[C04_PROCESSING.md](../reports/C04_PROCESSING.md) records the exact scope and D01
+new-owner/admission/finalization prerequisites. The completed real C04 playback
+route remains unexercised; preserved C03 playback remains on 8772.
