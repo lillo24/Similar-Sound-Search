@@ -49,7 +49,8 @@ No GitHub Actions workflow/required CI check exists in the inspected repository;
 | C01 passage banks | Delivered; complete legacy/long originals, partial short/HPSS diagnostics; [evidence](../reports/C01_INDEX.md) |
 | C02 retrieval and aggregation | Delivered; exact legacy default, event support and twenty-group shortlists; [evidence](../reports/C02_RETRIEVAL.md) |
 | C03 candidate refinement | Delivered; bounded original timing, retained controls, separately verified playback and C04 handoff; [evidence](../reports/C03_REFINEMENT.md) |
-| C04 incremental processing and D01-D04 interface/package | Future; first required user listening review remains D04 |
+| C04 incremental processing | Partial: fixture/recovery checks passed; 72-source banks/query/scores committed, final publication blocked at metadata ceiling; [evidence](../reports/C04_PROCESSING.md) |
+| D01-D04 interface/package | Future; live D01 needs metadata admission/finalization repair and an explicit new owner; first listening review remains D04 |
 | Perceptual quality and Loulou relevance | Unmeasured; real-catalogue candidates are not confirmed matches; controlled A05/A06 metrics remain separate |
 | Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 
@@ -154,3 +155,19 @@ historical listeners on 8766/8767/8768 remain. C01 must inspect the concrete han
 the B03 report, verify local source/cue/index compatibility and predeclare its own
 bounded component-index work. No C01 processing starts here. D04 remains the first
 required listening review; human/Loulou relevance is unmeasured.
+
+## C04 partial delivery and D01 handoff
+
+[Processing](PROCESSING.md) implements revisions, row reuse across packing,
+transactional jobs and the API handoff. The final suite passes 351 tests. Declared
+fixture deltas and actual termination/restart passed independent clean comparisons.
+Real adoption committed 72 source units, the saved query and 72 score units:
+145/148, zero new catalogue embeddings. The fixed metadata pool could not admit
+aggregation/import/publication bookkeeping. No finalized real C04 result, warm
+result or completed-C04 playback is claimed. C03 playback remains intact on 8772.
+
+The pool retains 134,197,338/134,217,728 counted metadata bytes and an unsettled
+120s reservation. Error journaling also refused; persisted in-progress state is
+not evidence of a live owner or success. All C04 locks are released. The [report](../reports/C04_PROCESSING.md)
+separates committed artifacts, intermediates and blocked work. Funds remain fixed;
+D01 needs an explicit new owner and admission repair. No D01 processing ran.

@@ -59,3 +59,9 @@ event/variant semantics, native scored/context support and the C03 export.
 nine native starts, original-control ties and unchanged C02 group order.
 [REFINEMENT.md](../docs/REFINEMENT.md) owns audited import, semantic native keys,
 original-mixture verification, preserved alternates and the C04 handoff.
+
+## C04 processing
+
+`processing.json` fixes one cumulative pool for every explicit revision, job and retry.
+[PROCESSING.md](../docs/PROCESSING.md) owns the dependency table, transactional API,
+read-only adoption and D01 handoff. No automatic garbage collection is provided.

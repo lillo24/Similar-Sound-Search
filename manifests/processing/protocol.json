@@ -1,0 +1,31 @@
+{
+  "schema_version": "c04-protocol-1",
+  "scenario_sequence": [
+    {"name": "cold", "population": ["a", "b"], "query": "q1", "expected": "encode all missing exact rows and query; complete population ranks"},
+    {"name": "warm", "expected": "validate sources and arrays; zero encodes; identical semantic result"},
+    {"name": "add", "population": ["a", "b", "c"], "expected": "encode c only; recompute all group ranks"},
+    {"name": "replace", "population": ["a", "b2", "c"], "expected": "encode replacement b2 only; all score and group descendants as needed"},
+    {"name": "remove", "population": ["a", "c"], "expected": "membership tombstone b2; no deletion or encodes; recompute complete ranks"},
+    {"name": "query", "query": "q2", "expected": "encode changed query only; score all eligible sources"},
+    {"name": "objective", "expected": "event association and objective selection change aggregation; raw features survive"},
+    {"name": "packing", "expected": "repartition exact row references; zero encodes"},
+    {"name": "window", "expected": "encode only newly requested native bounds"},
+    {"name": "labels", "expected": "metadata/report route changes; zero numerical inference"},
+    {"name": "recovery", "expected": "one real owned worker termination after committed features; resume preserves bytes and charges"},
+    {"name": "historical-adoption", "expected": "fresh 72-source, two-bank C04 audit; exact query/C02/C03/report import; zero catalogue encodes"}
+  ],
+  "fixture_policy": {"rate": 24000, "seconds": 6, "initial_sources": 2, "max_sources": 3, "query_examples": 1, "window_milliseconds": 2400, "hop_milliseconds": 1200},
+  "clean_comparisons": "each population/query revision plus objective/window; independently rebuilt features under same pool, scalar scoring/native membership oracle",
+  "fault_tests": "isolated roots: reservation/temp/array/membership/progress/final, contention/interrupted lock, cancellation, exhausted funds, disk/memory, corruption, lineage, schemas, implementation drift",
+  "reserved_headroom": {"workers": 48, "worker_seconds": 600, "feature_windows": 512, "metadata_bytes": 33554432},
+  "snapshot": "d6c54710786acdb584e92d2cba25491eb643c996fa622e3194d1b9381f659f87",
+  "primary_banks": ["69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229", "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0"],
+  "execution": {"path": "data/runs/retrieval/executions/a1390a76b77c76aa53c3c97d6adfd5dc5ed38b5f0e9ad9ad2bf890f7a0554d67.json", "record_hash": "a1390a76b77c76aa53c3c97d6adfd5dc5ed38b5f0e9ad9ad2bf890f7a0554d67"},
+  "arm": "event-multi",
+  "refinement_execution": {"path": "data/runs/refinement/executions/339fa84d523c457ab10c099be4feeb13b220d29fec995c31eed12fae4a23d98d.json", "record_hash": "339fa84d523c457ab10c099be4feeb13b220d29fec995c31eed12fae4a23d98d"},
+  "playback_bundle": "b7c1bae8c55f488883a599d4486b85d382b6d66eecabc6bbf028871e4ae48aee",
+  "delivery": {"revision": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3", "materialization": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036"},
+  "acquisition": false,
+  "garbage_collection": false,
+  "historical_work": "read-only; every new read and consumer proof belongs to C04"
+}

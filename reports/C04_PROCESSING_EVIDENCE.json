@@ -1,0 +1,4093 @@
+{
+  "schema_version": "c04-processing-evidence-1",
+  "state": "partial-metadata-ceiling",
+  "source_commit": "f242ed9769328e6c0da09cd985ee08c7b96195c9",
+  "consumer": "d1399bb23a9a2edeb716025a04855cb91c3d11c5ebe3ab29b2c2ebd79ca34d4c",
+  "declarations": {
+    "protocol": "4a82fb08b56350a45a6911262ac7765e9a5991f80b2161261cb2491e4a3c7366",
+    "correctness": "11b26378b964b07517288abd6046f35b7482f995f73127e104e6af0bd0d03da2",
+    "metadata_compatibility": "ac5547cb708d2518a467828b40af2d325235be2eb4018652c579c071abe3c8cd"
+  },
+  "scenarios": [
+    {
+      "name": "cold",
+      "state": "complete",
+      "plan": {
+        "path": "data/runs/processing/plans/9ec61dc9f13451c3fb4a06f3cfa230e04aa4566a262f23fd0f3d02188b551a7e.json",
+        "record_hash": "9ec61dc9f13451c3fb4a06f3cfa230e04aa4566a262f23fd0f3d02188b551a7e"
+      },
+      "job": {
+        "path": "data/runs/processing/jobs/86e4ee12081d341fd13f4a4c669586aedd622a49af88c5bbacca89889fb3fb41.json",
+        "record_hash": "86e4ee12081d341fd13f4a4c669586aedd622a49af88c5bbacca89889fb3fb41"
+      },
+      "result": {
+        "path": "data/runs/processing/results/bed8d645e61ae76d3797b7791e249d5e299ac92dba7fa93ee3ad60efc4df304d.json",
+        "record_hash": "bed8d645e61ae76d3797b7791e249d5e299ac92dba7fa93ee3ad60efc4df304d"
+      },
+      "delta": {
+        "job_seconds": 25.702999999994063,
+        "workers": 3,
+        "read_audio_seconds": 36.0,
+        "feature_windows": 9,
+        "processed_window_seconds": 21.599999999999998,
+        "feature_bytes": 210432,
+        "query_jobs": 1,
+        "clips": 0,
+        "clip_bytes": 0,
+        "metadata_bytes": 1828946,
+        "preparation_bytes": 0,
+        "managed_output_bytes": 210432
+      },
+      "estimates": [
+        {
+          "source": "c04-a",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 0,
+          "missing_rows": 4,
+          "encoding_seconds": 9.6,
+          "validation_read_seconds": 6.0,
+          "reasons": [
+            "source added or first explicit revision"
+          ]
+        },
+        {
+          "source": "c04-b",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 0,
+          "missing_rows": 4,
+          "encoding_seconds": 9.6,
+          "validation_read_seconds": 6.0,
+          "reasons": [
+            "source added or first explicit revision"
+          ]
+        }
+      ],
+      "tombstones": [],
+      "changed_dependencies": [],
+      "previous_consumer_run": null,
+      "clean": {
+        "comparison": {
+          "path": "data/runs/processing/clean-comparisons/243821209b79225c9a139e00399460a0742071c0dc681dd5468d23ce05cf34c3.json",
+          "record_hash": "243821209b79225c9a139e00399460a0742071c0dc681dd5468d23ce05cf34c3"
+        },
+        "passed": true,
+        "new_clean_encodes": 9,
+        "exact_feature_bytes": true,
+        "exact_native_membership": true,
+        "scalar_pairs": 8,
+        "max_scalar_error": 4.440892098500626e-16
+      }
+    },
+    {
+      "name": "warm",
+      "state": "complete",
+      "plan": {
+        "path": "data/runs/processing/plans/06a3925afece3c168213c49baed2db7d5accbffe6cfa8bc51f73a8c8559ba533.json",
+        "record_hash": "06a3925afece3c168213c49baed2db7d5accbffe6cfa8bc51f73a8c8559ba533"
+      },
+      "job": {
+        "path": "data/runs/processing/jobs/4898a1ca614fd858b2b0a13c1c12bc61a7cf0bd73413edf65b62cc0d57e8c246.json",
+        "record_hash": "4898a1ca614fd858b2b0a13c1c12bc61a7cf0bd73413edf65b62cc0d57e8c246"
+      },
+      "result": {
+        "path": "data/runs/processing/results/c9b7a5292b2d6325f7e0879121247cbe34e95f4b8ecca37799460af1335ca23c.json",
+        "record_hash": "c9b7a5292b2d6325f7e0879121247cbe34e95f4b8ecca37799460af1335ca23c"
+      },
+      "delta": {
+        "job_seconds": 9.562000000005355,
+        "workers": 2,
+        "read_audio_seconds": 18.0,
+        "feature_windows": 0,
+        "processed_window_seconds": 0.0,
+        "feature_bytes": 0,
+        "query_jobs": 1,
+        "clips": 0,
+        "clip_bytes": 0,
+        "metadata_bytes": 1442666,
+        "preparation_bytes": 0,
+        "managed_output_bytes": 0
+      },
+      "estimates": [
+        {
+          "source": "c04-a",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        },
+        {
+          "source": "c04-b",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        }
+      ],
+      "tombstones": [],
+      "changed_dependencies": [],
+      "previous_consumer_run": null,
+      "clean": null
+    },
+    {
+      "name": "add",
+      "state": "complete",
+      "plan": {
+        "path": "data/runs/processing/plans/df7d671570e0a0300b67e65399777d6ea5e831447d1e5d3f55237d72aed83bbb.json",
+        "record_hash": "df7d671570e0a0300b67e65399777d6ea5e831447d1e5d3f55237d72aed83bbb"
+      },
+      "job": {
+        "path": "data/runs/processing/jobs/d6bf03cbface6c8c0a5e9e4d87e9777bbe2185c27ede2a4862fd72609daa6a4f.json",
+        "record_hash": "d6bf03cbface6c8c0a5e9e4d87e9777bbe2185c27ede2a4862fd72609daa6a4f"
+      },
+      "result": {
+        "path": "data/runs/processing/results/4ce641e44e4de994c4e4c7c7f68c47288360f4586228c1f003552809058063e4.json",
+        "record_hash": "4ce641e44e4de994c4e4c7c7f68c47288360f4586228c1f003552809058063e4"
+      },
+      "delta": {
+        "job_seconds": 22.39100000000326,
+        "workers": 3,
+        "read_audio_seconds": 24.0,
+        "feature_windows": 4,
+        "processed_window_seconds": 9.600000000000001,
+        "feature_bytes": 71680,
+        "query_jobs": 1,
+        "clips": 0,
+        "clip_bytes": 0,
+        "metadata_bytes": 1957600,
+        "preparation_bytes": 0,
+        "managed_output_bytes": 71680
+      },
+      "estimates": [
+        {
+          "source": "c04-a",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        },
+        {
+          "source": "c04-b",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        },
+        {
+          "source": "c04-c",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 0,
+          "missing_rows": 4,
+          "encoding_seconds": 9.6,
+          "validation_read_seconds": 6.0,
+          "reasons": [
+            "source added or first explicit revision"
+          ]
+        }
+      ],
+      "tombstones": [],
+      "changed_dependencies": [],
+      "previous_consumer_run": null,
+      "clean": {
+        "comparison": {
+          "path": "data/runs/processing/clean-comparisons/88dffc2dd06f4627dcbe96e0fadd7f9b97196b94fc1106eb7540971d6e8afa27.json",
+          "record_hash": "88dffc2dd06f4627dcbe96e0fadd7f9b97196b94fc1106eb7540971d6e8afa27"
+        },
+        "passed": true,
+        "new_clean_encodes": 13,
+        "exact_feature_bytes": true,
+        "exact_native_membership": true,
+        "scalar_pairs": 12,
+        "max_scalar_error": 4.440892098500626e-16
+      }
+    },
+    {
+      "name": "replace",
+      "state": "complete",
+      "plan": {
+        "path": "data/runs/processing/plans/ace192ad87bcda8834830387765f268e7a186dd136c1a3f5031ad0a95e029291.json",
+        "record_hash": "ace192ad87bcda8834830387765f268e7a186dd136c1a3f5031ad0a95e029291"
+      },
+      "job": {
+        "path": "data/runs/processing/jobs/4fe3bacc647897f295aa55413e3964add9919503b0c5a58fffc6ba5105e8c3b3.json",
+        "record_hash": "4fe3bacc647897f295aa55413e3964add9919503b0c5a58fffc6ba5105e8c3b3"
+      },
+      "result": {
+        "path": "data/runs/processing/results/10f9df48f572f9e2a4e06ab79110954734ac4fa5a65344f781d634d6a4436358.json",
+        "record_hash": "10f9df48f572f9e2a4e06ab79110954734ac4fa5a65344f781d634d6a4436358"
+      },
+      "delta": {
+        "job_seconds": 15.218999999997322,
+        "workers": 3,
+        "read_audio_seconds": 24.0,
+        "feature_windows": 0,
+        "processed_window_seconds": 0.0,
+        "feature_bytes": 0,
+        "query_jobs": 1,
+        "clips": 0,
+        "clip_bytes": 0,
+        "metadata_bytes": 1937122,
+        "preparation_bytes": 0,
+        "managed_output_bytes": 0
+      },
+      "estimates": [
+        {
+          "source": "c04-a",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        },
+        {
+          "source": "c04-b",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": [
+            "source samples/decoder changed; affected native features invalidated"
+          ]
+        },
+        {
+          "source": "c04-c",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        }
+      ],
+      "tombstones": [],
+      "changed_dependencies": [],
+      "previous_consumer_run": {
+        "plan": {
+          "path": "data/runs/processing/plans/aac7731b198473df518128e23694462d568f8048e1f0e732c37609bf8afaf8d4.json",
+          "record_hash": "aac7731b198473df518128e23694462d568f8048e1f0e732c37609bf8afaf8d4"
+        },
+        "job": {
+          "path": "data/runs/processing/jobs/04da6ac0bf54a4dda6bfe3b7ee487f1a587bc7d76800876093d3e38c070847fd.json",
+          "record_hash": "04da6ac0bf54a4dda6bfe3b7ee487f1a587bc7d76800876093d3e38c070847fd"
+        },
+        "result": {
+          "path": "data/runs/processing/results/f2323daefebbd54f9bc9d67c37afb13c72b3cd971dbaa4a10d92a8d9dcd267b2.json",
+          "record_hash": "f2323daefebbd54f9bc9d67c37afb13c72b3cd971dbaa4a10d92a8d9dcd267b2"
+        },
+        "measured_delta": {
+          "job_seconds": 27.860000000015134,
+          "workers": 3,
+          "read_audio_seconds": 24.0,
+          "feature_windows": 4,
+          "processed_window_seconds": 9.599999999999994,
+          "feature_bytes": 71680,
+          "query_jobs": 1,
+          "clips": 0,
+          "clip_bytes": 0,
+          "metadata_bytes": 1981236,
+          "preparation_bytes": 0,
+          "managed_output_bytes": 71680
+        }
+      },
+      "clean": {
+        "comparison": {
+          "path": "data/runs/processing/clean-comparisons/138532d1682b4f5971f378eaee3765c87d9d93f95c1d342e3e1df0ef76acc23a.json",
+          "record_hash": "138532d1682b4f5971f378eaee3765c87d9d93f95c1d342e3e1df0ef76acc23a"
+        },
+        "passed": true,
+        "new_clean_encodes": 13,
+        "exact_feature_bytes": true,
+        "exact_native_membership": true,
+        "scalar_pairs": 12,
+        "max_scalar_error": 2.220446049250313e-16
+      }
+    },
+    {
+      "name": "remove",
+      "state": "complete",
+      "plan": {
+        "path": "data/runs/processing/plans/e8cc7962331f45f1e69c6e3b53a286f7d5ccb4c243aa2fb60483ae797d0d9d27.json",
+        "record_hash": "e8cc7962331f45f1e69c6e3b53a286f7d5ccb4c243aa2fb60483ae797d0d9d27"
+      },
+      "job": {
+        "path": "data/runs/processing/jobs/d47d3edf0a75a797b94d1f8dcf9e07e696015cf18eb31be47fc3f08acde8aa68.json",
+        "record_hash": "d47d3edf0a75a797b94d1f8dcf9e07e696015cf18eb31be47fc3f08acde8aa68"
+      },
+      "result": {
+        "path": "data/runs/processing/results/7cffcbdbbd0d4dfa6ee02343e69eec798eb6113651034f24cca89e0816c3539d.json",
+        "record_hash": "7cffcbdbbd0d4dfa6ee02343e69eec798eb6113651034f24cca89e0816c3539d"
+      },
+      "delta": {
+        "job_seconds": 16.453999999997905,
+        "workers": 2,
+        "read_audio_seconds": 18.0,
+        "feature_windows": 0,
+        "processed_window_seconds": 0.0,
+        "feature_bytes": 0,
+        "query_jobs": 1,
+        "clips": 0,
+        "clip_bytes": 0,
+        "metadata_bytes": 1478932,
+        "preparation_bytes": 0,
+        "managed_output_bytes": 0
+      },
+      "estimates": [
+        {
+          "source": "c04-a",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        },
+        {
+          "source": "c04-c",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        }
+      ],
+      "tombstones": [
+        "c04-b"
+      ],
+      "changed_dependencies": [],
+      "previous_consumer_run": null,
+      "clean": {
+        "comparison": {
+          "path": "data/runs/processing/clean-comparisons/14c05180a2168f30d9be4bd3baa22dc32845b2b4df03aeb272ab51df134ca6c4.json",
+          "record_hash": "14c05180a2168f30d9be4bd3baa22dc32845b2b4df03aeb272ab51df134ca6c4"
+        },
+        "passed": true,
+        "new_clean_encodes": 9,
+        "exact_feature_bytes": true,
+        "exact_native_membership": true,
+        "scalar_pairs": 8,
+        "max_scalar_error": 2.220446049250313e-16
+      }
+    },
+    {
+      "name": "query",
+      "state": "complete",
+      "plan": {
+        "path": "data/runs/processing/plans/a6bcc2f5f29e36ac6a53f2e20fc1c410a0f23829a7798d56321096613c676ea6.json",
+        "record_hash": "a6bcc2f5f29e36ac6a53f2e20fc1c410a0f23829a7798d56321096613c676ea6"
+      },
+      "job": {
+        "path": "data/runs/processing/jobs/ab19e44f26b011b219c726f9cc5a12246f4a2c4e625f63970ca9ddd092254fc8.json",
+        "record_hash": "ab19e44f26b011b219c726f9cc5a12246f4a2c4e625f63970ca9ddd092254fc8"
+      },
+      "result": {
+        "path": "data/runs/processing/results/ce0a0e3410ad7045ff83b5503b76436a197729f6c8a9a2975ca4c93248200392.json",
+        "record_hash": "ce0a0e3410ad7045ff83b5503b76436a197729f6c8a9a2975ca4c93248200392"
+      },
+      "delta": {
+        "job_seconds": 16.546999999991385,
+        "workers": 2,
+        "read_audio_seconds": 18.0,
+        "feature_windows": 1,
+        "processed_window_seconds": 2.4000000000000057,
+        "feature_bytes": 67072,
+        "query_jobs": 1,
+        "clips": 0,
+        "clip_bytes": 0,
+        "metadata_bytes": 1615446,
+        "preparation_bytes": 0,
+        "managed_output_bytes": 67072
+      },
+      "estimates": [
+        {
+          "source": "c04-a",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        },
+        {
+          "source": "c04-c",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        }
+      ],
+      "tombstones": [],
+      "changed_dependencies": [
+        "query"
+      ],
+      "previous_consumer_run": null,
+      "clean": {
+        "comparison": {
+          "path": "data/runs/processing/clean-comparisons/080924e1fc08e7492bc9bc024d887d8d553d5543c32a421128e95457e827359e.json",
+          "record_hash": "080924e1fc08e7492bc9bc024d887d8d553d5543c32a421128e95457e827359e"
+        },
+        "passed": true,
+        "new_clean_encodes": 9,
+        "exact_feature_bytes": true,
+        "exact_native_membership": true,
+        "scalar_pairs": 8,
+        "max_scalar_error": 3.3306690738754696e-16
+      }
+    },
+    {
+      "name": "objective",
+      "state": "complete",
+      "plan": {
+        "path": "data/runs/processing/plans/20b11e84e1bbba12b602574e60858c418cbc8d87e295630febded409354a3e58.json",
+        "record_hash": "20b11e84e1bbba12b602574e60858c418cbc8d87e295630febded409354a3e58"
+      },
+      "job": {
+        "path": "data/runs/processing/jobs/3c37a5740d12dd59490089a8f22ab3b1f44c7de34f3b8795f13f4a7d240830ae.json",
+        "record_hash": "3c37a5740d12dd59490089a8f22ab3b1f44c7de34f3b8795f13f4a7d240830ae"
+      },
+      "result": {
+        "path": "data/runs/processing/results/2415539271ade179b990be4cbc12a589a26c4255fda94dae6885796cefe2a40f.json",
+        "record_hash": "2415539271ade179b990be4cbc12a589a26c4255fda94dae6885796cefe2a40f"
+      },
+      "delta": {
+        "job_seconds": 9.438999999998487,
+        "workers": 2,
+        "read_audio_seconds": 18.0,
+        "feature_windows": 0,
+        "processed_window_seconds": 0.0,
+        "feature_bytes": 0,
+        "query_jobs": 1,
+        "clips": 0,
+        "clip_bytes": 0,
+        "metadata_bytes": 1466424,
+        "preparation_bytes": 0,
+        "managed_output_bytes": 0
+      },
+      "estimates": [
+        {
+          "source": "c04-a",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        },
+        {
+          "source": "c04-c",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        }
+      ],
+      "tombstones": [],
+      "changed_dependencies": [
+        "policy"
+      ],
+      "previous_consumer_run": null,
+      "clean": {
+        "comparison": {
+          "path": "data/runs/processing/clean-comparisons/332898ca2f52c1c09dafe3c1dc41d80430e2879f73925a04ba9560e13e93e0f4.json",
+          "record_hash": "332898ca2f52c1c09dafe3c1dc41d80430e2879f73925a04ba9560e13e93e0f4"
+        },
+        "passed": true,
+        "new_clean_encodes": 9,
+        "exact_feature_bytes": true,
+        "exact_native_membership": true,
+        "scalar_pairs": 8,
+        "max_scalar_error": 3.3306690738754696e-16
+      }
+    },
+    {
+      "name": "packing",
+      "state": "complete",
+      "plan": {
+        "path": "data/runs/processing/plans/8de66d8aea0ef7503709bfe1116583565fb105af58763949cf629cc22fb3364c.json",
+        "record_hash": "8de66d8aea0ef7503709bfe1116583565fb105af58763949cf629cc22fb3364c"
+      },
+      "job": {
+        "path": "data/runs/processing/jobs/bea082fbcaf093695018e08d4deffd207571b46312c9da2e4b3f67ab8b33c8bc.json",
+        "record_hash": "bea082fbcaf093695018e08d4deffd207571b46312c9da2e4b3f67ab8b33c8bc"
+      },
+      "result": {
+        "path": "data/runs/processing/results/3fb3fa87f67283362c35f46642aa496ebdef0f17a55d584cb7cbf1e01011792e.json",
+        "record_hash": "3fb3fa87f67283362c35f46642aa496ebdef0f17a55d584cb7cbf1e01011792e"
+      },
+      "delta": {
+        "job_seconds": 9.25,
+        "workers": 2,
+        "read_audio_seconds": 18.0,
+        "feature_windows": 0,
+        "processed_window_seconds": 0.0,
+        "feature_bytes": 0,
+        "query_jobs": 1,
+        "clips": 0,
+        "clip_bytes": 0,
+        "metadata_bytes": 1342644,
+        "preparation_bytes": 0,
+        "managed_output_bytes": 0
+      },
+      "estimates": [
+        {
+          "source": "c04-a",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        },
+        {
+          "source": "c04-c",
+          "requested_rows": 4,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        }
+      ],
+      "tombstones": [],
+      "changed_dependencies": [
+        "packing"
+      ],
+      "previous_consumer_run": null,
+      "clean": null
+    },
+    {
+      "name": "window",
+      "state": "complete",
+      "plan": {
+        "path": "data/runs/processing/plans/8e9583de080918b4ba768d4da7924749e27eefefd015446440365fe1eb8bfd29.json",
+        "record_hash": "8e9583de080918b4ba768d4da7924749e27eefefd015446440365fe1eb8bfd29"
+      },
+      "job": {
+        "path": "data/runs/processing/jobs/2b30d4064b10554d92b81675b96389bc25ed4b10f688be36a045ad37507af2a9.json",
+        "record_hash": "2b30d4064b10554d92b81675b96389bc25ed4b10f688be36a045ad37507af2a9"
+      },
+      "result": {
+        "path": "data/runs/processing/results/3c0a3bb7c4734125638141ec3728285965a1afc1fab4a677ffa761135614af31.json",
+        "record_hash": "3c0a3bb7c4734125638141ec3728285965a1afc1fab4a677ffa761135614af31"
+      },
+      "delta": {
+        "job_seconds": 39.9369999999908,
+        "workers": 2,
+        "read_audio_seconds": 18.0,
+        "feature_windows": 6,
+        "processed_window_seconds": 14.400000000000034,
+        "feature_bytes": 402432,
+        "query_jobs": 1,
+        "clips": 0,
+        "clip_bytes": 0,
+        "metadata_bytes": 1840762,
+        "preparation_bytes": 0,
+        "managed_output_bytes": 402432
+      },
+      "estimates": [
+        {
+          "source": "c04-a",
+          "requested_rows": 7,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 3,
+          "encoding_seconds": 7.2,
+          "validation_read_seconds": 6.0,
+          "reasons": [
+            "window policy changed; only exact compatible rows survive"
+          ]
+        },
+        {
+          "source": "c04-c",
+          "requested_rows": 7,
+          "metadata_reuse_candidates": 4,
+          "missing_rows": 3,
+          "encoding_seconds": 7.2,
+          "validation_read_seconds": 6.0,
+          "reasons": [
+            "window policy changed; only exact compatible rows survive"
+          ]
+        }
+      ],
+      "tombstones": [],
+      "changed_dependencies": [],
+      "previous_consumer_run": null,
+      "clean": {
+        "comparison": {
+          "path": "data/runs/processing/clean-comparisons/7bf15b1f7ba490243e435434a3e43362ddfd10a9cc4ae24dfc184903b13bb4ae.json",
+          "record_hash": "7bf15b1f7ba490243e435434a3e43362ddfd10a9cc4ae24dfc184903b13bb4ae"
+        },
+        "passed": true,
+        "new_clean_encodes": 15,
+        "exact_feature_bytes": true,
+        "exact_native_membership": true,
+        "scalar_pairs": 14,
+        "max_scalar_error": 5.551115123125783e-16
+      }
+    },
+    {
+      "name": "labels",
+      "state": "complete",
+      "plan": {
+        "path": "data/runs/processing/plans/a508b29fd7a2a16394f9bf54be902e701d92b707765405655f9fa2b2c3688861.json",
+        "record_hash": "a508b29fd7a2a16394f9bf54be902e701d92b707765405655f9fa2b2c3688861"
+      },
+      "job": {
+        "path": "data/runs/processing/jobs/1ca1be9fe752a33436aad34beff3b607f71e23838f98a349201dc58ce651cf36.json",
+        "record_hash": "1ca1be9fe752a33436aad34beff3b607f71e23838f98a349201dc58ce651cf36"
+      },
+      "result": {
+        "path": "data/runs/processing/results/ec80dc34df03ef631c274149b4a4b7bf3648a3bcd02ca8ee7cc0f0da17b69f62.json",
+        "record_hash": "ec80dc34df03ef631c274149b4a4b7bf3648a3bcd02ca8ee7cc0f0da17b69f62"
+      },
+      "delta": {
+        "job_seconds": 9.126000000003842,
+        "workers": 2,
+        "read_audio_seconds": 18.0,
+        "feature_windows": 0,
+        "processed_window_seconds": 0.0,
+        "feature_bytes": 0,
+        "query_jobs": 1,
+        "clips": 0,
+        "clip_bytes": 0,
+        "metadata_bytes": 1471018,
+        "preparation_bytes": 0,
+        "managed_output_bytes": 0
+      },
+      "estimates": [
+        {
+          "source": "c04-a",
+          "requested_rows": 7,
+          "metadata_reuse_candidates": 7,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": [
+            "metadata/ancestry changed; features compatible, eligibility recomputed"
+          ]
+        },
+        {
+          "source": "c04-c",
+          "requested_rows": 7,
+          "metadata_reuse_candidates": 7,
+          "missing_rows": 0,
+          "encoding_seconds": 0.0,
+          "validation_read_seconds": 6.0,
+          "reasons": []
+        }
+      ],
+      "tombstones": [],
+      "changed_dependencies": [
+        "label"
+      ],
+      "previous_consumer_run": null,
+      "clean": null
+    }
+  ],
+  "recovery": {
+    "job": {
+      "path": "data/runs/processing/jobs/3c1186568036783a6be2a5f6d70da1682156bfde02d13067cf325494addaffc3.json",
+      "record_hash": "3c1186568036783a6be2a5f6d70da1682156bfde02d13067cf325494addaffc3"
+    },
+    "result": {
+      "path": "data/runs/processing/results/c95df369b7324d3ac2479d3e78b2c4863514b1d30959ac759f134e28cdf5eaa7.json",
+      "record_hash": "c95df369b7324d3ac2479d3e78b2c4863514b1d30959ac759f134e28cdf5eaa7"
+    },
+    "source_units_committed_before_termination": 1,
+    "retained_committed_hashes": {
+      "c04-a": [
+        [
+          "877f087ea8444e55461f578f2477eb9fd70de290ef5c1ca1421c5b98765a4fbb",
+          "a56c81b2d2bd5fb483845e726141dede6875026bc4982000b22f7b60392fc566"
+        ],
+        [
+          "d01fec8853b49b29b8328e8d326648434e39cccf489651ff92319b17d59cdf32",
+          "424dfdbb23b704c70f7ed2c31ae90b435c2cea8612e911efda2a447cd89b2bfb"
+        ],
+        [
+          "d93a5e93caaf72c1ca6013748ff7f0f782a96c36a1770ccf4bcc8992443616c3",
+          "66522aca5697d1aa2f1300527f509fe4df6f2e8829916ec8a7cbbf68f5c448af"
+        ],
+        [
+          "4668866a17e95a2c0006e06335cdcef7644c395340e46f5d092fd024a1fad121",
+          "31031d7aa15ae40cab72458c0b868dae56ab9c3b15ef0e78e6d7eb5b77d1d1dc"
+        ],
+        [
+          "0dc98d4863b2a23fa1fb5f505de07e70a7289d4742cfa332d49ff25d753c5a2c",
+          "26addcc2c7838a5edd93ca5ae852154ef0d615ebfd3f97c37232b910014eca48"
+        ],
+        [
+          "184ca52138fafc2f8e5e88fc29699641ff4dbbffad64cd911f549ed750e66931",
+          "a74b82b206299ea350357c8e7339a56c8456210f3e7d43f3ad66f161ec3032d8"
+        ]
+      ]
+    },
+    "committed_rows_not_reembedded": true
+  },
+  "recovery_clean": {
+    "comparison": {
+      "path": "data/runs/processing/clean-comparisons/4c4d32767b85f25be89fd54e31f0df6401ae01e56f9e85720eaa7ee71592c50e.json",
+      "record_hash": "4c4d32767b85f25be89fd54e31f0df6401ae01e56f9e85720eaa7ee71592c50e"
+    },
+    "passed": true,
+    "new_clean_encodes": 13,
+    "max_scalar_error": 2.220446049250313e-16
+  },
+  "historical": {
+    "job": {
+      "path": "data/runs/processing/jobs/6d5edff624a49b8529ff2add0593f3953f668c7baa140f65568e922979d7176b.json",
+      "record_hash": "6d5edff624a49b8529ff2add0593f3953f668c7baa140f65568e922979d7176b"
+    },
+    "plan": {
+      "path": "data/runs/processing/plans/a5017addd669bc2d3461302e5ba742f42d31d4b5ddcbc45b674c33f1e8a3e4bc.json",
+      "record_hash": "a5017addd669bc2d3461302e5ba742f42d31d4b5ddcbc45b674c33f1e8a3e4bc"
+    },
+    "requested_units": 148,
+    "committed_units": 145,
+    "sources": 72,
+    "groups": 72,
+    "rows": 54939,
+    "banks": [
+      "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+      "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0"
+    ],
+    "snapshot": "d6c54710786acdb584e92d2cba25491eb643c996fa622e3194d1b9381f659f87",
+    "c02": {
+      "path": "data/runs/retrieval/executions/a1390a76b77c76aa53c3c97d6adfd5dc5ed38b5f0e9ad9ad2bf890f7a0554d67.json",
+      "record_hash": "a1390a76b77c76aa53c3c97d6adfd5dc5ed38b5f0e9ad9ad2bf890f7a0554d67"
+    },
+    "c03": {
+      "path": "data/runs/refinement/executions/339fa84d523c457ab10c099be4feeb13b220d29fec995c31eed12fae4a23d98d.json",
+      "record_hash": "339fa84d523c457ab10c099be4feeb13b220d29fec995c31eed12fae4a23d98d"
+    },
+    "saved_query": {
+      "revision": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3",
+      "materialization": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036"
+    },
+    "exact_query_hash": "f24d82060fd5809aec85f4754faa32da45aae49c34968b7b1a1a9d83fef29e95",
+    "query_committed": true,
+    "source_scores_committed": 72,
+    "new_catalogue_encodes": 0,
+    "copied_catalogue_arrays": 0,
+    "source_audit_consumers": {
+      "792dbd5d1f6cfc223e83b9565ee0f77e668cdfed8c4d551e50ad791c02677fdf": 67,
+      "055bc34665840898d962a5c5a7a8b23c44d942b4e2137d8851957a90b6bb32cd": 2,
+      "d1399bb23a9a2edeb716025a04855cb91c3d11c5ebe3ab29b2c2ebd79ca34d4c": 3
+    },
+    "source_units": [
+      {
+        "recording_id": "005af5e2aaad323d8bbcbe9aabde36778bbf0768623addcc254eee355de7b005",
+        "rows": 418,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/3038be9a6870c3d7cac6574e9894f948917ee38a546e222e170b22200ff5cbe9.json",
+          "record_hash": "3038be9a6870c3d7cac6574e9894f948917ee38a546e222e170b22200ff5cbe9"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "097ea8c89155a57fb092d68df914e73a6bf730a2f7f41f9261d1d3daf139b2f4",
+            "passage_digest": "3aa6f620a801a0f5947b646b5253295be37c9eb8855f7cdc2a1228ef4a22a7b9",
+            "rows": 335
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "09e45b2a1f7084b3ec1baf30d3c568b4c66d36031603dd3e3e37a98772b4329e",
+            "passage_digest": "1805edb7cee0ca0e7315699b5ac9a61454add828ec2dd598f5ce6b5385eac220",
+            "rows": 83
+          }
+        ]
+      },
+      {
+        "recording_id": "02e9c5776b23f68fc3ac3fdd3fbb36b0c497701c3a1a346e22f3ed76051b2064",
+        "rows": 778,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/2e212cc6267ffd1ce8d08957c07b16adee2fee6286c75539cf1b0ecce17af02e.json",
+          "record_hash": "2e212cc6267ffd1ce8d08957c07b16adee2fee6286c75539cf1b0ecce17af02e"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "d1edf316d40482f33c9240e79b61276fb39d06832fc25d870c0fa544e0434087",
+            "passage_digest": "43779bd2288d0684cedae351c5f224a123ce80dd3c30e474b7c456c1c9f7e586",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "49c9470b51bc0b333427a1107444509230f3ad9c2e7978cfbd0af892e9f4d64b",
+            "passage_digest": "50e6c340dbb462a2f5b287beb3d7fc381837c366d5b23488ec50a1acfb7681ea",
+            "rows": 111
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "45dc385be9ae64f350b06cb39f0c4d8e2fed821a4d8eac6c1879a864bdddf64d",
+            "passage_digest": "2fe8d80fa70bec02fa91f48fd5d559f062b3891a78ab200aac35e6812717a860",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "ab8275403fd6a50ae5d2090af53aa697b4ea0d3c4fd1be8f090375731d6e6f78",
+            "passage_digest": "ebfbb14132cf194f5b7deaa5dd5af20878f1c599bd1d48b0b0402dffff898ce0",
+            "rows": 27
+          }
+        ]
+      },
+      {
+        "recording_id": "039823cc3b6d5cf3636d7e79c4e4249648c9ed007dd9654eeaaee1083ba17cc3",
+        "rows": 504,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/5ee039a46f0d31d6adb5c3bf65b62450d291e2c8669f6b5b1fc7cb50d89e6d22.json",
+          "record_hash": "5ee039a46f0d31d6adb5c3bf65b62450d291e2c8669f6b5b1fc7cb50d89e6d22"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "4a44dda3aa04926241a78c80af317f69960d2de4c5be7b69b56c8e7eec645c5a",
+            "passage_digest": "882f4e3a4b59dc56187990ca54dec9f6b14029d6873d33ea4ceb0dd767f4c75c",
+            "rows": 404
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "72518b949a4741ad2e521a24192e2e840672d869628cf187ce6087096f1d168d",
+            "passage_digest": "0a2e70e7b6def8555fe0c38964647a97812edb5300e84284705360485bfc8461",
+            "rows": 100
+          }
+        ]
+      },
+      {
+        "recording_id": "0588cb971f205c13a31cd0ce6e3f38d36fc7d3e0c304117370263d67f9a4db48",
+        "rows": 886,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/8cfd764011f85788d4497b44577f897a66f781b3422e5703d327fa25213d001d.json",
+          "record_hash": "8cfd764011f85788d4497b44577f897a66f781b3422e5703d327fa25213d001d"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "77ebab09669ae4b682abe2f53fa9d39639369ef65f4ff92497b06cb645b60d4d",
+            "passage_digest": "14dbfdc32f4220ca34d39e5bf52b29b703dda79ff5c4e435c64b908e78e83e77",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "e61c8235f4d52c934e7f416e659e6a3879801494bb03752582eb16bf7601b4a1",
+            "passage_digest": "823705e9342afdaaf6684e6fdabbf161df7ce2dcd1f45df77b638e17e7cb2892",
+            "rows": 198
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "e29adfb2d47abd63132aac9606a09d4be1df8120c89cfb8b82da5a888182e9f8",
+            "passage_digest": "e88c44697fce141ce2b554ee438bffc73e2585628ab49191f5143fb3f2bcbcf7",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "c30d6e0e41c0741f3c40e846f70cad18e4c0966c3565266d89485869415f18fd",
+            "passage_digest": "d705ad9b34911f3419484758a769510fb569c5ee447b897138f5577629dae4d8",
+            "rows": 48
+          }
+        ]
+      },
+      {
+        "recording_id": "0c79da2bdbd98009c9269ff786259e2eb22d3264810c036bac7b63dc02a9db21",
+        "rows": 966,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/232e618b519e71d9f7f0002ab3159552ef3f96fef87699428e0ed904a137834f.json",
+          "record_hash": "232e618b519e71d9f7f0002ab3159552ef3f96fef87699428e0ed904a137834f"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "40274fdc5d7f75fd115bf099d77cb3d30fc88ab4457b295f3be0e86df7c5169f",
+            "passage_digest": "ceefbccf1a3a3d07bdfa9e6e9239fa953a74604c074bd6ef67c6f7e22f01295c",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "08b92baf42e56bc6e4d7224b65f00fa7c0d5b94885603d3bdaccb10d324e5619",
+            "passage_digest": "77f3f0aa3c8aae6a4c4fe22939d0a0e940e45a8eaec08f819a25bdac091cb375",
+            "rows": 262
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "1136869a086f91ecde591a7814acf0a6fd1a16bd428442e73c0d2caf047efb51",
+            "passage_digest": "c1b53b1943c8de0b9f0125151e134e8b0715d43518029f22b1bc28697590b7e8",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "7370ac187fcd83dec795fc97a9153e649647aa816ce4ec2306d0763df512899f",
+            "passage_digest": "03e0e06799c1f5d93d74b0e9771d83090b4cb873dfd68258cecc584d9bd0aa62",
+            "rows": 64
+          }
+        ]
+      },
+      {
+        "recording_id": "0dbaa617d1bfd02ab6c9439011638d47434432c899fbc8967d49635c58535fac",
+        "rows": 870,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/88bddcf60a9b78940629cb29d459484cf642afd8bc4abcec974d18c3dd3a99da.json",
+          "record_hash": "88bddcf60a9b78940629cb29d459484cf642afd8bc4abcec974d18c3dd3a99da"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "1366dce34e636e39cc4965bf7adcff3bdb9b4ed6f33f065b30f3b4ff87a982d1",
+            "passage_digest": "a085f724062a29f2104979eabf40fd41110637af051ce4ab2fda0c9e7e2035f6",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "863b51eec1c384f213b43ed4afb8fc5ce6a75976359cfb2415aaca3ff343536b",
+            "passage_digest": "2b37c5ebdceddc8e2a35b9b19d9ccdadda204fac0d44eb7130ca37b2d13dd402",
+            "rows": 185
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "041452cdf265c7a2939d748144673de5a1c622eadd757bc833db013f244154b3",
+            "passage_digest": "64857c1febbe6ad6218ace7c4d5c76c07648910bdccf572fd66347a710587258",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "5bbb775cedae97ed9db1259be9c50bdd4647c1e7eafc8912b6810a4a73aa9303",
+            "passage_digest": "9977dfaa02f0bce8149c0c743cd7ba01d96918cdf572f751a57f39c2683ff4af",
+            "rows": 45
+          }
+        ]
+      },
+      {
+        "recording_id": "121c534449b967209ad4db152d7a790e5fa8a44d7d090d04d9746be8aff741f5",
+        "rows": 824,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/6fdae3102c8a585d29c931b2ff2d8e25cc1c1bdafaad96d5fdcccf8d3b7c0618.json",
+          "record_hash": "6fdae3102c8a585d29c931b2ff2d8e25cc1c1bdafaad96d5fdcccf8d3b7c0618"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "b012bd559bc748e72730db978f6dc83e8bca0c574d9cde2e6f3779fd308f5b64",
+            "passage_digest": "3e168f52c4b0d0629a001f3cca0264d5941a7dccd70391a826b307645a87782a",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "1a315051297d1a5e48deda363a7be269a0ea1544af9f42f53fedf1e1362422a5",
+            "passage_digest": "789e6ce90cd1cc0d64a9b8d600a17fb8735b7974e7d97e1b93fdbc1306f03bb0",
+            "rows": 148
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "ce9b8dfdfb280a4e48bb0a5f74860991eeba6974b792708fe8afead90a2e6708",
+            "passage_digest": "32e579464e33c89f369ebde5f8cfce589c495afa9493ad372743930b016c1878",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "9126b861c0782deb9498d505b8ee9f9be4ffe45de0948bca2b57f058bba7aa64",
+            "passage_digest": "f62faf4a82fdba6b626325033721f7754c73ac14107eea552675adcf76657c9a",
+            "rows": 36
+          }
+        ]
+      },
+      {
+        "recording_id": "1a8d29e3ddcbc57b84a38c0649737a865ab1defe35ca7cf8f3cce586f6f660c6",
+        "rows": 996,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/3ad83177e05dc01df75ab8a518119694d8b2bbec0c7c2e7335496650ae841aea.json",
+          "record_hash": "3ad83177e05dc01df75ab8a518119694d8b2bbec0c7c2e7335496650ae841aea"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "73e52c8315f4f46bf51cb066446e0ab9408b378ef1dd260895f4371b77ec1738",
+            "passage_digest": "a5bb2f65373bd7fb7c22fa5f8be90208decc544e6c4ece02db0ebfad8bb5cebc",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "87b0dd7a7f6336d37066aaa5ca017d2d63ac8208a6f280f6db70c83c6a5fdc2a",
+            "passage_digest": "e0d86d76d11a895406ac7d6a900de921bc34059bc4dfdc50439cc581a38c793d",
+            "rows": 286
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "3b56f21bd354fd206e567e31c711740f66034158622c317eead1c79bfd5b3350",
+            "passage_digest": "d710485ee703f16c21680b47b8a295fc03d0aa6f716f33600ca42c37328fe5aa",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "35f8fead224c522fbcc18a6f9bf9a123d9e7382638d7b16681441ff309e707e9",
+            "passage_digest": "57d141ce7d097297607ef78564a7c4f304d6e63950e63dde8e2ddc73ec3906c6",
+            "rows": 70
+          }
+        ]
+      },
+      {
+        "recording_id": "1b3d6a5b7c0667388b800e7952e6f0b95c49ba7750346f9051f89dad6611b676",
+        "rows": 549,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/e0496d6a129f4960f290c47f58d137c4c3eb2f6aca9d1d7a8e12ce1e9a6b7e63.json",
+          "record_hash": "e0496d6a129f4960f290c47f58d137c4c3eb2f6aca9d1d7a8e12ce1e9a6b7e63"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "1a66685d853371b31ccdc2e9a404dcc7a7f72837d88b9e350d26d5fd83f5df8c",
+            "passage_digest": "5caee2d9fa98e416fee4b0ad8d22458ea9a9f179fa81bfc8fd267e90b6b26549",
+            "rows": 440
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "d4a798b4456b2cf387e5d9e7f987cdad78087e530c8e33b86a2a2f88443ea989",
+            "passage_digest": "3f39d0cedf56eb1c466ee08585a34d0cbece9f6fbe8197b506e01164c2323258",
+            "rows": 109
+          }
+        ]
+      },
+      {
+        "recording_id": "1cc1c34f9ee27490c4485a7ad72ccb0701b97d685418bb2dd1c4ae5a79bc0c48",
+        "rows": 1086,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/9f50c08bd1429bd59542c2190d8329e3d279750f762217d52d89cbaa39ebf097.json",
+          "record_hash": "9f50c08bd1429bd59542c2190d8329e3d279750f762217d52d89cbaa39ebf097"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "1acfb34411248cecc4c131b49313c798af517fa75fb21ed62640c48ee2fc09dd",
+            "passage_digest": "6448ba7ef3cc7949c80ea69a48e60c70072eb5b13a48ce69ca4c15fa3f087654",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "22ecd82717e2ba8a17ded2f38f3e4a43939a33fc70245388de1f63bdde5ccc11",
+            "passage_digest": "1df9c50d4c2bda3b96d2306519d3937990250ad6b2ce092974d92e0a2c09cbf0",
+            "rows": 358
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "4aff19a85f65387b9f02e621c4407beecb3dba72c6bd55e02a5d7615fdb4f059",
+            "passage_digest": "ddd3a6a585b6ba3d88725ccc1c9e5464aecc66c6bd810ca238c41a3bebdb113b",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "5c0212864ba2473b1fe8ecc4dffa20be716d99f89cddc44e6874f37da6a50e16",
+            "passage_digest": "264c25e5d9a40a605b0758437878143bec76f9597176c19e226961573eee6b3c",
+            "rows": 88
+          }
+        ]
+      },
+      {
+        "recording_id": "1f08c8edd806a2e087cf9028c6722688efa4bde031048b9c5162490ce4169049",
+        "rows": 559,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/4adb096ed73b2b95652383bc302acf82b57ccd655f439aa9cffc7aa27a2329f3.json",
+          "record_hash": "4adb096ed73b2b95652383bc302acf82b57ccd655f439aa9cffc7aa27a2329f3"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "c2732abe2c00f789e66d77be11e0358a18be53ff5b6c24d9d2310157541c601a",
+            "passage_digest": "5cb87f1afc6ef5001b2cd26eab35d4ca0a67e83a41035193526a42cfd5c53ee3",
+            "rows": 448
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "d793926f9f1ccbc91f876440acb3a42bd9908b9a379810d7115fe4c77527d4c2",
+            "passage_digest": "ffc96fd3a89792e3db669b1756f3e26a487bbce7bb9ad41fa945e9d1ae3e76d6",
+            "rows": 111
+          }
+        ]
+      },
+      {
+        "recording_id": "241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+        "rows": 959,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/b485c8baa44c27d12fb31a312dcf587c8dd1952d6ac6b2ca6b7a0f7f4982e9f0.json",
+          "record_hash": "b485c8baa44c27d12fb31a312dcf587c8dd1952d6ac6b2ca6b7a0f7f4982e9f0"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "c76a9fcdaef80f66d4dd01f5657f8a748840976cff93b9f703ea71f76429eb62",
+            "passage_digest": "d1a64a8bf1a57bbba984b50ebffc1fd8845d67feaa0b62af45a854ed31df0f24",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "fbbee598422643a03c6f8be08c7f5034528549fb0ad04bf27756a6a03efa54c5",
+            "passage_digest": "e8e1af3b8e93fea070174b3807abf2be4e1c820ab7969c6549da5b89d1d5261d",
+            "rows": 256
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "baffcd9bb22cb07948395c1545b87d90aae7385519bbe2e7c070fb747d3a4f31",
+            "passage_digest": "04de4efcd7366b181e525d0be24aa4e4629cbaf325d7bc24c035c8a5fbb18551",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "7b4877201c7a289237244c301b4da275e70dd69df2ce2d0eb720e7c7f9d54147",
+            "passage_digest": "29eb3dc2e4c3b8a535b17a0949d3a786a91339b7e6414c002ffc01e1438801b9",
+            "rows": 63
+          }
+        ]
+      },
+      {
+        "recording_id": "27d2dc70a3fbc3d5c4921d2ea0d6d2ca0f9812d540ee079e8554b7cb41a7ef90",
+        "rows": 706,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/32c8f14786ffa40966a42e284798b2b25c683985b00ad5a05e4da1c272170366.json",
+          "record_hash": "32c8f14786ffa40966a42e284798b2b25c683985b00ad5a05e4da1c272170366"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "4be6b2292e915a5c979fd65aa21e8c870439da3848f21662a0d2adf0424fe4f6",
+            "passage_digest": "dcd2f7e92ce8a92fa28c38eaff5cb32022f300de8147ac0ee1517773510cf051",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "bd74bfce82b41e7751a8c08b7b25e0cc9eda6853eef000dc7579b90b2bc210c1",
+            "passage_digest": "3a86e33b54f161aafc694463c385520d36b6a160d8cdd4ac98a5cda989df2ea4",
+            "rows": 54
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "051dad04a1aebcf153997431e373f256ba65758f064c7ce133e301375a67c98f",
+            "passage_digest": "e31422cddeba94d5bbd715c2624c3a86e7ca365a0258e8d101316d4ae5f1485b",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "4e4ef34821d7c5579267e372b87b670bd220bb5b96c33372fa1073308968e625",
+            "passage_digest": "72320a47c27937d3a148a31a7fddde49de62180bf2308b9b27beb3d7f41897aa",
+            "rows": 12
+          }
+        ]
+      },
+      {
+        "recording_id": "28ecc68d4b83b585ef781b12136a2ebf6809f00b820f311dc2ed44ce770144ab",
+        "rows": 1060,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/ec5536a6da7a0a00e5d1202c6a4611f276a6abe29d94a799c5f53bb73f6665b4.json",
+          "record_hash": "ec5536a6da7a0a00e5d1202c6a4611f276a6abe29d94a799c5f53bb73f6665b4"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "7acef132c1ec3dda0d146da50ce11bed97cc59343160eb9867310c8f083ccbb8",
+            "passage_digest": "cf91b327e32cffe3247a4b6c8da02bf5678d6b88dc3506552c2cf960c1761b9d",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "23f86b3dcfc06a5608760f8766766be4c78d4d5cfe5efa8cd7c6181658a3a1df",
+            "passage_digest": "f2297644fcd02f792f90e3d851dd7bcb435a05e858893c33c1247aec26f19801",
+            "rows": 337
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "00aa650997604f9fa8ce2b525c590c83d2f8c7878d34c636b8f17745e5a0a2ad",
+            "passage_digest": "8ab5b9c2294675548411bcb45d4095380fd725e52dba02b0bd058227b73e97bb",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "b3efb8fff1326da4ab0814518b949833d3252bc082585736db985d4b01ea271b",
+            "passage_digest": "49c4f8a26515cb1581118b91b1a600ec42f9e732559f3b0412716444626cbe85",
+            "rows": 83
+          }
+        ]
+      },
+      {
+        "recording_id": "2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+        "rows": 956,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/a529aae61894721e13403f5beb21c64ee245873d6eae9845b5c152473becbf15.json",
+          "record_hash": "a529aae61894721e13403f5beb21c64ee245873d6eae9845b5c152473becbf15"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "980222a81605be1648159cf95944c3e9ed0e7330875b95c5b4e88df23fad3f16",
+            "passage_digest": "225dfb6e146eaca4780e83643b461c013057e8f8142453b6d150e83a50dcdc5f",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "d84a1c9e79d1dad226a8199b40c9ee13fbdd598ecae08d1f5c748e997b9e49a8",
+            "passage_digest": "3931961e49f4a92e27fc76a9e1a920b41afaee3590df34ed68dadf0ab6b7d1e5",
+            "rows": 254
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "34734522e8e92c06636fedb1998a365449179cbdc279ecc10248ddfc9025d447",
+            "passage_digest": "6baade2d0cbc9723220fe176d17aa9ac4f21d471b55a2dace94761bbc1d3a89b",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "ece38cbff260eca54c48f4aa29beb29c81142cf76cbbcf4cb6b404d4bd2c23aa",
+            "passage_digest": "80dcbe68cda751cb04b2e9ef0fd27d846930a1207b04662d3cba6e68f6c5ab42",
+            "rows": 62
+          }
+        ]
+      },
+      {
+        "recording_id": "2e8b8fc444042d0ee77627f2626da1111b150f262e3484b98204217a6390341e",
+        "rows": 1066,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/e24f5c4cd33e3eaa27d2600a715992aa95dd4c688e85506d0239d8529d80d273.json",
+          "record_hash": "e24f5c4cd33e3eaa27d2600a715992aa95dd4c688e85506d0239d8529d80d273"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "32e60f235e8c0518e2a8c7133b8ebd7b016409ea9f37a76fa44d2a84c45089c8",
+            "passage_digest": "31159797a5e1d561bf3a4a89c3481bae37416f958f45232431e1f80be161d6f2",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "5514dbe36fb783f211f94714f579cc9a9e37bb5d6692686bf140013fb5abd6c6",
+            "passage_digest": "c595a55c5afbb172ee1f832f1f420d5ed0c82f36f13dbd687f037c34806349d8",
+            "rows": 342
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "b5a933c1ee8c48a9156c1aa598f04f74fbef994addaaf07ce8c58d52833452da",
+            "passage_digest": "3b23dd81b20eb386a993755b7e6a52a288f9a68303aef2ae584f3e946b42562b",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "e2af2b714818079c54dabf674a8874bb62359bf9f3b9e3499b302a5f297c6341",
+            "passage_digest": "1c132ce293b5c26571237801c18b831e7c452f579c3da3ab2eb135ef15b11070",
+            "rows": 84
+          }
+        ]
+      },
+      {
+        "recording_id": "2fe3a76023a434c5494e5b4addfc2ea539792baeddd8e868fd106f4f66641bc5",
+        "rows": 306,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/01144c221229a513c8a163b116589414978938453e0ee429d9335a1da4a2cb30.json",
+          "record_hash": "01144c221229a513c8a163b116589414978938453e0ee429d9335a1da4a2cb30"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "6c443934204431ef993f9d89bddcadf71518cc25da0f81d112ff93501d136eaf",
+            "passage_digest": "f5562947c45e0f2b02e3a72e0ec656e57718bb890ae6e6e2d3fbff195f369ed3",
+            "rows": 246
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "c4a4b0a1abbafd2e39728a11f7477e24e86b4d1c139e6c8f22c271b0290ce45d",
+            "passage_digest": "309a9fafb1ad3506306b7eaad7f4580ec6a5441603368ae60ebdc434bd759ce6",
+            "rows": 60
+          }
+        ]
+      },
+      {
+        "recording_id": "3355fd70f984f0da0d9b1312f2bf93ffd9617b9225ef8bd187cc295b6c25ad37",
+        "rows": 577,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/730997ccf0b385ac3dadd1a3796769e200abaceddd1897a3f4b3c30ffb191c1e.json",
+          "record_hash": "730997ccf0b385ac3dadd1a3796769e200abaceddd1897a3f4b3c30ffb191c1e"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "0c86fff8c086f5d42250584a9885f638cb0000b1163bf04c1a7b07d2887637b7",
+            "passage_digest": "59f985b842c9eba4e9add536d320dd559d285b916ad12d287eb69be890651a6a",
+            "rows": 463
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "f1807da0816964f8b57c60c2ae6a51da888fb606f4cfe090c468ffa9b9b18b7d",
+            "passage_digest": "4a5b33d3a3312a92e2ae64dffe4b2646c0085aa7abe4def32f9bbdaf44da869d",
+            "rows": 114
+          }
+        ]
+      },
+      {
+        "recording_id": "3388ebf4bded08922035a67f8323400e7ed9d4573488940591e53d37fbf6662d",
+        "rows": 706,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/daffac2adc56c202b9a823568afad32e16559ded11f5da61893dfa160bc3f9d5.json",
+          "record_hash": "daffac2adc56c202b9a823568afad32e16559ded11f5da61893dfa160bc3f9d5"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "d81eb5308d4316db4d63053485d8ffacaa958a93c7e4d74531e9b9dc229cf778",
+            "passage_digest": "7648245994e7b06946d12b0202f3a0cd771dc12d6b3c065a05e113c32d8b930f",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "53b0775a4018e5723ff405ac55bb51f8e085a38e3b395038f89b94ff22e78052",
+            "passage_digest": "4c89bae4db4d45bf1ff9c9099e3a041f2761d51bd109cea926711ba1dfce3e2a",
+            "rows": 54
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "afd4d1d6017d67ce4c4756ad4dbe107a6790e0db7a5d1999b6e1482a900311b4",
+            "passage_digest": "d0cd8704f8d0781e9ee0f97dc5cce443e00700d0d8db239f8a982fa7a40ad064",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "d1a09c7b054b0d3d15c223e3ad4e920b346deaccb2a4632bb13f6e4170966462",
+            "passage_digest": "26576e2e054f52d7c2188c5cede97b7b01b1b12f6ecb68d2eb60e21aaa87c4f6",
+            "rows": 12
+          }
+        ]
+      },
+      {
+        "recording_id": "33df701d5b69d49d6af1d09d3bef4c108924b5049c4ce9354fb83de0d87873a1",
+        "rows": 454,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/b0baf1998b911a84a198f85b0e9c047a602dce8ae6feed3daf4f3e4b958f4339.json",
+          "record_hash": "b0baf1998b911a84a198f85b0e9c047a602dce8ae6feed3daf4f3e4b958f4339"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "0611437bb9a3afc3eeec6dd0c51a716bad6c2bafd8c79f5d827c50e739ea211a",
+            "passage_digest": "394fea2123d4eb14f0c25e05d17aa1b7e1bb55240ab8f0b76cbf0efdfa56d6d8",
+            "rows": 364
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "f8cfc9eaadbda892058e713cedf16965cd8666f66cc23be54761f3846c9e297a",
+            "passage_digest": "f246aa25ba6666b7b7d39c854ba7356646ad09b8bf315a1da6867eb0bf5f1352",
+            "rows": 90
+          }
+        ]
+      },
+      {
+        "recording_id": "3494a3859d35a5c0b01498a517a59b7dbfc8625724248e6e5d573683410edfb9",
+        "rows": 359,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/e8a4447886139c6ff9124af995baaf6b6e90c2b28c7a09452b4ffac0ce8b4aec.json",
+          "record_hash": "e8a4447886139c6ff9124af995baaf6b6e90c2b28c7a09452b4ffac0ce8b4aec"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "056dac535a1b86b1fbdb6ef52eecafdc3b5b3f057dd22c5c08723fce525237af",
+            "passage_digest": "6de6220c0da0798482ed2bdd8798e0a7413064efd25575d26e4fc056f5fe0004",
+            "rows": 288
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "9b611436cc80cadbeae35e30dd1fa60f457e47879c8b8732078118771e701d3c",
+            "passage_digest": "7ed9ecdf95e304f8d6fca348b1c11f7f1f57f4750ac82cca1a51383cf656c0f0",
+            "rows": 71
+          }
+        ]
+      },
+      {
+        "recording_id": "393ad07ff3146a5470ec1886348f40c2dbf25072599c2cadb432078656bf13af",
+        "rows": 952,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/04db30d1bdbedbc07cd717b45892478611e71719f791771daec5d32f8574b2bb.json",
+          "record_hash": "04db30d1bdbedbc07cd717b45892478611e71719f791771daec5d32f8574b2bb"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "a0399fb7219927bd733efbf1a04895a482adbab1062345d196d90a0763455401",
+            "passage_digest": "63e876e90a91f6efcac76b6af07d09b45464c2dc6d806d69843e5a1986e59bb5",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "8f3c578a1d98c1107a807c3b85b77ee13e3d37032256ccb25a95883bc92f6191",
+            "passage_digest": "e7f562e6152f869abef610e9b44aacb3aec4e78bee286d210176c785093035d1",
+            "rows": 251
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "c2358c349a8c2478b10f99e9fc6639db58fb1dfcac9b7b5d0cfa751eb4702aa5",
+            "passage_digest": "0dc693f865dd64097c70020473a18de95803237f78e063af9beeca1d53e5b796",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "79852a82c96fb4ba89334026daf5e8b16b85e9c773c30ce17285b80cb2c1b220",
+            "passage_digest": "9a39eb4aae7dfe5dd85c88c4d89dc25504dafb4fcd4870b77cc95b136cfa6135",
+            "rows": 61
+          }
+        ]
+      },
+      {
+        "recording_id": "3a78813a1e19b86de37355abf98330c55bdd30b7a97d81be942aa38f6f71083b",
+        "rows": 785,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/4cd028ee70c80bd25c51a1c848c261ccb076f4ee0910b0e51372a1810e9f3616.json",
+          "record_hash": "4cd028ee70c80bd25c51a1c848c261ccb076f4ee0910b0e51372a1810e9f3616"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "ced9b7f1731d56f84d6adcabbe32957c386e09f2c2eac47f2a4d409fb179ac75",
+            "passage_digest": "81624f32d7bf4c4f2dba2c08e50aaa7d1ad807dd9c12fa493341ae48fc81d69a",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "7a69590d489352dda525f99bf82d9ba16e61f30216c2562fefd649eb32f11151",
+            "passage_digest": "e9da22ec13d549f2c16c7f48012c28383c1921459f9ae7b56f7ce5fb17d4a184",
+            "rows": 117
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "3bc5df05959c5585893c82d0e3050ddb0c8f7e5881f0b089c218f91688ada9ad",
+            "passage_digest": "a1eccfb48a61654b423265e1054f61a920fb8d56a42644b2edf163837cdc7f83",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "324a9717f6c968d227848f8d60d019a52e883760c095baed666b887042ef0478",
+            "passage_digest": "b16fdf39a3015b81c27f840d76beef4ec689d8e172bf485af8b52041b4ce807f",
+            "rows": 28
+          }
+        ]
+      },
+      {
+        "recording_id": "3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772",
+        "rows": 1031,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/863ff910138ad0ea74938112ca7f83c150769d3fb687cb8a415456ff4b683558.json",
+          "record_hash": "863ff910138ad0ea74938112ca7f83c150769d3fb687cb8a415456ff4b683558"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "c9221bf9982dbafa7df53e648e9666d0d4b28cab15ae7f89b5d6957bdd663e74",
+            "passage_digest": "7b8a1270a503acbee8a92ffbffaa45962f2cc25def22488ab414e6b65ce9ba32",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "5f4b24841830c584d69ab9f0d58c9217bcf06d6073939a55cfac2f1cbf68fdfa",
+            "passage_digest": "6e5e570c58930b90aea495558dfca2f63a0f6074e439caf237e4ba2240a6c364",
+            "rows": 314
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "258cb2e381bceb08ea1ffb169f08380996007d934d2da99ad58a3b49910ce507",
+            "passage_digest": "6a875ca142dca146a9d55aa8facf2f668e371139e76d1a465f838940c2ecb8b8",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "fc55706b8d13517790e49eb2ea20457d00fab673193c6b590695994c327502ca",
+            "passage_digest": "541c91a4ec9a24396a5630adab9b7ff6adbcc1d4e4c4147d03a5dcc01f5e9d01",
+            "rows": 77
+          }
+        ]
+      },
+      {
+        "recording_id": "3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+        "rows": 861,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/223a466296339566eb0d78dfd210c47e248d4f032dce2933082122cb0715f2c9.json",
+          "record_hash": "223a466296339566eb0d78dfd210c47e248d4f032dce2933082122cb0715f2c9"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "a4cd343f214b8e45f7fe17fde939544c22b0018a478137604f3ce475f658f768",
+            "passage_digest": "3f3367bb452f2f1b31ee139e2c4d3b4a4888ab688a4ef26a12637f99632a47b0",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "9f6b922064df0d8850ca3b0ad8ab48a9076353e71b775339758c972719e2ed9f",
+            "passage_digest": "1261ca4abe89392c61f87057c0d8ac328fe83a0050f05f2b8facf5a3f3ce6e67",
+            "rows": 178
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "57f43538544b80d1a500ad2d9f09fd5139779fd51a9100903239c748fa1bd42e",
+            "passage_digest": "5d34d0b89bdb312abd2dca11e130c0216d131ee382c5831bad8ff4111d46f266",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "d62821dfa24eeb713a95f8e1b8b147230cdd61b9f46d9c6a3307fd3ce4978e57",
+            "passage_digest": "a13c139d7094f18e1704909575c0592a390eb55e86a0dcf074df93795e5330da",
+            "rows": 43
+          }
+        ]
+      },
+      {
+        "recording_id": "3e36fb2358a9901a1b16fcee24b5e67f2b32d81300506d2cd93b8485e7a6f2c3",
+        "rows": 581,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/bf5c99ada4568487213195583e309a97d6fa624909771bea6cbcfecd87b8f792.json",
+          "record_hash": "bf5c99ada4568487213195583e309a97d6fa624909771bea6cbcfecd87b8f792"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "a0f877a1be0bf784d2ca4747de2c4b9426d1a93c2e4eecd103da97a8e335089e",
+            "passage_digest": "9c6acd1203c80f1dd8e53bbbdc39cb766d06ea7ba2274b3dcb40d63dad9c83de",
+            "rows": 466
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "2bcb8930625c3e1518a88d84525774cea4a98ca60ae425dcafed724e3a62963e",
+            "passage_digest": "8df45a536dc423888e794e9dd285afbd53e31410a8cfe542e54d19280183e222",
+            "rows": 115
+          }
+        ]
+      },
+      {
+        "recording_id": "41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+        "rows": 801,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/6eea2d2dbe3753b8bd1ab9e18232f6c4b7605172f7819947f50e285f0567a168.json",
+          "record_hash": "6eea2d2dbe3753b8bd1ab9e18232f6c4b7605172f7819947f50e285f0567a168"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "24ae8da1d64f1fe006345aa9038295d1d1b47a0eff8b62ac4f1c3ab0ff36aa44",
+            "passage_digest": "57f02b6328150fc986cb9ff6a1eb51ef720b6ebb2825c905fc7c892b7656d851",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "ba137c4649a7d08c1e63e93e52726b7ecc1aacd1a1a2e95e8a0c8088a66e9da6",
+            "passage_digest": "dbadc320f05738ed5452ab432c6629e2125c7cba339da9251d80a1a0fe2f2051",
+            "rows": 130
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "cd56686d8a7170d3d4186c767f9de029402d46a947f943bdf13b50a9b67f5c4f",
+            "passage_digest": "a92ff75cedd0093b5a29d0049dac8566913b16f4f463a9d01c146f5d194b460b",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "097403864185324994d9bda30824bd788d9daf72da8ff185c3c58ba6ffb6001e",
+            "passage_digest": "a682f17bd39028f3c6ce469fb4349d2d75f210ca33b29db2cefb48be0d65201e",
+            "rows": 31
+          }
+        ]
+      },
+      {
+        "recording_id": "44f01f4340cb6eb0741c54e2ffb2118591fae4c7d70031ce8d3de2c532e14eb2",
+        "rows": 756,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/479ca096c30b0d234338164313611a6f0d13f518655f31a22a35e6d99478ba2a.json",
+          "record_hash": "479ca096c30b0d234338164313611a6f0d13f518655f31a22a35e6d99478ba2a"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "7b74dd3936a79a4287106379de088c6a510fe37c6c76002326a6a231c85c3dd2",
+            "passage_digest": "3f1481ece9ea725a0940b61785a3c27fdcdcf3b82f1101597c4b3b4a4e39d85c",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "c2052bac6d0dbbdf45be5f4f70be9b5b5ef7405d049a95d1a77967cda8729c6f",
+            "passage_digest": "4b6314cd62815c391f215abe4d49dd830c7bc38c0be152b87bd559b852d878f9",
+            "rows": 94
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "9cb56479e0c38218e285c56c4a46c70d1aa0956bde9a0af9322b0ad407f896b7",
+            "passage_digest": "cbd765c7941adcaf55ed0a1394f7349992ca301e9eb48902604bb2aa9776d92f",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "6424cd81e2a1ff8ad3f3f2add078464091d4e5b85cfb884ab401ad591499b66a",
+            "passage_digest": "d121c9b55429ed345fc328ad2dff13084e9786e60d4f42c6a5b1505fb3979123",
+            "rows": 22
+          }
+        ]
+      },
+      {
+        "recording_id": "4b7f20b58f7362871022d59fa36a197e8d1e234cac6f99eaefe05de2d11b9735",
+        "rows": 994,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/4198256c80b1a9568fdbe60a6697e583d2bcb1c52fd25e8570cc17ad27d0c2f5.json",
+          "record_hash": "4198256c80b1a9568fdbe60a6697e583d2bcb1c52fd25e8570cc17ad27d0c2f5"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "8080ba249326360fbcbbb5a3c14ce8f9f0e18a4ed736c758a8c538eff7541cfc",
+            "passage_digest": "982258bdca90cb26370afa6765eb348a830fef9a8a152ebddbcd2668b3f907e8",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "859f8fce4c8619794db2e022f2f9899f8222a9a018c34e0f53fa0cd8b4904d95",
+            "passage_digest": "d324e3be410b34eb343c15540f831b17007cc3dd450555d87114d5184e997d65",
+            "rows": 284
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "f05a44cc0e60f113ddd57c0fdc31678b5665d20f9522f9f732d8ecf609466aca",
+            "passage_digest": "8e6622fc32c6f8f63bcde565b698ce051a587606aee43d07a68073a25c71839a",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "0a619be1916fd682d453e48bec63aca59cf97a006d79f3602e39fb969759f879",
+            "passage_digest": "a1c400bdd8efeb41ec0d8d43d83f60eccd3dcbd94a1be8773e01886a9ddf2c7f",
+            "rows": 70
+          }
+        ]
+      },
+      {
+        "recording_id": "5b31c43ecd7091e858e9bce40617028d3321212c3f5a47fb476cc48283390c3c",
+        "rows": 629,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/f4d6694e4a3e12c703a4e66ceec806e997a9bec5683750179d00e2395b867388.json",
+          "record_hash": "f4d6694e4a3e12c703a4e66ceec806e997a9bec5683750179d00e2395b867388"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "58bd1ced573605989157f64331a57f5a28bfa4e5c7ce67f6b25e1da5f24631de",
+            "passage_digest": "3fdaaefe43a5dbbee67badfecf7ddeda582b561eaf289de64049f0947a607103",
+            "rows": 504
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "91234027c92d5570f92054cabfdd915523ec5a5e316a12bdf1d48ef3392ae8ce",
+            "passage_digest": "6ab96ea2cd744dd2061eed3a0964ee38e63415cf0a82f362a0b3c8fe79c4c955",
+            "rows": 125
+          }
+        ]
+      },
+      {
+        "recording_id": "5cc7ab03e4937da3b6bf0a80cf8108bea24195cc1df8407ded6b2ef162876add",
+        "rows": 669,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/a3bc57437e6c12f2a5ac4e4d458d3fd2e6ede423cbaadc5818efa795de40c3fa.json",
+          "record_hash": "a3bc57437e6c12f2a5ac4e4d458d3fd2e6ede423cbaadc5818efa795de40c3fa"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "87f9d5b825d74a5bf79a50a4d76e45ab874c04a7161b9d4cf10c6f9a6be5c64a",
+            "passage_digest": "b00eed6eda537d457e84923c4bd3b9ada0343e8fe3ca9b9461c61f1062e307d7",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "26aded7b7657a9f287c728ebb295a1ac97adc7ef670e8b14c95d1efc6bbd792a",
+            "passage_digest": "c2f22b3310da7dd02896cbf6116965621c1fef73bcb433bc093d4a8fd91aff4b",
+            "rows": 24
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "4a3bcadb29b06bc8a687ff76831526c24722a64ee48d7742482cf67310e4ea96",
+            "passage_digest": "6393e708522c7dcb60bf6be9cd23cc082c46fbb1227e7f8592248581e6cfe7e4",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "c39ee8e894e41e73272221096726c832f0bd1c1b8a8b9d300a250770311dc9a3",
+            "passage_digest": "ed5abab8d37dc01f73a7926e7a722eeba1293ad3bb06165aad04c2b1bb5f55ee",
+            "rows": 5
+          }
+        ]
+      },
+      {
+        "recording_id": "60a24b53695795b6fff6a74de81502a3de9f6191f08c650cc9a05ea3de47b11d",
+        "rows": 920,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/d3ec56fbfa87fb4919565ca88befebc94766162bf96c4c7bdaeabc4f52038c03.json",
+          "record_hash": "d3ec56fbfa87fb4919565ca88befebc94766162bf96c4c7bdaeabc4f52038c03"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "5d1ca9fd95e3912f68c5989ca09ff8a30414aa02e5581ddef5d5eee00a2408cb",
+            "passage_digest": "e987debbec005076a059352d47667fd01d54e915bc37296f8d6bc68ec3b45b17",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "b0cfecae93014605fbaf366ba1b168d37dcefc7dcaaddf5e907a0caac227456e",
+            "passage_digest": "14d33e109e1f5cdfcf0e807ffe097ef15c1b716fe6a1ed3036c4a0d47533f0ad",
+            "rows": 225
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "aa818cf3cd16b05e6d79875ea7946469e72a22de5140e337dae6fd277c8d445f",
+            "passage_digest": "a40a7b0109afc25786d861ea431ae309d9e15f57ee77c1a93c02024e0eb36a3a",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "4e7733fcfbf1d4d7f89ac6f9a90ba19ebc4149f153ba5235cb2ca04f9bd8cde1",
+            "passage_digest": "72c78e31e440684f92b9bbf7311da927c9aabd16e8e34c8d97dc3b362e0fef92",
+            "rows": 55
+          }
+        ]
+      },
+      {
+        "recording_id": "64ccee3db2be1f934173f550652c7c8c00b4a89bfa2ca2c3aa9b0366b0a0762b",
+        "rows": 920,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/37dfbf6fabd95c7aeab7541072772544e6d8a59ee57c9b0a228f76d1b7562e37.json",
+          "record_hash": "37dfbf6fabd95c7aeab7541072772544e6d8a59ee57c9b0a228f76d1b7562e37"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "d99fa89d43b4282267b7b2e0b5e7ebd501283a363573279369c66b618d52f5a8",
+            "passage_digest": "17ddae8ae89a3d3f53e91d8e5aee41bf398a8a7d28c60c0e41119d013a4204a7",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "2b7d252c9ce4d0b9d4f4192fa19052d377af6964a4466837e6f33cea86b2a82c",
+            "passage_digest": "edd1403abafb6b74f15ab73965059a770d8969b1a87d958e2cd880824229fa0a",
+            "rows": 225
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "aa30db75dce1deb2ea179e1a56623c4cccde66191ccaf02c63c28b0b7cb4d4fe",
+            "passage_digest": "81d20f41636850c3b59c2e43f87d27e700542c4a0a3631354425a12a48d47f33",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "fe2e81a6a6a1961e647621ad2bb85b49a8bd41399966ac2e7f42e8e3fbd5eff9",
+            "passage_digest": "960ef607958c01cc01907cb009783c82882afda95c37372d894e97d28a0e3687",
+            "rows": 55
+          }
+        ]
+      },
+      {
+        "recording_id": "683c05c202edd603cff6d2fb0acd98bc1d138c1a5e8144d5786864e1d5460d8c",
+        "rows": 931,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/bdf654327f246ab2e25090faab937a0b167780d4fd41b5a6213f9f419dbc3e54.json",
+          "record_hash": "bdf654327f246ab2e25090faab937a0b167780d4fd41b5a6213f9f419dbc3e54"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "291fcecf330ecd4f80dd2081d66c9737baa5f55364a0fd1ecec89b389535cbf4",
+            "passage_digest": "e8c29ddd203798630b44e03a8e30e248b0fdec3b62cebdc248bbded8a7b130ee",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "b1c918bb89c01e8826b8dc2cd40b42c67e78aae994ee9018f6ffda778341cdde",
+            "passage_digest": "6f71f5e7e6774f8f4b95484d110302a7e92710f910f1b68461ee88fa1560f3e1",
+            "rows": 234
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "a22daaca6a55f33e81b6dbab35a8e724dd1f821a8711b26010d0c04020bd8765",
+            "passage_digest": "7fcdc72dbdb3029a3f8cadc69ab05b3c3c5e676afa69201e060277a98ac4c2ce",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "81daeddf7d0f6589a8a8206406497ff13839721943e86514dd7fe6b9f0f21cea",
+            "passage_digest": "290e11d1f27fd7a69497eed72df9fd1d3540d94acfe81aaa8e02db5f8c7f1614",
+            "rows": 57
+          }
+        ]
+      },
+      {
+        "recording_id": "7091eb9639103834665ab5b9610d0ba27c37f746266ca7c4864eb9d1b8ef7881",
+        "rows": 1122,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/515e5b50b60a8814b2201d80d38c3d65c4e829b753390e1e492368bcebd0a3e9.json",
+          "record_hash": "515e5b50b60a8814b2201d80d38c3d65c4e829b753390e1e492368bcebd0a3e9"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "8b5a59ee049d4cc384873cf3adecdf34b33c86a24ffdb306a78ad4683c4017fd",
+            "passage_digest": "cebec9e8fc03c7a61ff4ff903a6a9be456b2b4bda87fef5bcc92315850178037",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "4e9cfd84c7fcb3e59fab8a81f9e219feba4cba2e47fbc376c2a4921d4de0fc06",
+            "passage_digest": "6b268d80ca3549e9401306cb98d9f98f403cc2dca3619b92d61f5600a8d87cc9",
+            "rows": 387
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "a4dd042b1e83eec521ef019bf51c61c2c8d74fd4edffc6b2662fc74a56068bb0",
+            "passage_digest": "5225e430c075bbd8fb95714e288df12f30543110406b4a038567ee2dec65328f",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "6cf44f4f8d32c298ce8f6ae96da0b06adec891fbe42e0a8b3992e75d9cf27f6f",
+            "passage_digest": "b17a4e3bdd2318b754b9f807949b88bebf865b7923bb09db6377458fb3bfd611",
+            "rows": 95
+          }
+        ]
+      },
+      {
+        "recording_id": "7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+        "rows": 705,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/e603fa1f1c2fb89faf208a98d4d10804f02b0593a7aefa64c2191d960cc51b6d.json",
+          "record_hash": "e603fa1f1c2fb89faf208a98d4d10804f02b0593a7aefa64c2191d960cc51b6d"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "9d36bfa81a6a35a7917eab5965262fa2027c5802c3bcfc3a38d0db21a6cf59cd",
+            "passage_digest": "d8c74cf9e7d344cc9eee320ff4dd2b56cd5b21ee90fcff998c831d215101b947",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "d2a24ab5307c81f59539824303f0d1ccfd1497d987e088eb78e5dc5b68c3140c",
+            "passage_digest": "14284d37b8f1d05bd937a8066a2ba341606738d9bb7d4d720607bde4bb11ebb9",
+            "rows": 53
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "3abffd6c1d725f95cb72c2b445dd143b8bb5caa9b859bb71deb84f8927e7eb47",
+            "passage_digest": "3895a05cf0eccc26e4a3529056121605dcf3a70ed2dd6e74cae81b4f4e4ed36d",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "1abd78c6db4ed725480ea4042541686706990a51b8ba0cf5428a121aa1c9b84e",
+            "passage_digest": "6f0b120344532056db507371323e80d671020356742a17d6e9e5559ee49c43fd",
+            "rows": 12
+          }
+        ]
+      },
+      {
+        "recording_id": "72c4bd15df2838cb283a619991aa5f00b3b6a859626aea942b7336935c6ba4ec",
+        "rows": 767,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/160879fb8c92ac9ba28cfaffabface02908c4eeb91e424e899b083ce568b78bc.json",
+          "record_hash": "160879fb8c92ac9ba28cfaffabface02908c4eeb91e424e899b083ce568b78bc"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "967bbf6413b8db01b3409451a13bf201f6dcbad4a99c27ca6300f1f445e8ce47",
+            "passage_digest": "f42e2c3e5481e1ca87801f26c0921bba38472f745a4f48a735128eb3d36b367c",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "a411d30f919d9219ebfb576f0f31f9d9679f5152645971718a9d55ac7b85a182",
+            "passage_digest": "6ef83eaec64c6dc919c28e751e152bc07579909b670e1e39f5f269e7fea8dbc1",
+            "rows": 103
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "e3c6f2128a302eb99397cc067f8e31761eccdab99bb030135e057d5456cfa076",
+            "passage_digest": "c6385b4d97c10af335e6c646bd477c484768a9b008e222a27cba531e66448051",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "4a4826aff9bad7371134585c7996fd36a29718b2194f75418541e4bdc3af5c7f",
+            "passage_digest": "71d5d6ce03ce2b42bd25665cfd858ba203d649dea13512f44c9db5044558154a",
+            "rows": 24
+          }
+        ]
+      },
+      {
+        "recording_id": "7c6a1a08ed5671c3afb22bad523771b5008f8356712b7b013b93585199a912f5",
+        "rows": 508,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/536be666f2398adafa61bff5c41c1ea054f49704daf2a4ac8f15e2572036a8e7.json",
+          "record_hash": "536be666f2398adafa61bff5c41c1ea054f49704daf2a4ac8f15e2572036a8e7"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "d85fe35153b55b463b8e1e75e1289b6ed76627ac4309e39f0465d77066801e19",
+            "passage_digest": "05688139809c9c551031b537a3f3effd56108a2ed535c3f1f69de892133bcdc0",
+            "rows": 407
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "a3b10ad66372fe4db919f055cb598624fff7d8ccb1b30d1966a1cec3f445a532",
+            "passage_digest": "752c81c7e421862627ed2481f8d4c209c5f1e9a71c2a8c036a65e1f7cc3e885d",
+            "rows": 101
+          }
+        ]
+      },
+      {
+        "recording_id": "8d7a34191d0f2e1350fbca3fa45519e3fb89b2fe008fbdf2a81618f4fc57a83a",
+        "rows": 1046,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/76cd225cfe27ab45fefcf3c8ba5975d6d96c59835bbc14f3c65b9125c70d4f33.json",
+          "record_hash": "76cd225cfe27ab45fefcf3c8ba5975d6d96c59835bbc14f3c65b9125c70d4f33"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "e6288358243a2ca1c82c81b74b68a604a713c93de0d5c44a168b1a7021fe60ea",
+            "passage_digest": "d28b5ebbc6cacb51f275217651355c8ec320ae3d9ce293250a5be54db4bb79cb",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "4312b8a6ab3bba1cd945fe007d6a0d6b8b62278d78601009ff276e32db510346",
+            "passage_digest": "d4aaa4613ee749339ff100e08628db65bff716d39f730eddcb0562861005c182",
+            "rows": 326
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "cae901513ca6ea2bedc7f818ed6c8bce3d615f17fec46fdaaed40fa3933f6f2f",
+            "passage_digest": "a6e53b08b87c0f308f62943ab1bca7447376df317a44804cca7fab1cda7adf7c",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "a579f9c37614da0f39c532115401179e3f2118e09fcf3ddb47a0dc4d5184776f",
+            "passage_digest": "4e81eb8366672882a21e67bd72dd8e53d1bc6ecffa268069a14e9073330e29d9",
+            "rows": 80
+          }
+        ]
+      },
+      {
+        "recording_id": "8e68a5244bc162768dba7954d1071dc90d99201e5ef4101b293a97a13be9cbb1",
+        "rows": 308,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/532c02a2b6e3059202dde6b015c135a42d3b2bcf2457ff3dce584077cf0cdc91.json",
+          "record_hash": "532c02a2b6e3059202dde6b015c135a42d3b2bcf2457ff3dce584077cf0cdc91"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "c026b4b1d0f9c78d8a08bf765ed98d5697bcc372ce760987d818ece41de029a9",
+            "passage_digest": "b59655afdb002ed00b758bb6aca34a893777fec5133e343829fe19e2b05aa62b",
+            "rows": 247
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "ee071f4f84c4223b8433eb3f7d1f5c804fffdb65796ef68ef8a5c0071c6d6e25",
+            "passage_digest": "510e86870b22f4c88698884f4d3633bbd7e8db03a5bfa7c1b2d9c06472637ccb",
+            "rows": 61
+          }
+        ]
+      },
+      {
+        "recording_id": "8fa52d26be8ec05dfe0c4f37808b35014c0f7e651c1712549dccf3a2a6ea9291",
+        "rows": 786,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/ea8cfb7ae15b251bace311bdfb3cfb519fe11d86e14d8185770f9c1d59659f75.json",
+          "record_hash": "ea8cfb7ae15b251bace311bdfb3cfb519fe11d86e14d8185770f9c1d59659f75"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "2389b26fa3678e7dd944f4a4bda65f5a418cc12198c2e4a5bc028b3f96eeb03f",
+            "passage_digest": "4d0b2d14e8a2fc9fe9f82de7acc450015983a1a159599c1787cf009736eddf13",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "05b2ac0113bcccb5bf1be146971f4248c62528fdc894bd27c72fd1fe8447d7dd",
+            "passage_digest": "32e01b9e8a8c03432f90051c73226c8ded7f5903ca630cf2f824b4045dc0768a",
+            "rows": 118
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "01c2c03748573dc68dd2c8ff9af50a215a57e8205fd4b75092f0b4e61354d358",
+            "passage_digest": "18a0d003d616f73d2bc40dae1cc3918b49e8fd88e015ff1b80f4f804c0d38e28",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "4e229ab7f2f1c7ad90137b19946bee5fbbfe080fe031dab910790f6deaff410f",
+            "passage_digest": "0f4c0fd665fc4e62618e563b3244a8e8155319b4b45f07809303fca0200bd3a0",
+            "rows": 28
+          }
+        ]
+      },
+      {
+        "recording_id": "920237237b9dde0f1c2671fe823646ac8236a9ac76e45231b0e1c4ff59e11a43",
+        "rows": 889,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/6805e83f3aa410b104d1db078656bb9ef61004ece2fa5f167d5b1ae7caa913ca.json",
+          "record_hash": "6805e83f3aa410b104d1db078656bb9ef61004ece2fa5f167d5b1ae7caa913ca"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "c72677a43b653dd2d834b707e00ccff78ff0fbdc7c5fcff2c92ccde0516fec70",
+            "passage_digest": "b15610129e6923730a1fc5a5133f405fba706415c18cf634eaaeea1b4003431d",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "d6b76aeef0d6e16c31e025b2d76cfeb80450e1821c6294c4aaae45e37047dbc1",
+            "passage_digest": "a25c69d2e6c6a64ad657d8b532d69b61449e6cc94ad4013262550d266533d455",
+            "rows": 200
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "667fddf4c75bd7a71efb8787a394ec6f2a394ebd4fc820e4ecc94c067a853a80",
+            "passage_digest": "006fd3773868df9d472c6a9f3b9145c24241bb2b487abcf6fccaa03667858575",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "dcf205e7e5986ffb2ac60b81ff0476a9bb76c6a5d1276ed73b648767711ee726",
+            "passage_digest": "7f760e673fd37138ab0893cc78f2028b5d09a565868a1bc8a711382a8f76545a",
+            "rows": 49
+          }
+        ]
+      },
+      {
+        "recording_id": "9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+        "rows": 843,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/7f09db613d6373b77e106087c9087ffd4f521cf4670f42e915f0204649d49cb4.json",
+          "record_hash": "7f09db613d6373b77e106087c9087ffd4f521cf4670f42e915f0204649d49cb4"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "ea24b7d822edc78251a3ea21ff1831875e82089780b30ada16a4a41e9e27f1bb",
+            "passage_digest": "b27e73736280d48d345c41ee509d1183b4ae74b66c6c84f10dd06f8424e454f2",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "1100b3d84cd1504e752c1c7ddfc2318bc88ba56269fb7d8af8510a929609f158",
+            "passage_digest": "5cca7f20ba64042cd55490ab75a7ccd5211523e21bd0154e73ddb7ecbe6b3f8b",
+            "rows": 163
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "923dd9c126311af5addaa232be94b07068c5f6d04326b34fe3fce198494f82da",
+            "passage_digest": "80010a6d90a8f7252e8eb29eb0a9694e682dfae05efba0ccab168f0958352a69",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "b198e87e8c9e04123b0957f053ac342d5d9ab108f73854266f4de1d7b42da8dc",
+            "passage_digest": "3340e0c13caccf9d486b1ba22834f2b6988ea55f72a4f7bf7fa84a396d42b555",
+            "rows": 40
+          }
+        ]
+      },
+      {
+        "recording_id": "9f741ebceb59cda55898246265c06586a08c948bc8331cbd6beb26005209b2d3",
+        "rows": 917,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/7da526c07698ca7112324890a3969933ba7582269af4d013bc995bde88e74d85.json",
+          "record_hash": "7da526c07698ca7112324890a3969933ba7582269af4d013bc995bde88e74d85"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "27dc31c4c93043bdb2798cf2f8062331a0286fd78c76780bd25e01407b34fdde",
+            "passage_digest": "5bf259d23ad960517e8e62d3c5d56388be08196560b38602034b03d8082505b3",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "0c8973305eab01b403b1a549f1ed490fd29601ea9210d79bc39ed8d4e65cdc77",
+            "passage_digest": "b937b7717443e0cf5f0f9f4175fc2494ed8f60d1cbf4824d21bd5e793304a863",
+            "rows": 223
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "d63e29b7444bbc890a19d779cc605285cc81745b1356ba603b76bf17945d2f49",
+            "passage_digest": "06fb4920b6fc9cca01e7882b7ed1fb173eb392e540887afbd22f16f7f35bce8a",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "928ce8ab998952999c465b0c8b3560db6fe7198d97f52d49d026ddced33eb1ee",
+            "passage_digest": "c202d11017c9074c9e09c4fe7a1bbedc93687782a068d2fbfe8098eb5754f479",
+            "rows": 54
+          }
+        ]
+      },
+      {
+        "recording_id": "a6d93ab7d0430a712651354694cb03c54775f46e80cdb7f4d445147fbfa5c6f7",
+        "rows": 688,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/bffd9a7df620d0b1d599d191d67d89e10d52866410516cc6cf4bf499eeefa01b.json",
+          "record_hash": "bffd9a7df620d0b1d599d191d67d89e10d52866410516cc6cf4bf499eeefa01b"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "5756218065a6e9c53dd46bf9a58e14cda03a90042785875b78bc1b5f6fab058f",
+            "passage_digest": "ffe4ee428e2875bdd99f732b81358ee4f35433e2f3087dcc670bd324aeac3985",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "694295783caf1f3c305df4993e094e113203a54abc8c686abe4937f7005148b6",
+            "passage_digest": "cf7c8abcaf0f3626d7e3431d3d922eec625b3756afb40b7fb8ca6950ddcbdfd2",
+            "rows": 39
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "c96d7db475bec3243d80741c27e5121e630c1bf7b679b552c149855e444a2a98",
+            "passage_digest": "6884815562ad3d359319c5034dcd0a300c2476db059ddcc41b8a23876c8518b9",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "fcb7581bfc4ecde768efe8ac4dd88571d46744912aaae2b1cdd77efae364f9b3",
+            "passage_digest": "88d2a794a53c08d0832348ea4f7db50cbd6f7646190b32bf53ecae632e0eea94",
+            "rows": 9
+          }
+        ]
+      },
+      {
+        "recording_id": "aba0e552a3154b83e48ceb66c970cf49b785e8694990aa5ce5ab5f80096f7fef",
+        "rows": 369,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/526801b5cf9fcc4c36e53fa7a3070ce6c9ed75e8cc97805ae92c8f7aa7f7c6b7.json",
+          "record_hash": "526801b5cf9fcc4c36e53fa7a3070ce6c9ed75e8cc97805ae92c8f7aa7f7c6b7"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "38b1271a7fd6496d3eaf005e078af181b3e9a7213c51956036441ade37723761",
+            "passage_digest": "adf6974025ea2271baba816264cd1c533013b116b0723a16c18c76c8895a22ce",
+            "rows": 296
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "b6df0b336b1088584355739ee7c6a01dc575f0fde78cbe1d96ac2f5c184a769b",
+            "passage_digest": "2f6f3622eca244d1222638dee35e2282d52ad73768775ca3be6e43bb747de971",
+            "rows": 73
+          }
+        ]
+      },
+      {
+        "recording_id": "ae6f7c6adc0da97ef75a99209803a27d8ba8ff5cf56b8d5f53cbf0ac4313710d",
+        "rows": 661,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/8052ecd67252456fd4957e8b6b19e8571769f3cb690fc0413e7a9a4886b7a429.json",
+          "record_hash": "8052ecd67252456fd4957e8b6b19e8571769f3cb690fc0413e7a9a4886b7a429"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "8436b5e445bb0e86fa3410d0df0c78263fb0a2ffb520e12a680bbb30c42f1bd8",
+            "passage_digest": "3f91e59af7228dcfba9509b33edbcfec3e91f529fde8c79e6077f29c9f39e8d4",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "1629aa31f398db70a2db0b74b99917f78c1be666f5c28c4c806ec0327476d5e0",
+            "passage_digest": "b8ad9a1c75bb84b39574b25c9ef5e6a5ae3c92bec03bff91dcde277843fab571",
+            "rows": 18
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "87d245c64168ac82111d0cb44dc1dd458a3534c6b3189168c842853700a07e33",
+            "passage_digest": "a3adac29a41af5b63b770fe57ea4d7b093529341b276cbbc75c67e28ce201300",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "b0a23933f825e0dec0530e618eb037ad1ef7edcfb809bfba2113cb5c53f1e3bb",
+            "passage_digest": "52f30acbe954b7a3af573f5fa067f592228f264a5597fede888e2f430c52b1c4",
+            "rows": 3
+          }
+        ]
+      },
+      {
+        "recording_id": "b29770ad6531afee86fe13e34ddb8f2ffbf39ac2a0d250f41493b2c4133cb5df",
+        "rows": 971,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/43b21e9b66dc3cfbe6b5cd5728cadfb1b13cb2958590c516a1965ba0a9807229.json",
+          "record_hash": "43b21e9b66dc3cfbe6b5cd5728cadfb1b13cb2958590c516a1965ba0a9807229"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "997e8f43af354d7827f5d2762bd01f7901f0528252858c4f47f542e12dd96bee",
+            "passage_digest": "da48ef9a2beebbd26b3dfa7a0ef46a5eb85840e8c516e92342a277d770189dc7",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "25860436530abb6ba57ba4d7be1320172e0349d9cc0d53d53e8089be3c857bb1",
+            "passage_digest": "43e3da8a2345a45f5d63712d8f6797c3ea5eca62c2d4a883b23545e3c99b1a7a",
+            "rows": 266
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "2577e0ee474acf425e1429bd3be67d45d850a85f89dc29423620dbbdc6543b34",
+            "passage_digest": "0cd2ebf397e983adb48a395e9617434d81811a3175e0f09aa82629022b88082f",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "f80012a02481c23321868bd42f584f5a85628dd6fff6177cb4a5c2ee5ee4f72e",
+            "passage_digest": "546689ff01643e48244f6a1beaba6e395286a68857c2c8c96f203f6b0768f0e4",
+            "rows": 65
+          }
+        ]
+      },
+      {
+        "recording_id": "b44be5083a24286fc4fbb8bcabebc523b90065a8ce031a8cf2012dc94c7d47f9",
+        "rows": 828,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/3fa85ac1a52f0eace8e2df5756e8b30826e6f73a43952d9a1268d6dcdf258710.json",
+          "record_hash": "3fa85ac1a52f0eace8e2df5756e8b30826e6f73a43952d9a1268d6dcdf258710"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "26f3c78bfaf76248e8b4d75bdb23d4f4c54727c90bdb2941607512c4a76b4942",
+            "passage_digest": "25f777166a22ea1a3285885bf3cb15163ff6ac9253e9883350ed029d8d8ecefa",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "bd98637dffff379e9a95173893c7eef84081c49958bfe745eab45cd3709b255d",
+            "passage_digest": "51832ba450286544c42c51114390c940f02c4150814cd285641602b8704c7041",
+            "rows": 151
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "d97514ae269932d963ef7527c4806373a7441335f1af90373eb43d8c28780b80",
+            "passage_digest": "492cc5bb6ac5ce76e8d47a2bb150798b64f977be25dd7fe761f6697a828633dc",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "a1bed1dc201a4e6c1e88037fb78172e6035884851208c5eb0bcf7f10e8ca5312",
+            "passage_digest": "d974c15dfbf46c89bf04780377ac6e9f0d163a31a7ffef5a9cf5749d0224db4d",
+            "rows": 37
+          }
+        ]
+      },
+      {
+        "recording_id": "b5bab87d4842195af281f745ed1572f2febf1772bc218af52dc9fc6735eb5b26",
+        "rows": 696,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/ae83fab4714bebbafca33540f4429518eca1be8f0714859b6216769067105bb6.json",
+          "record_hash": "ae83fab4714bebbafca33540f4429518eca1be8f0714859b6216769067105bb6"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "738a3ecb384051d44aa73daf6e51b90a030d96e4c4f2b7129362c8092179c915",
+            "passage_digest": "d2e1c9e1f3384fe196b35e0658618b545e9d0b84128b10c11bfab2a95d592f74",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "217c4cd96bbcb8e646832483a236cfba1355969f0e9e33b9fc83ddd46eead1db",
+            "passage_digest": "d3d14b8f202ad1d678e67a33f871825c98d3090baf17937bea1983d1a5ec1605",
+            "rows": 46
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "bda0f0e778c134a2991e1928932ca7d586252a0c4d6bc042d5f26d76e8397ce5",
+            "passage_digest": "5bc6295c03f6599bb9cdf0002c8b788f66a72777e349c1f74f0387070139ddf7",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "6ebd1c79bca9d2e5f264639714ae222ffabd963f030f03ece5b3a4b8ab754787",
+            "passage_digest": "3e7214344b3a5167062219c39905c3b8480b45d68d3ee437d2677d7997a89e67",
+            "rows": 10
+          }
+        ]
+      },
+      {
+        "recording_id": "b9db0ac63e20c9ba46f7667424d962366024edc06ad6abd58f0b96bac0c4359d",
+        "rows": 199,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/ee9d735f2b40f7c7b1e6b6a967efb3ea12150303dbe71d20c167d23d4318cf5b.json",
+          "record_hash": "ee9d735f2b40f7c7b1e6b6a967efb3ea12150303dbe71d20c167d23d4318cf5b"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "804ec29999c351f8f37e11345954ff8501839a3ea1b0e7ddd921f9aae82a7164",
+            "passage_digest": "3388db28cbdaa459b2785a5e9e7966b942a88b4118d1d17b9f764191677f44ba",
+            "rows": 160
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "eb7e99b842ec5481df028fe9ee326a0131688de04a0b2a1bca1e5aac8083074c",
+            "passage_digest": "8d2fdff910174fb2c52879971f694a212d4a1ef4a9f418cd292af3ae424c6b0d",
+            "rows": 39
+          }
+        ]
+      },
+      {
+        "recording_id": "c06854cf82ae3a189aee93b0980ff54666218a98478e935e610f3ba31fd6092b",
+        "rows": 328,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/c076299bbf93c28f36d1785cb724db8346cd54f76c909b6604665d731a12b07e.json",
+          "record_hash": "c076299bbf93c28f36d1785cb724db8346cd54f76c909b6604665d731a12b07e"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "e0080ab010d5bbeef321a9db255ea10406f5bb8be259fff76033854acc04f15d",
+            "passage_digest": "5c8346737488fb965635773b393c18337a7acefc579aca558f1be6958b2c324d",
+            "rows": 263
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "591d13d352be0219b3dacb1f94091de958b3d11814d9b4a9c1ebad22adb78be4",
+            "passage_digest": "df39d96251685e1c0b7c692e48c65e04ed262d8a29863d7ac1a61c23097c4355",
+            "rows": 65
+          }
+        ]
+      },
+      {
+        "recording_id": "c173af3aeeeb03c98dad92598314424661e79c3971fe8769bc592bc7f8d5ab80",
+        "rows": 817,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/78f9e9c070fadd7ddcd24d8318a4dd9872c7f0ef12d5c807998468fb621c98d1.json",
+          "record_hash": "78f9e9c070fadd7ddcd24d8318a4dd9872c7f0ef12d5c807998468fb621c98d1"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "b495b6a95b027861bd88e8e07c9cdc55422645005b0e8e1998da89bdc8d37b62",
+            "passage_digest": "e9b0030823f6b85e674a686a2441706e740da2a9efe88f7d18e0634ec7691677",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "d3e57c54c620df7c9bd963c0ed763f9314d9d4a61468879db557b405c1a3d563",
+            "passage_digest": "930f0a9c2085569f01aba3ffc5dce34af672a53b3b7542aa615d0cb429910f05",
+            "rows": 143
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "5b5e0439872d8ef55d5330ba1670a459d3c7a0ae2cdd95fd8980fda6d9305122",
+            "passage_digest": "127694ce5da95ac744e3892899d2038d52d89046cbb5d02fa1225352c9ef4a81",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "676328a967ff135ca932453fd563fcb543d2d3bff64507ef0d960054d3e606dd",
+            "passage_digest": "fb838294f1f8820448eb5325923522f52a686f1e2b3510d604ca1cc23f17fb5d",
+            "rows": 34
+          }
+        ]
+      },
+      {
+        "recording_id": "c22be1356a4d0bbed5a1b728f53947f558899d2d45bbd0d343d10f4bdc1ff417",
+        "rows": 436,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/f8a9a5a491d5ae8aaba4dc5ac84efb8e83c4b65ca5f83d79d3883d054bc6914a.json",
+          "record_hash": "f8a9a5a491d5ae8aaba4dc5ac84efb8e83c4b65ca5f83d79d3883d054bc6914a"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "64109b191e21625b2c1c0cc4a9cdff62f631af3f8b74eafbc3050bcc417d8d70",
+            "passage_digest": "b1bc51fc651fb25f14f4daeecfb3afd306a4a115874da3129a3b7cd41134d001",
+            "rows": 350
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "8b2327cbeb917373ec073539bf18c215bbb6a33ed9da09d7c82b6bbde4deb99e",
+            "passage_digest": "eb55546b2da6ce2c24f9d2af06b87618efb5f23c5accfa0cf487191614f100af",
+            "rows": 86
+          }
+        ]
+      },
+      {
+        "recording_id": "c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+        "rows": 924,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/ee7548dd2d6774354de3a3d9ae6fee8cac2e7dd1c3b6db250456168cca0bd728.json",
+          "record_hash": "ee7548dd2d6774354de3a3d9ae6fee8cac2e7dd1c3b6db250456168cca0bd728"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "8ab81d419d3e6655f35e45d767ab68959532e615fdd959ea06dfeec4b5ce3865",
+            "passage_digest": "bf2b89d7bb4fa52e70b24c4aa3890eafe62e4c44592d9cd288c361b1cb3e3dda",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "e781a514b5f840d7cdc33b8b92d771e23a2874c0e5e5ebed52d068a89024b304",
+            "passage_digest": "d3d5abd418727c556cc95b390c18933d79ae8b083e91221c7d52afb92f7f6f64",
+            "rows": 228
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "00b9fe4d3300c55d1a6c48f0955d350b8cf198d0bcd83df71c24a4375d50f6b4",
+            "passage_digest": "89ca81e581b67032d0bdce2a9bc123f6a5b352c2e4018d5b093a66618ddcc6e0",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "c44bcb5a341eba9b2bde14f5637dc7d2bc2128026c45585ed9e9bf06cc75fd94",
+            "passage_digest": "7af5344e6868c8fcd55f54651e8ff97fa635bb349b4e5c4d25e9e414a481b5d8",
+            "rows": 56
+          }
+        ]
+      },
+      {
+        "recording_id": "c5ae126f76a53b74eee0b5d64fbcc247b1869c028435e8bca74a4731066f9d30",
+        "rows": 902,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/5ed6c9294843dbd9eff7e526f31bc877a63c1396f049ac6ca28ad506ac77f50c.json",
+          "record_hash": "5ed6c9294843dbd9eff7e526f31bc877a63c1396f049ac6ca28ad506ac77f50c"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "c802afdd9b8e671405cf838615f8602197bf90317cf4c3c32b9e50889bab9059",
+            "passage_digest": "b82e0adfc8ae382ffb8bf9f85334f5ff34c78720b6f24b87a3a3ee7d807a7698",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "f89d1843d88c961c55938533f8473c569ac6feb043e2ebfa8a51aa3e0ae21dbb",
+            "passage_digest": "8eb00efd0e0a69ff328d064b83b3f1f4dd55958119b1496b47b89054ea46206a",
+            "rows": 211
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "989bcc558517e667688555c095dbf72b089e9ff2658c173e36fc901769b9b28b",
+            "passage_digest": "287122c397763c8b31f326ee9e43b115c5f6a153f9173ff032fd7ce006f0e3e0",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "5683c6d86ce7dbf97588a762bb4cdaafbbede59134f1a89958ae2411e769caa1",
+            "passage_digest": "c7dfd325473b70080c97bdf9a7b6b1e19b66877831ca9271cdfaf057e74f84e1",
+            "rows": 51
+          }
+        ]
+      },
+      {
+        "recording_id": "c66a0df3555eb5bcb7a269348068c186b97d3c40c2cd13b4fe6d4ffcc2774418",
+        "rows": 989,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/5d5e66d654d036aea876d72c2813d82085c24d18388b36165a7916e0ed935380.json",
+          "record_hash": "5d5e66d654d036aea876d72c2813d82085c24d18388b36165a7916e0ed935380"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "9c1702cdc90ff7351ac9574acd0ff6645a2be65580bf0c03ae149a463abd425d",
+            "passage_digest": "a00850292ee0699793950f59d320fdadf726493fe9e3dcb2ea75a684f8c62f0d",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "6cb719381e47b1a4ca16eeb4d17f7a5a1af275eded21913e69ebfcb93428109d",
+            "passage_digest": "9b18140fb350072342758c3e4446ad4aa7e57a16f53726160e7eb33fd16ad78e",
+            "rows": 280
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "5fd3e3f782deb7932be8e5d82190727f0e37df28f7ea7f5a892747cdd75e5a83",
+            "passage_digest": "c80eff787157252ea384fc735879bdfff14b90bccb4c34e5206868199f39743f",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "d3929fe020cfc09097675223ad00f07332c892d91a5fd16e5551fd4bd6a753b5",
+            "passage_digest": "7d7330f7618bc9804a0ffd693ececdd80813be1c050ecc6934406a1e6ca135f3",
+            "rows": 69
+          }
+        ]
+      },
+      {
+        "recording_id": "c8126c0df2ff0aedd94619f5490f312a1bf289d87e954ecfa54c284123b55493",
+        "rows": 187,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/c5bcf98c61e95cb8a2277c0917634026d70e4e2eb46fe7b6afd9781f15ebbd3c.json",
+          "record_hash": "c5bcf98c61e95cb8a2277c0917634026d70e4e2eb46fe7b6afd9781f15ebbd3c"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "8084fb1410c69bd85a06ed20a08b3af194ce230ace5de3ba5f9947140595dbaa",
+            "passage_digest": "87eff4232504f70cf565a6be03ddd44300482c9f807251bb99ed2a5a1d4d4257",
+            "rows": 151
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "b5b1fc7525ec3049f980617be33bebb30a6c81011eebb81b70a65d1603bc76e0",
+            "passage_digest": "619543eb72500d3d06be53d28aa01747604b58adf7d4f1de25bd9f3ebbacd7d3",
+            "rows": 36
+          }
+        ]
+      },
+      {
+        "recording_id": "c9c3f4e73cda63f4f71d17961ec0cd079fe3e4ade12d74197ec3454a9ddf370e",
+        "rows": 814,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/7e121078d9da935d3cffd6fafab3f032695b9811cbe98a34f8970031d497e98a.json",
+          "record_hash": "7e121078d9da935d3cffd6fafab3f032695b9811cbe98a34f8970031d497e98a"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "061ee24e80dd40c7106af2e731c2958d5cc968f2d3808b43392f76c99c7ba5eb",
+            "passage_digest": "f6c3e678140c9d3f66ea676b113cf475875f2899da8569a47c55b09da2080bf1",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "9412608c31b02f1ae165bd7bf5489a4585a88cc673c49108b868699f9b0aaed0",
+            "passage_digest": "a9bf1dd2e6b493b6a56fd41fbfcd8aca834b3bae75f25fbd322297e07dd0ab3c",
+            "rows": 140
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "7dd9e8c7295e0fbc6545ff75b2f55a8c9801190f9223ca6398c08319b10bc1d3",
+            "passage_digest": "85687c0e0a060aa960674e3385534eda87369bb234921d7bba5ade44594a8e06",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "4726828cde79db5c929eee667dc636f960ebeaff314a21a912d919f5ef42a5b0",
+            "passage_digest": "3d90231d8ae3e90b3cf47c11c149981bcce8a109b4b5cbc1af6776df828be7ac",
+            "rows": 34
+          }
+        ]
+      },
+      {
+        "recording_id": "d09cb9d597a4ae2361864ddc901d47e5fe095c7deb510d32a4eed923c77ff715",
+        "rows": 527,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/dd7c08e7d53471ee828599f9dac38ea4f261e52190b98f67d9eea23fe47861cd.json",
+          "record_hash": "dd7c08e7d53471ee828599f9dac38ea4f261e52190b98f67d9eea23fe47861cd"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "9f525f88bef7b63205ddf0b295e07720c768fc272356846fc5cfb22cbb0a262b",
+            "passage_digest": "b0e91f21d4496d477b9392cdbdc074cb68c82ff6c25edd70bfad05596caa6046",
+            "rows": 423
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "68dc124d2650968f64df3a8dec9edf831c9aa6dff1a60238468ca2ebe29b4193",
+            "passage_digest": "43ce945ca54e193bb9852547875462f8f6a7b334c919c63d46eadb99ca315175",
+            "rows": 104
+          }
+        ]
+      },
+      {
+        "recording_id": "d17a47c2d03801a25b86f26ba6e326f9652bdf41d52c33fbf4806d0b33009711",
+        "rows": 449,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/57ff4aa9a8dcac4e675eb0eabbbcfe8ee17be18dd171ca4fe06f7a028ae447af.json",
+          "record_hash": "57ff4aa9a8dcac4e675eb0eabbbcfe8ee17be18dd171ca4fe06f7a028ae447af"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "94c2ad8cea1586e89dc24851d73c78944bfe557a70618b933a4201895541f5b6",
+            "passage_digest": "17777cb33c9fe6525c01b33a5d3fa3f9430b85393617afadafd53d581626ad80",
+            "rows": 360
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "8328d1103673543e6e889b1077ec5a797a31f5d9da279bc063e46d221f04eb65",
+            "passage_digest": "b2e5e4a3c6d5c6d13b62344b5d73b6239829774b46352c1680c2fcef42df23a4",
+            "rows": 89
+          }
+        ]
+      },
+      {
+        "recording_id": "d428b733ac5d06db4b6fa926ea2b096773292d0f78df710374eaec8aa3b93cde",
+        "rows": 1127,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/ecbd45b21df2986b2e9e0e471f9e6ed214a53730eb83b6f4403feb72405e3636.json",
+          "record_hash": "ecbd45b21df2986b2e9e0e471f9e6ed214a53730eb83b6f4403feb72405e3636"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "8ba4aceafb4d9d0b5def09a70f7523873784117408014b1151f277109aa7fb86",
+            "passage_digest": "ae2877a8fc58a4631d4111dbd77a9809e52bc2b39a46a2be92a3d440a611cde1",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "7ace957d85295eb2e63e5a01ff621d062beba1513cf200bd426113f8af3f39ec",
+            "passage_digest": "50c981ee91a5f8a4b8a6e91c6f29c698b9934202e7e1800720c83f23fdd620e3",
+            "rows": 391
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "09a574f9d2403b51c2f50b0d4f7c8127d60d04f99781aa6716de9c24280358d2",
+            "passage_digest": "290610c4d028fa03e27432823b08e0053f43d0361cc54ca795dcb50a83010466",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "37ca1c530844c3817b51ccd0eea9591f4deba63ce9d10f72cfd4f8d4c028afd0",
+            "passage_digest": "512ad50f617ccaafa152fe6790968acaaddebe1d0119ab5315a5be5f9ce3cb8d",
+            "rows": 96
+          }
+        ]
+      },
+      {
+        "recording_id": "d86405e259164cde9b3b70a62359cb398a3e1105e70f3f38910081f9fd43840e",
+        "rows": 960,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/b73a4833b9a0cbbb10b363609b0f67967b8eb6db4d401d017a87cc9149ee8664.json",
+          "record_hash": "b73a4833b9a0cbbb10b363609b0f67967b8eb6db4d401d017a87cc9149ee8664"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "b21aed594be8ae2dc7da023e0b1a2a1ff05974fd475c8504dc9ee8b4f7dd81e1",
+            "passage_digest": "5347d14b8f47e89404fb995621ecd5459fa975c23b1c6fe1a196dc3bb7cd17d2",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "dd93ab517ed6f82fafadb00347b7208cd9476b888f350cb5504265d115d52bd2",
+            "passage_digest": "d0f4fcd590e027558b2f35cce9ad307e85888974bb1560b7b2e5bc3861b9d624",
+            "rows": 257
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "dc043bc2406436411d9f46def6af6cf4744193d84161c154f10b7cf8fbd6a9fa",
+            "passage_digest": "baaf34719d2cfc3353d322d95d0aaf46925e8b75cfe4860a5729e1f4be2f9289",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "70b3858809c63727568f8baf39a012ca95eb4f639bb529b069c140d5ba449613",
+            "passage_digest": "f81e02d5e5252451d516a7f0ff21502f5461c7d7fc936866d827fa7c1606a21b",
+            "rows": 63
+          }
+        ]
+      },
+      {
+        "recording_id": "def2cbda8a412cd1e4e491190ce33fab60211ec3cfc83b5b38a0bbe3fda7f17a",
+        "rows": 956,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/ea593906125c66d404ccfc4884450b992dd4cd4355f1216f4fdaf859b8ae81f7.json",
+          "record_hash": "ea593906125c66d404ccfc4884450b992dd4cd4355f1216f4fdaf859b8ae81f7"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "a709fbc8bc728de04efb78898f331c3b4a9d40f1b4637aaa735f7f355af20018",
+            "passage_digest": "69c313b072c37a040e581d4d8cef1755c4d295a8bd9d6a251cd7fa0a30105e23",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "219d76883dae0de691d475df032bb02c653c80c783b6f08e6b47d34623828a20",
+            "passage_digest": "85b4f73ba23e38f5a12be07c9b256fa0d6eb7033084859984d27805639fae364",
+            "rows": 254
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "ae766a8ea74221cdcb64f412bedc8bbc0a8381c14628bdd807c8cb17a33b65e1",
+            "passage_digest": "0d907265f0a65016d6b6411529ecac6989e6e948d4fb4656fc0c2c2023674a9b",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "9bb4569b2e25d08be6856f60561e903dee64634a0a783da2ed3483f54e073129",
+            "passage_digest": "453b5916968f90dcd36b8b48039b44ad2b23f67f4028d9b643335d2a5a3891a6",
+            "rows": 62
+          }
+        ]
+      },
+      {
+        "recording_id": "e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+        "rows": 1024,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/2ecfd48af1213020551abcc5c94514fbe4b364be3876e1c76bd9b2d26965ba68.json",
+          "record_hash": "2ecfd48af1213020551abcc5c94514fbe4b364be3876e1c76bd9b2d26965ba68"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "b3e80178a7e8a7e07737e62b9bac2e6b3d59af5c8e685b787f4e0047d9ccb1f5",
+            "passage_digest": "ee1f11a4c60399576282dee3d1772fb5f3248627c5bd559cde4278c858806c21",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "87befae5239ec90813b15da5e17699b532eeac06bb11a89c5bc56c78c0694529",
+            "passage_digest": "64c9725996ddfb7a6a14f8d1e178035e2beb6fd580d8fce6623bb089dbb218bd",
+            "rows": 308
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "123d6a99cf1b669a0beb565ddfdd908868394969f18b4b4520a2832b66c9577b",
+            "passage_digest": "12c6ba9b453b86b61a4c2a95e154e12c3ed25f204af0429e8922a510027f7150",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "ab8428d3d55eeca72bdba771c29531c30ef32ed6aa74539a86c139ed19b2bfa5",
+            "passage_digest": "1d3f8f7a62fdb584924fc39ce5750fdb4c2c7cf20e594d72d4816ba39aacd5d2",
+            "rows": 76
+          }
+        ]
+      },
+      {
+        "recording_id": "e7f5d1f3739eecb3000c2d18f31eaa4acc9cf8450004c4ae2871af711e495b81",
+        "rows": 739,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/a48b1e814bcde4dcc0a060b4076c4f24274012293e3608aacb70e3dc42bdb333.json",
+          "record_hash": "a48b1e814bcde4dcc0a060b4076c4f24274012293e3608aacb70e3dc42bdb333"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "447d830255ad3c68502ef30dd02c3f5a5d72a92d95ad83f72fee2541d865adf5",
+            "passage_digest": "8f9e08bf1cbc240009f5a85aa89c49567b258762e2ef6dcd771a659c1a13dfdd",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "ba1efa4cb07e137b75c0d16b0aee493ecbb4a42817a125d862bb69736edfeb35",
+            "passage_digest": "89b9be0eb67be945a55c35aec9cf973231ff0e3de4b4e07fe109d00d8c126249",
+            "rows": 80
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "c1a2dee0b56f17489c825fabdc8411ef712cfd2ad6176804694186f0f79d56d8",
+            "passage_digest": "b67169d8647ad3ddfe94b48eaec43f659586b0c5b43a28cc35c6da5cd7caec25",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "7a2bbf6333d47314708438f628c70bf2706702d9a2f66bca9987e0dbeaf844d8",
+            "passage_digest": "dd099546b7423d8532e6a2b47755f0c99449b7cac2d5c2c558897022a4510410",
+            "rows": 19
+          }
+        ]
+      },
+      {
+        "recording_id": "ebf46fa8340b6982260aa8c13ac60b84dd1967fa0c9463b8fa1a215f94b856d3",
+        "rows": 1065,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/e243f005792f7b4f042d15ef718bb5f195a9b603a558fcf3221ff20a57dd08d7.json",
+          "record_hash": "e243f005792f7b4f042d15ef718bb5f195a9b603a558fcf3221ff20a57dd08d7"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "16f07a9d7f288ce144f3cc2f7fd0b616724b40a3279a6b802cd957bf9461aa54",
+            "passage_digest": "9cd35bf5e7be898a7f7cfa57dff3f54462b4c70adc68b7820d5b9f1d0038b5b1",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "9381493ac8b524f840a81fc5c036323ef5009f046915589d8c41ded6a2b404b0",
+            "passage_digest": "08cd476d6b5134d18011a0c5a5e83fd584d9aca83fb4dca9a1df956417420f09",
+            "rows": 341
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "aab8aed30aea9c07e58109a8d6115a499cd9d2a636a4847a4f33531deab6c072",
+            "passage_digest": "2d3d9841e639b1e76236b6c1fa9dab14bf0aecb35ae761ee52b2e297ecc17128",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "f3421d7ad63a610bba20eccfe0cbc457cc819ca130f4809983cdb9c36d33e1ad",
+            "passage_digest": "5061770050ad5554757bf4d67b2da5a2a375cf496861623b8bd8f128f76547e7",
+            "rows": 84
+          }
+        ]
+      },
+      {
+        "recording_id": "f25bc34d7b820ccc0e28556d564b8ef2cf2b2bd0f11547456c91ea760abf5a6a",
+        "rows": 1045,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/8b49359038dffab1be4fb8f12dcfd3e064611dbb97973c5a2174fdeda4ee0a17.json",
+          "record_hash": "8b49359038dffab1be4fb8f12dcfd3e064611dbb97973c5a2174fdeda4ee0a17"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "0e4c55c9c3f112bafe024e625b6711f04bc957e7c643e040922cce1decb1ee24",
+            "passage_digest": "ce0d249e60f1c6722885fdf28e411b4e236b37cf0b6e56d70c5cb0e269616dc5",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "8bf0178e1f5d586bfabb7d3525cbdc6ffa0ecd5f540e4677d07e4b6963e34122",
+            "passage_digest": "07c7841a6ce8f80d32cf9fff5fad200bb8029b22a01cd4f10b9b976dd766f40c",
+            "rows": 325
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "feec4a8cfc90e748b08bfa9a093e8db0e1a42f0bbb663bca626642c79c4c97bc",
+            "passage_digest": "94c3fb9db4c22076098d70135efeb56d39114b641c24776b79d13436ceb1d05e",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "61886381ff1fa948f44a281d9ea87105dbb2ac022efe66a84422fdfee575ee3b",
+            "passage_digest": "4403ca81ae43f7bc5286b4b9d386288e4c8cb12ab4dac611f6eb4fb09371a7e1",
+            "rows": 80
+          }
+        ]
+      },
+      {
+        "recording_id": "f3fe3abd9acb98819c7b84991cc2868d3487ec48592d28c7563dec9cb565566e",
+        "rows": 482,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/148ef98b982e7c55a650bd106df86546ce7f2bea4fdf9590de285d871a0a905b.json",
+          "record_hash": "148ef98b982e7c55a650bd106df86546ce7f2bea4fdf9590de285d871a0a905b"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "64e9c5ed9e0ee80435a445e8c135ae905eebd95b728ba28e8061e286af4b0d41",
+            "passage_digest": "8f4b57ef08750df89f1ff317a416c0402b046ea02d8a6c18faf86c625ec51e80",
+            "rows": 387
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "c1b4a0a9bfacb1908c25ad0f8938d3e711d19c74fb8e35eb93ba3fde8708db8c",
+            "passage_digest": "303ffab407f24065fb25037a98772930828e9af8e2b21bc2c026ee807588742f",
+            "rows": 95
+          }
+        ]
+      },
+      {
+        "recording_id": "f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+        "rows": 961,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/0d74a7470275de1c55ceba3bc9afcd8e54705ed53f7b3b17dbd6b2ee1ebcf1c9.json",
+          "record_hash": "0d74a7470275de1c55ceba3bc9afcd8e54705ed53f7b3b17dbd6b2ee1ebcf1c9"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "6ff4889591f4a09213651d3c3e36db0f21712f601d0494ebd76dbc125c3d2e78",
+            "passage_digest": "7474371187617a5a47e494bc82fbdb35a9c10178447e04b2e1725028b9a3999f",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "87b3123fde3d1d3fb8ce5313118e0c1743b5e3c5ca471bcc58bcb6ae7484342a",
+            "passage_digest": "d9bc6d4b515bb592e3e39e30a849e01501a49f262bc76f2f44dd3a89ebaa73e5",
+            "rows": 258
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "0218bc9f0daa9c8807d65fb3d9bacc4a394483fadde20550caac3ffde7035666",
+            "passage_digest": "732c013f29283012cad3bd23554e0981591687322cdd031714c94994ec7c3551",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "c30b27484e5dc095dc00d22a12af9304609109175eec48331f64823982d8ea2f",
+            "passage_digest": "ce453026a338218118c4bac16fca4f9a39fbd7efa76e6e390ed8d444530f02d6",
+            "rows": 63
+          }
+        ]
+      },
+      {
+        "recording_id": "fa68fdeeaa53f12e8c91ca3ca2784236babbedee0aec4f6639926da64fd3bb0a",
+        "rows": 444,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/a9a147e153eb144ebf9d58bb65b99502d428d1f0cc0b3148e2f9ac2762a179f0.json",
+          "record_hash": "a9a147e153eb144ebf9d58bb65b99502d428d1f0cc0b3148e2f9ac2762a179f0"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "04dbb1da3d74c652c51397e4d8345de83cce7f6f1ed3c22080332182ce8d5695",
+            "passage_digest": "a914766ffcebd66747a685526d13e28693087aa3b24d8d98f5c32c90a3a2b7e4",
+            "rows": 356
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "8def262148658452ac1ef6cbd21c14258624e9c904a83eedcef93563671badd0",
+            "passage_digest": "039a10edc47e446e6204d0a8146666ed9cb1928aa4f5821800d91fdc49ff38c0",
+            "rows": 88
+          }
+        ]
+      },
+      {
+        "recording_id": "fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+        "rows": 1045,
+        "new_encodes": 0,
+        "audit": {
+          "path": "data/runs/processing/consumer-audits/255ec1ed7b6d55ac1a1ca0a6ac56acf092272b4abfd4d98aaef3809580a1bbba.json",
+          "record_hash": "255ec1ed7b6d55ac1a1ca0a6ac56acf092272b4abfd4d98aaef3809580a1bbba"
+        },
+        "original_memberships": [
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "928b962528c907708eaf44873688d4f42d03d6189eca1e0e3237057d25751205",
+            "passage_digest": "34aa7f37988cec10763fd0e39237f20cb2df41049a7c1b7dab2b214e09a665ac",
+            "rows": 512
+          },
+          {
+            "bank_hash": "69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229",
+            "unit": "fb9340d3d91013c1a560020fe66306613ba971f4ed08dbf69f4807c518851678",
+            "passage_digest": "018197b164c97c70aad0fa29a6e6ed8b2122f0a1baefe78fe859cc748577c2a6",
+            "rows": 325
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "d4921a1280c69625cfe5dc2cf08c8ae9ea7044284466b7fd674f90d15d04002e",
+            "passage_digest": "ea696cc1e875264685e8fe20a5deec650b744a424391e65ca6acd6094de6f685",
+            "rows": 128
+          },
+          {
+            "bank_hash": "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0",
+            "unit": "e87ae9ea0da77868748fbb0db481b7c872f8bfac5b575119b56a9932a6fb7dd0",
+            "passage_digest": "80b7692347a27a71bf23d26f990effeca29916e4f0f258331efe1835a3f11573",
+            "rows": 80
+          }
+        ]
+      }
+    ],
+    "incomplete_group_publications": {
+      "legacy-mean": [
+        {
+          "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+          "rank": 1,
+          "score": 0.34548167617069714,
+          "ref": {
+            "path": "data/runs/processing/group-results/237662e52ad1ce01073325de7fd652252a0213fd992024ba43ed6056d34ed340.json",
+            "record_hash": "237662e52ad1ce01073325de7fd652252a0213fd992024ba43ed6056d34ed340"
+          }
+        },
+        {
+          "group": "family-9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+          "rank": 2,
+          "score": 0.36347850036076734,
+          "ref": {
+            "path": "data/runs/processing/group-results/58d35e5a14f7f61703671952e5b89ee3be1fe07b0fd92ad8ed08707066a92c9a.json",
+            "record_hash": "58d35e5a14f7f61703671952e5b89ee3be1fe07b0fd92ad8ed08707066a92c9a"
+          }
+        },
+        {
+          "group": "family-3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+          "rank": 3,
+          "score": 0.3926141076142837,
+          "ref": {
+            "path": "data/runs/processing/group-results/9ea14b4a24d72523fba68b1b63fad95ceafa6fd315c61660c8e4910427b10a74.json",
+            "record_hash": "9ea14b4a24d72523fba68b1b63fad95ceafa6fd315c61660c8e4910427b10a74"
+          }
+        },
+        {
+          "group": "family-c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+          "rank": 4,
+          "score": 0.41955925440921527,
+          "ref": {
+            "path": "data/runs/processing/group-results/b7ab58429b98355c2edbfb09a349b40738cd520a585cef07d84f629642aa0ca5.json",
+            "record_hash": "b7ab58429b98355c2edbfb09a349b40738cd520a585cef07d84f629642aa0ca5"
+          }
+        },
+        {
+          "group": "family-fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+          "rank": 5,
+          "score": 0.4208935048586083,
+          "ref": {
+            "path": "data/runs/processing/group-results/59579dfb9b3079bd49ae59534f54a8fc269b8b8540feb45b378ea41d34d51759.json",
+            "record_hash": "59579dfb9b3079bd49ae59534f54a8fc269b8b8540feb45b378ea41d34d51759"
+          }
+        },
+        {
+          "group": "family-7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+          "rank": 6,
+          "score": 0.4388605996160332,
+          "ref": {
+            "path": "data/runs/processing/group-results/7a8c6e04ded19ddb73496a09e23591290f2a7259a8146061d85cc0383b61d692.json",
+            "record_hash": "7a8c6e04ded19ddb73496a09e23591290f2a7259a8146061d85cc0383b61d692"
+          }
+        },
+        {
+          "group": "family-e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+          "rank": 7,
+          "score": 0.44209693241749604,
+          "ref": {
+            "path": "data/runs/processing/group-results/7d16bc0e1a3a8c5db10bb974acfa0451f9054fe9f432b7a05be7b33ffdc76018.json",
+            "record_hash": "7d16bc0e1a3a8c5db10bb974acfa0451f9054fe9f432b7a05be7b33ffdc76018"
+          }
+        },
+        {
+          "group": "family-241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+          "rank": 8,
+          "score": 0.4538042587804848,
+          "ref": {
+            "path": "data/runs/processing/group-results/4e33ae17b29f3be95f72f13be0fade72ffecb4a602af2f0c8ad8e3d6bb656a65.json",
+            "record_hash": "4e33ae17b29f3be95f72f13be0fade72ffecb4a602af2f0c8ad8e3d6bb656a65"
+          }
+        },
+        {
+          "group": "family-41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+          "rank": 9,
+          "score": 0.45617152228509805,
+          "ref": {
+            "path": "data/runs/processing/group-results/089fe33a37754fac805ff4a60a8da2fe20306bb52b59be9e4cab613f0ad0b503.json",
+            "record_hash": "089fe33a37754fac805ff4a60a8da2fe20306bb52b59be9e4cab613f0ad0b503"
+          }
+        },
+        {
+          "group": "family-3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772",
+          "rank": 10,
+          "score": 0.4567451407032187,
+          "ref": {
+            "path": "data/runs/processing/group-results/15d6dbd122797c39e6d12b8a5838ac98c982b40ce8af554e776eb10c24071030.json",
+            "record_hash": "15d6dbd122797c39e6d12b8a5838ac98c982b40ce8af554e776eb10c24071030"
+          }
+        },
+        {
+          "group": "family-393ad07ff3146a5470ec1886348f40c2dbf25072599c2cadb432078656bf13af",
+          "rank": 11,
+          "score": 0.45941262204051114,
+          "ref": {
+            "path": "data/runs/processing/group-results/db9da67d29d6a4ce696d0d1890879c5015e45be4cc68979142c6463362e2f714.json",
+            "record_hash": "db9da67d29d6a4ce696d0d1890879c5015e45be4cc68979142c6463362e2f714"
+          }
+        },
+        {
+          "group": "family-8e68a5244bc162768dba7954d1071dc90d99201e5ef4101b293a97a13be9cbb1",
+          "rank": 12,
+          "score": 0.46164630475223434,
+          "ref": {
+            "path": "data/runs/processing/group-results/7a61282254ebfbea1cd822596d06a8ea68b8fcba14feb300359244528483c1ef.json",
+            "record_hash": "7a61282254ebfbea1cd822596d06a8ea68b8fcba14feb300359244528483c1ef"
+          }
+        },
+        {
+          "group": "family-3a78813a1e19b86de37355abf98330c55bdd30b7a97d81be942aa38f6f71083b",
+          "rank": 13,
+          "score": 0.48168970114284937,
+          "ref": {
+            "path": "data/runs/processing/group-results/23320eb54ac3ec06854cedb154afec208510b338c17ef369a238d55c0e8d6419.json",
+            "record_hash": "23320eb54ac3ec06854cedb154afec208510b338c17ef369a238d55c0e8d6419"
+          }
+        },
+        {
+          "group": "family-def2cbda8a412cd1e4e491190ce33fab60211ec3cfc83b5b38a0bbe3fda7f17a",
+          "rank": 14,
+          "score": 0.484908487551748,
+          "ref": {
+            "path": "data/runs/processing/group-results/b9ceafeb1440b211e5279818ac39f51369697b37e6be0ddfe94e0b015281260a.json",
+            "record_hash": "b9ceafeb1440b211e5279818ac39f51369697b37e6be0ddfe94e0b015281260a"
+          }
+        },
+        {
+          "group": "family-60a24b53695795b6fff6a74de81502a3de9f6191f08c650cc9a05ea3de47b11d",
+          "rank": 15,
+          "score": 0.485002881435066,
+          "ref": {
+            "path": "data/runs/processing/group-results/2f2f5a62998212025eeb1af637edecd8a464abf17f6a639faa23005e2249e2e6.json",
+            "record_hash": "2f2f5a62998212025eeb1af637edecd8a464abf17f6a639faa23005e2249e2e6"
+          }
+        },
+        {
+          "group": "family-9f741ebceb59cda55898246265c06586a08c948bc8331cbd6beb26005209b2d3",
+          "rank": 16,
+          "score": 0.4856356786304784,
+          "ref": {
+            "path": "data/runs/processing/group-results/20558aae74217e8db28501ad7900271a1e785b13dde2969c7f7e17207aa2f8f0.json",
+            "record_hash": "20558aae74217e8db28501ad7900271a1e785b13dde2969c7f7e17207aa2f8f0"
+          }
+        },
+        {
+          "group": "family-c173af3aeeeb03c98dad92598314424661e79c3971fe8769bc592bc7f8d5ab80",
+          "rank": 17,
+          "score": 0.49043084478843446,
+          "ref": {
+            "path": "data/runs/processing/group-results/565d93056ebad54c7a85908f8afe0bfaff8fbf2da299d026fa3f27f7c3e073df.json",
+            "record_hash": "565d93056ebad54c7a85908f8afe0bfaff8fbf2da299d026fa3f27f7c3e073df"
+          }
+        },
+        {
+          "group": "family-33df701d5b69d49d6af1d09d3bef4c108924b5049c4ce9354fb83de0d87873a1",
+          "rank": 18,
+          "score": 0.490849796888958,
+          "ref": {
+            "path": "data/runs/processing/group-results/b2153c8a354a3600e25c73db942c4d48291882c0549bc5949f55b11a27366d9d.json",
+            "record_hash": "b2153c8a354a3600e25c73db942c4d48291882c0549bc5949f55b11a27366d9d"
+          }
+        },
+        {
+          "group": "family-1f08c8edd806a2e087cf9028c6722688efa4bde031048b9c5162490ce4169049",
+          "rank": 19,
+          "score": 0.4909009437949847,
+          "ref": {
+            "path": "data/runs/processing/group-results/f53f6da8dde9ecd262a40859f94243b64dfb66beb2c560a4036b560477cb85df.json",
+            "record_hash": "f53f6da8dde9ecd262a40859f94243b64dfb66beb2c560a4036b560477cb85df"
+          }
+        },
+        {
+          "group": "family-c5ae126f76a53b74eee0b5d64fbcc247b1869c028435e8bca74a4731066f9d30",
+          "rank": 20,
+          "score": 0.4910104235064773,
+          "ref": {
+            "path": "data/runs/processing/group-results/152aa2c8f0c34d7ffe9ca9013c0229fb51dfee1c665421076eeb9370dd7f0b89.json",
+            "record_hash": "152aa2c8f0c34d7ffe9ca9013c0229fb51dfee1c665421076eeb9370dd7f0b89"
+          }
+        },
+        {
+          "group": "family-8fa52d26be8ec05dfe0c4f37808b35014c0f7e651c1712549dccf3a2a6ea9291",
+          "rank": 21,
+          "score": 0.49372156664381717,
+          "ref": {
+            "path": "data/runs/processing/group-results/99f54efb5a2e8b65326d7a287304b290ef6f780db996d4ff7453d1ad90308d7b.json",
+            "record_hash": "99f54efb5a2e8b65326d7a287304b290ef6f780db996d4ff7453d1ad90308d7b"
+          }
+        },
+        {
+          "group": "family-aba0e552a3154b83e48ceb66c970cf49b785e8694990aa5ce5ab5f80096f7fef",
+          "rank": 22,
+          "score": 0.4949384013180125,
+          "ref": {
+            "path": "data/runs/processing/group-results/8ba965b6b5d55b6a40c17b3df65601b49937f4fa2d29122ddcf01d104f4f698c.json",
+            "record_hash": "8ba965b6b5d55b6a40c17b3df65601b49937f4fa2d29122ddcf01d104f4f698c"
+          }
+        },
+        {
+          "group": "family-f25bc34d7b820ccc0e28556d564b8ef2cf2b2bd0f11547456c91ea760abf5a6a",
+          "rank": 23,
+          "score": 0.49614323437214325,
+          "ref": {
+            "path": "data/runs/processing/group-results/58a12344c4ebeddeb0d3dd4b815b488fc9eff3b722c995f112568c1fdfa46577.json",
+            "record_hash": "58a12344c4ebeddeb0d3dd4b815b488fc9eff3b722c995f112568c1fdfa46577"
+          }
+        },
+        {
+          "group": "family-2e8b8fc444042d0ee77627f2626da1111b150f262e3484b98204217a6390341e",
+          "rank": 24,
+          "score": 0.49689417225492516,
+          "ref": {
+            "path": "data/runs/processing/group-results/fbfcbbba917fd51895db51bf261f7cb935e5155161e128bfe3f277b119bb7f70.json",
+            "record_hash": "fbfcbbba917fd51895db51bf261f7cb935e5155161e128bfe3f277b119bb7f70"
+          }
+        },
+        {
+          "group": "family-0c79da2bdbd98009c9269ff786259e2eb22d3264810c036bac7b63dc02a9db21",
+          "rank": 25,
+          "score": 0.49723404494546997,
+          "ref": {
+            "path": "data/runs/processing/group-results/9f39378368b7db574798bf1c6752338fc76a5378111bd3da73c167937037982a.json",
+            "record_hash": "9f39378368b7db574798bf1c6752338fc76a5378111bd3da73c167937037982a"
+          }
+        },
+        {
+          "group": "family-b9db0ac63e20c9ba46f7667424d962366024edc06ad6abd58f0b96bac0c4359d",
+          "rank": 26,
+          "score": 0.5047055655043564,
+          "ref": {
+            "path": "data/runs/processing/group-results/e658198765c8fc4b7ff4516efc4d06ebd49d6fd8776e4c43be9a5e7d0c550187.json",
+            "record_hash": "e658198765c8fc4b7ff4516efc4d06ebd49d6fd8776e4c43be9a5e7d0c550187"
+          }
+        },
+        {
+          "group": "family-d428b733ac5d06db4b6fa926ea2b096773292d0f78df710374eaec8aa3b93cde",
+          "rank": 27,
+          "score": 0.5057369224299963,
+          "ref": {
+            "path": "data/runs/processing/group-results/f5fc68105573b12527c57e085071477ccf728bdabd8fb102f4b88b295331ba45.json",
+            "record_hash": "f5fc68105573b12527c57e085071477ccf728bdabd8fb102f4b88b295331ba45"
+          }
+        },
+        {
+          "group": "family-1cc1c34f9ee27490c4485a7ad72ccb0701b97d685418bb2dd1c4ae5a79bc0c48",
+          "rank": 28,
+          "score": 0.5089167758741049,
+          "ref": {
+            "path": "data/runs/processing/group-results/2e027de3a6b4d280bb456ad829ece626d5635b49b5c0ddb529335d24e260ad3b.json",
+            "record_hash": "2e027de3a6b4d280bb456ad829ece626d5635b49b5c0ddb529335d24e260ad3b"
+          }
+        },
+        {
+          "group": "family-2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+          "rank": 29,
+          "score": 0.5093578237813539,
+          "ref": {
+            "path": "data/runs/processing/group-results/136d978acd771d01649f51d8c5d795b434c2a792eb897bae372b7c8531750dca.json",
+            "record_hash": "136d978acd771d01649f51d8c5d795b434c2a792eb897bae372b7c8531750dca"
+          }
+        },
+        {
+          "group": "family-683c05c202edd603cff6d2fb0acd98bc1d138c1a5e8144d5786864e1d5460d8c",
+          "rank": 30,
+          "score": 0.5167970403259122,
+          "ref": {
+            "path": "data/runs/processing/group-results/1eb15c89a50da31be9084026ee4bedcb03011d8a974aeb72b3dffafb58190354.json",
+            "record_hash": "1eb15c89a50da31be9084026ee4bedcb03011d8a974aeb72b3dffafb58190354"
+          }
+        },
+        {
+          "group": "family-fa68fdeeaa53f12e8c91ca3ca2784236babbedee0aec4f6639926da64fd3bb0a",
+          "rank": 31,
+          "score": 0.5177250473447015,
+          "ref": {
+            "path": "data/runs/processing/group-results/c3279d2c916156ff4d6e43705957267e2bb784c676e1d1c07f7785f73d74dbe9.json",
+            "record_hash": "c3279d2c916156ff4d6e43705957267e2bb784c676e1d1c07f7785f73d74dbe9"
+          }
+        },
+        {
+          "group": "family-4b7f20b58f7362871022d59fa36a197e8d1e234cac6f99eaefe05de2d11b9735",
+          "rank": 32,
+          "score": 0.521292785672153,
+          "ref": {
+            "path": "data/runs/processing/group-results/9cfb3175d38430450af99a126c61f7ace6f495f62d8821adb44e436e05d700cd.json",
+            "record_hash": "9cfb3175d38430450af99a126c61f7ace6f495f62d8821adb44e436e05d700cd"
+          }
+        },
+        {
+          "group": "family-d86405e259164cde9b3b70a62359cb398a3e1105e70f3f38910081f9fd43840e",
+          "rank": 33,
+          "score": 0.5239424065464104,
+          "ref": {
+            "path": "data/runs/processing/group-results/e224d394d7a5f689ddeda14cd906a72fb1cdd341fe681894d7d5390c2917f2a8.json",
+            "record_hash": "e224d394d7a5f689ddeda14cd906a72fb1cdd341fe681894d7d5390c2917f2a8"
+          }
+        },
+        {
+          "group": "family-ebf46fa8340b6982260aa8c13ac60b84dd1967fa0c9463b8fa1a215f94b856d3",
+          "rank": 34,
+          "score": 0.5253521613269274,
+          "ref": {
+            "path": "data/runs/processing/group-results/27bf66e56bea155e35ea6ea17a934249959982b4d81cd99fd1b598a98a1aaa09.json",
+            "record_hash": "27bf66e56bea155e35ea6ea17a934249959982b4d81cd99fd1b598a98a1aaa09"
+          }
+        },
+        {
+          "group": "family-c22be1356a4d0bbed5a1b728f53947f558899d2d45bbd0d343d10f4bdc1ff417",
+          "rank": 35,
+          "score": 0.5271777921222038,
+          "ref": {
+            "path": "data/runs/processing/group-results/03a43c9e95e5769317f75e02525361dd5149be6e036ec32e87e6fc7d77c3ed30.json",
+            "record_hash": "03a43c9e95e5769317f75e02525361dd5149be6e036ec32e87e6fc7d77c3ed30"
+          }
+        },
+        {
+          "group": "family-e7f5d1f3739eecb3000c2d18f31eaa4acc9cf8450004c4ae2871af711e495b81",
+          "rank": 36,
+          "score": 0.5338219713078347,
+          "ref": {
+            "path": "data/runs/processing/group-results/b0c243a55b8c91cb8cf2309f79d3383c49999dbf3313edf97504f422549e63a9.json",
+            "record_hash": "b0c243a55b8c91cb8cf2309f79d3383c49999dbf3313edf97504f422549e63a9"
+          }
+        },
+        {
+          "group": "family-c9c3f4e73cda63f4f71d17961ec0cd079fe3e4ade12d74197ec3454a9ddf370e",
+          "rank": 37,
+          "score": 0.5343897474903887,
+          "ref": {
+            "path": "data/runs/processing/group-results/06cc1f0eea1a34662e94fec22a198e228698082dfad11a110f0347ec30150698.json",
+            "record_hash": "06cc1f0eea1a34662e94fec22a198e228698082dfad11a110f0347ec30150698"
+          }
+        },
+        {
+          "group": "family-121c534449b967209ad4db152d7a790e5fa8a44d7d090d04d9746be8aff741f5",
+          "rank": 38,
+          "score": 0.5362217083999146,
+          "ref": {
+            "path": "data/runs/processing/group-results/72a7523e28d1770a516636d001a93a62acffea3a0a68d9c87da8704d17bd00a5.json",
+            "record_hash": "72a7523e28d1770a516636d001a93a62acffea3a0a68d9c87da8704d17bd00a5"
+          }
+        },
+        {
+          "group": "family-c66a0df3555eb5bcb7a269348068c186b97d3c40c2cd13b4fe6d4ffcc2774418",
+          "rank": 39,
+          "score": 0.5367829848446446,
+          "ref": {
+            "path": "data/runs/processing/group-results/c6c65f3f1b9c1ceba6b0ba0ec7eebdc71847a53419e38f20906b31e803faf318.json",
+            "record_hash": "c6c65f3f1b9c1ceba6b0ba0ec7eebdc71847a53419e38f20906b31e803faf318"
+          }
+        },
+        {
+          "group": "family-c8126c0df2ff0aedd94619f5490f312a1bf289d87e954ecfa54c284123b55493",
+          "rank": 40,
+          "score": 0.5372765114717803,
+          "ref": {
+            "path": "data/runs/processing/group-results/f1a33fd4472299e7c9bdb14490a9f9e0e92480ecbc53ad8dbfa72f86a990c70c.json",
+            "record_hash": "f1a33fd4472299e7c9bdb14490a9f9e0e92480ecbc53ad8dbfa72f86a990c70c"
+          }
+        },
+        {
+          "group": "family-64ccee3db2be1f934173f550652c7c8c00b4a89bfa2ca2c3aa9b0366b0a0762b",
+          "rank": 41,
+          "score": 0.5416471375677936,
+          "ref": {
+            "path": "data/runs/processing/group-results/50379c4044f2d17deef424a86e47164aa0930347959ae45f5734de6448b91d49.json",
+            "record_hash": "50379c4044f2d17deef424a86e47164aa0930347959ae45f5734de6448b91d49"
+          }
+        },
+        {
+          "group": "family-28ecc68d4b83b585ef781b12136a2ebf6809f00b820f311dc2ed44ce770144ab",
+          "rank": 42,
+          "score": 0.5458505191196833,
+          "ref": {
+            "path": "data/runs/processing/group-results/c13d84edc09d6c1e11494c08d1d690535f9b26f5b85d1eb2e42363449d1e0b2e.json",
+            "record_hash": "c13d84edc09d6c1e11494c08d1d690535f9b26f5b85d1eb2e42363449d1e0b2e"
+          }
+        },
+        {
+          "group": "family-920237237b9dde0f1c2671fe823646ac8236a9ac76e45231b0e1c4ff59e11a43",
+          "rank": 43,
+          "score": 0.551437045679056,
+          "ref": {
+            "path": "data/runs/processing/group-results/7f287d09a1f95402e01c58cb16ef8dad4161bef7487283815897620ecd783198.json",
+            "record_hash": "7f287d09a1f95402e01c58cb16ef8dad4161bef7487283815897620ecd783198"
+          }
+        },
+        {
+          "group": "family-3355fd70f984f0da0d9b1312f2bf93ffd9617b9225ef8bd187cc295b6c25ad37",
+          "rank": 44,
+          "score": 0.5533978303266435,
+          "ref": {
+            "path": "data/runs/processing/group-results/290767ce4af3aaae3fd2cdcdc699b91c7d37b6b5cf61b9292b6802e2e44ad134.json",
+            "record_hash": "290767ce4af3aaae3fd2cdcdc699b91c7d37b6b5cf61b9292b6802e2e44ad134"
+          }
+        },
+        {
+          "group": "family-72c4bd15df2838cb283a619991aa5f00b3b6a859626aea942b7336935c6ba4ec",
+          "rank": 45,
+          "score": 0.5556319187969683,
+          "ref": {
+            "path": "data/runs/processing/group-results/7bbda6f923fd32667a3866eac4c2a4018bb0d032594d55b64b28e7b8671f2edd.json",
+            "record_hash": "7bbda6f923fd32667a3866eac4c2a4018bb0d032594d55b64b28e7b8671f2edd"
+          }
+        },
+        {
+          "group": "family-8d7a34191d0f2e1350fbca3fa45519e3fb89b2fe008fbdf2a81618f4fc57a83a",
+          "rank": 46,
+          "score": 0.5558432046281843,
+          "ref": {
+            "path": "data/runs/processing/group-results/700df41197bd589f63de451c8b3daa44c7444c1c0c83d58d386ec61550a846f3.json",
+            "record_hash": "700df41197bd589f63de451c8b3daa44c7444c1c0c83d58d386ec61550a846f3"
+          }
+        },
+        {
+          "group": "family-3494a3859d35a5c0b01498a517a59b7dbfc8625724248e6e5d573683410edfb9",
+          "rank": 47,
+          "score": 0.5560574866801549,
+          "ref": {
+            "path": "data/runs/processing/group-results/6f56d20a6ddc479a54e4b37c4b3321deba312ba4b00fed009a0dc0236384c958.json",
+            "record_hash": "6f56d20a6ddc479a54e4b37c4b3321deba312ba4b00fed009a0dc0236384c958"
+          }
+        },
+        {
+          "group": "family-7c6a1a08ed5671c3afb22bad523771b5008f8356712b7b013b93585199a912f5",
+          "rank": 48,
+          "score": 0.5605615060048543,
+          "ref": {
+            "path": "data/runs/processing/group-results/c92419b6ad495c81ed65f4d59b0eda81dbe42e705969810a951d9a090cd7a212.json",
+            "record_hash": "c92419b6ad495c81ed65f4d59b0eda81dbe42e705969810a951d9a090cd7a212"
+          }
+        },
+        {
+          "group": "family-1b3d6a5b7c0667388b800e7952e6f0b95c49ba7750346f9051f89dad6611b676",
+          "rank": 49,
+          "score": 0.5632976260730385,
+          "ref": {
+            "path": "data/runs/processing/group-results/73006e2801ee21224438cd0f68ac46de99d116b55997c5b6a5945e6c40a3ac85.json",
+            "record_hash": "73006e2801ee21224438cd0f68ac46de99d116b55997c5b6a5945e6c40a3ac85"
+          }
+        },
+        {
+          "group": "family-a6d93ab7d0430a712651354694cb03c54775f46e80cdb7f4d445147fbfa5c6f7",
+          "rank": 50,
+          "score": 0.5639942286363975,
+          "ref": {
+            "path": "data/runs/processing/group-results/4a3285626c22a31100dfd9b9717bbbc57c0822750f9ab287706b63a2667f2c88.json",
+            "record_hash": "4a3285626c22a31100dfd9b9717bbbc57c0822750f9ab287706b63a2667f2c88"
+          }
+        },
+        {
+          "group": "family-d17a47c2d03801a25b86f26ba6e326f9652bdf41d52c33fbf4806d0b33009711",
+          "rank": 51,
+          "score": 0.5653302450442541,
+          "ref": {
+            "path": "data/runs/processing/group-results/1d78181964141b6a17af4ba1aaafea87ef2d9c5f857a401aed733caa0af363f7.json",
+            "record_hash": "1d78181964141b6a17af4ba1aaafea87ef2d9c5f857a401aed733caa0af363f7"
+          }
+        },
+        {
+          "group": "family-0dbaa617d1bfd02ab6c9439011638d47434432c899fbc8967d49635c58535fac",
+          "rank": 52,
+          "score": 0.5704963871227215,
+          "ref": {
+            "path": "data/runs/processing/group-results/0e8f1560faf68f726efe2c6826e25c4e7d6b3ecbe98247c3a3585d6719e5747b.json",
+            "record_hash": "0e8f1560faf68f726efe2c6826e25c4e7d6b3ecbe98247c3a3585d6719e5747b"
+          }
+        },
+        {
+          "group": "family-ae6f7c6adc0da97ef75a99209803a27d8ba8ff5cf56b8d5f53cbf0ac4313710d",
+          "rank": 53,
+          "score": 0.5709411930019257,
+          "ref": {
+            "path": "data/runs/processing/group-results/f26286fb574366e06a1c58a914b3e713341abb85b9c1ebd530a99bc231828c60.json",
+            "record_hash": "f26286fb574366e06a1c58a914b3e713341abb85b9c1ebd530a99bc231828c60"
+          }
+        },
+        {
+          "group": "family-0588cb971f205c13a31cd0ce6e3f38d36fc7d3e0c304117370263d67f9a4db48",
+          "rank": 54,
+          "score": 0.5729880893029868,
+          "ref": {
+            "path": "data/runs/processing/group-results/6f05fbe3488520b6a7f4ed3bb43b6110f03566f7eb90a0ecbb53326556c5a69e.json",
+            "record_hash": "6f05fbe3488520b6a7f4ed3bb43b6110f03566f7eb90a0ecbb53326556c5a69e"
+          }
+        },
+        {
+          "group": "family-3e36fb2358a9901a1b16fcee24b5e67f2b32d81300506d2cd93b8485e7a6f2c3",
+          "rank": 55,
+          "score": 0.5730640711725243,
+          "ref": {
+            "path": "data/runs/processing/group-results/ea1d02eb96df8c613b7e2297e69be5b6706992d85da888484f7366751112fc96.json",
+            "record_hash": "ea1d02eb96df8c613b7e2297e69be5b6706992d85da888484f7366751112fc96"
+          }
+        },
+        {
+          "group": "family-44f01f4340cb6eb0741c54e2ffb2118591fae4c7d70031ce8d3de2c532e14eb2",
+          "rank": 56,
+          "score": 0.5735527466382204,
+          "ref": {
+            "path": "data/runs/processing/group-results/231eb1edc01ca2eb8f7efb84939abc9a6e5fc89214a0d98a0396eeb73bd04050.json",
+            "record_hash": "231eb1edc01ca2eb8f7efb84939abc9a6e5fc89214a0d98a0396eeb73bd04050"
+          }
+        },
+        {
+          "group": "family-1a8d29e3ddcbc57b84a38c0649737a865ab1defe35ca7cf8f3cce586f6f660c6",
+          "rank": 57,
+          "score": 0.5736596268820635,
+          "ref": {
+            "path": "data/runs/processing/group-results/2fe9a4eb081bbcba82d25516b710868cdc7a24a5f7243e04071fe89fc3229b0e.json",
+            "record_hash": "2fe9a4eb081bbcba82d25516b710868cdc7a24a5f7243e04071fe89fc3229b0e"
+          }
+        },
+        {
+          "group": "family-c06854cf82ae3a189aee93b0980ff54666218a98478e935e610f3ba31fd6092b",
+          "rank": 58,
+          "score": 0.5763806101396795,
+          "ref": {
+            "path": "data/runs/processing/group-results/a6b91525459c08a79e30279de8f46bae470c635817a0ac6e1d442bebbbce7059.json",
+            "record_hash": "a6b91525459c08a79e30279de8f46bae470c635817a0ac6e1d442bebbbce7059"
+          }
+        },
+        {
+          "group": "family-27d2dc70a3fbc3d5c4921d2ea0d6d2ca0f9812d540ee079e8554b7cb41a7ef90",
+          "rank": 59,
+          "score": 0.5830256357977367,
+          "ref": {
+            "path": "data/runs/processing/group-results/1d738871a2db1db7e4b66c456e8f634e2adc1f884f0679e84585bb92d63aface.json",
+            "record_hash": "1d738871a2db1db7e4b66c456e8f634e2adc1f884f0679e84585bb92d63aface"
+          }
+        },
+        {
+          "group": "family-3388ebf4bded08922035a67f8323400e7ed9d4573488940591e53d37fbf6662d",
+          "rank": 60,
+          "score": 0.5885790962861764,
+          "ref": {
+            "path": "data/runs/processing/group-results/da3f27567de42e4b3886964737fff14515c5ef3535184265f4d2226519a6f160.json",
+            "record_hash": "da3f27567de42e4b3886964737fff14515c5ef3535184265f4d2226519a6f160"
+          }
+        },
+        {
+          "group": "family-b29770ad6531afee86fe13e34ddb8f2ffbf39ac2a0d250f41493b2c4133cb5df",
+          "rank": 61,
+          "score": 0.5904390406457134,
+          "ref": {
+            "path": "data/runs/processing/group-results/790d8cdd2dd6cfe5ae17bacd4e898cae41cdcd31e82b53f3e9efc178555d0d4b.json",
+            "record_hash": "790d8cdd2dd6cfe5ae17bacd4e898cae41cdcd31e82b53f3e9efc178555d0d4b"
+          }
+        },
+        {
+          "group": "family-005af5e2aaad323d8bbcbe9aabde36778bbf0768623addcc254eee355de7b005",
+          "rank": 62,
+          "score": 0.591393015279327,
+          "ref": {
+            "path": "data/runs/processing/group-results/9ee88779eed9fc5a2c73e18fbcc490903bfd6bb523bbaa674809525312ee9187.json",
+            "record_hash": "9ee88779eed9fc5a2c73e18fbcc490903bfd6bb523bbaa674809525312ee9187"
+          }
+        },
+        {
+          "group": "family-d09cb9d597a4ae2361864ddc901d47e5fe095c7deb510d32a4eed923c77ff715",
+          "rank": 63,
+          "score": 0.598905095204024,
+          "ref": {
+            "path": "data/runs/processing/group-results/5f54a73f4b07938a9358b35eea30b81cfb232ee6aa06ff16732ac5ede6539e30.json",
+            "record_hash": "5f54a73f4b07938a9358b35eea30b81cfb232ee6aa06ff16732ac5ede6539e30"
+          }
+        },
+        {
+          "group": "family-5b31c43ecd7091e858e9bce40617028d3321212c3f5a47fb476cc48283390c3c",
+          "rank": 64,
+          "score": 0.6039607038719419,
+          "ref": {
+            "path": "data/runs/processing/group-results/4f6f041c59f0effe124be31097aadcd5c1f7fccb860a981de8bb0ffe589f0f21.json",
+            "record_hash": "4f6f041c59f0effe124be31097aadcd5c1f7fccb860a981de8bb0ffe589f0f21"
+          }
+        },
+        {
+          "group": "family-7091eb9639103834665ab5b9610d0ba27c37f746266ca7c4864eb9d1b8ef7881",
+          "rank": 65,
+          "score": 0.6067319039160091,
+          "ref": {
+            "path": "data/runs/processing/group-results/9f2f598e917cdff071fd9e39fe32b284fd4edb72b44236481275786c1fd1065b.json",
+            "record_hash": "9f2f598e917cdff071fd9e39fe32b284fd4edb72b44236481275786c1fd1065b"
+          }
+        },
+        {
+          "group": "family-2fe3a76023a434c5494e5b4addfc2ea539792baeddd8e868fd106f4f66641bc5",
+          "rank": 66,
+          "score": 0.6124902380463677,
+          "ref": {
+            "path": "data/runs/processing/group-results/cd600243a796a280c955c97de12def1fad72ce5f93446a573b06d26df2c44fec.json",
+            "record_hash": "cd600243a796a280c955c97de12def1fad72ce5f93446a573b06d26df2c44fec"
+          }
+        },
+        {
+          "group": "family-039823cc3b6d5cf3636d7e79c4e4249648c9ed007dd9654eeaaee1083ba17cc3",
+          "rank": 67,
+          "score": 0.6173853005810661,
+          "ref": {
+            "path": "data/runs/processing/group-results/af9443e364d1518b43f4666d62787c715edca73335225fc5f0e6f717642e38b0.json",
+            "record_hash": "af9443e364d1518b43f4666d62787c715edca73335225fc5f0e6f717642e38b0"
+          }
+        },
+        {
+          "group": "family-b5bab87d4842195af281f745ed1572f2febf1772bc218af52dc9fc6735eb5b26",
+          "rank": 68,
+          "score": 0.6290055182324661,
+          "ref": {
+            "path": "data/runs/processing/group-results/2e75aad56f61a98415f23eae2b4421fcbecffa8f530ee9ee6adf1d8b6ab00fa1.json",
+            "record_hash": "2e75aad56f61a98415f23eae2b4421fcbecffa8f530ee9ee6adf1d8b6ab00fa1"
+          }
+        },
+        {
+          "group": "family-b44be5083a24286fc4fbb8bcabebc523b90065a8ce031a8cf2012dc94c7d47f9",
+          "rank": 69,
+          "score": 0.6300587378657578,
+          "ref": {
+            "path": "data/runs/processing/group-results/97a8fc802294a759da164fcbfadee989565959da7f8f92a68e53e12373b56bc8.json",
+            "record_hash": "97a8fc802294a759da164fcbfadee989565959da7f8f92a68e53e12373b56bc8"
+          }
+        },
+        {
+          "group": "family-02e9c5776b23f68fc3ac3fdd3fbb36b0c497701c3a1a346e22f3ed76051b2064",
+          "rank": 70,
+          "score": 0.6478383203026175,
+          "ref": {
+            "path": "data/runs/processing/group-results/dd4bd43963172b00d41c1d694fb69dd945fdb45a8fae2be392c008661661c09e.json",
+            "record_hash": "dd4bd43963172b00d41c1d694fb69dd945fdb45a8fae2be392c008661661c09e"
+          }
+        },
+        {
+          "group": "family-f3fe3abd9acb98819c7b84991cc2868d3487ec48592d28c7563dec9cb565566e",
+          "rank": 71,
+          "score": 0.6739526869741517,
+          "ref": {
+            "path": "data/runs/processing/group-results/cdcd83adef85f5685c2a9798385667609bb05af0dd20c608262102dcd4e652e4.json",
+            "record_hash": "cdcd83adef85f5685c2a9798385667609bb05af0dd20c608262102dcd4e652e4"
+          }
+        },
+        {
+          "group": "family-5cc7ab03e4937da3b6bf0a80cf8108bea24195cc1df8407ded6b2ef162876add",
+          "rank": 72,
+          "score": 0.687188362777565,
+          "ref": {
+            "path": "data/runs/processing/group-results/58e496683db1e83a5aa826141c1e5cca38d947d6041010a69497b0f5e29b5898.json",
+            "record_hash": "58e496683db1e83a5aa826141c1e5cca38d947d6041010a69497b0f5e29b5898"
+          }
+        }
+      ],
+      "event-multi": [
+        {
+          "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+          "rank": 1,
+          "score": 1.0,
+          "ref": {
+            "path": "data/runs/processing/group-results/3b332058c99a07e88bf84f41819897be2ff12d9211434a2fe767a909ac71a074.json",
+            "record_hash": "3b332058c99a07e88bf84f41819897be2ff12d9211434a2fe767a909ac71a074"
+          }
+        },
+        {
+          "group": "family-9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+          "rank": 2,
+          "score": 0.9838709677419355,
+          "ref": {
+            "path": "data/runs/processing/group-results/6e2901357687b82a3df25099af12b328eda2dc4c8c2a6ba36671c42978c073ff.json",
+            "record_hash": "6e2901357687b82a3df25099af12b328eda2dc4c8c2a6ba36671c42978c073ff"
+          }
+        },
+        {
+          "group": "family-3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+          "rank": 3,
+          "score": 0.9606894841269842,
+          "ref": {
+            "path": "data/runs/processing/group-results/f5f751d7ca9a393968537167d7b8c20aab93b985ffbf045e79019517590e8941.json",
+            "record_hash": "f5f751d7ca9a393968537167d7b8c20aab93b985ffbf045e79019517590e8941"
+          }
+        },
+        {
+          "group": "family-fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+          "rank": 4,
+          "score": 0.9533577533577533,
+          "ref": {
+            "path": "data/runs/processing/group-results/568d18711f368bc7979966d9eb211505f95ff1171cc6fd5e9ed7a59f45d4d122.json",
+            "record_hash": "568d18711f368bc7979966d9eb211505f95ff1171cc6fd5e9ed7a59f45d4d122"
+          }
+        },
+        {
+          "group": "family-c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+          "rank": 5,
+          "score": 0.9457932692307692,
+          "ref": {
+            "path": "data/runs/processing/group-results/200c5ddd10a1f86d1ce939e0936af76e0f950764da1a24a0bfedbc336214d4c4.json",
+            "record_hash": "200c5ddd10a1f86d1ce939e0936af76e0f950764da1a24a0bfedbc336214d4c4"
+          }
+        },
+        {
+          "group": "family-e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+          "rank": 6,
+          "score": 0.9037532923617209,
+          "ref": {
+            "path": "data/runs/processing/group-results/a5e32dd15c6023e911c5e1a9161d1257aa9ce03c52c1e384aa365fabd1ccda43.json",
+            "record_hash": "a5e32dd15c6023e911c5e1a9161d1257aa9ce03c52c1e384aa365fabd1ccda43"
+          }
+        },
+        {
+          "group": "family-3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772",
+          "rank": 7,
+          "score": 0.8909381663113006,
+          "ref": {
+            "path": "data/runs/processing/group-results/bac4d51e066bf15f42b4bfbf01c594f39098cc52a038cedb37117856627b586b.json",
+            "record_hash": "bac4d51e066bf15f42b4bfbf01c594f39098cc52a038cedb37117856627b586b"
+          }
+        },
+        {
+          "group": "family-41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+          "rank": 8,
+          "score": 0.8840579710144928,
+          "ref": {
+            "path": "data/runs/processing/group-results/668ea34572ac9eae07c9246e06cf86ead6ab9c41e6f11c56b9a2b86ca23b36ed.json",
+            "record_hash": "668ea34572ac9eae07c9246e06cf86ead6ab9c41e6f11c56b9a2b86ca23b36ed"
+          }
+        },
+        {
+          "group": "family-3a78813a1e19b86de37355abf98330c55bdd30b7a97d81be942aa38f6f71083b",
+          "rank": 9,
+          "score": 0.8799294312992942,
+          "ref": {
+            "path": "data/runs/processing/group-results/e02742a66c2d932739896574d2b0eb445137751c65db6318dd618ab0745f0c20.json",
+            "record_hash": "e02742a66c2d932739896574d2b0eb445137751c65db6318dd618ab0745f0c20"
+          }
+        },
+        {
+          "group": "family-241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+          "rank": 10,
+          "score": 0.8781068765534383,
+          "ref": {
+            "path": "data/runs/processing/group-results/f55fb36223dbe979defeba1af6a9e382a97b152115aed6b35184ba71f449e8ef.json",
+            "record_hash": "f55fb36223dbe979defeba1af6a9e382a97b152115aed6b35184ba71f449e8ef"
+          }
+        },
+        {
+          "group": "family-8e68a5244bc162768dba7954d1071dc90d99201e5ef4101b293a97a13be9cbb1",
+          "rank": 11,
+          "score": 0.8593253968253969,
+          "ref": {
+            "path": "data/runs/processing/group-results/59bcf6c034341e28636233b8494915a5b4115704f56502d7ef91d87ea622ddf9.json",
+            "record_hash": "59bcf6c034341e28636233b8494915a5b4115704f56502d7ef91d87ea622ddf9"
+          }
+        },
+        {
+          "group": "family-def2cbda8a412cd1e4e491190ce33fab60211ec3cfc83b5b38a0bbe3fda7f17a",
+          "rank": 12,
+          "score": 0.8357732732732732,
+          "ref": {
+            "path": "data/runs/processing/group-results/1f52f22b5c161e8b8b293dff81c80a0af528f43758e3788ef4391767a54c85dc.json",
+            "record_hash": "1f52f22b5c161e8b8b293dff81c80a0af528f43758e3788ef4391767a54c85dc"
+          }
+        },
+        {
+          "group": "family-7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+          "rank": 13,
+          "score": 0.8340724316334072,
+          "ref": {
+            "path": "data/runs/processing/group-results/8959d1b194339fa392ce83ffe2daefb93718beab050c28f0719f8478679f8d03.json",
+            "record_hash": "8959d1b194339fa392ce83ffe2daefb93718beab050c28f0719f8478679f8d03"
+          }
+        },
+        {
+          "group": "family-9f741ebceb59cda55898246265c06586a08c948bc8331cbd6beb26005209b2d3",
+          "rank": 14,
+          "score": 0.8191240086517664,
+          "ref": {
+            "path": "data/runs/processing/group-results/a86262ee1a864e6488b21121c6b707ddcf17cc37df7d164d71fecc5927d6585f.json",
+            "record_hash": "a86262ee1a864e6488b21121c6b707ddcf17cc37df7d164d71fecc5927d6585f"
+          }
+        },
+        {
+          "group": "family-60a24b53695795b6fff6a74de81502a3de9f6191f08c650cc9a05ea3de47b11d",
+          "rank": 15,
+          "score": 0.8133333333333334,
+          "ref": {
+            "path": "data/runs/processing/group-results/daabe862ccb00d5f5d25d668411f9b4e3beffb395be5140650b5ed0377cae0f4.json",
+            "record_hash": "daabe862ccb00d5f5d25d668411f9b4e3beffb395be5140650b5ed0377cae0f4"
+          }
+        },
+        {
+          "group": "family-33df701d5b69d49d6af1d09d3bef4c108924b5049c4ce9354fb83de0d87873a1",
+          "rank": 16,
+          "score": 0.782051282051282,
+          "ref": {
+            "path": "data/runs/processing/group-results/29845e4ef6c27619e7e3a167f8bd0c3d444cbc485a88985d13514c68ed83eaa2.json",
+            "record_hash": "29845e4ef6c27619e7e3a167f8bd0c3d444cbc485a88985d13514c68ed83eaa2"
+          }
+        }
+      ]
+    },
+    "remaining": [
+      {
+        "kind": "aggregate",
+        "subject": "population",
+        "dependencies": [
+          "5adf4a9ce6027afe6a52caa33e1eed2fcf0ec9a921617cbed967a1dfb66de3ea",
+          "7c1bd2a07f323dc1211cd654c22b60982c2e22fc7743b2447cc15039432069dc",
+          "2094e1ab6739943cf39f52aba5f566e7e030c23db66efa29ae2da0490cbc8d47",
+          "5d5fe9936d18b00c58a1ca413032b02a509e63489b94d59597fd6fde31a81024",
+          "2ebacd2f26685cd7483e3dc034533c46000b621fc8d0c259df14d54601b37452",
+          "7f21385d816d72f25f51ec82b14e0c8676cd65a1e1b6f0b8a50e62df91cf0a00",
+          "bf44c83405442b6fc4909825d6209c2ebe6bab4cd1eeebf9f11c2a12b670aa61",
+          "d4fe91c00051025d9b6e415903826bcc1ae96ae44261c7bc2c61488af1737d7c",
+          "1ef02e354f9a0d1cce3347e847005d0eae30ead9129595913c85063e7bcb8744",
+          "056e74306bb149fb38be5d3980b0bc9fa1c07faabeb0f2d60fd842b112f8f09f",
+          "6d8a4fec5f9f526558553bc9276937a7dfc666ff0c858f71e15c6826197a81b3",
+          "d2337a0a1d583d690f3375de099454b7a92d69fc0fb37a830696bc1ab7520ec5",
+          "2e2ca7f4763c89da85e660852af22714596872125fe8fb1ea97331d9d3fbd5df",
+          "a6b3039f21d74e947bb64b322d321d9e62b09f4941ccaa3758631ff8b29097a4",
+          "234ae43b4530e81f2aff7c0bf672acc8a649791f9337b21788464285f6cb197f",
+          "11e30c3f3b5310b962006efe2b1a848ad4d5395f00758a24b84226fa6c9cf029",
+          "27d807be3a8f943981c8aee7e3bb4f726fb01c3fd4058b570fd6dca4baaf918e",
+          "2026406e8e798b667ea2800301074c4ef4016e392e3030623123584feff221ee",
+          "93ecd49a67ecdcbc22d8043baf414582ae9cb7d97e1e6013d38ed421d60f4aa3",
+          "6740e40ad5f043ea94633364142d6e115f16eb9ef2dd7fea59d57674c91e94ca",
+          "d7703f9d281e33708a7e1b21a2947d4bb1e6b0cc18f9eb5cce7d898cbf9920b5",
+          "f80722983fc5b5c8cee3d372f2396cdc641a273dbd5e5775c5146f277c633db8",
+          "5faf3852f3a3659c834fe01611bc35a1dc7c7778db0b85b58049e21731a6b31e",
+          "a45054d30df7f0b2db30d143e12dfdc0a6d6df6fc4cf77596eaa66aaa6c8e096",
+          "5294748f0686d3fb3b8f8757851ceefba1b9dd41df426711e4a05453bbd0d2e3",
+          "f7ebc3006f6334e2a65c46f2e3c4785f4161a2e897e088ac3562ebd6c831ab6f",
+          "8bef98b7c7058edfde1dc4254c0a3a1faa8f493f39d42b545c573dfe72895c70",
+          "3768128ba7dff442062fc843fdc9dcc1c05f435ec620b3d469abeb4d69260cd7",
+          "4a4603c846df186532d9c29dc8fe3a82c2c5f7d748f94cdd40194844988adfa3",
+          "1f2f7786f98dce747ccf7b0897cd27f6404262de3965e10b2030fbd4613e40e3",
+          "9af33013e7830a3068b9a91cc7548cf707fc066396d686f8d6a2000151eaeb0e",
+          "a5a4a28e08fdfbcdd4208a3cbb6fe5aceb19257f24f9f54bdc6d59d1611e08dc",
+          "2423d38ebc3db73aee0a30b993bef57dd39d0b0440dcded1a1ea5de9a0e8e67d",
+          "b7d40ac2f6a12660051a326bed69add7c22a28a25d39d39bae8d28848ed6adc7",
+          "850d11139c3849f70434ad1ecd72c1723fbf9983b171944550ec8bc941d9a6b9",
+          "dfdf0478ef70c604d7f81374fe5ab11e3dad39b8a9fcc766227ae5f2a8f310cb",
+          "55867acf5b5b397f388e632e8e7df9e62e7b4d74614eb499c0dcc5a3220c1af5",
+          "32c0755fc9d012a8e4dfdd498ae0933952a537d792db2f34df365adae62dace1",
+          "380b486cc4f43a2f3fbf185a61189bf8879217f6c25680991557d4a2d235cc47",
+          "a882cebee27955a7857fe68421664d898a675a2bf14e605c0c2787cae50d77fd",
+          "2ef420be5a45577ffcafb58c96b2cb7256434482767663ef0466a58659951c89",
+          "c02b7403b521c5c84dd4312d178af81a529046cc1e3338b410c93598e53fc0ee",
+          "60398d1fb7278ae2a47bb5ddd7946182fd6eb83882677801d31ab4493c67123c",
+          "56014a897d40317040e706b1091485f2cbbc17647dd0998ba40bfead79d8a55a",
+          "1f05fdd20dd9519c9c7d2a14ca09c1f330d95d94e1bde282d4334128251fd6d9",
+          "f0d11ae39e01563e383fd8979cf8a9f699fec6a451967269df8ee17d48fc8d73",
+          "feb647acffb668f221e713c4c0227ca56818559b1cc22e29725a3bec3c1937ab",
+          "1e9bd89211c8f5697e81b976823b6c503e279ac54e54a832e988e8dea3735d49",
+          "50f0abde5f2285d0b06c72110e0ff3048c1883be1c7b81c3e9e78507dd6fc668",
+          "196b505be7ae3699a5f7e92c56f8d01672640f79311a68e394fb36685a8a49d3",
+          "a73af274d93c8443e27b6da61e457233763ebc7ab29f56ad8406651cfa98882e",
+          "32fca303b0b2943273692d882e2de06533cc07001693122e0f45b3d66a0d7928",
+          "48b2b183435fc6721638edd11ce95e81af50acb56d062224da65df2f3604e247",
+          "83b577d41e7d6455134cc1859e84f93b8f13da6416b2a1d8d902631bcb2126a9",
+          "f9a29cfffcb4a5ea248682778fc4edd02acccd15f12f6c95bb5290a3399d95a7",
+          "29db16276eb4fbe21015f2c09e502d92d05df613819fa1756e671333b44eed62",
+          "9670e0f01edbb99a898d05dd48e993dcad35a4c771caecbf314c3372a1c80a7b",
+          "7f27780f7f21d43a54c918678fd36c05e3d9a5223756a742ff965e8c1f0d27f1",
+          "01fcd2f09bc4c191d006fba0773a50d5de717c60873e3c2e173dbba4cc3cfeb4",
+          "635b929da0900383246fc4378a8aa65ed8ca7b8d576f48af453aeebc628c9463",
+          "a3a8a5f20c0b914bf483ecb8bcbdfe64504a265898cfa32b15b9d2f5a13694e4",
+          "454793320f18a770a82eb2229be8a5ab0d0deee211773c61f98b1714679f0fe2",
+          "b0491514e1775a74cd45d24f24439474d30b3bb977b16a887b575efcebbd9296",
+          "a375a7a789385c22927c9a6d77bfbde75ef04e8a5f6453dc1eda9f453cb8941c",
+          "01d65f0bee73dba2cf9419a1477d7ab94a0d8f115cb25afa9594012cfee22e98",
+          "e9c8bc057bd4b934d7c7f24ae52d865d793c545f566c342494aaaffc5e39d62c",
+          "1e677beb58488988abe456b3a58c8e7b953021f24d259aaccee9404f4acfdc7a",
+          "85c338a24be45c822029a20a33b5317ea19aadec86c1b82a7d54c7d66e60b1aa",
+          "a2836f11721d823e27bc6fc481540348c65ef680c70d69ba7d4eb964a3f96ac8",
+          "6e5f7a6f94f54d20c901cdfbd03202cedd3fd4abfc572eb3f2da003ac1327f48",
+          "e092cd2beb221b1742977b6695b780bb6e0a5ff10f4548375aac2a96a522d9c3",
+          "d1c0e306a78229a2839d3ac52aa0fe47d180aa911a7184c2df7c7be3915a26f2"
+        ],
+        "unit_id": "ad74d0cb41226f2442692b4f59db7e20a9b7e816d9b0ee296640d2da000e22a9"
+      },
+      {
+        "kind": "refinement",
+        "subject": "historical",
+        "dependencies": [
+          "ad74d0cb41226f2442692b4f59db7e20a9b7e816d9b0ee296640d2da000e22a9",
+          "fd847025273d8dc51a0db956b4933b83bd597cec242d4f807bbcc995c733c33f"
+        ],
+        "unit_id": "5dca7d6355b726518cc23dae3adff14453ad9b9b830ac51458e8ecdef7cb2384"
+      },
+      {
+        "kind": "publish",
+        "subject": "complete",
+        "dependencies": [
+          "5dca7d6355b726518cc23dae3adff14453ad9b9b830ac51458e8ecdef7cb2384"
+        ],
+        "unit_id": "dfbc0dbba1978b33ae4c14af7a95c30ae3dce92bf297cdf3efb6d9a5f4f05cd9"
+      }
+    ],
+    "current_result": null,
+    "last_complete": {
+      "job": {
+        "path": "data/runs/processing/jobs/3c1186568036783a6be2a5f6d70da1682156bfde02d13067cf325494addaffc3.json",
+        "record_hash": "3c1186568036783a6be2a5f6d70da1682156bfde02d13067cf325494addaffc3"
+      },
+      "result": {
+        "path": "data/runs/processing/results/c95df369b7324d3ac2479d3e78b2c4863514b1d30959ac759f134e28cdf5eaa7.json",
+        "record_hash": "c95df369b7324d3ac2479d3e78b2c4863514b1d30959ac759f134e28cdf5eaa7"
+      },
+      "record_hash": "7179dda5b0ce3c5c4ba4ca11d6de20fa252da8bda68feedaa455e9ee4f0e162c"
+    },
+    "real_warm_final_result": false,
+    "c04_completed_job_playback_exercised": false
+  },
+  "pool": {
+    "schema_version": "c04-pool-1",
+    "counts": {
+      "job_seconds": 1495.3059999999386,
+      "workers": 107,
+      "read_audio_seconds": 42827.20818594116,
+      "feature_windows": 139,
+      "processed_window_seconds": 319.2000000000001,
+      "feature_bytes": 3752448,
+      "query_jobs": 22,
+      "clips": 0,
+      "clip_bytes": 0,
+      "metadata_bytes": 134197338,
+      "preparation_bytes": 3480576,
+      "managed_output_bytes": 141450752
+    },
+    "ceilings": {
+      "job_seconds": 3600,
+      "workers": 256,
+      "read_audio_seconds": 90000,
+      "feature_windows": 4096,
+      "processed_window_seconds": 20000,
+      "feature_bytes": 33554432,
+      "query_jobs": 64,
+      "clips": 64,
+      "clip_bytes": 134217728,
+      "metadata_bytes": 134217728,
+      "preparation_bytes": 67108864,
+      "managed_output_bytes": 536870912
+    },
+    "measured_worker_seconds": 1375.3059999999386,
+    "uncertain_worker_seconds": 0,
+    "pending_worker_seconds": 120,
+    "pending_worker_id": 107,
+    "last_settled_worker": 106
+  },
+  "recorded_max_working_bytes": 325730304,
+  "worker_107": {
+    "state": "unsettled reservation retained",
+    "seconds": 120,
+    "journal_present": false,
+    "live_locks": "independently acquired/released after stop; no live C04 owner"
+  },
+  "namespace_inventory": {
+    "data/runs/processing": {
+      "files": 1814,
+      "bytes": 58285499
+    },
+    "data/features/processing": {
+      "files": 108,
+      "bytes": 257078
+    },
+    "data/indexes/processing": {
+      "files": 0,
+      "bytes": 0
+    },
+    "data/audio/processing": {
+      "files": 6,
+      "bytes": 3456480
+    },
+    "reports/local/c04": {
+      "files": 56,
+      "bytes": 4377493
+    },
+    "manifests/processing": {
+      "files": 10,
+      "bytes": 257846
+    }
+  },
+  "actual_new_managed_bytes": 66634396,
+  "own_arrays": {
+    "bundles": 54,
+    "published_rows": 139,
+    "bytes": 220416,
+    "reserved_feature_windows": 139,
+    "interpretation": "Includes independent clean outputs and retained failed-clean output. Published and reserved row counts are reported separately."
+  },
+  "checks": {
+    "full_regression": {
+      "passed": true,
+      "tests": 351,
+      "seconds": 271.889
+    },
+    "processing_tests": 36,
+    "ruff": "check and format passed on source/tests/scripts",
+    "setup": "offline editable install and pip check passed",
+    "smoke": "Isolated C04 starter root passed after restoring required reference metadata; earlier missing-setup failure retained.",
+    "live_known_answer": "Passed before expansion; unchanged oracle also covered by final tests",
+    "preservation": {
+      "state": "verified",
+      "files": 13496,
+      "unchanged": 13495,
+      "changed_or_missing": [],
+      "unexpected_additions": [],
+      "allowed": [
+        "exact C04 configuration navigation addition"
+      ],
+      "c01_denied_staging": "inventoried and retained"
+    },
+    "hosted_ci": "PR 26: no statuses/checks/workflows; unprotected main, no rulesets"
+  },
+  "playback": {
+    "bundle": "b7c1bae8c55f488883a599d4486b85d382b6d66eecabc6bbf028871e4ae48aee",
+    "path": "reports/local/c03/refinement-6f80c1786000d30144d0a3bf3da4dc777059f6cd391c13393e2dd3f712a6c405/index.html",
+    "startup": "scripts/listen-refinement.ps1",
+    "port": 8772,
+    "new_bundles": 0,
+    "new_clips": 0,
+    "native_http_browser_proofs": "historical C03 proofs retained; no fresh C04 browser claim"
+  },
+  "limitations": [
+    "Metadata admission did not protect final-bookkeeping headroom; aggregate publication and settlement stopped at the ceiling.",
+    "Progress remains in_progress/error=null: metadata refusal prevented error journaling. Pool, null current result and observed failure are authoritative.",
+    "Declared 32 MiB recovery reserve was prospective, not a separate admission floor.",
+    "Final aggregation, C03 import, snapshot/result, real warm result and completed-C04 playback remain blocked.",
+    "D01 needs an authorized owner/allowance and metadata admission repair. No C04 reset or renaming is authorized.",
+    "Cold pilot measured inclusive worker startup/decode/encode/publication; separate startup and physical I/O components were not isolated before the cap.",
+    "Setup/regression/preservation/static publication are separate. Public declarations and non-inference QA are not per-worker charged writes.",
+    "A03 remains 72/120; optional banks partial; human relevance, Loulou layer, rights, version and master alignment unverified."
+  ],
+  "after_cap": "No further processing dispatched; counters and reservation preserved. No cap increase/reset, GC, deployment or dependency change.",
+  "delivery_pr": "https://github.com/lillo24/Similar-Sound-Search/pull/26",
+  "record_hash": "ae6b5bc0d04bb91070e533acfb50f686e8c698946d048fb34df7ed5359d72c41"
+}

@@ -39,6 +39,7 @@ MANAGED = (
     "manifests/indexing",
     "manifests/retrieval",
     "manifests/refinement",
+    "manifests/processing",
 )
 
 

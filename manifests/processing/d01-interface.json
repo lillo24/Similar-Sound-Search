@@ -1,0 +1,28 @@
+{
+  "schema_version": "c04-d01-interface-1",
+  "python_module": "similar_sound_search.processing.api",
+  "dispatcher": "similar_sound_search.cli.execute",
+  "reference": {"path": "contained immutable record path", "record_hash": "canonical SHA256; keep opaque"},
+  "operations": ["import_sources", "plan", "run", "status", "resume", "cancel", "result", "membership", "playback", "events", "inventory"],
+  "schemas": {
+    "c04-input-1": ["label", "sources", "banks", "query", "policy", "packing", "refinement", "historical"],
+    "c04-plan-1": ["input_ref", "input", "representation", "consumer", "protocol_hash", "units", "previous", "tombstones", "changed_dependencies", "estimates", "blockers"],
+    "c04-job-1": ["name", "plan"],
+    "c04-progress-1": ["job", "state", "completed", "attempts", "result", "error", "requested_units"],
+    "c04-status-1": ["job", "plan", "state", "requested", "completed", "remaining_units", "error", "result", "last_complete", "allowance", "remaining_allowance", "cancellation_requested", "events_path"],
+    "c04-result-1": ["state", "plan", "input_ref", "consumer", "snapshot", "arms", "events", "excluded_groups", "query_hash", "selected_arm", "complete_groups", "population_count", "refinement", "playback", "defaults", "resource_owner"],
+    "c04-snapshot-1": ["state", "population", "banks", "bank_keys", "memberships", "tombstones"],
+    "c04-events-1": ["attempts", "next_cursor", "semantics"]
+  },
+  "states": ["pending", "running", "in_progress", "complete", "failed", "blocked", "cancelled"],
+  "error": ["step", "target", "unit_id", "error_type", "message", "recovery"],
+  "readers": {"membership": "api.membership(root, snapshot.memberships[source]) expands full or c04-compact-rows-1 references", "rows": "key/native_bounds/row/vector_sha256/bundle/source_key; cache.vectors validates bytes", "playback": "api.playback(job): immutable path/bundle and exact native C03 items", "events": "bounded cursor; poll status for transitions of current attempt"},
+  "semantics": {"run": "explicit plan/stable name; one shared pool", "resume": "same plan, audit committed outputs, remaining work", "cancel": "stop admission; bounded active unit finishes; charges retained", "last_complete": "separate from current incomplete/failed request", "removal": "snapshot tombstones; no deletion", "gc": "unsupported"},
+  "defaults": {"audio": "original", "retrieval": "legacy-mean", "pitch": "off"},
+  "experimental": ["event-legacy", "event-multi", "historical C03 timing refinement"],
+  "refinement_limit": "Existing exact chain only; changed dependencies need explicit later work",
+  "resource_owner": "data/runs/processing/pool.json",
+  "private_prerequisites": ["72 exact local originals", "frozen EfficientAT MN04 checkpoint/runtime", "C01 arrays/snapshot", "B03 exact original Loulou query", "C02 execution", "C03 execution/arrays/declarations/repaired media"],
+  "loulou": {"revision": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3", "materialization": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036", "rate": 44100, "scored_frames": [9613800, 10584000], "context_seconds": [217, 241], "identity_alignment_rights_relevance": "unverified", "discovery_recording": false},
+  "scope": "C04 engineering boundary; D01 UI and D04 listening review remain future"
+}

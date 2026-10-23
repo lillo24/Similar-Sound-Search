@@ -26,3 +26,6 @@ The CLI imports numerical/decoder libraries only in the bounded worker. Inputs f
 C02 `similar_sound_search/retrieval/` owns exact event supports, capped rank fusion, native overlap consolidation and the C03 shortlist; see its source map.
 
 `similar_sound_search/refinement/` owns C03 audited shortlist import, bounded native timing, atomic evidence, independent accounting and C04 export; see its source map.
+
+`similar_sound_search/processing/` owns C04 input revisions, row cache, transactional
+jobs, cumulative pool and D01 API; see its source map and [contract](../docs/PROCESSING.md).

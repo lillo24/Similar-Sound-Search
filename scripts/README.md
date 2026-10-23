@@ -56,3 +56,24 @@ features/scores/queries. Its offline 120s worker uses the same C01 ledger.
 `listen-retrieval.ps1` serves the verified C02 bundle on owned loopback 8771; `verify-retrieval-preservation.py` verifies all prior delivery bytes, including C01 staging, allowing only the exact C02 configuration navigation addition.
 
 `listen-refinement.ps1` starts verified C03 playback on loopback 8772. `verify-refinement-preservation.py` checks historical delivery bytes with only the exact C03 config navigation addition allowed.
+
+`declare-processing-consumer.py` pins/proves the classified C04 consumer before
+inference and refuses an existing declaration. `exercise-processing.py` runs the
+finite fixture/clean and historical/warm sequence in one pool.
+`exercise-processing-recovery.py` terminates only its own tracked real worker after
+durable commit, resumes and clean-checks it. `verify-processing-preservation.py
+capture|verify` checks earlier bytes including denied staging; only exact C04 config
+navigation is allowed. `listen-processing.ps1` resolves a completed C04 job to
+preserved C03 playback on foreground loopback 8773.
+
+`declare-processing-repair.py` is the one explicit correctness-repair proof,
+preserving the initial consumer and all spent work; it refuses an existing repair.
+
+`declare-processing-metadata-compatibility.py` pins the exact metadata-only upgrade
+and unchanged numerical/reservation proofs. It permits the same paused plan to
+resume under the declared new consumer, without replacing old records or charges.
+
+`export-processing-evidence.py` reads retained records for static public reporting;
+it dispatches no work and cannot settle/replenish the exhausted pool. Real C04
+finalization is partial; `listen-processing.ps1` has no completed warm real job.
+Use preserved C03 playback until a newly authorized owner repairs/finalizes the chain.
