@@ -490,6 +490,42 @@ class ApplicationTests(unittest.TestCase):
         self.assertEqual(model.calls, 1)
         self.assertFalse((self.root / "data/features/queries").exists())
 
+    def test_completed_search_navigation_is_read_only_and_keeps_resolved_query(self):
+        revision, materialization = "1" * 64, "2" * 64
+        identity = dict(request=dict(kind="search"))
+        key = digest(identity)
+        self.owner.publish(
+            self.budget,
+            self.owner.directory / "jobs" / (key + ".json"),
+            dict(job_id=key, identity=identity),
+        )
+        query = self.owner.put(
+            self.budget, "queries", dict(revision=revision, materialization=materialization)
+        )
+        result = self.owner.put(
+            self.budget,
+            "results",
+            dict(
+                query=query,
+                selection=dict(historical=False, materialization=None),
+                policy="legacy-mean",
+                query_hash="3" * 64,
+            ),
+        )
+        self.owner.publish(
+            self.budget,
+            api.state_path(self.owner, key),
+            dict(job_id=key, state="complete", result=result),
+        )
+        before = self.owner.pool()
+        with patch.object(queries, "inventory", return_value=dict(names=[])):
+            values = api.completed_searches(self.root)
+            self.assertEqual(values[0]["job_id"], key)
+            self.assertEqual(values[0]["query"]["materialization"], materialization)
+            self.assertEqual(values[0]["query"]["revision"], revision)
+            self.assertEqual(values[0]["label"], "Saved query")
+        self.assertEqual(self.owner.pool(), before)
+
     def test_controlled_population_scalar_exclusion_and_exact_players(self):
         from similar_sound_search.inputs import decode
         from similar_sound_search.processing.contracts import source_key

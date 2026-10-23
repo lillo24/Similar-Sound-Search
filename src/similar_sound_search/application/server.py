@@ -165,7 +165,12 @@ def make_server(root, limits, port=8774):
                     return self.send_file(STATIC / name, mime)
                 if path == "/api/bootstrap":
                     return self.send_json(
-                        dict(token=token, catalogue=api.catalogue(root), library=api.library(root))
+                        dict(
+                            token=token,
+                            catalogue=api.catalogue(root),
+                            library=api.library(root),
+                            completed=api.completed_searches(root),
+                        )
                     )
                 if path.startswith("/api/job/"):
                     key = api.identifier(path[9:])

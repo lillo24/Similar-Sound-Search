@@ -288,6 +288,43 @@ def library(root):
     return queries.inventory(Context(root))
 
 
+def completed_searches(root):
+    """Bounded immutable navigation for a fresh browser; no worker or audit is started."""
+    owner = Context(root)
+    names = queries.inventory(owner)["names"]
+    output = []
+    for path in sorted((owner.directory / "states").glob("*.json"))[:64]:
+        state = record(path)
+        if state["state"] != "complete":
+            continue
+        saved = job(owner, state["job_id"])
+        if saved["identity"]["request"]["kind"] not in {"search", "validate"}:
+            continue
+        value = owner.get(state["result"], "results")
+        q = owner.get(value["query"], "queries")
+        historical = value["selection"].get("historical", False)
+        label = (
+            "Loulou 3:38–4:00"
+            if historical
+            else next((n["label"] for n in names if q["revision"] in n["revisions"]), "Saved query")
+        )
+        output.append(
+            dict(
+                job_id=state["job_id"],
+                result=state["result"],
+                label=label,
+                query=dict(
+                    historical=historical,
+                    revision=q["revision"],
+                    materialization=q["materialization"],
+                ),
+                policy=value["policy"],
+                query_hash=value["query_hash"],
+            )
+        )
+    return output
+
+
 def catalogue(root):
     owner = Context(root)
     try:

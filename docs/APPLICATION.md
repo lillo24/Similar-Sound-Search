@@ -100,6 +100,12 @@ and stable control request ID. States include pending/running/in_progress, cance
 interrupted, blocked, failed and complete; cancellation stays pending while owned
 work continues. Closing/reloading a tab keeps the immutable request and accounting.
 Reopening a completed result is separate from submitting a fresh validation search.
+The completed-search selector also works in a fresh browser: bootstrap lists at most
+64 complete search/validation jobs with their resolved revision, materialization and
+policy. Selecting one validates and reads that publication without a worker or pool
+write. It remains available when the finite allowance cannot admit another search.
+Resume acknowledges a protected durable pending state before returning HTTP 202,
+so the next poll cannot mistake the previous terminal state for the resumed outcome.
 
 `d01-result-1` binds job/query/selection/policy/snapshot/arms/cards/chain/resource owner.
 Groups use a bounded lossless `d01-packed-group-1` storage codec behind `Context.get`;
