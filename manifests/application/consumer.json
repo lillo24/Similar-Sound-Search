@@ -5,7 +5,7 @@
     "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
     "application/__init__.py": "93ea3aae51e316c01fc70dfe12659bb0c2b101d6decc8273018772972f2e598e",
     "application/__main__.py": "cb525000a21ad32f647251d1ef92c6878c0bc4aa657d4446bb96e89de8e6364f",
-    "application/api.py": "b1d9a02e71a443298d47ae735dca7df4cfe394b4e1caf1e22ffef6949a04c9c8",
+    "application/api.py": "3c2cc97536554bc63990f3e9fa04bb46ee8ffd81fb535f86b329bff35d7b3501",
     "application/codec.py": "654cac5497daa31f15121067f72d265a501d4d187a8e3e44696f9d3f5d63ca9e",
     "application/context.py": "8e24c57224f10935d800475ab640ca8749bf1fa5a24aa6b363c51149f7d7f7f3",
     "application/files.py": "f62b964dc05d7eea9c5b4676e4ffc107d6d8eb3fefb3448f9e29a34de4b6005f",
@@ -163,8 +163,8 @@
   ],
   "inherited_consumer": "d1399bb23a9a2edeb716025a04855cb91c3d11c5ebe3ab29b2c2ebd79ca34d4c",
   "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
-  "source_commit": "57253ade62afc519c5df18e158960f2dc8cec770",
+  "source_commit": "82bd106ffd449ab6129d0aaa0e7a3cbd29d09329",
   "policy": "Exact inherited files; new application adapters call unchanged primitives. Unknown Python drift blocks; renderer assets have separate identity.",
-  "compatibility": "a20a8c6b2d795e0c7c6459313c6c30a22c4c19368a1c437165ce26d921df1778",
-  "record_hash": "37b5ba9d9fc26c446eceb52b6b4316afda4d0b6422b6119db0556fe217a6e6c7"
+  "compatibility": "f276cb835ec4c5d2531238901ab5204bd74fb2a6b5927059196abe1624bddd53",
+  "record_hash": "2aa105179be086ef84f5e4436eca7fbfc552616a29e7f49928e11afeea6f4e3e"
 }
