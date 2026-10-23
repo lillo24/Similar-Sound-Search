@@ -59,7 +59,8 @@ proof.update(
     resume_repair=dict(
         previous_source=before,
         numerical_calls_unchanged=True,
-        reason="Fresh consumer identity differs after declared coordinator edits. Compare exact semantic source/score dependencies; retain both consumer proofs and a new resume receipt.",
+        reason="Fresh consumer identity differs after declared coordinator edits. Compare exact "
+        "semantic source/score dependencies; retain both consumer proofs and a new resume receipt.",
     ),
 )
 key = digest(proof)

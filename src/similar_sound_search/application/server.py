@@ -149,6 +149,11 @@ def make_server(root, limits, port=8774):
             try:
                 self.host_ok()
                 path = self.target()
+                if path == "/favicon.ico":
+                    self.send_response(204)
+                    self.send_header("Content-Length", "0")
+                    self.end_headers()
+                    return
                 assets = {
                     "/": ("index.html", "text/html; charset=utf-8"),
                     "/app.js": ("app.js", "text/javascript; charset=utf-8"),

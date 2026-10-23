@@ -49,3 +49,56 @@ def native(budget, owner, spec):
                 )
             )
     return dict(passed=True, job_id=spec["job_id"], checks=checks)
+
+
+def finalization(budget, owner, key):
+    """Resume metadata/media finalization after scores/aggregation already committed.
+
+    Source bytes are freshly hashed and charged at full-source duration. Exact bytes,
+    unchanged decoder/representation and the prior full PCM audits establish the same
+    PCM without re-decoding unrelated songs. Every candidate array is reopened and
+    hash/native-validated. This is distinct from a warm search's full sequential reads.
+    """
+    from ..processing import cache
+    from ..processing import job as historical_job
+    from ..storage import contained, sha256
+    from . import history, job
+
+    old, plan, state = history.inputs(owner)
+    proofs = []
+    for source in plan["input"]["sources"]:
+        rid = source["recording_id"]
+        previous = job.committed(owner, key, "source:" + rid)
+        adoption = owner.get(previous["proof"], "adoptions")
+        if adoption["source"] != source or not adoption["source_pcm_verified"]:
+            raise InputError("D01 recovery lacks prior full source/PCM audit")
+        owner.charge(budget, read_audio_seconds=source["source"]["duration_seconds"])
+        path = contained(owner.root / source["source"]["local_path"], owner.root)
+        if sha256(path, budget) != source["source"]["sha256"]:
+            raise InputError(
+                "D01 finalization source bytes changed; existing scores cannot be published"
+            )
+        unit = next(u for u in plan["units"] if u["kind"] == "features" and u["subject"] == rid)
+        features = historical_job.output(old, state, unit)
+        cache.vectors(budget, old, features["rows"])
+        proofs.append(
+            dict(
+                source=rid,
+                prior=previous["proof"],
+                rows=len(features["rows"]),
+                source_bytes_verified=True,
+            )
+        )
+    return owner.put(
+        budget,
+        "finalization-audits",
+        dict(
+            job_id=key,
+            consumer=history.consumer(owner),
+            sources=proofs,
+            source_pcm="prior full sequential audit, unchanged exact bytes/decoder",
+            arrays_reopened=True,
+            new_encodes=0,
+            scope="committed aggregation to final media/publication only",
+        ),
+    )

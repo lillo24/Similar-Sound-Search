@@ -83,6 +83,7 @@ def cached_clip(budget, owner, source, bounds, samples=None):
     owner.charge(budget, metadata_bytes=16384)
     result = clip(budget, owner.audio / "media", source, samples, a, b, context=owner)
     path = owner.audio / result["path"]
+    owner.charge(budget, read_audio_seconds=(b - a) / meta["sample_rate_hz"])
     actual, audio = decode(path, budget)
     expected, gain = pcm16(samples[a:b])
     if (

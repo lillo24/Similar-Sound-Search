@@ -166,6 +166,18 @@ def worker(request):
             raise InputError("D01 request consumer changed; declare scoped compatibility")
         graph = units(owner, value)
         cache, done, encodes = {}, [], 0
+        if request.get("finalization_audit"):
+            from .validation import finalization
+
+            receipt = finalization(budget, owner, key)
+            return dict(
+                status="ok",
+                state="validated-finalization",
+                completed=[],
+                new_encodes=0,
+                receipt=receipt,
+                peak_working_bytes=memory_check(budget),
+            )
         if request.get("validate_units"):
             spec = value["identity"]["request"]["input"]
             saved = owner.get(committed(owner, key, "query")["query"], "queries")
@@ -219,7 +231,7 @@ def worker(request):
         )
 
 
-def execute(owner, key, limits, validate_units=None):
+def execute(owner, key, limits, validate_units=None, finalization_audit=False):
     from ..processing.runner import python_command
 
     environment = os.environ.copy()
@@ -230,6 +242,8 @@ def execute(owner, key, limits, validate_units=None):
     request = dict(root=str(owner.root), job_id=key, limits=limits)
     if validate_units:
         request["validate_units"] = validate_units
+    if finalization_audit:
+        request["finalization_audit"] = True
     try:
         completed = subprocess.run(
             command,
@@ -289,6 +303,19 @@ def _run(root, limits, key):
         validate = [
             u for u in graph if u.startswith("source:") and committed(owner, key, u) is not None
         ]
+        remaining = [u for u in graph if committed(owner, key, u) is None]
+        final_audit = False
+        admission_path = owner.directory / "recovery-admissions" / (key + ".json")
+        if (
+            admission_path.exists()
+            and remaining
+            and all(u.startswith("media:") or u == "publish" for u in remaining)
+        ):
+            admission = record(admission_path)
+            if admission["job_id"] != key or admission["remaining"] != remaining:
+                raise InputError("D01 finalization recovery graph changed")
+            validate = []
+            final_audit = True
         for _ in range(256):
             # The 120s deadline bounds each child and each coordinator transaction,
             # not the complete multi-worker request. Aggregate time stays in the pool.
@@ -328,12 +355,17 @@ def _run(root, limits, key):
                     raise ResourceError(
                         "D01 insufficient available commit for worker plus server overlap"
                     )
-                answer = execute(owner, key, {**limits, "max_seconds": 120}, validate[:4])
+                answer = execute(
+                    owner, key, {**limits, "max_seconds": 120}, validate[:4], final_audit
+                )
                 budget = CatalogueBudget(root, limits)
                 answer["server_peak_working_bytes"] = server_memory
                 answer["overlap_peak_bound"] = server_memory + answer.get("peak_working_bytes", 0)
                 if answer.get("state") == "validated":
                     del validate[:4]
+                    answer["state"] = "in_progress"
+                if answer.get("state") == "validated-finalization":
+                    final_audit = False
                     answer["state"] = "in_progress"
                 count = sum(unit_path(owner, key, u).exists() for u in graph)
                 outcome = answer.get(
@@ -428,7 +460,10 @@ def validate_resumed(owner, budget, unit, previous, current):
             or declaration["numerical_hash"] != active["numerical_hash"]
         ):
             raise InputError("D01 resumed producer/consumer proof is unknown")
-    fields = lambda p: {k: v for k, v in p.items() if k not in {"record_hash", "consumer"}}
+
+    def fields(p):
+        return {k: v for k, v in p.items() if k not in {"record_hash", "consumer"}}
+
     if previous["scores"] != current["scores"] or fields(before) != fields(after):
         raise InputError("D01 resumed source/score semantic dependency differs")
     owner.put(

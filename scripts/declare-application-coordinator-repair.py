@@ -45,7 +45,8 @@ proof.update(
     coordinator_repair=dict(
         function="_run",
         previous_source=before,
-        reason="120s bounds individual children and coordinator transactions; aggregate time remains charged; no timer spans the whole multi-worker request",
+        reason="120s bounds individual children and coordinator transactions; "
+        "aggregate time remains charged; no timer spans the whole multi-worker request",
     ),
 )
 key = digest(proof)

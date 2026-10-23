@@ -151,6 +151,10 @@ class Context:
             self._save(p)
 
     def charge(self, budget, **amounts):
+        if budget is not None:
+            # The initial managed-tree inventory can be slow. Keep it outside the
+            # pool mutex so cancellation/status/control never waits on that scan.
+            budget.track_file(self.directory / "pool.json")
         amounts["preparation_bytes"] = amounts.get("preparation_bytes", 0) + amounts.pop(
             "query_preparation_bytes", 0
         )
@@ -189,14 +193,33 @@ class Context:
                 > p["ceilings"]["managed_output_bytes"]
             ):
                 raise ResourceError("D01 managed output exhausted including metadata envelope")
-            if budget is not None:
-                budget.track_file(self.directory / "pool.json")
             self._save(p)
             if budget is not None:
                 budget.account_file(
                     self.directory / "pool.json", (self.directory / "pool.json").stat().st_size
                 )
         return p
+
+    def extend(self, budget, key, amount, admission):
+        """Explicit bounded recovery allocation within the same unchanged stage ceiling."""
+        self.charge(budget, metadata_bytes=POOL_WRITE)
+        with lock(self.root, "pool"):
+            p = self.pool()
+            allocation = p["allocations"][key]
+            if allocation.get("recovery_admission") == admission:
+                return
+            if allocation.get("recovery_admission") or allocation.get("closed"):
+                raise InputError("D01 allocation already recovered/closed")
+            cap = p["ceilings"]["metadata_bytes"] - self.cfg["protected_metadata_bytes"]
+            if p["ordinary_used"] + p["ordinary_reserved"] + amount > cap:
+                raise ResourceError("D01 recovery cannot fit complete remaining path in fixed pool")
+            allocation["initial_size"] = allocation["size"]
+            allocation["size"] += amount
+            allocation["remaining"] += amount
+            allocation["recovery_admission"] = admission
+            p["ordinary_reserved"] += amount
+            p["acceptance_held"] = max(0, p["acceptance_held"] - amount)
+            self._save(p)
 
     def publish(self, budget, path, value, immutable=False):
         path = contained(path, self.directory)

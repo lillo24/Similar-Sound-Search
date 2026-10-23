@@ -3,8 +3,10 @@
 import http.client
 import json
 import shutil
+import subprocess
 import tempfile
 import threading
+import time
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -12,7 +14,7 @@ from unittest.mock import patch
 import numpy as np
 import soundfile as sf
 
-from similar_sound_search.application import api, codec, history, media, pipeline, queries
+from similar_sound_search.application import api, codec, history, job, media, pipeline, queries
 from similar_sound_search.application.context import POOL_WRITE, Context, PersistenceError, payload
 from similar_sound_search.application.files import atomic_bytes
 from similar_sound_search.application.locks import active, lock
@@ -523,6 +525,111 @@ class ApplicationTests(unittest.TestCase):
             self.assertEqual(saved["bounds"], p["scored_bounds"])
             self.assertEqual(saved["original"]["group"], c["group"])
             self.assertEqual(c["query_hash"], q["record_hash"])
+
+    def test_committed_unit_survives_coordinator_failure_without_duplicate_work(self):
+        request = dict(kind="save", input={}, request_id="crash-after-commit")
+        key = api.submit(self.root, self.limits, request, acceptance=True)["job_id"]
+        calls = []
+
+        def perform(*args):
+            calls.append(1)
+            return dict(saved="immutable")
+
+        def interrupted(owner, key, limits, validate_units=None, finalization_audit=False):
+            job.worker(dict(root=str(owner.root), job_id=key, limits=limits))
+            raise RuntimeError("coordinator interrupted after immutable publication")
+
+        with (
+            patch.object(job, "perform", side_effect=perform),
+            patch.object(job, "execute", side_effect=interrupted),
+        ):
+            self.assertEqual(job.run(self.root, self.limits, key)["state"], "failed")
+
+        def execute(owner, key, limits, validate_units=None, finalization_audit=False):
+            return job.worker(dict(root=str(owner.root), job_id=key, limits=limits))
+
+        with (
+            patch.object(job, "perform", side_effect=perform),
+            patch.object(job, "execute", side_effect=execute),
+        ):
+            self.assertEqual(job.run(self.root, self.limits, key)["state"], "complete")
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(api.result(self.root, key)["output"], dict(saved="immutable"))
+
+    def test_fresh_consumer_receipt_preserves_semantic_resume_and_rejects_drift(self):
+        declaration = dict(code={}, numerical_hash=PROOF["numerical_hash"])
+        key = digest(declaration)
+        atomic_json(
+            self.root / "manifests/application/consumers" / (key + ".json"),
+            {**declaration, "record_hash": key},
+        )
+        prior = {**PROOF, "declaration_hash": key, "code_hash": digest({})}
+        before = self.owner.put(
+            self.budget, "adoptions", dict(consumer=prior, source="fixture", membership="exact")
+        )
+        after = self.owner.put(
+            self.budget, "adoptions", dict(consumer=PROOF, source="fixture", membership="exact")
+        )
+        job.validate_resumed(
+            self.owner,
+            self.budget,
+            "source",
+            dict(proof=before, scores="bound"),
+            dict(proof=after, scores="bound"),
+        )
+        changed = self.owner.put(
+            self.budget, "adoptions", dict(consumer=PROOF, source="fixture", membership="different")
+        )
+        with self.assertRaisesRegex(InputError, "semantic dependency"):
+            job.validate_resumed(
+                self.owner,
+                self.budget,
+                "source",
+                dict(proof=before, scores="bound"),
+                dict(proof=changed, scores="bound"),
+            )
+
+    def test_actual_owned_worker_interruption_releases_os_lock_and_keeps_reservation(self):
+        from similar_sound_search.processing.runner import python_command
+
+        key = api.submit(
+            self.root,
+            self.limits,
+            dict(kind="save", input={}, request_id="owned-interruption"),
+            acceptance=True,
+        )["job_id"]
+        owner = Context(self.root, key)
+        owner.reserve_attempt("killed-worker")
+        script = self.root / "owned-worker.py"
+        script.write_text(
+            "from pathlib import Path\nimport sys,time\n"
+            "from similar_sound_search.application.locks import lock\n"
+            "r=Path(sys.argv[1])\nwith lock(r,'worker'):\n"
+            " (r/'ready').write_text('ready')\n time.sleep(60)\n",
+            encoding="utf-8",
+        )
+        process = subprocess.Popen(
+            python_command(script, [str(self.root)]), stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        )
+        try:
+            deadline = time.monotonic() + 8
+            while not (self.root / "ready").exists() and time.monotonic() < deadline:
+                time.sleep(0.05)
+            self.assertTrue((self.root / "ready").exists())
+            self.assertTrue(active(self.root, "worker"))
+            process.terminate()
+            process.wait(timeout=5)
+            self.assertFalse(active(self.root, "worker"))
+            with lock(self.root, "coordinator"), lock(self.root, "worker"):
+                job.reconcile(owner, key)
+            self.assertEqual(owner.pool()["uncertain_worker_seconds"], 120)
+            self.assertEqual(owner.pool()["counts"]["job_seconds"], 120)
+            self.assertEqual(api.status(self.root, key)["state"], "interrupted")
+        finally:
+            if process.poll() is None:
+                process.terminate()
+                process.wait(timeout=5)
+            process.communicate()
 
 
 if __name__ == "__main__":
