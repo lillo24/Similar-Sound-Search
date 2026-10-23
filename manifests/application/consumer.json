@@ -7,10 +7,10 @@
     "application/__main__.py": "cb525000a21ad32f647251d1ef92c6878c0bc4aa657d4446bb96e89de8e6364f",
     "application/api.py": "ea3724f528db74435f3835b2674d0c3e4b695b981470c3a3eaed41836323c000",
     "application/codec.py": "654cac5497daa31f15121067f72d265a501d4d187a8e3e44696f9d3f5d63ca9e",
-    "application/context.py": "aca9acc77530ff1dacfafe1868cfdb99e2083d6d81e461d1cc8c506362eeae41",
+    "application/context.py": "110d50c58b1fb755cd018f9679a54939e2409c63519c7419db1001d37e62dae1",
     "application/files.py": "f62b964dc05d7eea9c5b4676e4ffc107d6d8eb3fefb3448f9e29a34de4b6005f",
-    "application/history.py": "10addba3998aef5c9a634784ba3030949a3cf8f92475b5cccf4cf2d79bac9b29",
-    "application/job.py": "f2109bf01c9f746aa2b37f205a76520e4296df9a870320a34694f2f49f93f4b3",
+    "application/history.py": "d37f1a7bc40ca82a94936b454b0d715788ae51b6584e845e3782bf068b9c8e6a",
+    "application/job.py": "bdd31ead10025984aab47b933a115299d7c4558472d6369757815e7f22c0ef43",
     "application/locks.py": "86ac5cfc3b070ce27508f2144dbe9311c495a976346b277161765ab32fa5ed05",
     "application/media.py": "72f7cef3733012977447e376dd83416617c7d4b1349c134dcb42e0368e1c16bc",
     "application/pipeline.py": "aca0e7ce0734ed2effd04d9923c20918dab18eaac726582591229015cead992e",
@@ -163,7 +163,8 @@
   ],
   "inherited_consumer": "d1399bb23a9a2edeb716025a04855cb91c3d11c5ebe3ab29b2c2ebd79ca34d4c",
   "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
-  "source_commit": "52d97097dcf1226d585278a1d0671d7750e6d328",
+  "source_commit": "267aa2c715d78d888196d7376eb0d0a833f777c6",
   "policy": "Exact inherited files; new application adapters call unchanged primitives. Unknown Python drift blocks; renderer assets have separate identity.",
-  "record_hash": "04526995ee400bf9b50661d63da0a005fb9313fca02ce16be9171a1aed44ab73"
+  "compatibility": "6f620216b7ddc4eec51cd64f43d9336bb9494cd9fd7e0062bf5d25a978f27106",
+  "record_hash": "d7c6491ac1bdd4384cf46136728a2a332de443435daee9f180fb5ab9c0bca90f"
 }
