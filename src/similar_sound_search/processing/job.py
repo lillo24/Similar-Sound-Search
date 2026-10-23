@@ -102,18 +102,18 @@ def step(request, budget, owner, fault=lambda _: None):
     # A retry never overwrites its predecessor. The pool reservation predates this claim.
     owner.publish(budget, attempt_path, attempt)
     state.update(attempts=attempt["sequence"], state="running", error=None)
-    owner.publish(budget, path, state)
-    producer = owner.put(
-        budget,
-        "producers",
-        dict(
-            schema_version="c04-producer-1",
-            job=job_ref,
-            unit_id=unit["unit_id"],
-            attempt=attempt["sequence"],
-            consumer=contracts.consumer_reference(plan["consumer"]),
-        ),
+    # The durable attempt is the claim; progress advances after verified publication.
+    # Non-feature units share one immutable consuming proof rather than duplicating it.
+    proof = dict(
+        schema_version="c04-consumer-proof-1",
+        job=job_ref,
+        consumer=contracts.consumer_reference(plan["consumer"]),
     )
+    if unit["kind"] in {"features", "query"}:
+        proof.update(
+            schema_version="c04-producer-1", unit_id=unit["unit_id"], attempt=attempt["sequence"]
+        )
+    producer = owner.put(budget, "producers", proof)
     commit = unit_path(owner, job_ref, unit)
     try:
         if commit.exists():
@@ -319,6 +319,7 @@ def run(request, execute):
         job = owner.get(job_ref, "jobs")
         plan = api.load_plan(owner, job["plan"])
         path, state = progress(owner, job_ref)
+        was_complete = state["state"] == "complete"
         # A cancelled job is resumed explicitly; the immutable cancellation remains evidence.
         control = owner.directory / "cancellation" / (job_ref["record_hash"] + ".json")
         if request.get("resume") and control.exists():
@@ -331,6 +332,9 @@ def run(request, execute):
                 )
                 archive.parent.mkdir(parents=True, exist_ok=True)
                 control.replace(archive)
+        if state["completed"]:
+            state.update(state="in_progress", error=None)
+            owner.publish(budget, path, state)
         validate = [
             u["unit_id"]
             for u in plan["units"]
@@ -350,7 +354,7 @@ def run(request, execute):
                 "limits": {**limits, "max_seconds": seconds},
             }
             if validate:
-                worker_request["validate_units"] = validate[:4]
+                worker_request["validate_units"] = validate[:8]
             started, result = time.monotonic(), None
             try:
                 result = execute(worker_request)
@@ -369,6 +373,8 @@ def run(request, execute):
             if result is None:
                 raise InputError("C04 dispatcher returned no explicit result")
             encoded += result.get("new_encodes", 0)
+            if result.get("state") == "cancelled":
+                return {**result, "new_encodes": encoded, "pool": owner.pool()}
             if result.get("status") == "failed":
                 path, state = progress(owner, job_ref)
                 if state["error"] is None:
@@ -384,8 +390,10 @@ def run(request, execute):
                 owner.publish(CatalogueBudget(root, limits), path, state)
                 return {**result, "job": job_ref, "new_encodes": encoded}
             if validate:
-                del validate[:4]
-                if not validate and state["state"] == "complete":
+                del validate[:8]
+                if not validate and was_complete:
+                    state.update(state="complete", error=None)
+                    owner.publish(CatalogueBudget(root, limits), path, state)
                     return dict(
                         status="ok",
                         state="complete",
@@ -407,6 +415,8 @@ def worker(request, budget):
         if request.get("validate_units"):
             for key in request["validate_units"]:
                 result = step({**request, "validate_unit": key}, budget, owner)
+                if result["state"] == "cancelled":
+                    return {**result, "peak_working_bytes": memory_check(budget)}
                 completed.append(key)
             return {
                 **result,

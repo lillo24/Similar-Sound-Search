@@ -47,7 +47,12 @@ def run_case(name, spec, previous=None, clean=False, pilot=False):
         try:
             if api.load_plan(owner, old["plan"])["input"] == spec:
                 plan = old["plan"]
-                save(name + "-before-resume.json", old)
+                prior = {k: v for k, v in old.items() if k not in {"record_hash", "input"}}
+                prior.update(
+                    original_summary_hash=old["record_hash"],
+                    input_ref=owner.get(plan, "plans")["input_ref"],
+                )
+                save(name + "-before-resume-" + old["record_hash"] + ".json", prior)
         except InputError:
             # Only a declared compatible old plan may resume; other changes create
             # a new explicit revision/job under the same pool.
@@ -73,6 +78,9 @@ def run_case(name, spec, previous=None, clean=False, pilot=False):
         input=spec,
         measured_delta={k: after["counts"][k] - before["counts"][k] for k in after["counts"]},
     )
+    if spec["historical"]:
+        answer.pop("input")
+        answer["input_ref"] = owner.get(plan, "plans")["input_ref"]
     save(name + ".json", answer)
     print(
         json.dumps(

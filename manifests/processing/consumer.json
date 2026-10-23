@@ -63,10 +63,10 @@
     "processing/cache.py": "1b0a73a6e9a25527304037d870a881e75e0f856ab6a07ad3977f45e52b7b6ed6",
     "processing/commands.py": "29b6755466bf83000b804349ed7ae54d88dd1b6a9e5b84164cc046abee903965",
     "processing/context.py": "d46e079ec6d38803a8210179064c4282ad27a00ab91b2bdb90e8e8331797db85",
-    "processing/contracts.py": "f37be8db1727dab4b3028542fc57a9eca39ad11157dfb1489d0ed7f57327e122",
-    "processing/engine.py": "4f8d10050abf979ec17323c8eb3f43fccdc50e1485afa94d5ab202a192ce7f2c",
+    "processing/contracts.py": "3fff3c19310cdd90ec9909c33fd410e386901f9eb8fee0a235a208a46d1c1b13",
+    "processing/engine.py": "292a437f8764a02b8eb2160cf49eaabc2599f0f95b6310a894b0e9908664e146",
     "processing/historical.py": "a1bc87132a2085f09efece469f9584ec462b07c15e31ff6edf2bae4603abdd41",
-    "processing/job.py": "4049c1060b8fa2d565fc1df30534421b9a7f3e07ebdcec953e617d7f7a222b57",
+    "processing/job.py": "824772c0828bb91cdb8fca1dab7ddf25bbcb972cc9dc6d537ef1fa1514adeec6",
     "processing/records.py": "b6510c72c9d232803f013003282350aaa8423b29bb59c4c921e099121a400009",
     "processing/runner.py": "4d6a677ca319a44201590d4f840384ef0fa4c540d4a8d56ab631d8fe300ca3f9",
     "processing/validation.py": "0db1ae0df6e43e9a109ba24675e58f7829cf217a4584968d0fe8ffb2cc7ca6a4",
@@ -287,10 +287,10 @@
     "refinement/engine.py": "37cad13d695111528faee9eb88dcc0c290b7b643514aeefe922fbf9dc6808ca8",
     "events/compatibility.py": "47f32c3daff8dd0cf6837ddbbe283b5c81487ab521ab12676f760e530a12a758"
   },
-  "numerical_hash": "34a13ad04c48b3e1179bb445f55858f868a112ad4df0477146ecc7880707273b",
+  "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
   "policy": "Exact source map; unknown drift blocks. Historical full-package guards unchanged.",
-  "previous_consumer": "792dbd5d1f6cfc223e83b9565ee0f77e668cdfed8c4d551e50ad791c02677fdf",
+  "previous_consumer": "055bc34665840898d962a5c5a7a8b23c44d942b4e2137d8851957a90b6bb32cd",
   "correctness_repair": "11b26378b964b07517288abd6046f35b7482f995f73127e104e6af0bd0d03da2",
-  "metadata_compatibility": "d4674d6aa2a56d7590f9c7ff9b40a7be164d1f114bde1c8aaa7f0997b5e9ae03",
-  "record_hash": "055bc34665840898d962a5c5a7a8b23c44d942b4e2137d8851957a90b6bb32cd"
+  "metadata_compatibility": "ac5547cb708d2518a467828b40af2d325235be2eb4018652c579c071abe3c8cd",
+  "record_hash": "d1399bb23a9a2edeb716025a04855cb91c3d11c5ebe3ab29b2c2ebd79ca34d4c"
 }

@@ -498,6 +498,33 @@ class ProcessingTests(unittest.TestCase):
         self.assertEqual(len(value["files"]), 2)
         self.assertFalse(value["deletion_authorized"])
 
+    def test_cancel_during_resume_validation_stops_dispatch(self):
+        ready = self.run_plan()
+        workers = self.owner.pool()["counts"]["workers"]
+
+        def execute(request):
+            api.cancel(self.root, ready["job"])
+            return job.worker(request, CatalogueBudget(self.root, request["limits"]))
+
+        answer = job.run(
+            dict(root=str(self.root), limits=self.limits, job_ref=ready["job"], resume=True),
+            execute,
+        )
+        self.assertEqual(answer["state"], "cancelled")
+        self.assertEqual(self.owner.pool()["counts"]["workers"] - workers, 1)
+
+    def test_query_matrix_reuse_is_only_within_one_worker(self):
+        from similar_sound_search.processing import engine
+
+        value = dict(query=dict(record_hash="q"), feature_hash="f", saved_input={})
+        array = np.ones((1, 4), dtype=np.float32)
+        with patch.object(engine, "query_vectors", return_value=array) as loader:
+            self.assertIs(engine.query_vectors_cached(self.budget, self.owner, value), array)
+            self.assertIs(engine.query_vectors_cached(self.budget, self.owner, value), array)
+            self.assertEqual(loader.call_count, 1)
+            engine.query_vectors_cached(self.budget, Context(self.root), value)
+            self.assertEqual(loader.call_count, 2)
+
     def test_lossless_compact_rows_and_legacy_read(self):
         from similar_sound_search.processing import records
 
@@ -517,12 +544,21 @@ class ProcessingTests(unittest.TestCase):
         scores = job.collect(self.owner, state, plan, "score")
         features = job.collect(self.owner, state, plan, "features")
         for source, value in scores.items():
+            from similar_sound_search.processing.engine import load_scores
+
+            value = load_scores(self.owner, value)
             rows = features[source]["rows"]
             self.assertEqual(value["identity"]["candidate_rows"], len(rows))
             self.assertEqual(
                 value["identity"]["candidate_digest"],
                 digest([[r["key"], r["vector_sha256"]] for r in rows]),
             )
+
+    def test_event_legacy_is_published_when_explicitly_requested(self):
+        value = self.request()
+        value["policy"]["arm"] = "event-legacy"
+        ready = self.run_plan(self.plan(value))
+        self.assertIn("event-legacy", api.result(self.root, ready["result"])["arms"])
 
     def test_compact_schema_and_conflicting_index_fail(self):
         from similar_sound_search.processing import records

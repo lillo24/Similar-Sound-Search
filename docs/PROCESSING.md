@@ -134,3 +134,15 @@ source/AST proofs checked at consumption. Old records and charges remain intact.
 The same paused plan resumes after revalidating committed outputs; unknown drift
 still blocks. `api.membership(root, ref)` reads both full and compact memberships,
 so D01 does not need private packing details.
+
+The final metadata revision publishes the numerical claim once in the attempt,
+shares immutable consumer proofs across non-feature units, and references saved
+source scores rather than copying their payload into progress. It publishes the
+complete legacy and event-multi group lists; event-legacy is additionally published
+when requested. C02's original three arms remain intact. Scoring/aggregation AST
+proofs separate these publication choices from unchanged numerical computation.
+One exact query matrix may be shared in memory within a worker after its first
+successful source/array validation; it never survives a worker or masks a failed
+load. Up to eight read-only resume validations share a worker; executable units
+remain capped at four. Cancellation during validation stops further admission,
+and status shows in-progress while resume validation runs.

@@ -113,14 +113,31 @@ def compatible_consumer(owner, previous, current):
             for n in ast.parse(source).body
             if isinstance(n, ast.FunctionDef) and n.name == "score"
         )
-        node.body = [
-            n
-            for n in node.body
-            if not (
-                isinstance(n, ast.Assign)
-                and any(isinstance(t, ast.Name) and t.id == "identity" for t in n.targets)
+
+        def target(n):
+            return (
+                n.targets[0].id
+                if isinstance(n, ast.Assign) and isinstance(n.targets[0], ast.Name)
+                else None
             )
-        ]
+
+        prefix = [n for n in node.body if target(n) in {"refs", "q", "query_hash", "matrix"}]
+        numerical, active = [], False
+        for n in node.body:
+            if target(n) == "examples":
+                active = True
+            if active:
+                numerical.append(n)
+            if target(n) == "result":
+                break
+        node.body = prefix + numerical
+        for call in ast.walk(node):
+            if (
+                isinstance(call, ast.Call)
+                and isinstance(call.func, ast.Name)
+                and call.func.id == "query_vectors_cached"
+            ):
+                call.func.id = "query_vectors"
         return hashlib.sha256(ast.dump(node, include_attributes=False).encode()).hexdigest()
 
     for text in (
@@ -129,6 +146,36 @@ def compatible_consumer(owner, previous, current):
     ):
         if scoring_body(text) != proof["unchanged_score_body"]:
             raise InputError("C04 metadata compatibility: scoring computation changed")
+
+    def aggregation_body(source):
+        node = next(
+            n
+            for n in ast.parse(source).body
+            if isinstance(n, ast.FunctionDef) and n.name == "aggregate"
+        )
+        node.body = [
+            n
+            for n in node.body
+            if not (
+                isinstance(n, ast.Assign)
+                and any(isinstance(t, ast.Name) and t.id == "arms_to_publish" for t in n.targets)
+            )
+            and not (
+                isinstance(n, ast.If)
+                and any(isinstance(x, ast.Name) and x.id == "arms_to_publish" for x in ast.walk(n))
+            )
+        ]
+        for n in node.body:
+            if isinstance(n, ast.For) and isinstance(n.target, ast.Name) and n.target.id == "arm":
+                n.iter = ast.parse("('legacy-mean','event-legacy','event-multi')", mode="eval").body
+        return hashlib.sha256(ast.dump(node, include_attributes=False).encode()).hexdigest()
+
+    for text in (
+        proof["original_sources"]["processing/engine.py"],
+        (base / "processing/engine.py").read_text(),
+    ):
+        if aggregation_body(text) != proof["unchanged_aggregation_body"]:
+            raise InputError("C04 metadata compatibility: aggregation computation changed")
     return proof["record_hash"]
 
 

@@ -97,6 +97,22 @@ def query_vectors(budget, owner, value):
     return saved_query(budget, owner, value["saved_input"], arrays=True)[1]
 
 
+def query_vectors_cached(budget, owner, value):
+    """Reuse only the exact already-validated matrix inside this bounded worker."""
+    key = digest(
+        dict(
+            query=value["query"]["record_hash"],
+            features=value["feature_hash"],
+            saved=value.get("saved_input"),
+        )
+    )
+    if not hasattr(owner, "query_vectors_cache"):
+        owner.query_vectors_cache = {}
+    if key not in owner.query_vectors_cache:
+        owner.query_vectors_cache[key] = query_vectors(budget, owner, value)
+    return owner.query_vectors_cache[key]
+
+
 def score(budget, owner, plan, source, feature_result, query_result):
     refs = feature_result["rows"]
     q = query_result["query"]
@@ -118,8 +134,8 @@ def score(budget, owner, plan, source, feature_result, query_result):
         value = record(path)
         if value["identity"] != identity:
             raise InputError("C04 score dependency locator changed")
-        return load_scores(owner, value)
-    examples = query_vectors(budget, owner, query_result)
+        return {"result": value["result"]}
+    examples = query_vectors_cached(budget, owner, query_result)
     per, means = distances(examples, matrix, "cosine")
     offsets = {tuple(r["native_bounds"]): i for i, r in enumerate(refs)}
     banks = []
@@ -163,7 +179,7 @@ def score(budget, owner, plan, source, feature_result, query_result):
     # Dependency-keyed immutable locator explicitly binds a content-addressed record.
     ref = owner.put(budget, "score-results", result)
     owner.publish(budget, path, dict(identity=identity, result=ref), immutable=True)
-    return result
+    return {"result": ref}
 
 
 def load_scores(owner, value):
@@ -253,7 +269,10 @@ def aggregate(budget, owner, plan, features_by_source, queries, scored, membersh
         complete.append(value)
     groups = retrieval_engine.group_sources(complete, cfg)
     arms = {}
-    for arm in ("legacy-mean", "event-legacy", "event-multi"):
+    arms_to_publish = ["legacy-mean", "event-multi"]
+    if plan["input"]["policy"]["arm"] == "event-legacy":
+        arms_to_publish.append("event-legacy")
+    for arm in arms_to_publish:
         ranking = fusion.results(groups, event_map, bank_keys, cfg, arm)
         refs = [
             owner.put(budget, "group-results", dict(schema_version="c04-group-1", rank=i + 1, **g))
