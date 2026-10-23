@@ -160,7 +160,9 @@ def worker(request):
     key = request["job_id"]
     with project_lock(owner.root), lock(owner.root, "worker"), offline_network():
         value = api.job(owner, key)
-        if history.consumer(owner) != value["consumer"]:
+        if history.consumer(owner) != value["consumer"] and not history.compatible(
+            owner, value["consumer"]
+        ):
             raise InputError("D01 request consumer changed; declare scoped compatibility")
         graph = units(owner, value)
         cache, done, encodes = {}, [], 0

@@ -189,7 +189,13 @@ class Context:
                 > p["ceilings"]["managed_output_bytes"]
             ):
                 raise ResourceError("D01 managed output exhausted including metadata envelope")
+            if budget is not None:
+                budget.track_file(self.directory / "pool.json")
             self._save(p)
+            if budget is not None:
+                budget.account_file(
+                    self.directory / "pool.json", (self.directory / "pool.json").stat().st_size
+                )
         return p
 
     def publish(self, budget, path, value, immutable=False):
@@ -201,8 +207,10 @@ class Context:
             return saved
         self.charge(budget, metadata_bytes=cost)
         budget.reserve(cost)
+        budget.track_file(path)
         atomic_json(path, saved)
-        budget.refresh_disk()
+        size = len((json.dumps(saved, indent=2, allow_nan=False) + "\n").encode("utf-8"))
+        budget.account_file(path, size)
         return saved
 
     def put(self, budget, kind, value):

@@ -87,7 +87,8 @@ def bank_reader(owner):
             expanded = []
             for u in value["committed"]:
                 meta = record(
-                    contained(owner.root / u["path"], owner.root / "data/features") / "record.json"
+                    contained(owner.root / u["path"], owner.root / "data/indexes/a06")
+                    / "record.json"
                 )
                 if meta["record_hash"] != u["array_record_hash"] or meta["shape"][0] != u["rows"]:
                     raise InputError("D01 legacy array receipt differs")
@@ -256,3 +257,21 @@ def cache_query(view, value, matrix):
         )
     )
     view.query_vectors_cache[key] = matrix
+
+
+def compatible(owner, previous):
+    """Only the explicitly pinned D01 path/accounting repair, no unknown drift."""
+    current = consumer(owner)
+    proof = record(owner.root / "manifests/application/compatibility.json")
+    declaration = record(owner.root / "manifests/application/consumer.json")
+    if declaration.get("compatibility") != proof["record_hash"]:
+        raise InputError("D01 compatibility declaration binding changed")
+    if (
+        proof["before"] != previous
+        or proof["after_code"] != code_identity()
+        or current["numerical_hash"] != previous["numerical_hash"]
+    ):
+        return None
+    if proof["changed_inherited_files"] or not proof["numerical_functions_unchanged"]:
+        raise InputError("D01 compatibility changes inherited numerical code")
+    return proof["record_hash"]
