@@ -133,7 +133,7 @@ class ApplicationTests(unittest.TestCase):
     def test_protected_slot_admitted_before_worker(self):
         self.owner.reserve_attempt("a")
         p = self.owner.pool()
-        self.assertEqual(p["protected_reserved"], 65536 - POOL_WRITE)
+        self.assertEqual(p["protected_reserved"], 262144 - POOL_WRITE)
         with self.assertRaises(ResourceError):
             self.owner.reserve_attempt("b")
         self.assertEqual(self.owner.pool(), p)
@@ -150,6 +150,39 @@ class ApplicationTests(unittest.TestCase):
             "worker", self.owner.directory / "stopped.json", dict(state="cancelled"), elapsed=5
         )
         self.assertEqual(self.owner.pool()["protected_reserved"], 0)
+
+    def test_worker_journal_replay_preserves_later_control_settlements(self):
+        self.owner.reserve_attempt("worker")
+        self.owner.reserve_attempt("control", seconds=0)
+        self.owner.terminal(
+            "control", self.owner.directory / "control.json", dict(cancel=True), elapsed=0
+        )
+        with patch.object(
+            self.owner, "_save", side_effect=PermissionError("crash after worker journal")
+        ):
+            with self.assertRaises(PersistenceError):
+                self.owner.terminal(
+                    "worker",
+                    self.owner.directory / "worker.json",
+                    dict(state="cancelled"),
+                    elapsed=5,
+                )
+        self.owner.reserve_attempt("later-control", seconds=0)
+        self.owner.terminal(
+            "later-control", self.owner.directory / "later.json", dict(resume=True), elapsed=0
+        )
+        before = self.owner.pool()
+        self.owner.terminal(
+            "worker", self.owner.directory / "worker.json", dict(state="cancelled"), elapsed=5
+        )
+        after = self.owner.pool()
+        self.assertTrue(after["attempts"]["worker"]["settled"])
+        self.assertEqual(after["last_settled"], before["last_settled"])
+        self.assertGreaterEqual(
+            after["counts"]["metadata_bytes"], before["counts"]["metadata_bytes"]
+        )
+        self.assertEqual(after["counts"]["job_seconds"], 5)
+        self.assertEqual(after["protected_reserved"], 0)
 
     def test_admission_covers_whole_request(self):
         before = self.owner.pool()

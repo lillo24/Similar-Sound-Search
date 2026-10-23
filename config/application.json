@@ -3,7 +3,7 @@
   "host": "127.0.0.1",
   "port": 8774,
   "protected_metadata_bytes": 33554432,
-  "attempt_bookkeeping_bytes": 65536,
+  "attempt_bookkeeping_bytes": 262144,
   "acceptance_ordinary_bytes": 41943040,
   "policy": {
     "max_job_seconds": 3600,

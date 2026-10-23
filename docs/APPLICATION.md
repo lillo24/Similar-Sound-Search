@@ -56,7 +56,7 @@ terminal/recovery bookkeeping. Whole-path geometry reserves groups, adoption/sco
 state transitions and finalization before request admission; larger example sets
 receive a larger estimate. Every actual publication debits serialized destination
 plus atomic temporary and overhead before writing. Pool replacements are bounded
-and counted. A 64 KiB protected slot precedes each attempt, including success/failure,
+and counted. A bounded 256 KiB protected slot precedes each attempt, including success/failure,
 journal, settlement and recovery. Terminal publication calls no ordinary writer.
 Failed writes retain charges/temporaries. Logical unspent allocations can be released;
 actual writes and unobservable worker reservations cannot be refunded.

@@ -60,7 +60,7 @@ class Context:
                 raise InputError("D01 invalid/increased ceiling: " + key)
         if (
             self.cfg["protected_metadata_bytes"] < 32 * MIB
-            or self.cfg["attempt_bookkeeping_bytes"] != 65536
+            or self.cfg["attempt_bookkeeping_bytes"] != 262144
             or self.cfg["host"] != "127.0.0.1"
         ):
             raise InputError("D01 protected reserve/loopback policy changed")
@@ -290,6 +290,12 @@ class Context:
             p["counts"]["metadata_bytes"] += POOL_WRITE
             p["counts"]["workers"] += int(bool(seconds))
             p["counts"]["job_seconds"] += seconds
+            _, snapshot_cost = payload(p)
+            terminal_bound = 2 * 8192 + 4096
+            journal_bound = snapshot_cost + 2 * 8192 + 8192
+            required = terminal_bound * 2 + journal_bound + POOL_WRITE * 2 + 4096
+            if required > slot["remaining"]:
+                raise ResourceError("D01 attempt bookkeeping geometry cannot fit protected slot")
             self._save(p)
             return slot
 
@@ -307,8 +313,24 @@ class Context:
                 saved = record(journal)
                 if saved["attempt"] != identity:
                     raise InputError("D01 settlement identity changed")
-                if saved["pool_after"]["last_settled"] > p["last_settled"]:
-                    self._save(saved["pool_after"])
+                pending = p["attempts"].get(identity)
+                if pending is not None and not pending["settled"]:
+                    delta = saved.get("delta")
+                    if delta is None:
+                        raise PersistenceError(
+                            "D01 old unsettled journal requires explicit recovery"
+                        )
+                    # Controls may settle a later sequence while this worker is pending.
+                    # Merge only this attempt's delta; never roll back later charges.
+                    p["protected_reserved"] -= pending["remaining"]
+                    p["protected_used"] += delta["metadata"]
+                    p["counts"]["metadata_bytes"] += delta["metadata"]
+                    p["counts"]["job_seconds"] += delta["seconds"]
+                    p["measured_worker_seconds"] += delta["measured"]
+                    p["uncertain_worker_seconds"] += delta["uncertain"]
+                    pending.update(settled=True, remaining=0)
+                    p["last_settled"] = max(p["last_settled"], pending["sequence"])
+                    self._save(p)
                 if not path.exists() or record(path) != saved["terminal"]:
                     atomic_json(path, saved["terminal"])
                 return
@@ -316,23 +338,32 @@ class Context:
             if slot["settled"]:
                 return
             terminal, cost = payload(value)
+            if (cost - 4096) // 2 > 8192:
+                raise PersistenceError("D01 terminal record exceeds admitted 8KiB state bound")
             # Journal embeds a bounded pool snapshot + terminal. Allow both atomic temporaries,
-            # final state and the pool replacement. 64KiB admission is checked before writing.
-            used = cost + POOL_WRITE * 2
+            # final state, pool replacement and one recovery state/pool write. The
+            # bounded 256KiB slot is admitted before work; actual serialization drives cost.
+            _, preview_cost = payload(dict(attempt=identity, terminal=terminal, pool_after=p))
+            used = cost * 2 + preview_cost + POOL_WRITE * 2 + 4096
             if used > slot["remaining"]:
                 raise PersistenceError("D01 terminal geometry exceeds its pre-reserved slot")
             p["protected_reserved"] -= slot["remaining"]
             p["protected_used"] += used
             p["counts"]["metadata_bytes"] += used
+            delta = dict(metadata=used, seconds=0, measured=0, uncertain=0)
             if uncertain:
                 p["uncertain_worker_seconds"] += slot["seconds"]
+                delta["uncertain"] = slot["seconds"]
             elif elapsed is not None:
                 elapsed = min(slot["seconds"], elapsed)
                 p["counts"]["job_seconds"] += elapsed - slot["seconds"]
                 p["measured_worker_seconds"] += elapsed
+                delta.update(seconds=elapsed - slot["seconds"], measured=elapsed)
             slot.update(settled=True, remaining=0)
             p["last_settled"] = max(p["last_settled"], slot["sequence"])
-            saved, journal_cost = payload(dict(attempt=identity, terminal=terminal, pool_after=p))
+            saved, journal_cost = payload(
+                dict(attempt=identity, terminal=terminal, pool_after=p, delta=delta)
+            )
             if journal_cost + cost + POOL_WRITE > used:
                 raise PersistenceError("D01 settlement exceeds reserved serialized bound")
             try:
