@@ -177,10 +177,7 @@ def worker(request):
                 if cancel.exists() and not record(cancel).get("resumed", False):
                     return dict(status="ok", state="cancelled", completed=[], new_encodes=0)
                 answer = pipeline.source_unit(budget, owner, spec, unit[7:], q, matrix)
-                if answer != committed(owner, key, unit):
-                    raise InputError(
-                        "D01 resumed source/score dependency differs from committed output"
-                    )
+                validate_resumed(owner, budget, unit, committed(owner, key, unit), answer)
             return dict(
                 status="ok",
                 state="validated",
@@ -414,6 +411,36 @@ def _run(root, limits, key):
 
 def request_search(value):
     return value["identity"]["request"]["kind"] in {"search", "validate"}
+
+
+def validate_resumed(owner, budget, unit, previous, current):
+    """Fresh consumer proof is distinct from unchanged semantic source/score output."""
+    before = owner.get(previous["proof"], "adoptions")
+    after = owner.get(current["proof"], "adoptions")
+    prior = before["consumer"]
+    archive = owner.root / "manifests/application/consumers" / (prior["declaration_hash"] + ".json")
+    active = history.consumer(owner)
+    if prior != active:
+        declaration = record(archive)
+        if (
+            declaration["record_hash"] != prior["declaration_hash"]
+            or digest(declaration["code"]) != prior["code_hash"]
+            or declaration["numerical_hash"] != active["numerical_hash"]
+        ):
+            raise InputError("D01 resumed producer/consumer proof is unknown")
+    fields = lambda p: {k: v for k, v in p.items() if k not in {"record_hash", "consumer"}}
+    if previous["scores"] != current["scores"] or fields(before) != fields(after):
+        raise InputError("D01 resumed source/score semantic dependency differs")
+    owner.put(
+        budget,
+        "resume-audits",
+        dict(
+            unit=unit,
+            previous=previous["proof"],
+            fresh=current["proof"],
+            semantic_source_scores_unchanged=True,
+        ),
+    )
 
 
 def run(root, limits, key):
