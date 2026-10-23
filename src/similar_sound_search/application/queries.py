@@ -184,10 +184,38 @@ def inventory(owner):
         )
     except (InputError, OSError, KeyError) as exc:
         historical.update(available=False, error=str(exc))
+    historical_saved = []
+    try:
+        from ..retrieval.context import QueryView
+
+        old = QueryView(owner)
+        for path in sorted((old.directory / "names").glob("*.json"))[:64]:
+            name = record(path)
+            for key in name["revisions"]:
+                rev = library.revision(old, key)
+                if rev["recipe"]["pitch"] != library.OFF or any(
+                    e["kind"] != "asset" for e in rev["recipe"]["examples"]
+                ):
+                    continue
+                available = all(
+                    (owner.root / assets.read_binding(old, k)["path"]).is_file()
+                    for k in rev["recipe"]["assets"]
+                )
+                historical_saved.append(
+                    dict(
+                        label=name["label"],
+                        revision=key,
+                        available=available,
+                        examples=len(rev["recipe"]["examples"]),
+                    )
+                )
+    except (InputError, OSError, KeyError) as exc:
+        historical["saved_library_error"] = str(exc)
     return dict(
         names=names,
         references=references,
         historical=historical,
+        historical_saved=historical_saved,
         unavailable=dict(
             pitch="No validated D01 pitch route",
             transform="No D01 transform route",

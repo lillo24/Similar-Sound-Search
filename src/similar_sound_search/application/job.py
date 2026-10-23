@@ -82,7 +82,11 @@ def perform(budget, owner, value, unit, query_cache):
         if previous_query is not None:
             saved = owner.get(previous_query["query"], "queries")
             selection["materialization"] = saved["materialization"]
-        query_cache["query"] = queries.load(budget, owner, selection)
+        if unit == "query" or unit.startswith("source:"):
+            query_cache["query"] = queries.load(budget, owner, selection)
+        else:
+            # Metadata aggregation and immutable media reuse do not consume query audio.
+            query_cache["query"] = (saved, None)
     q, matrix = query_cache["query"]
     if unit == "query":
         return dict(query=owner.put(budget, "queries", q), new_encodes=q["new_encodes"])

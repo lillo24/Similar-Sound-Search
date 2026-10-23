@@ -72,12 +72,18 @@ def cached_clip(budget, owner, source, bounds, samples=None):
         validate(owner, ref["record_hash"])
         return ref
     if samples is None:
-        if source["kind"] == "reference":
+        shared = getattr(owner, "media_samples", None)
+        sample_key = digest(dict(bytes=meta["sha256"], pcm=meta["canonical_pcm"]))
+        if shared is not None and shared[0] == sample_key:
+            samples = shared[1]
+        elif source["kind"] == "reference":
             _, _, samples = assets.read_asset(
                 budget, QueryOwner(owner), source["recording_id"], with_samples=True
             )
         else:
             samples = sources.load(budget, source, context=owner)
+        # One exact successful decode, one retained source, this bounded worker only.
+        owner.media_samples = (sample_key, samples)
     # The shared writer owns the unchanged PCM16 conversion and native verification.
     # Its direct receipt writes are prepaid including atomic temporary overhead here.
     owner.charge(budget, metadata_bytes=16384)
@@ -151,11 +157,8 @@ def cards(budget, owner, result, start=0, count=2):
                 additional=number > 0,
             )
             if number == 0:
-                samples = sources.load(budget, source, context=owner)
-                item["scored"] = cached_clip(budget, owner, source, p["scored_bounds"], samples)
-                item["context"] = cached_clip(
-                    budget, owner, source, row["original_context"], samples
-                )
+                item["scored"] = cached_clip(budget, owner, source, p["scored_bounds"])
+                item["context"] = cached_clip(budget, owner, source, row["original_context"])
             passages.append(item)
         output.append(
             dict(
