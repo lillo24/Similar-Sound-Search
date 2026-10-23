@@ -2,7 +2,26 @@
 
 Select a particular sound inside a song and find passages in other recordings with a similar sound character, with playable results and trustworthy timestamps. Timbre comes first, approximate pitch second; matching phrase rhythm or note order is deferred.
 
-**Current state: B03 reusable query revisions and optional pitch preference.** Named queries retain exact original/processed examples, cue provenance, native bounds and immutable executions; labels and pitch changes reuse validated features. Original audio and pitch off remain defaults. The unchanged EfficientAT MN04 index contains 72 recordings / 44,025 passages across 3.098 hours. [B03 evidence and C01 handoff](reports/B03_QUERIES.md) distinguish reproducibility checks, controlled retrieval and unmeasured human relevance; A03 remains partial at 72 recordings/35 artists.
+**Current state: D01 local search application.** Import a reference, select native
+intervals, save one to eight examples, search the existing 72 recordings and listen
+to exact scored passages with separate context. Original mixture, legacy mean and
+pitch off remain defaults. [D01 evidence](reports/D01_INTERFACE.md) records real
+adoption, warm/new-query searches and playback. C04 remains historically partial
+145/148; A03 remains partial at 72 recordings/35 artists. Human similarity is unmeasured.
+
+From this delivery checkout, start the app in a foreground terminal:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-sound-search.ps1
+```
+
+Open **http://127.0.0.1:8774/**; Ctrl+C stops owned work. Choose **Open a completed
+search** to reopen the original Loulou or generated two-example acceptance result
+without spending more inference allowance. Fresh searches have finite admission
+limits. [Application setup, contracts and recovery](docs/APPLICATION.md) and the
+[D02 interface](manifests/application/d02-interface.json) describe the product boundary.
+Private audio, model and ignored B/C artifacts must already be available; a public
+clone can run the isolated tests but cannot reconstruct the private catalogue.
 
 The supplied **daoud — Loulou & the loulous** MP3 is now available and technically registered. B03 uses the complete **218..240s** available-file mixture; recording identity, marked-version alignment, master offset, rights and intended layer remain unverified. [Availability](manifests/queries/loulou-availability.json) preserves these distinctions and the historical missing-input record. The first required listening review remains D04.
 

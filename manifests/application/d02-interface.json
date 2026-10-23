@@ -1,0 +1,108 @@
+{
+  "schema_version": "d01-d02-interface-1",
+  "module": "similar_sound_search.application.api",
+  "coordinator": "similar_sound_search.application.job.run",
+  "startup": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-sound-search.ps1",
+  "url": "http://127.0.0.1:8774/",
+  "owner": "data/runs/application/pool.json",
+  "defaults": {
+    "audio": "original",
+    "arm": "legacy-mean",
+    "pitch": "off"
+  },
+  "experimental": [
+    "event-multi",
+    "historical-refinement (exact pinned chain only)"
+  ],
+  "unavailable": [
+    "pitch",
+    "transforms",
+    "automatic selection",
+    "new-query refinement"
+  ],
+  "mutations": {
+    "POST /api/upload": "bounded raw audio; X-Upload-ID SHA256, X-Filename display text, Content-Length; returns explicit upload ID",
+    "POST /api/submit": {
+      "kind": "register|copy-reference|save|rename|preview|search|validate|metadata-preflight|native-qa",
+      "input": "operation-specific immutable inputs",
+      "request_id": "stable 1..80 alphanumeric/_/- key; conflicting retry fails"
+    },
+    "POST /api/cancel": {
+      "job_id": "SHA256",
+      "request_id": "stable SHA256 control ID"
+    },
+    "POST /api/resume": {
+      "job_id": "same persisted SHA256",
+      "request_id": "stable SHA256 control ID"
+    }
+  },
+  "security": "Exact loopback Host/Origin plus X-D01-Token from GET bootstrap; tokens rotate on server restart. No arbitrary paths/URLs/shell or remote origins.",
+  "reads": [
+    "GET /api/bootstrap",
+    "GET /api/job/<job_id>",
+    "GET /api/result/<job_id>",
+    "GET /api/revision/<revision_id>",
+    "GET /api/waveform/<record_id>",
+    "GET /media/<record_id> (reference preview)",
+    "GET /result-media/<result_id>/<media_id> (complete result membership plus ranges)",
+    "GET /historical/ (separate preserved C03 bundle)"
+  ],
+  "states": [
+    "pending",
+    "running",
+    "in_progress",
+    "complete",
+    "failed",
+    "blocked",
+    "cancelled",
+    "interrupted"
+  ],
+  "status_fields": [
+    "state",
+    "durable_state",
+    "observed_process",
+    "completed",
+    "requested",
+    "result",
+    "error",
+    "cancellation_pending",
+    "cancellation_requested",
+    "last_complete",
+    "allowance",
+    "historical_c04"
+  ],
+  "result_schema": "d01-result-1: job_id/query/selection/policy/consumer/snapshot/arms/cards/chain/selected_arm/excluded_groups/population/resource_owner",
+  "card_binding": "query_hash + arm + population + exact group reference + native representative; scored and context clips separate",
+  "reference_semantics": "opaque contained path + canonical record_hash; Context.get losslessly expands d01-packed-group-1",
+  "native_selection": "integer half-open frames; one to eight B03 validated original examples; event/context each <=30s; unordered unique PCM mean; all parent exclusions retained",
+  "historical_query": {
+    "historical": true,
+    "revision": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3",
+    "materialization": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036",
+    "rate": 44100,
+    "event": [
+      9613800,
+      10584000
+    ],
+    "context": [
+      9569700,
+      10628100
+    ]
+  },
+  "baselines": {
+    "c01": "d6c54710786acdb584e92d2cba25491eb643c996fa622e3194d1b9381f659f87",
+    "c02": "a1390a76b77c76aa53c3c97d6adfd5dc5ed38b5f0e9ad9ad2bf890f7a0554d67",
+    "c03": "339fa84d523c457ab10c099be4feeb13b220d29fec995c31eed12fae4a23d98d",
+    "playback": "b7c1bae8c55f488883a599d4486b85d382b6d66eecabc6bbf028871e4ae48aee"
+  },
+  "fixtures": "tests/test_application.py: generated native audio, independent scalar population/exclusion and clip binding, query dedup/conflicts, small isolated pools, filesystem/Windows replace and HTTP isolation",
+  "polling": "read-only; no worker/audit/progress publication or inference spending",
+  "quality": "Technical correctness only. Human sound similarity remains unmeasured; no D02/D03/D04 automatically started.",
+  "bootstrap_completed": "At most 64 complete search/validation jobs: job_id,result,label,query resolved revision/materialization,historical flag,policy,query_hash. Read-only; supports a browser with empty local storage.",
+  "resume_acknowledgement": "Protected durable pending acknowledgement precedes HTTP 202; complete jobs reopen without dispatch.",
+  "acceptance_results": {
+    "adopted": "1c0ef69a1a5156319dec8a976cab164de576d13ba9cc00f5c24b4355b361a678",
+    "warm": "12941fbd35737b6fb7df959d4fbbf9a1425fd5d5c1ba208cb01eb55e943ebef0",
+    "new_query": "589ac27a30d60007e1a7f8ad6fdd695499d23ca0f17b55e858b00d624be0fd6b"
+  }
+}

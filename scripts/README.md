@@ -77,3 +77,23 @@ resume under the declared new consumer, without replacing old records or charges
 it dispatches no work and cannot settle/replenish the exhausted pool. Real C04
 finalization is partial; `listen-processing.ps1` has no completed warm real job.
 Use preserved C03 playback until a newly authorized owner repairs/finalizes the chain.
+
+## D01 application
+
+`start-sound-search.ps1` runs the local app on 8774 in the foreground using the
+existing pinned environment; Ctrl+C stops admission and waits for its own worker.
+`application-worker.py` is the explicit actual-PID worker boundary.
+`exercise-application.py` drives the predeclared adoption/warm/native acceptance
+sequence against the one D01 pool; completed delivery actions must not be rerun to
+reset evidence or budgets. HTTP/browser QA is separately retained under ignored
+`reports/local/d01/` and does not substitute for native verification.
+
+`declare-application-*.py` are exact one-shot source/AST compatibility declarations
+for the retained repair history, preserving old producers and failing on unexpected
+drift. `admit-application-*-finalization.py` admit only an enumerated remaining path
+from the same fixed pool after a recorded metadata block; neither resets a limit.
+`verify-application-preservation.py capture|verify` refuses to replace its baseline
+and checks all earlier artifacts/configuration, including the retained C01 staging.
+`export-application-evidence.py` reads completed records into the typed public D01
+summary, refuses missing/failed QA and strips paths/tokens/audio. It dispatches no
+workers, settles no attempts and cannot reset the finite allowance.

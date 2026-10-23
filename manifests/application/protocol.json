@@ -1,0 +1,23 @@
+{
+  "schema_version": "d01-protocol-1",
+  "owner": "D01",
+  "roots": ["data/runs/application", "data/features/application", "data/audio/application", "reports/local/d01", "manifests/application"],
+  "shared_immutable_preparation": "data/audio/prepared/<A02 content hash>; only new bundles, charged to D01, existing bundles byte-preserved",
+  "pool": "data/runs/application/pool.json",
+  "historical_pool": "data/runs/processing/pool.json; read-only, including worker 107 reservation",
+  "c04_job": "6d5edff624a49b8529ff2add0593f3953f668c7baa140f65568e922979d7176b",
+  "c04_plan": "a5017addd669bc2d3461302e5ba742f42d31d4b5ddcbc45b674c33f1e8a3e4bc",
+  "c04_consumer": "d1399bb23a9a2edeb716025a04855cb91c3d11c5ebe3ab29b2c2ebd79ca34d4c",
+  "snapshot": "d6c54710786acdb584e92d2cba25491eb643c996fa622e3194d1b9381f659f87",
+  "primary_banks": ["69166ae8d5f9857c546119a257579ce4f9b39bc2638e03be0ff2383e06333229", "e25294d24c9243958c7af2456353ba3d8641a26d5a40c50bf8b2cb1608b67cc0"],
+  "execution": {"path": "data/runs/retrieval/executions/a1390a76b77c76aa53c3c97d6adfd5dc5ed38b5f0e9ad9ad2bf890f7a0554d67.json", "record_hash": "a1390a76b77c76aa53c3c97d6adfd5dc5ed38b5f0e9ad9ad2bf890f7a0554d67"},
+  "refinement_execution": {"path": "data/runs/refinement/executions/339fa84d523c457ab10c099be4feeb13b220d29fec995c31eed12fae4a23d98d.json", "record_hash": "339fa84d523c457ab10c099be4feeb13b220d29fec995c31eed12fae4a23d98d"},
+  "playback_bundle": "b7c1bae8c55f488883a599d4486b85d382b6d66eecabc6bbf028871e4ae48aee",
+  "delivery": {"revision": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3", "materialization": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036"},
+  "acceptance_sequence": ["adopt and finalize real chain; zero catalogue encodes", "reopen and unchanged warm legacy search", "browser import/select/audition/add/reorder/save/reload/new-query full-population search", "controlled scalar/native fixture", "cancel/restart/resume/duplicate/conflict/missing/corrupt/unavailable"],
+  "acceptance_reservation": {"ordinary_metadata_bytes": 41943040, "workers": 96, "worker_seconds": 1200, "read_audio_seconds": 50000, "feature_windows": 32, "clips": 56},
+  "publication": "source validation and scores by recording; immutable groups in chunks of eight; final result only after all references/media/chain audit commit",
+  "limits": "120s actual-PID workers, concurrency one, 1GiB numerical memory, 256MiB input/decoded/output, 4GiB managed and free headroom",
+  "defaults": {"audio": "original", "arm": "legacy-mean", "pitch": "off"},
+  "similarity": "candidate matches, no human relevance evidence; no D02/D03/D04 work"
+}

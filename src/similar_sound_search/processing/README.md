@@ -12,7 +12,9 @@ grid, cosine and complete-population C02 fusion. `historical.py` audits C01 bank
 the exact B03/C02/C03/playback chain without calling closed workers or writing there.
 `commands.py` routes CLI/foreground playback and bounded admin workers.
 `validation.py` supplies independent scalar/native answers and generated fixtures.
-DSP and ranking contracts retain their earlier owners; D01 is not implemented.
+DSP and ranking contracts retain their earlier owners. The separate
+[`application/` owner](../application/README.md) implements D01 without modifying
+this historical processing source or its partial request/pool.
 
 `runner.py` owns a single actual Windows worker process with preserved virtualenv
 paths/prefix and a hard deadline, avoiding the extra venv launcher PID.

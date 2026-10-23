@@ -1,0 +1,1622 @@
+{
+  "schema_version": "d01-public-evidence-1",
+  "outcome": "completed D01 acceptance; further full searches exceed the remaining allowance",
+  "startup": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-sound-search.ps1",
+  "url": "http://127.0.0.1:8774/",
+  "scope": "Real 72-recording catalogue plus separately identified generated engineering tests",
+  "current_consumer": {
+    "declaration_hash": "feb882325c29159d34b723df3b8a63deea5101561aa25d68ebca24df5859860a",
+    "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+    "code_hash": "a0f3ca08e36f46043103965ded2aaebcab7fb2a6dac1ca2f025cc01d4cf6c584",
+    "version": "d01-consumer-1"
+  },
+  "renderer_sha256": {
+    "app.js": "4e8276236680a52df1279c97e5bac1dc755bd837fd12a29ec2dfea85b6f0cd22",
+    "index.html": "e45deab478346f97fe6ea205a910dae4f097897bd02ffa92f23a119aee94d8d6",
+    "style.css": "3bf399cca6475b603e56515153dcbe7bd7fe804b9e42fb0d10bcf040b01ff15b"
+  },
+  "fixed_protocol_sha256": "d30b36b1e5b27f18102f60bf8a7869818eed54b7aad5da5339ef92837f07be5a",
+  "source_rows": {
+    "legacy": 44025,
+    "long": 10914,
+    "total": 54939,
+    "copied_arrays": 0
+  },
+  "acceptance": {
+    "adopted": {
+      "job_id": "1c0ef69a1a5156319dec8a976cab164de576d13ba9cc00f5c24b4355b361a678",
+      "state": "complete",
+      "completed": 99,
+      "requested": 99,
+      "result": "c71cd6e7f7a804d3669683e8d6b1dc46c5c52caec12beba6764032c8a8b54136",
+      "revision": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3",
+      "materialization": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036",
+      "query_hash": "f24d82060fd5809aec85f4754faa32da45aae49c34968b7b1a1a9d83fef29e95",
+      "new_query_encodes": 0,
+      "new_catalogue_encodes": 0,
+      "population": 72,
+      "excluded_groups": [],
+      "policy": "legacy-mean",
+      "submission_to_final_snapshot_delta": {
+        "read_audio_seconds": 46894.39102040812,
+        "feature_windows": 0,
+        "clips": 20,
+        "workers": 36
+      },
+      "arms": {
+        "legacy-mean": {
+          "complete": 72,
+          "shortlist": 20,
+          "display": 10
+        },
+        "event-multi": {
+          "complete": 72,
+          "shortlist": 20,
+          "display": 10
+        }
+      },
+      "chain": "e4e9f9a10fec2100c5e0eb36bea1b4d21a093f93065349564d6366edae7e1bf7",
+      "cards": [
+        {
+          "rank": 1,
+          "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+          "score": 0.34548167617069714,
+          "score_direction": "lower distance is better",
+          "group_ref": "bf200a8865a53e8ad3019e858521b85992f2d8cfe178e74cb253344310fc60ad",
+          "native": [
+            8423100,
+            8528940
+          ],
+          "context": [
+            8379000,
+            8573040
+          ],
+          "rate": 44100,
+          "scored_media": "fd7ff21c7340aa79e0a27c9ffcfafd6c4656a791cf372dd8836131e4de2e1865",
+          "context_media": "1b715946c0846b271d4778aa2cb74c47ba7b34a21f791571628ca5b13bddde7e",
+          "retained_passages": 1
+        },
+        {
+          "rank": 2,
+          "group": "family-9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+          "score": 0.36347850036076734,
+          "score_direction": "lower distance is better",
+          "group_ref": "474d3a48d6df605cec88d6cbbc255d53e5197b40c4a08e04b57137fef97a486a",
+          "native": [
+            5292000,
+            5397840
+          ],
+          "context": [
+            5247900,
+            5441940
+          ],
+          "rate": 44100,
+          "scored_media": "056c36ce0b7ab45d7551fa36524708b0d1eb7a8d2540ff40714fdf60e71b5434",
+          "context_media": "c69f66b4a5bac337360bc1e2467b3cc69a22c96ec63ee808a7732703f913235c",
+          "retained_passages": 1
+        },
+        {
+          "rank": 3,
+          "group": "family-3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+          "score": 0.3926141076142837,
+          "score_direction": "lower distance is better",
+          "group_ref": "b3f18f1d95dc01dc2b35214350f9951f017b7fc3407ca58322e9626334f4de23",
+          "native": [
+            4277700,
+            4383540
+          ],
+          "context": [
+            4233600,
+            4427640
+          ],
+          "rate": 44100,
+          "scored_media": "d263d4a85f7cc69359e0bbe3ed5ae3540027d24a6ee880869aa429d9b43bea9d",
+          "context_media": "507176952bf5c3c17088d83196cee4bfc1c699ac54922de048c931c74924c2ea",
+          "retained_passages": 1
+        },
+        {
+          "rank": 4,
+          "group": "family-c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+          "score": 0.41955925440921527,
+          "score_direction": "lower distance is better",
+          "group_ref": "fc1b0dfd1693f01ef12c2dd9fc09b47b947faf03474c9d00e43be9029ef4a12c",
+          "native": [
+            7221375,
+            7327215
+          ],
+          "context": [
+            7177275,
+            7371315
+          ],
+          "rate": 44100,
+          "scored_media": "3a191d01cabe1ad961e28fb12310c4070a2e733f5db328a3e13a45e65d6aaea4",
+          "context_media": "e15c93dc2db975f3b20eb568a726ee6fc70cc9a8e771f344f198244b4a8354d4",
+          "retained_passages": 1
+        },
+        {
+          "rank": 5,
+          "group": "family-fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+          "score": 0.4208935048586083,
+          "score_direction": "lower distance is better",
+          "group_ref": "fa10c9566cae57e4fd5c564ef2f0e6bca86dda0ebf72d544edf1361f09cb4a75",
+          "native": [
+            8577450,
+            8683290
+          ],
+          "context": [
+            8533350,
+            8727390
+          ],
+          "rate": 44100,
+          "scored_media": "6f1228fcbeae82f11e4cda64d88b3d82c756e86a4eaa34812c126b85cab57b13",
+          "context_media": "26d5b175d47f3811ac9802a0cca47442d3a89d3853172d6da4f97d730fd2f634",
+          "retained_passages": 1
+        },
+        {
+          "rank": 6,
+          "group": "family-7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+          "score": 0.4388605996160332,
+          "score_direction": "lower distance is better",
+          "group_ref": "765ffb4036ce683e16de1a27d11080936c410000a16f6301fd98f8f356fe214c",
+          "native": [
+            6085800,
+            6191640
+          ],
+          "context": [
+            6041700,
+            6235740
+          ],
+          "rate": 44100,
+          "scored_media": "368a5301c017bf3f20d27288f3345db14b922b073ce275cce7e261bceedeae31",
+          "context_media": "e6822bc7ce41700a42437f35c68218b2bb5de4c87efe9e52d3e35749a1a0c791",
+          "retained_passages": 1
+        },
+        {
+          "rank": 7,
+          "group": "family-e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+          "score": 0.44209693241749604,
+          "score_direction": "lower distance is better",
+          "group_ref": "d142bdb5f1093dbb0cec19f11a5e8e8358ca1a0d329e02f254241242c06e159a",
+          "native": [
+            341775,
+            447615
+          ],
+          "context": [
+            297675,
+            491715
+          ],
+          "rate": 44100,
+          "scored_media": "08abf066baf037b665e8fa3350d066ad4e56eadaf79003b535aa9fb90c5f8e9e",
+          "context_media": "087d58e5b615b0c7bb660304c806f64e6057eaa58b91989b743dbe716fe53a5b",
+          "retained_passages": 1
+        },
+        {
+          "rank": 8,
+          "group": "family-241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+          "score": 0.4538042587804848,
+          "score_direction": "lower distance is better",
+          "group_ref": "1dfda8fa757f18ee0c064d794c7b4d9b3a4d042385da184527110fe1382cc0a4",
+          "native": [
+            8312850,
+            8418690
+          ],
+          "context": [
+            8268750,
+            8462790
+          ],
+          "rate": 44100,
+          "scored_media": "3e8c5ea91e4322a619ca61963ec120a34faaa3d242adb3dcb4a08ae804cda62f",
+          "context_media": "60c25986ca230bfceb9e0434522902e5c18b177662388552ee6f593c3ec5681e",
+          "retained_passages": 1
+        },
+        {
+          "rank": 9,
+          "group": "family-41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+          "score": 0.45617152228509805,
+          "score_direction": "lower distance is better",
+          "group_ref": "c18e5df65dedcf3913510311fa3d96307e9410ae4b109646c3b86bb9f4215919",
+          "native": [
+            441000,
+            546840
+          ],
+          "context": [
+            396900,
+            590940
+          ],
+          "rate": 44100,
+          "scored_media": "41f23310cf55c8fdf9b0668833ddf3ca1b818c57c44420d941bcd737f2ba1989",
+          "context_media": "596127ec2f06f29fa28d5e7d1bdb4ebcea3a4f28eb4720448f9ce598938a113c",
+          "retained_passages": 1
+        },
+        {
+          "rank": 10,
+          "group": "family-3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772",
+          "score": 0.4567451407032187,
+          "score_direction": "lower distance is better",
+          "group_ref": "fcdb8b723912118bae0e521b403ae4a61554396ab119e3e6ac5d1fd8b17b23e4",
+          "native": [
+            8963325,
+            9069165
+          ],
+          "context": [
+            8919225,
+            9113265
+          ],
+          "rate": 44100,
+          "scored_media": "82f098db014c27a2a454edf076793d6868f711ef56dca33306aa80846d4fb8a4",
+          "context_media": "bdaa8157f180d704480ada366d8f11af73655c47a978ba0aeb475db188192bc7",
+          "retained_passages": 1
+        }
+      ]
+    },
+    "warm": {
+      "job_id": "12941fbd35737b6fb7df959d4fbbf9a1425fd5d5c1ba208cb01eb55e943ebef0",
+      "state": "complete",
+      "completed": 99,
+      "requested": 99,
+      "result": "cec00d3807ab7daa477695c059ad138f2378e8419f3d50ca2a59d8b3f889a26b",
+      "revision": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3",
+      "materialization": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036",
+      "query_hash": "f24d82060fd5809aec85f4754faa32da45aae49c34968b7b1a1a9d83fef29e95",
+      "new_query_encodes": 0,
+      "new_catalogue_encodes": 0,
+      "population": 72,
+      "excluded_groups": [],
+      "policy": "legacy-mean",
+      "submission_to_final_snapshot_delta": {
+        "read_audio_seconds": 21844.741337868574,
+        "feature_windows": 0,
+        "clips": 0,
+        "workers": 25
+      },
+      "arms": {
+        "legacy-mean": {
+          "complete": 72,
+          "shortlist": 20,
+          "display": 10
+        },
+        "event-multi": {
+          "complete": 72,
+          "shortlist": 20,
+          "display": 10
+        }
+      },
+      "chain": "1e3062d47f3cbb58c257bbae2447e70b88cb0631bea7d36a91331126fdf787a6",
+      "cards": [
+        {
+          "rank": 1,
+          "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+          "score": 0.34548167617069714,
+          "score_direction": "lower distance is better",
+          "group_ref": "bf200a8865a53e8ad3019e858521b85992f2d8cfe178e74cb253344310fc60ad",
+          "native": [
+            8423100,
+            8528940
+          ],
+          "context": [
+            8379000,
+            8573040
+          ],
+          "rate": 44100,
+          "scored_media": "fd7ff21c7340aa79e0a27c9ffcfafd6c4656a791cf372dd8836131e4de2e1865",
+          "context_media": "1b715946c0846b271d4778aa2cb74c47ba7b34a21f791571628ca5b13bddde7e",
+          "retained_passages": 1
+        },
+        {
+          "rank": 2,
+          "group": "family-9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+          "score": 0.36347850036076734,
+          "score_direction": "lower distance is better",
+          "group_ref": "474d3a48d6df605cec88d6cbbc255d53e5197b40c4a08e04b57137fef97a486a",
+          "native": [
+            5292000,
+            5397840
+          ],
+          "context": [
+            5247900,
+            5441940
+          ],
+          "rate": 44100,
+          "scored_media": "056c36ce0b7ab45d7551fa36524708b0d1eb7a8d2540ff40714fdf60e71b5434",
+          "context_media": "c69f66b4a5bac337360bc1e2467b3cc69a22c96ec63ee808a7732703f913235c",
+          "retained_passages": 1
+        },
+        {
+          "rank": 3,
+          "group": "family-3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+          "score": 0.3926141076142837,
+          "score_direction": "lower distance is better",
+          "group_ref": "b3f18f1d95dc01dc2b35214350f9951f017b7fc3407ca58322e9626334f4de23",
+          "native": [
+            4277700,
+            4383540
+          ],
+          "context": [
+            4233600,
+            4427640
+          ],
+          "rate": 44100,
+          "scored_media": "d263d4a85f7cc69359e0bbe3ed5ae3540027d24a6ee880869aa429d9b43bea9d",
+          "context_media": "507176952bf5c3c17088d83196cee4bfc1c699ac54922de048c931c74924c2ea",
+          "retained_passages": 1
+        },
+        {
+          "rank": 4,
+          "group": "family-c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+          "score": 0.41955925440921527,
+          "score_direction": "lower distance is better",
+          "group_ref": "fc1b0dfd1693f01ef12c2dd9fc09b47b947faf03474c9d00e43be9029ef4a12c",
+          "native": [
+            7221375,
+            7327215
+          ],
+          "context": [
+            7177275,
+            7371315
+          ],
+          "rate": 44100,
+          "scored_media": "3a191d01cabe1ad961e28fb12310c4070a2e733f5db328a3e13a45e65d6aaea4",
+          "context_media": "e15c93dc2db975f3b20eb568a726ee6fc70cc9a8e771f344f198244b4a8354d4",
+          "retained_passages": 1
+        },
+        {
+          "rank": 5,
+          "group": "family-fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+          "score": 0.4208935048586083,
+          "score_direction": "lower distance is better",
+          "group_ref": "fa10c9566cae57e4fd5c564ef2f0e6bca86dda0ebf72d544edf1361f09cb4a75",
+          "native": [
+            8577450,
+            8683290
+          ],
+          "context": [
+            8533350,
+            8727390
+          ],
+          "rate": 44100,
+          "scored_media": "6f1228fcbeae82f11e4cda64d88b3d82c756e86a4eaa34812c126b85cab57b13",
+          "context_media": "26d5b175d47f3811ac9802a0cca47442d3a89d3853172d6da4f97d730fd2f634",
+          "retained_passages": 1
+        },
+        {
+          "rank": 6,
+          "group": "family-7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+          "score": 0.4388605996160332,
+          "score_direction": "lower distance is better",
+          "group_ref": "765ffb4036ce683e16de1a27d11080936c410000a16f6301fd98f8f356fe214c",
+          "native": [
+            6085800,
+            6191640
+          ],
+          "context": [
+            6041700,
+            6235740
+          ],
+          "rate": 44100,
+          "scored_media": "368a5301c017bf3f20d27288f3345db14b922b073ce275cce7e261bceedeae31",
+          "context_media": "e6822bc7ce41700a42437f35c68218b2bb5de4c87efe9e52d3e35749a1a0c791",
+          "retained_passages": 1
+        },
+        {
+          "rank": 7,
+          "group": "family-e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+          "score": 0.44209693241749604,
+          "score_direction": "lower distance is better",
+          "group_ref": "d142bdb5f1093dbb0cec19f11a5e8e8358ca1a0d329e02f254241242c06e159a",
+          "native": [
+            341775,
+            447615
+          ],
+          "context": [
+            297675,
+            491715
+          ],
+          "rate": 44100,
+          "scored_media": "08abf066baf037b665e8fa3350d066ad4e56eadaf79003b535aa9fb90c5f8e9e",
+          "context_media": "087d58e5b615b0c7bb660304c806f64e6057eaa58b91989b743dbe716fe53a5b",
+          "retained_passages": 1
+        },
+        {
+          "rank": 8,
+          "group": "family-241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+          "score": 0.4538042587804848,
+          "score_direction": "lower distance is better",
+          "group_ref": "1dfda8fa757f18ee0c064d794c7b4d9b3a4d042385da184527110fe1382cc0a4",
+          "native": [
+            8312850,
+            8418690
+          ],
+          "context": [
+            8268750,
+            8462790
+          ],
+          "rate": 44100,
+          "scored_media": "3e8c5ea91e4322a619ca61963ec120a34faaa3d242adb3dcb4a08ae804cda62f",
+          "context_media": "60c25986ca230bfceb9e0434522902e5c18b177662388552ee6f593c3ec5681e",
+          "retained_passages": 1
+        },
+        {
+          "rank": 9,
+          "group": "family-41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+          "score": 0.45617152228509805,
+          "score_direction": "lower distance is better",
+          "group_ref": "c18e5df65dedcf3913510311fa3d96307e9410ae4b109646c3b86bb9f4215919",
+          "native": [
+            441000,
+            546840
+          ],
+          "context": [
+            396900,
+            590940
+          ],
+          "rate": 44100,
+          "scored_media": "41f23310cf55c8fdf9b0668833ddf3ca1b818c57c44420d941bcd737f2ba1989",
+          "context_media": "596127ec2f06f29fa28d5e7d1bdb4ebcea3a4f28eb4720448f9ce598938a113c",
+          "retained_passages": 1
+        },
+        {
+          "rank": 10,
+          "group": "family-3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772",
+          "score": 0.4567451407032187,
+          "score_direction": "lower distance is better",
+          "group_ref": "fcdb8b723912118bae0e521b403ae4a61554396ab119e3e6ac5d1fd8b17b23e4",
+          "native": [
+            8963325,
+            9069165
+          ],
+          "context": [
+            8919225,
+            9113265
+          ],
+          "rate": 44100,
+          "scored_media": "82f098db014c27a2a454edf076793d6868f711ef56dca33306aa80846d4fb8a4",
+          "context_media": "bdaa8157f180d704480ada366d8f11af73655c47a978ba0aeb475db188192bc7",
+          "retained_passages": 1
+        }
+      ]
+    },
+    "new_query": {
+      "job_id": "589ac27a30d60007e1a7f8ad6fdd695499d23ca0f17b55e858b00d624be0fd6b",
+      "state": "complete",
+      "completed": 98,
+      "requested": 98,
+      "result": "1c40c05c46a11d671bf38e57dca5acde9d68959ecf48528501580a71ec02ea19",
+      "revision": "3b3c46459b21c31d4757395275d0ecf411688f835981573920aea35ace8110f3",
+      "materialization": "20c4b2fa9e2fa5cc59410a9b3fd258187080c75e4109e63dc97a35f64d2b5201",
+      "query_hash": "ce7d42ad6fd74a684662d33a60cd10a8d0f0a3f40a23fa9137333f4719c37021",
+      "new_query_encodes": 2,
+      "new_catalogue_encodes": 0,
+      "population": 72,
+      "excluded_groups": [],
+      "policy": "legacy-mean",
+      "submission_to_final_snapshot_delta": {
+        "read_audio_seconds": 13281.395986394375,
+        "feature_windows": 2,
+        "clips": 18,
+        "workers": 27
+      },
+      "arms": {
+        "legacy-mean": {
+          "complete": 72,
+          "shortlist": 20,
+          "display": 10
+        },
+        "event-multi": {
+          "complete": 72,
+          "shortlist": 20,
+          "display": 10
+        }
+      },
+      "chain": null,
+      "cards": [
+        {
+          "rank": 1,
+          "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+          "score": 0.332447183417504,
+          "score_direction": "lower distance is better",
+          "group_ref": "3daab9389eff735407bf4c4d47421f3401af04c6529369f6276097eb122b5f7e",
+          "native": [
+            8423100,
+            8528940
+          ],
+          "context": [
+            8379000,
+            8573040
+          ],
+          "rate": 44100,
+          "scored_media": "fd7ff21c7340aa79e0a27c9ffcfafd6c4656a791cf372dd8836131e4de2e1865",
+          "context_media": "1b715946c0846b271d4778aa2cb74c47ba7b34a21f791571628ca5b13bddde7e",
+          "retained_passages": 1
+        },
+        {
+          "rank": 2,
+          "group": "family-c173af3aeeeb03c98dad92598314424661e79c3971fe8769bc592bc7f8d5ab80",
+          "score": 0.3581439907430079,
+          "score_direction": "lower distance is better",
+          "group_ref": "f474e49897a1110402e1676e66b2f32827fa8af701dd7cf18c04a5fdefe23269",
+          "native": [
+            4928175,
+            5034015
+          ],
+          "context": [
+            4884075,
+            5078115
+          ],
+          "rate": 44100,
+          "scored_media": "acdd597aaac4302b717ced396095d5ee0fb85575c1ffda4eb978fa30b0115642",
+          "context_media": "66e12d2df635830cc33984ecb70480a10bf89c959539c63e80af78ceddaca0be",
+          "retained_passages": 1
+        },
+        {
+          "rank": 3,
+          "group": "family-9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+          "score": 0.35869802039921517,
+          "score_direction": "lower distance is better",
+          "group_ref": "de34659f6dc21674f28f88607664984cb937a373e57b7d13ffbb1a8552c039af",
+          "native": [
+            7122150,
+            7227990
+          ],
+          "context": [
+            7078050,
+            7272090
+          ],
+          "rate": 44100,
+          "scored_media": "da4572dabebcfd518f9a75061c43907097592a1daab3562f797970c5f8cfd9c4",
+          "context_media": "886ddaddfbf9588bcd63e7a7f80b0690811d9600b265300ab6023e1ca2011660",
+          "retained_passages": 1
+        },
+        {
+          "rank": 4,
+          "group": "family-b9db0ac63e20c9ba46f7667424d962366024edc06ad6abd58f0b96bac0c4359d",
+          "score": 0.3707135068191988,
+          "score_direction": "lower distance is better",
+          "group_ref": "bfea15e2623ccc26ed59a26af39024712cef0c12a59508b331a0f5b1b6822ec3",
+          "native": [
+            66150,
+            171990
+          ],
+          "context": [
+            22050,
+            216090
+          ],
+          "rate": 44100,
+          "scored_media": "5f085f16d6c9cc1d30e8f5f9b06768c5e0fa1bff80c3fcacc2a8f0cf1bb4f12b",
+          "context_media": "e33e67a6c51c5b3ad0ad1ad0098a0d173c04a1443a7e1f45bdec03c50980dbf7",
+          "retained_passages": 1
+        },
+        {
+          "rank": 5,
+          "group": "family-c8126c0df2ff0aedd94619f5490f312a1bf289d87e954ecfa54c284123b55493",
+          "score": 0.3740705151567724,
+          "score_direction": "lower distance is better",
+          "group_ref": "ccf1bcdd5952d1ce0cd656689a3890e7de778b99c8aae741f9efc60f90239ab0",
+          "native": [
+            11025,
+            116865
+          ],
+          "context": [
+            0,
+            160965
+          ],
+          "rate": 44100,
+          "scored_media": "f05dd81f9f26992b304cee92384799e2f016f9cdc68adc53ed1ceebe16ea6b3d",
+          "context_media": "79fb2d0ac59404bb522f5d988ee7052df0d3de9dae7a0ded69ed173bfb2b8e60",
+          "retained_passages": 1
+        },
+        {
+          "rank": 6,
+          "group": "family-c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+          "score": 0.38685780723017443,
+          "score_direction": "lower distance is better",
+          "group_ref": "9157f0b5621b57c1d2960261033ca7b56a3045223b1c6591ae1b27f6c8606414",
+          "native": [
+            0,
+            105840
+          ],
+          "context": [
+            0,
+            149940
+          ],
+          "rate": 44100,
+          "scored_media": "65c93c84cb70971faba72838563c608f1eed04ad3633b6e2b262b57722898f7c",
+          "context_media": "878a84ac9b4c0067ca04ca545d9e9578c50a472a9f255701ffd88a2b75e850e4",
+          "retained_passages": 1
+        },
+        {
+          "rank": 7,
+          "group": "family-8e68a5244bc162768dba7954d1071dc90d99201e5ef4101b293a97a13be9cbb1",
+          "score": 0.3888269381771827,
+          "score_direction": "lower distance is better",
+          "group_ref": "792e14a32c72dff9249861c33e45aa92f78f54dae321809307f6b4d6384b002b",
+          "native": [
+            2370375,
+            2476215
+          ],
+          "context": [
+            2326275,
+            2520315
+          ],
+          "rate": 44100,
+          "scored_media": "1ec5885132ec7dcad563832bf7618c76efbb614b72b90b170029befdef027290",
+          "context_media": "d0c3ac16a513fc683bcbc0d29f010314390afb99caf6d3cfed1e8f496a3a6811",
+          "retained_passages": 1
+        },
+        {
+          "rank": 8,
+          "group": "family-d86405e259164cde9b3b70a62359cb398a3e1105e70f3f38910081f9fd43840e",
+          "score": 0.38886922581399375,
+          "score_direction": "lower distance is better",
+          "group_ref": "fe31fada6fd430189fb4587db9dd5383d0b58a9cfa1a99a5675ce8a94650d16a",
+          "native": [
+            2921625,
+            3027465
+          ],
+          "context": [
+            2877525,
+            3071565
+          ],
+          "rate": 44100,
+          "scored_media": "1cfc0e7b64ddcbf13c27fd18158345924bcf48848009c0fae7eb1bb48492e8ca",
+          "context_media": "78b27dd2d8fe5f62fa97a6b9b41ca6a87a3528e70974c34cdb1c59649630d4eb",
+          "retained_passages": 1
+        },
+        {
+          "rank": 9,
+          "group": "family-2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+          "score": 0.4022326430783646,
+          "score_direction": "lower distance is better",
+          "group_ref": "03503c4e1102be7f9c85f5a334d58b6ed63e5b8fdc429dcf33841f0d501c9cc5",
+          "native": [
+            0,
+            105840
+          ],
+          "context": [
+            0,
+            149940
+          ],
+          "rate": 44100,
+          "scored_media": "8f24ed9512ada986c1f2048afb2ed05176ad275dcbb2f3959479c357ad859538",
+          "context_media": "98176218128a39f675dc0c8fb3c69651f8b81b77758cddaed2f7a02f3ec2aea0",
+          "retained_passages": 1
+        },
+        {
+          "rank": 10,
+          "group": "family-41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+          "score": 0.42210470807958056,
+          "score_direction": "lower distance is better",
+          "group_ref": "cba9b6c3c3d7ff904d5cb6c2321cee9a6d7677342849d3ad8492ff96e197085e",
+          "native": [
+            418950,
+            524790
+          ],
+          "context": [
+            374850,
+            568890
+          ],
+          "rate": 44100,
+          "scored_media": "ee4444f709e0e2a72f1a00315fc113fcfe8babd0db6f4075d54e479af27e9c1a",
+          "context_media": "8b893da1be65a5dc24bb36c98c7ed680091d0d7b7051f2562ab73631b9014fa3",
+          "retained_passages": 1
+        }
+      ]
+    }
+  },
+  "original_query": {
+    "rate": 44100,
+    "event": [
+      9613800,
+      10584000
+    ],
+    "context": [
+      9569700,
+      10628100
+    ]
+  },
+  "generated_query": {
+    "rate": 24000,
+    "channels": 1,
+    "events": [
+      [
+        4800,
+        55200
+      ],
+      [
+        74400,
+        132000
+      ]
+    ]
+  },
+  "last_complete": "589ac27a30d60007e1a7f8ad6fdd695499d23ca0f17b55e858b00d624be0fd6b",
+  "metadata_preflight": {
+    "proposed_records": 217,
+    "counted_publication_bytes": 2494054,
+    "largest_record": 512626,
+    "comparisons": {
+      "legacy-mean": {
+        "groups": 72,
+        "order": true,
+        "max_score_delta": 0.0,
+        "native_representatives": true
+      },
+      "event-multi": {
+        "groups": 72,
+        "order": true,
+        "max_score_delta": 0.0,
+        "native_representatives": true
+      }
+    }
+  },
+  "corrected_geometry": {
+    "1": {
+      "schema_version": "d01-geometry-1",
+      "groups": 72,
+      "arms": 2,
+      "max_examples": 1,
+      "largest_group_counted_bytes": 13960,
+      "complete_path_counted_bytes": 52517120,
+      "ordinary_ceiling": 100663296,
+      "protected_bytes": 33554432,
+      "fits": true,
+      "inference": false
+    },
+    "2": {
+      "schema_version": "d01-geometry-1",
+      "groups": 72,
+      "arms": 2,
+      "max_examples": 2,
+      "largest_group_counted_bytes": 24048,
+      "complete_path_counted_bytes": 55422464,
+      "ordinary_ceiling": 100663296,
+      "protected_bytes": 33554432,
+      "fits": true,
+      "inference": false
+    },
+    "8": {
+      "schema_version": "d01-geometry-1",
+      "groups": 72,
+      "arms": 2,
+      "max_examples": 8,
+      "largest_group_counted_bytes": 125586,
+      "complete_path_counted_bytes": 84665408,
+      "ordinary_ceiling": 100663296,
+      "protected_bytes": 33554432,
+      "fits": true,
+      "inference": false
+    }
+  },
+  "same_pool_recovery_allocations": {
+    "adopted": {
+      "initial_bytes": 20971520,
+      "final_bytes": 29360128,
+      "admission": "37fcbf8ffe8045e943fe70ef1390341088f393149353c21581333613300909c7"
+    },
+    "new_query": {
+      "initial_bytes": 22020096,
+      "final_bytes": 30408704,
+      "admission": "2cf023d88759257d8b6c19873961150e7f0a5f084fbfcffafa318dfd91f39941"
+    }
+  },
+  "resources": {
+    "counts": {
+      "job_seconds": 2452.229999999923,
+      "workers": 106,
+      "read_audio_seconds": 85949.15968253935,
+      "feature_windows": 2,
+      "processed_window_seconds": 9.0,
+      "feature_bytes": 134144,
+      "query_jobs": 22,
+      "clips": 39,
+      "clip_bytes": 22566324,
+      "metadata_bytes": 73613272,
+      "preparation_bytes": 1216832,
+      "import_bytes": 576058,
+      "managed_output_bytes": 91602222
+    },
+    "ceilings": {
+      "job_seconds": 3600,
+      "workers": 256,
+      "read_audio_seconds": 90000,
+      "feature_windows": 1024,
+      "processed_window_seconds": 6000,
+      "feature_bytes": 33554432,
+      "query_jobs": 64,
+      "clips": 64,
+      "clip_bytes": 134217728,
+      "metadata_bytes": 134217728,
+      "preparation_bytes": 67108864,
+      "import_bytes": 134217728,
+      "managed_output_bytes": 536870912
+    },
+    "ordinary_used": 64373390,
+    "ordinary_reserved": 0,
+    "protected_used": 9239882,
+    "protected_reserved": 0,
+    "acceptance_held": 6899712,
+    "uncertain_worker_seconds": 0
+  },
+  "memory": {
+    "peak_working_bytes": 393711616,
+    "server_peak_working_bytes": 124706816,
+    "overlap_peak_bound": 497651712
+  },
+  "browser_memory": {
+    "scope": "one snapshot of owned Chrome during new-query QA; peaks not simultaneous",
+    "working_bytes": 477790208,
+    "sum_process_peaks": 488378368
+  },
+  "non_inference_qa": {
+    "reserved_bytes": 67108864,
+    "retained_bytes": 18660195
+  },
+  "browser": {
+    "warm-reopen": {
+      "passed": true,
+      "players": 52,
+      "busy_controls": null,
+      "actions": [
+        "default legacy: 20 players loaded, advanced, paused and sought",
+        "Refresh reopened the same complete job",
+        "C03 compatible historical: 32 players loaded, advanced, paused and sought",
+        "Browser phase passed"
+      ],
+      "page_errors": 0,
+      "console_errors": 0,
+      "external_requests": 0,
+      "evidence_sha256": "ac4efa68722e191d5894e8e84b79ee5e92b46dc0d46d0ba2fa015b797843b430"
+    },
+    "import-cancel": {
+      "passed": true,
+      "players": 0,
+      "busy_controls": null,
+      "actions": [
+        "Native file picker imported and decoded generated reference",
+        "Keyboard selection changed exactly one native frame",
+        "Dragged waveform interval handle",
+        "Auditioned selected native mixture",
+        "Saved and reloaded exact two-example revision",
+        "Unavailable new-query refinement rejected explicitly",
+        "Cancelled bounded request; browser reconnect will retain same job",
+        "Browser phase passed"
+      ],
+      "page_errors": 0,
+      "console_errors": 0,
+      "external_requests": 0,
+      "evidence_sha256": "ec157abeeb7223b0e947a41d4e364afd2e238eb14b09c95159da716e7f66ceda"
+    },
+    "resume-observe": {
+      "passed": true,
+      "players": 20,
+      "busy_controls": null,
+      "actions": [
+        "new-query legacy: 20 players loaded, advanced, paused and sought",
+        "Restart/resume and refresh retained exact request/result",
+        "Browser phase passed"
+      ],
+      "page_errors": 0,
+      "console_errors": 0,
+      "external_requests": 0,
+      "evidence_sha256": "23f707a59845b20b4bc19d92841b03767951c5d45796d1bf829d43cfc0987422"
+    },
+    "fresh-navigation": {
+      "passed": true,
+      "players": 1,
+      "busy_controls": true,
+      "actions": [
+        "Fresh browser opened both real completed results with exact resolved queries and no pool changes",
+        "Active operation preserved query/policy and locked edit/overlap controls",
+        "generated native reference preview: 1 players loaded, advanced, paused and sought",
+        "Completed result selection finished before refresh",
+        "Browser phase passed"
+      ],
+      "page_errors": 0,
+      "console_errors": 0,
+      "external_requests": 0,
+      "evidence_sha256": "b571fbbf1404639b623beb9f01192591b9ca7e5ad0d72096c8285c4b261f72f0"
+    },
+    "fresh-navigation-before-disconnect-fix": {
+      "passed": true,
+      "players": 1,
+      "busy_controls": null,
+      "actions": [
+        "Fresh browser opened both real completed results with exact resolved queries and no pool changes",
+        "generated native reference preview: 1 players loaded, advanced, paused and sought",
+        "Completed result selection finished before refresh",
+        "Browser phase passed"
+      ],
+      "page_errors": 0,
+      "console_errors": 0,
+      "external_requests": 0,
+      "evidence_sha256": "1ca10458d8995d388edd7fbf875932d4c2e03b8b845fa289d5d584e0647a5c92"
+    }
+  },
+  "native": {
+    "warm": {
+      "passed": true,
+      "checks": [
+        {
+          "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+          "kind": "scored",
+          "media": "fd7ff21c7340aa79e0a27c9ffcfafd6c4656a791cf372dd8836131e4de2e1865",
+          "bounds": [
+            8423100,
+            8528940
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+          "kind": "context",
+          "media": "1b715946c0846b271d4778aa2cb74c47ba7b34a21f791571628ca5b13bddde7e",
+          "bounds": [
+            8379000,
+            8573040
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+          "kind": "scored",
+          "media": "056c36ce0b7ab45d7551fa36524708b0d1eb7a8d2540ff40714fdf60e71b5434",
+          "bounds": [
+            5292000,
+            5397840
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+          "kind": "context",
+          "media": "c69f66b4a5bac337360bc1e2467b3cc69a22c96ec63ee808a7732703f913235c",
+          "bounds": [
+            5247900,
+            5441940
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+          "kind": "scored",
+          "media": "d263d4a85f7cc69359e0bbe3ed5ae3540027d24a6ee880869aa429d9b43bea9d",
+          "bounds": [
+            4277700,
+            4383540
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+          "kind": "context",
+          "media": "507176952bf5c3c17088d83196cee4bfc1c699ac54922de048c931c74924c2ea",
+          "bounds": [
+            4233600,
+            4427640
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+          "kind": "scored",
+          "media": "3a191d01cabe1ad961e28fb12310c4070a2e733f5db328a3e13a45e65d6aaea4",
+          "bounds": [
+            7221375,
+            7327215
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+          "kind": "context",
+          "media": "e15c93dc2db975f3b20eb568a726ee6fc70cc9a8e771f344f198244b4a8354d4",
+          "bounds": [
+            7177275,
+            7371315
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+          "kind": "scored",
+          "media": "6f1228fcbeae82f11e4cda64d88b3d82c756e86a4eaa34812c126b85cab57b13",
+          "bounds": [
+            8577450,
+            8683290
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+          "kind": "context",
+          "media": "26d5b175d47f3811ac9802a0cca47442d3a89d3853172d6da4f97d730fd2f634",
+          "bounds": [
+            8533350,
+            8727390
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+          "kind": "scored",
+          "media": "368a5301c017bf3f20d27288f3345db14b922b073ce275cce7e261bceedeae31",
+          "bounds": [
+            6085800,
+            6191640
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+          "kind": "context",
+          "media": "e6822bc7ce41700a42437f35c68218b2bb5de4c87efe9e52d3e35749a1a0c791",
+          "bounds": [
+            6041700,
+            6235740
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+          "kind": "scored",
+          "media": "08abf066baf037b665e8fa3350d066ad4e56eadaf79003b535aa9fb90c5f8e9e",
+          "bounds": [
+            341775,
+            447615
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+          "kind": "context",
+          "media": "087d58e5b615b0c7bb660304c806f64e6057eaa58b91989b743dbe716fe53a5b",
+          "bounds": [
+            297675,
+            491715
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+          "kind": "scored",
+          "media": "3e8c5ea91e4322a619ca61963ec120a34faaa3d242adb3dcb4a08ae804cda62f",
+          "bounds": [
+            8312850,
+            8418690
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+          "kind": "context",
+          "media": "60c25986ca230bfceb9e0434522902e5c18b177662388552ee6f593c3ec5681e",
+          "bounds": [
+            8268750,
+            8462790
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+          "kind": "scored",
+          "media": "41f23310cf55c8fdf9b0668833ddf3ca1b818c57c44420d941bcd737f2ba1989",
+          "bounds": [
+            441000,
+            546840
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+          "kind": "context",
+          "media": "596127ec2f06f29fa28d5e7d1bdb4ebcea3a4f28eb4720448f9ce598938a113c",
+          "bounds": [
+            396900,
+            590940
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772",
+          "kind": "scored",
+          "media": "82f098db014c27a2a454edf076793d6868f711ef56dca33306aa80846d4fb8a4",
+          "bounds": [
+            8963325,
+            9069165
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772",
+          "kind": "context",
+          "media": "bdaa8157f180d704480ada366d8f11af73655c47a978ba0aeb475db188192bc7",
+          "bounds": [
+            8919225,
+            9113265
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        }
+      ]
+    },
+    "new_query": {
+      "passed": true,
+      "checks": [
+        {
+          "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+          "kind": "scored",
+          "media": "fd7ff21c7340aa79e0a27c9ffcfafd6c4656a791cf372dd8836131e4de2e1865",
+          "bounds": [
+            8423100,
+            8528940
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+          "kind": "context",
+          "media": "1b715946c0846b271d4778aa2cb74c47ba7b34a21f791571628ca5b13bddde7e",
+          "bounds": [
+            8379000,
+            8573040
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-c173af3aeeeb03c98dad92598314424661e79c3971fe8769bc592bc7f8d5ab80",
+          "kind": "scored",
+          "media": "acdd597aaac4302b717ced396095d5ee0fb85575c1ffda4eb978fa30b0115642",
+          "bounds": [
+            4928175,
+            5034015
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-c173af3aeeeb03c98dad92598314424661e79c3971fe8769bc592bc7f8d5ab80",
+          "kind": "context",
+          "media": "66e12d2df635830cc33984ecb70480a10bf89c959539c63e80af78ceddaca0be",
+          "bounds": [
+            4884075,
+            5078115
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+          "kind": "scored",
+          "media": "da4572dabebcfd518f9a75061c43907097592a1daab3562f797970c5f8cfd9c4",
+          "bounds": [
+            7122150,
+            7227990
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+          "kind": "context",
+          "media": "886ddaddfbf9588bcd63e7a7f80b0690811d9600b265300ab6023e1ca2011660",
+          "bounds": [
+            7078050,
+            7272090
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-b9db0ac63e20c9ba46f7667424d962366024edc06ad6abd58f0b96bac0c4359d",
+          "kind": "scored",
+          "media": "5f085f16d6c9cc1d30e8f5f9b06768c5e0fa1bff80c3fcacc2a8f0cf1bb4f12b",
+          "bounds": [
+            66150,
+            171990
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-b9db0ac63e20c9ba46f7667424d962366024edc06ad6abd58f0b96bac0c4359d",
+          "kind": "context",
+          "media": "e33e67a6c51c5b3ad0ad1ad0098a0d173c04a1443a7e1f45bdec03c50980dbf7",
+          "bounds": [
+            22050,
+            216090
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-c8126c0df2ff0aedd94619f5490f312a1bf289d87e954ecfa54c284123b55493",
+          "kind": "scored",
+          "media": "f05dd81f9f26992b304cee92384799e2f016f9cdc68adc53ed1ceebe16ea6b3d",
+          "bounds": [
+            11025,
+            116865
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-c8126c0df2ff0aedd94619f5490f312a1bf289d87e954ecfa54c284123b55493",
+          "kind": "context",
+          "media": "79fb2d0ac59404bb522f5d988ee7052df0d3de9dae7a0ded69ed173bfb2b8e60",
+          "bounds": [
+            0,
+            160965
+          ],
+          "frames": 160965,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+          "kind": "scored",
+          "media": "65c93c84cb70971faba72838563c608f1eed04ad3633b6e2b262b57722898f7c",
+          "bounds": [
+            0,
+            105840
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+          "kind": "context",
+          "media": "878a84ac9b4c0067ca04ca545d9e9578c50a472a9f255701ffd88a2b75e850e4",
+          "bounds": [
+            0,
+            149940
+          ],
+          "frames": 149940,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-8e68a5244bc162768dba7954d1071dc90d99201e5ef4101b293a97a13be9cbb1",
+          "kind": "scored",
+          "media": "1ec5885132ec7dcad563832bf7618c76efbb614b72b90b170029befdef027290",
+          "bounds": [
+            2370375,
+            2476215
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-8e68a5244bc162768dba7954d1071dc90d99201e5ef4101b293a97a13be9cbb1",
+          "kind": "context",
+          "media": "d0c3ac16a513fc683bcbc0d29f010314390afb99caf6d3cfed1e8f496a3a6811",
+          "bounds": [
+            2326275,
+            2520315
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-d86405e259164cde9b3b70a62359cb398a3e1105e70f3f38910081f9fd43840e",
+          "kind": "scored",
+          "media": "1cfc0e7b64ddcbf13c27fd18158345924bcf48848009c0fae7eb1bb48492e8ca",
+          "bounds": [
+            2921625,
+            3027465
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 0.9483373420422653
+        },
+        {
+          "group": "family-d86405e259164cde9b3b70a62359cb398a3e1105e70f3f38910081f9fd43840e",
+          "kind": "context",
+          "media": "78b27dd2d8fe5f62fa97a6b9b41ca6a87a3528e70974c34cdb1c59649630d4eb",
+          "bounds": [
+            2877525,
+            3071565
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 0.9423559190061775
+        },
+        {
+          "group": "family-2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+          "kind": "scored",
+          "media": "8f24ed9512ada986c1f2048afb2ed05176ad275dcbb2f3959479c357ad859538",
+          "bounds": [
+            0,
+            105840
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-2ce0e9b42d5b7c71e20f5e6c256a39b8a62f8e7386968c59e7e655cded38f16b",
+          "kind": "context",
+          "media": "98176218128a39f675dc0c8fb3c69651f8b81b77758cddaed2f7a02f3ec2aea0",
+          "bounds": [
+            0,
+            149940
+          ],
+          "frames": 149940,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+          "kind": "scored",
+          "media": "ee4444f709e0e2a72f1a00315fc113fcfe8babd0db6f4075d54e479af27e9c1a",
+          "bounds": [
+            418950,
+            524790
+          ],
+          "frames": 105840,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        },
+        {
+          "group": "family-41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+          "kind": "context",
+          "media": "8b893da1be65a5dc24bb36c98c7ed680091d0d7b7051f2562ab73631b9014fa3",
+          "bounds": [
+            374850,
+            568890
+          ],
+          "frames": 194040,
+          "rate": 44100,
+          "channels": 2,
+          "samples_exact": true,
+          "gain": 1.0
+        }
+      ]
+    }
+  },
+  "http": {
+    "passed": true,
+    "players": 40,
+    "strict_origin_host": true,
+    "traversal_refused": true,
+    "symlink": {
+      "exercised": false,
+      "limitation": "OSError",
+      "outside_path_refused": true
+    },
+    "cross_result_media_refused": true,
+    "read_only_polling": true,
+    "idempotent_actual_submission": true,
+    "conflicting_retry_refused": true,
+    "non_inference_qa": true
+  },
+  "historical_c03_listener": {
+    "passed": true,
+    "bundle": "b7c1bae8c55f488883a599d4486b85d382b6d66eecabc6bbf028871e4ae48aee",
+    "port": 8772,
+    "html_sha256": "b97c19443e2dbd774943bbd81b49f96f03eb06b378ee3ae371ca1d7951402e8e"
+  },
+  "checks": {
+    "full_regression": {
+      "passed": true,
+      "tests": 382,
+      "seconds": 235.98
+    },
+    "static_and_setup": {
+      "ruff_lint": {
+        "passed": true,
+        "output": "All checks passed!"
+      },
+      "ruff_format": {
+        "passed": true,
+        "output": "193 files already formatted"
+      },
+      "javascript_syntax": {
+        "passed": true,
+        "output": ""
+      },
+      "pip_consistency": {
+        "passed": true,
+        "output": "No broken requirements found."
+      },
+      "offline_editable_install": {
+        "passed": true,
+        "log": "editable-setup.txt",
+        "dependencies_downloaded": 0
+      }
+    },
+    "dependencies": {
+      "passed": true,
+      "core": {
+        "cffi": "1.17.1",
+        "numpy": "2.2.6",
+        "pycparser": "2.22",
+        "ruff": "0.11.13",
+        "scipy": "1.15.3",
+        "setuptools": "80.9.0",
+        "soundfile": "0.13.1",
+        "truststore": "0.10.4",
+        "wheel": "0.45.1"
+      },
+      "models": {
+        "torch": "2.6.0+cpu",
+        "sympy": "1.13.1",
+        "typing_extensions": "4.16.0",
+        "filelock": "3.32.3",
+        "fsspec": "2026.7.0",
+        "Jinja2": "3.1.6",
+        "networkx": "3.6.1",
+        "MarkupSafe": "3.0.3",
+        "mpmath": "1.3.0"
+      }
+    },
+    "isolated_starter_smoke": "ok",
+    "known_answer": {
+      "status": "ok",
+      "passed": true,
+      "scalar_pairs": 4,
+      "native_intervals": 11
+    }
+  },
+  "preservation": {
+    "state": "verified",
+    "historical_files": 15490,
+    "changed_or_missing": [],
+    "unexpected_additions": [],
+    "new_shared_immutable_preparation": [
+      "data/audio/prepared/0f6a6a4d1bf8e0d6d62e30a9d86e96645d78796c8b42467a1d8b30d318968069/audio.wav",
+      "data/audio/prepared/0f6a6a4d1bf8e0d6d62e30a9d86e96645d78796c8b42467a1d8b30d318968069/record.json",
+      "data/audio/prepared/af6ec40769cbf689fcdea72acf88ecf0bca48b1fc943b37e805c3a30ea01ef84/audio.wav",
+      "data/audio/prepared/af6ec40769cbf689fcdea72acf88ecf0bca48b1fc943b37e805c3a30ea01ef84/record.json"
+    ],
+    "c01_denied_staging": "inventoried and retained; no deletion attempted"
+  },
+  "historical_c04": {
+    "state": "partial",
+    "completed": 145,
+    "requested": 148,
+    "job_id": "6d5edff624a49b8529ff2add0593f3953f668c7baa140f65568e922979d7176b",
+    "plan": "a5017addd669bc2d3461302e5ba742f42d31d4b5ddcbc45b674c33f1e8a3e4bc",
+    "metadata_bytes": 134197338,
+    "worker_seconds": 1495.3059999999386,
+    "workers": 107,
+    "pending_seconds": 120,
+    "result": null
+  },
+  "limitations": [
+    "Human similarity, rights, intended layer and master alignment are unverified.",
+    "Additional passages are native references in details; the first has players.",
+    "Actual symlink creation was refused by Windows; no workaround attempted.",
+    "Private audio/model/artifacts are required for real searches in another checkout.",
+    "No D02 evaluation, D03 packaging, D04 listening review or production deployment ran."
+  ],
+  "record_hash": "41d52511646f6f9f827eb9d8ab5f6f614513f19cb6202a382fbd39072010baa0"
+}

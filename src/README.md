@@ -29,3 +29,9 @@ C02 `similar_sound_search/retrieval/` owns exact event supports, capped rank fus
 
 `similar_sound_search/processing/` owns C04 input revisions, row cache, transactional
 jobs, cumulative pool and D01 API; see its source map and [contract](../docs/PROCESSING.md).
+
+`similar_sound_search/application/` owns the D01 loopback application, native query
+editing, protected metadata admission, read-only historical adoption and serial job
+orchestration. Its [source map](similar_sound_search/application/README.md) separates
+product/API/media ownership from unchanged DSP/ranking owners. C04's historical pool
+and partial request remain intact; new work uses only the explicit D01 owner.
