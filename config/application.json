@@ -1,0 +1,23 @@
+{
+  "schema_version": "d01-application-1",
+  "host": "127.0.0.1",
+  "port": 8774,
+  "protected_metadata_bytes": 33554432,
+  "attempt_bookkeeping_bytes": 65536,
+  "acceptance_ordinary_bytes": 41943040,
+  "policy": {
+    "max_job_seconds": 3600,
+    "max_workers": 256,
+    "max_read_audio_seconds": 90000,
+    "max_feature_windows": 1024,
+    "max_processed_window_seconds": 6000,
+    "max_feature_bytes": 33554432,
+    "max_query_jobs": 64,
+    "max_clips": 64,
+    "max_clip_bytes": 134217728,
+    "max_metadata_bytes": 134217728,
+    "max_preparation_bytes": 67108864,
+    "max_import_bytes": 134217728,
+    "max_managed_output_bytes": 536870912
+  }
+}
