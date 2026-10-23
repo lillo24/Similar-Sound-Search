@@ -216,7 +216,7 @@ evidence = dict(
         preservation=json.loads(
             (owner.reports / "preservation-after.json").read_text(encoding="utf-8")
         ),
-        hosted_ci="inspect on delivery PR; none configured at initial inspection",
+        hosted_ci="PR 26: no configured statuses/check runs/workflows; main unprotected, no rulesets",
     ),
     playback=dict(
         bundle=owner.protocol["playback_bundle"],
@@ -262,6 +262,7 @@ evidence = dict(
         "No further processing dispatched; counters and reservation preserved. "
         "No cap increase/reset, GC, deployment or dependency change."
     ),
+    delivery_pr="https://github.com/lillo24/Similar-Sound-Search/pull/26",
 )
 raw = json.dumps({**evidence, "record_hash": digest(evidence)}, indent=2, allow_nan=False) + "\n"
 if len(raw.encode("utf-8")) > 1024**2:

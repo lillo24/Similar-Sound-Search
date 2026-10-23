@@ -196,3 +196,8 @@ APIs bind C04's fixed pool; renaming/resetting/moving the same job cannot replen
 it. Validated rows, scores, declarations and private outputs remain in this checkout
 for a scoped new consumer. Another machine needs exact private inputs/checkpoint/
 artifacts. No D01 UI or listening review started; D04 remains the first review.
+
+Delivery PR: [#26](https://github.com/lillo24/Similar-Sound-Search/pull/26).
+Fresh delivery inspection found unprotected main, no rulesets, statuses, check
+runs, workflow runs or reviews. No hosted CI pass is claimed; local checks above
+are the executed validation.
