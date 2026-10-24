@@ -119,3 +119,9 @@ serialized-record bound, with an 8 MiB decoded limit, exact SHA256 and strict st
 validation. Per-case metrics and floating-point values are unchanged; `Context.get`
 expands them for scoring/reporting. Full product prediction references remain the
 unmodified source for each reported case.
+
+The immutable report allowlist is `data/runs/assessment/report-bundle.json` and
+byte-closure receipts are `data/runs/assessment/byte-audits/<split>.json`. Record
+publication stays inside its owner; generated HTML/media files are separate
+allowlisted artifacts under D02 roots. The pre-inference placement correction
+archives the earlier source declaration and changes no numerical or metric code.

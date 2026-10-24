@@ -223,7 +223,7 @@ def build(budget, owner):
         linked(target, name)
     return owner.publish(
         budget,
-        owner.reports / "bundle.json",
+        owner.directory / "report-bundle.json",
         dict(
             schema_version="d02-report-bundle-1",
             files=files,

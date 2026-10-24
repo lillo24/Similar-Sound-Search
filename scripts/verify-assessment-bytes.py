@@ -51,7 +51,7 @@ value = dict(
     protocol=protocol["record_hash"],
     checks=checks,
 )
-output = root / "reports/local/d02" / ("byte-audit-" + split + ".json")
+output = owner.directory / "byte-audits" / (split + ".json")
 if output.exists():
     if record(output) != {**value, "record_hash": digest(value)}:
         raise RuntimeError("D02 existing byte audit differs; never replace evidence")

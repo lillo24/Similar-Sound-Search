@@ -126,7 +126,7 @@ class Runtime:
         if not path.startswith("/evaluation/"):
             return None
         owner = self.context(self.root)
-        manifest = record(owner.reports / "bundle.json")
+        manifest = record(owner.directory / "report-bundle.json")
         key = path[len("/evaluation/") :] or "index.html"
         if key not in manifest["files"]:
             raise InputError("D02 report path outside immutable bundle allowlist")

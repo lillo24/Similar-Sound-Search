@@ -14,12 +14,35 @@ from similar_sound_search.storage import InputError, ResourceError, digest
 from sound_search_evaluation import audit, contracts, dataset, scoring
 from sound_search_evaluation.budget import CatalogueBudget as FastBudget
 from sound_search_evaluation.context import MIB, Context
-from sound_search_evaluation.runtime import category
+from sound_search_evaluation.runtime import Runtime, category
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class AssessmentTests(unittest.TestCase):
+    def test_report_manifest_stays_in_record_owner_and_serves_only_exact_own_files(self):
+        import hashlib
+
+        target = self.owner.reports / "index.html"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text("<p>inspectable report</p>", encoding="utf-8")
+        files = {
+            "index.html": dict(
+                path=target.relative_to(self.root).as_posix(),
+                sha256=hashlib.sha256(target.read_bytes()).hexdigest(),
+            )
+        }
+        self.owner.publish(
+            self.budget, self.owner.directory / "report-bundle.json", dict(files=files)
+        )
+        runtime = Runtime(self.root)
+        self.assertEqual(runtime.artifact("/evaluation/")[0], target)
+        with self.assertRaises(InputError):
+            runtime.artifact("/evaluation/missing.html")
+        target.write_text("tampered")
+        with self.assertRaises(InputError):
+            runtime.artifact("/evaluation/")
+
     def test_fresh_directory_entry_inventory_equals_standard_actual_inventory(self):
         for name in (
             "data/old/a.bin",
