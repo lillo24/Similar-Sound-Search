@@ -298,7 +298,7 @@
     "application/queries.py",
     "application/server.py"
   ],
-  "predecessor": "d88d2248f47816e281da47063cd0afe30673cd806d83cee4c18116d7d1bb01a8",
+  "predecessor": "013827d7cdf2f74cc5034da59c528bf5809a1230adc12fde1c1f9e6318606645",
   "accepted_previous": [
     {
       "declaration_hash": "feb882325c29159d34b723df3b8a63deea5101561aa25d68ebca24df5859860a",
@@ -323,8 +323,14 @@
       "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
       "code_hash": "2fecbd1895989f7fb78347758244262f7d49457dc99a055b51be05119c6f5673",
       "version": "d02-consumer-1"
+    },
+    {
+      "declaration_hash": "2f8652261914e5ccc00291fc641183ffc639a4090ef568d5e102e0908a853a5d",
+      "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+      "code_hash": "2fecbd1895989f7fb78347758244262f7d49457dc99a055b51be05119c6f5673",
+      "version": "d02-consumer-1"
     }
   ],
-  "reason": "Before any accepted prediction/quality summary: genuine recording-specific native memberships for aliases sharing PCM cache rows. Raw feature vectors, distances, grids, support counts, C02 fusion, metrics, gate and population remain unchanged; retain the first aggregation refusal and its charges.",
-  "record_hash": "013827d7cdf2f74cc5034da59c528bf5809a1230adc12fde1c1f9e6318606645"
+  "reason": "Lossless bounded score/aggregate/prediction storage with preservation of existing plain references, plus playable links for the predeclared failure example. All model, audio generation, scoring, metric, gate, matrix and population definitions unchanged.",
+  "record_hash": "0c428925522e5961cd43b4f0c6c3ac79271d849eba7116e6f6fa87427f8ebc1f"
 }
