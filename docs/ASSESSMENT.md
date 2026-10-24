@@ -136,7 +136,7 @@ fusion are unchanged. This corrects the retained first product aggregation refus
 the population. No complete prediction or quality summary preceded this correction.
 
 The long neutral reference filenames exposed a mobile grid minimum-width overflow.
-The shared application's single-column mobile track now uses `minmax(0,1fr)` so
-the form can shrink to the viewport. No player or crop calculation changes.
+The shared application's mobile track uses `minmax(0,1fr)` and example labels wrap
+within their flex row so long filenames fit the viewport. No player or crop calculation changes.
 The scoped UI declaration preserves the earlier renderer hashes; browser checks
 cover all affected default-app players as well as the D02 product cases.
