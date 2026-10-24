@@ -1,0 +1,2990 @@
+{
+  "schema_version": "d02-protocol-1",
+  "owner": "D02",
+  "base_commit": "9b376c1ae6d8eb20ed6d57cf648f9e6b49c48fa0",
+  "roots": [
+    "data/runs/assessment",
+    "data/features/assessment",
+    "data/audio/assessment",
+    "reports/local/d02",
+    "manifests/assessment"
+  ],
+  "pool": "data/runs/assessment/pool.json",
+  "shared_preparation": "Only new content-addressed A02 prepared files; preserve existing files",
+  "splits": {
+    "development": {
+      "families": [
+        {
+          "mechanism": "harmonic",
+          "spectral_slope": 1.17,
+          "fm_ratio": 1.57,
+          "cutoff_hz": 1050
+        },
+        {
+          "mechanism": "pluck",
+          "spectral_slope": 1.25,
+          "fm_ratio": 1.6800000000000002,
+          "cutoff_hz": 1590
+        },
+        {
+          "mechanism": "fm",
+          "spectral_slope": 1.3299999999999998,
+          "fm_ratio": 1.79,
+          "cutoff_hz": 2130
+        },
+        {
+          "mechanism": "noise",
+          "spectral_slope": 1.41,
+          "fm_ratio": 1.9000000000000001,
+          "cutoff_hz": 2670
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "eced700c6d180fcb34c7af717fe7f25a4b26c676e8b52c9ed5701d2d0cf58868",
+          "ordinal": 0,
+          "group": "cb114e5a6e294f013bf9bcb235501834dab6adaf62f11da83cb98ba3067c8d72",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 1241000,
+          "background_seed": 1260000,
+          "pitch": -5,
+          "phrase": 1,
+          "condition": 0,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 9,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "9279cd493d749add5083af769e1c336095a475c7a7f7964e910886ff150cc423",
+          "ordinal": 1,
+          "group": "76ce080e774c0fef3a099b2b04141d869192c5d7f3e742eb5b28707aa0f15ec4",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 1241037,
+          "background_seed": 1260041,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 1,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "b6c489ef3e4c306453c79ced776af2c0a91451cb02e6b5d1a4d86cac5edb46aa",
+          "ordinal": 2,
+          "group": "abcdb418308241f5d6d4244f4545c1d9ae2bf908561e5e0d5d6ae660cefa4ced",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 1241074,
+          "background_seed": 1260082,
+          "pitch": 7,
+          "phrase": 0,
+          "condition": 2,
+          "positions": [
+            0.17,
+            4.93
+          ],
+          "ratio_db": -6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "55892e064f5ea8d5cb5fc3edeff5bddfa715ee4dcb6aa6d8145e13139234fc3d",
+          "ordinal": 3,
+          "group": "40813c1c68f7674d4df459c2b457c9a9f6d8daad73352d9add451d8e257c07b2",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 1241111,
+          "background_seed": 1260123,
+          "pitch": -2,
+          "phrase": 1,
+          "condition": 3,
+          "positions": [
+            0.0,
+            5.6
+          ],
+          "ratio_db": 0,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "94b94f69aeeb4ed17cd5d3e7b3022e6d6da9f4775785a2ed0ff65c144e3a576f",
+          "ordinal": 4,
+          "group": "4586d58ccbff193336f28a4ebd7fe53af6271eedbb0f0a402737590ec6c902a0",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 1241148,
+          "background_seed": 1260164,
+          "pitch": 4,
+          "phrase": 2,
+          "condition": 4,
+          "positions": [
+            1.013
+          ],
+          "ratio_db": 3,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 44100,
+          "channels": 2,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "feeb4069514c522c2ab90871a0a661baaa3369a12ec71372d30a0a7ec90e503a",
+          "ordinal": 5,
+          "group": "275bc750c31c40fc02b60bcce103628e34e8c18448da3447d9fff8b1e2a6ff82",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 1241185,
+          "background_seed": 1260205,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 5,
+          "positions": [
+            0.311
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 1.7,
+          "event_seconds": 1.1,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "944eac6dd0e143a02f68ea9eaf54b8650b4bd7e678bcaf8451f66b76f6f85580",
+          "ordinal": 6,
+          "group": "1fade7f47297c2348095b47b5aae08cb125366a3da8b4b9cad34f30de0242306",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 1241222,
+          "background_seed": 1260246,
+          "pitch": -5,
+          "phrase": 1,
+          "condition": 0,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 9,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "651e9504008dadd508526f102256efab9e64120f9c33ed0092b87957560ccc29",
+          "ordinal": 7,
+          "group": "a660990400881ea560b2292a564a7165ce231a534ced1c059eb1fae581adf6f3",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 1241259,
+          "background_seed": 1260287,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 1,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "05edfc01bd5c1693f5f65253f3fc736c52583c2159f654a1a8a304986965b936",
+          "ordinal": 8,
+          "group": "ba2ea18854389acca2a9a7eee2025b28cd09c2ad1af366618ddc225c4b2f2a0c",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 1241296,
+          "background_seed": 1260328,
+          "pitch": 7,
+          "phrase": 0,
+          "condition": 2,
+          "positions": [
+            0.17,
+            4.93
+          ],
+          "ratio_db": -6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "7435d5156291783e69197b01ec951f95b4845d394c2f6b4bff8fce899cf5d24c",
+          "ordinal": 9,
+          "group": "ed7b400a474deea133249f87b58717d9e025a34dffc09f7232774e42d1f4e39e",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 1241333,
+          "background_seed": 1260369,
+          "pitch": -2,
+          "phrase": 1,
+          "condition": 3,
+          "positions": [
+            0.0,
+            5.6
+          ],
+          "ratio_db": 0,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "b6e27b8c57575e9a0e013e355311dcef49ee307e8b89fefd79072c3ae695b25d",
+          "ordinal": 10,
+          "group": "9edcd7cdb5a5729e3b06b36b7511eca9b3595b5d67a227a5e48971babd4f3424",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 1241370,
+          "background_seed": 1260410,
+          "pitch": 4,
+          "phrase": 2,
+          "condition": 4,
+          "positions": [
+            1.013
+          ],
+          "ratio_db": 3,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 44100,
+          "channels": 2,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "067b9c441ea0abcfdf19461e91e82eb9d11be2c8d31d63ffab1d54b9107efad7",
+          "ordinal": 11,
+          "group": "5ca575082c1a1db3ac612f6de63122d3f12be41dc1aef3a71a69355a9eb04c29",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 1241407,
+          "background_seed": 1260451,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 5,
+          "positions": [
+            0.311
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 1.7,
+          "event_seconds": 1.1,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "dda2c444c5c23ce50945ac836d88f20233748bd7abba2acf03bbd062d9c96970",
+          "ordinal": 12,
+          "group": "29657f24a9cf8ff133e78ae54c2dbc987f3a9ebc99abd1c3a21730a930aac8a9",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 1241444,
+          "background_seed": 1260492,
+          "pitch": -5,
+          "phrase": 1,
+          "condition": 0,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 9,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "4359e8852b897dae33ec777174b13621817f5cd47946b85bff069d00f3bd8e19",
+          "ordinal": 13,
+          "group": "27b673b2230d7756ff7912c295279516904c0bed0c1b55823aab1fe5b87c8d14",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 1241481,
+          "background_seed": 1260533,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 1,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "e444c30cddd0e01446b5d2eef3058b6931a385836d58285f1c1aa6624eb5228c",
+          "ordinal": 14,
+          "group": "21b37513df28072b8f6720632fa34b1843dc4972b3293c60ac8405d0fba731a9",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 1241518,
+          "background_seed": 1260574,
+          "pitch": 7,
+          "phrase": 0,
+          "condition": 2,
+          "positions": [
+            0.17,
+            4.93
+          ],
+          "ratio_db": -6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "28c278a3432026bd4e14135639c35c2adc8c929b1e37e77bf0e371d0a2b58cce",
+          "ordinal": 15,
+          "group": "c78e867c79ea2b34b6c770f5611d8d9072b52f3157df23c26ad01e4fdde6e8e3",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 1241555,
+          "background_seed": 1260615,
+          "pitch": -2,
+          "phrase": 1,
+          "condition": 3,
+          "positions": [
+            0.0,
+            5.6
+          ],
+          "ratio_db": 0,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "2190de3d289e5ecb00bbce9042adcf1508435e99530b28e389e40d0565f10016",
+          "ordinal": 16,
+          "group": "9671ae72355400fd2b43f310ce5b482300c8a5ab31f6e28c7f471614c4816566",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 1241592,
+          "background_seed": 1260656,
+          "pitch": 4,
+          "phrase": 2,
+          "condition": 4,
+          "positions": [
+            1.013
+          ],
+          "ratio_db": 3,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 44100,
+          "channels": 2,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "ca5c5d92cadc1ca1dd985ed039acd82cf9e27679d393f4bef480de86e732f498",
+          "ordinal": 17,
+          "group": "fdc72cbbfbd1a934e9e6abe500a26235150fa725302dbf31a22b973ebe7b6c10",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 1241629,
+          "background_seed": 1260697,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 5,
+          "positions": [
+            0.311
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 1.7,
+          "event_seconds": 1.1,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "d93f4ae55d3863fdfef5c08b81f40585f053165328f79803a25b8759b6a40213",
+          "ordinal": 18,
+          "group": "56c19900f58d6dab96242a91d14839a2d71236befcdef87d97b5ed1e291b79d5",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 1241666,
+          "background_seed": 1260738,
+          "pitch": -5,
+          "phrase": 1,
+          "condition": 0,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 9,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "8ae12b57322a844f6ec7029f5483c17c462ba80d4250b6bcc248e35baf0d72bd",
+          "ordinal": 19,
+          "group": "1980b3a3c4a771a400eecfb045af431169f73f1f5126bcfd87759079df305e1e",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 1241703,
+          "background_seed": 1260779,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 1,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "34f49f6c71c5af69352d51b50999d6110638633237f91d88768f19fcec4be504",
+          "ordinal": 20,
+          "group": "44ae8439d5014772d83a7d7b9fec2e963d8d2f0fcc429485553dbf84d6a4b9cf",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 1241740,
+          "background_seed": 1260820,
+          "pitch": 7,
+          "phrase": 0,
+          "condition": 2,
+          "positions": [
+            0.17,
+            4.93
+          ],
+          "ratio_db": -6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "16b3db57ac4ed87a13f6fc67b39bb5d0bc9ee68f051f56eeb325477a3e4d8369",
+          "ordinal": 21,
+          "group": "195b59e916c1ecde3b0ab995a18a66635b998936feefb953ffbd9c98587923af",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 1241777,
+          "background_seed": 1260861,
+          "pitch": -2,
+          "phrase": 1,
+          "condition": 3,
+          "positions": [
+            0.0,
+            5.6
+          ],
+          "ratio_db": 0,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "d3391276e943ac17ac730e053df84b4e346d23040d398311062b5b922353c348",
+          "ordinal": 22,
+          "group": "14204bbb13b456e218dc86f0477daec73678c26be222cedbba58e4778b9419ee",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 1241814,
+          "background_seed": 1260902,
+          "pitch": 4,
+          "phrase": 2,
+          "condition": 4,
+          "positions": [
+            1.013
+          ],
+          "ratio_db": 3,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 44100,
+          "channels": 2,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "53a9a8570a5d1d81ba357d13f7e3526807ce1d221b4e524e1d97641edafe4016",
+          "ordinal": 23,
+          "group": "ff47553ffd9f81954ae8d85655d33836beffa86f0e8f6c2ea2be84f753bee53c",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 1241851,
+          "background_seed": 1260943,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 5,
+          "positions": [
+            0.311
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 1.7,
+          "event_seconds": 1.1,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "e937193bf71276d3ee76b3e26f8328d418b869547def181ec508023f4778563c",
+          "ordinal": 24,
+          "group": "875703774d2c54ae7226118043be3745deec829922d471730789592c1a6ea4c8",
+          "family": 0,
+          "character": "hard-negative",
+          "performance_seed": 1241888,
+          "background_seed": 1260984,
+          "pitch": 0,
+          "phrase": 1,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "68e1d8db3bca8bd109de0e6b8e796e95fb284d0a4e80a3c1bd46c35f2f8b5c80",
+          "ordinal": 25,
+          "group": "64e7056d2a5407e9a7f637572daef4e0c05d6dda0c634cc20575e1d3d8d8dc5f",
+          "family": 1,
+          "character": "hard-negative",
+          "performance_seed": 1241925,
+          "background_seed": 1261025,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "b806b8b16e1aa718255e3ffb40e8017512de85eb48d310ab420abd1215f1cf0c",
+          "ordinal": 26,
+          "group": "f7213bb68d10924791a3a31f5f1bcd4ff792fa992f788cb49007d0f390acf01c",
+          "family": 2,
+          "character": "hard-negative",
+          "performance_seed": 1241962,
+          "background_seed": 1261066,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "87a265608dbadc02f3b7431373e2b25b903ab83d84677594ff76c239f2e8b3c7",
+          "ordinal": 27,
+          "group": "a78581705f0e8e7e26aac9a54f375201edd89dbbbf73de0a6e89aab92a51c578",
+          "family": 3,
+          "character": "hard-negative",
+          "performance_seed": 1241999,
+          "background_seed": 1261107,
+          "pitch": 0,
+          "phrase": 1,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "6405cddd7c122ac15a50417b3468c32b4dd0fbab3bcf177578421d7091b52fa8",
+          "ordinal": 28,
+          "group": "9d1a3298d9ce375ada24a9a8267dc2c95aa1a4da83197b1a4495a88d4b8d9671",
+          "family": 0,
+          "character": "hard-negative",
+          "performance_seed": 1242036,
+          "background_seed": 1261148,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "827c51480d3c28a94b1b4f3fba8a202835a3fe5f9f5dc9109d36d6c0016dca11",
+          "ordinal": 29,
+          "group": "9e9bc83bef129bb0a0371292eea7b058bd7e9a6281a64d29e38c111e293e0c99",
+          "family": 1,
+          "character": "hard-negative",
+          "performance_seed": 1242073,
+          "background_seed": 1261189,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "b315cbe161fdd35fb9b34f65f9c399522bf32d7537aec76234d559c77ff5df91",
+          "ordinal": 30,
+          "group": "8cfd76d719f1a2b5f70a8e6a3ee1a6ff716538df9811a86a206c4cda1b55d8bd",
+          "family": 2,
+          "character": "hard-negative",
+          "performance_seed": 1242110,
+          "background_seed": 1261230,
+          "pitch": 0,
+          "phrase": 1,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "db1fc85801e5a9f641f2fc721417ab966292e99e11a51331fa7abb7fd6490e45",
+          "ordinal": 31,
+          "group": "875703774d2c54ae7226118043be3745deec829922d471730789592c1a6ea4c8",
+          "family": 0,
+          "character": "hard-negative",
+          "performance_seed": 1242147,
+          "background_seed": 1261271,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": 24
+        }
+      ],
+      "cases": [
+        {
+          "case_id": "6ea2c7cb20013a9f68c953f6c700344851a9fe7d9462eec26c9f617c1ec5f797",
+          "ordinal": 0,
+          "kind": "independent-performance",
+          "condition": 0,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 1340000,
+              "background_seed": 1540000,
+              "pitch": 0,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            0
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "a3e4292ab3b8c6865494731d18e4efd34f565120647932ed6821f0ac07aeebe3",
+          "ordinal": 1,
+          "kind": "independent-performance",
+          "condition": 1,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 1340211,
+              "background_seed": 1540223,
+              "pitch": 6,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            0
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "52b670a048974eb60b2936e4ae4896319988d3f8311bf896c3a7a9caa738fd81",
+          "ordinal": 2,
+          "kind": "independent-performance",
+          "condition": 2,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 1340422,
+              "background_seed": 1540446,
+              "pitch": -4,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": -3,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            0
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "091285ed0df5df00f63b040b2b28725a50cbbb53cef0dc64eb497de0955d986d",
+          "ordinal": 3,
+          "kind": "independent-performance",
+          "condition": 3,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 1340633,
+              "background_seed": 1540669,
+              "pitch": 2,
+              "phrase": 0,
+              "event_seconds": 1.1,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                36000
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            0
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "e00467d4088d1616063c03a98be324f271fcf08fb4a355cef262c7a2fc232e06",
+          "ordinal": 4,
+          "kind": "independent-performance",
+          "condition": 0,
+          "examples": [
+            {
+              "family": 1,
+              "performance_seed": 1340844,
+              "background_seed": 1540892,
+              "pitch": 0,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            1
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "cf81e14aeeeebf9d8f36c4363c2768eec00cad7e0ea709f36271905069bc6de0",
+          "ordinal": 5,
+          "kind": "independent-performance",
+          "condition": 1,
+          "examples": [
+            {
+              "family": 1,
+              "performance_seed": 1341055,
+              "background_seed": 1541115,
+              "pitch": 6,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            1
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "ed7abaa9dcd326407e2bc4b1816d4a0cdd9d74bc8d7aa833f5f3b39f71c2a970",
+          "ordinal": 6,
+          "kind": "independent-performance",
+          "condition": 2,
+          "examples": [
+            {
+              "family": 1,
+              "performance_seed": 1341266,
+              "background_seed": 1541338,
+              "pitch": -4,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": -3,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            1
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "7466e685e101223510e5c6a73c1d218a536b3329df64fcf1fd5217a1ba88e7e6",
+          "ordinal": 7,
+          "kind": "independent-performance",
+          "condition": 3,
+          "examples": [
+            {
+              "family": 1,
+              "performance_seed": 1341477,
+              "background_seed": 1541561,
+              "pitch": 2,
+              "phrase": 1,
+              "event_seconds": 1.1,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                36000
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            1
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "096d565a42222b24b3c275683ac20a7e7520512230fa4d139d0c235fd7fdab5c",
+          "ordinal": 8,
+          "kind": "independent-performance",
+          "condition": 0,
+          "examples": [
+            {
+              "family": 2,
+              "performance_seed": 1341688,
+              "background_seed": 1541784,
+              "pitch": 0,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            2
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "f85e47a90d2338ef462f24983242c044a3747be6900bec6fa6ec6067a5cc499d",
+          "ordinal": 9,
+          "kind": "independent-performance",
+          "condition": 1,
+          "examples": [
+            {
+              "family": 2,
+              "performance_seed": 1341899,
+              "background_seed": 1542007,
+              "pitch": 6,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            2
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "53fa9fbf760b4780a9be83bc5d798c422dbf81c10b85403b8c6d0e56054f1769",
+          "ordinal": 10,
+          "kind": "independent-performance",
+          "condition": 2,
+          "examples": [
+            {
+              "family": 2,
+              "performance_seed": 1342110,
+              "background_seed": 1542230,
+              "pitch": -4,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": -3,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            2
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "145ecba30ae1dd2cff58896016c804dd4dbbbccda0c13bbb7de7e4d3715c130b",
+          "ordinal": 11,
+          "kind": "independent-performance",
+          "condition": 3,
+          "examples": [
+            {
+              "family": 2,
+              "performance_seed": 1342321,
+              "background_seed": 1542453,
+              "pitch": 2,
+              "phrase": 2,
+              "event_seconds": 1.1,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                36000
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            2
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "864910f88b0b6f9be122574cb979e61f4f707d667cd6a560eab3f84d24df6b9f",
+          "ordinal": 12,
+          "kind": "independent-performance",
+          "condition": 0,
+          "examples": [
+            {
+              "family": 3,
+              "performance_seed": 1342532,
+              "background_seed": 1542676,
+              "pitch": 0,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            3
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "59ff3f25b69905f7ed1fdfb780d4c8b984bbbcf9e62ebe508b659a3b5578dce9",
+          "ordinal": 13,
+          "kind": "independent-performance",
+          "condition": 1,
+          "examples": [
+            {
+              "family": 3,
+              "performance_seed": 1342743,
+              "background_seed": 1542899,
+              "pitch": 6,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            3
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "7e82f162b7d2b4a714621a4bf0370ca49e78109551334a96ed1c0f446c42f27c",
+          "ordinal": 14,
+          "kind": "independent-performance",
+          "condition": 2,
+          "examples": [
+            {
+              "family": 3,
+              "performance_seed": 1342954,
+              "background_seed": 1543122,
+              "pitch": -4,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": -3,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            3
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "8be081810b222a3fc8a7c94b4086f2aae20adf8627c5268d242e207d06c2472e",
+          "ordinal": 15,
+          "kind": "independent-performance",
+          "condition": 3,
+          "examples": [
+            {
+              "family": 3,
+              "performance_seed": 1343165,
+              "background_seed": 1543345,
+              "pitch": 2,
+              "phrase": 0,
+              "event_seconds": 1.1,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                36000
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            3
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "6da7af85a45f015700a74288ff91dda42060c8c972ab86fe49e3e71f369f1632",
+          "ordinal": 16,
+          "kind": "same-character-alternatives",
+          "condition": 4,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 1343376,
+              "background_seed": 1543568,
+              "pitch": 0,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            },
+            {
+              "family": 0,
+              "performance_seed": 1343429,
+              "background_seed": 1543627,
+              "pitch": 7,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            0
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "22173db7c4c4ffa9761a5b53b0f7a6ba351151e924b51ac3b03ce5dfeef32bbb",
+          "ordinal": 17,
+          "kind": "same-character-alternatives",
+          "condition": 4,
+          "examples": [
+            {
+              "family": 1,
+              "performance_seed": 1343587,
+              "background_seed": 1543791,
+              "pitch": 0,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            },
+            {
+              "family": 1,
+              "performance_seed": 1343640,
+              "background_seed": 1543850,
+              "pitch": 7,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            1
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "be72f6ee897b97b15b90fe9e73827d7d968a95f58f4fd02ea80a6d7a73b3213d",
+          "ordinal": 18,
+          "kind": "distinct-known-events",
+          "condition": 4,
+          "examples": [
+            {
+              "family": 2,
+              "performance_seed": 1343798,
+              "background_seed": 1544014,
+              "pitch": 0,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            },
+            {
+              "family": 3,
+              "performance_seed": 1343851,
+              "background_seed": 1544073,
+              "pitch": 7,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            2,
+            3
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "eb0faf40e50327cefe8e79edc8edc8b3763723e5fbff4e56f8febdd45430ace4",
+          "ordinal": 19,
+          "kind": "distinct-known-events",
+          "condition": 4,
+          "examples": [
+            {
+              "family": 3,
+              "performance_seed": 1344009,
+              "background_seed": 1544237,
+              "pitch": 0,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            },
+            {
+              "family": 0,
+              "performance_seed": 1344062,
+              "background_seed": 1544296,
+              "pitch": 7,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            0,
+            3
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "1e3a0dedc813fb984ea3fe01880ed3628fffb685df068ec5b88cd20f15c6e72b",
+          "ordinal": 20,
+          "kind": "absent-target",
+          "condition": 5,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 1344220,
+              "background_seed": 1544460,
+              "pitch": 0,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [],
+          "primary": false,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "5c8ed9eff22c26182266d3ec9295f398215a67cd4d2e997f93b196906675f850",
+          "ordinal": 21,
+          "kind": "absent-target",
+          "condition": 5,
+          "examples": [
+            {
+              "family": 1,
+              "performance_seed": 1344431,
+              "background_seed": 1544683,
+              "pitch": 0,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [],
+          "primary": false,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "815de4ae628899d41ff3212823cfef56dd0d7ddc4ea73adf01e78da3c0bbef09",
+          "ordinal": 22,
+          "kind": "exact-instance-exclusion",
+          "condition": 6,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 1344642,
+              "background_seed": 1544906,
+              "pitch": 0,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "positive_characters": [],
+          "primary": false,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "7c3e21d0e66f299806ad9be8263f16aa3c95b3b29d530530faec020b34f6def5",
+          "ordinal": 23,
+          "kind": "exact-instance-exclusion",
+          "condition": 6,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 1344853,
+              "background_seed": 1545129,
+              "pitch": 0,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 18,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": 31
+            }
+          ],
+          "positive_characters": [],
+          "primary": false,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        }
+      ]
+    },
+    "confirmation": {
+      "families": [
+        {
+          "mechanism": "harmonic",
+          "spectral_slope": 1.5999999999999999,
+          "fm_ratio": 1.76,
+          "cutoff_hz": 1420
+        },
+        {
+          "mechanism": "pluck",
+          "spectral_slope": 1.68,
+          "fm_ratio": 1.87,
+          "cutoff_hz": 1960
+        },
+        {
+          "mechanism": "fm",
+          "spectral_slope": 1.7599999999999998,
+          "fm_ratio": 1.98,
+          "cutoff_hz": 2500
+        },
+        {
+          "mechanism": "noise",
+          "spectral_slope": 1.8399999999999999,
+          "fm_ratio": 2.0900000000000003,
+          "cutoff_hz": 3040
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "ead3a6ac44fe517dcbae47a6de9dce193baaccd655af7810744c4b2352a85f9e",
+          "ordinal": 0,
+          "group": "472de1635136ef778c2073425d93f4aa44582ff916db31f955b1a31d4c7675d5",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 9241000,
+          "background_seed": 9260000,
+          "pitch": -5,
+          "phrase": 1,
+          "condition": 0,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 9,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "2411f177440d920fdff9e0607a5ae08806ad9fdbf1541fbf80af3698870dd133",
+          "ordinal": 1,
+          "group": "5e792c921fa66f5c41ed40d7517985765f7fde35d56511d0e093e6f9dff6f3bb",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 9241037,
+          "background_seed": 9260041,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 1,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "5a97986a5c3d52c27f6879320bf3abd304c4466d1a9510b380932afd1de39844",
+          "ordinal": 2,
+          "group": "c1cba78ab476cac3ed1cf033186ab144af04c0d6f1e8dfea6fed356527b693f1",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 9241074,
+          "background_seed": 9260082,
+          "pitch": 7,
+          "phrase": 0,
+          "condition": 2,
+          "positions": [
+            0.17,
+            4.93
+          ],
+          "ratio_db": -6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "9c711dff7f61377805dba39417df4839b88d4291b8c013df7c3f94912e56b389",
+          "ordinal": 3,
+          "group": "3cdf0ac3167ec6354a421f1b796dd62b4c64ddfbd6bd4de51bd98f4958790f0e",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 9241111,
+          "background_seed": 9260123,
+          "pitch": -2,
+          "phrase": 1,
+          "condition": 3,
+          "positions": [
+            0.0,
+            5.6
+          ],
+          "ratio_db": 0,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "914e0d1aebbfc2f407c2e69df655e4dd9fbaf683ae80a4dd309a43f9fb264d02",
+          "ordinal": 4,
+          "group": "acabd56e492f47125c056fa17630e260111b414178cb57e0b87a0d1123d5b11a",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 9241148,
+          "background_seed": 9260164,
+          "pitch": 4,
+          "phrase": 2,
+          "condition": 4,
+          "positions": [
+            1.013
+          ],
+          "ratio_db": 3,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 44100,
+          "channels": 2,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "3971033c5e21211b0972b3ed95904560ceca855b4f185e1dfc47d76ed6b477b6",
+          "ordinal": 5,
+          "group": "85793eba74f64373f750f4fa1c581831792c967b57eb5c71aa65f588e61da8ea",
+          "family": 0,
+          "character": "positive",
+          "performance_seed": 9241185,
+          "background_seed": 9260205,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 5,
+          "positions": [
+            0.311
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 1.7,
+          "event_seconds": 1.1,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "fc0ccee397520c92287ffcf6849fbee59c65802fcb068fc1289be6f833150141",
+          "ordinal": 6,
+          "group": "d2516e3f50b88ee6fa9b80ca731d25145906cf356f3f3ce0d7f64518339c1de2",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 9241222,
+          "background_seed": 9260246,
+          "pitch": -5,
+          "phrase": 1,
+          "condition": 0,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 9,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "69aec03547eefe6c202ebdfe3eb98fdb94d2674aeb3d4b80fd886473629021e5",
+          "ordinal": 7,
+          "group": "78e58ad6264e9774302699d10903429720d955f990eb92b8ef1e998cbc0d4819",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 9241259,
+          "background_seed": 9260287,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 1,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "8c9c683b5935c1d0516c928e36fa1654b5a33ce680140e9ca79e59569d7b2fac",
+          "ordinal": 8,
+          "group": "94f2f4cf3df81279238e5d4e5dcb28297e4bc116d4075d28dfbd4eb7eeafa103",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 9241296,
+          "background_seed": 9260328,
+          "pitch": 7,
+          "phrase": 0,
+          "condition": 2,
+          "positions": [
+            0.17,
+            4.93
+          ],
+          "ratio_db": -6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "0a26ebf55b832c4e9ad49b9b016943002404f72e177e3205a151b0c4dab8f84c",
+          "ordinal": 9,
+          "group": "0d30ee8a301172a13be87e254228b8f13f89722e9d1d642ff051d429e64efacf",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 9241333,
+          "background_seed": 9260369,
+          "pitch": -2,
+          "phrase": 1,
+          "condition": 3,
+          "positions": [
+            0.0,
+            5.6
+          ],
+          "ratio_db": 0,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "e2e515000aaaddcf05882b92f9a286b14e7d6ad45c038f5e5f463b542a977053",
+          "ordinal": 10,
+          "group": "5af9d238756ad311de5cb6a4e3a7527f1eeb11d4c6c49f6ba036227e7fde2ac3",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 9241370,
+          "background_seed": 9260410,
+          "pitch": 4,
+          "phrase": 2,
+          "condition": 4,
+          "positions": [
+            1.013
+          ],
+          "ratio_db": 3,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 44100,
+          "channels": 2,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "84faeaf3613220a584e0e069dd27ba8bae196d6488c0ae7361527d7c9fe3f3ff",
+          "ordinal": 11,
+          "group": "d53444937c6798cb7a33a5754ed120c8e092121b88e813e5ca0acbbb7d470148",
+          "family": 1,
+          "character": "positive",
+          "performance_seed": 9241407,
+          "background_seed": 9260451,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 5,
+          "positions": [
+            0.311
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 1.7,
+          "event_seconds": 1.1,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "d64c823e167bc50e135cf3ea4cc7fedbd0b77aa62aab68a4beec85d9b98519a3",
+          "ordinal": 12,
+          "group": "a0d135e9e73d4dc9de6ba5d1f5891e6b905fecaede2d0c18ef58dbae63254df1",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 9241444,
+          "background_seed": 9260492,
+          "pitch": -5,
+          "phrase": 1,
+          "condition": 0,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 9,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "1e11cf02915b684ea47b8dbcef7fe8907ba839314fec0d40fa752a55f304bf43",
+          "ordinal": 13,
+          "group": "da98629722d88a5448076c069d59021b7658ac4fe319152aee43c95c1809de66",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 9241481,
+          "background_seed": 9260533,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 1,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "a9d37dc64c68038b7d5aaaef52445e3bd80e9c1668a2211b5b81356ea69a482a",
+          "ordinal": 14,
+          "group": "f7662ee96c54acb38fc25d4f7f6609f1097af8d6f122b3f53496b56d1bd9c7c5",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 9241518,
+          "background_seed": 9260574,
+          "pitch": 7,
+          "phrase": 0,
+          "condition": 2,
+          "positions": [
+            0.17,
+            4.93
+          ],
+          "ratio_db": -6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "52b96ea446342e7a36a7ed4eb5ce4d6a648eee3b9c29e625fb50ae8043e4b184",
+          "ordinal": 15,
+          "group": "a90af66f57e03d2aee5e81d0b73e7e64ccb7304ea461a552243a99f5c1579fde",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 9241555,
+          "background_seed": 9260615,
+          "pitch": -2,
+          "phrase": 1,
+          "condition": 3,
+          "positions": [
+            0.0,
+            5.6
+          ],
+          "ratio_db": 0,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "a382498212cc9fee3a379a773d64daa79a7b85db8771a1eba8c6552251da1615",
+          "ordinal": 16,
+          "group": "65bffa720478041d2231904e6ac0a99a05f9eab45a3d3826c77c099525ca6651",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 9241592,
+          "background_seed": 9260656,
+          "pitch": 4,
+          "phrase": 2,
+          "condition": 4,
+          "positions": [
+            1.013
+          ],
+          "ratio_db": 3,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 44100,
+          "channels": 2,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "b0290c075d29406f8bd62a0361d3c1df34601da6e41791b4eca4e03f00f1279a",
+          "ordinal": 17,
+          "group": "bad30d988c8b722fa92a998f1bf3f5bc2fc514c15eeb0dcee403c9fb2c2ce8a4",
+          "family": 2,
+          "character": "positive",
+          "performance_seed": 9241629,
+          "background_seed": 9260697,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 5,
+          "positions": [
+            0.311
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 1.7,
+          "event_seconds": 1.1,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "a3ad61fda11822d9551092a940ed95691a0c9ea86f11a9dbf5a789bb5a305b4d",
+          "ordinal": 18,
+          "group": "93c484da3a10ef85392cb7c346937c13a18bbdf4b05fc5a4ef0be03092d6fb86",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 9241666,
+          "background_seed": 9260738,
+          "pitch": -5,
+          "phrase": 1,
+          "condition": 0,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 9,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "da5ceccad1e39353dd3beb13fcc472e0c1cf3f7c8908f6c32cd93077820c3e3c",
+          "ordinal": 19,
+          "group": "da565b342e2f9042b4b6b63aa581a8a0d617d7a6d8f75a9d4c9a925822a8c054",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 9241703,
+          "background_seed": 9260779,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 1,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "cca59a0b2e3bd57f7f7ccb07350f421aab0f0e6a362d487d694395ea9ce8efb1",
+          "ordinal": 20,
+          "group": "70702903db6bc847dc83ec89d4e6cfe2016fc6203e6aabdd5cbdef8a0a78e039",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 9241740,
+          "background_seed": 9260820,
+          "pitch": 7,
+          "phrase": 0,
+          "condition": 2,
+          "positions": [
+            0.17,
+            4.93
+          ],
+          "ratio_db": -6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "c2bf747faeb3b9a9627deb4e8d63e72f25ae20ef9ca414fedca61c61b43ed542",
+          "ordinal": 21,
+          "group": "3f81ce3ec3484e4366f1e558d4918f694a0bd987d42c5b6749334303e692c73b",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 9241777,
+          "background_seed": 9260861,
+          "pitch": -2,
+          "phrase": 1,
+          "condition": 3,
+          "positions": [
+            0.0,
+            5.6
+          ],
+          "ratio_db": 0,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "ffca621b7eed213f39d85fef67cc91c32d9c4efd6ee214b92e343abd50244188",
+          "ordinal": 22,
+          "group": "0b668eeeb36a514652955f59e78ceae35001f8bcc1393604e1fdcc98cd101a9a",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 9241814,
+          "background_seed": 9260902,
+          "pitch": 4,
+          "phrase": 2,
+          "condition": 4,
+          "positions": [
+            1.013
+          ],
+          "ratio_db": 3,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 44100,
+          "channels": 2,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "d698f487715814ff10c99df4bc9f2babb6af3a51717a5c4e1a1254df58d4f29a",
+          "ordinal": 23,
+          "group": "7f549d5f141b23c524907ead5acef119577a751337fdfa1cf93bc990f444f74c",
+          "family": 3,
+          "character": "positive",
+          "performance_seed": 9241851,
+          "background_seed": 9260943,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 5,
+          "positions": [
+            0.311
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 1.7,
+          "event_seconds": 1.1,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "c1be37e14b2de5d0032a7a77f57d9557f6d057f80453709222bf3976eadfd9b3",
+          "ordinal": 24,
+          "group": "e8e447a7cfd3125f86ec2676759b23defeb9fdce71479f45f572b740b485621b",
+          "family": 0,
+          "character": "hard-negative",
+          "performance_seed": 9241888,
+          "background_seed": 9260984,
+          "pitch": 0,
+          "phrase": 1,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "e4ff8afbfb5ffd83e1f49e34549e7f1c553450f9df420ae85ccd0b2e8191c6ef",
+          "ordinal": 25,
+          "group": "1ec8bfb16974c5bc01018b0cbc44917f541a0220a4ee97b2b459a3b2954a859d",
+          "family": 1,
+          "character": "hard-negative",
+          "performance_seed": 9241925,
+          "background_seed": 9261025,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "8e45ad8f1b5117b6150d3bf7bea88a355fa24345d61e19dadfa4479ef7a5cae2",
+          "ordinal": 26,
+          "group": "8e80a8e24169327a5e9c5159ed8f8fe2b9af1059e1a3751c536e0a5a016d0c28",
+          "family": 2,
+          "character": "hard-negative",
+          "performance_seed": 9241962,
+          "background_seed": 9261066,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "d8e6dbe422f2bba13b730eb6365ec25b9fda8bef126f23b33941589319144af8",
+          "ordinal": 27,
+          "group": "d3d4549c3c51f25976ab1ebb2180b1358f644a5a01578fd4ddda098e00ad6ded",
+          "family": 3,
+          "character": "hard-negative",
+          "performance_seed": 9241999,
+          "background_seed": 9261107,
+          "pitch": 0,
+          "phrase": 1,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "e9e26e34c3ba09d59b4e394896edaf45ca3f27f8fd53985283de9267664ce99b",
+          "ordinal": 28,
+          "group": "2cc6ccb98eb4d4562951178549600297ad7fa70950df3d41165b14f4fadefece",
+          "family": 0,
+          "character": "hard-negative",
+          "performance_seed": 9242036,
+          "background_seed": 9261148,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "1f77e140c77dc2bf3c310d8cc782b1e8652cfc1efc39ea347d5e243a5080cf44",
+          "ordinal": 29,
+          "group": "d66bb5a632f8e49d620909f64414265fcc39daeca2c5202b64f5e929db54fd09",
+          "family": 1,
+          "character": "hard-negative",
+          "performance_seed": 9242073,
+          "background_seed": 9261189,
+          "pitch": 0,
+          "phrase": 0,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "8db45adf9f64bff061f56fea98ab82f3ac49d7a1a898e2a0cd75051c4d0b0574",
+          "ordinal": 30,
+          "group": "446ea8c7682824ecabd956b9e897b04f6330fb16c1aff1b775cbe595cdecbc22",
+          "family": 2,
+          "character": "hard-negative",
+          "performance_seed": 9242110,
+          "background_seed": 9261230,
+          "pitch": 0,
+          "phrase": 1,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": null
+        },
+        {
+          "source_id": "0a565d32f16be59528a684594d2fb50027cc31b010fd2c11c7584ecc422f69b7",
+          "ordinal": 31,
+          "group": "e8e447a7cfd3125f86ec2676759b23defeb9fdce71479f45f572b740b485621b",
+          "family": 0,
+          "character": "hard-negative",
+          "performance_seed": 9242147,
+          "background_seed": 9261271,
+          "pitch": 0,
+          "phrase": 2,
+          "condition": 6,
+          "positions": [
+            0.373
+          ],
+          "ratio_db": 6,
+          "duration_seconds": 8.0,
+          "event_seconds": 2.4,
+          "rate": 24000,
+          "channels": 1,
+          "duplicate_of": 24
+        }
+      ],
+      "cases": [
+        {
+          "case_id": "f73ab8d38d12512513a791886f99cbd1fd0c0e2ced5523953b9c8ef1b4719e1a",
+          "ordinal": 0,
+          "kind": "independent-performance",
+          "condition": 0,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 9340000,
+              "background_seed": 9540000,
+              "pitch": 3,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            0
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "0a48d9c71b5a5a5eb28f5a19072a2b9e7f1fc9fd5fd2807b6648cdf74e9ef244",
+          "ordinal": 1,
+          "kind": "independent-performance",
+          "condition": 1,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 9340211,
+              "background_seed": 9540223,
+              "pitch": 9,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            0
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "1ccf7e6f0b355df51688d806dc48bcd1216ac73fa14df56e4ad15d06b2b7d174",
+          "ordinal": 2,
+          "kind": "independent-performance",
+          "condition": 0,
+          "examples": [
+            {
+              "family": 1,
+              "performance_seed": 9340422,
+              "background_seed": 9540446,
+              "pitch": 3,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            1
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "9a731d881db47faa4232cc945f82071a0b83b5a7fa593e3fe5c74fb3a89e506b",
+          "ordinal": 3,
+          "kind": "independent-performance",
+          "condition": 1,
+          "examples": [
+            {
+              "family": 1,
+              "performance_seed": 9340633,
+              "background_seed": 9540669,
+              "pitch": 9,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            1
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "664d0b8cb7c54fe4888ce72d6b6f3e8c51e5c039a193c141f3a3bc15db096f23",
+          "ordinal": 4,
+          "kind": "independent-performance",
+          "condition": 0,
+          "examples": [
+            {
+              "family": 2,
+              "performance_seed": 9340844,
+              "background_seed": 9540892,
+              "pitch": 3,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            2
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "9353c427ffd3b5cef4b4db20ed920c47b64d898445e0bf95273a81a490668e87",
+          "ordinal": 5,
+          "kind": "independent-performance",
+          "condition": 1,
+          "examples": [
+            {
+              "family": 2,
+              "performance_seed": 9341055,
+              "background_seed": 9541115,
+              "pitch": 9,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            2
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "e9428e0b80156458c913becc0ccf083996666de99f848ed529aa58922a5ceebf",
+          "ordinal": 6,
+          "kind": "independent-performance",
+          "condition": 0,
+          "examples": [
+            {
+              "family": 3,
+              "performance_seed": 9341266,
+              "background_seed": 9541338,
+              "pitch": 3,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            3
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "7f6db2dbd4aa2b25026e919fde0ddf6ada0df271e4b90695bdc1f5bcdfa0a0bf",
+          "ordinal": 7,
+          "kind": "independent-performance",
+          "condition": 1,
+          "examples": [
+            {
+              "family": 3,
+              "performance_seed": 9341477,
+              "background_seed": 9541561,
+              "pitch": 9,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            3
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "591efe78ad68c7f4f98acd6c41497c19cf6ae80b565f1ff973e3cec31439c9ee",
+          "ordinal": 8,
+          "kind": "same-character-alternatives",
+          "condition": 4,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 9341688,
+              "background_seed": 9541784,
+              "pitch": 3,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            },
+            {
+              "family": 0,
+              "performance_seed": 9341741,
+              "background_seed": 9541843,
+              "pitch": 10,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            0
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "34157af07a38d35f8bd3100b7338754b8dfa21b001a9fb38f406bd8934d5c7ca",
+          "ordinal": 9,
+          "kind": "same-character-alternatives",
+          "condition": 4,
+          "examples": [
+            {
+              "family": 1,
+              "performance_seed": 9341899,
+              "background_seed": 9542007,
+              "pitch": 3,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            },
+            {
+              "family": 1,
+              "performance_seed": 9341952,
+              "background_seed": 9542066,
+              "pitch": 10,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            1
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "63ca74489f851fcf675e8aa875ad21fd7a846b2d655f86bfbbfc6c9161bcf638",
+          "ordinal": 10,
+          "kind": "distinct-known-events",
+          "condition": 4,
+          "examples": [
+            {
+              "family": 2,
+              "performance_seed": 9342110,
+              "background_seed": 9542230,
+              "pitch": 3,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            },
+            {
+              "family": 3,
+              "performance_seed": 9342163,
+              "background_seed": 9542289,
+              "pitch": 10,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            2,
+            3
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "1b32d39713d617669d54c624e6e4e9dfca03c670b5e6ebc514b3f47b09c6d589",
+          "ordinal": 11,
+          "kind": "distinct-known-events",
+          "condition": 4,
+          "examples": [
+            {
+              "family": 3,
+              "performance_seed": 9342321,
+              "background_seed": 9542453,
+              "pitch": 3,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            },
+            {
+              "family": 0,
+              "performance_seed": 9342374,
+              "background_seed": 9542512,
+              "pitch": 10,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [
+            0,
+            3
+          ],
+          "primary": true,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "5a9998545021a9eb91e19aa6f37faec666ecae788a77958953ef1e7f351a6226",
+          "ordinal": 12,
+          "kind": "absent-target",
+          "condition": 5,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 9342532,
+              "background_seed": 9542676,
+              "pitch": 3,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [],
+          "primary": false,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "123a5c9bd6d92f596e87f16005b37708c551f7c2d6c58851431f366fc903aa9a",
+          "ordinal": 13,
+          "kind": "absent-target",
+          "condition": 5,
+          "examples": [
+            {
+              "family": 1,
+              "performance_seed": 9342743,
+              "background_seed": 9542899,
+              "pitch": 3,
+              "phrase": 1,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": null
+            }
+          ],
+          "positive_characters": [],
+          "primary": false,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "2b364405097a8bbe1aa745ec1cc76c8ac79c93dee10ee848e69b15ff0a490f8b",
+          "ordinal": 14,
+          "kind": "exact-instance-exclusion",
+          "condition": 6,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 9342954,
+              "background_seed": 9543122,
+              "pitch": 3,
+              "phrase": 2,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "positive_characters": [],
+          "primary": false,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        },
+        {
+          "case_id": "a11b932281cb731b2869356b7f921653c9bcc890fc8ad67134334c6adf3d772d",
+          "ordinal": 15,
+          "kind": "exact-instance-exclusion",
+          "condition": 6,
+          "examples": [
+            {
+              "family": 0,
+              "performance_seed": 9343165,
+              "background_seed": 9543345,
+              "pitch": 3,
+              "phrase": 0,
+              "event_seconds": 2.4,
+              "ratio_db": 0,
+              "native_rate": 24000,
+              "duration_seconds": 3.2,
+              "event": [
+                9600,
+                67200
+              ],
+              "context": [
+                0,
+                76800
+              ],
+              "source_ordinal": 31
+            }
+          ],
+          "positive_characters": [],
+          "primary": false,
+          "scoring_unit": "complete constructed motif; short-source motif has full 1.1s release"
+        }
+      ]
+    }
+  },
+  "input_isolation": "Neutral source/case IDs; family/insertion/positive truth stays outside retrieval inputs",
+  "construction": {
+    "primitive": "evaluation.rendering.render_tone and mix; familiar procedural mechanisms",
+    "performance": "Independent seeds, detuning +/-0.13 semitone, spectral slope +/-0.04, FM ratio +/-0.02 and cutoff +/-35Hz; multiplicative independent slow amplitude modulation",
+    "negative": "Same mechanism, slope+1.3, FM ratio+.67, cutoff+2200Hz; proxy identity, not human irrelevance",
+    "absent": "Query slope+2.4, FM ratio+1.7, cutoff+6000Hz; no matching preset in candidates",
+    "background": "Independent 3rd-order 1800Hz low-pass noise RMS .04 plus .01*sin(127Hz) and .008*sin(331Hz); no shared query realization",
+    "stereo": "Left mono mixture, right .7 mixture plus .01 independent noise; resample_poly 24k to44.1k",
+    "exact_controls": "Declared candidate original is the query parent; its duplicate group must be excluded",
+    "audit": "Independent algebraic mixture/level reconstruction, full PCM/hash, lag/native endpoint and silence/clipping checks"
+  },
+  "policies": [
+    "legacy-mean",
+    "event-multi"
+  ],
+  "default": {
+    "audio": "original",
+    "arm": "legacy-mean",
+    "pitch": "off"
+  },
+  "revision": {
+    "allowed": false,
+    "reason": "Compare shipped event-multi unchanged; no tuning dimension"
+  },
+  "limits": {
+    "queries": 40,
+    "development": 24,
+    "confirmation": 16,
+    "sources": 64,
+    "executions": 112,
+    "technical_replay_executions": 8
+  },
+  "banks": [
+    {
+      "window_milliseconds": 2400,
+      "hop_milliseconds": 600
+    },
+    {
+      "window_milliseconds": 4800,
+      "hop_milliseconds": 1000
+    }
+  ],
+  "metrics": {
+    "cuts": [
+      1,
+      5,
+      10,
+      20
+    ],
+    "iou": 0.5,
+    "truth_overlap": 0.5,
+    "matching": "one-to-one maximum cardinality then IoU; actual scored representatives only",
+    "primary": "Macro by declared mechanism family and condition; paired cases retained",
+    "absent": "Forced ranking validity and score/order only; no rejection threshold"
+  },
+  "controls": {
+    "constant": "eligible group ID ascending",
+    "random_seed": 882711,
+    "random": "independent seeded permutation per case, same eligible population"
+  },
+  "decision": "Complete valid compliant outputs; no macro group-hit@1 or IoU event-recall@10 loss; strict gain in at least one; no newly lost per-case positive-group coverage@20. Apply to development and confirmation separately; preserve condition regressions.",
+  "product_cases": {
+    "split": "development",
+    "ordinals": [
+      0,
+      16,
+      20
+    ],
+    "scope": "Real import/save/submit/status/result and frozen model; both arms; included in initial development executions"
+  },
+  "playable_rule": "Three product cases, plus first development primary baseline IoU miss at ten: first highest-ranked retained native representative for a known-positive group; if no known-positive group is ranked, first actual result. No quality-based replacement.",
+  "stage_metadata_mib": {
+    "prepare": 24,
+    "development": 72,
+    "confirmation": 56,
+    "delivery": 28,
+    "report": 12
+  },
+  "protected_metadata_mib": 32,
+  "qa_managed_mib": 64,
+  "evidence_limits": "Prospective confirmation within familiar mechanisms; no human agreement, new A06 holdout, Loulou layer truth or unseen musical-source claim",
+  "record_hash": "893aa664d48c02297837cd188c94e4fbdc11c0c8530eca59b1800eb8ca3f1a47"
+}
