@@ -108,3 +108,9 @@ map, separate evaluation source map and two-source cold/reuse pilot.
 `verify-evaluation-preservation.py capture|verify` compares every old artifact,
 including denied C01 staging, and permits only new immutable shared preparation.
 See [ASSESSMENT.md](../docs/ASSESSMENT.md) for commands and finite replay rules.
+
+`declare-evaluation-inventory-repair.py` archives the exact first D02 declaration
+and pins the pre-inference fresh-scan/publication/storage repair. It refuses to
+run after any feature encoding or query-policy claim. `verify-assessment-bytes.py`
+independently hashes every emitted source/reference against its recorded bytes;
+its additional reads and metadata are charged to D02 without changing originals.

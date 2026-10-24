@@ -8,6 +8,7 @@ Python file here. No generator family or ground-truth label enters retrieval.
 | --- | --- |
 | `commands.py`, `__main__.py` | Explicit preflight, generate/audit, index, query, run/resume, score, report and local serve commands |
 | `context.py` | Genuine D02 roots/pool and packed-group reads, using the application's protected accounting machinery |
+| `budget.py` | Fresh complete managed-tree scans with cached directory-entry sizes, preserving caps and link exclusions on Windows |
 | `contracts.py` | Exact inherited/own code proof, neutral inputs, population checks and finite execution claims |
 | `dataset.py`, `rendering.py` | Frozen independent performances, original bytes, genuine source metadata and B03 reference recipes |
 | `audit.py` | Independent mixture algebra, emitted PCM/native geometry and isolated relevance truth |

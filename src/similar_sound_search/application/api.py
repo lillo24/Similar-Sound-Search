@@ -125,7 +125,7 @@ def submit(root, limits, request, acceptance=False, runtime=None):
             owner.allocation = runtime.allocation(request)
             owner.job_id = key
             runtime.admit(owner, request)
-        budget = CatalogueBudget(root, limits)
+        budget = (CatalogueBudget if runtime is None else runtime.budget)(root, limits)
         value = dict(
             schema_version="d01-job-1",
             job_id=key,

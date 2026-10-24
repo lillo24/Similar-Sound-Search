@@ -6,10 +6,11 @@ import shutil
 from pathlib import Path
 
 from similar_sound_search.evaluation.artifacts import record
-from similar_sound_search.resources import CatalogueBudget, load_limits
+from similar_sound_search.resources import load_limits
 from similar_sound_search.storage import InputError
 
 from . import contracts, jobs
+from .budget import CatalogueBudget
 from .context import MIB, Context
 
 

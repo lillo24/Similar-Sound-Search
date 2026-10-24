@@ -12,6 +12,7 @@ from similar_sound_search.evaluation.artifacts import record
 from similar_sound_search.resources import CatalogueBudget, load_limits
 from similar_sound_search.storage import InputError, ResourceError, digest
 from sound_search_evaluation import audit, contracts, dataset, scoring
+from sound_search_evaluation.budget import CatalogueBudget as FastBudget
 from sound_search_evaluation.context import MIB, Context
 from sound_search_evaluation.runtime import category
 
@@ -19,6 +20,39 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class AssessmentTests(unittest.TestCase):
+    def test_fresh_directory_entry_inventory_equals_standard_actual_inventory(self):
+        for name in (
+            "data/old/a.bin",
+            "data/new/nested/b.bin",
+            "reports/local/c.bin",
+            "manifests/queries/d.bin",
+        ):
+            target = self.root / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(name.encode() * 23)
+        fast = FastBudget(self.root, self.budget.limits)
+        self.assertEqual(fast.managed_bytes(), self.budget.managed_bytes())
+        extra = self.root / "data/new/z.bin"
+        extra.write_bytes(b"actual new file")
+        fresh = FastBudget(self.root, self.budget.limits)
+        self.assertEqual(fresh.managed_bytes(), fast.managed_bytes() + len(b"actual new file"))
+
+    def test_assessment_lossless_bounded_storage_and_oversized_refusal(self):
+        value = dict(
+            schema_version="d02-scores-1",
+            cases=[dict(notes="a" * (2 * MIB), score=0.12345678912345678)],
+        )
+        ref = self.owner.put(self.budget, "assessments", value)
+        restored = self.owner.get(ref, "assessments")
+        self.assertEqual({k: v for k, v in restored.items() if k != "record_hash"}, value)
+        self.assertLess((self.root / ref["path"]).stat().st_size, MIB)
+        with self.assertRaises(InputError):
+            self.owner.put(
+                self.budget,
+                "assessments",
+                dict(schema_version="d02-scores-1", notes="x" * (8 * MIB)),
+            )
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)

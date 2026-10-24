@@ -11,10 +11,10 @@ from similar_sound_search.application import api
 from similar_sound_search.application.job import committed, unit_path
 from similar_sound_search.application.locks import lock
 from similar_sound_search.evaluation.artifacts import record
-from similar_sound_search.resources import CatalogueBudget
 from similar_sound_search.storage import InputError, ResourceError, digest, project_lock
 
 from . import contracts, pipeline
+from .budget import CatalogueBudget
 from .context import Context
 from .runtime import Runtime, category
 
@@ -171,7 +171,9 @@ def worker(request):
     budget = CatalogueBudget(root, request["limits"])
     with project_lock(root), lock(root, "worker"), offline_network():
         value = api.job(owner, key)
-        if contracts.consumer(owner) != value["consumer"]:
+        if contracts.consumer(owner) != value["consumer"] and not contracts.compatible(
+            owner, value["consumer"]
+        ):
             raise InputError("D02 worker consumer differs from its admitted job")
         done, encodes = [], 0
         for unit in graph(value):
@@ -301,6 +303,9 @@ def run(root, limits, key, split="development"):
                 ):
                     raise ResourceError("D02 insufficient commit for server and bounded worker")
                 answer = execute(owner, key, limits)
+                # The child has its own actual-PID deadline. Final publication is
+                # a fresh bounded coordinator transaction, as in the D01 runner.
+                budget = CatalogueBudget(root, limits)
                 outcome = answer.get(
                     "state", "blocked" if answer.get("error_type") == "ResourceError" else "failed"
                 )

@@ -1,6 +1,10 @@
 """D02 pool and compact storage using the product's protected accounting machinery."""
 
+import base64
+import hashlib
+import json
 import math
+import zlib
 from pathlib import Path
 
 from similar_sound_search.application.codec import decode
@@ -94,6 +98,28 @@ class Context(ApplicationContext):
         return {k: v for k, v in value.items() if k != "record_hash"}
 
     def get(self, ref, kind):
+        if kind == "assessments":
+            value = super().get(ref, kind)
+            if value.get("schema_version") != "d02-packed-assessment-1":
+                return value
+            if value.get("encoding") != "zlib-json-utf8":
+                raise InputError("D02 packed assessment encoding differs")
+            packed = base64.b64decode(value["payload"], validate=True)
+            inflater = zlib.decompressobj()
+            raw = inflater.decompress(packed, 8 * MIB + 1)
+            if (
+                len(raw) > 8 * MIB
+                or not inflater.eof
+                or inflater.unused_data
+                or inflater.unconsumed_tail
+                or len(raw) != value["plain_bytes"]
+                or hashlib.sha256(raw).hexdigest() != value["plain_sha256"]
+            ):
+                raise InputError("D02 compressed assessment size/hash/stream differs")
+            restored = json.loads(raw)
+            if restored.get("schema_version") != "d02-scores-1":
+                raise InputError("D02 packed assessment schema differs")
+            return {**restored, "record_hash": value["record_hash"]}
         if kind == "group-results" and "container" in ref:
             path = contained(self.root / ref["path"], self.directory / "group-batches")
             container = record(path)
@@ -115,6 +141,20 @@ class Context(ApplicationContext):
                 raise InputError("D02 packed group content/hash differs")
             return decode(value)
         return super().get(ref, kind)
+
+    def put(self, budget, kind, value):
+        if kind == "assessments":
+            raw = json.dumps(value, separators=(",", ":"), allow_nan=False).encode("utf-8")
+            if len(raw) > 8 * MIB:
+                raise InputError("D02 assessment exceeds 8 MiB decoded bound")
+            value = dict(
+                schema_version="d02-packed-assessment-1",
+                encoding="zlib-json-utf8",
+                plain_bytes=len(raw),
+                plain_sha256=hashlib.sha256(raw).hexdigest(),
+                payload=base64.b64encode(zlib.compress(raw, 9)).decode("ascii"),
+            )
+        return super().put(budget, kind, value)
 
     def model(self, budget, desc):
         if not hasattr(self, "feature_model"):

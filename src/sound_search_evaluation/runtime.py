@@ -4,10 +4,13 @@ from similar_sound_search.evaluation.artifacts import record
 from similar_sound_search.storage import InputError, ResourceError, contained, digest
 
 from . import contracts, pipeline
+from .budget import CatalogueBudget
 from .context import MIB, Context
 
 
 class Runtime:
+    budget = CatalogueBudget
+
     def __init__(self, root, split="development"):
         self.root, self.split = root, split
 

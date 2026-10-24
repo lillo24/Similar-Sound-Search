@@ -63,6 +63,7 @@ environment. No dependency or weight acquisition is needed:
 .venv/Scripts/python.exe -m sound_search_evaluation preflight
 .venv/Scripts/python.exe -m sound_search_evaluation generate --split development
 .venv/Scripts/python.exe -m sound_search_evaluation validate --split development
+.venv/Scripts/python.exe scripts/verify-assessment-bytes.py development
 .venv/Scripts/python.exe -m sound_search_evaluation index --ordinals 0,4 --tag cold-pilot
 .venv/Scripts/python.exe -m sound_search_evaluation index --ordinals 0,4 --tag reuse-pilot
 # Inspect pilot cost and exact reuse before the remaining index.
@@ -94,8 +95,27 @@ matches, with misses retained. Coverage matching independently uses 50% of the
 true event; IoU matching uses 0.5. Native grid/support/rank/representative diagnostics
 explain remaining misses.
 
+The independent emitted-byte closure check compares every actual original SHA256
+with its generated metadata, including query parents. It complements the decoded
+PCM/geometry/level audit and production freshness checks; it performs no inference
+and debits its complete reads and metadata to D02. Run it for each split before
+model processing. It is non-inference QA; it never changes an original or old pool.
+
 The private report reads allowlisted existing originals for bounded excerpt
 playback and displays exact scored native frames. Those players do not create
 new crops or replace the product's separately verified exact PCM16 clips. Complete
 predictions and both score summaries remain inspectable. The failure example
 uses the prospective selection rule, without flattering replacement.
+
+D02's inventory scans every actual managed root in every new worker using native
+directory-entry metadata. It skips links/junctions and preserves the 100,000-file,
+disk, free-space and time guards. It never substitutes a historical-size snapshot.
+This avoids repeated Windows path-stat calls. Coordinator publication gets a fresh
+bounded budget after a child returns, matching the existing D01 transaction pattern.
+The retained pre-inference audit publication refusal remains charged in the pool.
+
+Large assessments use lossless compressed JSON records under the existing 1 MiB
+serialized-record bound, with an 8 MiB decoded limit, exact SHA256 and strict stream
+validation. Per-case metrics and floating-point values are unchanged; `Context.get`
+expands them for scoring/reporting. Full product prediction references remain the
+unmodified source for each reported case.

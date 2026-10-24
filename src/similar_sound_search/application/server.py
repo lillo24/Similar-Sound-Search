@@ -331,7 +331,7 @@ def make_server(root, limits, port=8774, runtime=None):
             if existing.exists():
                 raise InputError("D01 upload already exists; load the registered reference")
             context.admit(allocation, 512 * 1024)
-            budget = CatalogueBudget(root, limits)
+            budget = (CatalogueBudget if runtime is None else runtime.budget)(root, limits)
             context.charge(budget, import_bytes=length)
             budget.reserve(length + 4096)
             target = context.audio / "imports" / (key + suffix)
