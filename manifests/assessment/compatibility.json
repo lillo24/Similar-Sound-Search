@@ -298,7 +298,7 @@
     "application/queries.py",
     "application/server.py"
   ],
-  "predecessor": "cbd8725fe4a80a6dc3cbc880f36214712b651e16915ff806cca56c55ae90ec97",
+  "predecessor": "d88d2248f47816e281da47063cd0afe30673cd806d83cee4c18116d7d1bb01a8",
   "accepted_previous": [
     {
       "declaration_hash": "feb882325c29159d34b723df3b8a63deea5101561aa25d68ebca24df5859860a",
@@ -317,8 +317,14 @@
       "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
       "code_hash": "2fecbd1895989f7fb78347758244262f7d49457dc99a055b51be05119c6f5673",
       "version": "d02-consumer-1"
+    },
+    {
+      "declaration_hash": "ca63340adb13c9e9707fed8162470c0e877d9b59495466432ec35c190bd84d74",
+      "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+      "code_hash": "2fecbd1895989f7fb78347758244262f7d49457dc99a055b51be05119c6f5673",
+      "version": "d02-consumer-1"
     }
   ],
-  "reason": "Before inference: report allowlist manifest stays within the record owner; static HTML/audio remain separate allowlisted artifacts. No renderer, model, metric, rank or gate changes.",
-  "record_hash": "d88d2248f47816e281da47063cd0afe30673cd806d83cee4c18116d7d1bb01a8"
+  "reason": "Before any accepted prediction/quality summary: genuine recording-specific native memberships for aliases sharing PCM cache rows. Raw feature vectors, distances, grids, support counts, C02 fusion, metrics, gate and population remain unchanged; retain the first aggregation refusal and its charges.",
+  "record_hash": "013827d7cdf2f74cc5034da59c528bf5809a1230adc12fde1c1f9e6318606645"
 }
