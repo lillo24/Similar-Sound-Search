@@ -281,7 +281,7 @@ class Context:
                 seconds=seconds,
                 settled=False,
                 sequence=p["attempt_sequence"],
-                job_id=self.allocation,
+                job_id=getattr(self, "job_id", self.allocation),
             )
             p["attempts"] = {k: v for k, v in p["attempts"].items() if not v["settled"]}
             p["attempts"][identity] = slot

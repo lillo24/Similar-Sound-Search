@@ -172,3 +172,18 @@ filesystem/publication failures, scalar/native ranking and media bindings, recip
 deduplication/optimistic conflicts, HTTP isolation and recovery fixtures. These can
 drive D02 technical automation without claiming human sound-similarity truth.
 D02 evaluation, D03 packaging and the first D04 listening review remain future work.
+## D02 evaluation provider
+
+The optional trusted Python `runtime` argument in the application API/server is
+used by `sound_search_evaluation.runtime.Runtime` on 8775. HTTP clients cannot
+select or supply a provider. `runtime=None` retains the historical application
+owner, inputs and port-8774 launch route. D02 supplies genuine generated source,
+index, query and membership records; [ASSESSMENT.md](ASSESSMENT.md) owns that finite
+population, its pool and commands.
+
+The exact scoped D02 source declaration accepts only its pinned five application
+seams and inherited numerical hash. Historical producer/consumer declarations are
+retained; unknown source drift still fails. `/api/result` and result-bound media
+continue to require the exact complete query/arm/population publication. The D02
+report has a separate immutable own-root allowlist at `/evaluation/` and cannot
+serve arbitrary workspace paths or substitute C03 for controlled results.

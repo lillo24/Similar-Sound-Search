@@ -1,15 +1,32 @@
 # Project status
 
-Updated 23 October 2026. **D01 local interface acceptance is complete.**
+Updated 24 October 2026. **D02 automatic evaluation is delivered.**
+[D02 evidence](../reports/D02_EVALUATION.md) and its
+[complete paired metrics](../reports/D02_EVALUATION.json) retain 24 development and
+16 confirmation cases, all valid, with 80 initial policy executions and eight
+technical replays. Event-multi improves macro IoU event recovery at ten from
+50.94% to 67.50% on development and 47.14% to 69.27% on confirmation. It newly loses
+positive groups at twenty in two development cases and one confirmation case,
+failing the frozen gate in both splits. Original/legacy/pitch-off stay default.
+The separate generated population does not extend the real discovery catalogue.
+The final complete suite passed 404 tests in 236.507s, with Ruff, JavaScript,
+pinned setup/dependencies, isolated smoke and independent scalar/native answers.
+Three product cases passed 60 native/player checks; the private report passed all
+130 controls. The final audit preserved all 17,330 historical files. D02 spent
+1,906.557 worker seconds and 223,433,434 metadata bytes within its original caps.
+
+**D01 local interface acceptance remains complete.**
 [D01 evidence](../reports/D01_INTERFACE.md) covers real import/native selection,
 saved queries, full-catalogue original/warm/new-query searches and exact playback.
-The final suite passes 382 tests; all 40 result clips passed independent native/HTTP
+Its historical final suite passed 382 tests; all 40 result clips passed independent native/HTTP
 checks and 72 result/C03 players passed Chrome playback. Completed searches reopen
 without inference, including from a fresh browser. Another full search cannot fit
 the fixed remaining D01 allowance. C04 remains historically partial 145/148 with its
 unsettled reservation unchanged. Original mixture/legacy mean/pitch off remain
 defaults. Human relevance and reference/master/rights/layer uncertainty remain.
-D02 automation, D03 packaging and D04 listening review are future work.
+D03 packaging and D04 listening review remain future work. D03 must define an
+explicit bounded runtime resource policy; normal operation cannot depend on
+deleting or resetting the exhausted delivery ledgers.
 Follow [AGENTS.md](../AGENTS.md) for PR/merge/cleanup delivery.
 
 ## Foundation and current delivery
@@ -60,7 +77,9 @@ No GitHub Actions workflow/required CI check exists in the inspected repository;
 | C02 retrieval and aggregation | Delivered; exact legacy default, event support and twenty-group shortlists; [evidence](../reports/C02_RETRIEVAL.md) |
 | C03 candidate refinement | Delivered; bounded original timing, retained controls, separately verified playback and C04 handoff; [evidence](../reports/C03_REFINEMENT.md) |
 | C04 incremental processing | Partial: fixture/recovery checks passed; 72-source banks/query/scores committed, final publication blocked at metadata ceiling; [evidence](../reports/C04_PROCESSING.md) |
-| D01-D04 interface/package | Future; live D01 needs metadata admission/finalization repair and an explicit new owner; first listening review remains D04 |
+| D01 local interface | Complete; readable completed searches on 8774, no further complete search fits its delivery allowance |
+| D02 automatic evaluation | Complete paired generated evaluation; both event-multi gates fail; [evidence](../reports/D02_EVALUATION.md) |
+| D03 packaging / D04 listening | Future; explicit runtime policy required for packaging, first required human review remains D04 |
 | Perceptual quality and Loulou relevance | Unmeasured; real-catalogue candidates are not confirmed matches; controlled A05/A06 metrics remain separate |
 | Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 

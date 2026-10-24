@@ -1,0 +1,13 @@
+{
+  "schema_version": "d02-metadata-admission-1",
+  "protocol": "893aa664d48c02297837cd188c94e4fbdc11c0c8530eca59b1800eb8ca3f1a47",
+  "measured_batch": "1c599801e9eea5a6bb12a3e00b6d636cd3c0f538df61f6e15a93fed1c327e6b3",
+  "additional_development_bytes": 18874368,
+  "reason": "Measured cold cases plus lossless compaction; 2 MiB publication margin over the initial 16 MiB forecast",
+  "fixed_metadata_ceiling": 268435456,
+  "protected_bytes": 33554432,
+  "confirmation_reserved": 58720256,
+  "report_reserved": 12582912,
+  "no_spent_charge_refunded": true,
+  "record_hash": "03dea1eadf7542851ed6767dfe94f6d1ae7715e568ea00f405462b4a4bbeacea"
+}

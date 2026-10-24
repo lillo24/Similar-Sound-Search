@@ -1,0 +1,15 @@
+{
+  "schema_version": "d02-resource-pilot-1",
+  "protocol": "893aa664d48c02297837cd188c94e4fbdc11c0c8530eca59b1800eb8ca3f1a47",
+  "split": "development",
+  "ordinals": [
+    0,
+    4
+  ],
+  "passes": [
+    "cold",
+    "exact-reuse"
+  ],
+  "policy": "Index only; no query distances or quality scores. Measure actual PID startup/decode/model/cache/write/settlement before remaining index. Stop if projected complete path violates preflight; no pool increases.",
+  "record_hash": "a41e498a4dd892990c7f0f028cf4674b3be894cc3ea11af5ffead2e3cfd5481a"
+}

@@ -97,3 +97,37 @@ and checks all earlier artifacts/configuration, including the retained C01 stagi
 `export-application-evidence.py` reads completed records into the typed public D01
 summary, refuses missing/failed QA and strips paths/tokens/audio. It dispatches no
 workers, settles no attempts and cannot reset the finite allowance.
+
+## D02 automatic evaluation
+
+`freeze-evaluation-protocol.py` is the one-shot prospective matrix/config writer.
+`declare-evaluation-consumer.py` pins the five product seams, unchanged numerical
+map, separate evaluation source map and two-source cold/reuse pilot.
+`evaluation-worker.py` is the actual-PID boundary for
+`python -m sound_search_evaluation`; it reports failures and never retries.
+`verify-evaluation-preservation.py capture|verify` compares every old artifact,
+including denied C01 staging, and permits only new immutable shared preparation.
+See [ASSESSMENT.md](../docs/ASSESSMENT.md) for commands and finite replay rules.
+
+`declare-evaluation-inventory-repair.py` archives the exact first D02 declaration
+and pins the pre-inference fresh-scan/publication/storage repair. It refuses to
+run after any feature encoding or query-policy claim. `verify-assessment-bytes.py`
+independently hashes every emitted source/reference against its recorded bytes;
+its additional reads and metadata are charged to D02 without changing originals.
+
+`declare-evaluation-publication-repair.py` pins the pre-inference record-owner
+placement fix, preserving previous consumers. `admit-evaluation-remaining.py`
+checks exact cold/reuse pilot outcomes and records the remaining-path forecast;
+actual pool guards remain authoritative and no ceiling is increased.
+
+`declare-evaluation-membership-repair.py` pins genuine PCM-alias membership IDs;
+`declare-evaluation-storage-repair.py` pins lossless bounded metadata packing.
+Both preserve earlier producers, numerical values and retained failure evidence.
+`declare-evaluation-layout.py` proves the two CSS-only mobile fixes and unchanged
+player code. `admit-evaluation-metadata.py` reserves measured development space;
+`admit-evaluation-confirmation.py` releases only completed preparation's unspent
+reservation and reserves the measured confirmation remainder within the same cap.
+`freeze-evaluation-candidate.py` pins the unchanged candidate and development gate
+before confirmation. `export-evaluation-evidence.py` reads saved assessments and
+verified acceptance/preservation evidence into the sanitized public JSON; it performs
+no inference, settlement, ledger reset or historical mutation.

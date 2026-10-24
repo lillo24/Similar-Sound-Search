@@ -1,0 +1,10 @@
+{
+  "schema_version": "d02-mobile-layout-compatibility-1",
+  "before_consumer": "feb882325c29159d34b723df3b8a63deea5101561aa25d68ebca24df5859860a",
+  "file": "src/similar_sound_search/application/web/style.css",
+  "before_sha256": "3b8286e4c7e128dc1abb8864d027e00d736af33ac37dddf39516c4444517f594",
+  "after_sha256": "3da18a6615a7337a4f189e83a5d1ea7071ce5cc649753fd11a0a2d74418f93d0",
+  "source_commit": "ed4a2c03b5f56984f745f6571bebe7c622931760",
+  "change": "Mobile track minimum only; player/crop logic and every numerical module unchanged",
+  "record_hash": "92bff8c9debebf33d47ca8f42e6332a2f00d7740d5c0723b6cc445b8a5d13027"
+}

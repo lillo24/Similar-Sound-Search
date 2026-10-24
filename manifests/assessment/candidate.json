@@ -1,0 +1,52 @@
+{
+  "schema_version": "d02-candidate-1",
+  "protocol": "893aa664d48c02297837cd188c94e4fbdc11c0c8530eca59b1800eb8ca3f1a47",
+  "baseline": "legacy-mean",
+  "candidate": "event-multi",
+  "revision": null,
+  "consumer": {
+    "declaration_hash": "6926132ca5410a4200a97d339c9a3eebbaffabd3fc3b714e2245f834d84d1619",
+    "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+    "code_hash": "2fecbd1895989f7fb78347758244262f7d49457dc99a055b51be05119c6f5673",
+    "version": "d02-consumer-1"
+  },
+  "development_assessment": "978e304cb91f329aa95387779b04611c386b2501a4cd9d3666270a43069f237e",
+  "development_gate": {
+    "baseline": {
+      "macro_group_hit_1": 0.625,
+      "macro_iou_event_recall_10": 0.509375
+    },
+    "candidate": {
+      "macro_group_hit_1": 0.725,
+      "macro_iou_event_recall_10": 0.675
+    },
+    "coverage_regressions": [
+      {
+        "case_id": "be72f6ee897b97b15b90fe9e73827d7d968a95f58f4fd02ea80a6d7a73b3213d",
+        "newly_lost_groups": [
+          "21b37513df28072b8f6720632fa34b1843dc4972b3293c60ac8405d0fba731a9"
+        ]
+      },
+      {
+        "case_id": "eb0faf40e50327cefe8e79edc8edc8b3763723e5fbff4e56f8febdd45430ace4",
+        "newly_lost_groups": [
+          "40813c1c68f7674d4df459c2b457c9a9f6d8daad73352d9add451d8e257c07b2"
+        ]
+      }
+    ],
+    "decision": "retain baseline; paired gate not met",
+    "passed": false,
+    "valid": true
+  },
+  "gate": "Complete valid compliant outputs; no macro group-hit@1 or IoU event-recall@10 loss; strict gain in at least one; no newly lost per-case positive-group coverage@20. Apply to development and confirmation separately; preserve condition regressions.",
+  "confirmation_cases": 16,
+  "confirmation_matrix": "71535a545715087250f6c899bf535a572969db20a84a95afa4764620a99c376a",
+  "decision": "Unchanged sole prospective alternative; no tuning. Development coverage guard failed; retain baseline. Run the declared confirmation once for complete paired evidence.",
+  "defaults": {
+    "audio": "original",
+    "arm": "legacy-mean",
+    "pitch": "off"
+  },
+  "source_commit": "d87a948e7a1176a234f8faae6b2d22a9ed113f55",
+  "record_hash": "3273c4ae09e61bcfa1397504731c79bde88ea2fc968484bda6e56e531085e38c"
+}

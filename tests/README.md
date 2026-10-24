@@ -92,3 +92,15 @@ Generated original audio and independent scalar answers verify exclusions and ex
 result-to-native-player binding. Query adapters retain dedup/all-parent semantics
 and optimistic revision checks. No private catalogue, historical ledger or model
 download is used by these tests; real acceptance is separately reported in D01.
+
+`test_assessment.py` adds D02 finite-owner/retained-attempt faults, independent
+stereo/short emitted-PCM audits, malformed/duplicate/missing ranking oracles,
+one-to-one event denominators, separate group/IoU/coverage metrics, seeded controls
+and paired promotion-gate regressions. These are model-free unit oracles. Actual
+frozen-model product/component agreement and Chrome acceptance are separate D02
+evidence; no mocked prediction is used as a real evaluation result.
+
+The D02 scalar alias fixture checks actual duplicate PCM through production fusion;
+storage fixtures check lossless values, retained plain references, decoded-size
+limits and report allowlist tampering. The complete final D02 suite contains 404
+tests; real model/API/browser evidence remains separately charged and reported.

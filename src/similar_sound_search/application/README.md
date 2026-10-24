@@ -28,3 +28,12 @@ audits already committed query/array/score outputs before bounded finalization.
 Completed-search navigation in `api.py` is a metadata read, independent of admission.
 
 See [APPLICATION.md](../../../docs/APPLICATION.md) for contracts and recovery.
+
+D02 adds a trusted optional runtime provider to `api.py`/`server.py`; HTTP request
+data cannot select it. The default remains the D01 population/pool on 8774.
+`queries.py` shares one lazy model across query owners and optionally adds actual
+parent ancestry supplied by the owner. `context.py` records actual job IDs when
+several jobs use a prepaid stage. `history.py` permits only the exact before/after
+D02 scoped proof; D01 declarations and numerical modules stay pinned. The
+[D02 subsystem](../../sound_search_evaluation/README.md) owns the generated inputs,
+separate pool and 8775 evaluation listener.
