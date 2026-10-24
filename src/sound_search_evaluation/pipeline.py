@@ -8,7 +8,7 @@ from similar_sound_search.processing import cache, engine
 from similar_sound_search.search import sources
 from similar_sound_search.storage import InputError, digest
 
-from . import contracts
+from . import contracts, membership
 
 
 def plan(owner, budget, arm="legacy-mean"):
@@ -180,8 +180,9 @@ def calculate(budget, owner, case_id, revision=None, category="initial"):
         if index["source"] != source or index["representation"] != value["representation"]:
             raise InputError("D02 indexed source/representation differs")
         cache.vectors(budget, owner, index["features"]["rows"])
-        scores[source["recording_id"]] = engine.score(
-            budget, owner, value, source, index["features"], q
+        raw_scores = engine.score(budget, owner, value, source, index["features"], q)
+        scores[source["recording_id"]] = membership.bind(
+            budget, owner, source, index, raw_scores, value["input"]["sources"]
         )
         memberships[source["recording_id"]] = dict(
             path=path.relative_to(owner.root).as_posix(), record_hash=index["record_hash"]

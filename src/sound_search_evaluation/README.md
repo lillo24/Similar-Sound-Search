@@ -13,6 +13,7 @@ Python file here. No generator family or ground-truth label enters retrieval.
 | `dataset.py`, `rendering.py` | Frozen independent performances, original bytes, genuine source metadata and B03 reference recipes |
 | `audit.py` | Independent mixture algebra, emitted PCM/native geometry and isolated relevance truth |
 | `pipeline.py` | Production model/cache/score/fusion calls and immutable complete predictions |
+| `membership.py` | Genuine recording-specific row IDs for actual PCM aliases, retaining raw cache-score artifacts and identical numbers |
 | `runtime.py` | Trusted provider for the existing import/save/submit/status/result/media HTTP API |
 | `jobs.py` | Serial actual-PID workers, native QA, useful-unit commits, cancellation and protected settlement |
 | `scoring.py` | Saved-prediction validation, group/event metrics, paired gate and diagnostic controls |

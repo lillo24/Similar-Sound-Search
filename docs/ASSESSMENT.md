@@ -125,3 +125,12 @@ byte-closure receipts are `data/runs/assessment/byte-audits/<split>.json`. Recor
 publication stays inside its owner; generated HTML/media files are separate
 allowlisted artifacts under D02 roots. The pre-inference placement correction
 archives the earlier source declaration and changes no numerical or metric code.
+
+Actual PCM aliases share C04 feature rows. Their C02 evidence witnesses still
+belong to different recordings. The D02 membership adapter retains the minimum
+neutral recording ID's raw row IDs and gives other aliases recording-specific
+native membership IDs. Each immutable projection binds its actual index, raw
+score artifact and original row keys. Distances, bounds, support counts and frozen
+fusion are unchanged. This corrects the retained first product aggregation refusal
+(`C02 conflicting same-row evidence`); it does not remove the duplicate or change
+the population. No complete prediction or quality summary preceded this correction.

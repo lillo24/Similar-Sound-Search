@@ -11,7 +11,7 @@ import numpy as np
 from similar_sound_search.evaluation.artifacts import record
 from similar_sound_search.resources import CatalogueBudget, load_limits
 from similar_sound_search.storage import InputError, ResourceError, digest
-from sound_search_evaluation import audit, contracts, dataset, scoring
+from sound_search_evaluation import audit, contracts, dataset, membership, scoring
 from sound_search_evaluation.budget import CatalogueBudget as FastBudget
 from sound_search_evaluation.context import MIB, Context
 from sound_search_evaluation.runtime import Runtime, category
@@ -20,6 +20,116 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class AssessmentTests(unittest.TestCase):
+    def test_actual_pcm_alias_memberships_preserve_scalar_scores_and_fuse_distinct_groups(self):
+        from similar_sound_search.application.pipeline import Capture
+        from similar_sound_search.processing import engine
+        from similar_sound_search.processing.contracts import source_key
+
+        t = np.arange(8000) / 8000
+        pop = []
+        indexed = {}
+        scores = {}
+        original_scores = {}
+        for i in range(3):
+            samples = (0.2 * np.sin(2 * np.pi * (220 if i < 2 else 440) * t)).astype(np.float32)[
+                :, None
+            ]
+            path = self.owner.audio / (str(i) + ".wav")
+            audio = dataset.write_audio(self.budget, self.owner, path, samples, 8000)
+            source = dict(
+                recording_id=str(i),
+                group="alias" if i < 2 else "other",
+                kind="engineering",
+                source={**audio, "local_path": path.relative_to(self.root).as_posix()},
+                title="Fixture",
+                artist="Generated",
+                offset=None,
+                offset_evidence=None,
+            )
+            pop.append(source)
+        for source in pop:
+            i = int(source["recording_id"])
+            # Independent scalar cosine with q=[1,0], candidates [4,3] / [0,1].
+            scalar = 0.2 if i < 2 else 1.0
+            r = dict(
+                key=digest([source_key(source), "native-row"]),
+                native_bounds=[0, 8000],
+                vector_sha256=digest([4, 3] if i < 2 else [0, 1]),
+            )
+            index = dict(source=source, features=dict(rows=[r]))
+            ipath = self.owner.directory / "index" / (source["recording_id"] + ".json")
+            self.owner.publish(self.budget, ipath, index, immutable=True)
+            indexed[source["recording_id"]] = record(ipath)
+            row = dict(key=r["key"], bounds=r["native_bounds"], per=[scalar], mean=scalar)
+            raw = dict(
+                schema_version="c04-source-scores-1",
+                identity=dict(candidate_digest=digest([[r["key"], r["vector_sha256"]]])),
+                banks=[dict(count=1, baseline=row, supports=[[row]]) for _ in range(2)],
+            )
+            original_scores[source["recording_id"]] = dict(
+                result=self.owner.put(self.budget, "score-results", raw)
+            )
+        for source in pop:
+            rid = source["recording_id"]
+            scores[rid] = membership.bind(
+                self.budget, self.owner, source, indexed[rid], original_scores[rid], pop
+            )
+        self.assertEqual(scores["0"], original_scores["0"])
+        bound = self.owner.get(scores["1"]["result"], "score-results")
+        raw = self.owner.get(original_scores["1"]["result"], "score-results")
+        self.assertEqual(bound["raw_scores"], original_scores["1"]["result"])
+        self.assertEqual(bound["banks"][0]["baseline"]["per"], raw["banks"][0]["baseline"]["per"])
+        self.assertNotEqual(
+            bound["banks"][0]["baseline"]["key"], raw["banks"][0]["baseline"]["key"]
+        )
+        q = dict(
+            record_hash=digest("scalar-query"),
+            identity=dict(excluded_groups=[]),
+            examples=[
+                dict(
+                    example_id=digest("example"),
+                    audio=dict(duration_seconds=1),
+                    prepared=dict(
+                        source=dict(sha256="f" * 64),
+                        technical_metadata=dict(canonical_pcm=dict(sha256="f" * 64)),
+                    ),
+                )
+            ],
+        )
+        plan = dict(
+            representation=dict(dimension=2),
+            tombstones=[],
+            input=dict(
+                sources=pop,
+                policy=dict(arm="legacy-mean", association=None),
+                banks=[
+                    dict(label=str(n), grid=dict(window_milliseconds=w, hop_milliseconds=h))
+                    for n, (w, h) in enumerate(((2400, 600), (4800, 1000)))
+                ],
+            ),
+        )
+        capture = Capture(self.owner)
+        result = engine.aggregate(
+            self.budget,
+            capture,
+            plan,
+            {},
+            dict(query=q),
+            scores,
+            {
+                s["recording_id"]: dict(
+                    path="actual-unit-index", record_hash=indexed[s["recording_id"]]["record_hash"]
+                )
+                for s in pop
+            },
+        )
+        groups = [
+            capture.records[r["path"]][1] for r in result["arms"]["legacy-mean"]["complete_groups"]
+        ]
+        self.assertEqual([g["group"] for g in groups], ["alias", "other"])
+        self.assertEqual([g["score"] for g in groups], [0.2, 1.0])
+        self.assertEqual(result["arms"]["event-multi"]["eligible_groups"], 2)
+
     def test_report_manifest_stays_in_record_owner_and_serves_only_exact_own_files(self):
         import hashlib
 
@@ -80,7 +190,11 @@ class AssessmentTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        for name in ("config/assessment.json", "manifests/assessment/protocol.json"):
+        for name in (
+            "config/assessment.json",
+            "config/retrieval.json",
+            "manifests/assessment/protocol.json",
+        ):
             target = self.root / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / name, target)
