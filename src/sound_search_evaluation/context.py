@@ -23,6 +23,48 @@ CEILINGS = {
     "metadata_bytes": 256 * MIB,
     "managed_output_bytes": 1024 * MIB,
 }
+PACKED_KINDS = {"score-results", "aggregates", "predictions"}
+
+
+def expand(value):
+    """Strict lossless JSON stream, bounded independently of compressed size."""
+    if value.get("encoding") != "zlib-json-utf8":
+        raise InputError("D02 packed record encoding differs")
+    packed = base64.b64decode(value["payload"], validate=True)
+    inflater = zlib.decompressobj()
+    raw = inflater.decompress(packed, 8 * MIB + 1)
+    if (
+        len(raw) > 8 * MIB
+        or not inflater.eof
+        or inflater.unused_data
+        or inflater.unconsumed_tail
+        or len(raw) != value["plain_bytes"]
+        or hashlib.sha256(raw).hexdigest() != value["plain_sha256"]
+    ):
+        raise InputError("D02 compressed record size/hash/stream differs")
+    restored = json.loads(raw)
+    if not isinstance(restored, dict):
+        raise InputError("D02 packed record must decode to an object")
+    return {**restored, "record_hash": value["record_hash"]}
+
+
+def pack(value, schema, kind=None):
+    raw = json.dumps(
+        {k: v for k, v in value.items() if k != "record_hash"},
+        sort_keys=True,
+        separators=(",", ":"),
+        allow_nan=False,
+    ).encode("utf-8")
+    if len(raw) > 8 * MIB:
+        raise InputError("D02 record exceeds 8 MiB decoded bound")
+    return dict(
+        schema_version=schema,
+        encoding="zlib-json-utf8",
+        plain_bytes=len(raw),
+        plain_sha256=hashlib.sha256(raw).hexdigest(),
+        payload=base64.b64encode(zlib.compress(raw, 9)).decode("ascii"),
+        **(dict(kind=kind) if kind else {}),
+    )
 
 
 class Context(ApplicationContext):
@@ -98,25 +140,18 @@ class Context(ApplicationContext):
         return {k: v for k, v in value.items() if k != "record_hash"}
 
     def get(self, ref, kind):
+        if kind in PACKED_KINDS:
+            value = super().get(ref, kind)
+            if value.get("schema_version") != "d02-packed-record-1":
+                return value
+            if value.get("kind") != kind:
+                raise InputError("D02 packed record kind differs")
+            return expand(value)
         if kind == "assessments":
             value = super().get(ref, kind)
             if value.get("schema_version") != "d02-packed-assessment-1":
                 return value
-            if value.get("encoding") != "zlib-json-utf8":
-                raise InputError("D02 packed assessment encoding differs")
-            packed = base64.b64decode(value["payload"], validate=True)
-            inflater = zlib.decompressobj()
-            raw = inflater.decompress(packed, 8 * MIB + 1)
-            if (
-                len(raw) > 8 * MIB
-                or not inflater.eof
-                or inflater.unused_data
-                or inflater.unconsumed_tail
-                or len(raw) != value["plain_bytes"]
-                or hashlib.sha256(raw).hexdigest() != value["plain_sha256"]
-            ):
-                raise InputError("D02 compressed assessment size/hash/stream differs")
-            restored = json.loads(raw)
+            restored = expand(value)
             if restored.get("schema_version") != "d02-scores-1":
                 raise InputError("D02 packed assessment schema differs")
             return {**restored, "record_hash": value["record_hash"]}
@@ -143,17 +178,15 @@ class Context(ApplicationContext):
         return super().get(ref, kind)
 
     def put(self, budget, kind, value):
+        if kind in PACKED_KINDS:
+            # Preserve every pre-transition reference and byte, including exact
+            # product/component replay roots. Only genuinely new content packs.
+            old_key = digest({k: v for k, v in value.items() if k != "record_hash"})
+            if (self.directory / kind / (old_key + ".json")).exists():
+                return super().put(budget, kind, value)
+            value = pack(value, "d02-packed-record-1", kind)
         if kind == "assessments":
-            raw = json.dumps(value, separators=(",", ":"), allow_nan=False).encode("utf-8")
-            if len(raw) > 8 * MIB:
-                raise InputError("D02 assessment exceeds 8 MiB decoded bound")
-            value = dict(
-                schema_version="d02-packed-assessment-1",
-                encoding="zlib-json-utf8",
-                plain_bytes=len(raw),
-                plain_sha256=hashlib.sha256(raw).hexdigest(),
-                payload=base64.b64encode(zlib.compress(raw, 9)).decode("ascii"),
-            )
+            value = pack(value, "d02-packed-assessment-1")
         return super().put(budget, kind, value)
 
     def model(self, budget, desc):

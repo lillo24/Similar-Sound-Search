@@ -20,6 +20,25 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class AssessmentTests(unittest.TestCase):
+    def test_packed_new_scores_preserve_legacy_references_and_exact_numbers(self):
+        from similar_sound_search.application.context import Context as BaseContext
+
+        old = dict(schema_version="c04-source-scores-1", banks=[dict(score=0.12345678912345678)])
+        ref = BaseContext.put(self.owner, self.budget, "score-results", old)
+        before = (self.root / ref["path"]).read_bytes()
+        self.assertEqual(self.owner.put(self.budget, "score-results", old), ref)
+        self.assertEqual((self.root / ref["path"]).read_bytes(), before)
+        new = {**old, "new_native_support": [0, 192000]}
+        packed = self.owner.put(self.budget, "score-results", new)
+        self.assertEqual(
+            record(self.root / packed["path"])["schema_version"], "d02-packed-record-1"
+        )
+        restored = self.owner.get(packed, "score-results")
+        self.assertEqual({k: v for k, v in restored.items() if k != "record_hash"}, new)
+        self.assertEqual(
+            self.owner.put(self.budget, "score-results", dict(reversed(list(new.items())))), packed
+        )
+
     def test_actual_pcm_alias_memberships_preserve_scalar_scores_and_fuse_distinct_groups(self):
         from similar_sound_search.application.pipeline import Capture
         from similar_sound_search.processing import engine

@@ -1,0 +1,15 @@
+{
+  "schema_version": "d02-mobile-layout-compatibility-1",
+  "file": "src/similar_sound_search/application/web/style.css",
+  "before_consumer": "feb882325c29159d34b723df3b8a63deea5101561aa25d68ebca24df5859860a",
+  "before_sha256": "3b8286e4c7e128dc1abb8864d027e00d736af33ac37dddf39516c4444517f594",
+  "after_sha256": "9bd8a69d4556e7b07729bbee82abec2d8e985f0b2f7c49f8cd1b4acb305e1449",
+  "unchanged_assets": {
+    "app.js": "14c1cdde638f3c8e5f447d27eef859cade0bebb5e5eedf021cf85a3e8bf44f13",
+    "index.html": "e45deab478346f97fe6ea205a910dae4f097897bd02ffa92f23a119aee94d8d6"
+  },
+  "predecessor": "92bff8c9debebf33d47ca8f42e6332a2f00d7740d5c0723b6cc445b8a5d13027",
+  "source_commit": "ac51ba4ade3bd58793af4904abf130e75939a32a",
+  "change": "Mobile grid minimum and long filename wrapping only; no player/crop/numerical change",
+  "record_hash": "807c2457170145fd7cca1355b2d0e347a8d2048d479ba54b918ea53341f1af3b"
+}

@@ -20,6 +20,12 @@ def build(budget, owner):
 
     def linked(path, name=None):
         key = name or digest(path.relative_to(owner.root).as_posix()) + path.suffix
+        if path.suffix == ".wav":
+            # Hashing an original is a complete read even without PCM decoding.
+            from similar_sound_search.inputs import probe
+
+            info = probe(path, budget)
+            owner.charge(budget, read_audio_seconds=info.frames / info.samplerate)
         files[key] = dict(
             path=path.relative_to(owner.root).as_posix(),
             sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
@@ -134,6 +140,7 @@ def build(budget, owner):
         )
         linked(view.root / locator["assessment"]["path"], split + "-scores.json")
     failure = None
+    failure_html = ""
     if first_failure:
         view, pred, case = first_failure
         positives = set(case["positive_groups"])
@@ -163,6 +170,29 @@ def build(budget, owner):
             context=b,
         )
         owner.publish(budget, owner.directory / "failure-example.json", failure, immutable=True)
+        failure_html = (
+            "<h2>Predeclared case with event misses</h2><p>Case "
+            + case["case_id"][:12]
+            + ". The selected highest-ranked known-positive representative follows the fixed rule "
+            "and may itself match a target. All missed events remain in the case metrics.</p>"
+        )
+        for label, ref in (("Exact scored PCM16 crop", a), ("Unscored context PCM16 crop", b)):
+            clip = view.get(ref, "media")
+            url = linked(view.root / clip["local_path"], "failure-" + ref["record_hash"] + ".wav")
+            duration = (clip["bounds"][1] - clip["bounds"][0]) / clip["original"]["source"][
+                "sample_rate_hz"
+            ]
+            failure_html += (
+                "<p>"
+                + label
+                + " · native "
+                + str(clip["bounds"])
+                + '</p><audio controls preload="none" data-start="0" data-end="'
+                + str(duration)
+                + '" src="'
+                + url
+                + '"></audio>'
+            )
     title = "D02 · frozen product evaluation"
     source = (
         (
@@ -183,6 +213,7 @@ def build(budget, owner):
             "I. No calibrated absent-target rejection exists.</p>"
         )
         + "".join(sections)
+        + failure_html
         + (
             "<h2>Resource and handoff</h2><p>One finite D02 pool. Saved results r"
             "emain readable after execution capacity is exhausted. D03 must speci"

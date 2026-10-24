@@ -140,3 +140,13 @@ The shared application's mobile track uses `minmax(0,1fr)` and example labels wr
 within their flex row so long filenames fit the viewport. No player or crop calculation changes.
 The scoped UI declaration preserves the earlier renderer hashes; browser checks
 cover all affected default-app players as well as the D02 product cases.
+
+The first four non-product cases measured about 3 MiB counted metadata each.
+New score, aggregate and prediction records therefore use the same bounded,
+lossless JSON compression as assessments. Existing plain records and their exact
+references are retained when the content already exists, so warm comparisons keep
+their original roots. Numbers, ordering and native supports do not change.
+The measured remaining path reserves an additional 18 MiB of unused ordinary
+capacity for development, within the unchanged 256 MiB pool and 32 MiB protected
+partition. Confirmation and final-report reservations remain protected; no spent
+charge is refunded. Resume existing jobs rather than rerunning first-time preflight.
