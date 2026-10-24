@@ -55,6 +55,7 @@ for split, base, count in (("development", 1240000, 24), ("confirmation", 924000
                 duplicate_of=24 if i == 31 else None,
             )
         )
+    sources[31]["family"] = sources[24]["family"]
     cases = []
     single_conditions = 4 if split == "development" else 2
     for i in range(count):

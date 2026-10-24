@@ -13,7 +13,7 @@ from ..evaluation.artifacts import record
 from ..search.report import byte_range, verify_bundle
 from ..storage import InputError, ResourceError, contained
 from . import api, job, media, queries
-from .context import Context, PersistenceError
+from .context import PersistenceError
 from .locks import lock
 
 STATIC = Path(__file__).parent / "web"
@@ -29,8 +29,8 @@ def upload_path(owner, key):
 
 
 class Manager:
-    def __init__(self, root, limits):
-        self.root, self.limits = root, limits
+    def __init__(self, root, limits, runtime=None):
+        self.root, self.limits, self.runtime = root, limits, runtime
         self.thread = None
         self.key = None
         self.errors = {}
@@ -46,7 +46,9 @@ class Manager:
 
             def run():
                 try:
-                    job.run(self.root, self.limits, key)
+                    (job.run if self.runtime is None else self.runtime.run)(
+                        self.root, self.limits, key
+                    )
                 except (InputError, OSError, ValueError, RuntimeError) as exc:
                     self.errors[key] = dict(
                         message=str(exc),
@@ -60,15 +62,20 @@ class Manager:
 
     def stop(self):
         if self.thread and self.thread.is_alive():
-            api.cancel(self.root, self.key, hashlib.sha256(secrets.token_bytes(32)).hexdigest())
+            api.cancel(
+                self.root,
+                self.key,
+                hashlib.sha256(secrets.token_bytes(32)).hexdigest(),
+                runtime=self.runtime,
+            )
             self.thread.join(125)
 
 
-def make_server(root, limits, port=8774):
+def make_server(root, limits, port=8774, runtime=None):
     if not 1024 <= port <= 65535:
         raise InputError("D01 port must be 1024..65535")
-    owner = Context(root)
-    manager = Manager(owner.root, limits)
+    owner = api.owner_for(root, runtime=runtime)
+    manager = Manager(owner.root, limits, runtime)
     token = secrets.token_urlsafe(32)
     origin = "http://127.0.0.1:" + str(port)
 
@@ -175,19 +182,21 @@ def make_server(root, limits, port=8774):
                     return self.send_json(
                         dict(
                             token=token,
-                            catalogue=api.catalogue(root),
-                            library=api.library(root),
-                            completed=api.completed_searches(root),
+                            catalogue=api.catalogue(root, runtime=runtime),
+                            library=api.library(root, runtime=runtime),
+                            completed=api.completed_searches(root, runtime=runtime),
                         )
                     )
                 if path.startswith("/api/job/"):
                     key = api.identifier(path[9:])
-                    value = api.status(root, key)
+                    value = api.status(root, key, runtime=runtime)
                     if key in manager.errors:
                         value["observed_failure"] = manager.errors[key]
                     return self.send_json(value)
                 if path.startswith("/api/result/"):
-                    return self.send_json(api.result(root, api.identifier(path[12:])))
+                    return self.send_json(
+                        api.result(root, api.identifier(path[12:]), runtime=runtime)
+                    )
                 if path.startswith("/api/revision/"):
                     return self.send_json(queries.exact_revision(owner, api.identifier(path[14:])))
                 if path.startswith("/api/waveform/"):
@@ -204,9 +213,13 @@ def make_server(root, limits, port=8774):
                     parts = path[14:].split("/")
                     if len(parts) != 2:
                         raise InputError("D01 media requires opaque result and media IDs")
-                    target, _ = api.result_media(root, *parts)
+                    target, _ = api.result_media(root, *parts, runtime=runtime)
                     return self.send_file(target, "audio/wav")
                 if path.startswith("/historical/"):
+                    if runtime is not None:
+                        raise InputError(
+                            "Historical C03 view is separate from controlled D02 results"
+                        )
                     from ..refinement.context import Context as HistoricalContext
 
                     view = HistoricalContext(root)
@@ -227,6 +240,10 @@ def make_server(root, limits, port=8774):
                         allowed[key],
                         "audio/wav" if key.endswith(".wav") else "text/html; charset=utf-8",
                     )
+                if runtime is not None:
+                    extra = runtime.artifact(path)
+                    if extra is not None:
+                        return self.send_file(*extra)
                 raise FileNotFoundError("Outside application/media allowlist")
             except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
                 return
@@ -269,7 +286,7 @@ def make_server(root, limits, port=8774):
                 if not isinstance(request, dict):
                     raise InputError("D01 JSON request must be an object")
                 if path == "/api/submit":
-                    result = api.submit(root, limits, request)
+                    result = api.submit(root, limits, request, runtime=runtime)
                     try:
                         manager.start(result["job_id"])
                     except ResourceError:
@@ -280,8 +297,10 @@ def make_server(root, limits, port=8774):
                         raise InputError("D01 control requires job and idempotent request ID")
                     key = api.identifier(request["job_id"])
                     if path == "/api/cancel":
-                        return self.send_json(api.cancel(root, key, request["request_id"]))
-                    result = api.resume_control(root, key, request["request_id"])
+                        return self.send_json(
+                            api.cancel(root, key, request["request_id"], runtime=runtime)
+                        )
+                    result = api.resume_control(root, key, request["request_id"], runtime=runtime)
                     manager.start(key)
                     return self.send_json(result, 202)
                 raise FileNotFoundError("Unknown explicit application mutation")
@@ -307,7 +326,7 @@ def make_server(root, limits, port=8774):
             if len(list((owner.directory / "uploads").glob("*.json"))) >= 64:
                 raise ResourceError("D01 upload count exhausted; load an existing reference")
             allocation = "upload-" + key
-            context = Context(root, allocation)
+            context = api.owner_for(root, allocation, runtime)
             existing = context.directory / "uploads" / (key + ".json")
             if existing.exists():
                 raise InputError("D01 upload already exists; load the registered reference")
@@ -357,11 +376,11 @@ def make_server(root, limits, port=8774):
     return server
 
 
-def serve(root, limits, port=8774):
+def serve(root, limits, port=8774, runtime=None):
     from ..matchers.runner import peak_memory
 
     with lock(root, "server"):
-        server = make_server(root, limits, port)
+        server = make_server(root, limits, port, runtime)
         print(
             f"Sound Search: http://127.0.0.1:{port}/ · foreground PID {os.getpid()} · Ctrl+C stops",
             flush=True,

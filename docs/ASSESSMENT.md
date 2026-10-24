@@ -53,3 +53,49 @@ The historical D01 results remain readable on 8774 and C03 on 8772. Another comp
 search does not fit D01's remaining allowance. D03 must define an explicit runtime
 resource policy; normal use cannot rely on deleting/resetting delivery ledgers.
 D02 neither packages a distribution nor starts D04 listening review.
+
+## Commands and persistence
+
+Run from the repository with the pinned `.venv` and existing optional CPU model
+environment. No dependency or weight acquisition is needed:
+
+```powershell
+.venv/Scripts/python.exe -m sound_search_evaluation preflight
+.venv/Scripts/python.exe -m sound_search_evaluation generate --split development
+.venv/Scripts/python.exe -m sound_search_evaluation validate --split development
+.venv/Scripts/python.exe -m sound_search_evaluation index --ordinals 0,4 --tag cold-pilot
+.venv/Scripts/python.exe -m sound_search_evaluation index --ordinals 0,4 --tag reuse-pilot
+# Inspect pilot cost and exact reuse before the remaining index.
+.venv/Scripts/python.exe -m sound_search_evaluation index --split development
+.venv/Scripts/python.exe -m sound_search_evaluation serve
+```
+
+The three product cases import/save through the normal browser on 8775 before
+the CLI registers other development cases. Then `queries --skip-product`, `run`,
+and `score` execute the declared development matrix. `resume --job <sha256>`
+continues the exact admitted job. A fresh job cannot reuse another job's initial
+case claim: it needs a counted technical replay. `replay --ordinals 0,16,20
+--tag product-component-agreement` checks agreement. `--tag` distinguishes explicit
+technical attempts; it never changes features or policy. Exact retries retain
+the claim and useful committed units.
+
+Commit the final candidate and unchanged decision gate before confirmation index
+or query encoding. Confirmation uses `generate`, `validate`, `index`, `queries`,
+`run` and `score` with `--split confirmation`, once and without tuning.
+`report` reads both saved assessments and produces the private report at
+`http://127.0.0.1:8775/evaluation/`. Scoring/reporting dispatch no feature work.
+Every declared case must exist before scoring; missing/invalid predictions fail
+explicitly rather than reducing the denominator.
+
+Macro metrics give equal weight to each present `(positive family, query condition)`
+cell; whole-query metrics average within each cell. A distinct-event query enters
+both declared family cells. Boundary errors are conditional on one-to-one IoU
+matches, with misses retained. Coverage matching independently uses 50% of the
+true event; IoU matching uses 0.5. Native grid/support/rank/representative diagnostics
+explain remaining misses.
+
+The private report reads allowlisted existing originals for bounded excerpt
+playback and displays exact scored native frames. Those players do not create
+new crops or replace the product's separately verified exact PCM16 clips. Complete
+predictions and both score summaries remain inspectable. The failure example
+uses the prospective selection rule, without flattering replacement.

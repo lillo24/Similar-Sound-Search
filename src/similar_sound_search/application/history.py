@@ -23,7 +23,11 @@ def consumer(owner):
     declaration = record(owner.root / "manifests/application/consumer.json")
     current = code_identity()
     if declaration["code"] != current:
-        raise InputError("D01 consumer source drift; explicit scoped declaration required")
+        # A D02 provider seam has its own exact before/after declaration. The
+        # historical consumer and numerical files are never rewritten or relaxed.
+        from sound_search_evaluation.contracts import consumer as evaluation_consumer
+
+        return evaluation_consumer(owner)
     old = record(owner.root / "manifests/processing/consumer.json")
     if (
         old["record_hash"] != owner.protocol["c04_consumer"]
@@ -262,6 +266,10 @@ def cache_query(view, value, matrix):
 def compatible(owner, previous):
     """Only the explicitly pinned D01 path/accounting repair, no unknown drift."""
     current = consumer(owner)
+    if current["version"] == "d02-consumer-1":
+        from sound_search_evaluation.contracts import compatible as evaluation_compatible
+
+        return evaluation_compatible(owner, previous)
     proof = record(owner.root / "manifests/application/compatibility.json")
     declaration = record(owner.root / "manifests/application/consumer.json")
     if declaration.get("compatibility") != proof["record_hash"]:

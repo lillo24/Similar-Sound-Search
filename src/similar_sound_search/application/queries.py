@@ -16,6 +16,20 @@ class QueryOwner(QueryContext):
         self.feature_root = owner.features / "queries"
         self.reports = owner.reports
 
+    @property
+    def feature_model(self):
+        # One actual model per bounded owner/worker, including multiple revisions.
+        return getattr(self.owner, "feature_model", None)
+
+    @feature_model.setter
+    def feature_model(self, value):
+        self.owner.feature_model = value
+
+    def resolve_example(self, budget, item):
+        result, groups = super().resolve_example(budget, item)
+        ancestry = getattr(self.owner, "query_ancestry", None)
+        return result, sorted(set(groups) | (set(ancestry(item)) if ancestry else set()))
+
     def charge(self, *args, **kwargs):
         # Shared A02/query/array writers publish their own receipts directly. Prepay
         # those bounded serialized records as metadata as well as their output bytes.

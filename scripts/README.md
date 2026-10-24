@@ -97,3 +97,14 @@ and checks all earlier artifacts/configuration, including the retained C01 stagi
 `export-application-evidence.py` reads completed records into the typed public D01
 summary, refuses missing/failed QA and strips paths/tokens/audio. It dispatches no
 workers, settles no attempts and cannot reset the finite allowance.
+
+## D02 automatic evaluation
+
+`freeze-evaluation-protocol.py` is the one-shot prospective matrix/config writer.
+`declare-evaluation-consumer.py` pins the five product seams, unchanged numerical
+map, separate evaluation source map and two-source cold/reuse pilot.
+`evaluation-worker.py` is the actual-PID boundary for
+`python -m sound_search_evaluation`; it reports failures and never retries.
+`verify-evaluation-preservation.py capture|verify` compares every old artifact,
+including denied C01 staging, and permits only new immutable shared preparation.
+See [ASSESSMENT.md](../docs/ASSESSMENT.md) for commands and finite replay rules.

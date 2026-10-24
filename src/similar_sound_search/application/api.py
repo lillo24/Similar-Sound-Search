@@ -10,6 +10,11 @@ from .context import Context
 from .locks import active, lock
 
 
+def owner_for(root, allocation=None, runtime=None):
+    """Explicit trusted provider injection; HTTP payloads never select an owner."""
+    return Context(root, allocation) if runtime is None else runtime.context(root, allocation)
+
+
 def identifier(value):
     if not isinstance(value, str) or not re.fullmatch("[a-f0-9]{64}", value):
         raise InputError("D01 expected opaque SHA256 identifier")
@@ -27,7 +32,7 @@ def state_path(owner, key):
     return owner.directory / "states" / (identifier(key) + ".json")
 
 
-def submit(root, limits, request, acceptance=False):
+def submit(root, limits, request, acceptance=False, runtime=None):
     """Explicit POST semantics; same immutable request yields the same durable job."""
     if (
         not isinstance(request, dict)
@@ -52,7 +57,7 @@ def submit(root, limits, request, acceptance=False):
     token = request["request_id"]
     if not isinstance(token, str) or not re.fullmatch("[a-zA-Z0-9_-]{1,80}", token):
         raise InputError("D01 stable request ID required")
-    owner = Context(root)
+    owner = owner_for(root, runtime=runtime)
     # Bind client retries before creating a second request. Different payload under the same
     # idempotency key is a conflict, not a new execution.
     binding = owner.directory / "requests" / (digest(token) + ".json")
@@ -62,7 +67,9 @@ def submit(root, limits, request, acceptance=False):
             if old["request"] != request:
                 raise InputError("D01 request conflict: idempotency key has different input")
             return dict(job_id=old["job_id"], reused=True)
-        consumer = history.consumer(owner)
+        consumer = history.consumer(owner) if runtime is None else runtime.consumer(owner)
+        if runtime is not None:
+            runtime.validate_request(owner, request)
         if request["kind"] in {"search", "validate"}:
             selection = request["input"]
             if (
@@ -83,7 +90,9 @@ def submit(root, limits, request, acceptance=False):
             ):
                 raise InputError("D01 refinement unavailable for a new query")
         size = 20 * 1024**2 if request["kind"] in {"search", "validate"} else 2 * 1024**2
-        if request["kind"] in {"search", "validate"}:
+        if runtime is not None:
+            size = runtime.estimate(request)
+        elif request["kind"] in {"search", "validate"}:
             from ..queries.library import revision
             from .pipeline import geometry_estimate
             from .queries import QueryOwner
@@ -101,10 +110,21 @@ def submit(root, limits, request, acceptance=False):
                 size,
                 ((geometry["complete_path_counted_bytes"] + 1024**2 - 1) // 1024**2 + 1) * 1024**2,
             )
-        identity = dict(request=request, consumer=consumer, population=owner.protocol["snapshot"])
+        identity = dict(
+            request=request,
+            consumer=consumer,
+            population=owner.protocol["snapshot"]
+            if runtime is None
+            else runtime.population_id(owner),
+        )
         key = digest(identity)
-        owner.admit(key, size, acceptance=acceptance, jobs=1)
-        owner.allocation = key
+        if runtime is None:
+            owner.admit(key, size, acceptance=acceptance, jobs=1)
+            owner.allocation = key
+        else:
+            owner.allocation = runtime.allocation(request)
+            owner.job_id = key
+            runtime.admit(owner, request)
         budget = CatalogueBudget(root, limits)
         value = dict(
             schema_version="d01-job-1",
@@ -113,6 +133,8 @@ def submit(root, limits, request, acceptance=False):
             allocation=size,
             consumer=consumer,
         )
+        if runtime is not None:
+            value["allocation_owner"] = owner.allocation
         owner.publish(budget, owner.directory / "jobs" / (key + ".json"), value, immutable=True)
         owner.publish(budget, binding, dict(request=request, job_id=key), immutable=True)
         slot = "submit-" + key
@@ -135,8 +157,8 @@ def submit(root, limits, request, acceptance=False):
         return dict(job_id=key, reused=False)
 
 
-def status(root, key):
-    owner = Context(root)
+def status(root, key, runtime=None):
+    owner = owner_for(root, runtime=runtime)
     value = job(owner, key)
     state = record(state_path(owner, key))
     running = active(owner.root, "worker") or active(owner.root, "coordinator")
@@ -178,8 +200,8 @@ def status(root, key):
     )
 
 
-def cancel(root, key, request_id):
-    owner = Context(root, key)
+def cancel(root, key, request_id, runtime=None):
+    owner = owner_for(root, key, runtime)
     job(owner, key)
     identifier(request_id)
     slot = "cancel-" + request_id
@@ -193,8 +215,8 @@ def cancel(root, key, request_id):
     return dict(job_id=key, state="cancellation_requested")
 
 
-def resume_control(root, key, request_id):
-    owner = Context(root, key)
+def resume_control(root, key, request_id, runtime=None):
+    owner = owner_for(root, key, runtime)
     job(owner, key)
     if active(owner.root, "worker") or active(owner.root, "coordinator"):
         raise ResourceError("D01 worker still active; cancellation remains pending until it stops")
@@ -216,8 +238,8 @@ def resume_control(root, key, request_id):
     return dict(job_id=key, state="resume_requested")
 
 
-def result(root, key):
-    owner = Context(root)
+def result(root, key, runtime=None):
+    owner = owner_for(root, runtime=runtime)
     state = record(state_path(owner, key))
     if state["state"] != "complete" or state["result"] is None:
         raise InputError("D01 request has no complete result; partial work is not a result")
@@ -258,15 +280,17 @@ def result(root, key):
     return value
 
 
-def result_media(root, result_id, media_id):
+def result_media(root, result_id, media_id, runtime=None):
     """Resolve media only through its immutable complete query/arm/population result."""
-    owner = Context(root)
+    owner = owner_for(root, runtime=runtime)
     ref = dict(
-        path="data/runs/application/results/" + identifier(result_id) + ".json",
+        path=(owner.directory / "results" / (identifier(result_id) + ".json"))
+        .relative_to(owner.root)
+        .as_posix(),
         record_hash=result_id,
     )
     declared = owner.get(ref, "results")
-    value = result(root, declared["job_id"])
+    value = result(root, declared["job_id"], runtime=runtime)
     if value["record_hash"] != result_id or value["schema_version"] != "d01-result-1":
         raise InputError("D01 media result is not the job's complete publication")
     identifier(media_id)
@@ -284,16 +308,19 @@ def result_media(root, result_id, media_id):
     return validate(owner, media_id)
 
 
-def library(root):
-    return queries.inventory(Context(root))
+def library(root, runtime=None):
+    owner = owner_for(root, runtime=runtime)
+    return queries.inventory(owner) if runtime is None else runtime.inventory(owner)
 
 
-def completed_searches(root):
+def completed_searches(root, runtime=None):
     """Bounded immutable navigation for a fresh browser; no worker or audit is started."""
-    owner = Context(root)
-    names = queries.inventory(owner)["names"]
+    owner = owner_for(root, runtime=runtime)
+    names = library(root, runtime=runtime)["names"]
     output = []
-    for path in sorted((owner.directory / "states").glob("*.json"))[:64]:
+    for path in sorted((owner.directory / "states").glob("*.json"))[
+        : owner.cfg["policy"]["max_query_jobs"]
+    ]:
         state = record(path)
         if state["state"] != "complete":
             continue
@@ -325,8 +352,10 @@ def completed_searches(root):
     return output
 
 
-def catalogue(root):
-    owner = Context(root)
+def catalogue(root, runtime=None):
+    owner = owner_for(root, runtime=runtime)
+    if runtime is not None:
+        return runtime.catalogue(owner)
     try:
         _, plan, _ = history.inputs(owner)
         missing = sum(
