@@ -196,3 +196,20 @@ and [acceptance evidence](../reports/D01_INTERFACE.md).
 | DEC-083 | Bind playback to a complete query/arm/population/result and semantic native crops. | Default legacy players cannot substitute C03 intervals or a foreign cached clip. Additional passages remain separate native references; waveform/browser clocks do not define scored bounds. |
 | DEC-084 | Keep HTTP controls independent from serial workers and persist pending resume acknowledgement before dispatch. | Browser refresh/restart/retry retains one immutable request. Status/completed navigation are read-only; local mutations require exact Host/Origin/token and only peer disconnects are handled quietly. |
 | DEC-085 | Finish the finite real acceptance and retain completed navigation when another full search cannot fit. | Original/warm/new-query work, 40 native clips and 72 browser players passed without cap changes. Human similarity, automatic evaluation, packaging and listening review retain their later owners. |
+
+## D02 automatic evaluation decisions
+
+24 October 2026; [contracts](ASSESSMENT.md),
+[prospective matrix](../manifests/assessment/protocol.json),
+[final candidate](../manifests/assessment/candidate.json) and
+[measured results](../reports/D02_EVALUATION.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-086 | Use a genuine separate generated population and D02 owner through five explicit application seams. | Production model, decoding, exact native grids, cache, cosine and C02 fusion remain unchanged. The default app keeps its real historical population and exact result/media bindings. |
+| DEC-087 | Freeze 24 development and 16 confirmation queries and compare only shipped event-multi against original/legacy/pitch-off. | Independent performances and backgrounds, 31 eligible groups, truth isolation and the same paired gate prevent an easier replacement benchmark. No revision or confirmation tuning occurs. |
+| DEC-088 | Keep group hit, all-positive-group recovery, one-to-one IoU event recovery and conditional localization separate. | Complete group order and all target events remain inspectable; longer support, rank cuts and passage caps cannot silently become precise localization. Absents have forced rankings and no calibrated rejection rule. |
+| DEC-089 | Give genuine PCM aliases distinct recording-membership row witnesses while retaining their shared cache vectors and raw scores. | Independent scalar/native tests repair a retained C02 conflicting-row refusal before any accepted prediction, without changing distances, supports, population or frozen fusion. |
+| DEC-090 | Compact new metadata losslessly and reserve measured remaining stages within the fixed pool. | Existing plain references remain exact. Development receives 18 MiB and confirmation 20 MiB of ordinary capacity; only completed preparation's unused reservation is released. Spent charges and the protected 32 MiB remain intact. |
+| DEC-091 | Retain the baseline after event-multi fails positive-group coverage guards in both splits. | Event recovery improves, but two development cases and one confirmation case lose a previously recovered positive group at twenty. Aggregate gains do not satisfy the prospective gate. |
+| DEC-092 | Pass readable completed fixtures and explicit resource-policy requirements to D03. | New searches need a separately defined bounded runtime policy, never a reset of delivery ledgers. The familiar generated mechanisms do not establish unseen-music, human or Loulou relevance; D04 review remains future. |

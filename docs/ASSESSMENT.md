@@ -158,3 +158,8 @@ byte checks are complete at that point, so only the unused preparation reservati
 is released. The original 256 MiB ceiling, 32 MiB protected partition, all spent
 charges and report/delivery reservations remain intact. This admission precedes
 confirmation prediction inspection and changes no case, policy or numerical code.
+
+After both indexes exist, the D02 bootstrap's `native_rows` is the inventory count
+across prepared splits. It is not a query's eligible denominator. The banner shows
+32 recordings / 31 groups for the selected split; predictions bind the exact
+split population and record every case's actual exclusions and eligible groups.

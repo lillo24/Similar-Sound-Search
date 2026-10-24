@@ -2,7 +2,15 @@
 
 Select a particular sound inside a song and find passages in other recordings with a similar sound character, with playable results and trustworthy timestamps. Timbre comes first, approximate pitch second; matching phrase rhythm or note order is deferred.
 
-**Current state: D01 local search application.** Import a reference, select native
+**Current state: D02 automatic evaluation delivered with the D01 local app.**
+The frozen 24-development/16-confirmation comparison completed on independent
+generated performances. Event-multi improved event recovery but lost positive-group
+coverage at twenty in both splits, so original mixture / legacy mean / pitch off
+remain defaults. [D02 evidence](reports/D02_EVALUATION.md),
+[machine-readable results](reports/D02_EVALUATION.json) and
+[evaluation commands](docs/ASSESSMENT.md) retain every case and the failed gate.
+
+Import a reference, select native
 intervals, save one to eight examples, search the existing 72 recordings and listen
 to exact scored passages with separate context. Original mixture, legacy mean and
 pitch off remain defaults. [D01 evidence](reports/D01_INTERFACE.md) records real
@@ -18,7 +26,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-sound-search.p
 Open **http://127.0.0.1:8774/**; Ctrl+C stops owned work. Choose **Open a completed
 search** to reopen the original Loulou or generated two-example acceptance result
 without spending more inference allowance. Fresh searches have finite admission
-limits. [Application setup, contracts and recovery](docs/APPLICATION.md) and the
+limits; another full search cannot fit D01's remaining delivery allowance. D03 must
+define an explicit bounded runtime policy without resetting these ledgers.
+[Application setup, contracts and recovery](docs/APPLICATION.md) and the
 [D02 interface](manifests/application/d02-interface.json) describe the product boundary.
 Private audio, model and ignored B/C artifacts must already be available; a public
 clone can run the isolated tests but cannot reconstruct the private catalogue.

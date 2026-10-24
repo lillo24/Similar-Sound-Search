@@ -99,3 +99,8 @@ one-to-one event denominators, separate group/IoU/coverage metrics, seeded contr
 and paired promotion-gate regressions. These are model-free unit oracles. Actual
 frozen-model product/component agreement and Chrome acceptance are separate D02
 evidence; no mocked prediction is used as a real evaluation result.
+
+The D02 scalar alias fixture checks actual duplicate PCM through production fusion;
+storage fixtures check lossless values, retained plain references, decoded-size
+limits and report allowlist tampering. The complete final D02 suite contains 404
+tests; real model/API/browser evidence remains separately charged and reported.
