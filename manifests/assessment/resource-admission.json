@@ -1,0 +1,33 @@
+{
+  "schema_version": "d02-remaining-admission-1",
+  "protocol": "893aa664d48c02297837cd188c94e4fbdc11c0c8530eca59b1800eb8ca3f1a47",
+  "pilots": [
+    {
+      "job_id": "6ab43f6a7671c415cfd6bf4087b692d264e538189a35c7d956bd0fd74171c409",
+      "new_encodes": 32,
+      "peak_working_bytes": 291680256
+    },
+    {
+      "job_id": "2148e09a8452dc99345de0ba1a7bf9b9dde7be0aea2805667418f53305aa70b5",
+      "new_encodes": 0,
+      "peak_working_bytes": 104853504
+    }
+  ],
+  "spent_seconds": 770.2790000000678,
+  "remaining_seconds_forecast": 2400,
+  "forecast": "Descriptive conservative admission estimate; actual 120s worker reservations and every pool guard remain authoritative. Reassess from measured work before confirmation; no cap increase.",
+  "metadata_allocations": {
+    "confirmation": 58720256,
+    "delivery": 29360128,
+    "report": 12582912,
+    "prepare": 25165824,
+    "development": 75497472
+  },
+  "maximum_candidate_memberships": 904,
+  "query_examples_bound": 48,
+  "total_new_windows_bound": 952,
+  "numerical_concurrency": 1,
+  "default": "legacy-mean/original/pitch-off",
+  "quality_scores_inspected": false,
+  "record_hash": "c35e3b93d7cb1e513ce01c1a87526ecfcbeba8944d69dd878abf0209f7c7f9bd"
+}

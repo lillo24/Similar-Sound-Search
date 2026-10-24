@@ -114,3 +114,8 @@ and pins the pre-inference fresh-scan/publication/storage repair. It refuses to
 run after any feature encoding or query-policy claim. `verify-assessment-bytes.py`
 independently hashes every emitted source/reference against its recorded bytes;
 its additional reads and metadata are charged to D02 without changing originals.
+
+`declare-evaluation-publication-repair.py` pins the pre-inference record-owner
+placement fix, preserving previous consumers. `admit-evaluation-remaining.py`
+checks exact cold/reuse pilot outcomes and records the remaining-path forecast;
+actual pool guards remain authoritative and no ceiling is increased.
