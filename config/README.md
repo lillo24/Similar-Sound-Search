@@ -1,10 +1,5 @@
 # Runtime configuration
 
-`assessment.json` fixes the separate D02 8775 owner and finite allowance; it does
-not alter historical pools or the starter tier. `import_bytes` counts generated
-originals and controlled uploads together. [ASSESSMENT.md](../docs/ASSESSMENT.md)
-defines the protected reserve, whole-path stage allocations and replay bounds.
-
 This folder owns reusable input, resource and finite catalogue contracts, without private paths or credentials.
 
 - `resource_limits.json` supplies required numeric smoke/starter tiers to `resources.py`. [RUNTIME.md](../docs/RUNTIME.md#resource-policy) describes enforcement and estimates. A03 enforces the download allowance at the network boundary; A05 additionally enforces the model shortlist cap. Missing fields fail; there are no hidden tier defaults.
