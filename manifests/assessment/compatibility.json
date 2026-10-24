@@ -298,6 +298,7 @@
     "application/queries.py",
     "application/server.py"
   ],
+  "predecessor": "cbd8725fe4a80a6dc3cbc880f36214712b651e16915ff806cca56c55ae90ec97",
   "accepted_previous": [
     {
       "declaration_hash": "feb882325c29159d34b723df3b8a63deea5101561aa25d68ebca24df5859860a",
@@ -310,9 +311,14 @@
       "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
       "code_hash": "9f4a589c626650249cbe51e241242c9cb8843e6630bee15f1a6f9de05902e4be",
       "version": "d02-consumer-1"
+    },
+    {
+      "declaration_hash": "a926eee13356c64b8c0a10c73651f641a9f1c8f19f6a4a028aabea73562c8e56",
+      "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+      "code_hash": "2fecbd1895989f7fb78347758244262f7d49457dc99a055b51be05119c6f5673",
+      "version": "d02-consumer-1"
     }
   ],
-  "predecessor": "e69e40f0f8ca9c9295c67db6e72960eea017a5eda991c720e58de2542d449009",
-  "reason": "Before any model/scored query: fresh native directory-entry inventory with unchanged caps; refresh coordinator publication transaction; lossless bounded assessment storage. No retrieval, renderer, metric or gate definition changed.",
-  "record_hash": "cbd8725fe4a80a6dc3cbc880f36214712b651e16915ff806cca56c55ae90ec97"
+  "reason": "Before inference: report allowlist manifest stays within the record owner; static HTML/audio remain separate allowlisted artifacts. No renderer, model, metric, rank or gate changes.",
+  "record_hash": "d88d2248f47816e281da47063cd0afe30673cd806d83cee4c18116d7d1bb01a8"
 }
