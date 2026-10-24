@@ -1,0 +1,17 @@
+{
+  "schema_version": "d02-confirmation-admission-1",
+  "protocol": "893aa664d48c02297837cd188c94e4fbdc11c0c8530eca59b1800eb8ca3f1a47",
+  "candidate": "3273c4ae09e61bcfa1397504731c79bde88ea2fc968484bda6e56e531085e38c",
+  "confirmation_before": 30393384,
+  "additional_confirmation_bytes": 20971520,
+  "remaining_case_bound": 16,
+  "forecast_bytes_per_case": 3145728,
+  "reason": "Measured development cold metadata, with confirmation index/queries now complete",
+  "unspent_prepare_released": 9609034,
+  "report_reserved": 12322386,
+  "delivery_reserved": 2352224,
+  "fixed_metadata_ceiling": 268435456,
+  "protected_metadata_bytes": 33554432,
+  "no_spent_charge_refunded": true,
+  "record_hash": "72d2d997fa080462f553a6562bfae6d3eaf4562ea9255a1fdc438f773be71220"
+}

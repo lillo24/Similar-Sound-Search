@@ -150,3 +150,11 @@ The measured remaining path reserves an additional 18 MiB of unused ordinary
 capacity for development, within the unchanged 256 MiB pool and 32 MiB protected
 partition. Confirmation and final-report reservations remain protected; no spent
 charge is refunded. Resume existing jobs rather than rerunning first-time preflight.
+
+After confirmation index/query preparation, `admit-evaluation-confirmation.py`
+reserves another 20 MiB for its sixteen prediction cases, using measured development
+costs and at least 48 MiB remaining coverage. Both source/PCM audits and independent
+byte checks are complete at that point, so only the unused preparation reservation
+is released. The original 256 MiB ceiling, 32 MiB protected partition, all spent
+charges and report/delivery reservations remain intact. This admission precedes
+confirmation prediction inspection and changes no case, policy or numerical code.

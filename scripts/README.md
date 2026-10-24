@@ -119,3 +119,15 @@ its additional reads and metadata are charged to D02 without changing originals.
 placement fix, preserving previous consumers. `admit-evaluation-remaining.py`
 checks exact cold/reuse pilot outcomes and records the remaining-path forecast;
 actual pool guards remain authoritative and no ceiling is increased.
+
+`declare-evaluation-membership-repair.py` pins genuine PCM-alias membership IDs;
+`declare-evaluation-storage-repair.py` pins lossless bounded metadata packing.
+Both preserve earlier producers, numerical values and retained failure evidence.
+`declare-evaluation-layout.py` proves the two CSS-only mobile fixes and unchanged
+player code. `admit-evaluation-metadata.py` reserves measured development space;
+`admit-evaluation-confirmation.py` releases only completed preparation's unspent
+reservation and reserves the measured confirmation remainder within the same cap.
+`freeze-evaluation-candidate.py` pins the unchanged candidate and development gate
+before confirmation. `export-evaluation-evidence.py` reads saved assessments and
+verified acceptance/preservation evidence into the sanitized public JSON; it performs
+no inference, settlement, ledger reset or historical mutation.
