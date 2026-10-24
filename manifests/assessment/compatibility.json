@@ -151,7 +151,7 @@
     "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
     "application/__init__.py": "93ea3aae51e316c01fc70dfe12659bb0c2b101d6decc8273018772972f2e598e",
     "application/__main__.py": "cb525000a21ad32f647251d1ef92c6878c0bc4aa657d4446bb96e89de8e6364f",
-    "application/api.py": "504538dd19388685c51384e295ee84eb8d762c080e9e26007bb8d85215153107",
+    "application/api.py": "c80ab0c8c445ea06b9da271f97168ae42b19028accc93576fc752362b47799d0",
     "application/codec.py": "654cac5497daa31f15121067f72d265a501d4d187a8e3e44696f9d3f5d63ca9e",
     "application/context.py": "4abf592d9950eee14dceef54cb75f9e25f3d2af683070efa42e23d0c1ff33547",
     "application/files.py": "f62b964dc05d7eea9c5b4676e4ffc107d6d8eb3fefb3448f9e29a34de4b6005f",
@@ -161,7 +161,7 @@
     "application/media.py": "efee9cdf00df58f1a251efe29350eb26989c496e0dc51f73a84bf1925a84ef6f",
     "application/pipeline.py": "9665cecb4d34cc4e0308268fcfbf107a442d91844f452b6662523603073bb585",
     "application/queries.py": "f872404dff6a291a1546f1f2ab263be3db4ab92b4ce42787899dfdb81f6914eb",
-    "application/server.py": "308701a2235b8240a886f994afebf50b108bae9a429cf4fe8a0b1d380164a730",
+    "application/server.py": "72878a8ab60494ac8f3841f94b65b2abd74d2d8141e05b503fa2a63444d77d9a",
     "application/validation.py": "0c33e36aad5487a6a85b420fa147dd9820510182c1802437b1952eccffe65405",
     "catalogue/__init__.py": "cb2f9dd3009b8ddda5243414de0433f48862b542b0f1ef65268b3a4b905b2b08",
     "catalogue/ingestion.py": "cde055f915935507cbdb187b0409609d0066956b4bdc7cd446519935ca11af94",
@@ -304,8 +304,15 @@
       "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
       "code_hash": "a0f3ca08e36f46043103965ded2aaebcab7fb2a6dac1ca2f025cc01d4cf6c584",
       "version": "d01-consumer-1"
+    },
+    {
+      "declaration_hash": "7ab65b5c1f60aa00fbada7ef297887b1b5aa342d7794c654422d93d30fa1331f",
+      "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+      "code_hash": "9f4a589c626650249cbe51e241242c9cb8843e6630bee15f1a6f9de05902e4be",
+      "version": "d02-consumer-1"
     }
   ],
-  "reason": "Trusted provider injection, separate D02 owner, actual job settlement IDs and query ancestry/model sharing; original D01 defaults and all numerical code unchanged",
-  "record_hash": "e69e40f0f8ca9c9295c67db6e72960eea017a5eda991c720e58de2542d449009"
+  "predecessor": "e69e40f0f8ca9c9295c67db6e72960eea017a5eda991c720e58de2542d449009",
+  "reason": "Before any model/scored query: fresh native directory-entry inventory with unchanged caps; refresh coordinator publication transaction; lossless bounded assessment storage. No retrieval, renderer, metric or gate definition changed.",
+  "record_hash": "cbd8725fe4a80a6dc3cbc880f36214712b651e16915ff806cca56c55ae90ec97"
 }
