@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import secrets
+import socket
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -17,6 +18,17 @@ from .context import PersistenceError
 from .locks import lock
 
 STATIC = Path(__file__).parent / "web"
+
+
+class LoopbackServer(ThreadingHTTPServer):
+    """Windows requires exclusive binding to refuse a live port reliably."""
+
+    allow_reuse_address = os.name != "nt"
+
+    def server_bind(self):
+        if os.name == "nt":
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
+        super().server_bind()
 
 
 def upload_path(owner, key):
@@ -198,14 +210,24 @@ def make_server(root, limits, port=8774, runtime=None):
                         api.result(root, api.identifier(path[12:]), runtime=runtime)
                     )
                 if path.startswith("/api/revision/"):
-                    return self.send_json(queries.exact_revision(owner, api.identifier(path[14:])))
+                    key = api.identifier(path[14:])
+                    selected = owner
+                    if runtime is not None and hasattr(runtime, "revision_context"):
+                        selected = runtime.revision_context(key)
+                    return self.send_json(queries.exact_revision(selected, key))
                 if path.startswith("/api/waveform/"):
+                    selected = owner
+                    if runtime is not None and hasattr(runtime, "waveform_context"):
+                        selected = runtime.waveform_context(api.identifier(path[14:]))
                     value = record(
-                        owner.directory / "waveforms" / (api.identifier(path[14:]) + ".json")
+                        selected.directory / "waveforms" / (api.identifier(path[14:]) + ".json")
                     )
                     return self.send_json(value)
                 if path.startswith("/media/"):
-                    target, value = media.validate(owner, api.identifier(path[7:]))
+                    selected = owner
+                    if runtime is not None and hasattr(runtime, "media_context"):
+                        selected = runtime.media_context(api.identifier(path[7:]))
+                    target, value = media.validate(selected, api.identifier(path[7:]))
                     if value["original"]["kind"] != "reference":
                         raise InputError("D01 candidate media requires its complete result scope")
                     return self.send_file(target, "audio/wav")
@@ -368,7 +390,7 @@ def make_server(root, limits, port=8774, runtime=None):
             pass
 
     try:
-        server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
+        server = LoopbackServer(("127.0.0.1", port), Handler)
     except OSError as exc:
         raise InputError(f"D01 cannot bind {origin}; port is in use or unavailable: {exc}") from exc
     server.manager = manager

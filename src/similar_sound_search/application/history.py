@@ -27,7 +27,12 @@ def consumer(owner):
         # historical consumer and numerical files are never rewritten or relaxed.
         from sound_search_evaluation.contracts import consumer as evaluation_consumer
 
-        return evaluation_consumer(owner)
+        expected = record(owner.root / "manifests/assessment/consumer.json")
+        if expected["code"] == current:
+            return evaluation_consumer(owner)
+        from sound_search_distribution.contracts import consumer as distribution_consumer
+
+        return distribution_consumer(owner)
     old = record(owner.root / "manifests/processing/consumer.json")
     if (
         old["record_hash"] != owner.protocol["c04_consumer"]
@@ -266,6 +271,10 @@ def cache_query(view, value, matrix):
 def compatible(owner, previous):
     """Only the explicitly pinned D01 path/accounting repair, no unknown drift."""
     current = consumer(owner)
+    if current["version"] == "d03-consumer-1":
+        from sound_search_distribution.contracts import compatible as distribution_compatible
+
+        return distribution_compatible(owner, previous)
     if current["version"] == "d02-consumer-1":
         from sound_search_evaluation.contracts import compatible as evaluation_compatible
 

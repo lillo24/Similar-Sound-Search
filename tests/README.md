@@ -104,3 +104,11 @@ The D02 scalar alias fixture checks actual duplicate PCM through production fusi
 storage fixtures check lossless values, retained plain references, decoded-size
 limits and report allowlist tampering. The complete final D02 suite contains 404
 tests; real model/API/browser evidence remains separately charged and reported.
+
+`test_distribution.py` adds D03 portable/archive boundaries, exact dependency
+failure messages, one-time external authorization, copied/stale/missing pools,
+whole-path multi-share exclusion, protected terminal independence, full-length
+request geometry, same-host relocation, historical read-only revision ownership,
+bounded Windows replacement faults and actual live-port exclusivity. These use
+isolated files/registries and no model. Installed real-catalogue, native and Chrome
+acceptance remain separate evidence in [D03_PACKAGE.md](../reports/D03_PACKAGE.md).

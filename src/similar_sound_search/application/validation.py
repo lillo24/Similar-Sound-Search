@@ -8,8 +8,8 @@ from ..storage import InputError
 from . import api, media
 
 
-def native(budget, owner, spec):
-    result = api.result(owner.root, spec["job_id"])
+def native(budget, owner, spec, runtime=None):
+    result = api.result(owner.root, spec["job_id"], runtime=runtime)
     population = {s["recording_id"]: s for s in result["population"]}
     checks = []
     for card in result["cards"][spec["start"] : spec["start"] + 2]:

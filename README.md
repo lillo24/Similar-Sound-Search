@@ -2,7 +2,12 @@
 
 Select a particular sound inside a song and find passages in other recordings with a similar sound character, with playable results and trustworthy timestamps. Timbre comes first, approximate pitch second; matching phrase rhythm or note order is deferred.
 
-**Current state: D02 automatic evaluation delivered with the D01 local app.**
+**Current state: D03 packaged local runtime.**
+The versioned offline archive, installed launch command, private prerequisites,
+finite runtime policy and technical evidence are in [D03_PACKAGE.md](reports/D03_PACKAGE.md)
+and [package setup/recovery](docs/PACKAGE.md). Core 0.3.0 and the pinned numerical
+dependencies are preserved. D04 listening review has not started.
+
 The frozen 24-development/16-confirmation comparison completed on independent
 generated performances. Event-multi improved event recovery but lost positive-group
 coverage at twenty in both splits, so original mixture / legacy mean / pitch off
@@ -17,17 +22,18 @@ pitch off remain defaults. [D01 evidence](reports/D01_INTERFACE.md) records real
 adoption, warm/new-query searches and playback. C04 remains historically partial
 145/148; A03 remains partial at 72 recordings/35 artists. Human similarity is unmeasured.
 
-From this delivery checkout, start the app in a foreground terminal:
+Start the installed D03 delivery in a foreground terminal:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-sound-search.ps1
+& "$env:USERPROFILE\Documents\Sound Search D03 à\installed\Scripts\python.exe" -I -m sound_search_distribution start --workspace "C:\SSS D03 à\w" --port 8776
 ```
 
-Open **http://127.0.0.1:8774/**; Ctrl+C stops owned work. Choose **Open a completed
+Open **http://127.0.0.1:8776/**; Ctrl+C stops owned work. Choose **Open a completed
 search** to reopen the original Loulou or generated two-example acceptance result
 without spending more inference allowance. Fresh searches have finite admission
-limits; another full search cannot fit D01's remaining delivery allowance. D03 must
-define an explicit bounded runtime policy without resetting these ledgers.
+limits. D03 protects a separate normal-use share; the historical D01 allowance
+cannot fund another full search. The old 8774 launcher remains available for its
+saved results and preserves its original ledgers.
 [Application setup, contracts and recovery](docs/APPLICATION.md) and the
 [D02 interface](manifests/application/d02-interface.json) describe the product boundary.
 Private audio, model and ignored B/C artifacts must already be available; a public

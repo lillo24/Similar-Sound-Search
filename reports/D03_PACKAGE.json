@@ -1,0 +1,776 @@
+{
+  "schema_version": "d03-package-evidence-1",
+  "outcome": "complete",
+  "release": "d03-1.0.0",
+  "pull_request": "https://github.com/lillo24/Similar-Sound-Search/pull/32",
+  "artifact": {
+    "path": "dist/similar-sound-search-d03-1.0.0.zip",
+    "bytes": 292441732,
+    "sha256": "062f97ac056f75f664440c0bfc45caaea3ed7e52023d6568704098dda7808901",
+    "source_commit": "a19b6af306bba6ba1ee77248560cd665ac003273",
+    "release_manifest_sha256": "b0a244af081c1854fd302c3978aee1f3505b1fdd3787c0cc0bdff33fa0b95920",
+    "wheel": "wheelhouse/similar_sound_search-0.3.0-py3-none-any.whl",
+    "wheel_bytes": 460148,
+    "wheel_sha256": "239ce5dd302eef45b1acd296fe84906128b1727a4c941b40b1d3254eda145e0b"
+  },
+  "target": {
+    "os": "Windows-11-10.0.22000-SP0",
+    "architecture": "AMD64",
+    "python": "3.12.14",
+    "core": "0.3.0",
+    "dependencies": {
+      "cffi": "1.17.1",
+      "numpy": "2.2.6",
+      "pycparser": "2.22",
+      "ruff": "0.11.13",
+      "scipy": "1.15.3",
+      "setuptools": "80.9.0",
+      "soundfile": "0.13.1",
+      "truststore": "0.10.4",
+      "wheel": "0.45.1",
+      "torch": "2.6.0+cpu",
+      "sympy": "1.13.1",
+      "typing_extensions": "4.16.0",
+      "filelock": "3.32.3",
+      "fsspec": "2026.7.0",
+      "Jinja2": "3.1.6",
+      "networkx": "3.6.1",
+      "MarkupSafe": "3.0.3",
+      "mpmath": "1.3.0"
+    }
+  },
+  "current_consumer": {
+    "declaration_hash": "666bb9e040e58d6998a154e21e83b9215f8547cd25badaae2edf9d97a8b42515",
+    "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+    "code_hash": "990e9ec6a6b9e64ad24946cde38eb6ceea91d680f99a2e642f8f44458fe02c98",
+    "version": "d03-consumer-1"
+  },
+  "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+  "packaging": {
+    "offline_wheels": 18,
+    "dependencies_expanded_bytes": 1401413336,
+    "network": {
+      "index": "https://pypi.org/pypi/setuptools/80.9.0/json",
+      "artifact_url": "https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl",
+      "requests": 2,
+      "download_bytes": 1216878,
+      "retries": 0,
+      "limit": 536870912,
+      "sha256": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922"
+    },
+    "reproducibility": {
+      "final_payload_identical": true,
+      "archive_bytes_identical": false,
+      "first": "239ce5dd302eef45b1acd296fe84906128b1727a4c941b40b1d3254eda145e0b",
+      "second": "2365ee8fdc8abdd16d8daac5955a3274ca99bacf9b180f150836990158617706",
+      "frozen_matcher_bytes_identical": true,
+      "packaged_ui_assets": [
+        "similar_sound_search/application/web/app.js",
+        "similar_sound_search/application/web/index.html",
+        "similar_sound_search/application/web/style.css"
+      ],
+      "vendored_notice_present": true
+    },
+    "non_editable": true,
+    "no_checkout_fallback": true,
+    "installed_entry": "sound-search-local / python -I -m sound_search_distribution",
+    "fresh_full_offline_environment": true,
+    "final_application_installed_by_non_editable_reinstall": true,
+    "second_full_environment_install": false
+  },
+  "private_closure": {
+    "files": 3518,
+    "bytes": 812191037,
+    "manifest_sha256": "0faf4182debce6a1a2c60c693ed768a4e6342660cc491bb3fec44c3f903f57b7",
+    "original_recordings": 72,
+    "candidate_rows": 54939,
+    "primary_rows": [
+      44025,
+      10914
+    ],
+    "all_bytes_verified": true,
+    "optional_history": {
+      "c03": false,
+      "d02": false
+    }
+  },
+  "runtime": {
+    "workspace_id": "d4ca10c6-1d83-4c50-b71c-ca3ad49fe042",
+    "allocation_id": "7ff69006-0383-4528-babc-218dfe1ed9e8",
+    "registry": "%LOCALAPPDATA%/SimilarSoundSearch/D03/allocation.json",
+    "total": {
+      "job_seconds": 7200,
+      "workers": 512,
+      "read_audio_seconds": 180000,
+      "feature_windows": 1024,
+      "processed_window_seconds": 12000,
+      "feature_bytes": 67108864,
+      "query_jobs": 128,
+      "clips": 128,
+      "clip_bytes": 268435456,
+      "metadata_bytes": 536870912,
+      "preparation_bytes": 134217728,
+      "import_bytes": 268435456,
+      "managed_output_bytes": 1073741824
+    },
+    "each_share": {
+      "job_seconds": 3600,
+      "workers": 256,
+      "read_audio_seconds": 90000,
+      "feature_windows": 512,
+      "processed_window_seconds": 6000,
+      "feature_bytes": 33554432,
+      "query_jobs": 64,
+      "clips": 64,
+      "clip_bytes": 134217728,
+      "metadata_bytes": 268435456,
+      "preparation_bytes": 67108864,
+      "import_bytes": 134217728,
+      "managed_output_bytes": 536870912
+    },
+    "protected_metadata_per_share": 33554432,
+    "verification_counts": {
+      "job_seconds": 625.876999999804,
+      "workers": 75,
+      "read_audio_seconds": 54026.004263038565,
+      "feature_windows": 2,
+      "processed_window_seconds": 22.0,
+      "feature_bytes": 134144,
+      "query_jobs": 16,
+      "clips": 40,
+      "clip_bytes": 23921320,
+      "metadata_bytes": 60451680,
+      "preparation_bytes": 65194496,
+      "import_bytes": 4608088,
+      "managed_output_bytes": 93858048
+    },
+    "normal_counts": {
+      "job_seconds": 0,
+      "workers": 0,
+      "read_audio_seconds": 0,
+      "feature_windows": 0,
+      "processed_window_seconds": 0,
+      "feature_bytes": 0,
+      "query_jobs": 0,
+      "clips": 0,
+      "clip_bytes": 0,
+      "metadata_bytes": 0,
+      "preparation_bytes": 0,
+      "import_bytes": 0,
+      "managed_output_bytes": 0
+    },
+    "verification_sealed": true,
+    "normal_capacity": {
+      "ready": true,
+      "reason": "D03 complete-path capacity available",
+      "required": {
+        "job_seconds": 1200,
+        "workers": 128,
+        "read_audio_seconds": 30000,
+        "query_jobs": 2,
+        "metadata_bytes": 113246208,
+        "feature_windows": 2,
+        "processed_window_seconds": 60,
+        "feature_bytes": 262144,
+        "preparation_bytes": 33554432,
+        "import_bytes": 0,
+        "clips": 20,
+        "clip_bytes": 41943040,
+        "managed_output_bytes": 83886080,
+        "ordinary_bytes": 100663296
+      },
+      "counts": {
+        "job_seconds": 0,
+        "workers": 0,
+        "read_audio_seconds": 0,
+        "feature_windows": 0,
+        "processed_window_seconds": 0,
+        "feature_bytes": 0,
+        "query_jobs": 0,
+        "clips": 0,
+        "clip_bytes": 0,
+        "metadata_bytes": 0,
+        "preparation_bytes": 0,
+        "import_bytes": 0,
+        "managed_output_bytes": 0
+      }
+    },
+    "verification_pool_sha256": "f84f458f231e4061300d69bd89ff4ad18db2306b318368e544e9160beebab91a",
+    "normal_pool_sha256": "ecfc63dbadf626f90c3dd49ba353a022b231b283a6612805c79c5363d776eb4f",
+    "protected_used": 9111710,
+    "ordinary_used": 51339970,
+    "uncertain_worker_seconds": 0,
+    "qa_prepaid_bytes": 62914560
+  },
+  "searches": {
+    "loulou": {
+      "job_id": "06a4ee15a6956b3b55c8bf9a018b65ecc32f3bb81f4d902d14ee1b7a6a19dd1e",
+      "result_id": "2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374",
+      "query_hash": "f24d82060fd5809aec85f4754faa32da45aae49c34968b7b1a1a9d83fef29e95",
+      "query_feature_hash": "7e2f82a440352c39afab2a1478988ad46a70e0150bbc06b2638e0299fc031cb2",
+      "worker_count": 25,
+      "worker_seconds": 232.375,
+      "committed_units": 98,
+      "new_catalogue_encodes": 0,
+      "worker_phase_counts": {
+        "job_seconds": 232.375,
+        "workers": 25,
+        "read_audio_seconds": 22816.023968253998,
+        "feature_windows": 0,
+        "processed_window_seconds": 0,
+        "feature_bytes": 0,
+        "query_jobs": 0,
+        "clips": 20,
+        "clip_bytes": 12077120,
+        "metadata_bytes": 19684240,
+        "preparation_bytes": 0,
+        "import_bytes": 0,
+        "managed_output_bytes": 12077120
+      },
+      "counts_scope": "submit-to-close watermarks; submit/control publication also in pool totals",
+      "wall_seconds": 234.9220000000205,
+      "producing_consumer": {
+        "declaration_hash": "a07f2aa4c43f355798235571f85534e2a3475140f04da9833de586fdd88c2722",
+        "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+        "code_hash": "4306385e0b6f0f84b5e0017b5a7e7b70c1786ebd8260aa8c524b40e1d3756adf",
+        "version": "d03-consumer-1"
+      }
+    },
+    "new_two_example": {
+      "job_id": "835e076af37d8e23458d890f8c10eabf5e694a4443633389e80aa609a2699ee9",
+      "result_id": "23553b1fb5ed3d32d8e0713f4257e64269dca1374a2f1dba839c4bcaa87b5b94",
+      "query_hash": "ebadaf45dd1a758803be8a697d40db0e60e0f89528993ea421c0423dbf8392de",
+      "query_feature_hash": "5fe562a3526b04a4e4e7e3c0a1c5f0b313871537ce0436973637b6dee46b78a3",
+      "worker_count": 27,
+      "worker_seconds": 219.0759999997681,
+      "committed_units": 98,
+      "new_catalogue_encodes": 0,
+      "worker_phase_counts": {
+        "job_seconds": 219.0759999997681,
+        "workers": 27,
+        "read_audio_seconds": 15518.984195011311,
+        "feature_windows": 2,
+        "processed_window_seconds": 22.0,
+        "feature_bytes": 134144,
+        "query_jobs": 1,
+        "clips": 20,
+        "clip_bytes": 11844200,
+        "metadata_bytes": 26972274,
+        "preparation_bytes": 2243072,
+        "import_bytes": 0,
+        "managed_output_bytes": 14221416
+      },
+      "counts_scope": "submit-to-close watermarks; submit/control publication also in pool totals",
+      "wall_seconds": 206.76500000001397,
+      "producing_consumer": {
+        "declaration_hash": "666bb9e040e58d6998a154e21e83b9215f8547cd25badaae2edf9d97a8b42515",
+        "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+        "code_hash": "990e9ec6a6b9e64ad24946cde38eb6ceea91d680f99a2e642f8f44458fe02c98",
+        "version": "d03-consumer-1"
+      }
+    },
+    "cancelled_phase_wall_seconds": 15.5,
+    "agreement": {
+      "legacy-mean": {
+        "complete_groups": 72,
+        "all_payloads_exact": true
+      },
+      "event-multi": {
+        "complete_groups": 72,
+        "all_payloads_exact": true
+      },
+      "query_hash_equal": true,
+      "new_result": "2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374",
+      "new_catalogue_encodes": 0,
+      "all_displayed_native_representatives_exact": true
+    },
+    "reuse": {
+      "features_before_after_equal": true,
+      "feature_files": 4,
+      "feature_rows": 2,
+      "new_catalogue_encodes": 0,
+      "query_hash": "ebadaf45dd1a758803be8a697d40db0e60e0f89528993ea421c0423dbf8392de",
+      "baseline_query_hash": "f24d82060fd5809aec85f4754faa32da45aae49c34968b7b1a1a9d83fef29e95",
+      "scores_differ": true,
+      "new_query_committed": {
+        "query": {
+          "path": "data/runs/runtime-verification/queries/1733118e79366d304869afcc9d8663960a64301e69d586ecb11320f79384a82a.json",
+          "record_hash": "1733118e79366d304869afcc9d8663960a64301e69d586ecb11320f79384a82a"
+        },
+        "new_encodes": 2
+      }
+    }
+  },
+  "failed_attempt": {
+    "job_id": "609d51bfb88a3aa7dc215b71f2b03d252f31e60ce9b9c8fbd0e31529b7a4dd1c",
+    "state": "failed",
+    "completed_units": 41,
+    "wall_seconds": 131.28200000000652,
+    "reason": "Windows busy-reader registry replace PermissionError",
+    "retained": true,
+    "spent_charges_retained": true,
+    "unused_reservations_only_released": true,
+    "extra_repair_searches": 1
+  },
+  "native": {
+    "passed": true,
+    "checks": 40,
+    "operations": 10
+  },
+  "browser": {
+    "passed": true,
+    "players": 40,
+    "unpaced": true,
+    "desktop_width": 1360,
+    "narrow_width": 390,
+    "reload": true,
+    "relocated_results": [
+      {
+        "job_id": "1c0ef69a1a5156319dec8a976cab164de576d13ba9cc00f5c24b4355b361a678",
+        "result": "c71cd6e7f7a804d3669683e8d6b1dc46c5c52caec12beba6764032c8a8b54136",
+        "cards": 10
+      },
+      {
+        "job_id": "12941fbd35737b6fb7df959d4fbbf9a1425fd5d5c1ba208cb01eb55e943ebef0",
+        "result": "cec00d3807ab7daa477695c059ad138f2378e8419f3d50ca2a59d8b3f889a26b",
+        "cards": 10
+      },
+      {
+        "job_id": "589ac27a30d60007e1a7f8ad6fdd695499d23ca0f17b55e858b00d624be0fd6b",
+        "result": "1c40c05c46a11d671bf38e57dca5acde9d68959ecf48528501580a71ec02ea19",
+        "cards": 10
+      },
+      {
+        "job_id": "835e076af37d8e23458d890f8c10eabf5e694a4443633389e80aa609a2699ee9",
+        "result": "23553b1fb5ed3d32d8e0713f4257e64269dca1374a2f1dba839c4bcaa87b5b94",
+        "cards": 10
+      },
+      {
+        "job_id": "06a4ee15a6956b3b55c8bf9a018b65ecc32f3bb81f4d902d14ee1b7a6a19dd1e",
+        "result": "2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374",
+        "cards": 10
+      }
+    ],
+    "long_label_layout_fixture": true,
+    "external_requests": []
+  },
+  "http": {
+    "passed": true,
+    "range": {
+      "status": 206,
+      "content_range": "bytes 0-63/776204",
+      "bytes": 64,
+      "mime": "audio/wav"
+    },
+    "refusals": {
+      "cross_result": 409,
+      "candidate_unscoped": 409,
+      "invalid_range": 416,
+      "bad_host": 409,
+      "traversal": 409
+    }
+  },
+  "session_rotation": {
+    "rotated": true,
+    "stale_token_status": 403,
+    "old_sha256": "6abaca94ac0be6350e86b1c62a8cf804d074e25f459c77e4e070a4fd972c84d5",
+    "new_sha256": "398e18fa37e4882ea30d292f72c6e43ffcd4e5fcfdf04bb0b28df341f35e65bf"
+  },
+  "relocation": {
+    "same_workspace_id": true,
+    "same_allocation_id": true,
+    "pool_bytes_identical": true,
+    "normal_counts_zero": true,
+    "old_path_absent": true,
+    "both_results_reopened": true,
+    "same_physical_host": true
+  },
+  "historical_results": [
+    {
+      "job": "1c0ef69a1a5156319dec8a976cab164de576d13ba9cc00f5c24b4355b361a678",
+      "result": "c71cd6e7f7a804d3669683e8d6b1dc46c5c52caec12beba6764032c8a8b54136",
+      "cards": 10
+    },
+    {
+      "job": "12941fbd35737b6fb7df959d4fbbf9a1425fd5d5c1ba208cb01eb55e943ebef0",
+      "result": "cec00d3807ab7daa477695c059ad138f2378e8419f3d50ca2a59d8b3f889a26b",
+      "cards": 10
+    },
+    {
+      "job": "589ac27a30d60007e1a7f8ad6fdd695499d23ca0f17b55e858b00d624be0fd6b",
+      "result": "1c40c05c46a11d671bf38e57dca5acde9d68959ecf48528501580a71ec02ea19",
+      "cards": 10
+    }
+  ],
+  "preservation": {
+    "state": "verified",
+    "historical_files": 24140,
+    "changed_or_missing": [],
+    "unexpected_additions": [],
+    "new_declarations": [
+      "manifests/application/consumers/7b724a0792ea44eef62b4d63fb722ae735e76b091f616af651234ed592c8289d.json",
+      "manifests/application/consumers/a07f2aa4c43f355798235571f85534e2a3475140f04da9833de586fdd88c2722.json",
+      "manifests/distribution/README.md",
+      "manifests/distribution/consumer.json",
+      "manifests/distribution/consumers/7b724a0792ea44eef62b4d63fb722ae735e76b091f616af651234ed592c8289d.json",
+      "manifests/distribution/consumers/a07f2aa4c43f355798235571f85534e2a3475140f04da9833de586fdd88c2722.json",
+      "manifests/distribution/consumers/c2b30399c42f761409c490e55a949a8d6f2cf145a93f1259641c0283f3c0e13f.json",
+      "manifests/distribution/consumers/c5afb88ee4cbf0f88efc0e9cdc63d949ac68b84477598c62ff6f30e7f19f4119.json",
+      "manifests/distribution/dependencies.json"
+    ],
+    "c01_denied_staging": "all retained; no deletion retried",
+    "seconds": 336.81199999997625
+  },
+  "memory": {
+    "max_observed_worker_bytes": 411422720,
+    "max_observed_server_bytes": 121978880,
+    "max_reported_overlap_bytes": 532918272,
+    "os_rss_enforced": false
+  },
+  "storage": {
+    "setup_live_bytes": 3030131511,
+    "setup_cap": 3221225472,
+    "private_and_runtime_bytes": 858176045,
+    "qa_bytes": 29308747,
+    "inherited_managed_now": 1862481902,
+    "free_bytes": 201951334400,
+    "combined_actual_bytes": 2720657947,
+    "combined_with_full_normal_reserve_bytes": 3257528859
+  },
+  "checks": {
+    "regression_tests": 417,
+    "regression_seconds": 281.216,
+    "ruff_lint": true,
+    "ruff_format_files": 241,
+    "javascript_syntax": true,
+    "dependency_check": true,
+    "installed_console_smoke": true,
+    "installed_faults": {
+      "core_missing": {
+        "ok": false,
+        "step": "doctor",
+        "error_type": "ModuleNotFoundError",
+        "error": "D03 missing dependency numpy; run checked offline setup"
+      },
+      "optional_missing": "D03 missing dependency torch; run checked offline setup",
+      "proof_mismatch": "D03 exact full-source/packaging compatibility proof differs",
+      "port_conflict": "D01 cannot bind http://127.0.0.1:8776; port is in use or unavailable: [WinError 10048] Di norma \u00e8 consentito un solo utilizzo di ogni indirizzo di socket (protocollo/indirizzo di rete/porta)",
+      "model_mismatch": {
+        "engineering_smoke": true,
+        "completed_results": true,
+        "real_catalogue_search": false,
+        "c03": false,
+        "d02": false
+      },
+      "model_absent": [
+        "mn04_as_mAP_432.pt"
+      ],
+      "deep_missing": "D03 missing/changed inventory file: mn04_as_mAP_432.pt",
+      "passed": true
+    },
+    "known_answers": {
+      "status": "ok",
+      "passed": true,
+      "scalar_pairs": 4,
+      "native_intervals": 11
+    },
+    "hosted_ci": "not configured"
+  },
+  "handoff": {
+    "stage": "D04",
+    "started": false,
+    "defaults": {
+      "audio": "original",
+      "arm": "legacy-mean",
+      "pitch": "off"
+    },
+    "query": {
+      "revision": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3",
+      "materialization": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036",
+      "frames": [
+        9613800,
+        10584000
+      ],
+      "rate": 44100
+    },
+    "completed_job": "06a4ee15a6956b3b55c8bf9a018b65ecc32f3bb81f4d902d14ee1b7a6a19dd1e",
+    "cards": [
+      {
+        "rank": 1,
+        "title": "Shivering Shadows (Featuring Viktor Van River)",
+        "artist": "Cutside",
+        "group": "family-f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+        "score": 0.34548167617069714,
+        "recording_id": "f85f0b690e48acb58d3a6621101ff078c90356698ddd27d9fe2bb447ceda5214",
+        "sample_rate_hz": 44100,
+        "scored_frames": [
+          8423100,
+          8528940
+        ],
+        "context_frames": [
+          8379000,
+          8573040
+        ],
+        "scored_seconds": [
+          191.0,
+          193.4
+        ],
+        "context_seconds": [
+          190.0,
+          194.4
+        ],
+        "scored_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/9fc594174a242705bde21b7d86b69b113c45c3b68dd79bc947153dde8468c128",
+        "context_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/fb224d77b846259709d40ecccd1c7b8023067b47a092edcb9bc92c6982d74b39"
+      },
+      {
+        "rank": 2,
+        "title": "Body, soul",
+        "artist": "Viktor Van River",
+        "group": "family-9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+        "score": 0.36347850036076734,
+        "recording_id": "9f66c57cf1f4ab19db767a06fab239d6511563fa0b51f3c06b991a0ff3d3188b",
+        "sample_rate_hz": 44100,
+        "scored_frames": [
+          5292000,
+          5397840
+        ],
+        "context_frames": [
+          5247900,
+          5441940
+        ],
+        "scored_seconds": [
+          120.0,
+          122.4
+        ],
+        "context_seconds": [
+          119.0,
+          123.4
+        ],
+        "scored_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/c3e663b785008adb5f347e6f934e56f16ae8ca7c146a3b7302610869380c9084",
+        "context_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/b4ce10a5c2c1331544c3205823196e061ef215f03ddbc9a386602fc8e47bf8ec"
+      },
+      {
+        "rank": 3,
+        "title": "Amaterasu",
+        "artist": "Cutside",
+        "group": "family-3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+        "score": 0.3926141076142837,
+        "recording_id": "3e04c9476896c6a3295026c3baa69e15708f35d07fc52d69bd7fd40278cd6e97",
+        "sample_rate_hz": 44100,
+        "scored_frames": [
+          4277700,
+          4383540
+        ],
+        "context_frames": [
+          4233600,
+          4427640
+        ],
+        "scored_seconds": [
+          97.0,
+          99.4
+        ],
+        "context_seconds": [
+          96.0,
+          100.4
+        ],
+        "scored_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/2814ee63d4f183a5cb5ef35795d14c31a87bb3f00c05ea9f583f34b2c7d715e9",
+        "context_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/787598c51f7e1bf8b5237d7caf71e991b4e2263ee3ab68501bf164154f48bc44"
+      },
+      {
+        "rank": 4,
+        "title": "Essence 118",
+        "artist": "mGee",
+        "group": "family-c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+        "score": 0.41955925440921527,
+        "recording_id": "c506fb5e93aa252a186bba0165a733e9e05234d6211f37419c89fabde36c48f1",
+        "sample_rate_hz": 44100,
+        "scored_frames": [
+          7221375,
+          7327215
+        ],
+        "context_frames": [
+          7177275,
+          7371315
+        ],
+        "scored_seconds": [
+          163.75,
+          166.15
+        ],
+        "context_seconds": [
+          162.75,
+          167.15
+        ],
+        "scored_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/aaf4118dc69febc3d21eb8d56a97afaac37eaa1f154b956e0cb728d518be8f77",
+        "context_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/84a475c6d2b9383be27cfa275d2c53cb28b1a6d6b529f99be6d5efa7994932d1"
+      },
+      {
+        "rank": 5,
+        "title": "Subway Cameo",
+        "artist": "Pete Lund",
+        "group": "family-fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+        "score": 0.4208935048586083,
+        "recording_id": "fd0c23cebf7484ea8b798227cdf8d7672504643d07c4da68acf8801f3db94116",
+        "sample_rate_hz": 44100,
+        "scored_frames": [
+          8577450,
+          8683290
+        ],
+        "context_frames": [
+          8533350,
+          8727390
+        ],
+        "scored_seconds": [
+          194.5,
+          196.9
+        ],
+        "context_seconds": [
+          193.5,
+          197.9
+        ],
+        "scored_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/f514f53d60e2d1ee5f86b272509e73efac74b5bcdbdb2e6804fc7a25e240ec3c",
+        "context_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/8a382ee9eee486e2d15a942053a9cfab9592177d6b3b802ad917cb544dad5fd6"
+      },
+      {
+        "rank": 6,
+        "title": "When I Lay Down",
+        "artist": "Gary Wood",
+        "group": "family-7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+        "score": 0.4388605996160332,
+        "recording_id": "7203ed1b2377da932d273b718308688a6fe659bd1b668933bfe0e66fdffdbd2e",
+        "sample_rate_hz": 44100,
+        "scored_frames": [
+          6085800,
+          6191640
+        ],
+        "context_frames": [
+          6041700,
+          6235740
+        ],
+        "scored_seconds": [
+          138.0,
+          140.4
+        ],
+        "context_seconds": [
+          137.0,
+          141.4
+        ],
+        "scored_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/526d07f0d170eeb5c0bbe38f60657ecd10cc8c17655b199ca77bf6400641aeb8",
+        "context_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/ef0cbad5414a499fd91602aacfa942bbe3b84b4ca47147cd1869906b79e45db7"
+      },
+      {
+        "rank": 7,
+        "title": "Absurdius Rex",
+        "artist": "Jovian Year",
+        "group": "family-e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+        "score": 0.44209693241749604,
+        "recording_id": "e4d59a31ca2a2c3bc5b8c950187b609c721623cc7eebac11afc0f14ab582cc42",
+        "sample_rate_hz": 44100,
+        "scored_frames": [
+          341775,
+          447615
+        ],
+        "context_frames": [
+          297675,
+          491715
+        ],
+        "scored_seconds": [
+          7.75,
+          10.15
+        ],
+        "context_seconds": [
+          6.75,
+          11.15
+        ],
+        "scored_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/4208e2fafe19b826bdb0b3a4dca8fd7a3adee7af4ccb99342487f116e8cab4f8",
+        "context_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/4fde4bce16ab6223b7c102c792706e179aade4c36726601663e1faa64b0c7993"
+      },
+      {
+        "rank": 8,
+        "title": "Something To See (De Vries Instrumental)",
+        "artist": "Donnie Ozone",
+        "group": "family-241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+        "score": 0.4538042587804848,
+        "recording_id": "241e3435b55371f7d7cbb11e370ef5fab83a9037edc599128cc843d39d25a4c6",
+        "sample_rate_hz": 44100,
+        "scored_frames": [
+          8312850,
+          8418690
+        ],
+        "context_frames": [
+          8268750,
+          8462790
+        ],
+        "scored_seconds": [
+          188.5,
+          190.9
+        ],
+        "context_seconds": [
+          187.5,
+          191.9
+        ],
+        "scored_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/a1d570e1bed157dad28769bdd82541a16079a745e7746dfa949dc0793648ede5",
+        "context_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/278a79b37e4b6d966fc7fd3eed035b2aeb4ac502df5d587da735da769efa1c62"
+      },
+      {
+        "rank": 9,
+        "title": "Confusion",
+        "artist": "Mos Emvy",
+        "group": "family-41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+        "score": 0.45617152228509805,
+        "recording_id": "41e876bb471f46cfe6ed92fef855b27e968ae4f06ad8ad50abf38893d2ee2064",
+        "sample_rate_hz": 44100,
+        "scored_frames": [
+          441000,
+          546840
+        ],
+        "context_frames": [
+          396900,
+          590940
+        ],
+        "scored_seconds": [
+          10.0,
+          12.4
+        ],
+        "context_seconds": [
+          9.0,
+          13.4
+        ],
+        "scored_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/9f7149e243e0cbf1b3660a98987b748ae9c4d427b4d99b24dc6222fe4378fc62",
+        "context_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/1ea7a33afc1804e3caeac3cd9045fcb92fa5a7eb36f84c675104716e3bf62b40"
+      },
+      {
+        "rank": 10,
+        "title": "Gladiator Season",
+        "artist": "GLD8TRZ",
+        "group": "family-3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772",
+        "score": 0.4567451407032187,
+        "recording_id": "3d22bfc07269ad09b9b59e5e713dbd6a63f11841f366632310408b32aafd0772",
+        "sample_rate_hz": 44100,
+        "scored_frames": [
+          8963325,
+          9069165
+        ],
+        "context_frames": [
+          8919225,
+          9113265
+        ],
+        "scored_seconds": [
+          203.25,
+          205.65
+        ],
+        "context_seconds": [
+          202.25,
+          206.65
+        ],
+        "scored_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/77a358a235b8295fb9eebc2c6a21550e8886256ec97e1f2ac795c68f025deac3",
+        "context_url": "/result-media/2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374/88303c30ea60d3ef957593162ccc50a666ad8d0b7b0fa5ae46d2f1f105f184ad"
+      }
+    ],
+    "distinct_song_labels": 10,
+    "human_relevance": "unmeasured",
+    "intended_layer": "unverified",
+    "rights": "unverified",
+    "version_master_alignment": "unverified"
+  },
+  "record_hash": "6bd676b8c143a059e1991307dfe60bf3c512d33b8ce6709ddaa9687fec7643d0"
+}

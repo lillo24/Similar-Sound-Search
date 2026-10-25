@@ -213,3 +213,15 @@ and [acceptance evidence](../reports/D01_INTERFACE.md).
 | DEC-090 | Compact new metadata losslessly and reserve measured remaining stages within the fixed pool. | Existing plain references remain exact. Development receives 18 MiB and confirmation 20 MiB of ordinary capacity; only completed preparation's unused reservation is released. Spent charges and the protected 32 MiB remain intact. |
 | DEC-091 | Retain the baseline after event-multi fails positive-group coverage guards in both splits. | Event recovery improves, but two development cases and one confirmation case lose a previously recovered positive group at twenty. Aggregate gains do not satisfy the prospective gate. |
 | DEC-092 | Pass readable completed fixtures and explicit resource-policy requirements to D03. | New searches need a separately defined bounded runtime policy, never a reset of delivery ledgers. The familiar generated mechanisms do not establish unseen-music, human or Loulou relevance; D04 review remains future. |
+
+## D03 package and runtime decisions
+
+25 October 2026; [package contracts](PACKAGE.md) and [measured evidence](../reports/D03_PACKAGE.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-093 | Keep core 0.3.0 and all resolved pins; version the offline distribution independently as d03-1.0.0. | Frozen model/representation identity includes exact Python 3.12.14 and matcher bytes. An ordinary non-editable wheel includes the UI and notices without spoofing those identities. |
+| DEC-094 | Stage a declared private dependency closure separately from the code archive. | Preserve 72 original recordings, candidate arrays, producer IDs and three exact D01 results. Omit optional full C03/D02 views, retain the original checkout and never substitute generated D02 data as the real catalogue. |
+| DEC-095 | Partition one allocation into fixed verification and normal shares, with an external canonical registry and checkpoints. | Copies, stale backups, restarts and upgrades cannot renew spent usage. Reserve whole requests and protected metadata, retain failed attempts, and release only unused reservations. Normal use remains unspent at handoff. |
+| DEC-096 | Retry the same prepaid Windows replacement temporary for at most one second and bind HTTP ports exclusively. | Actual acceptance exposed a busy-reader replace failure and an inherited reusable-socket duplicate bind. Preserve the stopped 41-unit search and its costs, use one permitted repair search, and scope compatibility to unchanged numerical code. |
+| DEC-097 | Keep exact baseline order and native players for D04; technical checks do not rate relevance. | The complete Loulou legacy/event group payloads match D01. A fresh two-example query encodes only its two rows and resumes without re-encoding. Human relevance, intended layer, rights and version/master alignment remain unverified. D04 has not started. |

@@ -1,5 +1,19 @@
 # Local setup
 
+`build-distribution.py` builds the D03 non-editable wheel, copies the exact cached
+18-wheel dependency closure, inventories public configuration/notices and emits a
+versioned offline archive. It uses the retained private cache-location inventory
+from delivery authoring; public wheel identities live in `manifests/distribution/dependencies.json`.
+`declare-distribution-consumer.py` prospectively freezes the exact core/adapter/UI
+maps, checks unchanged AST outside declared provider boundaries and retains scoped
+persistence/HTTP repair predecessors. Neither script initializes another runtime
+allowance. [PACKAGE.md](../docs/PACKAGE.md) owns the installed product workflow.
+`export-distribution-evidence.py --workspace <private-root>` reads retained local
+acceptance receipts and exports sanitized `reports/D03_PACKAGE.json`. It validates
+complete native/browser/preservation evidence and unspent normal capacity; it never
+dispatches inference or initializes state. The narrative report records the exact
+scope of the installed artifact iterations.
+
 `setup.ps1` owns Windows project-local environment creation and installation from the complete pinned `requirements.lock`, followed by an editable install and dependency check. It reuses an existing Python 3.12 `.venv`, never clears it, and fails on an incompatible interpreter or installation error. Pip's cache stays in ignored `.cache/pip/`.
 
 Pass a working interpreter with `-PythonExecutable` when `python` is a Windows Store alias. [RUNTIME.md](../docs/RUNTIME.md#setup) gives the exact setup and Linux equivalent; numerical libraries are used by the source package, while Ruff is only a validation tool.

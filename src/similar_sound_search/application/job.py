@@ -10,7 +10,7 @@ from ..evaluation.artifacts import record
 from ..resources import CatalogueBudget
 from ..storage import InputError, ResourceError, digest, project_lock
 from . import api, history, media, pipeline, queries
-from .context import Context, PersistenceError
+from .context import PersistenceError
 from .locks import lock
 
 
@@ -155,12 +155,12 @@ def perform(budget, owner, value, unit, query_cache):
     raise InputError("D01 unknown executable unit")
 
 
-def worker(request):
+def worker(request, runtime=None):
     from ..matchers.job import offline_network
     from ..matchers.runner import memory_check
 
-    owner = Context(__import__("pathlib").Path(request["root"]), request["job_id"])
-    budget = CatalogueBudget(owner.root, request["limits"])
+    owner = api.owner_for(__import__("pathlib").Path(request["root"]), request["job_id"], runtime)
+    budget = (CatalogueBudget if runtime is None else runtime.budget)(owner.root, request["limits"])
     key = request["job_id"]
     with project_lock(owner.root), lock(owner.root, "worker"), offline_network():
         value = api.job(owner, key)
@@ -168,7 +168,7 @@ def worker(request):
             owner, value["consumer"]
         ):
             raise InputError("D01 request consumer changed; declare scoped compatibility")
-        graph = units(owner, value)
+        graph = units(owner, value) if runtime is None else runtime.units(owner, value)
         cache, done, encodes = {}, [], 0
         if request.get("finalization_audit"):
             from .validation import finalization
@@ -217,7 +217,9 @@ def worker(request):
                     new_encodes=encodes,
                     peak_working_bytes=memory_check(budget),
                 )
-            answer = perform(budget, owner, value, unit, cache)
+            answer = (perform if runtime is None else runtime.perform)(
+                budget, owner, value, unit, cache
+            )
             owner.publish(
                 budget,
                 unit_path(owner, key, unit),
@@ -238,14 +240,14 @@ def worker(request):
         )
 
 
-def execute(owner, key, limits, validate_units=None, finalization_audit=False):
+def execute(owner, key, limits, validate_units=None, finalization_audit=False, script=None):
     from ..processing.runner import python_command
 
     environment = os.environ.copy()
     environment.update(
         OMP_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1", MKL_NUM_THREADS="1", PYTHONIOENCODING="utf-8"
     )
-    command = python_command(owner.root / "scripts/application-worker.py")
+    command = python_command(script or owner.root / "scripts/application-worker.py")
     request = dict(root=str(owner.root), job_id=key, limits=limits)
     if validate_units:
         request["validate_units"] = validate_units
@@ -298,15 +300,16 @@ def reconcile(owner, key):
             owner.terminal(identity, api.state_path(owner, previous_key), previous, uncertain=True)
 
 
-def _run(root, limits, key):
-    owner = Context(root, key)
+def _run(root, limits, key, runtime=None):
+    owner = api.owner_for(root, key, runtime)
     # This lock belongs to the coordinator while HTTP control/status runs independently.
     with lock(owner.root, "coordinator"):
         with lock(owner.root, "worker"):
             reconcile(owner, key)
         value = api.job(owner, key)
-        graph = units(owner, value)
-        budget = CatalogueBudget(root, limits)
+        graph = units(owner, value) if runtime is None else runtime.units(owner, value)
+        budget_type = CatalogueBudget if runtime is None else runtime.budget
+        budget = budget_type(root, limits)
         validate = [
             u for u in graph if u.startswith("source:") and committed(owner, key, u) is not None
         ]
@@ -328,7 +331,7 @@ def _run(root, limits, key):
         for _ in range(256):
             # The 120s deadline bounds each child and each coordinator transaction,
             # not the complete multi-worker request. Aggregate time stays in the pool.
-            budget = CatalogueBudget(root, limits)
+            budget = budget_type(root, limits)
             state = record(api.state_path(owner, key))
             if state["state"] == "complete":
                 return state
@@ -364,10 +367,10 @@ def _run(root, limits, key):
                     raise ResourceError(
                         "D01 insufficient available commit for worker plus server overlap"
                     )
-                answer = execute(
+                answer = (execute if runtime is None else runtime.execute)(
                     owner, key, {**limits, "max_seconds": 120}, validate[:4], final_audit
                 )
-                budget = CatalogueBudget(root, limits)
+                budget = budget_type(root, limits)
                 answer["server_peak_working_bytes"] = server_memory
                 answer["overlap_peak_bound"] = server_memory + answer.get("peak_working_bytes", 0)
                 if answer.get("state") == "validated":
@@ -487,9 +490,9 @@ def validate_resumed(owner, budget, unit, previous, current):
     )
 
 
-def run(root, limits, key):
+def run(root, limits, key, runtime=None):
     try:
-        return _run(root, limits, key)
+        return _run(root, limits, key, runtime)
     except PersistenceError:
         raise
     except (InputError, OSError, ValueError, RuntimeError) as exc:
@@ -497,7 +500,7 @@ def run(root, limits, key):
 
         if active(root, "coordinator") or active(root, "worker"):
             raise
-        owner = Context(root, key)
+        owner = api.owner_for(root, key, runtime)
         previous = record(api.state_path(owner, key))
         slot = "admission-" + uuid.uuid4().hex
         owner.reserve_attempt(slot, seconds=0)
