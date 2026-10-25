@@ -2,11 +2,17 @@
 
 Select a particular sound inside a song and find passages in other recordings with a similar sound character, with playable results and trustworthy timestamps. Timbre comes first, approximate pitch second; matching phrase rhythm or note order is deferred.
 
-**Current state: D03 packaged local runtime.**
+**Current work: D04 listening review; human response pending.**
+The [standalone review report](reports/D04_LISTENING.md),
+[immutable input](manifests/listening/d04-v1.json) and
+[listening instructions](docs/LISTENING.md) retain the exact saved reference and
+ten baseline candidates. Technical verification is recorded separately from
+human relevance.
+
 The versioned offline archive, installed launch command, private prerequisites,
 finite runtime policy and technical evidence are in [D03_PACKAGE.md](reports/D03_PACKAGE.md)
 and [package setup/recovery](docs/PACKAGE.md). Core 0.3.0 and the pinned numerical
-dependencies are preserved. D04 listening review has not started.
+dependencies are preserved.
 
 The frozen 24-development/16-confirmation comparison completed on independent
 generated performances. Event-multi improved event recovery but lost positive-group
@@ -22,7 +28,12 @@ pitch off remain defaults. [D01 evidence](reports/D01_INTERFACE.md) records real
 adoption, warm/new-query searches and playback. C04 remains historically partial
 145/148; A03 remains partial at 72 recordings/35 artists. Human similarity is unmeasured.
 
-Start the installed D03 delivery in a foreground terminal:
+For the focused D04 review, run `powershell -NoProfile -ExecutionPolicy Bypass
+-File scripts/listen-d04.ps1` and open **http://127.0.0.1:8777/** on the same
+Windows computer. The separate companion uses exact saved clips and optional
+private feedback, with no inference.
+
+For the general product, start the installed D03 delivery in a foreground terminal:
 
 ```powershell
 & "$env:USERPROFILE\Documents\Sound Search D03 à\installed\Scripts\python.exe" -I -m sound_search_distribution start --workspace "C:\SSS D03 à\w" --port 8776

@@ -1,0 +1,44 @@
+{
+  "schema_version": "d04-listening-evidence-1",
+  "engineering_state": "in progress; blocked on QA resource decision",
+  "human_state": "listening review pending; relevance unmeasured",
+  "review_version": "d04-v1",
+  "review_hash": "0767f7fdd1cdb294a7050566d93aaab74ecf34894cd2ac402597ee409d8570e5",
+  "package_sha256": "062f97ac056f75f664440c0bfc45caaea3ed7e52023d6568704098dda7808901",
+  "job_id": "06a4ee15a6956b3b55c8bf9a018b65ecc32f3bb81f4d902d14ee1b7a6a19dd1e",
+  "result_id": "2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374",
+  "defaults": {"audio": "original", "arm": "legacy-mean", "pitch": "off"},
+  "available": {"reference": 1, "candidate_passages": 10, "candidate_contexts": 10, "distinct_groups": 10, "distinct_recordings": 10, "private_media_bytes": 15876924},
+  "fresh_checks": {
+    "installed_readonly_result_and_media_provider": "passed",
+    "native_frames_headers_and_byte_hashes": "21 passed",
+    "full_source_audio_audit": "not repeated",
+    "reference_route": "unavailable: installed reader expects one inventory match; two byte-identical matches exist",
+    "reference_workaround": "exact retained C03 publication, both copies, supplied MP3 SHA and query native selection verified",
+    "focused_tests_before_final_feedback_lock": {"tests": 12, "passed": true},
+    "final_source_checks": "pending",
+    "full_regression": {"first_batch_tests": 92, "passed": 91, "errors": 1, "complete": false},
+    "d04_browser_playback": "not yet run",
+    "physical_phone": "not tested",
+    "final_ledger_hash_comparison": "pending"
+  },
+  "retained_proof": {
+    "d03_native_candidates": "40 independent checks passed in D03",
+    "d03_browser": "40 technical controls passed in D03; muted, not human listening",
+    "reference_publication": "b7c1bae8c55f488883a599d4486b85d382b6d66eecabc6bbf028871e4ae48aee",
+    "search_scope": "Loulou ran on preceding installed artifact; final artifact reopened and verified it; no D04 search"
+  },
+  "resources": {
+    "inference": 0,
+    "catalogue_encodes": 0,
+    "new_downloads": 0,
+    "processing_receipts": 10,
+    "decoded_original_audio_seconds": 0,
+    "incomplete_test_fixture_bytes_observed": 33997853,
+    "qa_cap_stop": true,
+    "cleanup": "rejected by automatic approval review: blocked by policy; command did not execute; no alternate cleanup attempted",
+    "resource_adjustment": "requested, not authorized",
+    "d03_pool_mutations": "none dispatched; final hash verification pending"
+  },
+  "responses": {"shown_on_review": 10, "listened_rated": 0, "similar": 0, "different": 0, "unsure": 0, "unanswered": 10, "provenance": "no response received from Leonardo"}
+}

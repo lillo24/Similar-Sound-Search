@@ -1,5 +1,12 @@
 # Runtime and catalogue correctness tests
 
+`test_listening_review.py` owns D04's exact public review order/native timestamps,
+manifest integrity, unchanged WAV byte/header checks, separate unanswered/unsure/
+declined states, strict review/item membership, immutable feedback revisions,
+optimistic conflicts, export/import, quotas and finite loopback HTTP protections.
+These are model-free isolated fixtures, with no actual human ratings. Private
+installed-provider and browser acceptance are separate D04 evidence.
+
 `test_indexing.py` uses disposable roots, generated native PCM and fake embeddings
 for C01 grids/tails/short files, coverage unions, row/feature identity, corruption,
 interrupted recovery, single-writer conflicts, lifetime accounting, read-only B03
