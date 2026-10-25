@@ -1,6 +1,7 @@
 # D03 package delivery
 
 25 October 2026. **Complete technical delivery; D04 has not started.**
+Repository review/merge artifact: [PR #32](https://github.com/lillo24/Similar-Sound-Search/pull/32).
 [Sanitized machine evidence](D03_PACKAGE.json) contains exact job/result/media IDs,
 resource counters, source hashes, checks and the ordered D04 cards. The private
 catalogue, checkpoint, runtime outputs and local archive are retained locally.

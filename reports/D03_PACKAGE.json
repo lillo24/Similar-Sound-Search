@@ -2,6 +2,7 @@
   "schema_version": "d03-package-evidence-1",
   "outcome": "complete",
   "release": "d03-1.0.0",
+  "pull_request": "https://github.com/lillo24/Similar-Sound-Search/pull/32",
   "artifact": {
     "path": "dist/similar-sound-search-d03-1.0.0.zip",
     "bytes": 292441732,
@@ -771,5 +772,5 @@
     "rights": "unverified",
     "version_master_alignment": "unverified"
   },
-  "record_hash": "a883d684a3338b85308a0613e2268ad497ce4b7f1f66a5f1afc61a92554dbd06"
+  "record_hash": "6bd676b8c143a059e1991307dfe60bf3c512d33b8ce6709ddaa9687fec7643d0"
 }

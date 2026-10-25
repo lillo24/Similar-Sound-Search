@@ -108,6 +108,7 @@ def export(root, workspace):
         schema_version="d03-package-evidence-1",
         outcome="complete",
         release=RELEASE,
+        pull_request="https://github.com/lillo24/Similar-Sound-Search/pull/32",
         artifact=dict(
             path=archive.relative_to(root).as_posix(),
             bytes=archive.stat().st_size,
