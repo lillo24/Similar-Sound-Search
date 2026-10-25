@@ -116,7 +116,7 @@ def build(root, output):
         dependencies=[{k: v for k, v in w.items() if k != "path"} for w in wheels],
     )
     (output / "release.json").write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
-    archive = output.with_suffix(".zip")
+    archive = output.with_name(output.name + ".zip")
     if archive.exists():
         raise RuntimeError("Archive already exists")
     with zipfile.ZipFile(archive, "w", zipfile.ZIP_STORED) as z:

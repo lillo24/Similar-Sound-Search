@@ -5,14 +5,9 @@ import json
 import sys
 from pathlib import Path
 
-from similar_sound_search.application import server
-from similar_sound_search.application.locks import lock
 from similar_sound_search.storage import InputError
 
-from . import RELEASE, authority, doctor
-from .assets import prepare
-from .policy import limits
-from .runtime import Runtime
+from . import RELEASE
 
 
 def main(argv=None):
@@ -33,6 +28,16 @@ def main(argv=None):
         if args.command == "version":
             result = dict(release=RELEASE, core="0.3.0", module=str(Path(__file__).resolve()))
         else:
+            # Delay numerical imports until the explicit process boundary so a
+            # missing core dependency produces an actionable setup failure.
+            from similar_sound_search.application import server
+            from similar_sound_search.application.locks import lock
+
+            from . import authority, doctor
+            from .assets import prepare
+            from .policy import limits
+            from .runtime import Runtime
+
             if not args.workspace:
                 parser.error("--workspace is required")
             root = args.workspace.resolve()
@@ -79,10 +84,13 @@ def main(argv=None):
                 return 0
         print(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False))
         return 0
-    except (InputError, OSError, ValueError, KeyError, RuntimeError) as exc:
+    except (InputError, OSError, ValueError, KeyError, RuntimeError, ModuleNotFoundError) as exc:
+        error = str(exc)
+        if isinstance(exc, ModuleNotFoundError):
+            error = "D03 missing dependency " + str(exc.name) + "; run checked offline setup"
         print(
             json.dumps(
-                dict(ok=False, step=args.command, error_type=type(exc).__name__, error=str(exc))
+                dict(ok=False, step=args.command, error_type=type(exc).__name__, error=error)
             ),
             file=sys.stderr,
         )

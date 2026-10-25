@@ -45,6 +45,38 @@ class DistributionTests(unittest.TestCase):
             authority.initialize(other, self.registry)
         self.assertEqual((self.registry / "allocation.json").read_bytes(), before)
 
+    def test_full_identity_search_transaction_fits_prepaid_geometry(self):
+        owner = Context(self.root, "a" * 64, "verification")
+        owner.operation = "search"
+        owner.admit("a" * 64, 96 * MIB, jobs=1)
+        owner.reserve_attempt("attempt-" + "b" * 32)
+        owner.charge(self.budget, read_audio_seconds=123.45678, feature_windows=2)
+        owner.terminal(
+            "attempt-" + "b" * 32,
+            owner.directory / "states/x.json",
+            dict(state="complete"),
+            elapsed=12.345678,
+        )
+        owner.release("a" * 64)
+        self.assertIsNone(authority.read(self.root)[1]["active"])
+        self.assertGreater(owner.pool()["counts"]["job_seconds"], 12)
+
+    def test_doctor_dependency_failures_name_expected_pin(self):
+        import importlib.metadata
+
+        from sound_search_distribution.doctor import dependencies
+
+        for name in ("requirements.lock", "requirements-models.lock"):
+            shutil.copyfile(ROOT / name, self.root / name)
+        with patch(
+            "importlib.metadata.version", side_effect=importlib.metadata.PackageNotFoundError
+        ):
+            with self.assertRaisesRegex(InputError, "missing dependency cffi"):
+                dependencies(self.root)
+        with patch("importlib.metadata.version", return_value="wrong"):
+            with self.assertRaisesRegex(InputError, "expected 1.17.1, found wrong"):
+                dependencies(self.root)
+
     def test_copy_missing_pool_and_stale_backup_are_explicit_failures(self):
         copied = self.base / "backup"
         shutil.copytree(self.root, copied)

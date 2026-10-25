@@ -332,7 +332,7 @@
     "assets.py": "dbfbb2ab8bae2172de35f9bc6da67d82a8436e582f31caf1769e8bd08de12709",
     "authority.py": "4f76306827ae005171ac05ad82a29d8b772e0888b95f967d0bbe61e1ade3f8f0",
     "bootstrap.py": "6b7fc10179b5398310bda47185ab4de98ec128b1b6ce722f79e323f6bce03778",
-    "cli.py": "58ed5fb28da08d0106e9a8ba38aed565e98f92934a0d720c30165379ccd9b3d3",
+    "cli.py": "87f693fba0a470978e0366e6e6ae608af97a131c949508aa8ab7d959e7492b9c",
     "context.py": "fc165725c8f3a50c5c2e6147c3ee62ec644083443536e57f43b4834dbaffdb8b",
     "contracts.py": "f5d3e966771fa79f7b7ffcdc19136a16d7b423967d55bc2cc6634a7cfffaaf3b",
     "doctor.py": "06559f7a414866f72b8ef66ddf290324d9b9401011a8dc24d4c4cbc145c9232a",
@@ -361,6 +361,6 @@
     "index.html": "e45deab478346f97fe6ea205a910dae4f097897bd02ffa92f23a119aee94d8d6",
     "style.css": "9bd8a69d4556e7b07729bbee82abec2d8e985f0b2f7c49f8cd1b4acb305e1449"
   },
-  "source_commit": "f372fe5a0d2309e1b9d3fe1e53df80d1fab1858c",
-  "record_hash": "c5afb88ee4cbf0f88efc0e9cdc63d949ac68b84477598c62ff6f30e7f19f4119"
+  "source_commit": "b2313073596941eddef403accac84eed399e8a8d",
+  "record_hash": "c2b30399c42f761409c490e55a949a8d6f2cf145a93f1259641c0283f3c0e13f"
 }
