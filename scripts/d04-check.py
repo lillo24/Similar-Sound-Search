@@ -25,6 +25,7 @@ def main():
         raise ReviewError("Unsettled D04 invocation; retain its reservation and investigate")
     spent = sum(read(f)["seconds"] for f in finishes)
     decoded = sum(read(f)["reserved_source_seconds"] for f in starts)
+    # Existing starts/finishes still consume this same allowance and 600 seconds.
     rules = allowance()
     if len(starts) < rules["prior_invocations"] or spent + 0.000001 < rules["prior_spent_seconds"]:
         raise ReviewError("Prior D04 charges missing; restore receipts, never reset the allowance")
@@ -48,7 +49,8 @@ def main():
     # Existing fixture paths contain nested content hashes. The Windows namespace
     # prefix preserves their exact paths while allowing native paths beyond 260.
     temp_name = str(temp)
-    if os.name == "nt" and Path(command[0]).stem.lower() in {"python", "pythonw"}:
+    if (os.name == "nt" and Path(command[0]).stem.lower() in {"python", "pythonw"}
+            and not temp_name.startswith("\\\\?\\")):
         temp_name = "\\\\?\\" + temp_name
     env.update(
         OMP_NUM_THREADS="1",

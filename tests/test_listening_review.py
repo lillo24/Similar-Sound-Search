@@ -3,6 +3,7 @@
 import copy
 import http.client
 import json
+import runpy
 import socket
 import sys
 import tempfile
@@ -254,6 +255,57 @@ class ListeningReviewTests(unittest.TestCase):
         output_limits(self.root, 17 * MIB, "bundle")
         with self.assertRaisesRegex(ReviewError, "metadata"):
             output_limits(self.root, 17 * MIB, "metadata")
+
+    def test_amended_qa_preserves_retained_bytes_and_combined_output_limit(self):
+        retained = 33997853
+        files = {
+            "qa/tmp/retained-fixture.wav": retained,
+            "qa/other": 224 * MIB - retained,
+            "bundle/media": 20 * MIB,
+            "metadata/receipts": 11 * MIB,
+        }
+        with patch("listening_review.common.inventory", return_value=files):
+            self.assertEqual(output_limits(self.root, MIB), files)
+            # Each category could still fit, but their combined output would not.
+            with self.assertRaisesRegex(ReviewError, "total"):
+                output_limits(self.root, MIB + 1)
+            with self.assertRaisesRegex(ReviewError, "qa/"):
+                output_limits(self.root, 1, "qa")
+        self.assertEqual(files["qa/tmp/retained-fixture.wav"], retained)
+
+    def check_fixture(self, count, seconds):
+        folder = self.root / "metadata/receipts"
+        for i in range(count):
+            put_new(
+                folder / f"{i + 1:02}-start.json",
+                dict(label="test fixture only", reserved_source_seconds=0),
+            )
+            put_new(folder / f"{i + 1:02}-finish.json", dict(seconds=seconds))
+        return folder, runpy.run_path(str(ROOT / "scripts/d04-check.py"))["main"]
+
+    def test_amendment_keeps_prior_receipts_and_only_admits_the_24th_invocation(self):
+        folder, check = self.check_fixture(23, 25)
+        before = {p.name: p.read_bytes() for p in folder.iterdir()}
+        argv = ["d04-check", "--root", str(self.root), "--label", "fixture", "--", "fixture"]
+        with patch.object(sys, "argv", argv), patch("subprocess.Popen") as launch:
+            launch.return_value.wait.return_value = 0
+            launch.return_value.poll.return_value = 0
+            self.assertEqual(check(), 0)
+            self.assertEqual(read(folder / "24-start.json")["deadline"], 25)
+            with self.assertRaisesRegex(ReviewError, "exhausted"):
+                check()
+            launch.assert_called_once()
+        self.assertEqual({name: (folder / name).read_bytes() for name in before}, before)
+
+    def test_amendment_does_not_reopen_600_seconds_with_unused_invocations(self):
+        folder, check = self.check_fixture(10, 60)
+        before = {p.name: p.read_bytes() for p in folder.iterdir()}
+        argv = ["d04-check", "--root", str(self.root), "--label", "fixture", "--", "fixture"]
+        with patch.object(sys, "argv", argv), patch("subprocess.Popen") as launch:
+            with self.assertRaisesRegex(ReviewError, "exhausted"):
+                check()
+            launch.assert_not_called()
+        self.assertEqual({p.name: p.read_bytes() for p in folder.iterdir()}, before)
 
     def test_single_ranges_include_suffix_and_reject_invalid_geometry(self):
         self.assertEqual(byte_range("bytes=0-63", 100), (0, 63, True))

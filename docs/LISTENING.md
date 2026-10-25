@@ -101,6 +101,15 @@ them; real busy-reader errors remain explicit. This companion does not replenish
 or use any application pool. Human listening
 and idle foreground service time are separate from processing-worker time.
 
+On 25 October 2026 Leonardo explicitly authorized this D04-only amendment from
+32 to 224 MiB QA, 128 to 256 MiB total output, and 16 to 24 invocations. All prior
+attempts, spent time, receipts and retained temporary files still count. The
+600-second aggregate, 120-second worker, source-read, other category and global
+disk limits are unchanged; both D03 pools and the external registry stay untouched.
+The automatic approval review's temporary-file cleanup rejection remains in force.
+Do not delete those files, retry the rejected cleanup or initialize another QA root
+to obtain fresh counters. Resume against the existing receipts and inventory.
+
 Focused tests run with `.venv/Scripts/python.exe -m unittest discover -s tests -p
 test_listening_review.py -q`. The complete existing regression suite is also
 required for companion code changes, in bounded batches if necessary. Real private

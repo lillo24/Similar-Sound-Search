@@ -110,6 +110,7 @@ def allowance():
 
 def output_limits(root, additional=0, category="metadata", transient=False):
     files = inventory(root, transient=transient)
+    # Category ceilings are independent; their sum does not enlarge the total.
     rules = allowance()
     for prefix, cap in (
         ("qa/", rules["qa_bytes"]),

@@ -37,7 +37,22 @@
     "incomplete_test_fixture_bytes_observed": 33997853,
     "qa_cap_stop": true,
     "cleanup": "rejected by automatic approval review: blocked by policy; command did not execute; no alternate cleanup attempted",
-    "resource_adjustment": "explicitly authorized: 224 MiB QA, 256 MiB combined output, 24 cumulative invocations; 600 aggregate seconds and all earlier charges retained",
+    "resource_adjustment": {
+      "state": "explicitly authorized by Leonardo on 2026-10-25; applied to PR #34",
+      "qa_max_bytes": 234881024,
+      "total_output_max_bytes": 268435456,
+      "max_cumulative_invocations": 24,
+      "max_aggregate_seconds": 600,
+      "prior_charges_and_receipts": "retained; no reset or new allowance",
+      "other_limits_and_d03_pools": "unchanged",
+      "cleanup_authorized": false
+    },
+    "amendment_validation": {
+      "environment": "Linux repository checkout; Windows delivery assets and receipts unavailable",
+      "new_d04_processing_invocations": 0,
+      "tests": "cap/receipt regression cases added; execution pending against existing delivery accounting",
+      "windows_failure": "traceback unavailable here; diagnosis and rerun still required"
+    },
     "d03_pool_mutations": "none dispatched; final hash verification pending"
   },
   "responses": {"shown_on_review": 10, "listened_rated": 0, "similar": 0, "different": 0, "unsure": 0, "unanswered": 10, "provenance": "no response received from Leonardo"}

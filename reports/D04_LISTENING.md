@@ -117,6 +117,13 @@ regression or D04 browser pass is claimed. The technical QA foreground server
 was stopped. All existing application operations used in preparation were reads;
 the final before/after ledger comparison is still pending.
 
+The amendment was applied from a Linux repository checkout. The Windows failure
+traceback, original cumulative processing receipts, private WAV bundle, installed
+runtime and preservation baseline are not present there. No replacement allowance
+was initialized and no additional D04 processing invocation was launched without
+the existing elapsed-time evidence. The new cap/receipt tests are pending on the
+delivery host along with the Windows replacement diagnosis and remaining QA.
+
 ## Optional human response
 
 Listening review **pending**. Ten items are available on the page; **0 rated,
