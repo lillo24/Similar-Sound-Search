@@ -225,3 +225,14 @@ and [acceptance evidence](../reports/D01_INTERFACE.md).
 | DEC-095 | Partition one allocation into fixed verification and normal shares, with an external canonical registry and checkpoints. | Copies, stale backups, restarts and upgrades cannot renew spent usage. Reserve whole requests and protected metadata, retain failed attempts, and release only unused reservations. Normal use remains unspent at handoff. |
 | DEC-096 | Retry the same prepaid Windows replacement temporary for at most one second and bind HTTP ports exclusively. | Actual acceptance exposed a busy-reader replace failure and an inherited reusable-socket duplicate bind. Preserve the stopped 41-unit search and its costs, use one permitted repair search, and scope compatibility to unchanged numerical code. |
 | DEC-097 | Keep exact baseline order and native players for D04; technical checks do not rate relevance. | The complete Loulou legacy/event group payloads match D01. A fresh two-example query encodes only its two rows and resumes without re-encoding. Human relevance, intended layer, rights and version/master alignment remain unverified. D04 has not started. |
+
+## D04 listening presentation decisions
+
+25 October 2026; [review contract](LISTENING.md) and [report](../reports/D04_LISTENING.md).
+
+| ID | Decision | Reason / consequence |
+| --- | --- | --- |
+| DEC-098 | Freeze one review hash independently of evolving feedback, retaining the original full-mixture query and ten distinct saved ranks. | Item IDs bind exact recording/group/native/media identities; changing inputs requires a new version rather than migrating opinions. |
+| DEC-099 | Use a separate loopback companion with 21 byte-identical private clips and no application-operation proxy. | The installed provider validates the saved publication; the duplicate-reference route failure is handled explicitly through the exact retained C03 reference proof, without changing the frozen package or consuming normal capacity. |
+| DEC-100 | Keep optional feedback in private immutable parent-linked revisions with explicit durable save, JSON export/import and stale-tab conflicts. | Browser drafts/play events never establish human listening. Pending, partial, completed and declined responses remain separate from technical delivery; raw notes stay private. |
+| DEC-101 | Apply Leonardo's 25 October D04-only amendment: 224 MiB QA, 256 MiB total output and 24 cumulative invocations. | The unchanged regression fixture exceeded the initial QA cap. Retain all prior receipts, spent charges and denied-cleanup files; preserve 600 aggregate seconds, every other limit and both D03 pools. The Windows replacement failure and final acceptance remain separate verification requirements. |

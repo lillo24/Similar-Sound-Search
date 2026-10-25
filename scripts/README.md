@@ -1,5 +1,13 @@
 # Local setup
 
+`listen-d04.ps1` opens the private, reference-first D04 review using the existing
+installed interpreter. `d04-review.py` prepares only verified saved clips or serves
+the separate stdlib companion; [its subsystem map](listening_review/README.md)
+separates immutable input, feedback, playback and preservation responsibilities.
+`d04-check.py` records the finite D04-only preparation allowance; it cannot refill
+an application pool. See [LISTENING.md](../docs/LISTENING.md) for launch, feedback,
+resource boundaries and missing-private-artifact prerequisites.
+
 `build-distribution.py` builds the D03 non-editable wheel, copies the exact cached
 18-wheel dependency closure, inventories public configuration/notices and emits a
 versioned offline archive. It uses the retained private cache-location inventory

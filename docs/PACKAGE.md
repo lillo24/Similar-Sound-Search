@@ -106,4 +106,5 @@ envelope. The normal share remains available for real user requests and complete
 results remain readable after exhaustion. Keep/export the complete private
 workspace and registry inventory; automatic garbage collection and user deletion
 are outside this task. Human relevance, rights, version/master and intended-layer
-alignment remain unverified. **D04 has not started.**
+alignment remain unverified. [D04's separate listening companion](LISTENING.md)
+uses the saved publication without spending either application share.

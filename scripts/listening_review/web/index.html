@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D04 · Listen for the sound</title>
+  <link rel="stylesheet" href="/review.css">
+  <script src="/review.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#candidates">Skip to candidates</a>
+  <main>
+    <header>
+      <p class="eyebrow">D04 · First listening review</p>
+      <h1>Listen for the sound</h1>
+      <p>Compare the <strong>type of sound</strong> with the reference. Melody, mood and genre needn't match.</p>
+      <p>These are the baseline's ten candidates. You can answer a few, all, or none.</p>
+      <a href="/D04_LISTENING.md" download>Download the readable report</a>
+    </header>
+    <p id="load-status" role="status">Loading the saved review…</p>
+    <section id="reference-player" class="reference" aria-labelledby="reference-title" hidden>
+      <div>
+        <p class="eyebrow">Original reference · full mixture</p>
+        <h2 id="reference-title">daoud — Loulou &amp; the loulous</h2>
+        <p>03:38.000–04:00.000 · 22 seconds</p>
+      </div>
+      <div id="reference-control"></div>
+    </section>
+    <section class="instructions" aria-labelledby="reference-question">
+      <h2 id="reference-question">Start with the reference</h2>
+      <p>Is this the recording and section you meant? Which sound within the mixture do you mean? An everyday description or “unsure” is enough.</p>
+      <label for="section-answer">Recording and section (optional)</label>
+      <select id="section-answer">
+        <option value="not-listened">Not listened</option>
+        <option value="yes">Yes, this recording and section</option>
+        <option value="no">Different recording or section</option>
+        <option value="unsure">Unsure</option>
+      </select>
+      <label for="sound-answer">The sound you mean (optional)</label>
+      <textarea id="sound-answer" rows="2" maxlength="2000" placeholder="Describe it in your own words, or say unsure"></textarea>
+      <label for="reference-note">Other reference notes (optional)</label>
+      <textarea id="reference-note" rows="2" maxlength="2000"></textarea>
+    </section>
+    <section id="candidates" aria-labelledby="candidate-title">
+      <h2 id="candidate-title">Ten baseline candidates</h2>
+      <p>Play passage is the scored interval. <strong>Context is unscored.</strong> All timestamps refer to the supplied audio files; external master alignment is unverified.</p>
+      <div id="cards"></div>
+    </section>
+    <section class="feedback-panel" aria-labelledby="feedback-title">
+      <h2 id="feedback-title">Keep or share your responses</h2>
+      <p>Responses are optional. Playing a clip does not set a rating. Notes stay on this computer unless you share them.</p>
+      <label for="listener">Your name (optional, self-reported)</label>
+      <input id="listener" maxlength="80" autocomplete="off">
+      <label for="participation">Participation (optional)</label>
+      <select id="participation">
+        <option value="pending">No participation response</option>
+        <option value="reviewing">Reviewing</option>
+        <option value="declined">I prefer not to review</option>
+      </select>
+      <div class="actions">
+        <button id="save" type="button" disabled>Save responses on this computer</button>
+        <button id="export" type="button" disabled>Export responses as JSON</button>
+      </div>
+      <p id="save-status" role="status">No responses saved.</p>
+      <label for="import">Import a response JSON from this exact review (64 KiB maximum)</label>
+      <input id="import" type="file" accept=".json,application/json" disabled>
+      <div id="import-preview" hidden>
+        <p>Validated import. Applying replaces the current draft; earlier saved revisions remain available.</p>
+        <button id="apply-import" type="button">Apply imported responses</button>
+      </div>
+      <p>You can also reply in chat, for example: <code>reference: …; D04-01 similar; D04-02 different; D04-03 unsure</code>. No ten-item form is required.</p>
+      <a href="/feedback-template.json" download>Download a blank response template</a>
+    </section>
+    <details>
+      <summary>Inspect the review evidence</summary>
+      <p>Original mixture · legacy mean · pitch off. Distances are baseline scores, not confidence percentages. Song labels are supplied metadata.</p>
+      <a href="/review.json" download>Download the immutable review manifest</a>
+      <pre id="evidence"></pre>
+    </details>
+    <footer>
+      <p><strong>127.0.0.1 means this computer.</strong> This is the supported Windows listening route. Phone access and Android playback have not been tested.</p>
+      <p id="human-status">Listening review pending; relevance unmeasured.</p>
+    </footer>
+  </main>
+</body>
+</html>

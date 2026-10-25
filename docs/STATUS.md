@@ -1,10 +1,21 @@
 # Project status
 
-Updated 25 October 2026. **D03 packaged local runtime is delivered.**
+Updated 25 October 2026. **D04 technical delivery is complete; human response pending.**
+[Review report](../reports/D04_LISTENING.md),
+[machine evidence](../reports/D04_LISTENING.json),
+[immutable manifest](../manifests/listening/d04-v1.json) and
+[launch/feedback instructions](LISTENING.md) own the separate, non-inference
+companion. All 435 unique tests, 42 browser player checks and the scoped
+1,345-record preservation audit passed. The D04-only 224 MiB QA / 256 MiB total /
+24-invocation amendment retains all prior charges and the 600-second aggregate
+limit; D03 pools are unchanged. Technical QA is separate from actual listening;
+relevance is unmeasured.
+
+**D03 packaged local runtime is delivered.**
 [Package evidence](../reports/D03_PACKAGE.md), [machine-readable handoff](../reports/D03_PACKAGE.json)
 and [install/start/recovery commands](PACKAGE.md) identify the wheel/archive,
 separate private closure and one fixed two-share allocation. Original/legacy/pitch-off
-remain defaults. The first required listening review remains D04; it has not started.
+remain defaults. D04 uses its exact saved publication and no application capacity.
 
 **D02 automatic evaluation is delivered.**
 [D02 evidence](../reports/D02_EVALUATION.md) and its
@@ -31,7 +42,7 @@ the fixed remaining D01 allowance. C04 remains historically partial 145/148 with
 unsettled reservation unchanged. Original mixture/legacy mean/pitch off remain
 defaults. Human relevance and reference/master/rights/layer uncertainty remain.
 D03 now defines a separate finite runtime policy. Its normal operation preserves
-these historical ledgers. D04 listening review remains future work.
+these historical ledgers. D04's human response remains pending.
 Follow [AGENTS.md](../AGENTS.md) for PR/merge/cleanup delivery.
 
 ## Foundation and current delivery
@@ -84,7 +95,8 @@ No GitHub Actions workflow/required CI check exists in the inspected repository;
 | C04 incremental processing | Partial: fixture/recovery checks passed; 72-source banks/query/scores committed, final publication blocked at metadata ceiling; [evidence](../reports/C04_PROCESSING.md) |
 | D01 local interface | Complete; readable completed searches on 8774, no further complete search fits its delivery allowance |
 | D02 automatic evaluation | Complete paired generated evaluation; both event-multi gates fail; [evidence](../reports/D02_EVALUATION.md) |
-| D03 packaging / D04 listening | Future; explicit runtime policy required for packaging, first required human review remains D04 |
+| D03 packaging | Delivered; exact non-editable wheel/archive and separate private closure, fixed two-share runtime policy |
+| D04 listening | Complete technical delivery; 435 tests and 42 browser player checks pass; actual human response pending |
 | Perceptual quality and Loulou relevance | Unmeasured; real-catalogue candidates are not confirmed matches; controlled A05/A06 metrics remain separate |
 | Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 
