@@ -80,13 +80,23 @@ an existing bundle or change an existing review manifest.
 
 `scripts/d04-check.py --root reports/local/d04 --label <label> -- <command>` records
 the small D04-only preparation allowance. It retains starts, failures and elapsed
-times, limits aggregate supervised time to 600 seconds / 16 invocations, and gives
+times, limits aggregate supervised time to 600 seconds / 24 cumulative invocations, and gives
 each actual worker at most 120 seconds with one numerical thread. Source audio
-reservations total at most 6,000 seconds. The 128 MiB new-output envelope contains
-32 MiB QA, 16 MiB metadata/feedback and 64 MiB private media/export caps. Temporary
+reservations total at most 6,000 seconds. The 256 MiB total-output envelope contains
+224 MiB QA, 16 MiB metadata/feedback and 64 MiB private media/export caps. These are
+independent ceilings, not additive budgets: all output together must fit 256 MiB. Temporary
 QA output is sampled; receipts distinguish observed peaks from reserved bounds.
 This companion does not replenish or use any application pool. Human listening
 and idle foreground service time are separate from processing-worker time.
+
+On 25 October 2026 Leonardo explicitly authorized this D04-only amendment from
+32 to 224 MiB QA, 128 to 256 MiB total output, and 16 to 24 invocations. All prior
+attempts, spent time, receipts and retained temporary files still count. The
+600-second aggregate, 120-second worker, source-read, other category and global
+disk limits are unchanged; both D03 pools and the external registry stay untouched.
+The automatic approval review's temporary-file cleanup rejection remains in force.
+Do not delete those files, retry the rejected cleanup or initialize another QA root
+to obtain fresh counters. Resume against the existing receipts and inventory.
 
 Focused tests run with `.venv/Scripts/python.exe -m unittest discover -s tests -p
 test_listening_review.py -q`. The complete existing regression suite is also

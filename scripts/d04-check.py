@@ -25,7 +25,9 @@ def main():
         raise ReviewError("Unsettled D04 invocation; retain its reservation and investigate")
     spent = sum(read(f)["seconds"] for f in finishes)
     decoded = sum(read(f)["reserved_source_seconds"] for f in starts)
-    if len(starts) >= 16 or spent >= 600 or not 0 <= a.source_seconds <= 6000 - decoded:
+    # The amendment raises only the cumulative invocation ceiling. Existing
+    # starts/finishes still consume this same allowance and the same 600 seconds.
+    if len(starts) >= 24 or spent >= 600 or not 0 <= a.source_seconds <= 6000 - decoded:
         raise ReviewError("D04 preparation allowance exhausted")
     output_limits(root, 1024 * 1024)
     deadline = min(120, 600 - spent)

@@ -103,10 +103,12 @@ def inventory(root, transient=False):
 
 def output_limits(root, additional=0, category="metadata", transient=False):
     files = inventory(root, transient=transient)
-    for prefix, cap in (("qa/", 32 * MIB), ("metadata/", 16 * MIB), ("bundle/", 64 * MIB)):
+    # D04's user-authorized amendment retains all existing files and charges.
+    # Category ceilings are independent; their sum does not enlarge the total.
+    for prefix, cap in (("qa/", 224 * MIB), ("metadata/", 16 * MIB), ("bundle/", 64 * MIB)):
         extra = additional if prefix == category + "/" else 0
         if sum(n for p, n in files.items() if p.startswith(prefix)) + extra > cap:
             raise ReviewError("D04 output cap reached: " + prefix)
-    if sum(files.values()) + additional > 128 * MIB:
+    if sum(files.values()) + additional > 256 * MIB:
         raise ReviewError("D04 total output cap reached")
     return files

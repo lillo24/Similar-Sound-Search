@@ -5,13 +5,17 @@ relevance unmeasured.** This Markdown file is a standalone downloadable report.
 The page presents ten baseline candidates, without confirmed-match labels or
 confidence percentages. Original mixture / legacy mean / pitch off remain defaults.
 
-**Current blocker:** the unchanged full-suite regression fixture requires more
+**Retained resource failure:** the unchanged full-suite regression fixture requires more
 temporary audio than D04's 32 MiB QA allowance. A supervised attempt stopped at
 that cap and retained a 33,997,853-byte incomplete generated test fixture (the
 half-second sampler detected the boundary after a write). Automatic approval
 review rejected cleanup with “blocked by policy”; nothing was deleted or retried
-through another path. A bounded QA/storage adjustment has been requested. D04's
-own final browser acceptance, final preservation comparison and PR merge remain
+through another path. On 25 October Leonardo authorized **224 MiB QA, 256 MiB total
+output and 24 cumulative invocations**, including every prior attempt and retained
+temporary file. The **600-second aggregate**, other limits and D03 pools are
+unchanged. This amendment is recorded in PR #34 and enforced by the companion;
+it does not reset charges or authorize cleanup. D04's final regression, its
+own browser acceptance, final preservation comparison and PR merge remain
 pending. The launch command below describes the prepared route, not a claim that
 the delivered D04 player checks have already passed.
 
@@ -114,6 +118,13 @@ before completing. These failures and processing receipts are retained; no full
 regression or D04 browser pass is claimed. The technical QA foreground server
 was stopped. All existing application operations used in preparation were reads;
 the final before/after ledger comparison is still pending.
+
+The amendment was applied from a Linux repository checkout. The Windows failure
+traceback, original cumulative processing receipts, private WAV bundle, installed
+runtime and preservation baseline are not present there. No replacement allowance
+was initialized and no additional D04 processing invocation was launched without
+the existing elapsed-time evidence. The new cap/receipt tests are pending on the
+delivery host along with the Windows replacement diagnosis and remaining QA.
 
 ## Optional human response
 
