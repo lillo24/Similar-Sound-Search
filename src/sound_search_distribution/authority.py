@@ -9,6 +9,8 @@ Only explicit relocation changes the single canonical workspace binding.
 import json
 import os
 import shutil
+import tempfile
+import time
 import uuid
 from pathlib import Path
 
@@ -123,14 +125,27 @@ def read(root):
 
 
 def save(path, value):
-    from similar_sound_search.application.files import atomic_bytes
-
     clean = {k: v for k, v in value.items() if k != "record_hash"}
     raw = (
         json.dumps({**clean, "record_hash": digest(clean)}, separators=(",", ":")).encode() + b"\n"
     )
     path.parent.mkdir(parents=True, exist_ok=True)
-    atomic_bytes(path, raw)
+    fd, temporary = tempfile.mkstemp(prefix=".d03-write-", dir=path.parent)
+    with os.fdopen(fd, "wb") as stream:
+        stream.write(raw)
+        stream.flush()
+        os.fsync(stream.fileno())
+    # Windows readers can briefly deny replacement. Retry the SAME fully paid
+    # temporary, with no additional data writes. Permanent failure stays loud and
+    # retains the temporary; this is not a state/result fallback.
+    for attempt in range(21):
+        try:
+            os.replace(temporary, path)
+            return
+        except PermissionError:
+            if attempt == 20:
+                raise
+            time.sleep(0.05)
 
 
 def verify_pool(root, share, pool):

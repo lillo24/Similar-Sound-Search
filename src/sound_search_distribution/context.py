@@ -134,7 +134,7 @@ class Context(BaseContext):
         )
         if size * 2 + 8192 > POOL_WRITE:
             raise ResourceError("D03 pool/registry serialized geometry exceeds prepaid slot")
-        super()._save(p)
+        authority.save(self.directory / "pool.json", p)
         authority.save(Path(self.binding["registry"]), a)
 
     def admit(self, key, ordinary, acceptance=False, jobs=0):

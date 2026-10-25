@@ -14,7 +14,15 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "command",
-        choices=["version", "prepare", "doctor", "start", "relocate", "seal-verification"],
+        choices=[
+            "version",
+            "prepare",
+            "doctor",
+            "start",
+            "relocate",
+            "seal-verification",
+            "abandon",
+        ],
     )
     parser.add_argument("--workspace", type=Path)
     parser.add_argument("--source", type=Path)
@@ -23,6 +31,7 @@ def main(argv=None):
     parser.add_argument("--share", choices=["normal", "verification"], default="normal")
     parser.add_argument("--port", type=int, default=8776)
     parser.add_argument("--deep", action="store_true")
+    parser.add_argument("--job-id")
     args = parser.parse_args(argv)
     try:
         if args.command == "version":
@@ -57,6 +66,22 @@ def main(argv=None):
                     workspace_id=authority.binding(root)["workspace_id"],
                     private_files=len(result["files"]),
                 )
+            elif args.command == "abandon":
+                from similar_sound_search.application import api
+                from similar_sound_search.application.locks import active
+                from similar_sound_search.evaluation.artifacts import record
+
+                key = api.identifier(args.job_id)
+                owner = Runtime(root, args.share).context(root, key)
+                path, _ = authority.read(root)
+                with lock(path.parent, "server"):
+                    if active(root, "worker") or active(root, "coordinator"):
+                        raise InputError("D03 stop the admitted worker before abandonment")
+                    state = record(api.state_path(owner, key))
+                    if state["state"] not in {"failed", "blocked", "cancelled", "interrupted"}:
+                        raise InputError("D03 abandon requires a stopped incomplete request")
+                    owner.release(key)
+                result = dict(job_id=key, abandoned=True, spent_charges_preserved=True)
             elif args.command == "relocate":
                 if not args.destination:
                     parser.error("relocate requires --destination")

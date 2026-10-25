@@ -49,6 +49,37 @@ class DistributionTests(unittest.TestCase):
             authority.initialize(other, self.registry)
         self.assertEqual((self.registry / "allocation.json").read_bytes(), before)
 
+    def test_windows_busy_replace_retries_same_paid_temp_and_permanent_error_is_loud(self):
+        import os
+
+        p = self.base / "replace.json"
+        authority.save(p, dict(value=1))
+        replace = os.replace
+        calls = []
+
+        def busy_once(source, dest):
+            calls.append(source)
+            if len(calls) == 1:
+                raise PermissionError("reader busy")
+            return replace(source, dest)
+
+        with (
+            patch.object(authority.os, "replace", side_effect=busy_once),
+            patch.object(authority.time, "sleep"),
+        ):
+            authority.save(p, dict(value=2))
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(calls[0], calls[1])
+        before = p.read_bytes()
+        with (
+            patch.object(authority.os, "replace", side_effect=PermissionError("disk denied")),
+            patch.object(authority.time, "sleep"),
+        ):
+            with self.assertRaises(PermissionError):
+                authority.save(p, dict(value=3))
+        self.assertEqual(p.read_bytes(), before)
+        self.assertTrue(list(self.base.glob(".d03-write-*")))
+
     def test_historical_revision_keeps_its_read_only_library_owner(self):
         from sound_search_distribution.runtime import ReadContext, Runtime
 

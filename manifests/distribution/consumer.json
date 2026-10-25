@@ -330,10 +330,10 @@
     "__init__.py": "ab6489cd62fbc34a118c8ba8972a187f953b9f8bfdd4539aa69af62f50a32e28",
     "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
     "assets.py": "c4325e17901f73290e9a8651094fe7c8d7363b926c28a0ea6337fc0684315a31",
-    "authority.py": "4f76306827ae005171ac05ad82a29d8b772e0888b95f967d0bbe61e1ade3f8f0",
+    "authority.py": "ee1af9c2acdd455d5b0826e1d591cba8f96778ab14b0f57bf2728c0f99eb4a4d",
     "bootstrap.py": "6b7fc10179b5398310bda47185ab4de98ec128b1b6ce722f79e323f6bce03778",
-    "cli.py": "87f693fba0a470978e0366e6e6ae608af97a131c949508aa8ab7d959e7492b9c",
-    "context.py": "fc165725c8f3a50c5c2e6147c3ee62ec644083443536e57f43b4834dbaffdb8b",
+    "cli.py": "f168ba052df513b3fe27d9c5312a8617061263b1ca0d67ee4c2fedacfb29daa1",
+    "context.py": "592b6dfff0d836ade5aa71f49b3164c9f141113147368a50471ad62f8d33feb4",
     "contracts.py": "f5d3e966771fa79f7b7ffcdc19136a16d7b423967d55bc2cc6634a7cfffaaf3b",
     "doctor.py": "06559f7a414866f72b8ef66ddf290324d9b9401011a8dc24d4c4cbc145c9232a",
     "files.py": "590f6713027b2de6e35428f97ebda07d35e94e15f3eb352a35bc24cdf48e8749",
@@ -353,6 +353,12 @@
       "declaration_hash": "6926132ca5410a4200a97d339c9a3eebbaffabd3fc3b714e2245f834d84d1619",
       "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
       "code_hash": "2fecbd1895989f7fb78347758244262f7d49457dc99a055b51be05119c6f5673"
+    },
+    {
+      "version": "d03-consumer-1",
+      "declaration_hash": "7b724a0792ea44eef62b4d63fb722ae735e76b091f616af651234ed592c8289d",
+      "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+      "code_hash": "4306385e0b6f0f84b5e0017b5a7e7b70c1786ebd8260aa8c524b40e1d3756adf"
     }
   ],
   "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
@@ -361,6 +367,7 @@
     "index.html": "e45deab478346f97fe6ea205a910dae4f097897bd02ffa92f23a119aee94d8d6",
     "style.css": "9bd8a69d4556e7b07729bbee82abec2d8e985f0b2f7c49f8cd1b4acb305e1449"
   },
-  "source_commit": "b178ecdafcc359f08165eef6845230ff9111c6e7",
-  "record_hash": "7b724a0792ea44eef62b4d63fb722ae735e76b091f616af651234ed592c8289d"
+  "source_commit": "9a97c70e3a654a36863ed589d63bf606a6e8e3cb",
+  "persistence_repair_previous": "7b724a0792ea44eef62b4d63fb722ae735e76b091f616af651234ed592c8289d",
+  "record_hash": "a07f2aa4c43f355798235571f85534e2a3475140f04da9833de586fdd88c2722"
 }

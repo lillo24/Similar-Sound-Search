@@ -40,6 +40,11 @@ checked numerical working estimate; RSS is measured, without OS RSS enforcement.
 
 There is no reset/refill command. Restore the latest whole workspace and external
 registry after filesystem failure; stale checkpoints fail. Stop the server before
+explicitly abandoning a stopped incomplete request with `abandon --job-id <id>`:
+it retains the failed state, units and spent charges, closes the allocation and
+releases only unused reservations. Windows replacement retries the same prepaid
+temporary for at most one second; a permanent error retains it and fails loudly.
+Stop the server before
 the explicit relocation command, which renames the same workspace and updates
 only the external canonical path. If interrupted between rename and registry
 publication, restore the old path before retrying. Keep original backups private.
