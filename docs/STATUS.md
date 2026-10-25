@@ -1,6 +1,12 @@
 # Project status
 
-Updated 24 October 2026. **D02 automatic evaluation is delivered.**
+Updated 25 October 2026. **D03 packaged local runtime is delivered.**
+[Package evidence](../reports/D03_PACKAGE.md), [machine-readable handoff](../reports/D03_PACKAGE.json)
+and [install/start/recovery commands](PACKAGE.md) identify the wheel/archive,
+separate private closure and one fixed two-share allocation. Original/legacy/pitch-off
+remain defaults. The first required listening review remains D04; it has not started.
+
+**D02 automatic evaluation is delivered.**
 [D02 evidence](../reports/D02_EVALUATION.md) and its
 [complete paired metrics](../reports/D02_EVALUATION.json) retain 24 development and
 16 confirmation cases, all valid, with 80 initial policy executions and eight
@@ -24,9 +30,8 @@ without inference, including from a fresh browser. Another full search cannot fi
 the fixed remaining D01 allowance. C04 remains historically partial 145/148 with its
 unsettled reservation unchanged. Original mixture/legacy mean/pitch off remain
 defaults. Human relevance and reference/master/rights/layer uncertainty remain.
-D03 packaging and D04 listening review remain future work. D03 must define an
-explicit bounded runtime resource policy; normal operation cannot depend on
-deleting or resetting the exhausted delivery ledgers.
+D03 now defines a separate finite runtime policy. Its normal operation preserves
+these historical ledgers. D04 listening review remains future work.
 Follow [AGENTS.md](../AGENTS.md) for PR/merge/cleanup delivery.
 
 ## Foundation and current delivery

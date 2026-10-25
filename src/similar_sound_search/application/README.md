@@ -40,3 +40,12 @@ several jobs use a prepaid stage. `history.py` permits only the exact before/aft
 D02 scoped proof; D01 declarations and numerical modules stay pinned. The
 [D02 subsystem](../../sound_search_evaluation/README.md) owns the generated inputs,
 separate pool and 8775 evaluation listener.
+
+D03 extends that trusted seam to coordinator units, executor and native QA. Reads
+select the exact runtime share or historical result/media/revision owner; historical
+revision-state references retain their original library. Optional library/feature
+roots let both runtime shares reopen saved queries. HTTP request data never selects
+a provider. [The distribution subsystem](../../sound_search_distribution/README.md)
+owns installation, workspace fencing and finite new real-catalogue work on 8776.
+Its capability flag disables C03 refinement and hides the omitted history link;
+other providers retain their existing UI behavior.
