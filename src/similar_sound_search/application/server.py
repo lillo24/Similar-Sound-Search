@@ -198,7 +198,11 @@ def make_server(root, limits, port=8774, runtime=None):
                         api.result(root, api.identifier(path[12:]), runtime=runtime)
                     )
                 if path.startswith("/api/revision/"):
-                    return self.send_json(queries.exact_revision(owner, api.identifier(path[14:])))
+                    key = api.identifier(path[14:])
+                    selected = owner
+                    if runtime is not None and hasattr(runtime, "revision_context"):
+                        selected = runtime.revision_context(key)
+                    return self.send_json(queries.exact_revision(selected, key))
                 if path.startswith("/api/waveform/"):
                     selected = owner
                     if runtime is not None and hasattr(runtime, "waveform_context"):

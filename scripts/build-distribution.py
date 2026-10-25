@@ -76,6 +76,7 @@ def build(root, output):
         "Verify: python setup.py verify\n"
         "Install: python setup.py install --environment C:\\YourFolder\\environment\n"
         "Prepare private workspace separately, once (no private data is in this archive):\n"
+        "Use a short Windows workspace such as C:\\SSS D03 è\\w; hashed paths must fit 240 chars.\n"
         "<environment>\\Scripts\\python.exe -I -m sound_search_distribution prepare "
         "--source <original-private-workspace> --distribution <this-directory> "
         "--workspace <new-empty-workspace>\n"

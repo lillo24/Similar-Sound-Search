@@ -1,6 +1,7 @@
 """Select and stage the actual private dependency graph without copying old experiments."""
 
 import json
+import os
 import re
 import shutil
 from collections import defaultdict
@@ -146,6 +147,11 @@ def prepare(source, destination, public_root):
     if shutil.disk_usage(destination.parent).free < private_bytes + 4 * 1024**3:
         raise InputError("D03 private staging would violate 4 GiB free headroom")
     stage = destination.with_name(destination.name + ".d03-staging")
+    if os.name == "nt" and any(len(str(stage / n)) > 240 for n in manifest["files"]):
+        raise InputError(
+            "D03 workspace path too long for this Windows target; choose a short root "
+            "such as C:\\SSS D03 è\\w. No staging writes were made."
+        )
     if stage.exists():
         raise InputError("D03 staging already exists; retain/inspect the earlier attempt")
     stage.mkdir(parents=True)

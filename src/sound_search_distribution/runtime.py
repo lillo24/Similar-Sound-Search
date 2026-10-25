@@ -42,6 +42,14 @@ class Runtime:
     def result_context(self, key):
         return self._record_context("results", key)
 
+    def revision_context(self, key):
+        """Historical revision-state paths retain their original library owner."""
+        api.identifier(key)
+        old = ReadContext(self.root)
+        if (old.directory / "library/revisions" / (key + ".json")).is_file():
+            return old
+        return Context(self.root, share=self.share)
+
     def waveform_context(self, key):
         return self._record_context("waveforms", key)
 

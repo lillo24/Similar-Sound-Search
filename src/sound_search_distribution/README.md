@@ -2,6 +2,9 @@
 
 This package owns D03 packaging, readiness and the one finite post-delivery
 runtime allocation. Numerical algorithms remain in `similar_sound_search`.
+On the exercised Windows host use a short private root such as `C:\SSS D03 è\w`:
+long content-addressed historical paths must fit 240 characters including staging.
+Preparation checks this before copying. Spaces and non-ASCII names are supported.
 
 - `bootstrap.py` is the stdlib-only archive verifier/offline installer copied to
   each code archive as `setup.py`. It rejects undeclared members, changed hashes,

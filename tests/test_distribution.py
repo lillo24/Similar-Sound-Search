@@ -26,7 +26,11 @@ class DistributionTests(unittest.TestCase):
         self.base = Path(self.temp.name)
         self.root = self.base / "space à workspace"
         self.root.mkdir()
-        for name in ("config/resource_limits.json", "manifests/application/protocol.json"):
+        for name in (
+            "config/resource_limits.json",
+            "config/application.json",
+            "manifests/application/protocol.json",
+        ):
             dest = self.root / name
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / name, dest)
@@ -44,6 +48,18 @@ class DistributionTests(unittest.TestCase):
         with self.assertRaisesRegex(InputError, "already initialized"):
             authority.initialize(other, self.registry)
         self.assertEqual((self.registry / "allocation.json").read_bytes(), before)
+
+    def test_historical_revision_keeps_its_read_only_library_owner(self):
+        from sound_search_distribution.runtime import ReadContext, Runtime
+
+        key = "d" * 64
+        p = self.root / "data/runs/application/library/revisions" / (key + ".json")
+        p.parent.mkdir(parents=True)
+        p.write_text("{}")
+        view = Runtime(self.root).revision_context(key)
+        self.assertIsInstance(view, ReadContext)
+        with self.assertRaisesRegex(InputError, "read-only"):
+            view.admit(key, MIB)
 
     def test_full_identity_search_transaction_fits_prepaid_geometry(self):
         owner = Context(self.root, "a" * 64, "verification")
