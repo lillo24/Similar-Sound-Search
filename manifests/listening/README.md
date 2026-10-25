@@ -12,3 +12,8 @@ notes and their evolving revisions remain ignored under `reports/local/d04/`.
 Changing reference, membership or timing requires another review version; responses
 never silently move between review hashes. [LISTENING.md](../../docs/LISTENING.md)
 explains the companion and its private artifacts.
+
+`preparation-allowance.json` records the explicit D04-only continuation amendment:
+224 MiB QA, 256 MiB combined new output and 24 cumulative invocations, retaining
+600 aggregate seconds and every earlier charge. It is independent of the immutable
+review identity and grants no application allocation, inference or numerical change.

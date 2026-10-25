@@ -1,0 +1,19 @@
+{
+  "schema_version": "d04-preparation-allowance-1",
+  "authorization": "Explicit user amendment for D04 continuation in PR #34, 25 October 2026",
+  "scope": "D04 only; all previous attempts and retained temporary files included",
+  "qa_bytes": 234881024,
+  "total_output_bytes": 268435456,
+  "metadata_bytes": 16777216,
+  "media_bundle_bytes": 67108864,
+  "cumulative_invocations": 24,
+  "aggregate_seconds": 600,
+  "source_audio_seconds": 6000,
+  "worker_deadline_seconds": 120,
+  "numerical_threads": 1,
+  "prior_invocations": 10,
+  "prior_spent_seconds": 168.501,
+  "original_limits": {"qa_bytes": 33554432, "total_output_bytes": 134217728, "cumulative_invocations": 16},
+  "d03_pools": "unchanged; no reset, refill, unseal, inference or alternate allocation",
+  "cleanup": "Retain the policy-denied D04 temporary fixture and all historical C01 staging; no cleanup retry"
+}

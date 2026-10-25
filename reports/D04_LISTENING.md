@@ -5,15 +5,17 @@ relevance unmeasured.** This Markdown file is a standalone downloadable report.
 The page presents ten baseline candidates, without confirmed-match labels or
 confidence percentages. Original mixture / legacy mean / pitch off remain defaults.
 
-**Current blocker:** the unchanged full-suite regression fixture requires more
-temporary audio than D04's 32 MiB QA allowance. A supervised attempt stopped at
+**Authorized continuation:** the unchanged full-suite regression fixture required more
+temporary audio than D04's original 32 MiB QA allowance. A supervised attempt stopped at
 that cap and retained a 33,997,853-byte incomplete generated test fixture (the
 half-second sampler detected the boundary after a write). Automatic approval
 review rejected cleanup with “blocked by policy”; nothing was deleted or retried
-through another path. A bounded QA/storage adjustment has been requested. D04's
-own final browser acceptance, final preservation comparison and PR merge remain
-pending. The launch command below describes the prepared route, not a claim that
-the delivered D04 player checks have already passed.
+through another path. The user explicitly amended D04 to **224 MiB QA, 256 MiB
+combined new output and 24 cumulative invocations**, keeping **600 aggregate
+seconds**, every earlier charge, all other limits and all D03 pools unchanged.
+The amendment is recorded in [PR #34](https://github.com/lillo24/Similar-Sound-Search/pull/34)
+and the [versioned allowance](../manifests/listening/preparation-allowance.json).
+Final technical QA is in progress; human listening remains pending.
 
 ## Open and listen on the delivery Windows computer
 

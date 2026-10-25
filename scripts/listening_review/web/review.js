@@ -9,6 +9,11 @@ function status(message, error = false) {
   byId("save-status").textContent = message;
   byId("save-status").className = error ? "error" : "";
 }
+function savedResponseStatus(snapshot) {
+  if (!snapshot) return;
+  const c = snapshot.counts;
+  byId("human-status").textContent = "Saved self-reported responses: " + c.state + "; " + c.listened_rated + " rated, " + c.similar + " similar, " + c.different + " different, " + c.unsure + " unsure, " + c.unanswered + " unanswered.";
+}
 async function request(path, value) {
   const response = await fetch(path, value === undefined ? {} : {
     method: "POST", headers: {"Content-Type": "application/json", "X-D04-Token": token}, body: JSON.stringify(value)
@@ -49,6 +54,8 @@ function player(role, label, availability) {
     message.textContent = "Unavailable: this saved clip could not be loaded. No substitute is used.";
   };
   audio.addEventListener("play", () => {
+    // A queued play event for an already-paused clip must not stop a later choice.
+    if (audio.paused) return;
     for (const other of players) if (other !== audio) other.pause();
     button.textContent = "Pause " + label;
   });
@@ -57,6 +64,8 @@ function player(role, label, availability) {
   audio.addEventListener("error", fail);
   button.addEventListener("click", async () => {
     if (!audio.paused) { audio.pause(); return; }
+    // Pause synchronously: play's queued event can arrive after the next click.
+    for (const other of players) if (other !== audio) other.pause();
     try { await audio.play(); }
     catch (error) { message.textContent = "Playback failed: " + error.message + ". Try the native play control."; }
   });
@@ -137,6 +146,7 @@ async function start() {
   byId("load-status").textContent = "Saved review ready. Nothing plays automatically.";
   if (restored) status(dirty ? "Unsaved browser draft restored. Save or export it to keep a durable copy." : "Saved response draft restored.");
   else if (data.latest) status("Loaded saved response revision " + data.latest.revision + " from this computer.");
+  savedResponseStatus(data.latest);
   byId("save").disabled = byId("export").disabled = byId("import").disabled = false;
   byId("save").onclick = async () => {
     byId("save").disabled = true;
@@ -147,8 +157,7 @@ async function start() {
       dirty = JSON.stringify(documentValue) !== JSON.stringify(sent);
       remember();
       status("Saved on this computer as revision " + snapshot.revision + ". " + (dirty ? "Newer edits remain unsaved." : "Export JSON if you want to share it."));
-      const c = snapshot.counts;
-      byId("human-status").textContent = "Saved self-reported responses: " + c.state + "; " + c.listened_rated + " rated, " + c.similar + " similar, " + c.different + " different, " + c.unsure + " unsure, " + c.unanswered + " unanswered.";
+      savedResponseStatus(snapshot);
     } catch (error) { status(error.message + " Your current draft is still here.", true); }
     finally { byId("save").disabled = false; }
   };

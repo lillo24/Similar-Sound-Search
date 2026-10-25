@@ -1,6 +1,6 @@
 {
   "schema_version": "d04-listening-evidence-1",
-  "engineering_state": "in progress; blocked on QA resource decision",
+  "engineering_state": "in progress; D04-only QA amendment authorized",
   "human_state": "listening review pending; relevance unmeasured",
   "review_version": "d04-v1",
   "review_hash": "0767f7fdd1cdb294a7050566d93aaab74ecf34894cd2ac402597ee409d8570e5",
@@ -37,7 +37,7 @@
     "incomplete_test_fixture_bytes_observed": 33997853,
     "qa_cap_stop": true,
     "cleanup": "rejected by automatic approval review: blocked by policy; command did not execute; no alternate cleanup attempted",
-    "resource_adjustment": "requested, not authorized",
+    "resource_adjustment": "explicitly authorized: 224 MiB QA, 256 MiB combined output, 24 cumulative invocations; 600 aggregate seconds and all earlier charges retained",
     "d03_pool_mutations": "none dispatched; final hash verification pending"
   },
   "responses": {"shown_on_review": 10, "listened_rated": 0, "similar": 0, "different": 0, "unsure": 0, "unanswered": 10, "provenance": "no response received from Leonardo"}

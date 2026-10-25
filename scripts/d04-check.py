@@ -6,7 +6,7 @@ import subprocess
 import time
 from pathlib import Path
 
-from listening_review.common import ReviewError, output_limits, put_new, read
+from listening_review.common import ReviewError, allowance, output_limits, put_new, read
 
 
 def main():
@@ -25,28 +25,40 @@ def main():
         raise ReviewError("Unsettled D04 invocation; retain its reservation and investigate")
     spent = sum(read(f)["seconds"] for f in finishes)
     decoded = sum(read(f)["reserved_source_seconds"] for f in starts)
-    if len(starts) >= 16 or spent >= 600 or not 0 <= a.source_seconds <= 6000 - decoded:
+    rules = allowance()
+    if len(starts) < rules["prior_invocations"] or spent + 0.000001 < rules["prior_spent_seconds"]:
+        raise ReviewError("Prior D04 charges missing; restore receipts, never reset the allowance")
+    if (
+        len(starts) >= rules["cumulative_invocations"]
+        or spent >= rules["aggregate_seconds"]
+        or not 0 <= a.source_seconds <= rules["source_audio_seconds"] - decoded
+    ):
         raise ReviewError("D04 preparation allowance exhausted")
     output_limits(root, 1024 * 1024)
-    deadline = min(120, 600 - spent)
+    deadline = min(rules["worker_deadline_seconds"], rules["aggregate_seconds"] - spent)
     index = f"{len(starts) + 1:02}"
     put_new(
         folder / (index + "-start.json"),
         dict(label=a.label, deadline=deadline, reserved_source_seconds=a.source_seconds),
     )
     env = os.environ.copy()
+    command = a.command[1:] if a.command[:1] == ["--"] else a.command
     temp = root / "qa/tmp"
     temp.mkdir(parents=True, exist_ok=True)
+    # Existing fixture paths contain nested content hashes. The Windows namespace
+    # prefix preserves their exact paths while allowing native paths beyond 260.
+    temp_name = str(temp)
+    if os.name == "nt" and Path(command[0]).stem.lower() in {"python", "pythonw"}:
+        temp_name = "\\\\?\\" + temp_name
     env.update(
         OMP_NUM_THREADS="1",
         OPENBLAS_NUM_THREADS="1",
         MKL_NUM_THREADS="1",
         PYTHONIOENCODING="utf-8",
         PYTHONDONTWRITEBYTECODE="1",
-        TMP=str(temp),
-        TEMP=str(temp),
+        TMP=temp_name,
+        TEMP=temp_name,
     )
-    command = a.command[1:] if a.command[:1] == ["--"] else a.command
     started = time.monotonic()
     code, timeout = 1, False
     peak = {k: 0 for k in ("qa", "metadata", "bundle", "total")}
@@ -74,7 +86,15 @@ def main():
                     pass
         finally:
             if process.poll() is None:
-                process.kill()
+                if os.name == "nt":
+                    subprocess.run(
+                        ["taskkill", "/PID", str(process.pid), "/T", "/F"],
+                        check=False,
+                        capture_output=True,
+                        timeout=5,
+                    )
+                else:
+                    process.kill()
                 process.wait(timeout=5)
     except subprocess.TimeoutExpired:
         timeout = True

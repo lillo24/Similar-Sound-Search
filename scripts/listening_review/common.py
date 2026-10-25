@@ -54,8 +54,6 @@ def put_new(path, value):
     with path.open("xb") as stream:
         stream.write(raw)
         stream.flush()
-        import os
-
         os.fsync(stream.fileno())
 
 
@@ -71,6 +69,9 @@ def inside(root, relative):
 
 def inventory(root, transient=False):
     root = Path(root)
+    scan_root = root
+    if os.name == "nt" and not str(root).startswith("\\\\?\\"):
+        scan_root = Path("\\\\?\\" + str(root.resolve()))
     result = {}
 
     def walk(folder):
@@ -91,22 +92,33 @@ def inventory(root, transient=False):
                 if entry.is_dir(follow_symlinks=False):
                     walk(entry.path)
                 elif entry.is_file(follow_symlinks=False):
-                    result[Path(entry.path).relative_to(root).as_posix()] = info.st_size
+                    result[Path(entry.path).relative_to(scan_root).as_posix()] = info.st_size
             except FileNotFoundError:
                 if not transient:
                     raise
                 # A disposable file removed during a live sample is no longer output.
 
-    walk(root)
+    walk(scan_root)
     return result
+
+
+def allowance():
+    return read(
+        Path(__file__).resolve().parents[2] / "manifests/listening/preparation-allowance.json", 4096
+    )
 
 
 def output_limits(root, additional=0, category="metadata", transient=False):
     files = inventory(root, transient=transient)
-    for prefix, cap in (("qa/", 32 * MIB), ("metadata/", 16 * MIB), ("bundle/", 64 * MIB)):
+    rules = allowance()
+    for prefix, cap in (
+        ("qa/", rules["qa_bytes"]),
+        ("metadata/", rules["metadata_bytes"]),
+        ("bundle/", rules["media_bundle_bytes"]),
+    ):
         extra = additional if prefix == category + "/" else 0
         if sum(n for p, n in files.items() if p.startswith(prefix)) + extra > cap:
             raise ReviewError("D04 output cap reached: " + prefix)
-    if sum(files.values()) + additional > 128 * MIB:
+    if sum(files.values()) + additional > rules["total_output_bytes"]:
         raise ReviewError("D04 total output cap reached")
     return files

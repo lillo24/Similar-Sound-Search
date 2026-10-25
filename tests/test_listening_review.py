@@ -19,6 +19,7 @@ from listening_review import feedback, manifest  # noqa: E402
 from listening_review.common import (  # noqa: E402
     MIB,
     ReviewError,
+    inventory,
     output_limits,
     put_new,
     read,
@@ -176,6 +177,66 @@ class ListeningReviewTests(unittest.TestCase):
                 other.save(feedback.blank(self.review), None, "local-form")
         saved = other.save(feedback.blank(self.review), None, "local-form")
         self.assertEqual(saved["revision"], 1)
+
+    def test_atomic_replacement_with_live_size_monitor(self):
+        from similar_sound_search.storage import atomic_json
+
+        path = self.root / "construction.json"
+        stop = threading.Event()
+        errors = []
+
+        def observe():
+            try:
+                while not stop.is_set():
+                    inventory(self.root, transient=True)
+                    stop.wait(0.001)
+            except OSError as exc:
+                errors.append(exc)
+
+        thread = threading.Thread(target=observe)
+        thread.start()
+        try:
+            for number in range(100):
+                atomic_json(path, dict(sequence=number))
+        finally:
+            stop.set()
+            thread.join(3)
+        self.assertEqual(errors, [])
+        self.assertFalse(thread.is_alive())
+        self.assertEqual(read(path), dict(sequence=99))
+
+    @unittest.skipUnless(sys.platform == "win32", "Windows native sharing semantics")
+    def test_windows_busy_reader_failure_is_explicit_and_release_restores_replacement(self):
+        import ctypes
+        from ctypes import wintypes
+
+        from similar_sound_search.storage import atomic_json
+
+        kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+        kernel.CreateFileW.argtypes = [
+            wintypes.LPCWSTR,
+            wintypes.DWORD,
+            wintypes.DWORD,
+            wintypes.LPVOID,
+            wintypes.DWORD,
+            wintypes.DWORD,
+            wintypes.HANDLE,
+        ]
+        kernel.CreateFileW.restype = wintypes.HANDLE
+        kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+        path = self.root / "construction.json"
+        atomic_json(path, dict(sequence=0))
+        # Deliberately omit FILE_SHARE_DELETE, reproducing the native failure.
+        handle = kernel.CreateFileW(str(path), 0x80000000, 0x1 | 0x2, None, 3, 0x80, None)
+        self.assertNotEqual(handle, ctypes.c_void_p(-1).value)
+        try:
+            with self.assertRaises(PermissionError):
+                atomic_json(path, dict(sequence=1))
+            self.assertEqual(read(path), dict(sequence=0))
+        finally:
+            kernel.CloseHandle(handle)
+        atomic_json(path, dict(sequence=2))
+        self.assertEqual(read(path), dict(sequence=2))
 
     def test_corrupt_latest_is_failure_instead_of_previous_success(self):
         first = self.store.save(feedback.blank(self.review), None, "local-form")

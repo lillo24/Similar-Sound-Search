@@ -124,7 +124,9 @@ async function main() {
     await stale.waitForFunction(() => document.getElementById("save-status").textContent.includes("newer response exists"));
     assert.match(await stale.locator("#reference-note").inputValue(), /Stale-tab draft/);
     await stale.close();
-    e.feedback = {draft_reload: true, saved_revisions: 4, durable_export: true, import_roundtrip: true,
+    e.feedback = {draft_reload: true, prior_saved_revisions: boot.latest?.revision || 0,
+      new_saved_revisions: 4, saved_revisions: (boot.latest?.revision || 0) + 4,
+      durable_export: true, import_roundtrip: true,
       dirty_import_refused: true, foreign_review_refused: true, stale_tab_conflict: true,
       all_fixture_ratings_not_listened: true, location: "isolated qa-feedback; excluded from human state"};
     await context.close(); await browser.close(); context = browser = null;
@@ -156,6 +158,10 @@ async function main() {
   } finally {
     if (context) await context.close(); if (browser) await browser.close();
     e.decoded_wav_seconds_upper_bound = e.media_response_bytes / (44100 * 2 * 2);
+    if (e.decoded_wav_seconds_upper_bound > 1200) {
+      e.passed = false; e.error = "Browser WAV decode upper bound exceeds its 1200-second reservation";
+      process.exitCode = 1;
+    }
     fs.writeFileSync(path.join(out, "browser.json"), JSON.stringify(e, null, 2));
     console.log(JSON.stringify({passed: e.passed, controls: e.players.length, error: e.error,
       decoded_wav_seconds_upper_bound: e.decoded_wav_seconds_upper_bound}));

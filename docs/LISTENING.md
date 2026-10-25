@@ -80,12 +80,25 @@ an existing bundle or change an existing review manifest.
 
 `scripts/d04-check.py --root reports/local/d04 --label <label> -- <command>` records
 the small D04-only preparation allowance. It retains starts, failures and elapsed
-times, limits aggregate supervised time to 600 seconds / 16 invocations, and gives
+times, limits aggregate supervised time to 600 seconds / 24 cumulative invocations, and gives
 each actual worker at most 120 seconds with one numerical thread. Source audio
-reservations total at most 6,000 seconds. The 128 MiB new-output envelope contains
-32 MiB QA, 16 MiB metadata/feedback and 64 MiB private media/export caps. Temporary
+reservations total at most 6,000 seconds. The explicitly amended 256 MiB new-output
+envelope contains 224 MiB QA, 16 MiB metadata/feedback and 64 MiB private media/export
+caps; their sum is still constrained by the total. This D04-only user amendment
+retains all ten prior attempts and their 168.501 spent seconds. The versioned
+[allowance](../manifests/listening/preparation-allowance.json) is recorded in PR #34.
+No processing seconds, source allowance or application pool was increased.
+The policy-denied incomplete D04 test fixture remains included in QA and total
+output. No deletion retry is authorized or performed.
+Final export also includes the public manifests/reports in the combined output
+inventory. Temporary
 QA output is sampled; receipts distinguish observed peaks from reserved bounds.
-This companion does not replenish or use any application pool. Human listening
+The supervisor checks pre-amendment charges are present. On Windows it supplies
+the extended path namespace for nested generated fixture paths, without changing
+their actual locations or frozen source. The live inventory uses cached directory
+entry sizes rather than opening files while the existing atomic writer renames
+them; real busy-reader errors remain explicit. This companion does not replenish
+or use any application pool. Human listening
 and idle foreground service time are separate from processing-worker time.
 
 Focused tests run with `.venv/Scripts/python.exe -m unittest discover -s tests -p
