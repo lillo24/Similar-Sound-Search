@@ -1,0 +1,14 @@
+Similar Sound Search D03 local distribution
+
+The application wheel includes the vendored EfficientAT MIT notice at
+similar_sound_search/matchers/LICENSE-EfficientAT.md (Florian Schmid, 2022).
+Its source headers and notice are preserved. Third-party dependencies remain
+unmodified pinned wheels; their original *.dist-info/licenses, LICENSE, COPYING
+and NOTICE files are retained inside those wheels and the installed environment.
+See release.json for exact wheel identities and checksums and the two lockfiles
+for resolved versions. Consult those dependency notices for their license terms.
+
+This distribution contains no private audio, private feature arrays or model
+checkpoint. Their separate local prerequisite inventory is private-assets.json.
+Availability of a local file is not a grant of audio/model redistribution rights.
+Version/master alignment, intended musical layer and human relevance are unverified.

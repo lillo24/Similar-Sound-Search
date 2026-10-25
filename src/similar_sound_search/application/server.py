@@ -200,12 +200,18 @@ def make_server(root, limits, port=8774, runtime=None):
                 if path.startswith("/api/revision/"):
                     return self.send_json(queries.exact_revision(owner, api.identifier(path[14:])))
                 if path.startswith("/api/waveform/"):
+                    selected = owner
+                    if runtime is not None and hasattr(runtime, "waveform_context"):
+                        selected = runtime.waveform_context(api.identifier(path[14:]))
                     value = record(
-                        owner.directory / "waveforms" / (api.identifier(path[14:]) + ".json")
+                        selected.directory / "waveforms" / (api.identifier(path[14:]) + ".json")
                     )
                     return self.send_json(value)
                 if path.startswith("/media/"):
-                    target, value = media.validate(owner, api.identifier(path[7:]))
+                    selected = owner
+                    if runtime is not None and hasattr(runtime, "media_context"):
+                        selected = runtime.media_context(api.identifier(path[7:]))
+                    target, value = media.validate(selected, api.identifier(path[7:]))
                     if value["original"]["kind"] != "reference":
                         raise InputError("D01 candidate media requires its complete result scope")
                     return self.send_file(target, "audio/wav")

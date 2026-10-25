@@ -11,9 +11,9 @@ class QueryOwner(QueryContext):
     def __init__(self, owner):
         super().__init__(owner.root)
         self.owner = owner
-        self.directory = owner.directory / "library"
+        self.directory = getattr(owner, "library_root", owner.directory / "library")
         self.queries = self.directory / "materialized"
-        self.feature_root = owner.features / "queries"
+        self.feature_root = getattr(owner, "query_features_root", owner.features / "queries")
         self.reports = owner.reports
 
     @property

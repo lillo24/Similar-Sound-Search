@@ -158,7 +158,7 @@ def submit(root, limits, request, acceptance=False, runtime=None):
 
 
 def status(root, key, runtime=None):
-    owner = owner_for(root, runtime=runtime)
+    owner = owner_for(root, key, runtime)
     value = job(owner, key)
     state = record(state_path(owner, key))
     running = active(owner.root, "worker") or active(owner.root, "coordinator")
@@ -239,7 +239,7 @@ def resume_control(root, key, request_id, runtime=None):
 
 
 def result(root, key, runtime=None):
-    owner = owner_for(root, runtime=runtime)
+    owner = owner_for(root, key, runtime)
     state = record(state_path(owner, key))
     if state["state"] != "complete" or state["result"] is None:
         raise InputError("D01 request has no complete result; partial work is not a result")
@@ -283,6 +283,8 @@ def result(root, key, runtime=None):
 def result_media(root, result_id, media_id, runtime=None):
     """Resolve media only through its immutable complete query/arm/population result."""
     owner = owner_for(root, runtime=runtime)
+    if runtime is not None and hasattr(runtime, "result_context"):
+        owner = runtime.result_context(result_id)
     ref = dict(
         path=(owner.directory / "results" / (identifier(result_id) + ".json"))
         .relative_to(owner.root)
@@ -349,6 +351,8 @@ def completed_searches(root, runtime=None):
                 query_hash=value["query_hash"],
             )
         )
+    if runtime is not None and hasattr(runtime, "additional_completed"):
+        output.extend(runtime.additional_completed())
     return output
 
 
