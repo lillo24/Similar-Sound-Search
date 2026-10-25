@@ -1,59 +1,1114 @@
 {
   "schema_version": "d04-listening-evidence-1",
-  "engineering_state": "in progress; D04-only QA amendment authorized",
+  "engineering_state": "complete technical delivery",
   "human_state": "listening review pending; relevance unmeasured",
+  "pull_request": "https://github.com/lillo24/Similar-Sound-Search/pull/34",
   "review_version": "d04-v1",
   "review_hash": "0767f7fdd1cdb294a7050566d93aaab74ecf34894cd2ac402597ee409d8570e5",
-  "package_sha256": "062f97ac056f75f664440c0bfc45caaea3ed7e52023d6568704098dda7808901",
+  "package": {
+    "archive_bytes": 292441732,
+    "archive_sha256": "062f97ac056f75f664440c0bfc45caaea3ed7e52023d6568704098dda7808901",
+    "core": "0.3.0",
+    "installed_consumer": {
+      "code_hash": "990e9ec6a6b9e64ad24946cde38eb6ceea91d680f99a2e642f8f44458fe02c98",
+      "declaration_hash": "666bb9e040e58d6998a154e21e83b9215f8547cd25badaae2edf9d97a8b42515",
+      "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
+      "version": "d03-consumer-1"
+    },
+    "release": "d03-1.0.0",
+    "search_scope": "Loulou ran on preceding installed artifact; final artifact reopened/verified it",
+    "wheel_sha256": "239ce5dd302eef45b1acd296fe84906128b1727a4c941b40b1d3254eda145e0b"
+  },
   "job_id": "06a4ee15a6956b3b55c8bf9a018b65ecc32f3bb81f4d902d14ee1b7a6a19dd1e",
   "result_id": "2319b2130074a3d6a0eee93b3e1debfdb01637f22803c3dc8b2fd42851bb7374",
-  "defaults": {"audio": "original", "arm": "legacy-mean", "pitch": "off"},
-  "available": {"reference": 1, "candidate_passages": 10, "candidate_contexts": 10, "distinct_groups": 10, "distinct_recordings": 10, "private_media_bytes": 15876924},
-  "fresh_checks": {
-    "installed_readonly_result_and_media_provider": "passed",
-    "native_frames_headers_and_byte_hashes": "21 passed",
-    "full_source_audio_audit": "not repeated",
-    "reference_route": "unavailable: installed reader expects one inventory match; two byte-identical matches exist",
-    "reference_workaround": "exact retained C03 publication, both copies, supplied MP3 SHA and query native selection verified",
-    "focused_tests_before_final_feedback_lock": {"tests": 12, "passed": true},
-    "final_source_checks": "pending",
-    "full_regression": {"first_batch_tests": 92, "passed": 91, "errors": 1, "complete": false},
-    "d04_browser_playback": "not yet run",
-    "physical_phone": "not tested",
-    "final_ledger_hash_comparison": "pending"
+  "query_hash": "f24d82060fd5809aec85f4754faa32da45aae49c34968b7b1a1a9d83fef29e95",
+  "revision": "c5d9eebb0a510565b6201113f3f4e4686845db6cf27d34ec929560a438b341a3",
+  "materialization": "0ebb77012137c086e4cb1f72298e16446b33d96da2de28d7c9ccc5d663a03036",
+  "population_hash": "100c44356e2fbc6c771d987be934e3231ddf91834fa9d87fe6442f5dd5a7216c",
+  "defaults": {
+    "arm": "legacy-mean",
+    "audio": "original",
+    "pitch": "off"
   },
-  "retained_proof": {
-    "d03_native_candidates": "40 independent checks passed in D03",
-    "d03_browser": "40 technical controls passed in D03; muted, not human listening",
-    "reference_publication": "b7c1bae8c55f488883a599d4486b85d382b6d66eecabc6bbf028871e4ae48aee",
-    "search_scope": "Loulou ran on preceding installed artifact; final artifact reopened and verified it; no D04 search"
+  "available": {
+    "reference": 1,
+    "candidate_passages": 10,
+    "candidate_contexts": 10,
+    "distinct_groups": 10,
+    "distinct_recordings": 10,
+    "private_media_bytes": 15876924
+  },
+  "input_verification": {
+    "installed_readonly_provider": true,
+    "immutable_review_matches_saved_publication": true,
+    "native": [
+      {
+        "frames": 970200,
+        "passed": true,
+        "rate": 44100,
+        "role": "reference",
+        "sha256": "390f8584e5cf2713bdd38b588571627eb8f6bd5d8aea0495662645bb666094ad"
+      },
+      {
+        "frames": 105840,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-01-scored",
+        "sha256": "dddfb50a18d4b346d23dfdb22ce192cdbb3543e2b5ba7bd11e369e6584dc45d6"
+      },
+      {
+        "frames": 194040,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-01-context",
+        "sha256": "72e0bd5e178c4d2b4e939e5546f666c68d07b3f09d997930e94c921a477632b8"
+      },
+      {
+        "frames": 105840,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-02-scored",
+        "sha256": "5150120a7e2c158560947b6b73567683b5600c6995759a6fd0ac0f1c9e9da8fc"
+      },
+      {
+        "frames": 194040,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-02-context",
+        "sha256": "7f94668d20c905e5b8b9001bd4a2e14a3e84f337b56239ceee4d17ae9402f466"
+      },
+      {
+        "frames": 105840,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-03-scored",
+        "sha256": "9a955224a7c8bc07e44472bf982192614a7871bceee612d7030c03d3dc4d4b55"
+      },
+      {
+        "frames": 194040,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-03-context",
+        "sha256": "bf8ee223af0cb3371f70d57466d6711c143a794e1e4636d1fcc342af90129044"
+      },
+      {
+        "frames": 105840,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-04-scored",
+        "sha256": "66904662928704f8d026dc9e05ce96a2e7eeec0a5db8ee04fec54499f4dac275"
+      },
+      {
+        "frames": 194040,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-04-context",
+        "sha256": "9d557d96eaadb6f505739a329fe35aae5747e6c3991b89a27ffeb2dea9a23e87"
+      },
+      {
+        "frames": 105840,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-05-scored",
+        "sha256": "ab06c70be5fc91f3bcedcc508de4ba8f362bdbac4bfb2b6a5fa02f9b4df16acb"
+      },
+      {
+        "frames": 194040,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-05-context",
+        "sha256": "63e052f5b7a5af128d34d80adabf8c7f5ba22d960bd262e56b087f74bcea5c68"
+      },
+      {
+        "frames": 105840,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-06-scored",
+        "sha256": "43e1683f186f45c3efbec1eeae081e7293bb3d27fc16a76f457a5d1b31c01c01"
+      },
+      {
+        "frames": 194040,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-06-context",
+        "sha256": "cfd5edf7575daeb70eb26840c3b9d591c280f281d636703e96cdf1aded142ffd"
+      },
+      {
+        "frames": 105840,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-07-scored",
+        "sha256": "053bdfe92475e3cc2e97f9530c42b7faee581c84c852a46ef32d683e61d72389"
+      },
+      {
+        "frames": 194040,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-07-context",
+        "sha256": "d8d7877b04ba8735b29ceaba1ca85996f59196178c45a7dd65aa18bbb712c6ab"
+      },
+      {
+        "frames": 105840,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-08-scored",
+        "sha256": "eb2d2b4407a848bf5fac7bc07887f509eee2df5dfb11cb9076787b42b477946f"
+      },
+      {
+        "frames": 194040,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-08-context",
+        "sha256": "26644013cd2601ddfb92620c386c427d296caf42eb65470b65708fe889d3aefe"
+      },
+      {
+        "frames": 105840,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-09-scored",
+        "sha256": "87fa7069c0f3d03cbee55e3cb1470dae7042e18f5f3294ed96fa82425382e173"
+      },
+      {
+        "frames": 194040,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-09-context",
+        "sha256": "25676697401756a6aaf0c39c1fc6d919b93deca60f9c3035970874e7019f4d56"
+      },
+      {
+        "frames": 105840,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-10-scored",
+        "sha256": "0bf47171c66276134ef9af28b74062b9f89fa3c39a29dc3683a079ebb01a1ed8"
+      },
+      {
+        "frames": 194040,
+        "passed": true,
+        "rate": 44100,
+        "role": "D04-10-context",
+        "sha256": "186c973fa74d1a708c4472bf9d92d2d94f200e9d1baff22a288fcfb17d3bf100"
+      }
+    ],
+    "full_source_audit_repeated": false,
+    "reference_route": {
+      "available": false,
+      "error": "D03 exact original Loulou preview missing",
+      "error_type": "InputError",
+      "path": "/private-reference/loulou.wav"
+    },
+    "reference_copies_verified": 2,
+    "reference_resolution": "exact retained C03 bundle, source SHA and native selection",
+    "original_source_sha256": "2fc1256b1ac35134cfaef177aaf032277a0e375c676e50d391a1e3b22046ae30",
+    "reference_wav_sha256": "390f8584e5cf2713bdd38b588571627eb8f6bd5d8aea0495662645bb666094ad"
+  },
+  "checks": {
+    "regression": {
+      "all_unique_expected_ids_covered": true,
+      "batches": [
+        {
+          "group": "0",
+          "passed": true,
+          "seconds": 40.93799999996554,
+          "tests": 91
+        },
+        {
+          "group": "1",
+          "passed": true,
+          "seconds": 60.81199999997625,
+          "tests": 126
+        },
+        {
+          "group": "2",
+          "passed": true,
+          "seconds": 33.93699999997625,
+          "tests": 67
+        },
+        {
+          "group": "3",
+          "passed": true,
+          "seconds": 97.625,
+          "tests": 66
+        },
+        {
+          "group": "4",
+          "passed": true,
+          "seconds": 8.686999999976251,
+          "tests": 81
+        },
+        {
+          "group": "evaluation",
+          "passed": true,
+          "seconds": 22.90600000001723,
+          "tests": 1
+        }
+      ],
+      "focused_final": 18,
+      "tests": 435
+    },
+    "ruff": {
+      "passed": true,
+      "python_files": 251
+    },
+    "javascript_syntax": true,
+    "powershell_parse": true,
+    "http": [
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/3880844",
+        "mime": "audio/wav",
+        "role": "reference",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/423404",
+        "mime": "audio/wav",
+        "role": "D04-01-scored",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/776204",
+        "mime": "audio/wav",
+        "role": "D04-01-context",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/423404",
+        "mime": "audio/wav",
+        "role": "D04-02-scored",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/776204",
+        "mime": "audio/wav",
+        "role": "D04-02-context",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/423404",
+        "mime": "audio/wav",
+        "role": "D04-03-scored",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/776204",
+        "mime": "audio/wav",
+        "role": "D04-03-context",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/423404",
+        "mime": "audio/wav",
+        "role": "D04-04-scored",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/776204",
+        "mime": "audio/wav",
+        "role": "D04-04-context",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/423404",
+        "mime": "audio/wav",
+        "role": "D04-05-scored",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/776204",
+        "mime": "audio/wav",
+        "role": "D04-05-context",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/423404",
+        "mime": "audio/wav",
+        "role": "D04-06-scored",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/776204",
+        "mime": "audio/wav",
+        "role": "D04-06-context",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/423404",
+        "mime": "audio/wav",
+        "role": "D04-07-scored",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/776204",
+        "mime": "audio/wav",
+        "role": "D04-07-context",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/423404",
+        "mime": "audio/wav",
+        "role": "D04-08-scored",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/776204",
+        "mime": "audio/wav",
+        "role": "D04-08-context",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/423404",
+        "mime": "audio/wav",
+        "role": "D04-09-scored",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/776204",
+        "mime": "audio/wav",
+        "role": "D04-09-context",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/423404",
+        "mime": "audio/wav",
+        "role": "D04-10-scored",
+        "status": 206
+      },
+      {
+        "bytes": 64,
+        "content_range": "bytes 0-63/776204",
+        "mime": "audio/wav",
+        "role": "D04-10-context",
+        "status": 206
+      }
+    ],
+    "fresh_production_feedback_empty": true,
+    "session_token_rotated": true,
+    "delivered_report_download": {
+      "passed": true,
+      "sha256_lf": "71c3dc511896c7db77eeb641d2eea2801880153ae6bb6fee4552f478a997beab",
+      "mime": "text/markdown; charset=utf-8"
+    },
+    "served_web_source_sha256_lf": {
+      "/": "1c39218be925340c9e16ef1c3a9eef14e4b0e0b1b6cbdff7d65479bdb0080723",
+      "/review.js": "c883a60ec8991796583d0014dd4913e55314abbace9a775c1d43a0af941e317f",
+      "/review.css": "3fa2e80829921c475f0474ea58b160de065deb2375853653f8cc5bed65e2ea12"
+    }
+  },
+  "browser": {
+    "passed": true,
+    "browser": "155.0.8059.85",
+    "muted": true,
+    "headless": true,
+    "physical_phone_tested": false,
+    "players": [
+      {
+        "viewport": 1360,
+        "role": "reference",
+        "advanced": 0.081891,
+        "time": 12.627079,
+        "duration": 22,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-01-scored",
+        "advanced": 0.069065,
+        "time": 1.376968,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-01-context",
+        "advanced": 0.090825,
+        "time": 2.524442,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-02-scored",
+        "advanced": 0.085655,
+        "time": 1.376968,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-02-context",
+        "advanced": 0.0983,
+        "time": 2.524442,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-03-scored",
+        "advanced": 0.078235,
+        "time": 1.376968,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-03-context",
+        "advanced": 0.094612,
+        "time": 2.524442,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-04-scored",
+        "advanced": 0.081006,
+        "time": 1.376968,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-04-context",
+        "advanced": 0.068515,
+        "time": 2.524442,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-05-scored",
+        "advanced": 0.101092,
+        "time": 1.376968,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-05-context",
+        "advanced": 0.078519,
+        "time": 2.524442,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-06-scored",
+        "advanced": 0.094363,
+        "time": 1.376968,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-06-context",
+        "advanced": 0.085124,
+        "time": 2.524442,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-07-scored",
+        "advanced": 0.06657,
+        "time": 1.376968,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-07-context",
+        "advanced": 0.085488,
+        "time": 2.524442,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-08-scored",
+        "advanced": 0.082699,
+        "time": 1.376968,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-08-context",
+        "advanced": 0.069347,
+        "time": 2.524442,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-09-scored",
+        "advanced": 0.081469,
+        "time": 1.376968,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-09-context",
+        "advanced": 0.067782,
+        "time": 2.524442,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-10-scored",
+        "advanced": 0.08137,
+        "time": 1.376968,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 1360,
+        "role": "D04-10-context",
+        "advanced": 0.06964,
+        "time": 2.524442,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "reference",
+        "advanced": 0.068631,
+        "time": 12.527162,
+        "duration": 22,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-01-scored",
+        "advanced": 0.077678,
+        "time": 1.364567,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-01-context",
+        "advanced": 0.084136,
+        "time": 2.501706,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-02-scored",
+        "advanced": 0.091911,
+        "time": 1.364567,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-02-context",
+        "advanced": 0.087944,
+        "time": 2.501706,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-03-scored",
+        "advanced": 0.088164,
+        "time": 1.364567,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-03-context",
+        "advanced": 0.08689,
+        "time": 2.501706,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-04-scored",
+        "advanced": 0.076512,
+        "time": 1.364567,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-04-context",
+        "advanced": 0.084465,
+        "time": 2.501706,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-05-scored",
+        "advanced": 0.08437,
+        "time": 1.364567,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-05-context",
+        "advanced": 0.074953,
+        "time": 2.501706,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-06-scored",
+        "advanced": 0.080555,
+        "time": 1.364567,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-06-context",
+        "advanced": 0.082899,
+        "time": 2.501706,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-07-scored",
+        "advanced": 0.090352,
+        "time": 1.364567,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-07-context",
+        "advanced": 0.086112,
+        "time": 2.501706,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-08-scored",
+        "advanced": 0.080217,
+        "time": 1.364567,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-08-context",
+        "advanced": 0.076872,
+        "time": 2.501706,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-09-scored",
+        "advanced": 0.083955,
+        "time": 1.364567,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-09-context",
+        "advanced": 0.103474,
+        "time": 2.501706,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-10-scored",
+        "advanced": 0.093476,
+        "time": 1.364567,
+        "duration": 2.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      },
+      {
+        "viewport": 390,
+        "role": "D04-10-context",
+        "advanced": 0.084731,
+        "time": 2.501706,
+        "duration": 4.4,
+        "paused": true,
+        "error": null,
+        "rate": 1,
+        "volume": 1
+      }
+    ],
+    "viewports": [
+      {
+        "width": 1360,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "overflow": false
+      }
+    ],
+    "reload": true,
+    "fresh_browser": true,
+    "long_title_fixture": true,
+    "missing_media_fixture": "isolated HTTP 409, explicit UI failure, no live file modified",
+    "feedback": {
+      "draft_reload": true,
+      "prior_saved_revisions": 4,
+      "new_saved_revisions": 4,
+      "saved_revisions": 8,
+      "durable_export": true,
+      "import_roundtrip": true,
+      "dirty_import_refused": true,
+      "foreign_review_refused": true,
+      "stale_tab_conflict": true,
+      "all_fixture_ratings_not_listened": true,
+      "location": "isolated qa-feedback; excluded from human state"
+    },
+    "application_operations": [],
+    "external_requests": [],
+    "page_errors": []
+  },
+  "preservation": {
+    "passed": true,
+    "protected_files": 1345,
+    "changed_or_missing": [],
+    "scope": "Pre-existing config/manifests, frozen core/distribution source, pools/ledgers/guards and external registry; not a repeat of D03 full-file audio audit",
+    "pool_registry_hashes": {
+      "external-allocation-registry": "9536e79fb2f5d23e1e8ad4c63176fa2dfa2121597bd2902635622761949c6deb",
+      "installed-workspace/data/runs/application/pool.json": "667e6bb0160831a1dd17fc2a815052c50be8cc92fa36bf48facd45fb813be1e2",
+      "installed-workspace/data/runs/processing/pool.json": "cfd68f1aa43f8b5c19ebbda0ea028566152dc673d66f953d92f80be2c77dab5e",
+      "installed-workspace/data/runs/refinement/ledger.json": "2a5d1836f5d57adbddb62b0afbc1401007adb7aaf515c2b04a18b7ef8690a5ae",
+      "installed-workspace/data/runs/runtime-normal/pool.json": "ecfc63dbadf626f90c3dd49ba353a022b231b283a6612805c79c5363d776eb4f",
+      "installed-workspace/data/runs/runtime-verification/pool.json": "f84f458f231e4061300d69bd89ff4ad18db2306b318368e544e9160beebab91a",
+      "original/data/runs/application/pool.json": "667e6bb0160831a1dd17fc2a815052c50be8cc92fa36bf48facd45fb813be1e2",
+      "original/data/runs/assessment/pool.json": "c9a0234be5708ca640c508ea77cb9455335e0e5dccd1e0be72182eff8de3fdce",
+      "original/data/runs/catalogue/local-engineering/ledger.json": "920c4322497e4342a97866ac595cdab49bfc3308c6348ec1a5259ef995e92de6",
+      "original/data/runs/catalogue/starter/ledger.json": "580158abba10c31a76437a246d0d23daf52a665c5caedf2d2b815dc91fd8e5c7",
+      "original/data/runs/evaluation/ledger.json": "f09634c17f201197c559ab7993cbcaacd2bc6aa177e670ac0b4eb402fffc8228",
+      "original/data/runs/events/ledger.json": "3b77ae86e9654bbe80fc359d93a76e67292c0a96af2922ff7392f9349288dda3",
+      "original/data/runs/indexing/ledger.json": "179d20dc02d0340237b22fe15bd2f92cf34fb87025485dd2eec3c1dfc2a9dfe1",
+      "original/data/runs/matchers/ledger.json": "2c5ebabf0201f2c7cfa3ee847eae5d346580b1e31660393261507560aed4e51b",
+      "original/data/runs/processing/pool.json": "cfd68f1aa43f8b5c19ebbda0ea028566152dc673d66f953d92f80be2c77dab5e",
+      "original/data/runs/queries/ledger.json": "7d75c55f06b1b1fb67813c0b8ccafba57cc0f905c21b502b44f6790cbe2556fe",
+      "original/data/runs/refinement/ledger.json": "2a5d1836f5d57adbddb62b0afbc1401007adb7aaf515c2b04a18b7ef8690a5ae",
+      "original/data/runs/retrieval/ledger.json": "940f03249ca4be961a881d5c3d930fd72a55dbb63676bbda2befb5bb2f7d2939",
+      "original/data/runs/search/ledger.json": "7ad78f4c3f6621e9a876892229d72699ba15205d226434d89ee2eabf5cbda115",
+      "original/data/runs/separation/ledger.json": "87ecf39e529236274703dd9dc922742a0eb26ed282f1244f77c7c07a8d08dc69"
+    },
+    "normal_counts": {
+      "clip_bytes": 0,
+      "clips": 0,
+      "feature_bytes": 0,
+      "feature_windows": 0,
+      "import_bytes": 0,
+      "job_seconds": 0,
+      "managed_output_bytes": 0,
+      "metadata_bytes": 0,
+      "preparation_bytes": 0,
+      "processed_window_seconds": 0,
+      "query_jobs": 0,
+      "read_audio_seconds": 0,
+      "workers": 0
+    },
+    "verification_sealed": true,
+    "prior_receipt_hashes_preserved": true
   },
   "resources": {
+    "authorization": {
+      "schema_version": "d04-preparation-allowance-1",
+      "authorization": "Explicit user amendment for D04 continuation in PR #34, 25 October 2026",
+      "scope": "D04 only; all previous attempts and retained temporary files included",
+      "qa_bytes": 234881024,
+      "total_output_bytes": 268435456,
+      "metadata_bytes": 16777216,
+      "media_bundle_bytes": 67108864,
+      "cumulative_invocations": 24,
+      "aggregate_seconds": 600,
+      "source_audio_seconds": 6000,
+      "worker_deadline_seconds": 120,
+      "numerical_threads": 1,
+      "prior_invocations": 10,
+      "prior_spent_seconds": 168.501,
+      "original_limits": {
+        "qa_bytes": 33554432,
+        "total_output_bytes": 134217728,
+        "cumulative_invocations": 16
+      },
+      "d03_pools": "unchanged; no reset, refill, unseal, inference or alternate allocation",
+      "cleanup": "Retain the policy-denied D04 temporary fixture and all historical C01 staging; no cleanup retry"
+    },
+    "prior_invocations": 10,
+    "prior_spent_seconds": 168.5010000000475,
+    "completed_invocations": 23,
+    "supervised_seconds": 511.329000000027,
+    "final_export_receipt": 23,
+    "final_receipt_settlement_pending": false,
+    "source_audio_seconds_reserved": 2400.0,
+    "original_source_audio_decodes": 0,
+    "browser_served_wav_seconds": [
+      528.1428117913832,
+      613.7480385487528
+    ],
+    "source_scope": "No original MP3/catalogue decoding. Browser figures are served-byte equivalents; 1200 seconds per browser invocation remain conservatively reserved. Unit-generated audio is regression-fixture scope.",
+    "observed_peak_bytes": {
+      "qa": 143019966,
+      "metadata": 549094,
+      "bundle": 15940173,
+      "total": 159231354
+    },
+    "storage": {
+      "combined_with_full_d04_allowance_bytes": 3525964315,
+      "free_bytes": 204564180992,
+      "inherited_with_normal_reserve_bytes": 3257528859,
+      "media_bundle_bytes": 15940173,
+      "metadata_live_bytes": 539041,
+      "private_live_bytes": 50762252,
+      "qa_live_bytes": 34271975,
+      "retained_failed_fixture_bytes": 33997853,
+      "retained_failed_fixture_files": 227,
+      "public_metadata_bytes": 102381,
+      "final_private_live_bytes": 50791739,
+      "final_private_and_public_bytes": 50894120,
+      "final_metadata_live_bytes": 550410
+    },
+    "prior_failed_invocations": [
+      {
+        "invocation": 2,
+        "label": "freeze-installed-publication",
+        "seconds": 16.625,
+        "exit_code": 1,
+        "timeout": false
+      },
+      {
+        "invocation": 3,
+        "label": "freeze-installed-publication-repair",
+        "seconds": 6.813000000023749,
+        "exit_code": 1,
+        "timeout": false
+      },
+      {
+        "invocation": 5,
+        "label": "focused-tests-and-source-checks",
+        "seconds": 6.25,
+        "exit_code": 1,
+        "timeout": false
+      },
+      {
+        "invocation": 6,
+        "label": "focused-validation",
+        "seconds": 8.125,
+        "exit_code": 1,
+        "timeout": false
+      },
+      {
+        "invocation": 7,
+        "label": "focused-final",
+        "seconds": 6.453000000037719,
+        "exit_code": 1,
+        "timeout": false
+      },
+      {
+        "invocation": 9,
+        "label": "full-regression-foundations",
+        "seconds": 68.14100000000326,
+        "exit_code": 1,
+        "timeout": false
+      },
+      {
+        "invocation": 10,
+        "label": "regression-index-retrieval-and-Windows-fixture-retry",
+        "seconds": 32.125,
+        "exit_code": 1,
+        "timeout": false
+      },
+      {
+        "invocation": 18,
+        "label": "real-saved-review-browser-controls",
+        "seconds": 18.10899999999674,
+        "exit_code": 1,
+        "timeout": false
+      },
+      {
+        "invocation": 21,
+        "label": "final-installed-provider-HTTP-and-preservation-audit",
+        "seconds": 11.125,
+        "exit_code": 1,
+        "timeout": false
+      }
+    ],
+    "cleanup": "Policy-denied incomplete D04 fixture retained: 227 files / 33,997,853 bytes. No cleanup retry; historical C01 staging also preserved.",
     "inference": 0,
     "catalogue_encodes": 0,
-    "new_downloads": 0,
-    "processing_receipts": 10,
-    "decoded_original_audio_seconds": 0,
-    "incomplete_test_fixture_bytes_observed": 33997853,
-    "qa_cap_stop": true,
-    "cleanup": "rejected by automatic approval review: blocked by policy; command did not execute; no alternate cleanup attempted",
-    "resource_adjustment": {
-      "state": "explicitly authorized by Leonardo on 2026-10-25; applied to PR #34",
-      "qa_max_bytes": 234881024,
-      "total_output_max_bytes": 268435456,
-      "max_cumulative_invocations": 24,
-      "max_aggregate_seconds": 600,
-      "prior_charges_and_receipts": "retained; no reset or new allowance",
-      "other_limits_and_d03_pools": "unchanged",
-      "cleanup_authorized": false
-    },
-    "amendment_validation": {
-      "environment": "Linux repository checkout; Windows delivery assets and receipts unavailable",
-      "new_d04_processing_invocations": 0,
-      "tests": "cap/receipt regression cases added; execution pending against existing delivery accounting",
-      "windows_failure": "traceback unavailable here; diagnosis and rerun still required"
-    },
-    "d03_pool_mutations": "none dispatched; final hash verification pending"
+    "downloads": 0,
+    "model_or_dependency_changes": 0,
+    "gpu_use": false,
+    "measurement": "Actual supervised worker wall seconds; live private-output inventories sampled every half second. Foreground idle service and human listening are separate. No OS RSS or filesystem-quota enforcement claim."
   },
-  "responses": {"shown_on_review": 10, "listened_rated": 0, "similar": 0, "different": 0, "unsure": 0, "unanswered": 10, "provenance": "no response received from Leonardo"}
+  "retained_proof": {
+    "reference": "C03 native sample proof",
+    "candidate_clips": "D03 independent native proof; D04 hashes/headers/frames refreshed",
+    "d03_browser": "Prior muted D03 technical checks do not establish listening",
+    "search_scope": "Loulou ran on preceding installed artifact; final artifact reopened/verified it"
+  },
+  "responses": {
+    "shown_on_review": 10,
+    "listened_rated": 0,
+    "similar": 0,
+    "different": 0,
+    "unsure": 0,
+    "unanswered": 10,
+    "provenance": "No listening response received from Leonardo. Automated qa-feedback files are excluded."
+  },
+  "fixes": {
+    "windows_atomic_replacement": "Non-intrusive cached directory-size inventory and Windows namespace for long fixture paths. Native busy-reader refusal/recovery and 100 monitored replacements pass; original full integration test passes. Frozen writer/core unchanged.",
+    "exclusive_playback": "Custom Play pauses previous audio synchronously; stale queued play events cannot stop a later selection. Full browser run repeated without added pacing.",
+    "audit_helper": "One retained failed audit invocation shadowed http with a local function; corrected before the final passing preservation audit."
+  }
 }

@@ -2,7 +2,7 @@
 
 Select a particular sound inside a song and find passages in other recordings with a similar sound character, with playable results and trustworthy timestamps. Timbre comes first, approximate pitch second; matching phrase rhythm or note order is deferred.
 
-**Current work: D04 listening review; human response pending.**
+**D04 listening review is ready; human response pending.**
 The [standalone review report](reports/D04_LISTENING.md),
 [immutable input](manifests/listening/d04-v1.json) and
 [listening instructions](docs/LISTENING.md) retain the exact saved reference and

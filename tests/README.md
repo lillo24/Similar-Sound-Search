@@ -4,6 +4,8 @@
 manifest integrity, unchanged WAV byte/header checks, separate unanswered/unsure/
 declined states, strict review/item membership, immutable feedback revisions,
 optimistic conflicts, export/import, quotas and finite loopback HTTP protections.
+Its 18 tests include the amended cap/receipt boundaries, native Windows
+busy-reader refusal/recovery and atomic replacement alongside the live inventory.
 These are model-free isolated fixtures, with no actual human ratings. Private
 installed-provider and browser acceptance are separate D04 evidence.
 

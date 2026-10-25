@@ -1,10 +1,15 @@
 # Project status
 
-Updated 25 October 2026. **D04 listening review is being prepared; human response pending.**
+Updated 25 October 2026. **D04 technical delivery is complete; human response pending.**
 [Review report](../reports/D04_LISTENING.md),
+[machine evidence](../reports/D04_LISTENING.json),
 [immutable manifest](../manifests/listening/d04-v1.json) and
 [launch/feedback instructions](LISTENING.md) own the separate, non-inference
-companion. Technical QA is separate from actual listening; relevance is unmeasured.
+companion. All 435 unique tests, 42 browser player checks and the scoped
+1,345-record preservation audit passed. The D04-only 224 MiB QA / 256 MiB total /
+24-invocation amendment retains all prior charges and the 600-second aggregate
+limit; D03 pools are unchanged. Technical QA is separate from actual listening;
+relevance is unmeasured.
 
 **D03 packaged local runtime is delivered.**
 [Package evidence](../reports/D03_PACKAGE.md), [machine-readable handoff](../reports/D03_PACKAGE.json)
@@ -91,7 +96,7 @@ No GitHub Actions workflow/required CI check exists in the inspected repository;
 | D01 local interface | Complete; readable completed searches on 8774, no further complete search fits its delivery allowance |
 | D02 automatic evaluation | Complete paired generated evaluation; both event-multi gates fail; [evidence](../reports/D02_EVALUATION.md) |
 | D03 packaging | Delivered; exact non-editable wheel/archive and separate private closure, fixed two-share runtime policy |
-| D04 listening | Focused review preparation and technical QA; actual human response pending |
+| D04 listening | Complete technical delivery; 435 tests and 42 browser player checks pass; actual human response pending |
 | Perceptual quality and Loulou relevance | Unmeasured; real-catalogue candidates are not confirmed matches; controlled A05/A06 metrics remain separate |
 | Linux live acquisition/GPU compute/arbitrary compressed seek | Unverified; sequential MP3 fixture behavior only |
 

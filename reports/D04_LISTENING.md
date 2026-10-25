@@ -1,6 +1,6 @@
 # D04 — First listening review
 
-25 October 2026. Technical verification in progress. **Listening review pending;
+25 October 2026. **Complete technical delivery.** **Listening review pending;
 relevance unmeasured.** This Markdown file is a standalone downloadable report.
 The page presents ten baseline candidates, without confirmed-match labels or
 confidence percentages. Original mixture / legacy mean / pitch off remain defaults.
@@ -15,7 +15,7 @@ combined new output and 24 cumulative invocations**, keeping **600 aggregate
 seconds**, every earlier charge, all other limits and all D03 pools unchanged.
 The amendment is recorded in [PR #34](https://github.com/lillo24/Similar-Sound-Search/pull/34)
 and the [versioned allowance](../manifests/listening/preparation-allowance.json).
-Final technical QA is in progress; human listening remains pending.
+All final technical checks passed. Human listening remains pending; optional ratings did not gate merge.
 
 ## Open and listen on the delivery Windows computer
 
@@ -107,22 +107,61 @@ audits. D04 freshly verifies bytes, WAV headers/native frame counts, publication
 membership and query/arm/population/order. It does not claim a new full-source
 audio audit. Muted browser QA establishes controls, never perceptual relevance.
 
-Current validation: the original 12 focused D04 tests passed, with scoped Ruff,
-JavaScript syntax and PowerShell parsing. The later feedback process-lock test
-and final source revision still need validation. The first regression batch ran
-92 tests with 91 passing and one Windows atomic-replacement error in the full
-procedural integration test. A subsequent attempt stopped at the QA output cap
-before completing. These failures and processing receipts are retained; no full
-regression or D04 browser pass is claimed. The technical QA foreground server
-was stopped. All existing application operations used in preparation were reads;
-the final before/after ledger comparison is still pending.
+## Technical verification and resources
 
-The amendment was applied from a Linux repository checkout. The Windows failure
-traceback, original cumulative processing receipts, private WAV bundle, installed
-runtime and preservation baseline are not present there. No replacement allowance
-was initialized and no additional D04 processing invocation was launched without
-the existing elapsed-time evidence. The new cap/receipt tests are pending on the
-delivery host along with the Windows replacement diagnosis and remaining QA.
+**435 unique tests passed in bounded batches:** the full 417 existing tests and
+18 D04 tests, with the final D04 checks repeated after integrating Leonardo's
+amendment commit. Ruff lint/format passed over 251 Python files; JavaScript/CJS
+syntax and the PowerShell launcher parser passed. No hosted CI is configured.
+
+The exact installed read-only provider revalidated the saved publication against
+the immutable review. All **21 WAV byte hashes, headers and native frame counts**
+passed again. All 21 result-bound companion media routes returned correct WAV
+MIME/206 ranges and the expected bytes. The final launcher was exercised with the
+existing installed interpreter; restart rotated its token, and the fresh human
+feedback store is empty. Malformed/foreign/stale cases use isolated fixtures.
+
+**42 real player checks passed:** reference plus all 20 scored/context controls
+at both 1360px and 390px, including actual native play/pause/seek and one-player
+exclusivity. Reload, a separate fresh browser, long-title layout, missing-media
+errors, feedback draft reload, durable JSON export/import, dirty-import refusal
+and stale-tab conflicts passed. Chrome 155.0.8059.85 was headless and muted.
+The missing-media network fixture altered no live file; no UI success was injected
+and no pacing workaround was added. No physical phone was tested. All eight saved
+QA feedback revisions are explicitly technical, not Leonardo's responses, and
+all their ratings remain not listened. They are separate from the empty human store.
+
+The earlier Windows atomic-replacement failure was resolved independently of the
+budget change: D04's monitor now obtains cached directory-entry sizes rather than
+opening live fixture files while the frozen writer replaces them; Windows fixture
+paths use the extended namespace without moving their actual locations. A native
+busy-reader fault still fails explicitly, release restores replacement, and 100
+replacements alongside the live monitor pass. The original full procedural test
+also passes. The frozen core writer and numerical code are unchanged.
+
+The first browser run exposed a queued-play-event race after all individual
+players passed. Custom Play now pauses the previous player synchronously and
+ignores stale events from paused clips. The complete browser run then passed.
+Both attempts remain charged and retained. One final-audit helper naming error
+also remains in the receipts; the corrected audit passed.
+
+**1,345 protected records are byte-identical**, including original/configuration/
+manifest/frozen-code records, every inventoried historical pool/ledger/guard,
+both D03 shares and the external allocation registry. The normal share's counters
+remain zero; verification remains sealed. This scoped preservation check does not
+claim another full audit of D03's 24,140 historical audio/feature files.
+
+The D04-only 224 MiB QA / 256 MiB combined-output / 24 cumulative-invocation
+amendment is enforced alongside the unchanged 600 aggregate seconds, 120 seconds
+per worker, one numerical thread, source allowance and 16 MiB metadata / 64 MiB
+media limits. Every earlier attempt and spent charge remains counted; final
+settled usage and per-pool hashes are in [the machine evidence](D04_LISTENING.json).
+The policy-denied 227-file, 33,997,853-byte incomplete D04 fixture remains intact.
+No historical C01 staging was removed or retried. Temporary output peaks and
+retained files are included; no extra environment, distribution or private
+closure was copied. Combined inherited managed storage, the full 512 MiB normal
+reserve and the entire amended D04 allowance are bounded at **3,525,964,315 bytes**,
+below 4 GiB. Final free space exceeded 190 GiB, with required headroom reserved.
 
 ## Optional human response
 

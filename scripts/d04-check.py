@@ -49,8 +49,11 @@ def main():
     # Existing fixture paths contain nested content hashes. The Windows namespace
     # prefix preserves their exact paths while allowing native paths beyond 260.
     temp_name = str(temp)
-    if (os.name == "nt" and Path(command[0]).stem.lower() in {"python", "pythonw"}
-            and not temp_name.startswith("\\\\?\\")):
+    if (
+        os.name == "nt"
+        and Path(command[0]).stem.lower() in {"python", "pythonw"}
+        and not temp_name.startswith("\\\\?\\")
+    ):
         temp_name = "\\\\?\\" + temp_name
     env.update(
         OMP_NUM_THREADS="1",

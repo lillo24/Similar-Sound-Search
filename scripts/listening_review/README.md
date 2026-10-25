@@ -12,6 +12,7 @@ the installed interpreter; `../listen-d04.ps1` supplies the private launch confi
 | `preservation.py` | Snapshot historical pools/ledgers/configuration/declarations and frozen source; compare prior hashes after QA |
 | `feedback.py` | Optional responses, exact review membership, qualitative counts and immutable parent-linked revisions |
 | `server.py` | Loopback-only finite routes/ranges and Host/Origin/session-token write protection; no application operations |
+| `browser-check.cjs` | Technical Chrome playback/layout/feedback acceptance using existing Playwright; writes separate QA evidence and never human ratings |
 | `web/index.html`, `web/review.css`, `web/review.js` | Reference-first accessible cards, exclusive playback, temporary drafts and explicit durable save/export/import |
 
 `../d04-check.py` supervises only D04's small validation allowance using the existing
