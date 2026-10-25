@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import secrets
+import socket
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -17,6 +18,17 @@ from .context import PersistenceError
 from .locks import lock
 
 STATIC = Path(__file__).parent / "web"
+
+
+class LoopbackServer(ThreadingHTTPServer):
+    """Windows requires exclusive binding to refuse a live port reliably."""
+
+    allow_reuse_address = os.name != "nt"
+
+    def server_bind(self):
+        if os.name == "nt":
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
+        super().server_bind()
 
 
 def upload_path(owner, key):
@@ -378,7 +390,7 @@ def make_server(root, limits, port=8774, runtime=None):
             pass
 
     try:
-        server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
+        server = LoopbackServer(("127.0.0.1", port), Handler)
     except OSError as exc:
         raise InputError(f"D01 cannot bind {origin}; port is in use or unavailable: {exc}") from exc
     server.manager = manager

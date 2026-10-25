@@ -49,6 +49,22 @@ class DistributionTests(unittest.TestCase):
             authority.initialize(other, self.registry)
         self.assertEqual((self.registry / "allocation.json").read_bytes(), before)
 
+    def test_live_loopback_port_is_exclusive_on_windows(self):
+        import socket
+
+        from similar_sound_search.application.server import make_server
+        from sound_search_distribution.runtime import Runtime
+
+        with socket.socket() as probe:
+            probe.bind(("127.0.0.1", 0))
+            port = probe.getsockname()[1]
+        server = make_server(self.root, limits(self.root), port, Runtime(self.root))
+        try:
+            with self.assertRaisesRegex(InputError, "port is in use"):
+                make_server(self.root, limits(self.root), port, Runtime(self.root))
+        finally:
+            server.server_close()
+
     def test_windows_busy_replace_retries_same_paid_temp_and_permanent_error_is_loud(self):
         import os
 

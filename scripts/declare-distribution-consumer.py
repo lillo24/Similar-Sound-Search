@@ -14,6 +14,7 @@ from sound_search_distribution.contracts import own_code
 root = Path.cwd()
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--previous-distribution", type=Path)
+parser.add_argument("--http-port-repair", action="store_true")
 args = parser.parse_args()
 target = root / "manifests/distribution/consumer.json"
 if target.exists():
@@ -28,7 +29,7 @@ allowed = {
     "application/queries.py": {"QueryOwner"},
     "application/job.py": {"worker", "execute", "_run", "run"},
     "application/validation.py": {"native"},
-    "application/server.py": {"make_server"},
+    "application/server.py": {"make_server", "LoopbackServer"},
 }
 changed = sorted(k for k, v in before["code"].items() if code[k] != v)
 if set(changed) != set(allowed) or set(code) != set(before["code"]):
@@ -65,8 +66,42 @@ for version, p in (("d01-consumer-1", "application"), ("d02-consumer-1", "assess
     )
 if args.previous_distribution:
     prior = record(args.previous_distribution)
-    if prior["code"] != code or prior["numerical_hash"] != before["numerical_hash"]:
-        raise RuntimeError("Repair cannot change inherited/numerical source")
+    if prior["numerical_hash"] != before["numerical_hash"]:
+        raise RuntimeError("Repair cannot change numerical identity")
+    if args.http_port_repair:
+        differences = {k for k, h in prior["code"].items() if code[k] != h}
+        if differences != {"application/server.py"} or own_code() != prior["distribution_code"]:
+            raise RuntimeError("HTTP repair exceeds the exact server binding boundary")
+        old = subprocess.check_output(
+            ["git", "show", "b03ee15:src/similar_sound_search/application/server.py"]
+        ).decode("utf-8")
+        if (
+            hashlib.sha256(old.replace("\r\n", "\n").encode()).hexdigest()
+            != prior["code"]["application/server.py"]
+        ):
+            raise RuntimeError("HTTP repair predecessor source differs")
+
+        class RenameServer(ast.NodeTransformer):
+            def visit_Name(self, node):
+                if node.id == "ThreadingHTTPServer":
+                    node.id = "LoopbackServer"
+                return node
+
+        expected = RenameServer().visit(ast.parse(old))
+        actual = ast.parse(
+            (root / "src/similar_sound_search/application/server.py").read_text(encoding="utf-8")
+        )
+        for tree in (expected, actual):
+            tree.body = [
+                n
+                for n in tree.body
+                if not isinstance(n, (ast.Import, ast.ImportFrom))
+                and getattr(n, "name", None) != "LoopbackServer"
+            ]
+        if ast.dump(expected) != ast.dump(actual):
+            raise RuntimeError("HTTP repair changed handlers or coordinator behavior")
+    elif prior["code"] != code:
+        raise RuntimeError("Persistence repair cannot change inherited source")
     own_changed = {k for k, h in prior["distribution_code"].items() if own_code().get(k) != h}
     if own_changed - {"authority.py", "context.py", "cli.py"}:
         raise RuntimeError("Repair exceeds the bounded Windows persistence/abandon boundary")

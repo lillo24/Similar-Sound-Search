@@ -161,7 +161,7 @@
     "application/media.py": "efee9cdf00df58f1a251efe29350eb26989c496e0dc51f73a84bf1925a84ef6f",
     "application/pipeline.py": "9665cecb4d34cc4e0308268fcfbf107a442d91844f452b6662523603073bb585",
     "application/queries.py": "37a056e7b42746f85f37a50d74ed99b801e0f3fec756da3e553421a72d02c3ec",
-    "application/server.py": "6bc95c10fab23d6e0b0b9e364425097209f6f381bf72ba8ab7baa282d8a01541",
+    "application/server.py": "3d5a530a13072be5b2b8eb17c5c70d50ed1a43cfc5cd166b4d5dbcaadec6c4e3",
     "application/validation.py": "6af9f62a224cdf9e37261b8c829758826f53b345ec197e3b0f4780b3f755164f",
     "catalogue/__init__.py": "cb2f9dd3009b8ddda5243414de0433f48862b542b0f1ef65268b3a4b905b2b08",
     "catalogue/ingestion.py": "cde055f915935507cbdb187b0409609d0066956b4bdc7cd446519935ca11af94",
@@ -320,6 +320,7 @@
       "QueryOwner"
     ],
     "application/server.py": [
+      "LoopbackServer",
       "make_server"
     ],
     "application/validation.py": [
@@ -356,18 +357,18 @@
     },
     {
       "version": "d03-consumer-1",
-      "declaration_hash": "7b724a0792ea44eef62b4d63fb722ae735e76b091f616af651234ed592c8289d",
+      "declaration_hash": "a07f2aa4c43f355798235571f85534e2a3475140f04da9833de586fdd88c2722",
       "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
       "code_hash": "4306385e0b6f0f84b5e0017b5a7e7b70c1786ebd8260aa8c524b40e1d3756adf"
     }
   ],
   "numerical_hash": "faaa5b2f4ea303977b19dad336ee5911d1666018bcd95a317465ee94edce6487",
   "web": {
-    "app.js": "4bff41cc2bff20a019276d0cb902b61ed5029c64878ba5311461e8a174b11b2d",
+    "app.js": "bac9b2917fbe97e530ffb2b1ba7a983ca9a04093edff4a4735465ec3731c22e6",
     "index.html": "e45deab478346f97fe6ea205a910dae4f097897bd02ffa92f23a119aee94d8d6",
     "style.css": "9bd8a69d4556e7b07729bbee82abec2d8e985f0b2f7c49f8cd1b4acb305e1449"
   },
-  "source_commit": "9a97c70e3a654a36863ed589d63bf606a6e8e3cb",
-  "persistence_repair_previous": "7b724a0792ea44eef62b4d63fb722ae735e76b091f616af651234ed592c8289d",
-  "record_hash": "a07f2aa4c43f355798235571f85534e2a3475140f04da9833de586fdd88c2722"
+  "source_commit": "b03ee15b68172dd68caa1dab6170754ee389c61d",
+  "persistence_repair_previous": "a07f2aa4c43f355798235571f85534e2a3475140f04da9833de586fdd88c2722",
+  "record_hash": "666bb9e040e58d6998a154e21e83b9215f8547cd25badaae2edf9d97a8b42515"
 }

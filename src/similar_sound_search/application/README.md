@@ -26,6 +26,9 @@ song, encodes a vector or charges a processing worker.
 `validation.py` independently verifies native samples/channel/gain/endpoints and
 audits already committed query/array/score outputs before bounded finalization.
 Completed-search navigation in `api.py` is a metadata read, independent of admission.
+On Windows `LoopbackServer` uses `SO_EXCLUSIVEADDRUSE` and disables address reuse:
+the platform's ordinary reusable HTTP socket can otherwise accept a duplicate live
+bind. Port conflicts fail before startup; other platforms retain normal reuse.
 
 See [APPLICATION.md](../../../docs/APPLICATION.md) for contracts and recovery.
 
